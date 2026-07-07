@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:28:36.850Z",
-  "updatedAt": "2026-06-28T12:56:50Z",
+  "generatedAt": "2026-07-07T23:37:03.504Z",
+  "updatedAt": "2026-07-07T23:23:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "triage:done"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-06-28T12:56:50Z"
+    "updatedAt": "2026-07-07T23:23:35Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should this proceed as a sponsored MX-first Merchant feed generator using the Excel feed manifest, and how should Brazil or other account-enabled country scope be represented in versioned config?",
-  "rationale": "The code gaps are clear, but live Merchant uploads, country limits, the attached Excel ordering, and the missing Brazil config require operational/product ownership before an autonomous fix PR can safely decide the rollout shape.",
+  "question": "Should the team proceed with one coordinated Merchant Center feed redesign under MiguelHamelyn, including MX-first validation with Jesús and any missing country config, or split the mapper/code work from live upload operations?",
+  "rationale": "The code gap is clear, but the requested rollout order, Brazil coverage, and live Merchant Center upload sequence require human operational ownership rather than an autonomous cleanup close.",
   "options": [
     {
-      "title": "Sponsor MX-first generator",
-      "body": "Implement the mapper and manifest-driven generator, produce local CSV proof, and coordinate the first live upload in MX with Jesús before other countries.",
+      "title": "Coordinate one owned feed redesign",
+      "body": "Keep this issue open under the assigned owner, implement the mapper and country orchestration together, and run MX proof with Jesús before other countries.",
       "recommended": true
     },
     {
-      "title": "Split mapper from rollout",
-      "body": "First land the brand/product_type/metadata mapper changes without live upload scope, then track country rollout as a separate operational issue.",
+      "title": "Split code and operations",
+      "body": "Open a narrower code issue/PR for mapper and country support while tracking live uploads separately with the operations owner.",
       "recommended": false
     },
     {
-      "title": "Pause for final account manifest",
-      "body": "Wait until maintainers confirm the enabled-country list, Brazil handling, and Excel contract before changing scripts.",
+      "title": "Defer Brazil or unconfirmed countries",
+      "body": "Limit the first implementation to countries with confirmed config and document the remaining country enablement as follow-up.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sponsor MX-first generator",
-    "body": "Implement the mapper and manifest-driven generator, produce local CSV proof, and coordinate the first live upload in MX with Jesús before other countries.",
+    "title": "Coordinate one owned feed redesign",
+    "body": "Keep this issue open under the assigned owner, implement the mapper and country orchestration together, and run MX proof with Jesús before other countries.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "He is the current assignee and authored the related Merchant feed PR, making him the best available routing owner for this product/ops decision.",
+    "reason": "MiguelHamelyn is assigned to this issue and authored the recent Merchant feed refactor, US upload, and MX routing cleanup.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewedAt": "2026-07-07T23:28:36.850Z",
+    "reviewedAt": "2026-07-07T23:37:03.504Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

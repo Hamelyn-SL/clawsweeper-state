@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:29:41.190Z",
-  "updatedAt": "2026-06-29T21:13:02Z",
+  "generatedAt": "2026-07-07T23:49:26.237Z",
+  "updatedAt": "2026-07-07T23:23:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "triage:blocked"
     ],
     "createdAt": "2026-06-23T10:23:55Z",
-    "updatedAt": "2026-06-29T21:13:02Z"
+    "updatedAt": "2026-07-07T23:23:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Which internal source should replace the Mercado Libre browser view for deciding which labels are emailed to Segmail each weekday?",
-  "rationale": "The discussion already blocks browser automation, and choosing between pending-label orders, current picking contents, or the existing Meli-FedEx flow changes what the operation sends.",
+  "question": "What internal order source and eligibility criteria should replace the Mercado Libre browser view for this daily Segmail label email?",
+  "rationale": "The code has the building blocks, but the browser source was rejected and the replacement business criteria are not specified in the issue or current docs.",
   "options": [
     {
-      "title": "Use internal order state",
-      "body": "Drive the email from MercadoLibre order sells that match a maintainer-approved status/filter and explicitly exclude canceled orders.",
+      "title": "Use internal order data",
+      "body": "Implement the automation only after operations defines the internal statuses, date window, and cancellation exclusion for eligible Mercado Libre orders.",
       "recommended": true
     },
     {
-      "title": "Wait for MercadoLibre API confirmation",
-      "body": "Keep the issue blocked until operations confirms an API-backed or report-backed equivalent of “Envíos de hoy.”",
+      "title": "Keep blocked",
+      "body": "Leave the issue blocked until Mercado Libre or operations provides a reliable non-browser source for the daily list.",
       "recommended": false
     },
     {
-      "title": "Do not automate the email",
-      "body": "Close the request if the risk of sending the wrong labels outweighs the daily manual saving.",
+      "title": "Sponsor browser automation",
+      "body": "Explicitly accept the maintenance risk of browser/profile automation for the current manual flow.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Use internal order state",
-    "body": "Drive the email from MercadoLibre order sells that match a maintainer-approved status/filter and explicitly exclude canceled orders.",
+    "title": "Use internal order data",
+    "body": "Implement the automation only after operations defines the internal statuses, date window, and cancellation exclusion for eligible Mercado Libre orders.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn already routed the issue as blocked and has recent history in the MercadoLibre label/carrier path.",
-    "confidence": "high"
+    "reason": "JavierHamelyn already pushed back on browser automation in the discussion and has recent Meli/FedEx implementation history.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6605.md",
-    "reviewedAt": "2026-07-07T23:29:41.190Z",
+    "reviewedAt": "2026-07-07T23:49:26.237Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

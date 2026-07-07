@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:47:02.032Z",
+  "updatedAt": "2026-07-01T06:03:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6617,
+    "title": "EPIC · Revisión V3 — Nuevo puesto de revisión de producto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6617",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "epic:revision-v3"
+    ],
+    "createdAt": "2026-06-23T17:18:57Z",
+    "updatedAt": "2026-07-01T06:03:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should the Revision V3 umbrella stay open until the three remaining child issues are resolved, or should maintainers explicitly split the hardware/analytics leftovers and close the epic scope now?",
+  "rationale": "The repository evidence shows meaningful work remains, but two remaining items are operational/hardware decisions and one is an analytics model decision, so automation should not decide the epic boundary.",
+  "options": [
+    {
+      "title": "Keep umbrella open",
+      "body": "Leave the epic open as the canonical tracker until the productivity aggregation and kiosk hardware/runbook children are resolved or deliberately descoped.",
+      "recommended": true
+    },
+    {
+      "title": "Split and close scope",
+      "body": "Move the remaining analytics and hardware items to their own owner-approved tracking path, then close the epic only after documenting that scope cut.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep umbrella open",
+    "body": "Leave the epic open as the canonical tracker until the productivity aggregation and kiosk hardware/runbook children are resolved or deliberately descoped.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Alex is assigned on the epic and authored the recent merged Revision V3 branch PRs that document and adjust the implementation.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6617.md",
+    "reviewedAt": "2026-07-07T23:47:02.032Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

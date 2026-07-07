@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:41:32.423Z",
+  "updatedAt": "2026-07-07T23:23:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6604,
+    "title": "Aumentar el nº páginas (productos) a mostrar en catálogo ecommerce",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "reporter:jesus",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-06-23T10:15:32Z",
+    "updatedAt": "2026-07-07T23:23:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should the public ecommerce catalog expand to a 30,000-product pagination window for SEO now, or should BL-ecommerce-catalog keep the current 500-result window and lower the API cap?",
+  "rationale": "Both directions are represented by open issues, and the 30,000-product path has SEO, latency, cost, and BL-spec implications that automation should not choose silently.",
+  "options": [
+    {
+      "title": "Confirm 30,000 SEO phase",
+      "body": "Implement the coordinated cap increase and retarget or close the conflicting BL issue so the product direction is unambiguous.",
+      "recommended": true
+    },
+    {
+      "title": "Keep the 500-result window",
+      "body": "Treat this request as superseded by the BL catalog cap work and update this issue with the SEO tradeoff.",
+      "recommended": false
+    },
+    {
+      "title": "Defer to BL F2 validation",
+      "body": "Pause implementation until the BL-ecommerce-catalog owner validates the pagination rule and monitoring requirements.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirm 30,000 SEO phase",
+    "body": "Implement the coordinated cap increase and retarget or close the conflicting BL issue so the product direction is unambiguous.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "The BL catalog parent issue identifies this handle as owner, and the conflicting cap issue was created from that validation path.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
+    "reviewedAt": "2026-07-07T23:41:32.423Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
