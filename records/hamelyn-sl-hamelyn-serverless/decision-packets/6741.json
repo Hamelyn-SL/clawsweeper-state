@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:57:41.275Z",
+  "updatedAt": "2026-07-07T23:51:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6741,
+    "title": "Actualizar layout de pagina de producto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "reporter:victor"
+    ],
+    "createdAt": "2026-06-30T12:25:24Z",
+    "updatedAt": "2026-07-07T23:51:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should this PDP redesign land as one coordinated feature PR or be split into smaller PRs for breadcrumb/details, author block, and best-seller carousel?",
+  "rationale": "The request is clear but spans visual layout, enriched data, cache behavior, and copy, so maintainers should decide the implementation boundary before a repair worker starts.",
+  "options": [
+    {
+      "title": "Split into focused PRs",
+      "body": "Land the low-risk breadcrumb/details work separately from the author-data and best-seller carousel work.",
+      "recommended": true
+    },
+    {
+      "title": "One coordinated PDP PR",
+      "body": "Implement the full layout in one feature branch with stronger browser proof and product review before merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Split into focused PRs",
+    "body": "Land the low-risk breadcrumb/details work separately from the author-data and best-seller carousel work.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Most closely tied to the current PDP variant implementation history.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
+    "reviewedAt": "2026-07-07T23:57:41.275Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
