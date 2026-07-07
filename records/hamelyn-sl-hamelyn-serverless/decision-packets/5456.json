@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:07:28.522Z",
-  "updatedAt": "2026-06-29T21:05:45Z",
+  "generatedAt": "2026-07-07T22:10:17.399Z",
+  "updatedAt": "2026-07-07T22:01:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,42 +19,42 @@
       "area:marketplace-sync"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-06-29T21:05:45Z"
+    "updatedAt": "2026-07-07T22:01:52Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "For TodoColeccion create-side 429s, should the products flow reduce throughput with a provider-safe lock/rate limiter, split create out of `/api/todoColeccion`, or keep the current abort-and-recover behavior with stronger alerting?",
-  "rationale": "The code can be changed narrowly, but the correct fix depends on the desired throughput versus provider-limit tradeoff and whether product writes should be serialized across cron invocations.",
+  "question": "Should the next fix focus on create-side throttling/breaker behavior here, or should maintainers first resolve the adjacent TodoColeccion price-recovery create retry in https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7169?",
+  "rationale": "The code path is clear, but choosing the right rate budget, breaker scope, and ordering depends on live provider behavior and operational tolerance for skipped create work.",
   "options": [
     {
-      "title": "Add products write throttling",
-      "body": "Implement a TodoColeccion products-scope limiter or lock with tests and phase metrics so create/updatePrice cannot exceed the provider's safe write envelope.",
+      "title": "Sponsor a bounded create-side fix",
+      "body": "Treat this issue as canonical and ask for a PR that isolates create-side rate-limit handling, adds focused tests, and proves the production signature drops after deploy.",
       "recommended": true
     },
     {
-      "title": "Split create into its own cron",
-      "body": "Move create-side TodoColeccion writes to a separate route or schedule so rate limits do not consume the main sync cron budget.",
+      "title": "Fix recovery churn first",
+      "body": "Prioritize https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7169 if maintainers believe price-error recovery is feeding product-scope create churn.",
       "recommended": false
     },
     {
-      "title": "Keep abort-and-recover",
-      "body": "Accept the current batch abort behavior and improve alerting/reporting instead of reducing throughput in code.",
+      "title": "Keep observing only",
+      "body": "Leave code unchanged temporarily and require a fresh BigQuery sample proving the signature still appears after the June TodoColeccion mitigations.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Add products write throttling",
-    "body": "Implement a TodoColeccion products-scope limiter or lock with tests and phase metrics so create/updatePrice cannot exceed the provider's safe write envelope.",
+    "title": "Sponsor a bounded create-side fix",
+    "body": "Treat this issue as canonical and ask for a PR that isolates create-side rate-limit handling, adds focused tests, and proves the production signature drops after deploy.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Most recent contributor across the TodoColeccion API error-handling and recovery code touched by the likely fix.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn merged the first mitigation and later marked this issue confirmed-live, so they are the best visible owner for the operational priority choice.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewedAt": "2026-07-07T22:07:28.522Z",
-    "mainSha": "d7265db4024f86eb6518f87fc6033676bcf71d18"
+    "reviewedAt": "2026-07-07T22:10:17.399Z",
+    "mainSha": "3842c1e6c854cdda44736d8aba388698896fc2f7"
   }
 }
