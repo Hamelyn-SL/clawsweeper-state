@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:28:36.850Z",
+  "updatedAt": "2026-06-28T12:56:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6545,
+    "title": "Regenerar feeds de Merchant Center (multi-país): metadata completa + correcciones de mapeo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "reporter:jesus",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-06-18T13:56:43Z",
+    "updatedAt": "2026-06-28T12:56:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should this proceed as a sponsored MX-first Merchant feed generator using the Excel feed manifest, and how should Brazil or other account-enabled country scope be represented in versioned config?",
+  "rationale": "The code gaps are clear, but live Merchant uploads, country limits, the attached Excel ordering, and the missing Brazil config require operational/product ownership before an autonomous fix PR can safely decide the rollout shape.",
+  "options": [
+    {
+      "title": "Sponsor MX-first generator",
+      "body": "Implement the mapper and manifest-driven generator, produce local CSV proof, and coordinate the first live upload in MX with Jesús before other countries.",
+      "recommended": true
+    },
+    {
+      "title": "Split mapper from rollout",
+      "body": "First land the brand/product_type/metadata mapper changes without live upload scope, then track country rollout as a separate operational issue.",
+      "recommended": false
+    },
+    {
+      "title": "Pause for final account manifest",
+      "body": "Wait until maintainers confirm the enabled-country list, Brazil handling, and Excel contract before changing scripts.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sponsor MX-first generator",
+    "body": "Implement the mapper and manifest-driven generator, produce local CSV proof, and coordinate the first live upload in MX with Jesús before other countries.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "He is the current assignee and authored the related Merchant feed PR, making him the best available routing owner for this product/ops decision.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
+    "reviewedAt": "2026-07-07T23:28:36.850Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

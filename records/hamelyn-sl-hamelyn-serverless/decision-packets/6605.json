@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:29:41.190Z",
+  "updatedAt": "2026-06-29T21:13:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6605,
+    "title": "Automatizar correo Meli",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6605",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:blocked"
+    ],
+    "createdAt": "2026-06-23T10:23:55Z",
+    "updatedAt": "2026-06-29T21:13:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Which internal source should replace the Mercado Libre browser view for deciding which labels are emailed to Segmail each weekday?",
+  "rationale": "The discussion already blocks browser automation, and choosing between pending-label orders, current picking contents, or the existing Meli-FedEx flow changes what the operation sends.",
+  "options": [
+    {
+      "title": "Use internal order state",
+      "body": "Drive the email from MercadoLibre order sells that match a maintainer-approved status/filter and explicitly exclude canceled orders.",
+      "recommended": true
+    },
+    {
+      "title": "Wait for MercadoLibre API confirmation",
+      "body": "Keep the issue blocked until operations confirms an API-backed or report-backed equivalent of “Envíos de hoy.”",
+      "recommended": false
+    },
+    {
+      "title": "Do not automate the email",
+      "body": "Close the request if the risk of sending the wrong labels outweighs the daily manual saving.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Use internal order state",
+    "body": "Drive the email from MercadoLibre order sells that match a maintainer-approved status/filter and explicitly exclude canceled orders.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn already routed the issue as blocked and has recent history in the MercadoLibre label/carrier path.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6605.md",
+    "reviewedAt": "2026-07-07T23:29:41.190Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
