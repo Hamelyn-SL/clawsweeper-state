@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:56:01.478Z",
-  "updatedAt": "2026-06-29T21:12:47Z",
+  "generatedAt": "2026-07-07T23:10:03.655Z",
+  "updatedAt": "2026-07-07T22:49:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,42 +17,42 @@
       "triage:done"
     ],
     "createdAt": "2026-06-09T12:17:30Z",
-    "updatedAt": "2026-06-29T21:12:47Z"
+    "updatedAt": "2026-07-07T22:49:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the remaining prep-center FEDEX workflow be implemented now as staged fulfillment work, and should prep-centers be identified by recipient/address ShipMatrix rules or by a more explicit B2B/prep-center marker?",
-  "rationale": "The issue is valid but crosses carrier-routing data model, operations configuration, batch-label policy, and packing UX; automation should not choose the long-term prep-center matching contract on its own.",
+  "question": "Should the work be split into staged PRs for recipient routing, FEDEX consolidated batch-skip state, and packing regeneration UI, or should maintainers sponsor one larger end-to-end PR?",
+  "rationale": "The remaining work crosses data-driven routing, persisted label state, FEDEX side effects, and warehouse UI, so automation should not choose the rollout boundary or operator policy without maintainer intent.",
   "options": [
     {
-      "title": "Stage the fulfillment implementation",
-      "body": "Add recipient/address matching or an approved explicit prep-center marker first, then batch-skip behavior and packing self-service FEDEX generation in follow-up PRs.",
+      "title": "Split into staged PRs",
+      "body": "Implement and validate the routing/config layer first, then add the batch-skip state and packing regeneration UX with focused operational proof.",
       "recommended": true
     },
     {
-      "title": "Keep as backlog feature",
-      "body": "Leave the current manual Spring-to-FEDEX switch in place and keep the broader automatic prep-center workflow queued until operations prioritizes it.",
+      "title": "One end-to-end PR",
+      "body": "Land the full workflow together, accepting a larger review surface across core shipping logic and admin packing UI.",
       "recommended": false
     },
     {
-      "title": "Narrow to routing only",
-      "body": "Only add a ShipMatrix criterion now and defer packing self-service, accepting that heavy consolidations may still need manual handling.",
+      "title": "Defer the workflow",
+      "body": "Keep the current manual Spring-to-FEDEX switch and consolidated label dedupe while operations continue handling prep-center shipments manually.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Stage the fulfillment implementation",
-    "body": "Add recipient/address matching or an approved explicit prep-center marker first, then batch-skip behavior and packing self-service FEDEX generation in follow-up PRs.",
+    "title": "Split into staged PRs",
+    "body": "Implement and validate the routing/config layer first, then add the batch-skip state and packing regeneration UX with focused operational proof.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn has the strongest recent history across ShipMatrix selection, carrier-resolution precedence, and manual carrier switching.",
+    "reason": "They have the strongest recent history across carrier resolution and the FEDEX multi-box packing switch that this feature extends.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6310.md",
-    "reviewedAt": "2026-07-07T22:56:01.478Z",
+    "reviewedAt": "2026-07-07T23:10:03.655Z",
     "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
   }
 }
