@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T21:58:21.315Z",
-  "updatedAt": "2026-06-19T07:35:57Z",
+  "generatedAt": "2026-07-07T22:05:57.899Z",
+  "updatedAt": "2026-07-07T21:53:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,42 +17,42 @@
       "app:marketplace"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-06-19T07:35:57Z"
+    "updatedAt": "2026-07-07T21:53:28Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "For recurring eBay `updatePrice` 400 partial failures after offerId reconciliation, should `/api/ebay` keep HTTP 200 with per-SKU permanent/transient handling, or should sustained/material partial failures escalate the cron response?",
-  "rationale": "The code path can be adjusted, but the safe behavior depends on production payloads and on how operators want multi-phase marketplace cron health to be represented.",
+  "question": "For eBay price-update partial failures, should `/api/ebay` keep returning HTTP 200 with `Completed with partial failures`, or should material unsynchronized SKU batches fail or alert more strongly?",
+  "rationale": "The issue mixes a concrete eBay 400 classification bug with the broader cron aggregation policy, and source shows the current 200 partial-success behavior is shared cron infrastructure rather than an isolated eBay line change.",
   "options": [
     {
-      "title": "Keep HTTP 200 but strengthen classification",
-      "body": "Recommended: capture a fresh payload, ensure each 400 maps to permanent or transient per SKU, and keep the cron response partial-success while adding actionable logs/alerts.",
+      "title": "Keep 200, strengthen eBay classification",
+      "body": "Preserve the shared cron contract and fix only the remaining eBay 400 payload classification, retry, reconciliation, and logging behavior.",
       "recommended": true
     },
     {
-      "title": "Escalate material partial failures",
-      "body": "Return a failing cron response or equivalent alert when an eBay updatePrice batch crosses an agreed failure threshold.",
+      "title": "Escalate material eBay partial failures",
+      "body": "Change eBay or shared cron behavior so large partial failures become a stronger operational failure signal, accepting monitoring and alerting impact.",
       "recommended": false
     },
     {
-      "title": "Treat remaining 400s as terminal per-SKU noise",
-      "body": "Close only if live evidence shows every remaining 400 is an expected permanent SKU state and operations does not need stronger cron health semantics.",
+      "title": "Defer until live payload is captured",
+      "body": "Keep the issue assigned and avoid code changes until a current production payload proves which 400 variant remains unresolved.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep HTTP 200 but strengthen classification",
-    "body": "Recommended: capture a fresh payload, ensure each 400 maps to permanent or transient per SKU, and keep the cron response partial-success while adding actionable logs/alerts.",
+    "title": "Keep 200, strengthen eBay classification",
+    "body": "Preserve the shared cron contract and fix only the remaining eBay 400 payload classification, retry, reconciliation, and logging behavior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Marcos is assigned to the issue and authored the later offerId reconciliation PR closest to the remaining eBay updatePrice behavior.",
+    "person": "JavierHamelyn",
+    "reason": "He is tied by git history to both the eBay update-price fix and the current partial-failure/cron behavior.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewedAt": "2026-07-07T21:58:21.315Z",
-    "mainSha": "547ff73262d3455e80702212d666528868edd477"
+    "reviewedAt": "2026-07-07T22:05:57.899Z",
+    "mainSha": "d7265db4024f86eb6518f87fc6033676bcf71d18"
   }
 }

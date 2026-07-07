@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:10:17.399Z",
-  "updatedAt": "2026-07-07T22:01:52Z",
+  "generatedAt": "2026-07-07T22:11:49.376Z",
+  "updatedAt": "2026-06-29T21:05:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,53 +16,45 @@
       "priority:p1",
       "app:marketplace",
       "triage:confirmed-live",
-      "area:marketplace-sync",
-      "P1",
-      "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "area:marketplace-sync"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-07T22:01:52Z"
+    "updatedAt": "2026-06-29T21:05:45Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the next fix focus on create-side throttling/breaker behavior here, or should maintainers first resolve the adjacent TodoColeccion price-recovery create retry in https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7169?",
-  "rationale": "The code path is clear, but choosing the right rate budget, breaker scope, and ordering depends on live provider behavior and operational tolerance for skipped create work.",
+  "question": "Should TodoColeccion product throttling be solved by tuning create/backoff behavior inside the products scope, by further splitting create and updatePrice breaker/scheduling, or by treating the current abort as acceptable provider protection?",
+  "rationale": "The source still has the protective abort, but the safe permanent fix depends on current production frequency and the provider’s real rate-limit semantics rather than a purely local code preference.",
   "options": [
     {
-      "title": "Sponsor a bounded create-side fix",
-      "body": "Treat this issue as canonical and ask for a PR that isolates create-side rate-limit handling, adds focused tests, and proves the production signature drops after deploy.",
+      "title": "Tune products throttling first",
+      "body": "Use fresh logs/provider evidence to add a narrow create-side backoff or budget while preserving the scoped breaker protection.",
       "recommended": true
     },
     {
-      "title": "Fix recovery churn first",
-      "body": "Prioritize https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7169 if maintainers believe price-error recovery is feeding product-scope create churn.",
+      "title": "Split create and price isolation",
+      "body": "Separate create and updatePrice breaker or cron behavior if current logs show one products subflow still starves the other.",
       "recommended": false
     },
     {
-      "title": "Keep observing only",
-      "body": "Leave code unchanged temporarily and require a fresh BigQuery sample proving the signature still appears after the June TodoColeccion mitigations.",
+      "title": "Accept current protection",
+      "body": "Leave the abort behavior in place if current production data shows the remaining rate limits are rare and safer than continuing the batch.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sponsor a bounded create-side fix",
-    "body": "Treat this issue as canonical and ask for a PR that isolates create-side rate-limit handling, adds focused tests, and proves the production signature drops after deploy.",
+    "title": "Tune products throttling first",
+    "body": "Use fresh logs/provider evidence to add a narrow create-side backoff or budget while preserving the scoped breaker protection.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "JavierHamelyn merged the first mitigation and later marked this issue confirmed-live, so they are the best visible owner for the operational priority choice.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Recent TodoColeccion API and error-classification work makes this the strongest code-history owner for the rate-limit behavior.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909509165",
-    "reviewedAt": "2026-07-07T22:10:17.399Z",
-    "mainSha": "3842c1e6c854cdda44736d8aba388698896fc2f7"
+    "reviewedAt": "2026-07-07T22:11:49.376Z",
+    "mainSha": "d7265db4024f86eb6518f87fc6033676bcf71d18"
   }
 }
