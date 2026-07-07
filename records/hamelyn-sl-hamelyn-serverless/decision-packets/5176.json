@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T21:55:15.198Z",
+  "generatedAt": "2026-07-07T21:50:22.558Z",
   "updatedAt": "2026-07-07T21:16:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,40 +17,47 @@
       "app:marketplace",
       "triage:done",
       "triage:confirmed-live",
-      "area:marketplace-sync"
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-04-12T13:24:14Z",
     "updatedAt": "2026-07-07T21:16:33Z"
   },
   "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "Is the current dev implementation enough to close this after a fresh BigQuery check, or should the issue stay open for an upstream MercadoLibre image eligibility/backfill fix?",
-  "rationale": "The code now classifies and suppresses repeats, but the issue was confirmed live before later mitigations and the remaining first-discovery/backfill boundary needs owner intent and production evidence.",
+  "question": "Is the current post-PR-6503/6635 production signal enough to close this MercadoLibre `IMAGE_NOT_FOUND` issue, or should it stay open for a preflight/backfill fix?",
+  "rationale": "Source now contains plausible mitigations, but the issue's latest production evidence says the pattern was still live after earlier fixes and no later production proof is recorded in the thread.",
   "options": [
     {
-      "title": "Verify then close if quiet",
-      "body": "Run a post-PR6503/PR6635 BigQuery check for IMAGE_NOT_FOUND and close only if the create error signature is gone or limited to expected ineligible telemetry.",
+      "title": "Verify production before closing",
+      "body": "Run the BigQuery check for `/api/mercadolibre` after the latest deploy and close only if `IMAGE_NOT_FOUND` no longer re-enters create for selected stocks.",
       "recommended": true
     },
     {
-      "title": "Keep for upstream eligibility",
-      "body": "Implement a MercadoLibre preflight/backfill that marks missing or undersized images before the create selector discovers them one-by-one.",
+      "title": "Implement preflight/backfill",
+      "body": "If the signal remains live, add or run the narrow eligibility/backfill path that prevents known missing-image stocks from being discovered one by one by create.",
       "recommended": false
     },
     {
-      "title": "Split data cleanup",
-      "body": "Close the code portion and track catalog image repair/backfill as a separate data-ops item with dry-run gates.",
+      "title": "Accept current one-time rejection",
+      "body": "If operations accepts first-seen ineligible rows with HTTP 200 as expected behavior, document that boundary and close this issue with the production evidence.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verify then close if quiet",
-    "body": "Run a post-PR6503/PR6635 BigQuery check for IMAGE_NOT_FOUND and close only if the create error signature is gone or limited to expected ineligible telemetry.",
+    "title": "Verify production before closing",
+    "body": "Run the BigQuery check for `/api/mercadolibre` after the latest deploy and close only if `IMAGE_NOT_FOUND` no longer re-enters create for selected stocks.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Alex is the current assignee and authored the earlier IMAGE_NOT_FOUND/retry-policy fixes.",
+    "reason": "The issue is assigned to Alex and Alex carried the earlier formal fixes for this exact issue.",
     "confidence": "high"
   },
   "source": {
