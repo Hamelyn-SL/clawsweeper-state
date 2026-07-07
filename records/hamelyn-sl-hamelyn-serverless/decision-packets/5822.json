@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:37:39.433Z",
+  "updatedAt": "2026-07-05T10:28:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5822,
+    "title": "Productividad: separar los tipos de operación de Picking y Packing en subtipos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5822",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "priority:p2",
+      "reporter:banosdavidhamelyn",
+      "feature",
+      "triage:needs-info"
+    ],
+    "createdAt": "2026-05-13T05:44:42Z",
+    "updatedAt": "2026-07-05T10:28:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should productivity subtypes be implemented as visual-only derived grouping, persisted `metadata.operationSubtype`, or new first-class `operationType` enum values with migration/backfill decisions?",
+  "rationale": "The code can support multiple approaches, and the reporter explicitly asked for lower-complexity options that avoid schema changes, so implementation would otherwise bake in a product/data-model choice.",
+  "options": [
+    {
+      "title": "Persist subtype in metadata",
+      "body": "Keep `PICKING` and `PACKING` as operation types, add sanitized `metadata.operationSubtype`, and derive historical fallbacks where the source data is reliable.",
+      "recommended": true
+    },
+    {
+      "title": "Dashboard-only derivation",
+      "body": "Compute subtypes only in the productivity report UI/API, accepting weaker filtering and incomplete historical accuracy when metadata is missing.",
+      "recommended": false
+    },
+    {
+      "title": "First-class operation types",
+      "body": "Add enum values for each subtype and decide migration/backfill rules for existing generic sessions before implementation.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persist subtype in metadata",
+    "body": "Keep `PICKING` and `PACKING` as operation types, add sanitized `metadata.operationSubtype`, and derive historical fallbacks where the source data is reliable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "He authored the key productivity code paths and is the reporter asking which lower-complexity product shape to use.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5822.md",
+    "reviewedAt": "2026-07-07T22:37:39.433Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

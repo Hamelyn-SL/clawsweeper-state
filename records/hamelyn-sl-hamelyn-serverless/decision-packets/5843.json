@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:38:26.863Z",
+  "updatedAt": "2026-06-29T21:12:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5843,
+    "title": "[V3.5] Data ficha producto adaptada por idioma del dominio",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "app:ecommerce",
+      "priority:p2",
+      "feature",
+      "reporter:javier",
+      "triage:no-change",
+      "surface:pdp",
+      "epic:v3.5-features"
+    ],
+    "createdAt": "2026-05-13T22:17:19Z",
+    "updatedAt": "2026-06-29T21:12:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should R18 be sponsored now as a large ecommerce data/localization track, and should the first implementation milestone be benchmark plus storage contract before PDP/admin work?",
+  "rationale": "The remaining scope is a product/data decision across LLM provider cost, Mongo schema, pipeline timing, fallback behavior, and admin ownership rather than a narrow bug fix.",
+  "options": [
+    {
+      "title": "Benchmark and contract first",
+      "body": "Run the 50-product benchmark and agree on `Product.translations` storage/fallback semantics before building pipeline, PDP, or admin UI.",
+      "recommended": true
+    },
+    {
+      "title": "Narrow PDP-only milestone",
+      "body": "Ship only title suffix and read-path fallback after a minimal data contract, leaving pipeline/admin overrides for later issues.",
+      "recommended": false
+    },
+    {
+      "title": "Defer R18",
+      "body": "Keep the issue open but do not start implementation until V3.5 owners prioritize the data cost and manual-override workflow.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Benchmark and contract first",
+    "body": "Run the 50-product benchmark and agree on `Product.translations` storage/fallback semantics before building pipeline, PDP, or admin UI.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "This handle authored the issue and latest scope updates, and also appears in current PDP description history.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
+    "reviewedAt": "2026-07-07T22:38:26.863Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

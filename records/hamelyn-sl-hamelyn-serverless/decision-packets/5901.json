@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:38:33.199Z",
+  "updatedAt": "2026-06-29T21:12:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5901,
+    "title": "marketplace-crons: Fnac devuelve 500 en pedidos y batch",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5901",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-orders"
+    ],
+    "createdAt": "2026-05-19T00:34:22Z",
+    "updatedAt": "2026-06-29T21:12:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should Fnac `DELETE OFFER` 500s remain treated as transient provider noise, or should the team implement delete-offer-specific recovery despite `/offers_update` being side-effectful?",
+  "rationale": "Current source shows the code path clearly, but choosing retry/recovery semantics for Fnac offer deletion can change marketplace side effects and needs operational ownership.",
+  "options": [
+    {
+      "title": "Keep canonical open and re-check production recurrence",
+      "body": "Use the newer withdraw logs plus BigQuery to confirm whether the recurrence is sustained before changing side-effectful Fnac behavior.",
+      "recommended": true
+    },
+    {
+      "title": "Implement scoped safe retries only",
+      "body": "Add retry/backoff only for idempotent or low-side-effect paths such as auth, orders query, and batch status, while separately designing delete-offer handling.",
+      "recommended": false
+    },
+    {
+      "title": "Accept provider noise and close after evidence",
+      "body": "Close only if a fresh production window shows no sustained recurrence and the existing next-cron recovery is acceptable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep canonical open and re-check production recurrence",
+    "body": "Use the newer withdraw logs plus BigQuery to confirm whether the recurrence is sustained before changing side-effectful Fnac behavior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn is the strongest current code-history owner for the affected Fnac and withdraw paths and applied the latest related logging changes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5901.md",
+    "reviewedAt": "2026-07-07T22:38:33.199Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

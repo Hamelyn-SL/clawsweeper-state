@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:38:26.352Z",
+  "updatedAt": "2026-06-29T21:06:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5778,
+    "title": "marketplace-crons: eBay rechaza creates por política de título o descripción",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync"
+    ],
+    "createdAt": "2026-05-09T06:34:37Z",
+    "updatedAt": "2026-06-29T21:06:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "For eBay create failures containing `Issue_172_Block`, account-limited text, or counterfeit-policy wording, should Hamelyn classify them as per-SKU permanent catalog errors, account-level transient blocks, or split them by message family?",
+  "rationale": "The source fix is small, but the wrong policy can either bury recoverable account restrictions or keep non-recoverable catalog/policy rejects in the retry pool.",
+  "options": [
+    {
+      "title": "Split by message family",
+      "body": "Classify counterfeit/content-policy rejections as `PERMANENT`, but route account-limited seller blocks to an account-level alert/hold with explicit requeue after eBay clears the restriction.",
+      "recommended": true
+    },
+    {
+      "title": "Treat all as permanent",
+      "body": "Stop retries immediately for every observed variant, accepting that account-level recovery will require manual SKU requeue.",
+      "recommended": false
+    },
+    {
+      "title": "Keep account blocks retryable",
+      "body": "Only add permanent rules for item/content policy and leave account-limited cases transient or unknown until the seller account state is confirmed.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Split by message family",
+    "body": "Classify counterfeit/content-policy rejections as `PERMANENT`, but route account-limited seller blocks to an account-level alert/hold with explicit requeue after eBay clears the restriction.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "They recently marked this issue confirmed-live in the marketplace-sync area and have recent history around the eBay marketplace surface.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
+    "reviewedAt": "2026-07-07T22:38:26.352Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}
