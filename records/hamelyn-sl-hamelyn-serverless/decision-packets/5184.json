@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T21:51:35.433Z",
+  "updatedAt": "2026-07-07T21:22:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5184,
+    "title": "marketplace-crons: eBay falla al publicar ofertas en bulkPublishOffer y el cron lo absorbe",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "triage:confirmed-live",
+      "area:marketplace-sync"
+    ],
+    "createdAt": "2026-04-13T00:24:51Z",
+    "updatedAt": "2026-07-07T21:22:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "For eBay create/publish, should a bulkPublishOffer batch with zero successful publications fail or escalate the /api/ebay cron response, or should it remain HTTP 200 with stronger internal alerting?",
+  "rationale": "The code can add detail mechanically, but changing the cron-level success signal affects monitoring and multi-phase cron semantics that need maintainer/operator intent.",
+  "options": [
+    {
+      "title": "Escalate zero-success publish batches",
+      "body": "Treat a publish batch with no successful offers as a phase failure or equivalent alert before re-enabling eBay create.",
+      "recommended": true
+    },
+    {
+      "title": "Keep HTTP 200 with stronger alerting",
+      "body": "Continue allowing other phases to finish but add explicit per-offer logs and priority notification for zero-success publish batches.",
+      "recommended": false
+    },
+    {
+      "title": "Keep create disabled",
+      "body": "Leave eBay create off until the account/policy rejection family is handled operationally outside this code path.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Escalate zero-success publish batches",
+    "body": "Treat a publish batch with no successful offers as a phase failure or equivalent alert before re-enabling eBay create.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn owns the most recent eBay cron mitigation in current history and is closest to the cron-level operational decision.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
+    "reviewedAt": "2026-07-07T21:51:35.433Z",
+    "mainSha": "547ff73262d3455e80702212d666528868edd477"
+  }
+}
