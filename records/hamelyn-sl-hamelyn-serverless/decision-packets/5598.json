@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:27:40.571Z",
+  "updatedAt": "2026-07-07T22:09:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5598,
+    "title": "marketplace-crons: Amazon ES create falla cuando no encuentra ASIN para el EAN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5598",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync"
+    ],
+    "createdAt": "2026-04-30T01:34:27Z",
+    "updatedAt": "2026-07-07T22:09:48Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "Are the post-recovery Amazon ES logs showing the same SKUs bypassing the 24h cooldown, or only expected retries/new products with no resolvable ASIN?",
+  "rationale": "Source inspection shows an intended cooldown path, but the issue’s production reopens say the signature is still live; deciding closure or code work requires live SKU-level proof.",
+  "options": [
+    {
+      "title": "Verify live recurrence first",
+      "body": "Keep the issue open until BigQuery and Mongo evidence shows whether the same SKUs are violating cooldown or the logs are expected no-ASIN retries.",
+      "recommended": true
+    },
+    {
+      "title": "Promote a narrow fix",
+      "body": "If the same SKUs are retried too soon, repair the exact recovery selector or timestamp update path.",
+      "recommended": false
+    },
+    {
+      "title": "Close as external catalog limitation",
+      "body": "If cooldown is respected and the products simply have no Amazon ASIN, close only after documenting the intended exclusion or retry policy.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verify live recurrence first",
+    "body": "Keep the issue open until BigQuery and Mongo evidence shows whether the same SKUs are violating cooldown or the logs are expected no-ASIN retries.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "HamelynDev owns the current issue assignment and authored the merged partial recovery for this exact signature.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5598.md",
+    "reviewedAt": "2026-07-07T22:27:40.571Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}
