@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:38:33.199Z",
-  "updatedAt": "2026-06-29T21:12:38Z",
+  "generatedAt": "2026-07-07T22:50:06.334Z",
+  "updatedAt": "2026-07-07T22:33:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,42 +20,42 @@
       "area:marketplace-orders"
     ],
     "createdAt": "2026-05-19T00:34:22Z",
-    "updatedAt": "2026-06-29T21:12:38Z"
+    "updatedAt": "2026-07-07T22:33:07Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should Fnac `DELETE OFFER` 500s remain treated as transient provider noise, or should the team implement delete-offer-specific recovery despite `/offers_update` being side-effectful?",
-  "rationale": "Current source shows the code path clearly, but choosing retry/recovery semantics for Fnac offer deletion can change marketplace side effects and needs operational ownership.",
+  "question": "Should Fnac `/offers_update` withdraw failures get an intra-cron retry/backoff, or should retries stay limited to auth/read/batch-status calls until Fnac idempotency is proven?",
+  "rationale": "The live recurrence is now centered on `deleteFnacOffer`, but prior triage explicitly warned that retrying side-effecting Fnac POSTs may duplicate batches or actions.",
   "options": [
     {
-      "title": "Keep canonical open and re-check production recurrence",
-      "body": "Use the newer withdraw logs plus BigQuery to confirm whether the recurrence is sustained before changing side-effectful Fnac behavior.",
+      "title": "Keep retries to safe endpoints first",
+      "body": "Add bounded retry/backoff for `auth`, `orders_query`, and `batch_status`, while leaving `offers_update` and `orders_update` on next-tick recovery until idempotency is proven.",
       "recommended": true
     },
     {
-      "title": "Implement scoped safe retries only",
-      "body": "Add retry/backoff only for idempotent or low-side-effect paths such as auth, orders query, and batch status, while separately designing delete-offer handling.",
+      "title": "Add guarded withdraw retry",
+      "body": "Retry `deleteFnacOffer` only with contract evidence or code-level guards that prevent duplicate batch side effects.",
       "recommended": false
     },
     {
-      "title": "Accept provider noise and close after evidence",
-      "body": "Close only if a fresh production window shows no sustained recurrence and the existing next-cron recovery is acceptable.",
+      "title": "Accept next-tick recovery",
+      "body": "Keep current behavior and treat these provider 500s as operational noise unless BigQuery shows sustained delayed withdrawals or customer impact.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep canonical open and re-check production recurrence",
-    "body": "Use the newer withdraw logs plus BigQuery to confirm whether the recurrence is sustained before changing side-effectful Fnac behavior.",
+    "title": "Keep retries to safe endpoints first",
+    "body": "Add bounded retry/backoff for `auth`, `orders_query`, and `batch_status`, while leaving `offers_update` and `orders_update` on next-tick recovery until idempotency is proven.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn is the strongest current code-history owner for the affected Fnac and withdraw paths and applied the latest related logging changes.",
-    "confidence": "high"
+    "reason": "Recent Fnac/marketplace area history and triage labels make this the best available routing candidate for the retry-boundary decision.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5901.md",
-    "reviewedAt": "2026-07-07T22:38:33.199Z",
+    "reviewedAt": "2026-07-07T22:50:06.334Z",
     "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
   }
 }

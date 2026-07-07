@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:38:26.352Z",
-  "updatedAt": "2026-06-29T21:06:20Z",
+  "generatedAt": "2026-07-07T22:40:44.025Z",
+  "updatedAt": "2026-07-07T22:32:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,42 +19,42 @@
       "area:marketplace-sync"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-06-29T21:06:20Z"
+    "updatedAt": "2026-07-07T22:32:59Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "For eBay create failures containing `Issue_172_Block`, account-limited text, or counterfeit-policy wording, should Hamelyn classify them as per-SKU permanent catalog errors, account-level transient blocks, or split them by message family?",
-  "rationale": "The source fix is small, but the wrong policy can either bury recoverable account restrictions or keep non-recoverable catalog/policy rejects in the retry pool.",
+  "question": "Should eBay account-limited and policy-block create failures be treated as SKU-level permanent catalog errors, marketplace-level operational incidents, or a split between those two paths?",
+  "rationale": "The reopened evidence mixes item-policy rejects with seller-account limitation text; choosing the wrong bucket can either keep retrying impossible SKUs or hide an account-level outage.",
   "options": [
     {
-      "title": "Split by message family",
-      "body": "Classify counterfeit/content-policy rejections as `PERMANENT`, but route account-limited seller blocks to an account-level alert/hold with explicit requeue after eBay clears the restriction.",
+      "title": "Split by failure family",
+      "body": "Classify item-policy and counterfeit rejects as permanent per SKU, but route account-limited signatures to an operational marketplace-level incident path before re-enabling create.",
       "recommended": true
     },
     {
       "title": "Treat all as permanent",
-      "body": "Stop retries immediately for every observed variant, accepting that account-level recovery will require manual SKU requeue.",
+      "body": "Mark the whole reopened signature family permanent per SKU, reducing retry pressure but risking silent masking of seller-account blocks.",
       "recommended": false
     },
     {
-      "title": "Keep account blocks retryable",
-      "body": "Only add permanent rules for item/content policy and leave account-limited cases transient or unknown until the seller account state is confirmed.",
+      "title": "Keep create disabled",
+      "body": "Leave eBay create off until operations confirms the seller-account/policy state and provides current production evidence.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split by message family",
-    "body": "Classify counterfeit/content-policy rejections as `PERMANENT`, but route account-limited seller blocks to an account-level alert/hold with explicit requeue after eBay clears the restriction.",
+    "title": "Split by failure family",
+    "body": "Classify item-policy and counterfeit rejects as permanent per SKU, but route account-limited signatures to an operational marketplace-level incident path before re-enabling create.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "They recently marked this issue confirmed-live in the marketplace-sync area and have recent history around the eBay marketplace surface.",
-    "confidence": "medium"
+    "reason": "JavierHamelyn is tied to the current eBay controller state and recent eBay integration work, so this policy choice likely belongs closest to that area.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewedAt": "2026-07-07T22:38:26.352Z",
+    "reviewedAt": "2026-07-07T22:40:44.025Z",
     "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
   }
 }

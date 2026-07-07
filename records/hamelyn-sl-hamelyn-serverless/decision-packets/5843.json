@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:38:26.863Z",
-  "updatedAt": "2026-06-29T21:12:35Z",
+  "generatedAt": "2026-07-07T22:46:03.871Z",
+  "updatedAt": "2026-07-07T22:33:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,42 +20,42 @@
       "epic:v3.5-features"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
-    "updatedAt": "2026-06-29T21:12:35Z"
+    "updatedAt": "2026-07-07T22:33:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should R18 be sponsored now as a large ecommerce data/localization track, and should the first implementation milestone be benchmark plus storage contract before PDP/admin work?",
-  "rationale": "The remaining scope is a product/data decision across LLM provider cost, Mongo schema, pipeline timing, fallback behavior, and admin ownership rather than a narrow bug fix.",
+  "question": "Should R18 proceed as a persisted `Product.translations` data feature after a benchmark, or should maintainers split/defer parts of the title, description, pipeline, and admin scope?",
+  "rationale": "The remaining work depends on cost/quality tradeoffs, MongoDB storage shape, operational backfill strategy, and admin UX ownership, which automation should not choose alone.",
   "options": [
     {
-      "title": "Benchmark and contract first",
-      "body": "Run the 50-product benchmark and agree on `Product.translations` storage/fallback semantics before building pipeline, PDP, or admin UI.",
+      "title": "Approve staged persisted-translations track",
+      "body": "Run the benchmark first, define the MongoDB/API contract, then split implementation across pipeline, PDP, and admin PRs while keeping this issue open as the tracker.",
       "recommended": true
     },
     {
-      "title": "Narrow PDP-only milestone",
-      "body": "Ship only title suffix and read-path fallback after a minimal data contract, leaving pipeline/admin overrides for later issues.",
+      "title": "Split a PDP-only title suffix slice",
+      "body": "A smaller PR could add suffix rendering before the translation pipeline, but it would leave the core persisted description and admin override requirement unresolved.",
       "recommended": false
     },
     {
       "title": "Defer R18",
-      "body": "Keep the issue open but do not start implementation until V3.5 owners prioritize the data cost and manual-override workflow.",
+      "body": "Keep current localized UI/SEO copy only and postpone product-content translation until cost and catalog-backfill ownership are clearer.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Benchmark and contract first",
-    "body": "Run the 50-product benchmark and agree on `Product.translations` storage/fallback semantics before building pipeline, PDP, or admin UI.",
+    "title": "Approve staged persisted-translations track",
+    "body": "Run the benchmark first, define the MongoDB/API contract, then split implementation across pipeline, PDP, and admin PRs while keeping this issue open as the tracker.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "This handle authored the issue and latest scope updates, and also appears in current PDP description history.",
-    "confidence": "high"
+    "reason": "Javier authored the requirement, posted scope updates confirming what remains open, and has recent history on the PDP description surface.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
-    "reviewedAt": "2026-07-07T22:38:26.863Z",
+    "reviewedAt": "2026-07-07T22:46:03.871Z",
     "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
   }
 }
