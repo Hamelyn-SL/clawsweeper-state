@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:45:39.972Z",
+  "updatedAt": "2026-06-29T21:06:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6046,
+    "title": "marketplace-crons: eBay create falla porque falta price",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync"
+    ],
+    "createdAt": "2026-05-25T20:33:08Z",
+    "updatedAt": "2026-06-29T21:06:37Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "Has production `marketplace-crons` run with the merged missing-price fix, and do `Price must be defined` complete-failure logs still occur after that deployed build?",
+  "rationale": "The repository code contains the intended local guard, but the issue was reopened with post-merge live evidence and needs production deployment/log proof that is outside the checkout.",
+  "options": [
+    {
+      "title": "Verify deployed logs",
+      "body": "Confirm the deployed marketplace-crons build includes the fix and check fresh `/api/ebay` logs before closing or coding another change.",
+      "recommended": true
+    },
+    {
+      "title": "Close if clean",
+      "body": "If fresh production logs after the deployed build have no `Price must be defined` complete-failure signature, close this as implemented by the merged fix.",
+      "recommended": false
+    },
+    {
+      "title": "Narrow a second fix",
+      "body": "If the signature persists after the deployed build, treat it as a remaining eBay create error path and open a focused follow-up against `bulkCreateOffer`/`createEbayProduct`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verify deployed logs",
+    "body": "Confirm the deployed marketplace-crons build includes the fix and check fresh `/api/ebay` logs before closing or coding another change.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "He owns the current assignment and authored the merged fix that needs deployment/live verification.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
+    "reviewedAt": "2026-07-07T22:45:39.972Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

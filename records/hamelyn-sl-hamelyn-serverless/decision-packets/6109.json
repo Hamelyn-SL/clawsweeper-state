@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:44:50.357Z",
+  "updatedAt": "2026-06-23T08:00:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6109,
+    "title": "EPIC · Hamelyn SEO — Audit técnico (selección priorizada)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6109",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "reporter:javier",
+      "epic:seo"
+    ],
+    "createdAt": "2026-05-28T05:49:21Z",
+    "updatedAt": "2026-06-23T08:00:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should this SEO audit epic remain open as the canonical tracker for the deferred/debated HAM audit buckets, or should it be closed now that the 12 created child issues are closed?",
+  "rationale": "The repository evidence proves the selected child work progressed, but the issue explicitly leaves multiple audit buckets deferred or unconfirmed and current dev lacks the referenced selection document, so automation cannot safely decide the product tracking boundary.",
+  "options": [
+    {
+      "title": "Keep as SEO epic",
+      "body": "Leave this issue open and update it with the current owner decision for the remaining default-plan, debated, and unconfirmed HAM audit buckets.",
+      "recommended": true
+    },
+    {
+      "title": "Close as completed selection",
+      "body": "Close it manually if the owner confirms the 12 closed child issues plus documented exclusions exhaust the intended scope of this epic.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep as SEO epic",
+    "body": "Leave this issue open and update it with the current owner decision for the remaining default-plan, debated, and unconfirmed HAM audit buckets.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn is the current assignee and has recent ecommerce SEO/product metadata history in the affected area.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6109.md",
+    "reviewedAt": "2026-07-07T22:44:50.357Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}
