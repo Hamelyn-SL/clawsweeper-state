@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:21:11.843Z",
+  "updatedAt": "2026-07-07T22:11:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 6544,
+    "title": "feat: add supply eas deploy workflow with version bump selector",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-06-18T13:37:49Z",
+    "updatedAt": "2026-07-07T22:11:21Z",
+    "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "Should Supply Deploy be allowed to push version-bump commits to the selected branch and auto-submit release builds to store destinations from a manual GitHub Action?",
+  "rationale": "This is a release-operations policy choice: the code is a useful implementation path, but automation with contents write, EXPO_TOKEN, and store submission changes who can trigger release side effects.",
+  "options": [
+    {
+      "title": "Require guarded deploy proof first",
+      "body": "Keep this direction, but require branch-history cleanup, pinned EAS CLI, and redacted beta or dry-run proof before considering merge.",
+      "recommended": true
+    },
+    {
+      "title": "Accept as release-owned automation",
+      "body": "A release owner can explicitly accept the contents-write and production-draft behavior as the intended operating model.",
+      "recommended": false
+    },
+    {
+      "title": "Pause until release policy is clearer",
+      "body": "Leave the PR draft or close it if the team wants a different release mechanism than a GitHub Action that commits and submits builds.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Require guarded deploy proof first",
+    "body": "Keep this direction, but require branch-history cleanup, pinned EAS CLI, and redacted beta or dry-run proof before considering merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "The PR was reassigned to Miguel for Supply/EAS/workflow expertise, and recent history also shows Supply version-area work.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
+    "reviewedAt": "2026-07-07T23:21:11.843Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

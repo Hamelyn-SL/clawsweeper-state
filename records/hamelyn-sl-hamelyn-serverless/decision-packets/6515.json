@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:21:36.154Z",
+  "updatedAt": "2026-06-29T21:12:59Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6515,
+    "title": "Páginas de autor publican texto de Wikipedia (CC BY-SA) e imágenes de Commons sin atribución",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "reporter:PabloMoran34",
+      "triage:done"
+    ],
+    "createdAt": "2026-06-18T06:45:23Z",
+    "updatedAt": "2026-06-29T21:12:59Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should author pages avoid CC BY-SA/Commons obligations by regenerating descriptions from CC0 facts and filtering images to PD/CC0, or should Hamelyn keep Wikipedia/Commons content and add full attribution/license metadata?",
+  "rationale": "Both paths are plausible and affect legal exposure, SEO content, image availability, stored data shape, and public UI; automation should not choose that policy without maintainer intent.",
+  "options": [
+    {
+      "title": "Avoid CC obligations",
+      "body": "Generate descriptions only from CC0 Wikidata facts, stop storing Wikipedia extracts, and only cache images whose Commons metadata is PD/CC0, using the fallback image otherwise.",
+      "recommended": true
+    },
+    {
+      "title": "Keep content with attribution",
+      "body": "Persist source, author, license, license URL, and file/article links, then show attribution on the author page and include appropriate structured-data/source context.",
+      "recommended": false
+    },
+    {
+      "title": "Containment first",
+      "body": "Temporarily suppress stored author descriptions/images from the public author page while the final ingestion and data-cleanup path is decided.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Avoid CC obligations",
+    "body": "Generate descriptions only from CC0 Wikidata facts, stop storing Wikipedia extracts, and only cache images whose Commons metadata is PD/CC0, using the fallback image otherwise.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "This person is tied to the current enrichment lines by blame and already performed the issue triage that identified the containment path.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6515.md",
+    "reviewedAt": "2026-07-07T23:21:36.154Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
