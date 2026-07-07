@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:13:52.128Z",
-  "updatedAt": "2026-06-29T21:06:53Z",
+  "generatedAt": "2026-07-07T23:25:10.000Z",
+  "updatedAt": "2026-07-07T23:05:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,37 +18,37 @@
       "triage:needs-info"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-06-29T21:06:53Z"
+    "updatedAt": "2026-07-07T23:05:19Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Who can confirm the current Buscalibre and Milanuncios partner/operations facts needed before these docs become stable?",
-  "rationale": "The repository can show current code behavior, but it cannot prove partner contract status, allowed Milanuncios endpoint usage, operational contacts, or safe secret-manager references.",
+  "question": "Which confirmed Buscalibre and Milanuncios operational facts should be recorded as stable runbook documentation?",
+  "rationale": "Repository source maps the active flows, but the remaining host/portal, CSV contract, contact, credential-reference, API permission, and conditions-of-use answers require operational or partner confirmation.",
   "options": [
     {
-      "title": "Wait for operational confirmation",
-      "body": "Keep this issue open under needs-info until the assigned owner or operations confirms the partner-contract and contact details, then make a small docs-only update.",
+      "title": "Wait for confirmed partner details",
+      "body": "Keep this issue open under needs-info until Buscalibre and Milanuncios owners provide contract-safe answers for the docs.",
       "recommended": true
     },
     {
-      "title": "Document code-only state",
-      "body": "Update the docs with only the observable code paths and explicitly mark partner/contact answers as unknown, accepting that the central request remains incomplete.",
+      "title": "Document as explicitly unknown",
+      "body": "Update the docs now to mark each unanswered item as unknown or experimental, accepting that the runbook remains incomplete.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Wait for operational confirmation",
-    "body": "Keep this issue open under needs-info until the assigned owner or operations confirms the partner-contract and contact details, then make a small docs-only update.",
+    "title": "Wait for confirmed partner details",
+    "body": "Keep this issue open under needs-info until Buscalibre and Milanuncios owners provide contract-safe answers for the docs.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn owns the current docs trail and is the live assignee on this issue.",
+    "reason": "JavierHamelyn created the runbooks and opened this follow-up specifically for these remaining operational gaps.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewedAt": "2026-07-07T23:13:52.128Z",
-    "mainSha": "6971449e81a920edb297c6953566c8209fd2c14e"
+    "reviewedAt": "2026-07-07T23:25:10.000Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

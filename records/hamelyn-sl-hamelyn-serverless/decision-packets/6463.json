@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:10:16.299Z",
-  "updatedAt": "2026-06-27T08:47:20Z",
+  "generatedAt": "2026-07-07T23:18:52.067Z",
+  "updatedAt": "2026-07-07T23:05:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "triage:needs-info"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-06-27T08:47:20Z"
+    "updatedAt": "2026-07-07T23:05:12Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Who can confirm the current Celeritas contract, technical contact, and safe credential/config reference for the active tracking and drop-label flows?",
-  "rationale": "The remaining blocker is external operational truth, not code discovery; automation can see current code paths but cannot verify partner docs, contacts, or secret-manager ownership.",
+  "question": "Which Celeritas operational source, owner/contact, and credential reference should be treated as canonical for the docs update?",
+  "rationale": "The remaining facts depend on operations/vendor knowledge and secret-management policy that cannot be safely inferred from code or old Slack references.",
   "options": [
     {
-      "title": "Keep as operational tracker",
-      "body": "Keep this issue open until operations confirms the manual/contact/credential facts and the docs are updated without secret values.",
+      "title": "Confirm and document canonical operations",
+      "body": "Have the Celeritas owner or operations contact confirm the current manual, active API scope, and safe config reference, then patch the integration docs.",
       "recommended": true
     },
     {
-      "title": "Split credential migration",
-      "body": "If the credential literals are still live, open a narrower security/config follow-up and keep this issue focused on documentation facts.",
+      "title": "Split secret migration first",
+      "body": "If the legacy credential references are still live, open a separate security/config task before publishing any stable credential-location guidance.",
       "recommended": false
     },
     {
-      "title": "Close after docs-only update",
-      "body": "Close only after the Celeritas docs explicitly reconcile tracking, drop-label creation, official contract evidence, and safe credential references.",
+      "title": "Close only with explicit operations decision",
+      "body": "Close this issue only if operations confirms there is no active Celeritas contract or documentation path worth preserving.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep as operational tracker",
-    "body": "Keep this issue open until operations confirms the manual/contact/credential facts and the docs are updated without secret values.",
+    "title": "Confirm and document canonical operations",
+    "body": "Have the Celeritas owner or operations contact confirm the current manual, active API scope, and safe config reference, then patch the integration docs.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Javier authored the relevant docs and REST tracking PR and is already assigned to this issue.",
+    "reason": "JavierHamelyn owns the current docs/history trail and is already assigned on the live issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewedAt": "2026-07-07T23:10:16.299Z",
-    "mainSha": "6971449e81a920edb297c6953566c8209fd2c14e"
+    "reviewedAt": "2026-07-07T23:18:52.067Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

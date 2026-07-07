@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:21:36.154Z",
+  "generatedAt": "2026-07-07T23:30:55.588Z",
   "updatedAt": "2026-06-29T21:12:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,38 +21,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should author pages avoid CC BY-SA/Commons obligations by regenerating descriptions from CC0 facts and filtering images to PD/CC0, or should Hamelyn keep Wikipedia/Commons content and add full attribution/license metadata?",
-  "rationale": "Both paths are plausible and affect legal exposure, SEO content, image availability, stored data shape, and public UI; automation should not choose that policy without maintainer intent.",
+  "question": "Should Hamelyn remediate author pages by avoiding Wikipedia/Commons licensed content, or by storing and displaying full attribution for it?",
+  "rationale": "Both paths are valid but they have different legal, content, schema, UI, and backfill consequences that automation should not choose alone.",
   "options": [
     {
-      "title": "Avoid CC obligations",
-      "body": "Generate descriptions only from CC0 Wikidata facts, stop storing Wikipedia extracts, and only cache images whose Commons metadata is PD/CC0, using the fallback image otherwise.",
+      "title": "Avoid licensed content",
+      "body": "Generate author descriptions from CC0 facts only and allow only public-domain/CC0 images or placeholders, reducing ongoing attribution burden.",
       "recommended": true
     },
     {
-      "title": "Keep content with attribution",
-      "body": "Persist source, author, license, license URL, and file/article links, then show attribution on the author page and include appropriate structured-data/source context.",
-      "recommended": false
-    },
-    {
-      "title": "Containment first",
-      "body": "Temporarily suppress stored author descriptions/images from the public author page while the final ingestion and data-cleanup path is decided.",
+      "title": "Add attribution support",
+      "body": "Keep Wikipedia/Commons content only after adding source, author, license, license URL, and changed-state metadata through ingestion, storage, storefront, and JSON-LD.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Avoid CC obligations",
-    "body": "Generate descriptions only from CC0 Wikidata facts, stop storing Wikipedia extracts, and only cache images whose Commons metadata is PD/CC0, using the fallback image otherwise.",
+    "title": "Avoid licensed content",
+    "body": "Generate author descriptions from CC0 facts only and allow only public-domain/CC0 images or placeholders, reducing ongoing attribution burden.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "This person is tied to the current enrichment lines by blame and already performed the issue triage that identified the containment path.",
+    "reason": "JavierHamelyn already performed the triage validation and framed the next step as containment followed by a definitive A/B implementation decision.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6515.md",
-    "reviewedAt": "2026-07-07T23:21:36.154Z",
+    "reviewedAt": "2026-07-07T23:30:55.588Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

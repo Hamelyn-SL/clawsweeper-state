@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:17:10.176Z",
+  "generatedAt": "2026-07-07T23:19:13.496Z",
   "updatedAt": "2026-07-07T23:05:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "What first supported dev-database slice should be implemented before any automated PR work starts?",
-  "rationale": "The code shape is visible, but the source of truth for anonymized cohorts, retention, allowed database names, and destructive-operation confirmations is a safety policy choice rather than a purely mechanical fix.",
+  "question": "Should the first implementation be limited to local safe tooling around `Hamelyn_DEV_BASE` sandboxes, or should it also define the refresh/anonymization pipeline now?",
+  "rationale": "Current code provides partial guard patterns, but maintainers need to choose how much data-governance policy belongs in the first PR before automation can safely implement it.",
   "options": [
     {
-      "title": "Start with guarded command slice",
-      "body": "Implement only `dev-db:audit`, `dev-db:index-sync`, `dev-db:create-sandbox`, and `dev-db:drop-sandbox` with denylisted production names, explicit confirmations, no production refresh automation, and short docs.",
+      "title": "Start with safe local tooling",
+      "body": "Build audit, index comparison, create/drop sandbox commands and docs first, leaving refresh/anonymization as a follow-up once the operational policy is clearer.",
       "recommended": true
     },
     {
-      "title": "Scope full anonymized base refresh first",
-      "body": "Pause implementation until maintainers define the `Hamelyn_DEV_BASE` refresh, anonymization rules, fixture sources, and ownership process end to end.",
+      "title": "Design full data pipeline first",
+      "body": "Pause implementation until maintainers specify how `Hamelyn_DEV_BASE` is refreshed, anonymized, owned, and reviewed.",
       "recommended": false
     },
     {
-      "title": "Keep as manual runbook only",
-      "body": "Document the current fulfillment sandbox and production guard patterns without adding shared commands yet, accepting that teams continue to create sandboxes manually.",
+      "title": "Keep manual for now",
+      "body": "Document the existing fulfillment sandbox pattern and defer generalized tooling until repeated use proves the workflow shape.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Start with guarded command slice",
-    "body": "Implement only `dev-db:audit`, `dev-db:index-sync`, `dev-db:create-sandbox`, and `dev-db:drop-sandbox` with denylisted production names, explicit confirmations, no production refresh automation, and short docs.",
+    "title": "Start with safe local tooling",
+    "body": "Build audit, index comparison, create/drop sandbox commands and docs first, leaving refresh/anonymization as a follow-up once the operational policy is clearer.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn introduced the closest existing sandbox helper and authored the current feature request, so they are the best available owner for scoping the first slice.",
-    "confidence": "medium"
+    "reason": "JavierHamelyn authored the issue and also introduced the closest existing sandbox/audit patterns in git history.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewedAt": "2026-07-07T23:17:10.176Z",
+    "reviewedAt": "2026-07-07T23:19:13.496Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
