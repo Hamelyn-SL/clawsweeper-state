@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:47:44.152Z",
+  "updatedAt": "2026-06-27T12:57:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6663,
+    "title": "feat: migrate google merchant feeds to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "reporter:PabloMoran34",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-06-25T07:29:25Z",
+    "updatedAt": "2026-06-27T12:57:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the first implementation keep Google Merchant generation in GitHub Actions and migrate used feeds to BigQuery first, or move the whole pipeline into `apps/data-platform` now?",
+  "rationale": "Both paths are plausible, but the issue explicitly leaves deployment location and fallback strategy open, and the new-books feed has a known schema dependency that changes rollout order.",
+  "options": [
+    {
+      "title": "Phase in place first",
+      "body": "Keep the existing GitHub Actions and SFTP flow, migrate used feeds to BigQuery, then add `newData.logista` materialization before new-books cutover.",
+      "recommended": true
+    },
+    {
+      "title": "Move to data-platform now",
+      "body": "Relocate feed generation under `apps/data-platform` as part of the migration, accepting a larger first PR and deployment-surface change.",
+      "recommended": false
+    },
+    {
+      "title": "Keep Mongo fallback",
+      "body": "Allow a temporary Mongo fallback for new books while BigQuery parity is proven, but document when it must be removed.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Phase in place first",
+    "body": "Keep the existing GitHub Actions and SFTP flow, migrate used feeds to BigQuery, then add `newData.logista` materialization before new-books cutover.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn already produced the viability analysis and two-phase recommendation on the issue.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
+    "reviewedAt": "2026-07-07T23:47:44.152Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
