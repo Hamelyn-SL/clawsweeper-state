@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:13:52.128Z",
+  "updatedAt": "2026-06-29T21:06:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6464,
+    "title": "Completar preguntas operativas de marketplaces en docs integrations",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6464",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:marketplace",
+      "question",
+      "reporter:javier",
+      "triage:needs-info"
+    ],
+    "createdAt": "2026-06-16T21:54:00Z",
+    "updatedAt": "2026-06-29T21:06:53Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Who can confirm the current Buscalibre and Milanuncios partner/operations facts needed before these docs become stable?",
+  "rationale": "The repository can show current code behavior, but it cannot prove partner contract status, allowed Milanuncios endpoint usage, operational contacts, or safe secret-manager references.",
+  "options": [
+    {
+      "title": "Wait for operational confirmation",
+      "body": "Keep this issue open under needs-info until the assigned owner or operations confirms the partner-contract and contact details, then make a small docs-only update.",
+      "recommended": true
+    },
+    {
+      "title": "Document code-only state",
+      "body": "Update the docs with only the observable code paths and explicitly mark partner/contact answers as unknown, accepting that the central request remains incomplete.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Wait for operational confirmation",
+    "body": "Keep this issue open under needs-info until the assigned owner or operations confirms the partner-contract and contact details, then make a small docs-only update.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn owns the current docs trail and is the live assignee on this issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
+    "reviewedAt": "2026-07-07T23:13:52.128Z",
+    "mainSha": "6971449e81a920edb297c6953566c8209fd2c14e"
+  }
+}

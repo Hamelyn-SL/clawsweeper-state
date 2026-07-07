@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:10:16.299Z",
+  "updatedAt": "2026-06-27T08:47:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6463,
+    "title": "Completar preguntas operativas de mensajeras en docs integrations",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "priority:p2",
+      "app:infrastructure",
+      "question",
+      "reporter:javier",
+      "triage:needs-info"
+    ],
+    "createdAt": "2026-06-16T21:53:49Z",
+    "updatedAt": "2026-06-27T08:47:20Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Who can confirm the current Celeritas contract, technical contact, and safe credential/config reference for the active tracking and drop-label flows?",
+  "rationale": "The remaining blocker is external operational truth, not code discovery; automation can see current code paths but cannot verify partner docs, contacts, or secret-manager ownership.",
+  "options": [
+    {
+      "title": "Keep as operational tracker",
+      "body": "Keep this issue open until operations confirms the manual/contact/credential facts and the docs are updated without secret values.",
+      "recommended": true
+    },
+    {
+      "title": "Split credential migration",
+      "body": "If the credential literals are still live, open a narrower security/config follow-up and keep this issue focused on documentation facts.",
+      "recommended": false
+    },
+    {
+      "title": "Close after docs-only update",
+      "body": "Close only after the Celeritas docs explicitly reconcile tracking, drop-label creation, official contract evidence, and safe credential references.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep as operational tracker",
+    "body": "Keep this issue open until operations confirms the manual/contact/credential facts and the docs are updated without secret values.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Javier authored the relevant docs and REST tracking PR and is already assigned to this issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
+    "reviewedAt": "2026-07-07T23:10:16.299Z",
+    "mainSha": "6971449e81a920edb297c6953566c8209fd2c14e"
+  }
+}
