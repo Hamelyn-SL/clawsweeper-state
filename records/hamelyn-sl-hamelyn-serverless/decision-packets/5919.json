@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:46:26.214Z",
-  "updatedAt": "2026-06-23T08:00:28Z",
+  "generatedAt": "2026-07-07T22:49:24.858Z",
+  "updatedAt": "2026-07-07T22:40:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,42 +20,42 @@
       "epic:v3.5-features"
     ],
     "createdAt": "2026-05-19T09:54:32Z",
-    "updatedAt": "2026-06-23T08:00:28Z"
+    "updatedAt": "2026-07-07T22:40:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the Rainforest materialization now target the current `provider_records` plus `attributes.ratings.rainforest_es`/root `rating` contract, or preserve the issue's older `attributes.providersRatings.amazon` target?",
-  "rationale": "Current dev changed both the provider-data source and the product rating schema after the issue was written, so automation should not choose the permanent data contract while the issue is assigned to a human owner.",
+  "question": "Should the Rainforest materializer target the current ecommerce resolver path `attributes.providersRatings.amazon`, or should it align the resolver with the newer `attributes.ratings.rainforest_es`/root rating model first?",
+  "rationale": "The original issue and triage target `providersRatings`, but later merged provider work introduced `attributes.ratings` and moved source data from `productdataraw` to `provider_records`; choosing the permanent contract affects the implementation boundary.",
   "options": [
     {
-      "title": "Use current rating contract",
-      "body": "Implement a small data-crons sync from provider-records/Rainforest payloads into `attributes.ratings.rainforest_es` and recompute root `rating`, preserving existing provider metadata.",
+      "title": "Populate `providersRatings.amazon` now",
+      "body": "Read Rainforest from `provider_records`, write only `attributes.providersRatings.amazon`, and leave a later unification for the newer rating model.",
       "recommended": true
     },
     {
-      "title": "Keep original target",
-      "body": "Materialize only `attributes.providersRatings.amazon`, which matches the issue text but may create drift from the newer `attributes.ratings` convention.",
+      "title": "Unify on `attributes.ratings` first",
+      "body": "Update the resolver to consume `attributes.ratings`/root rating, then materialize Rainforest as `rainforest_es`, which is cleaner but broader.",
       "recommended": false
     },
     {
-      "title": "Fold into broader provider backfill",
-      "body": "Defer this issue until the provider-records backfill/state design owns Rainforest, Keepa, and future rating sources together.",
+      "title": "Pause until rating model is settled",
+      "body": "Keep the issue assigned while maintainers decide whether Rainforest, Keepa, and social-books should share one canonical product rating contract.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Use current rating contract",
-    "body": "Implement a small data-crons sync from provider-records/Rainforest payloads into `attributes.ratings.rainforest_es` and recompute root `rating`, preserving existing provider metadata.",
+    "title": "Populate `providersRatings.amazon` now",
+    "body": "Read Rainforest from `provider_records`, write only `attributes.providersRatings.amazon`, and leave a later unification for the newer rating model.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "He owns the live assignment and authored both the Rainforest-rating attempt and the later rating infrastructure work.",
+    "reason": "He is assigned and authored the most recent merged rating/provider storage changes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5919.md",
-    "reviewedAt": "2026-07-07T22:46:26.214Z",
+    "reviewedAt": "2026-07-07T22:49:24.858Z",
     "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
   }
 }
