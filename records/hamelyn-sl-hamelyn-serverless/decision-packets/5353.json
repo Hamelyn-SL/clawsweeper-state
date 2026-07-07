@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T21:58:21.315Z",
+  "updatedAt": "2026-06-19T07:35:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5353,
+    "title": "marketplace-crons: eBay devuelve 400 en bulk_update_price_quantity durante updatePrice y el cron lo absorbe",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace"
+    ],
+    "createdAt": "2026-04-20T08:04:44Z",
+    "updatedAt": "2026-06-19T07:35:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "For recurring eBay `updatePrice` 400 partial failures after offerId reconciliation, should `/api/ebay` keep HTTP 200 with per-SKU permanent/transient handling, or should sustained/material partial failures escalate the cron response?",
+  "rationale": "The code path can be adjusted, but the safe behavior depends on production payloads and on how operators want multi-phase marketplace cron health to be represented.",
+  "options": [
+    {
+      "title": "Keep HTTP 200 but strengthen classification",
+      "body": "Recommended: capture a fresh payload, ensure each 400 maps to permanent or transient per SKU, and keep the cron response partial-success while adding actionable logs/alerts.",
+      "recommended": true
+    },
+    {
+      "title": "Escalate material partial failures",
+      "body": "Return a failing cron response or equivalent alert when an eBay updatePrice batch crosses an agreed failure threshold.",
+      "recommended": false
+    },
+    {
+      "title": "Treat remaining 400s as terminal per-SKU noise",
+      "body": "Close only if live evidence shows every remaining 400 is an expected permanent SKU state and operations does not need stronger cron health semantics.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep HTTP 200 but strengthen classification",
+    "body": "Recommended: capture a fresh payload, ensure each 400 maps to permanent or transient per SKU, and keep the cron response partial-success while adding actionable logs/alerts.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Marcos is assigned to the issue and authored the later offerId reconciliation PR closest to the remaining eBay updatePrice behavior.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
+    "reviewedAt": "2026-07-07T21:58:21.315Z",
+    "mainSha": "547ff73262d3455e80702212d666528868edd477"
+  }
+}
