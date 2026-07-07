@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:07:28.522Z",
+  "updatedAt": "2026-06-29T21:05:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5456,
+    "title": "marketplace-crons: TodoColeccion entra en rate limit en create y el circuit breaker corta el lote",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync"
+    ],
+    "createdAt": "2026-04-24T08:37:28Z",
+    "updatedAt": "2026-06-29T21:05:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "For TodoColeccion create-side 429s, should the products flow reduce throughput with a provider-safe lock/rate limiter, split create out of `/api/todoColeccion`, or keep the current abort-and-recover behavior with stronger alerting?",
+  "rationale": "The code can be changed narrowly, but the correct fix depends on the desired throughput versus provider-limit tradeoff and whether product writes should be serialized across cron invocations.",
+  "options": [
+    {
+      "title": "Add products write throttling",
+      "body": "Implement a TodoColeccion products-scope limiter or lock with tests and phase metrics so create/updatePrice cannot exceed the provider's safe write envelope.",
+      "recommended": true
+    },
+    {
+      "title": "Split create into its own cron",
+      "body": "Move create-side TodoColeccion writes to a separate route or schedule so rate limits do not consume the main sync cron budget.",
+      "recommended": false
+    },
+    {
+      "title": "Keep abort-and-recover",
+      "body": "Accept the current batch abort behavior and improve alerting/reporting instead of reducing throughput in code.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Add products write throttling",
+    "body": "Implement a TodoColeccion products-scope limiter or lock with tests and phase metrics so create/updatePrice cannot exceed the provider's safe write envelope.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Most recent contributor across the TodoColeccion API error-handling and recovery code touched by the likely fix.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
+    "reviewedAt": "2026-07-07T22:07:28.522Z",
+    "mainSha": "d7265db4024f86eb6518f87fc6033676bcf71d18"
+  }
+}
