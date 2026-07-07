@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:30:34.769Z",
+  "updatedAt": "2026-06-20T00:34:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5745,
+    "title": "marketplace-crons: Amazon COM Catalog API recibe 429 al buscar ASINs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5745",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace"
+    ],
+    "createdAt": "2026-05-08T00:34:01Z",
+    "updatedAt": "2026-06-20T00:34:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should recoverable Catalog API 429 warnings remain monitored only, or should marketplace-crons proactively slow or change Catalog lookup behavior now?",
+  "rationale": "The warning is real after the merged mitigation, but the discussion says observed requests still completed and persisted ASINs, so automation should not choose the latency-versus-throttling tradeoff alone.",
+  "options": [
+    {
+      "title": "Keep monitoring until terminal impact",
+      "body": "Leave this issue open as the canonical thread and only start code work when `Error buscando` or correlated `No ASIN found for this EAN` failures increase.",
+      "recommended": true
+    },
+    {
+      "title": "Tighten Catalog retry behavior now",
+      "body": "Apply a focused change to use the existing retry helper or respect `Retry-After`, accepting slower Amazon create enrichment to reduce warning volume.",
+      "recommended": false
+    },
+    {
+      "title": "Retune the Catalog budget globally",
+      "body": "Revisit the Catalog rate budget across Amazon ES/COM/SE and serverless concurrency, which is broader but more likely to address shared quota pressure.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Keep monitoring until terminal impact",
+    "body": "Leave this issue open as the canonical thread and only start code work when `Error buscando` or correlated `No ASIN found for this EAN` failures increase.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn owns the recent mitigation and is assigned to the issue, making him the best available routing owner for the next threshold decision.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5745.md",
+    "reviewedAt": "2026-07-07T22:30:34.769Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

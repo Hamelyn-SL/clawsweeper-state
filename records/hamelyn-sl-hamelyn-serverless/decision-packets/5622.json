@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:31:07.080Z",
+  "updatedAt": "2026-07-07T22:22:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5622,
+    "title": "core: el cron-handler devuelve 200 en fallos parciales y oculta degradaciones operativas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622",
+    "state": "open",
+    "labels": [
+      "crons",
+      "core",
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:needs-info",
+      "triage:confirmed-live",
+      "area:cron-reliability"
+    ],
+    "createdAt": "2026-05-01T08:13:47Z",
+    "updatedAt": "2026-07-07T22:22:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should the first cron-handler phase keep HTTP 200 with structured partial-failure/severity signals, or should selected routes start returning 207/5xx now?",
+  "rationale": "The code change is straightforward, but the safe behavior depends on which existing partial failures are business-tolerated versus operationally alertable across shared cron apps.",
+  "options": [
+    {
+      "title": "Ship compatible structured signal first",
+      "body": "Add `status`, `rejectedCount`, `rejectedReasons`, and `severity` to response/log output while keeping HTTP 200 as the default until route policies are explicit.",
+      "recommended": true
+    },
+    {
+      "title": "Define route status matrix now",
+      "body": "Classify each critical route and implement 207/5xx behavior only for the routes where partial failures must fail operational checks immediately.",
+      "recommended": false
+    },
+    {
+      "title": "Close without handler-policy change",
+      "body": "Keep marketplace-specific issues responsible for each symptom and leave the shared handler contract unchanged.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ship compatible structured signal first",
+    "body": "Add `status`, `rejectedCount`, `rejectedReasons`, and `severity` to response/log output while keeping HTTP 200 as the default until route policies are explicit.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn authored the issue, is tied to the current handler snapshot by blame, and appears closest to the cross-cron policy question in the available history.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
+    "reviewedAt": "2026-07-07T22:31:07.080Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}

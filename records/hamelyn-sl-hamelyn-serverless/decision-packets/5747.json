@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:30:45.841Z",
+  "updatedAt": "2026-06-29T21:12:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5747,
+    "title": "marketplace-crons: Amazon notifications-pull recibe 500 en getOrder",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5747",
+    "state": "open",
+    "labels": [
+      "crons",
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:blocked",
+      "triage:confirmed-live",
+      "area:marketplace-orders"
+    ],
+    "createdAt": "2026-05-08T02:35:52Z",
+    "updatedAt": "2026-06-29T21:12:29Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "Should Hamelyn add bounded local retry/backoff for Amazon Orders `getOrder` 500s in the notification pull flow, or leave this as provider escalation with SQS-level retry only?",
+  "rationale": "The code path is clear, but the safe handling depends on current SP-API behavior and Hamelyn's quota/error-budget tolerance.",
+  "options": [
+    {
+      "title": "Add bounded retry",
+      "body": "Wrap `getOrder` with the shared HTTP retry helper using a small retry budget and preserve failed-message retention.",
+      "recommended": true
+    },
+    {
+      "title": "Provider escalation only",
+      "body": "Keep current SQS retry behavior and track the failing request/order IDs with Amazon until SP-API recovers.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Add bounded retry",
+    "body": "Wrap `getOrder` with the shared HTTP retry helper using a small retry budget and preserve failed-message retention.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Recent blame places the central notification processor and Amazon order API wrapper on this path.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5747.md",
+    "reviewedAt": "2026-07-07T22:30:45.841Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}
