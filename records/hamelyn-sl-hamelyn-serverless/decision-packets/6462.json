@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:11:30.590Z",
-  "updatedAt": "2026-06-29T21:12:53Z",
+  "generatedAt": "2026-07-07T23:17:10.176Z",
+  "updatedAt": "2026-07-07T23:05:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "triage:done"
     ],
     "createdAt": "2026-06-16T21:39:40Z",
-    "updatedAt": "2026-06-29T21:12:53Z"
+    "updatedAt": "2026-07-07T23:05:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "What is the approved first slice and safety boundary for creating `Hamelyn_DEV_BASE` and disposable sandboxes from production-shaped data?",
-  "rationale": "The issue involves anonymized production-derived data, destructive database commands, index parity, and developer workflow policy, so automation should not choose the permanent data-refresh and safety model alone.",
+  "question": "What first supported dev-database slice should be implemented before any automated PR work starts?",
+  "rationale": "The code shape is visible, but the source of truth for anonymized cohorts, retention, allowed database names, and destructive-operation confirmations is a safety policy choice rather than a purely mechanical fix.",
   "options": [
     {
-      "title": "Approve the narrow tooling slice",
-      "body": "Build only manifest-only audit, index comparison, guarded sandbox create/drop, and docs while leaving refresh/anonymization automation for a later decision.",
+      "title": "Start with guarded command slice",
+      "body": "Implement only `dev-db:audit`, `dev-db:index-sync`, `dev-db:create-sandbox`, and `dev-db:drop-sandbox` with denylisted production names, explicit confirmations, no production refresh automation, and short docs.",
       "recommended": true
     },
     {
-      "title": "Design the full DEV_BASE refresh first",
-      "body": "Pause implementation until maintainers define source cohorts, anonymization rules, ownership, and refresh cadence for `Hamelyn_DEV_BASE`.",
+      "title": "Scope full anonymized base refresh first",
+      "body": "Pause implementation until maintainers define the `Hamelyn_DEV_BASE` refresh, anonymization rules, fixture sources, and ownership process end to end.",
       "recommended": false
     },
     {
-      "title": "Keep using ad hoc sandboxes",
-      "body": "Do not add shared dev-db tooling yet and continue reusing local scripts such as the fulfillment sandbox for specific flows.",
+      "title": "Keep as manual runbook only",
+      "body": "Document the current fulfillment sandbox and production guard patterns without adding shared commands yet, accepting that teams continue to create sandboxes manually.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Approve the narrow tooling slice",
-    "body": "Build only manifest-only audit, index comparison, guarded sandbox create/drop, and docs while leaving refresh/anonymization automation for a later decision.",
+    "title": "Start with guarded command slice",
+    "body": "Implement only `dev-db:audit`, `dev-db:index-sync`, `dev-db:create-sandbox`, and `dev-db:drop-sandbox` with denylisted production names, explicit confirmations, no production refresh automation, and short docs.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Javier introduced the nearest existing sandbox/audit files and authored the issue's detailed delivery proposal.",
-    "confidence": "high"
+    "reason": "JavierHamelyn introduced the closest existing sandbox helper and authored the current feature request, so they are the best available owner for scoping the first slice.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewedAt": "2026-07-07T23:11:30.590Z",
-    "mainSha": "6971449e81a920edb297c6953566c8209fd2c14e"
+    "reviewedAt": "2026-07-07T23:17:10.176Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
