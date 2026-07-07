@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T23:02:47.802Z",
+  "updatedAt": "2026-06-28T22:56:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6461,
+    "title": "feat: rediseñar formulario de creación de cupones en admin",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6461",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "priority:p2",
+      "reporter:JavierHamelyn",
+      "feature",
+      "triage:done",
+      "area:coupons"
+    ],
+    "createdAt": "2026-06-16T15:02:00Z",
+    "updatedAt": "2026-06-28T22:56:10Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the coupon redesign add a separate customer-visible coupon text field, or keep the existing single description field while only reorganizing the admin UI?",
+  "rationale": "Current code stores one required description and checkout displays that same value, so splitting internal and customer copy changes persisted data and storefront behavior.",
+  "options": [
+    {
+      "title": "Split description fields",
+      "body": "Add explicit internal and customer-visible fields and update admin APIs, coupon schema/repository, and checkout display behavior in the same delivery.",
+      "recommended": true
+    },
+    {
+      "title": "UI-only redesign",
+      "body": "Keep the current description contract and implement the guided modal, preview, and duplicate-prefill flow without changing coupon data semantics.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Split description fields",
+    "body": "Add explicit internal and customer-visible fields and update admin APIs, coupon schema/repository, and checkout display behavior in the same delivery.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "They authored the recent coupon panel revamp and opened this follow-up with the mockup and acceptance criteria.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6461.md",
+    "reviewedAt": "2026-07-07T23:02:47.802Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}
