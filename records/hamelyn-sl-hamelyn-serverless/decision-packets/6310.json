@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:56:01.478Z",
+  "updatedAt": "2026-06-29T21:12:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6310,
+    "title": "Multibulto FEDEX para consolidados pesados (prep-centers tipo ZoomBooks)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6310",
+    "state": "open",
+    "labels": [
+      "priority:p3",
+      "app:infrastructure",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:done"
+    ],
+    "createdAt": "2026-06-09T12:17:30Z",
+    "updatedAt": "2026-06-29T21:12:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the remaining prep-center FEDEX workflow be implemented now as staged fulfillment work, and should prep-centers be identified by recipient/address ShipMatrix rules or by a more explicit B2B/prep-center marker?",
+  "rationale": "The issue is valid but crosses carrier-routing data model, operations configuration, batch-label policy, and packing UX; automation should not choose the long-term prep-center matching contract on its own.",
+  "options": [
+    {
+      "title": "Stage the fulfillment implementation",
+      "body": "Add recipient/address matching or an approved explicit prep-center marker first, then batch-skip behavior and packing self-service FEDEX generation in follow-up PRs.",
+      "recommended": true
+    },
+    {
+      "title": "Keep as backlog feature",
+      "body": "Leave the current manual Spring-to-FEDEX switch in place and keep the broader automatic prep-center workflow queued until operations prioritizes it.",
+      "recommended": false
+    },
+    {
+      "title": "Narrow to routing only",
+      "body": "Only add a ShipMatrix criterion now and defer packing self-service, accepting that heavy consolidations may still need manual handling.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Stage the fulfillment implementation",
+    "body": "Add recipient/address matching or an approved explicit prep-center marker first, then batch-skip behavior and packing self-service FEDEX generation in follow-up PRs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn has the strongest recent history across ShipMatrix selection, carrier-resolution precedence, and manual carrier switching.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6310.md",
+    "reviewedAt": "2026-07-07T22:56:01.478Z",
+    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+  }
+}
