@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-07T22:15:34.965Z",
+  "updatedAt": "2026-06-18T05:34:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5607,
+    "title": "marketplace-crons: MercadoLibre devuelve 429 al descargar etiquetas de envío",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5607",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace"
+    ],
+    "createdAt": "2026-04-30T07:33:46Z",
+    "updatedAt": "2026-06-18T05:34:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should MercadoLibre label 429s fail visibly after a bounded retry budget, or should the queue keep deferring them until a real label is obtained?",
+  "rationale": "The current code already has a bounded 10-delivery retry budget; changing that budget or the terminal behavior affects operator visibility, queue pressure, and whether orders remain blocked for hours.",
+  "options": [
+    {
+      "title": "Bounded retry plus visible error",
+      "body": "Respect `Retry-After` when present, keep a bounded retry budget, and persist a retriable label error on the orderSell when the budget is exhausted.",
+      "recommended": true
+    },
+    {
+      "title": "Indefinite deferred retry",
+      "body": "Keep labels pending and keep deferring 429s until MercadoLibre allows the download, accepting longer queue occupancy to avoid manual recovery.",
+      "recommended": false
+    },
+    {
+      "title": "Operational-only tuning",
+      "body": "Leave code as-is and handle remaining 429s through provider quota or deployment/runtime tuning outside this issue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bounded retry plus visible error",
+    "body": "Respect `Retry-After` when present, keep a bounded retry budget, and persist a retriable label error on the orderSell when the budget is exhausted.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn is assigned and authored the latest merged mitigation for this exact issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5607.md",
+    "reviewedAt": "2026-07-07T22:15:34.965Z",
+    "mainSha": "3842c1e6c854cdda44736d8aba388698896fc2f7"
+  }
+}
