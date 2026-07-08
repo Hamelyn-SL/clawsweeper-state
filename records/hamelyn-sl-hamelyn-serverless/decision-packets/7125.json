@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T08:59:11.885Z",
+  "updatedAt": "2026-07-08T04:32:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7125,
+    "title": "BL-ecommerce-engagement-01: notify requests with unknown EANs are retried forever and never cleaned up",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7125",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p3",
+      "triage:pr-opened",
+      "business-logic",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-07-07T11:45:46Z",
+    "updatedAt": "2026-07-08T04:32:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "Should deleted-or-missing product notify rows be terminally closed by the cron, or should only new invalid signups be rejected while existing rows remain pending for possible catalog return?",
+  "rationale": "Two open PRs encode different retention policies for products that disappear after signup, and automation should not choose that business rule without owner intent.",
+  "options": [
+    {
+      "title": "Close orphan rows in the cron",
+      "body": "Merge the broader fix path from https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198 so missing-product rows stop retrying and new invalid signups are rejected.",
+      "recommended": true
+    },
+    {
+      "title": "Reject only new unknown products",
+      "body": "Use the narrower signup-only path from https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143 if pending rows for removed products must be preserved for later catalog return.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Close orphan rows in the cron",
+    "body": "Merge the broader fix path from https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198 so missing-product rows stop retrying and new invalid signups are rejected.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "They are the reporter and authored the BL extraction/fix context that frames the retention-policy choice.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7125.md",
+    "reviewedAt": "2026-07-08T08:59:11.885Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

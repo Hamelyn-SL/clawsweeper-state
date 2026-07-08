@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:47:02.032Z",
-  "updatedAt": "2026-07-01T06:03:02Z",
+  "generatedAt": "2026-07-08T08:55:45.827Z",
+  "updatedAt": "2026-07-08T08:33:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,45 +17,44 @@
       "epic:revision-v3",
       "P1",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-23T17:18:57Z",
-    "updatedAt": "2026-07-01T06:03:02Z"
+    "updatedAt": "2026-07-08T08:33:28Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the Revision V3 umbrella stay open until the three remaining child issues are resolved, or should maintainers explicitly split the hardware/analytics leftovers and close the epic scope now?",
-  "rationale": "The repository evidence shows meaningful work remains, but two remaining items are operational/hardware decisions and one is an analytics model decision, so automation should not decide the epic boundary.",
+  "question": "Should the Revision V3 umbrella stay open until the remaining analytics, hardware, and tracing children are resolved, or should maintainers explicitly split that remaining scope and close the umbrella now?",
+  "rationale": "The evidence shows meaningful work remains, but some of it is operational/hardware and product-scope coordination rather than a single source-code fix automation should decide.",
   "options": [
     {
       "title": "Keep umbrella open",
-      "body": "Leave the epic open as the canonical tracker until the productivity aggregation and kiosk hardware/runbook children are resolved or deliberately descoped.",
+      "body": "Leave this issue as the canonical tracker until the open child issues are resolved or intentionally descoped.",
       "recommended": true
     },
     {
-      "title": "Split and close scope",
-      "body": "Move the remaining analytics and hardware items to their own owner-approved tracking path, then close the epic only after documenting that scope cut.",
+      "title": "Split remaining scope",
+      "body": "Move the remaining analytics, hardware, and tracing items to a maintainer-approved tracking path, then close the umbrella only after documenting the scope cut.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Keep umbrella open",
-    "body": "Leave the epic open as the canonical tracker until the productivity aggregation and kiosk hardware/runbook children are resolved or deliberately descoped.",
+    "body": "Leave this issue as the canonical tracker until the open child issues are resolved or intentionally descoped.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Alex is assigned on the epic and authored the recent merged Revision V3 branch PRs that document and adjust the implementation.",
+    "reason": "Alex is assigned on the epic and has the strongest recent Revision V3 PR history across the kiosk and coordination surfaces.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6617.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6617#issuecomment-4910072071",
-    "reviewedAt": "2026-07-07T23:47:02.032Z",
+    "reviewedAt": "2026-07-08T08:55:45.827Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

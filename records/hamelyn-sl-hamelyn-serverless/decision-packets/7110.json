@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T08:48:12.317Z",
+  "updatedAt": "2026-07-07T10:26:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7110,
+    "title": "BL-ecommerce-authors: Authors — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7110",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-07T09:15:04Z",
+    "updatedAt": "2026-07-07T10:26:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should danielmenchen-hamelyn validate the extracted Ecommerce Authors rules and sitemap flag before any isolation/tests proceed?",
+  "rationale": "The Hamelyn BL pipeline makes F2 owner validation blocking, and this issue has live code plus at least one flagged behavior question that automation should not decide alone.",
+  "options": [
+    {
+      "title": "Run owner-led F2 first",
+      "body": "Extract the draft specs, resolve all flags with the named owner, then proceed to isolation and tests only for validated rules.",
+      "recommended": true
+    },
+    {
+      "title": "Defer the block",
+      "body": "Keep the issue open but leave the Authors block queued until higher-priority Ecommerce BL areas finish.",
+      "recommended": false
+    },
+    {
+      "title": "Narrow the scope",
+      "body": "Limit this issue to the author detail page rules and open a separate issue for sitemap behavior if the owner treats it as SEO scope.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Run owner-led F2 first",
+    "body": "Extract the draft specs, resolve all flags with the named owner, then proceed to isolation and tests only for validated rules.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "They are the named owner and current assignee for the BL block.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7110.md",
+    "reviewedAt": "2026-07-08T08:48:12.317Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

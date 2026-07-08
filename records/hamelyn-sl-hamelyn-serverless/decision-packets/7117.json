@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T08:58:19.562Z",
-  "updatedAt": "2026-07-08T08:49:09Z",
+  "generatedAt": "2026-07-08T08:53:21.827Z",
+  "updatedAt": "2026-07-07T10:13:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "reporter:victor"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-08T08:49:09Z"
+    "updatedAt": "2026-07-07T10:13:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "What should the v1 scope be for the root minihome redesign, especially around reusing the category/subcategory modules from https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6798 versus building root-page-specific sections?",
-  "rationale": "The request is valid but crosses design, SEO copy, search/catalog embedding, responsive behavior, and ranking/interlinking semantics, which need ecommerce product direction before implementation.",
+  "question": "Should ecommerce implement this as one approved shared CategoryHub redesign now, and what exact design/copy scope from the external template is in bounds?",
+  "rationale": "The code path is clear, but the change is a broad storefront layout, SEO, and responsive-design feature rather than a narrow broken-behavior fix.",
   "options": [
     {
-      "title": "Sponsor a planned CategoryHub redesign",
-      "body": "Implement the root minihome redesign as a dedicated ecommerce PR, reusing shared search/filter and highlight primitives while defining root-specific copy and QA criteria.",
+      "title": "Approve shared redesign",
+      "body": "Implement the four minihomes through shared CategoryHub subcomponents with explicit desktop/mobile visual QA and per-route copy data.",
       "recommended": true
     },
     {
-      "title": "Ship a narrower v1",
-      "body": "Limit v1 to hero search, benefit banner, and catalog embedding, then track offers and interlinking as a follow-up.",
+      "title": "Split into staged PRs",
+      "body": "Land hero/benefits, embedded catalog, and SEO/interlinking as separate reviewed increments if the team wants lower merge risk.",
       "recommended": false
     },
     {
-      "title": "Defer the minihomes",
-      "body": "Leave the root minihomes unchanged for now and rely on the already-shipped category/subcategory page redesign.",
+      "title": "Defer design work",
+      "body": "Keep the current minihomes until ecommerce has a finalized internal design spec that replaces the external template.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sponsor a planned CategoryHub redesign",
-    "body": "Implement the root minihome redesign as a dedicated ecommerce PR, reusing shared search/filter and highlight primitives while defining root-specific copy and QA criteria.",
+    "title": "Approve shared redesign",
+    "body": "Implement the four minihomes through shared CategoryHub subcomponents with explicit desktop/mobile visual QA and per-route copy data.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "They authored the closest shipped category-layout and interlinking implementation, making them the best code-history owner for scoping reuse versus new minihome modules.",
-    "confidence": "high"
+    "person": "Alex Cantón",
+    "reason": "Recent CategoryHub discovery/interlinking work makes Alex the strongest routing candidate for the shared minihome surface.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewedAt": "2026-07-08T08:58:19.562Z",
-    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+    "reviewedAt": "2026-07-08T08:53:21.827Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
