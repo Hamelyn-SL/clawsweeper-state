@@ -25,7 +25,7 @@
     "createdAt": "2026-07-07T09:14:32Z",
     "updatedAt": "2026-07-07T11:09:32Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
   "question": "Should the Coupons & Promotions BL block continue as the owner-approved 28-rule spin through F2, or should maintainers split it before F3/F4?",
   "rationale": "Automation cannot validate the business wording or override the owner-approved block size; F2 is explicitly human-blocking in the BL pipeline.",
