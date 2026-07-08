@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:21:11.843Z",
+  "generatedAt": "2026-07-08T16:22:14.090Z",
   "updatedAt": "2026-07-07T22:11:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,40 +16,40 @@
     "updatedAt": "2026-07-07T22:11:21Z",
     "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
   },
-  "lane": "merge_risk",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "Should Supply Deploy be allowed to push version-bump commits to the selected branch and auto-submit release builds to store destinations from a manual GitHub Action?",
-  "rationale": "This is a release-operations policy choice: the code is a useful implementation path, but automation with contents write, EXPO_TOKEN, and store submission changes who can trigger release side effects.",
+  "question": "¿El workflow de Supply puede hacer bump y push directo sobre `dev` antes de completar el build/submit, o debe forzar un gate de release que no anuncie la versión hasta que los binarios estén disponibles?",
+  "rationale": "El código se puede arreglar mecánicamente, pero la decisión de cuándo `dev` debe anunciar una versión móvil afecta al proceso de release y a la experiencia de usuarios existentes.",
   "options": [
     {
-      "title": "Require guarded deploy proof first",
-      "body": "Keep this direction, but require branch-history cleanup, pinned EAS CLI, and redacted beta or dry-run proof before considering merge.",
+      "title": "Gate de release antes de anunciar versión",
+      "body": "Recomiendo exigir que el bump que llega a `dev` ocurra solo cuando el build/submit esté validado y la disponibilidad en stores esté controlada.",
       "recommended": true
     },
     {
-      "title": "Accept as release-owned automation",
-      "body": "A release owner can explicitly accept the contents-write and production-draft behavior as the intended operating model.",
+      "title": "Aceptar push directo a dev",
+      "body": "Mantiene el flujo más simple, pero el equipo asume el riesgo operativo de modal de actualización antes de que exista binario descargable.",
       "recommended": false
     },
     {
-      "title": "Pause until release policy is clearer",
-      "body": "Leave the PR draft or close it if the team wants a different release mechanism than a GitHub Action that commits and submits builds.",
+      "title": "Pausar el PR",
+      "body": "Deja el deploy de Supply manual hasta acordar un runbook de release móvil más explícito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Require guarded deploy proof first",
-    "body": "Keep this direction, but require branch-history cleanup, pinned EAS CLI, and redacted beta or dry-run proof before considering merge.",
+    "title": "Gate de release antes de anunciar versión",
+    "body": "Recomiendo exigir que el bump que llega a `dev` ocurra solo cuando el build/submit esté validado y la disponibilidad en stores esté controlada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "The PR was reassigned to Miguel for Supply/EAS/workflow expertise, and recent history also shows Supply version-area work.",
+    "reason": "Es el revisor solicitado y tiene historial reciente en versionado y trabajo de Supply.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
-    "reviewedAt": "2026-07-07T23:21:11.843Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:22:14.090Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

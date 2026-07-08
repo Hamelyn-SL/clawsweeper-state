@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:24:57.535Z",
-  "updatedAt": "2026-07-06T12:55:15Z",
+  "generatedAt": "2026-07-08T16:30:17.963Z",
+  "updatedAt": "2026-07-08T10:13:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,46 @@
       "triage:no-change",
       "business-logic",
       "hackathon",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T07:29:50Z",
-    "updatedAt": "2026-07-06T12:55:15Z"
+    "updatedAt": "2026-07-08T10:13:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the remaining ecommerce Shipping Costs extraction in https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 stay sequenced behind the marketplace-domain work, or should it be rebased and moved forward now?",
-  "rationale": "The issue is not source-complete on current `dev`, and the remaining branch is intentionally draft due to owner sequencing rather than an unowned missing implementation.",
+  "question": "¿Debe la extracción ecommerce pendiente de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 seguir secuenciada como draft detrás del trabajo de dominios, o debe rebasarse y avanzar ahora?",
+  "rationale": "La parte restante existe como PR intencionalmente draft y conflictiva por una decisión de secuenciación del owner, no como una ausencia de implementación sin dueño.",
   "options": [
     {
-      "title": "Continue through the existing draft PR",
-      "body": "Keep this issue open, update the checklist numbering, and have the owner/reviewer rebase and review https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 when sequencing allows.",
+      "title": "Continuar por la PR draft existente",
+      "body": "Mantener esta issue abierta, actualizar la numeración del checklist y rebasar/revisar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 cuando el owner lo desbloquee.",
       "recommended": true
     },
     {
-      "title": "Rescope the parent issue",
-      "body": "If the ecommerce rules no longer belong under Shipping Costs, explicitly rewrite the parent checklist and move the remaining work to a new canonical BL issue.",
+      "title": "Reencuadrar el alcance",
+      "body": "Si las reglas ecommerce ya no pertenecen a Shipping Costs, mover explícitamente ese trabajo a una nueva issue canónica y ajustar esta issue madre.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continue through the existing draft PR",
-    "body": "Keep this issue open, update the checklist numbering, and have the owner/reviewer rebase and review https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 when sequencing allows.",
+    "title": "Continuar por la PR draft existente",
+    "body": "Mantener esta issue abierta, actualizar la numeración del checklist y rebasar/revisar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 cuando el owner lo desbloquee.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Pablo is the issue owner, assignee, and author of the split/renumbering decision that left #7004 as the remaining work.",
+    "reason": "Es el owner declarado, asignado actual y autor de la decisión de split/renumeración que dejó la parte ecommerce en la PR draft.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6899.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6899#issuecomment-4911148383",
-    "reviewedAt": "2026-07-08T03:24:57.535Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:30:17.963Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

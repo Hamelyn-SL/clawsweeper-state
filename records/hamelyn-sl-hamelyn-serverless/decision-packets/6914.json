@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:25:08.412Z",
-  "updatedAt": "2026-07-06T23:14:35Z",
+  "generatedAt": "2026-07-08T16:28:09.394Z",
+  "updatedAt": "2026-07-08T10:14:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,50 @@
       "feature",
       "triage:pr-opened",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-06T08:33:34Z",
-    "updatedAt": "2026-07-06T23:14:35Z"
+    "updatedAt": "2026-07-08T10:14:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should this issue be handled as a narrow Zafón biography-field change now, or folded into the broader author licensing/content strategy tracked in https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515?",
-  "rationale": "The code shape is small, but the remaining work includes content provenance and production data handling that automation should not choose while the broader licensing issue is open.",
+  "question": "¿Debe resolverse esta issue como un cambio acotado de biografía propia para Zafón ahora, o debe esperar a la estrategia de licencias/contenido de autor de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515?",
+  "rationale": "La forma técnica es pequeña, pero decidir la fuente del texto largo y si se permite contenido derivado de Wikipedia/Commons es una decisión de producto/legal que no conviene automatizar.",
   "options": [
     {
-      "title": "Recreate the narrow biography PR",
-      "body": "Add optional `author.biography`, render it only in the collapsed About block, and load reviewed owned copy for Carlos Ruiz Zafón without changing `description`.",
+      "title": "Recrear el cambio acotado",
+      "body": "Añadir `author.biography`, renderizarlo solo en `Sobre {Autor}` y cargar una bio propia revisada para Carlos Ruiz Zafón sin tocar `description`.",
       "recommended": true
     },
     {
-      "title": "Fold into author licensing work",
-      "body": "Keep this issue open but defer implementation until the broader Wikipedia/Commons strategy decides how author biographies and images should be sourced.",
+      "title": "Integrarlo con licencias de autor",
+      "body": "Mantener esta issue abierta hasta que la estrategia de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515 defina cómo se generan o atribuyen biografías e imágenes.",
       "recommended": false
     },
     {
-      "title": "Close as out of scope",
-      "body": "Close only if maintainers no longer want per-author long biography copy on author pages.",
+      "title": "Cerrar por cambio de alcance",
+      "body": "Cerrar solo si producto decide que las páginas de autor no deben tener biografías largas específicas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recreate the narrow biography PR",
-    "body": "Add optional `author.biography`, render it only in the collapsed About block, and load reviewed owned copy for Carlos Ruiz Zafón without changing `description`.",
+    "title": "Recrear el cambio acotado",
+    "body": "Añadir `author.biography`, renderizarlo solo en `Sobre {Autor}` y cargar una bio propia revisada para Carlos Ruiz Zafón sin tocar `description`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn has the clearest recent evidence on the related licensing decision that gates the content-source choice.",
+    "reason": "Tiene el contexto reciente más claro sobre la decisión de licencias que condiciona la fuente del contenido.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6914.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6914#issuecomment-4911149508",
-    "reviewedAt": "2026-07-08T03:25:08.412Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:28:09.394Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

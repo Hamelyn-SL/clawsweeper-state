@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:05:57.899Z",
-  "updatedAt": "2026-07-07T21:53:28Z",
+  "generatedAt": "2026-07-08T16:19:53.744Z",
+  "updatedAt": "2026-07-08T10:32:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,43 +24,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-07T21:53:28Z"
+    "updatedAt": "2026-07-08T10:32:48Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "For eBay price-update partial failures, should `/api/ebay` keep returning HTTP 200 with `Completed with partial failures`, or should material unsynchronized SKU batches fail or alert more strongly?",
-  "rationale": "The issue mixes a concrete eBay 400 classification bug with the broader cron aggregation policy, and source shows the current 200 partial-success behavior is shared cron infrastructure rather than an isolated eBay line change.",
+  "question": "Para los fallos parciales de actualización de precio de eBay, ¿debe `/api/ebay` seguir devolviendo HTTP 200 con `Completed with partial failures` o debe escalar los lotes materiales sin sincronizar con una señal de fallo más fuerte?",
+  "rationale": "La issue mezcla un bug de clasificación 400 con una política compartida de agregación del cron; el código actual muestra que el HTTP 200 de fallo parcial es comportamiento común, no un detalle aislado de eBay.",
   "options": [
     {
-      "title": "Keep 200, strengthen eBay classification",
-      "body": "Preserve the shared cron contract and fix only the remaining eBay 400 payload classification, retry, reconciliation, and logging behavior.",
+      "title": "Mantener 200 y reforzar eBay",
+      "body": "Preserva el contrato compartido del cron y enfoca el arreglo en payload, clasificación, reconciliación y logging de la variante 400 restante.",
       "recommended": true
     },
     {
-      "title": "Escalate material eBay partial failures",
-      "body": "Change eBay or shared cron behavior so large partial failures become a stronger operational failure signal, accepting monitoring and alerting impact.",
+      "title": "Escalar fallos parciales materiales",
+      "body": "Convierte ciertos fallos parciales de eBay en una señal operacional más fuerte, aceptando impacto en monitorización y alertas.",
       "recommended": false
     },
     {
-      "title": "Defer until live payload is captured",
-      "body": "Keep the issue assigned and avoid code changes until a current production payload proves which 400 variant remains unresolved.",
+      "title": "Esperar payload vivo",
+      "body": "No cambiar código hasta capturar una muestra actual que demuestre qué variante 400 sigue fallando.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep 200, strengthen eBay classification",
-    "body": "Preserve the shared cron contract and fix only the remaining eBay 400 payload classification, retry, reconciliation, and logging behavior.",
+    "title": "Mantener 200 y reforzar eBay",
+    "body": "Preserva el contrato compartido del cron y enfoca el arreglo en payload, clasificación, reconciliación y logging de la variante 400 restante.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "He is tied by git history to both the eBay update-price fix and the current partial-failure/cron behavior.",
+    "reason": "Es el candidato con mejor señal histórica sobre la ruta de eBay updatePrice y la semántica actual de fallo parcial.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-07T22:05:57.899Z",
-    "mainSha": "d7265db4024f86eb6518f87fc6033676bcf71d18"
+    "reviewedAt": "2026-07-08T16:19:53.744Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

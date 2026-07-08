@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:22:28.790Z",
-  "updatedAt": "2026-07-07T22:11:12Z",
+  "generatedAt": "2026-07-08T16:22:56.854Z",
+  "updatedAt": "2026-07-08T10:14:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,49 +13,48 @@
       "size/XL",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
+      "P0",
       "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-02T15:30:16Z",
-    "updatedAt": "2026-07-07T22:11:12Z",
+    "updatedAt": "2026-07-08T10:14:18Z",
     "headSha": "26a4a7ed0e31d3b098057422bb908b427c25bc19"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "What should the permanent public product contract be for ecommerce, Supply featured products, autocomplete, and prescriptor results?",
-  "rationale": "The remaining blockers require deciding which fields are deliberately public per surface, not only adding more names to a denylist; `priceBuy` is sensitive on ecommerce product pages but appears intentionally public for Supply.",
+  "question": "¿Qué contrato público debe conservar `featured` para Supply y cómo se debe sustituir `units` para limitar compras sin filtrar inventario real?",
+  "rationale": "El PR toca una frontera P0 de datos públicos y dos campos discutidos (`priceBuy` y `units`) tienen doble significado: pueden ser sensibles en ecommerce, pero también sostienen flujos públicos existentes.",
   "options": [
     {
-      "title": "Unify around allowlists",
-      "body": "Use a shared fail-closed public serializer for ecommerce product payloads and add narrowly named Supply/search/prescriptor variants for deliberately public fields.",
+      "title": "Separar contratos por superficie",
+      "body": "Mantener allowlist estricta para ecommerce, definir un serializer específico de Supply que conserve `priceBuy` público, y sustituir `units` por un cap/validación server-side no sensible.",
       "recommended": true
     },
     {
-      "title": "Keep surface denylists",
-      "body": "Allow separate denylists per endpoint, but require exact alignment, documentation, and regression tests for every public payload surface.",
+      "title": "Aceptar el cambio actual y documentar roturas",
+      "body": "Se cierra más agresivamente la fuga, pero Supply y el límite de carrito pueden degradarse hasta que haya seguimiento operativo.",
       "recommended": false
     },
     {
-      "title": "Pause for security sign-off",
-      "body": "Hold the branch until ecommerce/API owners approve the public/private field boundary and stock-limit replacement behavior.",
+      "title": "Pausar y rehacer como PRs más pequeños",
+      "body": "Dividir ecommerce, disponibilidad/carrito y BFF Supply reduce riesgo, pero retrasa el cierre de la fuga P0.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Unify around allowlists",
-    "body": "Use a shared fail-closed public serializer for ecommerce product payloads and add narrowly named Supply/search/prescriptor variants for deliberately public fields.",
+    "title": "Separar contratos por superficie",
+    "body": "Mantener allowlist estricta para ecommerce, definir un serializer específico de Supply que conserve `priceBuy` público, y sustituir `units` por un cap/validación server-side no sensible.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "alexcanHamelyn already identified the active security and compatibility blockers and is assigned for review on this PR.",
+    "reason": "Ya identificó los bloqueos concretos y tiene señal directa en ecommerce/APIs públicas según la revisión y el reparto automático.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6808.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6808#issuecomment-4911138293",
-    "reviewedAt": "2026-07-08T03:22:28.790Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:22:56.854Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

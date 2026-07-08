@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T00:26:15.630Z",
-  "updatedAt": "2026-07-03T12:18:30Z",
+  "generatedAt": "2026-07-08T16:29:53.543Z",
+  "updatedAt": "2026-07-08T10:12:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,50 +15,49 @@
       "feature",
       "reporter:miguel",
       "triage:done",
-      "P2",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-03T10:44:24Z",
-    "updatedAt": "2026-07-03T12:18:30Z"
+    "updatedAt": "2026-07-08T10:12:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should Supply web start this migration now with a phase-1 slug-source-of-truth PR, or wait until Expo Router server output is less alpha before investing in SSR and Vercel deployment changes?",
-  "rationale": "The current code confirms the requested architecture is still missing, but the full plan affects routing, deployment, SEO, client auth behavior, and alpha framework features, which requires maintainer rollout intent before implementation.",
+  "question": "¿Debe Supply web migrar ahora a `web.output: \"server\"` con rewrites de Expo Router y SSR, o conviene abordar solo prerrequisitos acotados como la fuente única de slugs?",
+  "rationale": "La issue propone una migración amplia sobre APIs `unstable_` de Expo Router, despliegue Vercel server output y comportamiento SEO/runtime; automatizarla como bugfix sería demasiado arriesgado sin dirección de producto e infraestructura.",
   "options": [
     {
-      "title": "Split phase 1 first",
-      "body": "Create a small PR for the typed localized slug source and collision assertions while leaving server output and SSR for a later staging PoC.",
+      "title": "Aprobar migración por fases",
+      "body": "Mantener esta issue como épica y exigir una PoC de staging antes de cambiar producción.",
       "recommended": true
     },
     {
-      "title": "Sponsor the full PoC now",
-      "body": "Treat this as a product/infra project and define staging, Vercel, Auth0, SEO, native-deeplink, and performance acceptance gates before implementation.",
+      "title": "Solo fase 1 por ahora",
+      "body": "Limitar el trabajo inmediato a fuente única de slugs y assert de colisiones, dejando SSR/server output para una decisión posterior.",
       "recommended": false
     },
     {
-      "title": "Pause until SDK 56+",
-      "body": "Keep the issue open but defer server-output work until the Expo Router SSR surface is more stable for this app.",
+      "title": "Posponer server output",
+      "body": "Conservar el modelo estático y resolver bugs concretos mediante issues hijas hasta que Expo Router SSR esté más estable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split phase 1 first",
-    "body": "Create a small PR for the typed localized slug source and collision assertions while leaving server output and SSR for a later staging PoC.",
+    "title": "Aprobar migración por fases",
+    "body": "Mantener esta issue como épica y exigir una PoC de staging antes de cambiar producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Miguel owns the issue and has recent Supply web area changes, so he is the best routing owner for rollout scope and phase ordering.",
+    "reason": "Abrió la propuesta y aparece como principal contribuidor reciente del área Supply en el historial local disponible.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6829.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829#issuecomment-4910270381",
-    "reviewedAt": "2026-07-08T00:26:15.630Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:29:53.543Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:25:36.508Z",
-  "updatedAt": "2026-07-06T14:58:09Z",
+  "generatedAt": "2026-07-08T16:28:39.202Z",
+  "updatedAt": "2026-07-08T10:14:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,52 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-07-06T14:58:09Z"
+    "updatedAt": "2026-07-08T10:14:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Which marketplace service-level codes should map to `ShipPriority.URGENT`, `NORMAL`, or fallback-by-price for eBay, Fnac, CDL, Discogs, AbeBooks, and TodoColeccion?",
-  "rationale": "The source bug is clear, but the correct SLA mapping is a Marketplace/business contract rather than a mechanical code repair.",
+  "question": "¿Qué códigos o métodos de envío deben mapearse a `ShipPriority.URGENT` para cada marketplace, y en qué canales debe seguir existiendo fallback por importe?",
+  "rationale": "La corrección cambia decisiones de SLA y depende de semántica externa por marketplace; el código muestra señales parciales, pero no define cuáles son contractualmente urgentes.",
   "options": [
     {
-      "title": "Define mappings first",
-      "body": "Marketplace owners provide the provider-by-provider service-code table and fallback policy, then implementation can update formatters and BL artifacts safely.",
+      "title": "Mapping por marketplace con fallback acotado",
+      "body": "Definir la tabla de códigos urgentes por canal y usar el importe solo cuando el importador no exponga señal fiable.",
       "recommended": true
     },
     {
-      "title": "Keep thresholds temporarily",
-      "body": "Current behavior remains documented while the team accepts ongoing false positive/negative urgency risk until provider contracts are confirmed.",
+      "title": "Mantener umbrales hasta tener datos completos",
+      "body": "Dejar el comportamiento actual mientras se recopilan muestras reales de métodos de envío por marketplace.",
+      "recommended": false
+    },
+    {
+      "title": "Mover la regla a un bloque Marketplace",
+      "body": "Esperar a abrir el dominio BL de Marketplace y resolver allí esta prioridad junto con el parsing de órdenes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Define mappings first",
-    "body": "Marketplace owners provide the provider-by-provider service-code table and fallback policy, then implementation can update formatters and BL artifacts safely.",
+    "title": "Mapping por marketplace con fallback acotado",
+    "body": "Definir la tabla de códigos urgentes por canal y usar el importe solo cuando el importador no exponga señal fiable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "The parent BL issue identifies PabloMoran34 as the owner for this block, and this issue says the owner validated the desired behavior.",
+    "reason": "Figura como owner del bloque BL y abrió la divergencia con el contexto funcional necesario.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
-    "reviewedAt": "2026-07-08T03:25:36.508Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:28:39.202Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

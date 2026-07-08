@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T00:20:44.167Z",
-  "updatedAt": "2026-07-03T20:57:37Z",
+  "generatedAt": "2026-07-08T16:20:56.044Z",
+  "updatedAt": "2026-07-08T10:09:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,52 @@
       "app:infrastructure",
       "reporter:PabloMoran34",
       "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:data-loss",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "impact:data-loss"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-07-03T20:57:37Z"
+    "updatedAt": "2026-07-08T10:09:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "How should `soldAt` be represented for `SOLD_AS_ALTERNATIVE` rows before fixing and backfilling this issue?",
-  "rationale": "The plain `SOLD` leak has a clear existing contract, but replacement stocks can either inherit the order marketplace or need distinct attribution, and the backfill will persist that choice across historical data.",
+  "question": "¿Cómo debe representarse `soldAt` para los stocks con `withdrawalReason = 'SOLD_AS_ALTERNATIVE'` antes de corregir la fuga y preparar el backfill?",
+  "rationale": "La parte `SOLD` tiene contrato existente, pero las ventas de reemplazo pueden heredar el marketplace de la orden o necesitar una atribución distinta, y esa elección quedaría persistida en datos históricos.",
   "options": [
     {
-      "title": "Fix SOLD first, decide alternatives separately",
-      "body": "Prevent generic `SOLD` withdrawals without marketplace attribution and backfill recoverable `SOLD` rows, while leaving `SOLD_AS_ALTERNATIVE` for an explicit follow-up decision.",
+      "title": "Corregir SOLD primero y diferir alternativas",
+      "body": "Impedir nuevas retiradas `SOLD` sin marketplace y backfillear las filas `SOLD` recuperables, dejando `SOLD_AS_ALTERNATIVE` para una decisión explícita posterior.",
       "recommended": true
     },
     {
-      "title": "Backfill alternatives from order marketplace",
-      "body": "Treat replacement-stock sales as marketplace sales and populate `soldAt` from the linked order for both future and recoverable historical alternative rows.",
+      "title": "Atribuir alternativas al marketplace de la orden",
+      "body": "Poblar `soldAt` de `SOLD_AS_ALTERNATIVE` desde la orden enlazada tanto en código futuro como en backfill histórico recuperable.",
       "recommended": false
     },
     {
-      "title": "Add separate alternative attribution",
-      "body": "Keep `soldAt` as the original sold-stock marketplace field and introduce a distinct field or reporting rule for replacement-stock attribution.",
+      "title": "Crear una atribución separada para alternativas",
+      "body": "Mantener `soldAt` para la venta principal y modelar los stocks sustitutos con otro campo o regla analítica documentada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fix SOLD first, decide alternatives separately",
-    "body": "Prevent generic `SOLD` withdrawals without marketplace attribution and backfill recoverable `SOLD` rows, while leaving `SOLD_AS_ALTERNATIVE` for an explicit follow-up decision.",
+    "title": "Corregir SOLD primero y diferir alternativas",
+    "body": "Impedir nuevas retiradas `SOLD` sin marketplace y backfillear las filas `SOLD` recuperables, dejando `SOLD_AS_ALTERNATIVE` para una decisión explícita posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn already framed the unresolved `SOLD_AS_ALTERNATIVE` choice in triage and recently touched the stock sale marketplace path.",
+    "reason": "Ya planteó la decisión pendiente de `SOLD_AS_ALTERNATIVE` en el triaje y tiene contexto reciente de marketplace/stock.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6790#issuecomment-4910268218",
-    "reviewedAt": "2026-07-08T00:20:44.167Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:20:56.044Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

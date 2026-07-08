@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:20:18.400Z",
-  "updatedAt": "2026-07-04T17:28:00Z",
+  "generatedAt": "2026-07-08T16:24:59.777Z",
+  "updatedAt": "2026-07-08T10:14:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "triage:done",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-04T13:53:13Z",
-    "updatedAt": "2026-07-04T17:28:00Z"
+    "updatedAt": "2026-07-08T10:14:22Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "Should Marketplace maintainers consolidate this older MercadoLibre oversell report into https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178, or keep both open while the reconciliation/backfill plan is defined?",
-  "rationale": "Current dev does not implement the full fix, and the required remediation likely touches many production records/listings, so maintainer intent is needed before consolidation or a backfill path.",
+  "question": "¿Debe el equipo Marketplace consolidar este informe histórico en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178, o mantener ambos abiertos hasta aprobar el plan de reconciliación/backfill de MercadoLibre?",
+  "rationale": "La corrección pendiente afecta a listados externos y posiblemente a muchos registros de producción; ClawSweeper no debería elegir ni ejecutar esa consolidación o backfill sin intención explícita del mantenedor.",
   "options": [
     {
-      "title": "Use the newer issue as canonical",
-      "body": "Route code and data-reconciliation work through https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 while preserving this issue as historical evidence until a maintainer manually closes or links it.",
+      "title": "Usar la issue más nueva como canónica",
+      "body": "Encaminar el diseño y la implementación por https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178, preservando esta issue como evidencia histórica hasta que un mantenedor la cierre o enlace manualmente.",
       "recommended": true
     },
     {
-      "title": "Keep both active",
-      "body": "Leave both reports open as separate operational snapshots, accepting duplicate triage overhead until the reconciliation lands.",
+      "title": "Mantener ambas abiertas",
+      "body": "Conservar ambos snapshots operacionales abiertos mientras se mide el alcance y se aprueba el plan de reconciliación.",
       "recommended": false
     },
     {
-      "title": "Manually close this as duplicate",
-      "body": "Close this issue only if maintainers want one tracker and explicitly decide that the newer issue preserves all needed context.",
+      "title": "Cerrar esta como duplicada manualmente",
+      "body": "Cerrar esta issue solo si el equipo confirma que la issue más nueva contiene todo el contexto necesario para ejecutar el trabajo restante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Use the newer issue as canonical",
-    "body": "Route code and data-reconciliation work through https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 while preserving this issue as historical evidence until a maintainer manually closes or links it.",
+    "title": "Usar la issue más nueva como canónica",
+    "body": "Encaminar el diseño y la implementación por https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178, preservando esta issue como evidencia histórica hasta que un mantenedor la cierre o enlace manualmente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Marcos has the strongest recent code-history signal in the MercadoLibre listing/withdraw path and is the best available owner for deciding the implementation route.",
+    "reason": "Es quien tiene la señal más fuerte de historial reciente en el selector y la retirada de MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6859.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859#issuecomment-4911140355",
-    "reviewedAt": "2026-07-08T03:20:18.400Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:24:59.777Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

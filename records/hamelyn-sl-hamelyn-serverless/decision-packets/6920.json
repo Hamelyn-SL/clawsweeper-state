@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:23:01.426Z",
-  "updatedAt": "2026-07-06T22:26:09Z",
+  "generatedAt": "2026-07-08T16:26:14.929Z",
+  "updatedAt": "2026-07-08T10:14:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,53 @@
       "app:ecommerce",
       "priority:p2",
       "triage:done",
-      "P0",
-      "impact:security",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0"
     ],
     "createdAt": "2026-07-06T08:48:19Z",
-    "updatedAt": "2026-07-06T22:26:09Z"
+    "updatedAt": "2026-07-08T10:14:42Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P0",
-  "question": "Should checkout amount mismatches fail closed before persistence, or should the server recalculate and overwrite the submitted totals?",
-  "rationale": "Both choices fix the client-trust boundary, but they have different customer-facing failure behavior, analytics impact, and compatibility implications for cached checkout clients.",
+  "question": "¿El checkout debe rechazar las discrepancias de importe antes de persistir, o recalcular y sobrescribir los totales enviados por el cliente?",
+  "rationale": "Ambas opciones cierran el límite de confianza, pero cambian la experiencia del cliente, la compatibilidad con sesiones cacheadas y la observabilidad de bugs de frontend.",
   "options": [
     {
-      "title": "Reject mismatches before save",
-      "body": "Return a clear 400-style checkout error when client-sent shipping or total differs from the server calculation, preventing underpayment and surfacing stale client bugs.",
+      "title": "Rechazar discrepancias antes de guardar",
+      "body": "Devolver un 400 claro cuando envío o total no coincidan con el cálculo del servidor, evitando pagos insuficientes y haciendo visibles clientes obsoletos.",
       "recommended": true
     },
     {
-      "title": "Recalculate and overwrite totals",
-      "body": "Persist and charge the server-calculated values while logging the discrepancy, reducing customer interruption but hiding client drift unless monitored.",
+      "title": "Recalcular y sobrescribir",
+      "body": "Persistir y cobrar los valores calculados por el servidor, reduciendo fricción al cliente pero ocultando divergencias salvo que se registren y monitoricen.",
       "recommended": false
     },
     {
-      "title": "Sequence after BL extraction",
-      "body": "Wait for the draft BL extraction PR to land first, then implement the enforcement as a smaller follow-up on top of the shared pure functions.",
+      "title": "Secuenciar tras la extracción BL",
+      "body": "Esperar a que la extracción de reglas compartidas de la PR 7004 se resuelva y aplicar luego el enforcement encima de ese servicio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reject mismatches before save",
-    "body": "Return a clear 400-style checkout error when client-sent shipping or total differs from the server calculation, preventing underpayment and surfacing stale client bugs.",
+    "title": "Rechazar discrepancias antes de guardar",
+    "body": "Devolver un 400 claro cuando envío o total no coincidan con el cálculo del servidor, evitando pagos insuficientes y haciendo visibles clientes obsoletos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "The issue came from the Shipping Costs BL owner workflow, and the decision affects the validated BL spec for this rule.",
+    "reason": "Es el propietario visible del bloque `BL-shipping-costs` y la decisión afecta directamente a la spec de esta divergencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6920.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920#issuecomment-4911151853",
-    "reviewedAt": "2026-07-08T03:23:01.426Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:26:14.929Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:19:09.967Z",
-  "updatedAt": "2026-07-05T10:54:41Z",
+  "generatedAt": "2026-07-08T16:22:33.704Z",
+  "updatedAt": "2026-07-08T10:07:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:admin",
       "priority:p3",
       "triage:needs-info",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-05T10:46:42Z",
-    "updatedAt": "2026-07-05T10:54:41Z"
+    "updatedAt": "2026-07-08T10:07:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should Admin Data -> Gráficas remain as an Atlas Charts dashboard, or should the admin route be removed?",
-  "rationale": "Both available fixes are mutually exclusive and depend on external Atlas/dashboard ownership rather than source-code evidence.",
+  "question": "¿Debe conservarse Admin Data/Gráficas con un dashboard de MongoDB Charts válido, o debe eliminarse la vista del admin?",
+  "rationale": "Los dos arreglos son mutuamente excluyentes y dependen de propiedad externa de Atlas y de uso de producto, no de una inferencia fiable desde el código.",
   "options": [
     {
-      "title": "Replace the dashboard embed",
-      "body": "Provide or recreate a valid embeddable MongoDB Charts dashboard ID and update Charts.tsx while preserving the admin route.",
+      "title": "Restaurar el dashboard",
+      "body": "Proporcionar o recrear un dashboard ID válido, habilitar embedding y actualizar `Charts.tsx` manteniendo la ruta actual.",
       "recommended": true
     },
     {
-      "title": "Remove the view",
-      "body": "Delete the Charts screen and unregister the Data/Gráficas resource if this dashboard is no longer part of the admin product.",
+      "title": "Eliminar la vista",
+      "body": "Borrar `Charts.tsx` y desregistrar `v4/admin/data/graphs` si el dashboard ya no forma parte del producto admin.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Replace the dashboard embed",
-    "body": "Provide or recreate a valid embeddable MongoDB Charts dashboard ID and update Charts.tsx while preserving the admin route.",
+    "title": "Restaurar el dashboard",
+    "body": "Proporcionar o recrear un dashboard ID válido, habilitar embedding y actualizar `Charts.tsx` manteniendo la ruta actual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "The current hardcoded embed line points to this current-main history, making them the best available routing candidate for the admin/data decision.",
+    "reason": "Es la mejor señal histórica disponible para la línea actual y el merge reciente de admin, aunque la decisión puede requerir al equipo de datos/admin.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6885.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6885#issuecomment-4911142703",
-    "reviewedAt": "2026-07-08T03:19:09.967Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:22:33.704Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

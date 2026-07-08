@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T21:51:35.433Z",
-  "updatedAt": "2026-07-07T21:22:12Z",
+  "generatedAt": "2026-07-08T16:21:09.370Z",
+  "updatedAt": "2026-07-08T10:25:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -27,43 +27,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-07T21:22:12Z"
+    "updatedAt": "2026-07-08T10:25:28Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "For eBay create/publish, should a bulkPublishOffer batch with zero successful publications fail or escalate the /api/ebay cron response, or should it remain HTTP 200 with stronger internal alerting?",
-  "rationale": "The code can add detail mechanically, but changing the cron-level success signal affects monitoring and multi-phase cron semantics that need maintainer/operator intent.",
+  "question": "Para create/publish de eBay, ¿un lote de `bulkPublishOffer` con cero publicaciones exitosas debe fallar o escalar la respuesta del cron `/api/ebay`, o debe seguir siendo HTTP 200 con alertas internas más fuertes?",
+  "rationale": "La parte mecánica de logging por oferta es acotada, pero la semántica de éxito del cron multifase y la reactivación de create son una decisión de operación/producto del marketplace.",
   "options": [
     {
-      "title": "Escalate zero-success publish batches",
-      "body": "Treat a publish batch with no successful offers as a phase failure or equivalent alert before re-enabling eBay create.",
+      "title": "Escalar lotes sin éxitos",
+      "body": "Tratar un lote de publicación con cero ofertas correctas como fallo de fase o alerta equivalente antes de reactivar create de eBay.",
       "recommended": true
     },
     {
-      "title": "Keep HTTP 200 with stronger alerting",
-      "body": "Continue allowing other phases to finish but add explicit per-offer logs and priority notification for zero-success publish batches.",
+      "title": "Mantener HTTP 200 con alerta fuerte",
+      "body": "Permitir que el cron siga devolviendo 200 cuando otras fases funcionen, pero añadir logs por oferta y notificación prioritaria para lotes sin éxitos.",
       "recommended": false
     },
     {
-      "title": "Keep create disabled",
-      "body": "Leave eBay create off until the account/policy rejection family is handled operationally outside this code path.",
+      "title": "Mantener create deshabilitado",
+      "body": "Dejar create de eBay apagado hasta que operaciones confirme la causa de los rechazos de cuenta/política y aporte una prueba segura de reactivación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalate zero-success publish batches",
-    "body": "Treat a publish batch with no successful offers as a phase failure or equivalent alert before re-enabling eBay create.",
+    "title": "Escalar lotes sin éxitos",
+    "body": "Tratar un lote de publicación con cero ofertas correctas como fallo de fase o alerta equivalente antes de reactivar create de eBay.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn owns the most recent eBay cron mitigation in current history and is closest to the cron-level operational decision.",
+    "reason": "Es la persona más conectada al estado actual del controlador de eBay y al comportamiento compartido del cron, que son los puntos donde debe decidirse la política operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-07T21:51:35.433Z",
-    "mainSha": "547ff73262d3455e80702212d666528868edd477"
+    "reviewedAt": "2026-07-08T16:21:09.370Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

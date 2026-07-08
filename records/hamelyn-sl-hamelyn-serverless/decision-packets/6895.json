@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:26:17.233Z",
-  "updatedAt": "2026-07-06T10:13:26Z",
+  "generatedAt": "2026-07-08T16:28:19.887Z",
+  "updatedAt": "2026-07-08T10:12:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "triage:done",
       "business-logic",
       "hackathon",
-      "P3",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-07-06T10:13:26Z"
+    "updatedAt": "2026-07-08T10:12:40Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "Should this Supply mother issue remain the umbrella, or should it be rewritten or superseded after mapping the remaining blocks to Buying, Shipping, and Warehouse block issues?",
-  "rationale": "Current dev has moved part of the work into narrower Buying and Shipping BL blocks, but the original Supply checklist still contains unresolved areas and automation should not choose the permanent domain taxonomy.",
+  "question": "¿Debe esta issue seguir siendo el paraguas de Supply, o debe reescribirse/sustituirse por issues de bloque de Buying, Shipping y Warehouse?",
+  "rationale": "El código actual ya cubre partes del antiguo dominio Supply bajo otras carpetas BL, pero decidir la taxonomía permanente y qué bloques quedan pendientes es una decisión de dominio, no un arreglo mecánico.",
   "options": [
     {
-      "title": "Update and keep the umbrella",
-      "body": "Keep this issue open, rewrite its checklist to link the completed Buying/Shipping blocks and name the remaining Supply or Warehouse blocks explicitly.",
+      "title": "Mantener y actualizar el paraguas",
+      "body": "Actualizar el checklist con enlaces a los bloques ya cerrados y dejar explícitos los bloques Supply/Warehouse pendientes.",
       "recommended": true
     },
     {
-      "title": "Supersede with narrower issues",
-      "body": "Create or identify canonical issues for the remaining incidents, suspicious-orders, B2B, and warehouse lifecycle work, then close this umbrella with those links.",
+      "title": "Sustituir por issues estrechas",
+      "body": "Crear o identificar issues canónicas por bloque restante y cerrar esta issue solo cuando esos enlaces preserven el contexto.",
       "recommended": false
     },
     {
-      "title": "Pause until open BL PRs land",
-      "body": "Wait for the open Buying eligibility and account PRs to merge before deciding whether this umbrella still adds routing value.",
+      "title": "Pausar hasta cerrar más bloques",
+      "body": "Esperar a que aterricen los bloques BL relacionados y reevaluar después si el paraguas aún aporta coordinación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Update and keep the umbrella",
-    "body": "Keep this issue open, rewrite its checklist to link the completed Buying/Shipping blocks and name the remaining Supply or Warehouse blocks explicitly.",
+    "title": "Mantener y actualizar el paraguas",
+    "body": "Actualizar el checklist con enlaces a los bloques ya cerrados y dejar explícitos los bloques Supply/Warehouse pendientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn opened the umbrella and authored the BL pipeline skill, so they are the best available owner for the taxonomy decision.",
+    "reason": "Abrió la issue y versionó la skill que define el flujo BL, así que es el mejor owner disponible para decidir la taxonomía del paraguas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-07-08T03:26:17.233Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T16:28:19.887Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }
