@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T20:58:47.470Z",
+  "updatedAt": "2026-07-08T07:42:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7212,
+    "title": "eBay ES leaves sold orphan listings live when mk row is missing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-08T07:31:00Z",
+    "updatedAt": "2026-07-08T07:42:34Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿El equipo Marketplace/Data prefiere ejecutar el recovery como job/backfill puntual desde `marketplace_snapshots.ebay_es_listings` o convertirlo primero en una ruta recurrente de reconciliación de eBay ES?",
+  "rationale": "La dirección técnica afecta a mutaciones reales sobre cientos de listings publicados y a si se versiona una capacidad recurrente o se ejecuta una corrección operativa puntual; no es una decisión segura para automatizar sin confirmación humana.",
+  "options": [
+    {
+      "title": "Recovery controlado puntual",
+      "body": "Crear un script/backfill con dry-run, muestras, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
+      "recommended": true
+    },
+    {
+      "title": "Reconciliación recurrente",
+      "body": "Añadir un job periódico que detecte huérfanos vendidos desde snapshots y ejecute retiradas con límites, alertas y auditoría continua.",
+      "recommended": false
+    },
+    {
+      "title": "Sembrar documentos `mk_ebayEs` mínimos",
+      "body": "Recrear filas locales mínimas para que el withdraw existente las procese, asumiendo el coste de una migración de datos muy acotada y auditada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recovery controlado puntual",
+    "body": "Crear un script/backfill con dry-run, muestras, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Aparece como autor reciente del flujo de withdraw/report y del issue, y tiene contexto directo de la evidencia operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7212.md",
+    "reviewedAt": "2026-07-08T20:58:47.470Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

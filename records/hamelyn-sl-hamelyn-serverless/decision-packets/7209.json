@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T20:58:34.358Z",
+  "updatedAt": "2026-07-08T09:42:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7209,
+    "title": "Amazon ES price-threshold DB_ONLY_WITH_DETAILS errors persist despite recovery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7209",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-08T06:37:14Z",
+    "updatedAt": "2026-07-08T09:42:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué rango min/max debe enviarse a Amazon ES para `optimo`, `atascado` y `sin_grupo`, y debe ir sin `pricingRuleId` salvo en grupos aprobados?",
+  "rationale": "El cambio no es solo mecánico: modifica la política de umbrales enviada a Amazon para grupos que hoy se excluyen explícitamente de la regla de pricing, y esa decisión afecta recuperación, márgenes y automatización de precios.",
+  "options": [
+    {
+      "title": "Separar umbrales de regla automática",
+      "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo para grupos ya aprobados.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar regla existente",
+      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, asumiendo que también pueden recibir el plan de pricing automático actual.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar recovery de 18155",
+      "body": "Mantener los listings suprimidos hasta definir política comercial de umbrales y evitar retries que repitan el error.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar umbrales de regla automática",
+    "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo para grupos ya aprobados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la mejor ruta inicial porque llevó el fix previo de recovery 14016/18155/18555 y documentó el riesgo de política de pricing asociado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7209.md",
+    "reviewedAt": "2026-07-08T20:58:34.358Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T21:02:21.122Z",
+  "updatedAt": "2026-07-08T09:42:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7226,
+    "title": "feat: buscador manual y por EAN de lote en la pantalla de revisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "epic:revision-v3"
+    ],
+    "createdAt": "2026-07-08T09:19:27Z",
+    "updatedAt": "2026-07-08T09:42:34Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta mejora implementarse ahora dentro del modal legacy de revisión o esperar a la ruta definitiva de Revisión V3 del epic padre?",
+  "rationale": "La falta técnica está clara, pero la issue pertenece al epic de Revisión V3 y ya tiene responsable asignado; la automatización no debería decidir si tocar el modal actual o esperar al flujo táctil definitivo.",
+  "options": [
+    {
+      "title": "Implementar fallback compacto en el modal actual",
+      "body": "Añade el buscador por EAN/Pedido de Compra en `OrderReviewModal` reutilizando la lógica existente y deja el flujo operativo resuelto sin cambio de vista.",
+      "recommended": true
+    },
+    {
+      "title": "Resolverlo dentro de Revisión V3",
+      "body": "Mantiene esta issue como sub-tarea del epic y evita invertir en el modal legacy si la pantalla táctil nueva va a sustituirlo pronto.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar como fuera de alcance del modal actual",
+      "body": "Solo tendría sentido si el equipo confirma que el puesto nuevo no va a usar esta pantalla y que la búsqueda separada seguirá siendo el flujo oficial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Implementar fallback compacto en el modal actual",
+    "body": "Añade el buscador por EAN/Pedido de Compra en `OrderReviewModal` reutilizando la lógica existente y deja el flujo operativo resuelto sin cambio de vista.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el responsable asignado de esta issue y aparece como contribuidor reciente en la superficie admin v4 relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7226.md",
+    "reviewedAt": "2026-07-08T21:02:21.122Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:19:51.196Z",
-  "updatedAt": "2026-07-05T11:28:22Z",
+  "generatedAt": "2026-07-08T20:57:28.104Z",
+  "updatedAt": "2026-07-08T16:34:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "priority:p3",
       "app:infrastructure",
       "triage:done",
-      "P2",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-05T10:56:20Z",
-    "updatedAt": "2026-07-05T11:28:22Z"
+    "updatedAt": "2026-07-08T16:34:54Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Should this issue stay as one large monorepo-wide cleanup, or should maintainers split it into a focused admin-first repair plus follow-up sweep items?",
-  "rationale": "The source evidence confirms real remaining admin bugs, but the issue asks for a broad cross-app sweep and visual/browser validation that may exceed a safe autonomous repair boundary.",
+  "question": "¿Queréis resolver este barrido como un único PR frontend grande o dividirlo por patrón/app empezando por admin?",
+  "rationale": "La causa está clara, pero el alcance aceptado exige smoke visual/browser de varias apps y conviene que frontend mantenga la estrategia de entrega antes de automatizar un arreglo parcial.",
   "options": [
     {
-      "title": "Split admin-first repair",
-      "body": "Fix the confirmed admin patterns first and open or keep follow-up tracking for any remaining ecommerce, data-dashboards, or supply findings discovered by search and smoke testing.",
+      "title": "Dividir por patrón y empezar por admin",
+      "body": "Primer PR para los patrones confirmados de admin y pagos, con validación de consola en las vistas citadas, dejando el resto del monorepo para PRs siguientes.",
       "recommended": true
     },
     {
-      "title": "Keep one large sweep",
-      "body": "Assign this as a larger frontend task that covers all apps and requires complete browser smoke proof before closing.",
+      "title": "Un único barrido monorepo",
+      "body": "Resolver todos los patrones en una rama grande reduce deuda de una vez, pero aumenta coste de revisión y validación visual.",
       "recommended": false
     },
     {
-      "title": "Narrow acceptance to admin",
-      "body": "If maintainers only need the confirmed console warnings cleaned up now, update acceptance to admin and leave wider pattern hardening for normal maintenance.",
+      "title": "Mantener como deuda planificada",
+      "body": "Conservar la issue abierta hasta que el equipo frontend pueda reservar una sesión de smoke completa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split admin-first repair",
-    "body": "Fix the confirmed admin patterns first and open or keep follow-up tracking for any remaining ecommerce, data-dashboards, or supply findings discovered by search and smoke testing.",
+    "title": "Dividir por patrón y empezar por admin",
+    "body": "Primer PR para los patrones confirmados de admin y pagos, con validación de consola en las vistas citadas, dejando el resto del monorepo para PRs siguientes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "They reported the issue from the Next 16 admin smoke pass and have recent payment/admin context for deciding how much of that sweep is required for acceptance.",
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato más directo por la proveniencia de varios patrones JSX actuales que producen el nesting inválido.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6886.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6886#issuecomment-4911143556",
-    "reviewedAt": "2026-07-08T03:19:51.196Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T20:57:28.104Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

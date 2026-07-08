@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T20:59:10.645Z",
+  "updatedAt": "2026-07-08T05:58:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7203,
+    "title": "fix: generate supply sitemap from deploy env",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7203",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-08T05:44:06Z",
+    "updatedAt": "2026-07-08T05:58:44Z",
+    "headSha": "ebcf3d5455a09ebccbcf4c6e32f104e2a2988432"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Confirmamos que todos los proyectos Vercel de Supply que desplegarán este `buildCommand` tienen `EXPO_PUBLIC_DEFAULT_HOST` y `EXPO_PUBLIC_DEFAULT_LANGUAGE` configuradas antes de mergear?",
+  "rationale": "El cambio arregla el sitemap incorrecto, pero convierte la falta de configuración externa en fallo de build; esa comprobación vive fuera del diff y necesita señal operativa/mantenedor.",
+  "options": [
+    {
+      "title": "Verificar env vars y mergear",
+      "body": "Confirmar las variables en los proyectos Supply de Vercel y mergear el PR si CI y revisión se mantienen verdes.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el fail-closed sin comprobación adicional",
+      "body": "Asumir que la configuración externa ya está correcta y aceptar el riesgo de que un deploy regional falle si falta una variable.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar y documentar matriz de proyectos",
+      "body": "Bloquear el merge hasta tener una lista explícita de proyectos Supply y valores esperados por entorno.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar env vars y mergear",
+    "body": "Confirmar las variables en los proyectos Supply de Vercel y mergear el PR si CI y revisión se mantienen verdes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está solicitado como revisor del PR y aparece como principal señal reciente del área Supply en el historial y la issue relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7203.md",
+    "reviewedAt": "2026-07-08T20:59:10.645Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}
