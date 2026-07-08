@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:50:05.841Z",
-  "updatedAt": "2026-07-07T11:09:32Z",
+  "generatedAt": "2026-07-08T04:03:07.632Z",
+  "updatedAt": "2026-07-08T03:45:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,37 +18,42 @@
       "hackathon"
     ],
     "createdAt": "2026-07-07T09:14:32Z",
-    "updatedAt": "2026-07-07T11:09:32Z"
+    "updatedAt": "2026-07-08T03:45:39Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Should the Coupons & Promotions BL block continue as the owner-approved 28-rule spin through F2, or should maintainers split it before F3/F4?",
-  "rationale": "Automation cannot validate the business wording or override the owner-approved block size; F2 is explicitly human-blocking in the BL pipeline.",
+  "question": "Should MiguelHamelyn complete F2 for the current 28-rule Coupons & Promotions block and then publish the single BL PR, or should the block be split before F3/F4?",
+  "rationale": "The repo's BL pipeline makes owner validation blocking, and automation cannot validate the business rule text or decide whether the accepted oversized block should proceed unchanged.",
   "options": [
     {
-      "title": "Continue the 28-rule F2 block",
-      "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
+      "title": "Complete F2 on the current block",
+      "body": "MiguelHamelyn validates flags and all 28 rules in bulk, then the existing branch can proceed to F3/F4 and a single BL PR.",
       "recommended": true
     },
     {
-      "title": "Split before isolation",
-      "body": "Break the block into smaller sub-blocks if reviewer load is too high, at the cost of revisiting the owner’s stated grouping decision.",
+      "title": "Split before implementation",
+      "body": "Maintainers split the 28 rules into smaller blocks before isolation/tests to reduce review size, at the cost of reworking the current F1 output.",
+      "recommended": false
+    },
+    {
+      "title": "Defer the BL block",
+      "body": "Leave the mother issue open but pause F2/F3/F4 until the Coupons & Promotions ownership or review bandwidth is clearer.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continue the 28-rule F2 block",
-    "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
+    "title": "Complete F2 on the current block",
+    "body": "MiguelHamelyn validates flags and all 28 rules in bulk, then the existing branch can proceed to F3/F4 and a single BL PR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "He is the assigned owner, confirmed F0/F1, and is the named blocker for F2 validation.",
+    "reason": "He is the assigned block owner and already confirmed the F0 boundary decision for this issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7103.md",
-    "reviewedAt": "2026-07-08T03:50:05.841Z",
+    "reviewedAt": "2026-07-08T04:03:07.632Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

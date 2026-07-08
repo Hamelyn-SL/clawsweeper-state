@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T04:03:37.643Z",
+  "updatedAt": "2026-07-08T03:45:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7097,
+    "title": "BL-buying-account-14: address/collect-method update by index skips range validation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7097",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:done",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T08:13:13Z",
+    "updatedAt": "2026-07-08T03:45:15Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should the range-guard fix wait for the BL-buying-account extraction PR to land, or should a fix PR add the missing BL-14 artifact now?",
+  "rationale": "The runtime bug is clear, but the issue explicitly requires updating BL-14 spec/test files that are still owned by an open, conflicting BL extraction PR rather than current dev.",
+  "options": [
+    {
+      "title": "Wait for BL PR, then fix",
+      "body": "Repair and land the BL extraction PR first, then apply this small behavior fix against the completed BL artifact set.",
+      "recommended": true
+    },
+    {
+      "title": "Fix now with BL-14 artifacts",
+      "body": "Open a targeted fix PR that adds the missing BL-14 spec/test plus the repository guards, accepting possible conflicts with the open BL extraction PR.",
+      "recommended": false
+    },
+    {
+      "title": "Fold into BL PR",
+      "body": "Change the open BL extraction PR to include the behavior fix, trading speed for a departure from the BL pipeline's no-behavior-change rule.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Wait for BL PR, then fix",
+    "body": "Repair and land the BL extraction PR first, then apply this small behavior fix against the completed BL artifact set.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn is the named Seller Account BL owner and already reviewed the related extraction PR, so this sequencing choice is closest to that ownership boundary.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7097.md",
+    "reviewedAt": "2026-07-08T04:03:37.643Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
