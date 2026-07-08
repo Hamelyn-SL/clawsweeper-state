@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:56:37.040Z",
+  "generatedAt": "2026-07-08T04:12:11.821Z",
   "updatedAt": "2026-07-08T03:45:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,38 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the Product Page block continue through F1/F2 now with MiguelHamelyn validating all rules and flags before any F3/F4 isolation?",
-  "rationale": "The repository BL process makes owner validation of each business rule a blocking human step, and current `dev` has no Product Page BL artifacts yet.",
+  "question": "Should the Ecommerce Product Page BL block continue as one assigned F1-F5 block, or should maintainers rescope it if F1 produces more rules than the healthy BL block size?",
+  "rationale": "The BL workflow requires owner validation of every Product Page business statement before isolation/tests, and automation cannot choose the validated business contract.",
   "options": [
     {
-      "title": "Continue F1/F2 first",
-      "body": "MiguelHamelyn validates the extracted Product Page rules and flags, then the implementer isolates and tests only validated behavior while leaving divergences in linked issues.",
+      "title": "Proceed as assigned",
+      "body": "MiguelHamelyn continues F1/F2 for this Product Page block and opens one BL PR after validation.",
       "recommended": true
     },
     {
-      "title": "Split the block",
-      "body": "If extraction confirms the block is larger than a healthy BL spin, the owner should split it into smaller Product Page sub-blocks before isolation.",
-      "recommended": false
-    },
-    {
-      "title": "Pause behind divergences",
-      "body": "The team can wait for the open Product Page divergence issues to settle before validating final BL specs, at the cost of delaying the mother block.",
+      "title": "Rescope after F1",
+      "body": "If extraction exceeds the healthy block size, the owner should split or merge subdomains before F3/F4.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continue F1/F2 first",
-    "body": "MiguelHamelyn validates the extracted Product Page rules and flags, then the implementer isolates and tests only validated behavior while leaving divergences in linked issues.",
+    "title": "Proceed as assigned",
+    "body": "MiguelHamelyn continues F1/F2 for this Product Page block and opens one BL PR after validation.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "They are the named owner and current assignee, and they have recent Product Page implementation history.",
+    "reason": "He is the assigned issue owner and the recent Product Page implementation owner in git history.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7106.md",
-    "reviewedAt": "2026-07-08T03:56:37.040Z",
+    "reviewedAt": "2026-07-08T04:12:11.821Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
