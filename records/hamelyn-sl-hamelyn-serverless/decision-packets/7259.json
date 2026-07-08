@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T21:21:04.585Z",
+  "updatedAt": "2026-07-08T20:53:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7259,
+    "title": "fix: persist alibris inventory export audit",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7259",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-08T20:44:01Z",
+    "updatedAt": "2026-07-08T20:53:15Z",
+    "headSha": "4abd883df2e31cca51265b4b3b248a98890d26d9"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Aceptamos que el export de Alibris falle la Action si el upload fue correcto pero no se pudo persistir `config/alibrisInventoryExportAudit`, y que los dry-runs escriban audit en Mongo?",
+  "rationale": "La rama cambia la semántica operativa de un job de producción: añade escritura persistente en cada run y convierte el audit en condición de éxito del job, algo que CI y self-test no validan por sí solos.",
+  "options": [
+    {
+      "title": "Aceptar fail-closed con prueba real",
+      "body": "Mantener la semántica del PR, pero exigir evidencia redaccionada de escritura del audit antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener upload como éxito si falla audit",
+      "body": "Cambiar el comportamiento para que un fallo de audit alerte pero no convierta en fallido un upload ya completado.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer hasta definir el watcher",
+      "body": "Pausar el PR hasta confirmar exactamente cómo el watcher leerá `data.lastRun` y `data.lastSuccessfulUpload`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar fail-closed con prueba real",
+    "body": "Mantener la semántica del PR, pero exigir evidencia redaccionada de escritura del audit antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el flujo Alibris y reportó el hueco de frescura que este PR intenta cerrar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7259.md",
+    "reviewedAt": "2026-07-08T21:21:04.585Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}
