@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:18:55.046Z",
+  "generatedAt": "2026-07-08T15:23:40.838Z",
   "updatedAt": "2026-07-08T10:50:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,51 +17,49 @@
       "business-logic",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "P2",
       "impact:security",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
     "updatedAt": "2026-07-08T10:50:44Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe resolverse primero como servicio compartido de cálculo de envío para checkout y cupones, o como parche acotado del endpoint de cupones?",
-  "rationale": "El límite de confianza está claro, pero el arreglo toca una frontera de seguridad de importes y se solapa con el bug más amplio de checkout; hace falta decidir secuencia y propiedad antes de encolar otro fix grande.",
+  "question": "¿Debe resolverse primero este límite de confianza con un recálculo server-side acotado al endpoint de cupones, o debe aterrizar junto con el cálculo compartido de envío/total del checkout de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920?",
+  "rationale": "La vulnerabilidad concreta está clara, pero el arreglo anterior ya fue grande y se solapa con el límite de pago de checkout, así que la automatización no debería escoger sola la secuencia ni la frontera del servicio compartido.",
   "options": [
     {
-      "title": "Servicio compartido primero",
-      "body": "Centralizar el cálculo server-side y conectar tanto checkout como prevalidación de cupones reduce divergencias entre límites de confianza.",
+      "title": "Compartir cálculo con checkout primero",
+      "body": "Construir el cálculo de envío común y conectar tanto checkout como prevalidación de cupones reduce duplicación y deriva entre ambos límites de confianza.",
       "recommended": true
     },
     {
-      "title": "Parche acotado de cupones",
-      "body": "Corregir ya el endpoint de cupones con destino y prioridad reduce este riesgo antes, pero deja la validación de checkout para otro trabajo coordinado.",
+      "title": "Parchear cupones primero",
+      "body": "Corregir ahora solo el endpoint de cupones reduce antes el riesgo de prevalidación, pero deja pendiente coordinar el mismo cálculo con checkout.",
       "recommended": false
     },
     {
-      "title": "Esperar a la PR BL",
-      "body": "Aterrizar primero la extracción BL puede dar tests y specs, pero retrasa el cierre del bug de comportamiento.",
+      "title": "Esperar al bloque BL de cupones",
+      "body": "Aplazar el arreglo hasta que la PR BL de cupones se estabilice puede mejorar trazabilidad, pero retrasa el cierre de un bug de seguridad confirmado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Servicio compartido primero",
-    "body": "Centralizar el cálculo server-side y conectar tanto checkout como prevalidación de cupones reduce divergencias entre límites de confianza.",
+    "title": "Compartir cálculo con checkout primero",
+    "body": "Construir el cálculo de envío común y conectar tanto checkout como prevalidación de cupones reduce duplicación y deriva entre ambos límites de confianza.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Figura como owner del bloque Coupons & Promotions y la issue ya está asignada a él.",
+    "reason": "Es el owner asignado del bloque de cupones y quien mejor puede coordinar la frontera con checkout y BL.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4916361005",
-    "reviewedAt": "2026-07-08T15:18:55.046Z",
+    "reviewedAt": "2026-07-08T15:23:40.838Z",
     "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }

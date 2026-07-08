@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:20:20.835Z",
+  "generatedAt": "2026-07-08T15:23:54.865Z",
   "updatedAt": "2026-07-08T13:53:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,10 +11,9 @@
     "state": "open",
     "labels": [
       "size/M",
-      "rating: 🦐 gold shrimp",
-      "status: 📣 needs proof",
       "P3",
-      "merge-risk: 🚨 other"
+      "rating: 🦐 gold shrimp",
+      "status: 📣 needs proof"
     ],
     "createdAt": "2026-07-07T12:35:59Z",
     "updatedAt": "2026-07-08T13:53:23Z",
@@ -22,39 +21,38 @@
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el arreglo canónico conservar pendientes las solicitudes de productos eliminados tras el alta, como documenta esta PR, o cerrar esas filas en el cron como propone https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198?",
-  "rationale": "Ambas PRs resuelven la misma divergencia de BL pero fijan comportamientos distintos para productos que pueden volver al catálogo, y la automatización no debería escoger esa política de negocio.",
+  "question": "¿Debe el arreglo canónico para las alertas de disponibilidad limitarse a rechazar nuevas altas sin producto, preservando pendientes las solicitudes de productos eliminados, o debe marcar también esas filas como notificadas en el cron como propone https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198?",
+  "rationale": "Las dos PRs abiertas resuelven el mismo issue con políticas de negocio distintas para productos que desaparecen después del alta, y la decisión afecta a si una alerta puede sobrevivir hasta que el producto vuelva al catálogo.",
   "options": [
     {
-      "title": "Preservar pendientes tras eliminación",
-      "body": "Retargetear esta vía, corregir la spec a Zod, añadir prueba real y cerrar o ajustar la PR solapada para no cerrar esas filas en el cron.",
+      "title": "Confirmar la vía de alta solamente",
+      "body": "Mantiene vivas las solicitudes existentes si el producto vuelve, pero acepta que los huérfanos históricos sigan suponiendo una consulta diaria adicional.",
       "recommended": true
     },
     {
-      "title": "Adoptar cierre en cron",
-      "body": "Usar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198 como vía canónica si el owner acepta que las solicitudes de productos eliminados sean terminales.",
+      "title": "Adoptar la limpieza en cron",
+      "body": "Cierra también los huérfanos históricos y de producto eliminado, pero descarta esos avisos si el producto reaparece más tarde.",
       "recommended": false
     },
     {
       "title": "Pausar ambas PRs",
-      "body": "Mantener ambas en espera hasta que el owner confirme explícitamente la política de retención para productos retirados.",
+      "body": "Evita cerrar el issue con una política implícita hasta que el owner de BL deje una decisión visible en el hilo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar pendientes tras eliminación",
-    "body": "Retargetear esta vía, corregir la spec a Zod, añadir prueba real y cerrar o ajustar la PR solapada para no cerrar esas filas en el cron.",
+    "title": "Confirmar la vía de alta solamente",
+    "body": "Mantiene vivas las solicitudes existentes si el producto vuelve, pero acepta que los huérfanos históricos sigan suponiendo una consulta diaria adicional.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el revisor solicitado y el contribuidor reciente que tocó la misma ruta durante la migración a Zod.",
-    "confidence": "medium"
+    "reason": "Es el reviewer solicitado en esta PR y tiene historial reciente directo en la ruta que ahora se modifica.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7143.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143#issuecomment-4916362995",
-    "reviewedAt": "2026-07-08T15:20:20.835Z",
+    "reviewedAt": "2026-07-08T15:23:54.865Z",
     "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }
