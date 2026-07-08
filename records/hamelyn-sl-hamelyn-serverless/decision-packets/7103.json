@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T04:05:53.199Z",
-  "updatedAt": "2026-07-08T03:45:39Z",
+  "generatedAt": "2026-07-08T03:50:05.841Z",
+  "updatedAt": "2026-07-07T11:09:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,46 @@
       "feature",
       "triage:done",
       "business-logic",
-      "hackathon"
+      "hackathon",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-07T09:14:32Z",
-    "updatedAt": "2026-07-08T03:45:39Z"
+    "updatedAt": "2026-07-07T11:09:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the Coupons & Promotions BL block continue as the owner-approved 28-rule F2 bulk review before any F3/F4 implementation?",
-  "rationale": "The BL pipeline intentionally makes business-rule validation a human owner decision; current source inspection cannot decide which draft rules are valid business truth.",
+  "question": "Should the Coupons & Promotions BL block continue as the owner-approved 28-rule spin through F2, or should maintainers split it before F3/F4?",
+  "rationale": "Automation cannot validate the business wording or override the owner-approved block size; F2 is explicitly human-blocking in the BL pipeline.",
   "options": [
     {
       "title": "Continue the 28-rule F2 block",
-      "body": "MiguelHamelyn validates flags first and then all 28 draft rules before any isolation or tests proceed.",
+      "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
       "recommended": true
     },
     {
-      "title": "Split the block before F2 completion",
-      "body": "Maintainers reduce review size but must update the mother issue and branch plan before any implementation work continues.",
-      "recommended": false
-    },
-    {
-      "title": "Pause until specs are publishable",
-      "body": "The local draft branch or draft PR is made visible first so reviewers can inspect the F1 output before F2 resumes.",
+      "title": "Split before isolation",
+      "body": "Break the block into smaller sub-blocks if reviewer load is too high, at the cost of revisiting the owner’s stated grouping decision.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Continue the 28-rule F2 block",
-    "body": "MiguelHamelyn validates flags first and then all 28 draft rules before any isolation or tests proceed.",
+    "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "He is the named owner, assignee, and author of the main merged coupon feature history.",
+    "reason": "He is the assigned owner, confirmed F0/F1, and is the named blocker for F2 validation.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7103.md",
-    "reviewedAt": "2026-07-08T04:05:53.199Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7103#issuecomment-4911292118",
+    "reviewedAt": "2026-07-08T03:50:05.841Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
