@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:22:06.477Z",
-  "updatedAt": "2026-07-07T21:46:29Z",
+  "generatedAt": "2026-07-08T09:23:36.165Z",
+  "updatedAt": "2026-07-08T09:14:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,42 +16,42 @@
       "triage:done"
     ],
     "createdAt": "2026-07-07T21:34:11Z",
-    "updatedAt": "2026-07-07T21:46:29Z"
+    "updatedAt": "2026-07-08T09:14:36Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the CDL fix first verify live Mirakl offer state before deleting local mk docs, seed orphan rows from snapshots, or do both in one operational reconciliation?",
-  "rationale": "The code fix and the existing orphan cleanup affect external marketplace state and production data at batch scale, so maintainers need to choose the rollout and rate-limit posture before automation writes a patch.",
+  "question": "For CDL live offers whose stock is already `WITHDRAWN` and whose `mk_casaDelLibro` row is absent, should the marketplace team prefer live Mirakl verification before local deletion, snapshot-based rehydration, or one-time cleanup plus a narrower code guard?",
+  "rationale": "The code defect is clear, but the production-safe fix can touch hundreds of marketplace rows and needs an operational choice about Mirakl rate limits, duplicate withdrawals, and bulk correction.",
   "options": [
     {
-      "title": "Verify then reconcile",
-      "body": "Keep withdrawn batch docs retryable until Mirakl confirms inactive state, and add a controlled reconciliation for already-orphaned live offers.",
+      "title": "Live verification before deletion",
+      "body": "Keep local rows retryable until Mirakl proves the offer is inactive, reducing future orphaned offers at the cost of extra API calls.",
       "recommended": true
     },
     {
-      "title": "Rehydrate orphans first",
-      "body": "Seed safe mk_casaDelLibro rows from fresh CDL snapshots so the existing withdraw cron can process them, leaving batch deletion hardening for a second change.",
+      "title": "Snapshot rehydration recovery",
+      "body": "Use `cdl_listings` snapshots to recreate minimal retryable rows for active withdrawn SKUs, with strict dry-run controls.",
       "recommended": false
     },
     {
-      "title": "Manual cleanup only",
-      "body": "Run an operational correction outside the code path and keep the code hardening as a separate marketplace task.",
+      "title": "One-time cleanup first",
+      "body": "Retire the current orphaned offers operationally before changing batch semantics, reducing immediate oversell risk but leaving recurrence possible until code changes land.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verify then reconcile",
-    "body": "Keep withdrawn batch docs retryable until Mirakl confirms inactive state, and add a controlled reconciliation for already-orphaned live offers.",
+    "title": "Live verification before deletion",
+    "body": "Keep local rows retryable until Mirakl proves the offer is inactive, reducing future orphaned offers at the cost of extra API calls.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Javier has the freshest Casa del Libro API touch plus the live operational context for this exact report.",
+    "reason": "He provided the CDL production evidence and has recent history in the Casa del Libro marketplace API area.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7177.md",
-    "reviewedAt": "2026-07-08T09:22:06.477Z",
-    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+    "reviewedAt": "2026-07-08T09:23:36.165Z",
+    "mainSha": "c9a20cd1c5fd8faded07fb9eae57516cc2f49d3e"
   }
 }

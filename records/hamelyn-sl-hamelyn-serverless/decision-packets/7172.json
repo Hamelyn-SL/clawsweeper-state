@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:21:22.999Z",
-  "updatedAt": "2026-07-07T21:29:07Z",
+  "generatedAt": "2026-07-08T09:22:11.730Z",
+  "updatedAt": "2026-07-08T09:16:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,42 +16,42 @@
       "triage:done"
     ],
     "createdAt": "2026-07-07T20:13:50Z",
-    "updatedAt": "2026-07-07T21:29:07Z"
+    "updatedAt": "2026-07-08T09:16:07Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "Should marketplace/data approve an AbeBooks reverse recovery that seeds only verified live `stockStatus=WITHDRAWN` book listings missing `mk_abebooks`, or require live API verification before any row rehydration?",
-  "rationale": "The fix involves external marketplace state and a mass data mutation, so repository policy requires human approval of scope and proof before execution.",
+  "question": "Should AbeBooks orphan withdrawal recovery rehydrate safe `mk_abebooks` rows for the existing withdraw cron, or send a direct AbeBooks close/quantity-zero job from the live snapshot?",
+  "rationale": "Both routes can fix the live-listing gap, but they mutate production marketplace state for more than 10 listings and the repo policy requires a dry-run, samples, and human confirmation before that operational choice.",
   "options": [
     {
-      "title": "Dry-run seed-and-withdraw",
-      "body": "Run a dry-run with exact count, three samples, and literal filter for the withdrawn-book subset, then seed minimal `mk_abebooks` rows and let the withdraw cron process them.",
+      "title": "Rehydrate safe mk rows first",
+      "body": "Build a dry-run reverse recovery that seeds only proven live, withdrawn book rows as `mk_abebooks` entries and lets the existing withdraw cron remove them.",
       "recommended": true
     },
     {
-      "title": "Verify every candidate live first",
-      "body": "Add an AbeBooks live/API verification step before seeding rows, reducing false positives at the cost of more implementation and rate-limit risk.",
+      "title": "Direct external close job",
+      "body": "Use the snapshot/API evidence to send a dedicated AbeBooks close or quantity-zero operation without creating local mk rows first.",
       "recommended": false
     },
     {
-      "title": "Fold into broader orphan-row program",
-      "body": "Route this through a multi-marketplace orphan-listing reconciliation effort with eBay/CDL/MercadoLibre instead of a provider-specific fix.",
+      "title": "Manual seed only",
+      "body": "Handle the current cohort manually and defer a reusable recovery path, reducing code scope but leaving the systemic gap open.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dry-run seed-and-withdraw",
-    "body": "Run a dry-run with exact count, three samples, and literal filter for the withdrawn-book subset, then seed minimal `mk_abebooks` rows and let the withdraw cron process them.",
+    "title": "Rehydrate safe mk rows first",
+    "body": "Build a dry-run reverse recovery that seeds only proven live, withdrawn book rows as `mk_abebooks` entries and lets the existing withdraw cron remove them.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Javier has the strongest operational evidence trail for this AbeBooks report and recent AbeBooks withdraw logging history.",
+    "reason": "Javier has the strongest AbeBooks-specific withdraw history and recent raw withdraw logging context for choosing the operational recovery route.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7172.md",
-    "reviewedAt": "2026-07-08T09:21:22.999Z",
-    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+    "reviewedAt": "2026-07-08T09:22:11.730Z",
+    "mainSha": "c9a20cd1c5fd8faded07fb9eae57516cc2f49d3e"
   }
 }
