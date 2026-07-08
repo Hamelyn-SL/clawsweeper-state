@@ -18,11 +18,12 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
+      "clawsweeper:needs-security-review",
+      "P2",
       "impact:security",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
     "updatedAt": "2026-07-08T15:38:12Z"
@@ -60,6 +61,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4913339931",
     "reviewedAt": "2026-07-08T16:35:36.716Z",
     "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
