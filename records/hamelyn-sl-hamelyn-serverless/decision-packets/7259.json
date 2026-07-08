@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T21:21:04.585Z",
+  "generatedAt": "2026-07-08T21:20:53.656Z",
   "updatedAt": "2026-07-08T20:53:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,11 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7259",
     "state": "open",
     "labels": [
-      "size/L",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 availability"
+      "size/L"
     ],
     "createdAt": "2026-07-08T20:44:01Z",
     "updatedAt": "2026-07-08T20:53:15Z",
@@ -22,39 +18,38 @@
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Aceptamos que el export de Alibris falle la Action si el upload fue correcto pero no se pudo persistir `config/alibrisInventoryExportAudit`, y que los dry-runs escriban audit en Mongo?",
-  "rationale": "La rama cambia la semántica operativa de un job de producción: añade escritura persistente en cada run y convierte el audit en condición de éxito del job, algo que CI y self-test no validan por sí solos.",
+  "question": "¿Aceptamos que el export diario falle con exit code `3` cuando el upload termina bien pero no se puede escribir el audit en Mongo?",
+  "rationale": "Es una decisión operativa: mejora la visibilidad del watcher, pero también puede convertir un upload correcto en una Action fallida y cambiar el significado de dry-run.",
   "options": [
     {
-      "title": "Aceptar fail-closed con prueba real",
-      "body": "Mantener la semántica del PR, pero exigir evidencia redaccionada de escritura del audit antes de mergear.",
+      "title": "Mantener fail-closed con prueba real",
+      "body": "Exigir evidencia redacted del documento de audit y aceptar que sin audit persistido el job debe fallar para que el watcher no lea frescura falsa.",
       "recommended": true
     },
     {
-      "title": "Mantener upload como éxito si falla audit",
-      "body": "Cambiar el comportamiento para que un fallo de audit alerte pero no convierta en fallido un upload ya completado.",
+      "title": "Hacer el audit best-effort",
+      "body": "Permitir que el upload correcto devuelva éxito aunque falle la escritura del audit, a cambio de que el watcher pueda quedarse sin señal persistida.",
       "recommended": false
     },
     {
-      "title": "Posponer hasta definir el watcher",
-      "body": "Pausar el PR hasta confirmar exactamente cómo el watcher leerá `data.lastRun` y `data.lastSuccessfulUpload`.",
+      "title": "Pausar hasta revisión operativa",
+      "body": "Esperar a que la persona dueña del canal Alibris confirme la semántica de dry-run y el impacto de exit code `3`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar fail-closed con prueba real",
-    "body": "Mantener la semántica del PR, pero exigir evidencia redaccionada de escritura del audit antes de mergear.",
+    "title": "Mantener fail-closed con prueba real",
+    "body": "Exigir evidencia redacted del documento de audit y aceptar que sin audit persistido el job debe fallar para que el watcher no lea frescura falsa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo el flujo Alibris y reportó el hueco de frescura que este PR intenta cerrar.",
+    "reason": "Es la señal de historia más fuerte para el flujo de inventario Alibris y sus guardas operativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7259.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7259#issuecomment-4919333077",
-    "reviewedAt": "2026-07-08T21:21:04.585Z",
+    "reviewedAt": "2026-07-08T21:20:53.656Z",
     "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

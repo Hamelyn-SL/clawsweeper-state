@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T21:20:52.239Z",
+  "updatedAt": "2026-07-08T19:39:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7255,
+    "title": "fix: requeue amazon price mismatch updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7255",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-08T19:29:26Z",
+    "updatedAt": "2026-07-08T19:39:40Z",
+    "headSha": "ad220e7dfda3a437acd93e933032e404c62feecf"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Aceptamos que `PRICE_MISMATCH` se limpie cuando se envía el feed batch de precio, antes de la confirmación posterior de Amazon?",
+  "rationale": "La dirección del fix resuelve la cola atascada, pero la semántica de limpieza cambia el estado persistido de miles de listings y puede ocultar temporalmente drift no aplicado.",
+  "options": [
+    {
+      "title": "Aceptar limpieza al submit",
+      "body": "Mergear el PR tal como está, asumiendo que el watcher de snapshots es la fuente que reabre el mismatch si Amazon no aplica el feed.",
+      "recommended": true
+    },
+    {
+      "title": "Limpiar solo con confirmación",
+      "body": "Pedir que la limpieza de `PRICE_MISMATCH` se mueva al punto donde se confirme el resultado del feed, aunque el fix tarde más en aterrizar.",
+      "recommended": false
+    },
+    {
+      "title": "Aterrizar solo la reencolación",
+      "body": "Separar la inclusión en la cola de precio de la limpieza del error y dejar la política de limpieza para una PR posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar limpieza al submit",
+    "body": "Mergear el PR tal como está, asumiendo que el watcher de snapshots es la fuente que reabre el mismatch si Amazon no aplica el feed.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Está solicitado como reviewer del PR y tiene señal reciente en updates de precio de marketplaces.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7255.md",
+    "reviewedAt": "2026-07-08T21:20:52.239Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}
