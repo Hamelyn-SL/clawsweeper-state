@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T08:48:12.317Z",
-  "updatedAt": "2026-07-07T10:26:30Z",
+  "generatedAt": "2026-07-08T14:47:31.469Z",
+  "updatedAt": "2026-07-08T13:35:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,53 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:done",
       "business-logic",
       "hackathon",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T09:15:04Z",
-    "updatedAt": "2026-07-07T10:26:30Z"
+    "updatedAt": "2026-07-08T13:35:07Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "Should danielmenchen-hamelyn validate the extracted Ecommerce Authors rules and sitemap flag before any isolation/tests proceed?",
-  "rationale": "The Hamelyn BL pipeline makes F2 owner validation blocking, and this issue has live code plus at least one flagged behavior question that automation should not decide alone.",
+  "question": "¿Debe aceptarse https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7245 como cumplimiento del pipeline F1-F5 de Ecommerce Authors?",
+  "rationale": "El cierre depende de una revisión humana del bloque BL y del PR abierto; la automatización no debe cerrar el issue mientras el PR candidato no esté mergeado.",
   "options": [
     {
-      "title": "Run owner-led F2 first",
-      "body": "Extract the draft specs, resolve all flags with the named owner, then proceed to isolation and tests only for validated rules.",
+      "title": "Revisar y mergear el PR candidato",
+      "body": "Si el reviewer valida que las specs, funciones y tests respetan el comportamiento actual, el PR debería aterrizar y cerrar este issue.",
       "recommended": true
     },
     {
-      "title": "Defer the block",
-      "body": "Keep the issue open but leave the Authors block queued until higher-priority Ecommerce BL areas finish.",
+      "title": "Pedir cambios en el PR candidato",
+      "body": "Si falta alguna regla, prueba o validación de owner, mantener este issue abierto y pedir ajustes en el PR existente.",
       "recommended": false
     },
     {
-      "title": "Narrow the scope",
-      "body": "Limit this issue to the author detail page rules and open a separate issue for sitemap behavior if the owner treats it as SEO scope.",
+      "title": "Replantear el bloque",
+      "body": "Si el PR no representa el alcance acordado, mantener este issue abierto y sustituirlo por una extracción más acotada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Run owner-led F2 first",
-    "body": "Extract the draft specs, resolve all flags with the named owner, then proceed to isolation and tests only for validated rules.",
+    "title": "Revisar y mergear el PR candidato",
+    "body": "Si el reviewer valida que las specs, funciones y tests respetan el comportamiento actual, el PR debería aterrizar y cerrar este issue.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "They are the named owner and current assignee for the BL block.",
-    "confidence": "high"
+    "person": "PabloMoran34",
+    "reason": "Es el reviewer nombrado en el issue y el reviewer solicitado en el PR candidato.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7110.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7110#issuecomment-4913163178",
-    "reviewedAt": "2026-07-08T08:48:12.317Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T14:47:31.469Z",
+    "mainSha": "67b565af615e40c42050f54c8bed15ddf24089cd"
   }
 }
