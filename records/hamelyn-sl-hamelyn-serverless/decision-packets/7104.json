@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:27:39.280Z",
-  "updatedAt": "2026-07-08T10:33:00Z",
+  "generatedAt": "2026-07-08T15:43:44.422Z",
+  "updatedAt": "2026-07-08T15:38:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,52 @@
       "feature",
       "business-logic",
       "hackathon",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T09:14:36Z",
-    "updatedAt": "2026-07-08T10:33:00Z"
+    "updatedAt": "2026-07-08T15:38:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152 como implementación F1-F5 del bloque BL de SEO de Ecommerce, o debe dividirse/replantearse antes de fusionarse?",
-  "rationale": "La issue exige validación de owner en F2 y la PR candidata expande el barrido estimado a 65 reglas y 84 ficheros cambiados, así que la decisión de alcance y aceptación corresponde al responsable/reviewer del bloque.",
+  "question": "¿Debe aceptarse https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152 como implementación F1-F5 del bloque BL de SEO de Ecommerce, o debe dividirse/acotarse antes de mergear?",
+  "rationale": "La PR candidata implementa el objetivo, pero transforma una estimación de unas seis reglas en 65 reglas y 84 ficheros tocados; esa decisión de alcance y validación F2 no puede resolverla una limpieza automática.",
   "options": [
     {
       "title": "Revisar e integrar la PR candidata",
-      "body": "Aceptar la división en subsubdominios si las 65 specs, las funciones aisladas y los tests cumplen la definición de done del pipeline BL.",
+      "body": "Aceptar la división en subdominios SEO si owner y reviewer confirman que las specs, funciones y tests cumplen la definición de terminado.",
       "recommended": true
     },
     {
-      "title": "Acotar o dividir el bloque",
-      "body": "Pedir una división en PRs más pequeñas si el alcance actual es demasiado grande para revisar con seguridad.",
+      "title": "Pedir división o recorte",
+      "body": "Mantener esta issue abierta y solicitar PRs más pequeñas si el bloque completo no es revisable con seguridad en una sola fusión.",
       "recommended": false
     },
     {
-      "title": "Replantear la implementación",
-      "body": "Mantener esta issue como padre y cerrar o rehacer la PR si la validación del owner decide otra frontera para SEO.",
+      "title": "Reiniciar el bloque",
+      "body": "Cerrar o sustituir la PR candidata si la validación F2 o el límite del subdominio necesitan replantearse.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Revisar e integrar la PR candidata",
-    "body": "Aceptar la división en subsubdominios si las 65 specs, las funciones aisladas y los tests cumplen la definición de done del pipeline BL.",
+    "body": "Aceptar la división en subdominios SEO si owner y reviewer confirman que las specs, funciones y tests cumplen la definición de terminado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el owner nombrado, assignee actual y autor de la PR candidata de cierre.",
+    "reason": "Es el owner nombrado, assignee actual y autor de la PR candidata que cierra la issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7104.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7104#issuecomment-4916442516",
-    "reviewedAt": "2026-07-08T15:27:39.280Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-08T15:43:44.422Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }
