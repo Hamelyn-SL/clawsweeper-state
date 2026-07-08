@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:57:14.651Z",
+  "updatedAt": "2026-07-08T03:46:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7105,
+    "title": "BL-ecommerce-catalog: Public Catalog — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7105",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-07T09:14:41Z",
+    "updatedAt": "2026-07-08T03:46:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the Public Catalog BL block proceed with the corrected F1 inventory, and should `constants/categories/SEO` be validated here or moved to the Ecommerce SEO BL block?",
+  "rationale": "The BL pipeline makes owner validation blocking, and the current issue discussion already identifies scope facts and a SEO/catalog boundary that cannot be safely settled by source inspection alone.",
+  "options": [
+    {
+      "title": "Proceed with corrected Public Catalog F1/F2",
+      "body": "Validate the current 30-item page size, unconditional 15-item availability batching, live filters/sorting/pagination, and decide the SEO constants boundary during owner review.",
+      "recommended": true
+    },
+    {
+      "title": "Move SEO constants to the SEO block",
+      "body": "Treat `constants/categories/SEO` as content/routing SEO unless the owner explicitly wants those rules documented under Public Catalog.",
+      "recommended": false
+    },
+    {
+      "title": "Pause until child cleanups land",
+      "body": "Review the open child PRs first, then run F1/F2 against the simplified catalog/search code to avoid documenting dead paths.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Proceed with corrected Public Catalog F1/F2",
+    "body": "Validate the current 30-item page size, unconditional 15-item availability batching, live filters/sorting/pagination, and decide the SEO constants boundary during owner review.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "They are named as the block owner, assigned to the issue, and authored the related BL child issues discovered during extraction.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7105.md",
+    "reviewedAt": "2026-07-08T03:57:14.651Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

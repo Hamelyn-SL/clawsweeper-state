@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:55:34.519Z",
+  "updatedAt": "2026-07-08T03:46:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7102,
+    "title": "BL-ecommerce-checkout: Cart & Checkout — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7102",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-07T09:14:28Z",
+    "updatedAt": "2026-07-08T03:46:22Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should AlexDiaz-Hamelyn proceed with the Cart & Checkout BL block now, and should the shipping-group boundary be kept in checkout or deferred to the related shipping/localization/order-sell blocks during F1?",
+  "rationale": "The repository BL workflow makes F2 owner validation blocking, and the current source has a known domain-boundary ambiguity that automation should not settle before writing validated specs.",
+  "options": [
+    {
+      "title": "Proceed with F1/F2 first",
+      "body": "Extract the current rules, flag the shipping-group boundary, and validate all flags and rule text with the named owner before any isolation or tests.",
+      "recommended": true
+    },
+    {
+      "title": "Narrow the block",
+      "body": "If F1 finds more than the expected rule count, split or defer only after the owner chooses the boundary rather than letting the worker repartition it.",
+      "recommended": false
+    },
+    {
+      "title": "Pause the BL block",
+      "body": "Leave the issue open but do not start extraction until checkout ownership or adjacent coupon/localization boundaries are rescheduled.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Proceed with F1/F2 first",
+    "body": "Extract the current rules, flag the shipping-group boundary, and validate all flags and rule text with the named owner before any isolation or tests.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "They are both the named BL owner in the issue body and the current assignee.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7102.md",
+    "reviewedAt": "2026-07-08T03:55:34.519Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
