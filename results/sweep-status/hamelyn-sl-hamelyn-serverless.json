@@ -3,9 +3,9 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Audit finished",
-  "detail": "Reconciled durable hamelyn-sl/hamelyn-serverless records before audit: moved 0 closed records, restored 0 reopened records, removed 0 stale archived copies. Refreshed audit state from a full live scan.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/28925416407",
+  "state": "Apply idle",
+  "detail": "No unchanged high-confidence close proposals are awaiting apply. Close candidate mix: no close candidates. Scheduled apply wakes every 15 minutes and exits without scanning unrelated keep-open records when there is no close work.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/28926830644",
   "planned_count": null,
   "planned_capacity": null,
   "planned_shards": null,
@@ -21,5 +21,5 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": null,
   "last_close_apply_health": null,
-  "updated_at": "2026-07-08T07:28:55.748Z"
+  "updated_at": "2026-07-08T07:55:23.402Z"
 }
