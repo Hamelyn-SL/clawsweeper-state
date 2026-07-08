@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:00:35.258Z",
-  "updatedAt": "2026-07-07T18:25:54Z",
+  "generatedAt": "2026-07-08T09:06:53.383Z",
+  "updatedAt": "2026-07-08T08:55:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,37 +17,42 @@
       "business-logic"
     ],
     "createdAt": "2026-07-07T12:10:45Z",
-    "updatedAt": "2026-07-07T18:25:54Z"
+    "updatedAt": "2026-07-08T08:55:49Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Should this divergence be fixed now by creating/updating the BL-ecommerce-product-06 spec and test in the fix PR, or should it wait for the Product Page BL mother issue to land those artefacts first?",
-  "rationale": "The runtime bug is clear, but the repository BL workflow expects linked spec/function/test artefacts and the specific ecommerce Product Page spec is absent from dev.",
+  "question": "Should this fallback bug be fixed now with newly added BL artifacts, or should it wait for the open Product Page BL block to land its specs/tests first?",
+  "rationale": "The runtime bug is source-confirmed, but the requested BL spec/test files are absent from dev and the repository BL workflow requires coordinated owner validation.",
   "options": [
     {
-      "title": "Fix now with BL artefacts",
-      "body": "Create or update the BL-ecommerce-product-06 spec/test in the same narrow fix PR so the behavior and rule documentation land together.",
+      "title": "Fix with BL artifacts",
+      "body": "Implement the ProductPageB/C fallback and include the matching validated BL spec/test work in the same PR or branch once the Product Page artifacts are available.",
       "recommended": true
     },
     {
-      "title": "Wait for mother BL branch",
-      "body": "Keep this issue open until the Product Page BL block provides the spec/test files, then apply the behavior fix against that structure.",
+      "title": "Code-first hotfix",
+      "body": "Land the live UI fallback first and explicitly track the BL spec/test backfill in the Product Page block.",
+      "recommended": false
+    },
+    {
+      "title": "Wait for BL block",
+      "body": "Keep this bug open until the broader Product Page BL issue produces the validated spec/test structure, accepting the current missing strikethrough in the meantime.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fix now with BL artefacts",
-    "body": "Create or update the BL-ecommerce-product-06 spec/test in the same narrow fix PR so the behavior and rule documentation land together.",
+    "title": "Fix with BL artifacts",
+    "body": "Implement the ProductPageB/C fallback and include the matching validated BL spec/test work in the same PR or branch once the Product Page artifacts are available.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is the issue reporter, named BL owner on the related Product Page block, and recent owner of the ProductPageB/C implementation history.",
+    "reason": "MiguelHamelyn is the named Product Page BL owner and the strongest recent feature-history owner for ProductPageB/C.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7130.md",
-    "reviewedAt": "2026-07-08T09:00:35.258Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T09:06:53.383Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
   }
 }
