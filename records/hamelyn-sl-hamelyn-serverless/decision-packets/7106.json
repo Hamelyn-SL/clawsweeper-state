@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T04:12:11.821Z",
+  "generatedAt": "2026-07-08T04:19:25.305Z",
   "updatedAt": "2026-07-08T03:45:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,33 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the Ecommerce Product Page BL block continue as one assigned F1-F5 block, or should maintainers rescope it if F1 produces more rules than the healthy BL block size?",
-  "rationale": "The BL workflow requires owner validation of every Product Page business statement before isolation/tests, and automation cannot choose the validated business contract.",
+  "question": "Should MiguelHamelyn continue the Product Page BL block through F1/F2 as one mother issue before any isolation/tests, or should maintainers split/defer the block?",
+  "rationale": "The repository BL process requires owner validation of the business rules before F3/F4, and the open child divergence issues make this a maintainer/owner coordination step rather than a safe autonomous fix.",
   "options": [
     {
-      "title": "Proceed as assigned",
-      "body": "MiguelHamelyn continues F1/F2 for this Product Page block and opens one BL PR after validation.",
+      "title": "Continue current BL block",
+      "body": "MiguelHamelyn validates the Product Page rules in F2, then the team lands one BL PR with specs, isolation, tests, and linked divergences.",
       "recommended": true
     },
     {
-      "title": "Rescope after F1",
-      "body": "If extraction exceeds the healthy block size, the owner should split or merge subdomains before F3/F4.",
+      "title": "Split only if F1 expands too far",
+      "body": "If extraction grows beyond the issue's expected size, the owner can split after F1 with explicit boundaries instead of letting automation choose the split.",
+      "recommended": false
+    },
+    {
+      "title": "Defer the block",
+      "body": "Maintain the current Product Page code without BL specs/tests for now, accepting that child divergence work remains less anchored.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proceed as assigned",
-    "body": "MiguelHamelyn continues F1/F2 for this Product Page block and opens one BL PR after validation.",
+    "title": "Continue current BL block",
+    "body": "MiguelHamelyn validates the Product Page rules in F2, then the team lands one BL PR with specs, isolation, tests, and linked divergences.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "He is the assigned issue owner and the recent Product Page implementation owner in git history.",
+    "reason": "The issue body names MiguelHamelyn as the Product Page BL owner and GitHub shows the issue assigned to that account.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7106.md",
-    "reviewedAt": "2026-07-08T04:12:11.821Z",
+    "reviewedAt": "2026-07-08T04:19:25.305Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
