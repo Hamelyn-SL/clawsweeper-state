@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T21:20:52.239Z",
+  "generatedAt": "2026-07-08T21:27:31.759Z",
   "updatedAt": "2026-07-08T19:39:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,12 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7255",
     "state": "open",
     "labels": [
-      "size/M",
-      "proof: sufficient",
-      "rating: 🐚 platinum hermit",
-      "status: 👀 ready for maintainer look",
-      "P2",
-      "merge-risk: 🚨 other"
+      "size/M"
     ],
     "createdAt": "2026-07-08T19:29:26Z",
     "updatedAt": "2026-07-08T19:39:40Z",
@@ -23,39 +18,33 @@
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Aceptamos que `PRICE_MISMATCH` se limpie cuando se envía el feed batch de precio, antes de la confirmación posterior de Amazon?",
-  "rationale": "La dirección del fix resuelve la cola atascada, pero la semántica de limpieza cambia el estado persistido de miles de listings y puede ocultar temporalmente drift no aplicado.",
+  "question": "¿Aceptamos que `PRICE_MISMATCH` se limpie al enviar el feed batch de Amazon, con el watcher re-marcándolo si el precio sigue descuadrado?",
+  "rationale": "La decisión afecta a la observabilidad temporal de miles de SKUs y no se puede resolver solo con tipos o lint; es una elección operativa de cuándo considerar procesado el mismatch.",
   "options": [
     {
       "title": "Aceptar limpieza al submit",
-      "body": "Mergear el PR tal como está, asumiendo que el watcher de snapshots es la fuente que reabre el mismatch si Amazon no aplica el feed.",
+      "body": "Aterriza el PR como está y se asume que el siguiente snapshot volverá a marcar los casos que Amazon no aplique.",
       "recommended": true
     },
     {
-      "title": "Limpiar solo con confirmación",
-      "body": "Pedir que la limpieza de `PRICE_MISMATCH` se mueva al punto donde se confirme el resultado del feed, aunque el fix tarde más en aterrizar.",
-      "recommended": false
-    },
-    {
-      "title": "Aterrizar solo la reencolación",
-      "body": "Separar la inclusión en la cola de precio de la limpieza del error y dejar la política de limpieza para una PR posterior.",
+      "title": "Limpiar solo tras confirmación",
+      "body": "Pediría rediseñar la limpieza para esperar evidencia posterior de Amazon, con más latencia y complejidad en el flujo batch.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar limpieza al submit",
-    "body": "Mergear el PR tal como está, asumiendo que el watcher de snapshots es la fuente que reabre el mismatch si Amazon no aplica el feed.",
+    "body": "Aterriza el PR como está y se asume que el siguiente snapshot volverá a marcar los casos que Amazon no aplique.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Está solicitado como reviewer del PR y tiene señal reciente en updates de precio de marketplaces.",
+    "reason": "Ya aparece como reviewer solicitado para esta superficie y tiene historial adyacente en price updates de marketplaces.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7255.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7255#issuecomment-4919347766",
-    "reviewedAt": "2026-07-08T21:20:52.239Z",
+    "reviewedAt": "2026-07-08T21:27:31.759Z",
     "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }
