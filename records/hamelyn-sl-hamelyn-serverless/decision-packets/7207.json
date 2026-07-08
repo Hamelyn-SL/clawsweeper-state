@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T15:11:46.670Z",
+  "updatedAt": "2026-07-08T13:54:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7207,
+    "title": "fix: expose navbar_index_link as testID on supply home tab",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7207",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-08T06:33:09Z",
+    "updatedAt": "2026-07-08T13:54:51Z",
+    "headSha": "984e368282ea35d35932f356773d4a12dfbd1dea"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Acepta el equipo Supply empaquetar credenciales E2E en la app de Device Cloud, o debe bloquearse el merge hasta mover el ROPC fuera del bundle Expo?",
+  "rationale": "El PR resuelve una parte real del E2E, pero decide una frontera de seguridad de credenciales y Auth0 que no conviene fijar por automatización.",
+  "options": [
+    {
+      "title": "Corregir antes de merge",
+      "body": "Rehacer el bootstrap para que la contraseña no viva en `EXPO_PUBLIC_*` ni en el bundle y pedir prueba real del head actual.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el riesgo E2E",
+      "body": "Fusionar asumiendo explícitamente que la cuenta de test y el secreto de cliente pueden quedar expuestos en artefactos externos de E2E.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el alcance",
+      "body": "Fusionar solo Node 22/testID/artefactos y dejar la autenticación ROPC en un PR específico para https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7242.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir antes de merge",
+    "body": "Rehacer el bootstrap para que la contraseña no viva en `EXPO_PUBLIC_*` ni en el bundle y pedir prueba real del head actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor asignado para este PR y ya aparece como punto de revisión del área Supply/E2E.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7207.md",
+    "reviewedAt": "2026-07-08T15:11:46.670Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+  }
+}

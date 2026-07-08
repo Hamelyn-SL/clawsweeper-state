@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:50:05.841Z",
-  "updatedAt": "2026-07-07T11:09:32Z",
+  "generatedAt": "2026-07-08T15:11:03.810Z",
+  "updatedAt": "2026-07-08T11:05:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,46 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:done",
       "business-logic",
       "hackathon",
-      "P2",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-07T09:14:32Z",
-    "updatedAt": "2026-07-07T11:09:32Z"
+    "updatedAt": "2026-07-08T11:05:10Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Should the Coupons & Promotions BL block continue as the owner-approved 28-rule spin through F2, or should maintainers split it before F3/F4?",
-  "rationale": "Automation cannot validate the business wording or override the owner-approved block size; F2 is explicitly human-blocking in the BL pipeline.",
+  "question": "¿Debe continuar el bloque completo de 28 reglas por https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7237 tras resolver conflictos, o conviene dividirlo antes de mergear?",
+  "rationale": "La automatización no debe decidir el tamaño final ni validar negocio de un bloque BL payment-adjacent; el owner ya lo agrupó, pero la PR sigue conflictiva y requiere revisión humana.",
   "options": [
     {
-      "title": "Continue the 28-rule F2 block",
-      "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
+      "title": "Actualizar y revisar la PR enlazada",
+      "body": "Resolver conflictos, revisar los comentarios de bots/reviewer y fusionar el bloque único si mantiene comportamiento.",
       "recommended": true
     },
     {
-      "title": "Split before isolation",
-      "body": "Break the block into smaller sub-blocks if reviewer load is too high, at the cost of revisiting the owner’s stated grouping decision.",
+      "title": "Dividir el bloque",
+      "body": "Partir las 28 reglas en bloques menores si el reviewer considera que el tamaño impide una revisión fiable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continue the 28-rule F2 block",
-    "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
+    "title": "Actualizar y revisar la PR enlazada",
+    "body": "Resolver conflictos, revisar los comentarios de bots/reviewer y fusionar el bloque único si mantiene comportamiento.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "He is the assigned owner, confirmed F0/F1, and is the named blocker for F2 validation.",
+    "reason": "Es el owner asignado del bloque y autor de la PR enlazada que debe actualizarse o dividirse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7103.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7103#issuecomment-4911292118",
-    "reviewedAt": "2026-07-08T03:50:05.841Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T15:11:03.810Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }

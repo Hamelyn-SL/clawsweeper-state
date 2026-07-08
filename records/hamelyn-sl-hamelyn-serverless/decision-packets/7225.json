@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T15:11:51.119Z",
+  "updatedAt": "2026-07-08T10:55:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7225,
+    "title": "Ecommerce: permitir a usuarios no logueados cancelar su pedido",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p2",
+      "feature",
+      "triage:done",
+      "reporter:AlexDiaz-Hamelyn"
+    ],
+    "createdAt": "2026-07-08T09:17:43Z",
+    "updatedAt": "2026-07-08T10:55:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ecommerce patrocinar ahora un autoservicio de cancelación guest con mutación pública protegida, o mantener la cancelación guest como gestión manual vía incidencia?",
+  "rationale": "La fuente confirma el hueco funcional, pero el cambio afecta UX multidioma, soporte y una mutación pública que requiere contrato de seguridad y producto antes de automatizar implementación.",
+  "options": [
+    {
+      "title": "Implementar flujo guest protegido",
+      "body": "Añadir endpoint y UI guest con validación pedido+email, rate limit, estados cancelables server-side y reutilización de la cancelación existente.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener incidencia manual",
+      "body": "Dejar el flujo actual y documentar que los guests solicitan cancelación vía incidencia hasta que se priorice autoservicio.",
+      "recommended": false
+    },
+    {
+      "title": "Hacer una fase de diseño primero",
+      "body": "Cerrar contrato UX/copy/rate-limit y después abrir una issue técnica más estrecha para implementación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Implementar flujo guest protegido",
+    "body": "Añadir endpoint y UI guest con validación pedido+email, rate limit, estados cancelables server-side y reutilización de la cancelación existente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es quien más recientemente tocó la UI de contacto donde viviría la decisión de producto y experiencia guest.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
+    "reviewedAt": "2026-07-08T15:11:51.119Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+  }
+}
