@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:14:58.897Z",
-  "updatedAt": "2026-07-08T09:04:49Z",
+  "generatedAt": "2026-07-08T09:10:12.285Z",
+  "updatedAt": "2026-07-07T16:53:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,42 +17,42 @@
       "business-logic"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
-    "updatedAt": "2026-07-08T09:04:49Z"
+    "updatedAt": "2026-07-07T16:53:36Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "Should coupon prevalidation get a standalone server-side shipping recalculation patch now, or should it be implemented together with the broader checkout amount trust-boundary work?",
-  "rationale": "Both issues depend on the same shipping-cost source of truth; choosing the sequencing and endpoint ownership is a maintainer security and domain-boundary decision, not a small mechanical cleanup.",
+  "question": "Should this coupon prevalidation fix land as a coupon-only server-side recalculation now, or be folded into the shared checkout shipping/total validation work tracked by https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920?",
+  "rationale": "The expected trust boundary is clear, but the previous correct-looking fix was size/L and overlaps with a broader payment-boundary calculation issue, so maintainers should choose the sequencing and shared-service boundary before another implementation attempt.",
   "options": [
     {
-      "title": "Share one shipping service across both fixes",
-      "body": "Build the server-side shipping calculation once and apply it to coupon prevalidation and checkout amount validation so the two trust boundaries cannot drift.",
+      "title": "Share calculation with checkout first",
+      "body": "Build the shared server-side shipping calculation once and wire both checkout validation and coupon prevalidation to it, reducing drift between the two trust boundaries.",
       "recommended": true
     },
     {
-      "title": "Patch coupon prevalidation first",
-      "body": "Keep the endpoint in admin for now and make the narrow coupon route stop accepting client amounts, accepting the risk of a near-term second shipping calculation for checkout.",
+      "title": "Patch coupon validation first",
+      "body": "Land a narrower coupon endpoint fix now using destination and priority inputs, accepting that checkout total validation will still need a coordinated follow-up.",
       "recommended": false
     },
     {
-      "title": "Wait for the BL coupon block",
-      "body": "Sequence this behind the Coupons & Promotions BL validation work, reducing churn but leaving the prevalidation trust gap open longer.",
+      "title": "Wait for BL mother issue",
+      "body": "Hold this child divergence until the Coupons & Promotions BL block publishes validated specs and tests, trading speed for stricter BL sequencing.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Share one shipping service across both fixes",
-    "body": "Build the server-side shipping calculation once and apply it to coupon prevalidation and checkout amount validation so the two trust boundaries cannot drift.",
+    "title": "Share calculation with checkout first",
+    "body": "Build the shared server-side shipping calculation once and wire both checkout validation and coupon prevalidation to it, reducing drift between the two trust boundaries.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is named as Coupons & Promotions owner and has recent checkout-area history, making him the best available owner for sequencing coupon and checkout fixes.",
+    "reason": "He is the named Coupons & Promotions BL owner and recent coupon validation contributor, so he is the best available owner for the coupon-side sequencing choice.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewedAt": "2026-07-08T09:14:58.897Z",
+    "reviewedAt": "2026-07-08T09:10:12.285Z",
     "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
   }
 }

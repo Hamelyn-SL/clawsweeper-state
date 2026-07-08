@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:21:22.999Z",
+  "updatedAt": "2026-07-07T21:29:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7172,
+    "title": "AbeBooks withdrawal recovery misses live listings when mk row is absent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7172",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-07T20:13:50Z",
+    "updatedAt": "2026-07-07T21:29:07Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should marketplace/data approve an AbeBooks reverse recovery that seeds only verified live `stockStatus=WITHDRAWN` book listings missing `mk_abebooks`, or require live API verification before any row rehydration?",
+  "rationale": "The fix involves external marketplace state and a mass data mutation, so repository policy requires human approval of scope and proof before execution.",
+  "options": [
+    {
+      "title": "Dry-run seed-and-withdraw",
+      "body": "Run a dry-run with exact count, three samples, and literal filter for the withdrawn-book subset, then seed minimal `mk_abebooks` rows and let the withdraw cron process them.",
+      "recommended": true
+    },
+    {
+      "title": "Verify every candidate live first",
+      "body": "Add an AbeBooks live/API verification step before seeding rows, reducing false positives at the cost of more implementation and rate-limit risk.",
+      "recommended": false
+    },
+    {
+      "title": "Fold into broader orphan-row program",
+      "body": "Route this through a multi-marketplace orphan-listing reconciliation effort with eBay/CDL/MercadoLibre instead of a provider-specific fix.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dry-run seed-and-withdraw",
+    "body": "Run a dry-run with exact count, three samples, and literal filter for the withdrawn-book subset, then seed minimal `mk_abebooks` rows and let the withdraw cron process them.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Javier has the strongest operational evidence trail for this AbeBooks report and recent AbeBooks withdraw logging history.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7172.md",
+    "reviewedAt": "2026-07-08T09:21:22.999Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}

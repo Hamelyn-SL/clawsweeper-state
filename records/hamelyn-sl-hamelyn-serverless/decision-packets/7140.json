@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:09:36.563Z",
+  "updatedAt": "2026-07-08T00:26:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7140,
+    "title": "BL-ecommerce-coupons: static promo banner hardcodes 5% discount copy",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7140",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p3",
+      "feature",
+      "triage:done",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T12:14:01Z",
+    "updatedAt": "2026-07-08T00:26:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "Should the ecommerce promo banner derive active offer copy from coupon data, from a dedicated editable promotion/CMS config, or remain localized static copy while only removing the unused legacy banner?",
+  "rationale": "The code can support coupon metadata, but marketing copy, locale behavior, scheduling, and ownership of live promotions are product decisions that automation should not choose implicitly.",
+  "options": [
+    {
+      "title": "Use a promotion source of truth",
+      "body": "Create or select an editable promo config/API that references the coupon and exposes localized copy plus structured discount terms to the header strip.",
+      "recommended": true
+    },
+    {
+      "title": "Derive directly from coupon documents",
+      "body": "Generate the banner from the active coupon’s `discount.kind` and locale-specific coupon mapping, reducing config duplication but limiting marketing phrasing flexibility.",
+      "recommended": false
+    },
+    {
+      "title": "Keep static copy and remove legacy banner",
+      "body": "Remove or deprecate `CouponBanner` to eliminate the dead `5%` constant, accepting that the visible `PromoStrip` remains manually synchronized.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Use a promotion source of truth",
+    "body": "Create or select an editable promo config/API that references the coupon and exposes localized copy plus structured discount terms to the header strip.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "He is the named Coupons & Promotions owner in the related BL block and is the best routing point for promo behavior and source-of-truth decisions.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7140.md",
+    "reviewedAt": "2026-07-08T09:09:36.563Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}

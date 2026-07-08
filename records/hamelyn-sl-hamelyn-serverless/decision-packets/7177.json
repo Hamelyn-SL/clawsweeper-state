@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:22:06.477Z",
+  "updatedAt": "2026-07-07T21:46:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7177,
+    "title": "Casa del Libro keeps active Mirakl offers for withdrawn stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7177",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-07T21:34:11Z",
+    "updatedAt": "2026-07-07T21:46:29Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Should the CDL fix first verify live Mirakl offer state before deleting local mk docs, seed orphan rows from snapshots, or do both in one operational reconciliation?",
+  "rationale": "The code fix and the existing orphan cleanup affect external marketplace state and production data at batch scale, so maintainers need to choose the rollout and rate-limit posture before automation writes a patch.",
+  "options": [
+    {
+      "title": "Verify then reconcile",
+      "body": "Keep withdrawn batch docs retryable until Mirakl confirms inactive state, and add a controlled reconciliation for already-orphaned live offers.",
+      "recommended": true
+    },
+    {
+      "title": "Rehydrate orphans first",
+      "body": "Seed safe mk_casaDelLibro rows from fresh CDL snapshots so the existing withdraw cron can process them, leaving batch deletion hardening for a second change.",
+      "recommended": false
+    },
+    {
+      "title": "Manual cleanup only",
+      "body": "Run an operational correction outside the code path and keep the code hardening as a separate marketplace task.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verify then reconcile",
+    "body": "Keep withdrawn batch docs retryable until Mirakl confirms inactive state, and add a controlled reconciliation for already-orphaned live offers.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Javier has the freshest Casa del Libro API touch plus the live operational context for this exact report.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7177.md",
+    "reviewedAt": "2026-07-08T09:22:06.477Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}

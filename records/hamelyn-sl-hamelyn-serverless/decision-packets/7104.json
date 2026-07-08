@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:08:15.408Z",
+  "updatedAt": "2026-07-08T08:52:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7104,
+    "title": "BL-ecommerce-seo: SEO — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7104",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:queued",
+      "business-logic",
+      "hackathon",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
+    ],
+    "createdAt": "2026-07-07T09:14:36Z",
+    "updatedAt": "2026-07-08T08:52:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152 be accepted as the F1-F5 implementation for the Ecommerce SEO BL block, or should the block be split or restarted before merge?",
+  "rationale": "The issue asks for owner-validated business-logic extraction, and the open PR expands the estimated six-rule block into 65 rules across 84 changed files, so maintainer owner/reviewer judgment is required before this can be considered complete.",
+  "options": [
+    {
+      "title": "Review and land PR 7152",
+      "body": "Accept the current split into SEO sub-subdomains if the owner/reviewer agree the 65 validated specs, isolated functions, and tests satisfy the block definition of done.",
+      "recommended": true
+    },
+    {
+      "title": "Narrow or split the block",
+      "body": "Ask the PR author to reduce the branch into smaller BL PRs if the current SEO surface is too large to review safely in one merge.",
+      "recommended": false
+    },
+    {
+      "title": "Restart the implementation path",
+      "body": "Close the PR and keep this issue as the parent if maintainers decide the extraction needs a different boundary or owner validation pass.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Review and land PR 7152",
+    "body": "Accept the current split into SEO sub-subdomains if the owner/reviewer agree the 65 validated specs, isolated functions, and tests satisfy the block definition of done.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "alexcanHamelyn is the named owner, current assignee, and PR author for the linked implementation candidate.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7104.md",
+    "reviewedAt": "2026-07-08T09:08:15.408Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}
