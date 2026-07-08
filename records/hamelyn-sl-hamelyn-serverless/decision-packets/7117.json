@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T08:58:19.562Z",
+  "updatedAt": "2026-07-08T08:49:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7117,
+    "title": "Minihome - /libros/, /peliculas/, /musica/, /videojuegos/ - Nuevas secciones layour",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "reporter:victor"
+    ],
+    "createdAt": "2026-07-07T10:03:47Z",
+    "updatedAt": "2026-07-08T08:49:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "What should the v1 scope be for the root minihome redesign, especially around reusing the category/subcategory modules from https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6798 versus building root-page-specific sections?",
+  "rationale": "The request is valid but crosses design, SEO copy, search/catalog embedding, responsive behavior, and ranking/interlinking semantics, which need ecommerce product direction before implementation.",
+  "options": [
+    {
+      "title": "Sponsor a planned CategoryHub redesign",
+      "body": "Implement the root minihome redesign as a dedicated ecommerce PR, reusing shared search/filter and highlight primitives while defining root-specific copy and QA criteria.",
+      "recommended": true
+    },
+    {
+      "title": "Ship a narrower v1",
+      "body": "Limit v1 to hero search, benefit banner, and catalog embedding, then track offers and interlinking as a follow-up.",
+      "recommended": false
+    },
+    {
+      "title": "Defer the minihomes",
+      "body": "Leave the root minihomes unchanged for now and rely on the already-shipped category/subcategory page redesign.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sponsor a planned CategoryHub redesign",
+    "body": "Implement the root minihome redesign as a dedicated ecommerce PR, reusing shared search/filter and highlight primitives while defining root-specific copy and QA criteria.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "They authored the closest shipped category-layout and interlinking implementation, making them the best code-history owner for scoping reuse versus new minihome modules.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
+    "reviewedAt": "2026-07-08T08:58:19.562Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}
