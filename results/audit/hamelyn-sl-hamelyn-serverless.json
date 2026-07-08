@@ -1,0 +1,3620 @@
+{
+  "generatedAt": "2026-07-08T01:08:39.359Z",
+  "targetRepo": "hamelyn-sl/hamelyn-serverless",
+  "scan": {
+    "complete": true,
+    "pagesScanned": 3,
+    "openItemsSeen": 213
+  },
+  "counts": {
+    "itemRecords": 91,
+    "closedRecords": 0,
+    "missingOpen": 122,
+    "missingEligibleOpen": 39,
+    "missingMaintainerOpen": 0,
+    "missingProtectedOpen": 0,
+    "missingRecentOpen": 83,
+    "openArchived": 0,
+    "staleItemRecords": 0,
+    "duplicateRecords": 0,
+    "protectedProposed": 0,
+    "staleReviews": 0
+  },
+  "findings": {
+    "missingOpen": [
+      {
+        "number": 6808,
+        "kind": "pull_request",
+        "title": "fix: stop exposing internal product data on public surfaces",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-02T15:30:16Z",
+        "updatedAt": "2026-07-07T22:11:12Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6842,
+        "kind": "issue",
+        "title": "[PRUEBA BL] BL dominio marketplace: extracción por bloques",
+        "labels": [
+          "priority:p3",
+          "app:marketplace",
+          "feature",
+          "triage:needs-info",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-03T15:45:43Z",
+        "updatedAt": "2026-07-03T15:54:57Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6845,
+        "kind": "issue",
+        "title": "Supply web: client-side navigation to nested routes silently no-ops in production builds",
+        "labels": [
+          "bug",
+          "app:supply",
+          "priority:p2",
+          "reporter:miguel",
+          "triage:needs-info"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-03T22:54:34Z",
+        "updatedAt": "2026-07-04T04:01:17Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6859,
+        "kind": "issue",
+        "title": "MercadoLibre listings sold in Hamelyn remain live and purchasable",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-04T13:53:13Z",
+        "updatedAt": "2026-07-04T17:28:00Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6866,
+        "kind": "issue",
+        "title": "CLI hamelyn v0.3: pulido de UX tras la batería de pruebas (validación verbosa, EPIPE, token vacío)",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-04T15:32:51Z",
+        "updatedAt": "2026-07-04T16:43:38Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6882,
+        "kind": "issue",
+        "title": "🐛 Producción: batería de errores recurrentes en logs de Vercel (admin 500 users, incidents 502, Serper 400, sharp, Amazon 429/confirmShipment, crons)",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "reporter:JavierHamelyn",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T01:57:06Z",
+        "updatedAt": "2026-07-05T02:12:48Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6885,
+        "kind": "issue",
+        "title": "Admin: vista Data/Gráficas rota — dashboard de MongoDB Charts inexistente (error code 2)",
+        "labels": [
+          "bug",
+          "app:admin",
+          "priority:p3",
+          "triage:needs-info"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T10:46:42Z",
+        "updatedAt": "2026-07-05T10:54:41Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6886,
+        "kind": "issue",
+        "title": "Limpiar HTML inválido que causará hydration errors (nesting de DOM) en todo el monorepo",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T10:56:20Z",
+        "updatedAt": "2026-07-05T11:28:22Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6890,
+        "kind": "issue",
+        "title": "MercadoLibre price update retries closed/inactive items and spams 400",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T14:10:37Z",
+        "updatedAt": "2026-07-07T10:35:11Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6891,
+        "kind": "pull_request",
+        "title": "fix: stop retrying stale mercadolibre price updates",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T14:29:47Z",
+        "updatedAt": "2026-07-07T22:11:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6895,
+        "kind": "issue",
+        "title": "BL-supply-domain: extracción por bloques",
+        "labels": [
+          "app:supply",
+          "priority:p3",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T06:47:16Z",
+        "updatedAt": "2026-07-06T10:13:26Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6899,
+        "kind": "issue",
+        "title": "BL-shipping-costs: Shipping Costs — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "triage:no-change",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T07:29:50Z",
+        "updatedAt": "2026-07-06T12:55:15Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6914,
+        "kind": "issue",
+        "title": "Página de autor - Inyectar contenido en la biografia (sección sobre el autor)",
+        "labels": [
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p2",
+          "feature",
+          "triage:pr-opened",
+          "reporter:victor"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:33:34Z",
+        "updatedAt": "2026-07-06T23:14:35Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6919,
+        "kind": "issue",
+        "title": "BL-shipping-costs-02: patrones de differentShippingCosts mal escapados en countries",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:03Z",
+        "updatedAt": "2026-07-07T04:41:04Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6920,
+        "kind": "issue",
+        "title": "BL-shipping-costs-07: el checkout no valida en servidor el coste de envío ni el total enviados por el cliente",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:19Z",
+        "updatedAt": "2026-07-06T22:26:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6921,
+        "kind": "issue",
+        "title": "BL-shipping-costs-08: la rama totalPrice === 1 del checkout no descuenta el envío del totalPrice de la venta",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:27Z",
+        "updatedAt": "2026-07-07T04:59:45Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6922,
+        "kind": "issue",
+        "title": "BL-shipping-costs-11: la urgencia de ventas de marketplace se infiere del importe de envío y no del flag del marketplace",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:48Z",
+        "updatedAt": "2026-07-06T14:58:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6923,
+        "kind": "issue",
+        "title": "BL-shipping-costs: código muerto de shipping: getShippingCost sin call sites y MtcShippingCostSetted sin uso",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:57Z",
+        "updatedAt": "2026-07-07T10:50:11Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6929,
+        "kind": "issue",
+        "title": "BL-shipping-invoices-12: mapeo arancelario de Correos divergente del de la factura",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:59:02Z",
+        "updatedAt": "2026-07-07T10:20:07Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6930,
+        "kind": "issue",
+        "title": "BL-shipping-invoices-08: firma obsoleta en el pie de las facturas",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:needs-info",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:59:04Z",
+        "updatedAt": "2026-07-06T22:45:04Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6958,
+        "kind": "issue",
+        "title": "Monitorizar picos de 400/500 en los webhooks de tracking con /loop en la máquina de triage",
+        "labels": [
+          "priority:p3",
+          "app:infrastructure",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:08:01Z",
+        "updatedAt": "2026-07-07T01:54:39Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6960,
+        "kind": "issue",
+        "title": "supply-e2e: workflow roto por Node 20 sin WebSocket nativo en el CLI de Device Cloud",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:09:56Z",
+        "updatedAt": "2026-07-06T13:56:45Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6962,
+        "kind": "issue",
+        "title": "BL-buying-eligibility: Purchase Eligibility — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:15:28Z",
+        "updatedAt": "2026-07-07T08:35:08Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6967,
+        "kind": "issue",
+        "title": "BL-buying-account: Seller Account — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:15:40Z",
+        "updatedAt": "2026-07-06T11:33:12Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6978,
+        "kind": "issue",
+        "title": "BL-shipping-carrier-03: migrate shipMatrix pattern notation to standard regex",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:16:53Z",
+        "updatedAt": "2026-07-06T18:28:20Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6994,
+        "kind": "issue",
+        "title": "BL-buying-eligibility-07: la exclusión de diccionarios y enciclopedias solo aplica al alta de EAN nuevo",
+        "labels": [
+          "bug",
+          "app:supply",
+          "priority:p2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T11:35:30Z",
+        "updatedAt": "2026-07-07T08:35:05Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6998,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract buying eligibility business rules into bl specs with tests",
+        "labels": [
+          "size/XL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T11:53:59Z",
+        "updatedAt": "2026-07-07T09:14:18Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6999,
+        "kind": "issue",
+        "title": "BL-pricing-offers: Offer Pricing — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:05:54Z",
+        "updatedAt": "2026-07-07T06:27:28Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7000,
+        "kind": "issue",
+        "title": "BL-pricing-groups: Group Pricing — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:05:56Z",
+        "updatedAt": "2026-07-07T06:50:13Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7002,
+        "kind": "pull_request",
+        "title": "fix: resolve shipping labels business-logic divergences",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:08:24Z",
+        "updatedAt": "2026-07-07T22:11:06Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7004,
+        "kind": "pull_request",
+        "title": "refactor: extract ecommerce checkout shipping cost business rules into bl specs with tests",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:26:53Z",
+        "updatedAt": "2026-07-07T22:11:04Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7014,
+        "kind": "issue",
+        "title": "BL-pricing-offers-07: first-hand reference drops shipping before cascade",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:50:08Z",
+        "updatedAt": "2026-07-07T10:35:13Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7019,
+        "kind": "issue",
+        "title": "Integrar API real de puntos SEUR PUDO y selección de punto por el vendedor (BL-shipping-pudo-supply-02)",
+        "labels": [
+          "app:supply",
+          "priority:p3",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T13:04:06Z",
+        "updatedAt": "2026-07-07T01:40:18Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7022,
+        "kind": "issue",
+        "title": "BL-buying-cart-04: la fecha de recogida solo bloquea domingos, no festivos",
+        "labels": [
+          "app:supply",
+          "priority:p2",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T13:06:17Z",
+        "updatedAt": "2026-07-07T07:12:55Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7028,
+        "kind": "issue",
+        "title": "BL-pricing-offers: remove dead code in Pricing.ts (mapDataToOffersToCalculate)",
+        "labels": [
+          "priority:p3",
+          "app:infrastructure",
+          "feature",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T13:22:40Z",
+        "updatedAt": "2026-07-07T10:20:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7046,
+        "kind": "issue",
+        "title": "BL-shipping-carrier: atomic claim on carrier switch to avoid duplicate shipments",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:03:40Z",
+        "updatedAt": "2026-07-07T00:41:38Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7047,
+        "kind": "issue",
+        "title": "eBay ES: 86k own listings live in snapshot without stocks_marketplace row",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:05:41Z",
+        "updatedAt": "2026-07-07T00:28:29Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7049,
+        "kind": "issue",
+        "title": "Amazon: withdrawAmazonProduct marca WITHDRAWN todo el lote aunque el PATCH falle por sku",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:14:05Z",
+        "updatedAt": "2026-07-07T07:20:10Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7054,
+        "kind": "pull_request",
+        "title": "fix: preserve amazon withdraw patch failures",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:48:07Z",
+        "updatedAt": "2026-07-07T22:11:01Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7058,
+        "kind": "pull_request",
+        "title": "chore: remove dead pricing code",
+        "labels": [
+          "size/M",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T01:25:38Z",
+        "updatedAt": "2026-07-07T11:58:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7061,
+        "kind": "pull_request",
+        "title": "fix: remove checkout total price exception",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T04:58:07Z",
+        "updatedAt": "2026-07-07T22:10:57Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7062,
+        "kind": "pull_request",
+        "title": "chore: remove dead shipping cost code",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T05:13:18Z",
+        "updatedAt": "2026-07-07T22:10:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7064,
+        "kind": "pull_request",
+        "title": "fix: align correos tariff codes with invoices",
+        "labels": [
+          "size/S",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T05:41:19Z",
+        "updatedAt": "2026-07-07T10:17:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7065,
+        "kind": "pull_request",
+        "title": "chore: extract offer pricing business logic into specs and services",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T05:54:46Z",
+        "updatedAt": "2026-07-07T22:10:51Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7066,
+        "kind": "pull_request",
+        "title": "refactor: improve error handling for Abebooks XML parser failures",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:00:33Z",
+        "updatedAt": "2026-07-07T22:10:47Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7068,
+        "kind": "pull_request",
+        "title": "chore: extract group pricing business logic into specs and services",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:23:18Z",
+        "updatedAt": "2026-07-07T22:10:45Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7071,
+        "kind": "pull_request",
+        "title": "docs: sync hamelyn-knowledge for #7063",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-07T06:48:39Z",
+        "updatedAt": "2026-07-07T22:10:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7072,
+        "kind": "issue",
+        "title": "BL-buying-account-04: register-origin language fallback should be Spanish, not Portuguese",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:49:35Z",
+        "updatedAt": "2026-07-07T09:14:36Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7075,
+        "kind": "issue",
+        "title": "BL-buying-orders-01: remove dead V4 order transition helpers",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:57:36Z",
+        "updatedAt": "2026-07-07T10:10:17Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7077,
+        "kind": "issue",
+        "title": "BL-buying-orders-05: reschedule keeps carrier instead of clearing it",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:57:39Z",
+        "updatedAt": "2026-07-07T19:54:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7079,
+        "kind": "issue",
+        "title": "BL-buying-account-07: unify request authorizer in app-router variant with read-only role enforcement",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:58:19Z",
+        "updatedAt": "2026-07-07T09:14:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7085,
+        "kind": "issue",
+        "title": "BL-shipping-tracking-08: update spec and tests after spring tracking link change",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T07:24:57Z",
+        "updatedAt": "2026-07-07T07:57:07Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7087,
+        "kind": "pull_request",
+        "title": "fix: validate pickup country and block holidays in supply checkout",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T07:42:47Z",
+        "updatedAt": "2026-07-07T22:10:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7088,
+        "kind": "issue",
+        "title": "BL-buying-orders-10: mergeLegacyOrders drops mergedReferences when accumulator array is empty",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T07:51:25Z",
+        "updatedAt": "2026-07-07T19:40:26Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7094,
+        "kind": "issue",
+        "title": "BL-buying-account-11: province value is wiped for DE/FR addresses instead of stored when provided",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T08:03:11Z",
+        "updatedAt": "2026-07-07T09:14:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7097,
+        "kind": "issue",
+        "title": "BL-buying-account-14: address/collect-method update by index skips range validation",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T08:13:13Z",
+        "updatedAt": "2026-07-07T09:14:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7100,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract buying account business logic (specs, functions, tests)",
+        "labels": [
+          "size/XL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T08:58:16Z",
+        "updatedAt": "2026-07-07T12:44:50Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7102,
+        "kind": "issue",
+        "title": "BL-ecommerce-checkout: Cart & Checkout — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:28Z",
+        "updatedAt": "2026-07-07T15:09:47Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7103,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons: Coupons & Promotions — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:32Z",
+        "updatedAt": "2026-07-07T11:09:32Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7104,
+        "kind": "issue",
+        "title": "BL-ecommerce-seo: SEO — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:36Z",
+        "updatedAt": "2026-07-07T13:55:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7105,
+        "kind": "issue",
+        "title": "BL-ecommerce-catalog: Public Catalog — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:41Z",
+        "updatedAt": "2026-07-07T13:40:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7106,
+        "kind": "issue",
+        "title": "BL-ecommerce-product: Product Page — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:45Z",
+        "updatedAt": "2026-07-07T13:30:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7107,
+        "kind": "issue",
+        "title": "BL-ecommerce-search: Search — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:50Z",
+        "updatedAt": "2026-07-07T11:24:05Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7108,
+        "kind": "issue",
+        "title": "BL-ecommerce-recommendations: Recommendations — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:pr-opened",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:54Z",
+        "updatedAt": "2026-07-07T10:41:17Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7109,
+        "kind": "issue",
+        "title": "BL-ecommerce-home: Home & Editorial — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:59Z",
+        "updatedAt": "2026-07-07T13:06:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7110,
+        "kind": "issue",
+        "title": "BL-ecommerce-authors: Authors — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:04Z",
+        "updatedAt": "2026-07-07T10:26:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7111,
+        "kind": "issue",
+        "title": "BL-ecommerce-account: Buyer Account — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:08Z",
+        "updatedAt": "2026-07-07T11:53:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7112,
+        "kind": "issue",
+        "title": "BL-ecommerce-localization: Localization — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:13Z",
+        "updatedAt": "2026-07-07T09:41:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7113,
+        "kind": "issue",
+        "title": "BL-ecommerce-engagement: Engagement — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:17Z",
+        "updatedAt": "2026-07-07T12:20:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7114,
+        "kind": "issue",
+        "title": "Botón de incidencia supply",
+        "labels": [
+          "source:admin-panel",
+          "app:supply",
+          "priority:p1",
+          "feature",
+          "reporter:arineligrigore",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:21:38Z",
+        "updatedAt": "2026-07-07T14:54:11Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7115,
+        "kind": "issue",
+        "title": "BL-ecommerce-search-03: searchProducts legacy engine has no live callers",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:01:02Z",
+        "updatedAt": "2026-07-07T10:01:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7116,
+        "kind": "pull_request",
+        "title": "feat: add BL invocation logging and admin business-logic graph",
+        "labels": [],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:01:49Z",
+        "updatedAt": "2026-07-07T22:10:34Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7117,
+        "kind": "issue",
+        "title": "Minihome - /libros/, /peliculas/, /musica/, /videojuegos/ - Nuevas secciones layour",
+        "labels": [
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "reporter:victor"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:03:47Z",
+        "updatedAt": "2026-07-07T10:13:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7118,
+        "kind": "pull_request",
+        "title": "fix: resolve buying-orders lifecycle divergences",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:17:13Z",
+        "updatedAt": "2026-07-07T22:10:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7119,
+        "kind": "issue",
+        "title": "URL CONTÁCTANOS",
+        "labels": [
+          "source:admin-panel",
+          "app:supply",
+          "priority:p1",
+          "feature",
+          "reporter:arineligrigore",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:27:12Z",
+        "updatedAt": "2026-07-07T13:29:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7120,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce recommendations rules block",
+        "labels": [
+          "size/XXL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:30:49Z",
+        "updatedAt": "2026-07-07T10:40:33Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7121,
+        "kind": "issue",
+        "title": "escaneo de enciclopedias/diccionarios ",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:supply",
+          "priority:p1",
+          "reporter:arineligrigore",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:37:37Z",
+        "updatedAt": "2026-07-07T12:12:50Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7123,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce search rules block",
+        "labels": [
+          "size/XXL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:41:24Z",
+        "updatedAt": "2026-07-07T10:54:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7124,
+        "kind": "issue",
+        "title": "BL-ecommerce-engagement-02: availability alert never fires for new/dropship-only stock",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "reporter:miguel",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T11:40:06Z",
+        "updatedAt": "2026-07-07T19:27:53Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7125,
+        "kind": "issue",
+        "title": "BL-ecommerce-engagement-01: notify requests with unknown EANs are retried forever and never cleaned up",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T11:45:46Z",
+        "updatedAt": "2026-07-07T11:45:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7126,
+        "kind": "issue",
+        "title": "BL-ecommerce-seo-metadata-01: pt-BR excluded from hreflang alternates",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:00:10Z",
+        "updatedAt": "2026-07-07T19:03:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7127,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce engagement rules block",
+        "labels": [
+          "size/L",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:04:48Z",
+        "updatedAt": "2026-07-07T12:33:47Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7128,
+        "kind": "pull_request",
+        "title": "feat: add daily change history for config collection",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:00Z",
+        "updatedAt": "2026-07-07T22:10:28Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7129,
+        "kind": "issue",
+        "title": "BL-ecommerce-product: dead product page component tree with stale pricing logic",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:37Z",
+        "updatedAt": "2026-07-07T12:10:49Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7130,
+        "kind": "issue",
+        "title": "BL-ecommerce-product-06: product page missing x1.37 reference price fallback when new price is unknown",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:45Z",
+        "updatedAt": "2026-07-07T18:25:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7131,
+        "kind": "issue",
+        "title": "BL-ecommerce-catalog-12: unused jumpPages prop in Pagination component",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:59Z",
+        "updatedAt": "2026-07-07T12:11:11Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7132,
+        "kind": "issue",
+        "title": "BL-ecommerce-catalog-14: dead search handler with unrouted batching logic",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:11:12Z",
+        "updatedAt": "2026-07-07T12:11:22Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7133,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-21: applyOnlyToRegistedUser not enforced in checkout revalidation",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:12:43Z",
+        "updatedAt": "2026-07-07T17:54:15Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7134,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-23: coupon currency field is never read, amounts always evaluated as EUR",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:06Z",
+        "updatedAt": "2026-07-07T12:13:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7135,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-24: checkout trusts client appliedDiscount for all coupon types except free units",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:07Z",
+        "updatedAt": "2026-07-07T17:15:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7136,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-25: invalidated coupon stays visually applied with zero discount",
+        "labels": [
+          "app:ecommerce",
+          "priority:p3",
+          "feature",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:29Z",
+        "updatedAt": "2026-07-07T12:13:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7137,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-27: coupon validation trusts client-sent shipping cost and regional surplus",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:30Z",
+        "updatedAt": "2026-07-07T16:53:36Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7138,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-28: stripe bypass uses exact equality without rounding tolerance",
+        "labels": [
+          "app:ecommerce",
+          "priority:p3",
+          "feature",
+          "triage:running",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:58Z",
+        "updatedAt": "2026-07-08T01:05:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7139,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons: duplicated user identity resolution for coupon usage tracking",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:59Z",
+        "updatedAt": "2026-07-08T00:50:05Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7140,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons: static promo banner hardcodes 5% discount copy",
+        "labels": [
+          "app:ecommerce",
+          "priority:p3",
+          "feature",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:14:01Z",
+        "updatedAt": "2026-07-08T00:26:06Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7142,
+        "kind": "pull_request",
+        "title": "fix: trigger availability alert for new/dropship-only stock",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:26:22Z",
+        "updatedAt": "2026-07-07T22:10:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7143,
+        "kind": "pull_request",
+        "title": "fix: reject availability alert signups for unknown products",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:35:59Z",
+        "updatedAt": "2026-07-07T22:10:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7146,
+        "kind": "issue",
+        "title": "Mostrar en el panel de Auto Packing qué regalo incluir en cada pedido",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "priority:p2",
+          "reporter:jesus",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:38:17Z",
+        "updatedAt": "2026-07-07T15:55:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7147,
+        "kind": "issue",
+        "title": "BL-ecommerce-localization-05: cart endpoint skips COP/ARS integer rounding",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:38:54Z",
+        "updatedAt": "2026-07-07T16:13:26Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7149,
+        "kind": "pull_request",
+        "title": "feat: add supply contact page",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:40:35Z",
+        "updatedAt": "2026-07-07T22:10:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7151,
+        "kind": "issue",
+        "title": "Añadir hora peninsular en horario de atc ",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "reporter:irenegarcia"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T13:23:21Z",
+        "updatedAt": "2026-07-07T15:44:46Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7152,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce SEO business logic block",
+        "labels": [
+          "size/XL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T13:32:10Z",
+        "updatedAt": "2026-07-07T13:35:51Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7153,
+        "kind": "pull_request",
+        "title": "feat: add supply incident action to sales list",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T14:52:29Z",
+        "updatedAt": "2026-07-07T22:10:13Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7154,
+        "kind": "pull_request",
+        "title": "fix: clarify customer service timezone",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T15:29:36Z",
+        "updatedAt": "2026-07-07T15:36:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7155,
+        "kind": "pull_request",
+        "title": "fix: align cart currency conversion",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T16:11:41Z",
+        "updatedAt": "2026-07-07T22:10:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7157,
+        "kind": "pull_request",
+        "title": "fix: reconcile checkout coupon discounts server-side",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T17:13:36Z",
+        "updatedAt": "2026-07-07T22:10:05Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7158,
+        "kind": "pull_request",
+        "title": "fix: enforce registered-user coupon guard",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T17:53:02Z",
+        "updatedAt": "2026-07-07T22:10:02Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7161,
+        "kind": "issue",
+        "title": "PDFs de admin con PII en stores públicos de Vercel Blob con pathnames predecibles",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T18:54:16Z",
+        "updatedAt": "2026-07-07T19:18:02Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7162,
+        "kind": "pull_request",
+        "title": "fix: include Brazil in hreflang alternates",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T18:55:39Z",
+        "updatedAt": "2026-07-07T22:09:58Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7164,
+        "kind": "pull_request",
+        "title": "fix: randomize admin blob export paths",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T19:12:17Z",
+        "updatedAt": "2026-07-07T22:09:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7166,
+        "kind": "pull_request",
+        "title": "fix: notify availability for new stock",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T19:26:41Z",
+        "updatedAt": "2026-07-07T22:09:50Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7170,
+        "kind": "issue",
+        "title": "Discogs price update marks transient API errors as permanent SYNC_ERROR",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T19:59:55Z",
+        "updatedAt": "2026-07-07T20:31:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7171,
+        "kind": "pull_request",
+        "title": "fix: respect transient price update failures",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:12:50Z",
+        "updatedAt": "2026-07-07T22:09:43Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7172,
+        "kind": "issue",
+        "title": "AbeBooks withdrawal recovery misses live listings when mk row is absent",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:13:50Z",
+        "updatedAt": "2026-07-07T21:29:07Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7173,
+        "kind": "issue",
+        "title": "Alibris inventory purge lacks observable freshness after withdrawn stock sale",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:24:59Z",
+        "updatedAt": "2026-07-07T20:48:49Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7176,
+        "kind": "pull_request",
+        "title": "fix: harden alibris inventory upload",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:47:35Z",
+        "updatedAt": "2026-07-07T22:09:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7177,
+        "kind": "issue",
+        "title": "Casa del Libro keeps active Mirakl offers for withdrawn stocks",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T21:34:11Z",
+        "updatedAt": "2026-07-07T21:46:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7179,
+        "kind": "pull_request",
+        "title": "fix: retry TodoColeccion price recovery as update",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T22:11:04Z",
+        "updatedAt": "2026-07-07T22:11:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7183,
+        "kind": "pull_request",
+        "title": "skills: add hamelyn-vercel-build-audit and hamelyn-b2b-order-intake",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T22:35:55Z",
+        "updatedAt": "2026-07-07T22:36:23Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7186,
+        "kind": "pull_request",
+        "title": "fix: enforce order transition validation",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T22:56:37Z",
+        "updatedAt": "2026-07-07T22:57:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7190,
+        "kind": "pull_request",
+        "title": "fix: remove dead profile addresses page",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-08T00:10:05Z",
+        "updatedAt": "2026-07-08T00:10:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7191,
+        "kind": "pull_request",
+        "title": "fix: unify coupon user identity filter",
+        "labels": [
+          "size/M",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-08T00:43:03Z",
+        "updatedAt": "2026-07-08T00:43:44Z",
+        "missingReason": "recently_created"
+      }
+    ],
+    "missingEligibleOpen": [
+      {
+        "number": 6808,
+        "kind": "pull_request",
+        "title": "fix: stop exposing internal product data on public surfaces",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-02T15:30:16Z",
+        "updatedAt": "2026-07-07T22:11:12Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6842,
+        "kind": "issue",
+        "title": "[PRUEBA BL] BL dominio marketplace: extracción por bloques",
+        "labels": [
+          "priority:p3",
+          "app:marketplace",
+          "feature",
+          "triage:needs-info",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-03T15:45:43Z",
+        "updatedAt": "2026-07-03T15:54:57Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6845,
+        "kind": "issue",
+        "title": "Supply web: client-side navigation to nested routes silently no-ops in production builds",
+        "labels": [
+          "bug",
+          "app:supply",
+          "priority:p2",
+          "reporter:miguel",
+          "triage:needs-info"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-03T22:54:34Z",
+        "updatedAt": "2026-07-04T04:01:17Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6859,
+        "kind": "issue",
+        "title": "MercadoLibre listings sold in Hamelyn remain live and purchasable",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-04T13:53:13Z",
+        "updatedAt": "2026-07-04T17:28:00Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6866,
+        "kind": "issue",
+        "title": "CLI hamelyn v0.3: pulido de UX tras la batería de pruebas (validación verbosa, EPIPE, token vacío)",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-04T15:32:51Z",
+        "updatedAt": "2026-07-04T16:43:38Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6882,
+        "kind": "issue",
+        "title": "🐛 Producción: batería de errores recurrentes en logs de Vercel (admin 500 users, incidents 502, Serper 400, sharp, Amazon 429/confirmShipment, crons)",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "reporter:JavierHamelyn",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T01:57:06Z",
+        "updatedAt": "2026-07-05T02:12:48Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6885,
+        "kind": "issue",
+        "title": "Admin: vista Data/Gráficas rota — dashboard de MongoDB Charts inexistente (error code 2)",
+        "labels": [
+          "bug",
+          "app:admin",
+          "priority:p3",
+          "triage:needs-info"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T10:46:42Z",
+        "updatedAt": "2026-07-05T10:54:41Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6886,
+        "kind": "issue",
+        "title": "Limpiar HTML inválido que causará hydration errors (nesting de DOM) en todo el monorepo",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T10:56:20Z",
+        "updatedAt": "2026-07-05T11:28:22Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6890,
+        "kind": "issue",
+        "title": "MercadoLibre price update retries closed/inactive items and spams 400",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T14:10:37Z",
+        "updatedAt": "2026-07-07T10:35:11Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6891,
+        "kind": "pull_request",
+        "title": "fix: stop retrying stale mercadolibre price updates",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-05T14:29:47Z",
+        "updatedAt": "2026-07-07T22:11:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6895,
+        "kind": "issue",
+        "title": "BL-supply-domain: extracción por bloques",
+        "labels": [
+          "app:supply",
+          "priority:p3",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T06:47:16Z",
+        "updatedAt": "2026-07-06T10:13:26Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6899,
+        "kind": "issue",
+        "title": "BL-shipping-costs: Shipping Costs — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "triage:no-change",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T07:29:50Z",
+        "updatedAt": "2026-07-06T12:55:15Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6914,
+        "kind": "issue",
+        "title": "Página de autor - Inyectar contenido en la biografia (sección sobre el autor)",
+        "labels": [
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p2",
+          "feature",
+          "triage:pr-opened",
+          "reporter:victor"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:33:34Z",
+        "updatedAt": "2026-07-06T23:14:35Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6919,
+        "kind": "issue",
+        "title": "BL-shipping-costs-02: patrones de differentShippingCosts mal escapados en countries",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:03Z",
+        "updatedAt": "2026-07-07T04:41:04Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6920,
+        "kind": "issue",
+        "title": "BL-shipping-costs-07: el checkout no valida en servidor el coste de envío ni el total enviados por el cliente",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:19Z",
+        "updatedAt": "2026-07-06T22:26:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6921,
+        "kind": "issue",
+        "title": "BL-shipping-costs-08: la rama totalPrice === 1 del checkout no descuenta el envío del totalPrice de la venta",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:27Z",
+        "updatedAt": "2026-07-07T04:59:45Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6922,
+        "kind": "issue",
+        "title": "BL-shipping-costs-11: la urgencia de ventas de marketplace se infiere del importe de envío y no del flag del marketplace",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:48Z",
+        "updatedAt": "2026-07-06T14:58:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6923,
+        "kind": "issue",
+        "title": "BL-shipping-costs: código muerto de shipping: getShippingCost sin call sites y MtcShippingCostSetted sin uso",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:48:57Z",
+        "updatedAt": "2026-07-07T10:50:11Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6929,
+        "kind": "issue",
+        "title": "BL-shipping-invoices-12: mapeo arancelario de Correos divergente del de la factura",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:59:02Z",
+        "updatedAt": "2026-07-07T10:20:07Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6930,
+        "kind": "issue",
+        "title": "BL-shipping-invoices-08: firma obsoleta en el pie de las facturas",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:needs-info",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T08:59:04Z",
+        "updatedAt": "2026-07-06T22:45:04Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6958,
+        "kind": "issue",
+        "title": "Monitorizar picos de 400/500 en los webhooks de tracking con /loop en la máquina de triage",
+        "labels": [
+          "priority:p3",
+          "app:infrastructure",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:08:01Z",
+        "updatedAt": "2026-07-07T01:54:39Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6960,
+        "kind": "issue",
+        "title": "supply-e2e: workflow roto por Node 20 sin WebSocket nativo en el CLI de Device Cloud",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:09:56Z",
+        "updatedAt": "2026-07-06T13:56:45Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6962,
+        "kind": "issue",
+        "title": "BL-buying-eligibility: Purchase Eligibility — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:15:28Z",
+        "updatedAt": "2026-07-07T08:35:08Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6967,
+        "kind": "issue",
+        "title": "BL-buying-account: Seller Account — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:15:40Z",
+        "updatedAt": "2026-07-06T11:33:12Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6978,
+        "kind": "issue",
+        "title": "BL-shipping-carrier-03: migrate shipMatrix pattern notation to standard regex",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T10:16:53Z",
+        "updatedAt": "2026-07-06T18:28:20Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6994,
+        "kind": "issue",
+        "title": "BL-buying-eligibility-07: la exclusión de diccionarios y enciclopedias solo aplica al alta de EAN nuevo",
+        "labels": [
+          "bug",
+          "app:supply",
+          "priority:p2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T11:35:30Z",
+        "updatedAt": "2026-07-07T08:35:05Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6998,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract buying eligibility business rules into bl specs with tests",
+        "labels": [
+          "size/XL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T11:53:59Z",
+        "updatedAt": "2026-07-07T09:14:18Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 6999,
+        "kind": "issue",
+        "title": "BL-pricing-offers: Offer Pricing — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:05:54Z",
+        "updatedAt": "2026-07-07T06:27:28Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7000,
+        "kind": "issue",
+        "title": "BL-pricing-groups: Group Pricing — specs, aislamiento y tests",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "feature",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:05:56Z",
+        "updatedAt": "2026-07-07T06:50:13Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7002,
+        "kind": "pull_request",
+        "title": "fix: resolve shipping labels business-logic divergences",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:08:24Z",
+        "updatedAt": "2026-07-07T22:11:06Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7004,
+        "kind": "pull_request",
+        "title": "refactor: extract ecommerce checkout shipping cost business rules into bl specs with tests",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:26:53Z",
+        "updatedAt": "2026-07-07T22:11:04Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7014,
+        "kind": "issue",
+        "title": "BL-pricing-offers-07: first-hand reference drops shipping before cascade",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T12:50:08Z",
+        "updatedAt": "2026-07-07T10:35:13Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7019,
+        "kind": "issue",
+        "title": "Integrar API real de puntos SEUR PUDO y selección de punto por el vendedor (BL-shipping-pudo-supply-02)",
+        "labels": [
+          "app:supply",
+          "priority:p3",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T13:04:06Z",
+        "updatedAt": "2026-07-07T01:40:18Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7022,
+        "kind": "issue",
+        "title": "BL-buying-cart-04: la fecha de recogida solo bloquea domingos, no festivos",
+        "labels": [
+          "app:supply",
+          "priority:p2",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T13:06:17Z",
+        "updatedAt": "2026-07-07T07:12:55Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7028,
+        "kind": "issue",
+        "title": "BL-pricing-offers: remove dead code in Pricing.ts (mapDataToOffersToCalculate)",
+        "labels": [
+          "priority:p3",
+          "app:infrastructure",
+          "feature",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T13:22:40Z",
+        "updatedAt": "2026-07-07T10:20:09Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7046,
+        "kind": "issue",
+        "title": "BL-shipping-carrier: atomic claim on carrier switch to avoid duplicate shipments",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:03:40Z",
+        "updatedAt": "2026-07-07T00:41:38Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7047,
+        "kind": "issue",
+        "title": "eBay ES: 86k own listings live in snapshot without stocks_marketplace row",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:05:41Z",
+        "updatedAt": "2026-07-07T00:28:29Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7049,
+        "kind": "issue",
+        "title": "Amazon: withdrawAmazonProduct marca WITHDRAWN todo el lote aunque el PATCH falle por sku",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:14:05Z",
+        "updatedAt": "2026-07-07T07:20:10Z",
+        "missingReason": "eligible"
+      },
+      {
+        "number": 7054,
+        "kind": "pull_request",
+        "title": "fix: preserve amazon withdraw patch failures",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-06T23:48:07Z",
+        "updatedAt": "2026-07-07T22:11:01Z",
+        "missingReason": "eligible"
+      }
+    ],
+    "missingMaintainerOpen": [],
+    "missingProtectedOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7058,
+        "kind": "pull_request",
+        "title": "chore: remove dead pricing code",
+        "labels": [
+          "size/M",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T01:25:38Z",
+        "updatedAt": "2026-07-07T11:58:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7061,
+        "kind": "pull_request",
+        "title": "fix: remove checkout total price exception",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T04:58:07Z",
+        "updatedAt": "2026-07-07T22:10:57Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7062,
+        "kind": "pull_request",
+        "title": "chore: remove dead shipping cost code",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T05:13:18Z",
+        "updatedAt": "2026-07-07T22:10:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7064,
+        "kind": "pull_request",
+        "title": "fix: align correos tariff codes with invoices",
+        "labels": [
+          "size/S",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T05:41:19Z",
+        "updatedAt": "2026-07-07T10:17:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7065,
+        "kind": "pull_request",
+        "title": "chore: extract offer pricing business logic into specs and services",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T05:54:46Z",
+        "updatedAt": "2026-07-07T22:10:51Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7066,
+        "kind": "pull_request",
+        "title": "refactor: improve error handling for Abebooks XML parser failures",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:00:33Z",
+        "updatedAt": "2026-07-07T22:10:47Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7068,
+        "kind": "pull_request",
+        "title": "chore: extract group pricing business logic into specs and services",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:23:18Z",
+        "updatedAt": "2026-07-07T22:10:45Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7071,
+        "kind": "pull_request",
+        "title": "docs: sync hamelyn-knowledge for #7063",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-07T06:48:39Z",
+        "updatedAt": "2026-07-07T22:10:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7072,
+        "kind": "issue",
+        "title": "BL-buying-account-04: register-origin language fallback should be Spanish, not Portuguese",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:49:35Z",
+        "updatedAt": "2026-07-07T09:14:36Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7075,
+        "kind": "issue",
+        "title": "BL-buying-orders-01: remove dead V4 order transition helpers",
+        "labels": [
+          "bug",
+          "priority:p3",
+          "app:infrastructure",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:57:36Z",
+        "updatedAt": "2026-07-07T10:10:17Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7077,
+        "kind": "issue",
+        "title": "BL-buying-orders-05: reschedule keeps carrier instead of clearing it",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:57:39Z",
+        "updatedAt": "2026-07-07T19:54:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7079,
+        "kind": "issue",
+        "title": "BL-buying-account-07: unify request authorizer in app-router variant with read-only role enforcement",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T06:58:19Z",
+        "updatedAt": "2026-07-07T09:14:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7085,
+        "kind": "issue",
+        "title": "BL-shipping-tracking-08: update spec and tests after spring tracking link change",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T07:24:57Z",
+        "updatedAt": "2026-07-07T07:57:07Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7087,
+        "kind": "pull_request",
+        "title": "fix: validate pickup country and block holidays in supply checkout",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T07:42:47Z",
+        "updatedAt": "2026-07-07T22:10:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7088,
+        "kind": "issue",
+        "title": "BL-buying-orders-10: mergeLegacyOrders drops mergedReferences when accumulator array is empty",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T07:51:25Z",
+        "updatedAt": "2026-07-07T19:40:26Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7094,
+        "kind": "issue",
+        "title": "BL-buying-account-11: province value is wiped for DE/FR addresses instead of stored when provided",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T08:03:11Z",
+        "updatedAt": "2026-07-07T09:14:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7097,
+        "kind": "issue",
+        "title": "BL-buying-account-14: address/collect-method update by index skips range validation",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T08:13:13Z",
+        "updatedAt": "2026-07-07T09:14:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7100,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract buying account business logic (specs, functions, tests)",
+        "labels": [
+          "size/XL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T08:58:16Z",
+        "updatedAt": "2026-07-07T12:44:50Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7102,
+        "kind": "issue",
+        "title": "BL-ecommerce-checkout: Cart & Checkout — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:28Z",
+        "updatedAt": "2026-07-07T15:09:47Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7103,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons: Coupons & Promotions — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:32Z",
+        "updatedAt": "2026-07-07T11:09:32Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7104,
+        "kind": "issue",
+        "title": "BL-ecommerce-seo: SEO — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:36Z",
+        "updatedAt": "2026-07-07T13:55:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7105,
+        "kind": "issue",
+        "title": "BL-ecommerce-catalog: Public Catalog — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:41Z",
+        "updatedAt": "2026-07-07T13:40:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7106,
+        "kind": "issue",
+        "title": "BL-ecommerce-product: Product Page — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:45Z",
+        "updatedAt": "2026-07-07T13:30:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7107,
+        "kind": "issue",
+        "title": "BL-ecommerce-search: Search — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:50Z",
+        "updatedAt": "2026-07-07T11:24:05Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7108,
+        "kind": "issue",
+        "title": "BL-ecommerce-recommendations: Recommendations — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:pr-opened",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:54Z",
+        "updatedAt": "2026-07-07T10:41:17Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7109,
+        "kind": "issue",
+        "title": "BL-ecommerce-home: Home & Editorial — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:14:59Z",
+        "updatedAt": "2026-07-07T13:06:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7110,
+        "kind": "issue",
+        "title": "BL-ecommerce-authors: Authors — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:04Z",
+        "updatedAt": "2026-07-07T10:26:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7111,
+        "kind": "issue",
+        "title": "BL-ecommerce-account: Buyer Account — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:08Z",
+        "updatedAt": "2026-07-07T11:53:44Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7112,
+        "kind": "issue",
+        "title": "BL-ecommerce-localization: Localization — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:13Z",
+        "updatedAt": "2026-07-07T09:41:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7113,
+        "kind": "issue",
+        "title": "BL-ecommerce-engagement: Engagement — specs, aislamiento y tests",
+        "labels": [
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "business-logic",
+          "hackathon"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:15:17Z",
+        "updatedAt": "2026-07-07T12:20:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7114,
+        "kind": "issue",
+        "title": "Botón de incidencia supply",
+        "labels": [
+          "source:admin-panel",
+          "app:supply",
+          "priority:p1",
+          "feature",
+          "reporter:arineligrigore",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T09:21:38Z",
+        "updatedAt": "2026-07-07T14:54:11Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7115,
+        "kind": "issue",
+        "title": "BL-ecommerce-search-03: searchProducts legacy engine has no live callers",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:01:02Z",
+        "updatedAt": "2026-07-07T10:01:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7116,
+        "kind": "pull_request",
+        "title": "feat: add BL invocation logging and admin business-logic graph",
+        "labels": [],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:01:49Z",
+        "updatedAt": "2026-07-07T22:10:34Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7117,
+        "kind": "issue",
+        "title": "Minihome - /libros/, /peliculas/, /musica/, /videojuegos/ - Nuevas secciones layour",
+        "labels": [
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p1",
+          "feature",
+          "triage:done",
+          "reporter:victor"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:03:47Z",
+        "updatedAt": "2026-07-07T10:13:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7118,
+        "kind": "pull_request",
+        "title": "fix: resolve buying-orders lifecycle divergences",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:17:13Z",
+        "updatedAt": "2026-07-07T22:10:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7119,
+        "kind": "issue",
+        "title": "URL CONTÁCTANOS",
+        "labels": [
+          "source:admin-panel",
+          "app:supply",
+          "priority:p1",
+          "feature",
+          "reporter:arineligrigore",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:27:12Z",
+        "updatedAt": "2026-07-07T13:29:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7120,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce recommendations rules block",
+        "labels": [
+          "size/XXL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:30:49Z",
+        "updatedAt": "2026-07-07T10:40:33Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7121,
+        "kind": "issue",
+        "title": "escaneo de enciclopedias/diccionarios ",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:supply",
+          "priority:p1",
+          "reporter:arineligrigore",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:37:37Z",
+        "updatedAt": "2026-07-07T12:12:50Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7123,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce search rules block",
+        "labels": [
+          "size/XXL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T10:41:24Z",
+        "updatedAt": "2026-07-07T10:54:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7124,
+        "kind": "issue",
+        "title": "BL-ecommerce-engagement-02: availability alert never fires for new/dropship-only stock",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "reporter:miguel",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T11:40:06Z",
+        "updatedAt": "2026-07-07T19:27:53Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7125,
+        "kind": "issue",
+        "title": "BL-ecommerce-engagement-01: notify requests with unknown EANs are retried forever and never cleaned up",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic",
+          "reporter:danielmenchen-hamelyn"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T11:45:46Z",
+        "updatedAt": "2026-07-07T11:45:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7126,
+        "kind": "issue",
+        "title": "BL-ecommerce-seo-metadata-01: pt-BR excluded from hreflang alternates",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:00:10Z",
+        "updatedAt": "2026-07-07T19:03:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7127,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce engagement rules block",
+        "labels": [
+          "size/L",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:04:48Z",
+        "updatedAt": "2026-07-07T12:33:47Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7128,
+        "kind": "pull_request",
+        "title": "feat: add daily change history for config collection",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:00Z",
+        "updatedAt": "2026-07-07T22:10:28Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7129,
+        "kind": "issue",
+        "title": "BL-ecommerce-product: dead product page component tree with stale pricing logic",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:37Z",
+        "updatedAt": "2026-07-07T12:10:49Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7130,
+        "kind": "issue",
+        "title": "BL-ecommerce-product-06: product page missing x1.37 reference price fallback when new price is unknown",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:45Z",
+        "updatedAt": "2026-07-07T18:25:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7131,
+        "kind": "issue",
+        "title": "BL-ecommerce-catalog-12: unused jumpPages prop in Pagination component",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:10:59Z",
+        "updatedAt": "2026-07-07T12:11:11Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7132,
+        "kind": "issue",
+        "title": "BL-ecommerce-catalog-14: dead search handler with unrouted batching logic",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:11:12Z",
+        "updatedAt": "2026-07-07T12:11:22Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7133,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-21: applyOnlyToRegistedUser not enforced in checkout revalidation",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:12:43Z",
+        "updatedAt": "2026-07-07T17:54:15Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7134,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-23: coupon currency field is never read, amounts always evaluated as EUR",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:06Z",
+        "updatedAt": "2026-07-07T12:13:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7135,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-24: checkout trusts client appliedDiscount for all coupon types except free units",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:07Z",
+        "updatedAt": "2026-07-07T17:15:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7136,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-25: invalidated coupon stays visually applied with zero discount",
+        "labels": [
+          "app:ecommerce",
+          "priority:p3",
+          "feature",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:29Z",
+        "updatedAt": "2026-07-07T12:13:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7137,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-27: coupon validation trusts client-sent shipping cost and regional surplus",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:30Z",
+        "updatedAt": "2026-07-07T16:53:36Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7138,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-28: stripe bypass uses exact equality without rounding tolerance",
+        "labels": [
+          "app:ecommerce",
+          "priority:p3",
+          "feature",
+          "triage:running",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:58Z",
+        "updatedAt": "2026-07-08T01:05:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7139,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons: duplicated user identity resolution for coupon usage tracking",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:13:59Z",
+        "updatedAt": "2026-07-08T00:50:05Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7140,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons: static promo banner hardcodes 5% discount copy",
+        "labels": [
+          "app:ecommerce",
+          "priority:p3",
+          "feature",
+          "triage:done",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:14:01Z",
+        "updatedAt": "2026-07-08T00:26:06Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7142,
+        "kind": "pull_request",
+        "title": "fix: trigger availability alert for new/dropship-only stock",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:26:22Z",
+        "updatedAt": "2026-07-07T22:10:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7143,
+        "kind": "pull_request",
+        "title": "fix: reject availability alert signups for unknown products",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:35:59Z",
+        "updatedAt": "2026-07-07T22:10:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7146,
+        "kind": "issue",
+        "title": "Mostrar en el panel de Auto Packing qué regalo incluir en cada pedido",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "priority:p2",
+          "reporter:jesus",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:38:17Z",
+        "updatedAt": "2026-07-07T15:55:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7147,
+        "kind": "issue",
+        "title": "BL-ecommerce-localization-05: cart endpoint skips COP/ARS integer rounding",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:38:54Z",
+        "updatedAt": "2026-07-07T16:13:26Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7149,
+        "kind": "pull_request",
+        "title": "feat: add supply contact page",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T12:40:35Z",
+        "updatedAt": "2026-07-07T22:10:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7151,
+        "kind": "issue",
+        "title": "Añadir hora peninsular en horario de atc ",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p2",
+          "triage:pr-opened",
+          "reporter:irenegarcia"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T13:23:21Z",
+        "updatedAt": "2026-07-07T15:44:46Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7152,
+        "kind": "pull_request",
+        "title": "[BL] chore: extract ecommerce SEO business logic block",
+        "labels": [
+          "size/XL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T13:32:10Z",
+        "updatedAt": "2026-07-07T13:35:51Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7153,
+        "kind": "pull_request",
+        "title": "feat: add supply incident action to sales list",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T14:52:29Z",
+        "updatedAt": "2026-07-07T22:10:13Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7154,
+        "kind": "pull_request",
+        "title": "fix: clarify customer service timezone",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T15:29:36Z",
+        "updatedAt": "2026-07-07T15:36:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7155,
+        "kind": "pull_request",
+        "title": "fix: align cart currency conversion",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T16:11:41Z",
+        "updatedAt": "2026-07-07T22:10:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7157,
+        "kind": "pull_request",
+        "title": "fix: reconcile checkout coupon discounts server-side",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T17:13:36Z",
+        "updatedAt": "2026-07-07T22:10:05Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7158,
+        "kind": "pull_request",
+        "title": "fix: enforce registered-user coupon guard",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T17:53:02Z",
+        "updatedAt": "2026-07-07T22:10:02Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7161,
+        "kind": "issue",
+        "title": "PDFs de admin con PII en stores públicos de Vercel Blob con pathnames predecibles",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:infrastructure",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T18:54:16Z",
+        "updatedAt": "2026-07-07T19:18:02Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7162,
+        "kind": "pull_request",
+        "title": "fix: include Brazil in hreflang alternates",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T18:55:39Z",
+        "updatedAt": "2026-07-07T22:09:58Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7164,
+        "kind": "pull_request",
+        "title": "fix: randomize admin blob export paths",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T19:12:17Z",
+        "updatedAt": "2026-07-07T22:09:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7166,
+        "kind": "pull_request",
+        "title": "fix: notify availability for new stock",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T19:26:41Z",
+        "updatedAt": "2026-07-07T22:09:50Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7170,
+        "kind": "issue",
+        "title": "Discogs price update marks transient API errors as permanent SYNC_ERROR",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T19:59:55Z",
+        "updatedAt": "2026-07-07T20:31:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7171,
+        "kind": "pull_request",
+        "title": "fix: respect transient price update failures",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:12:50Z",
+        "updatedAt": "2026-07-07T22:09:43Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7172,
+        "kind": "issue",
+        "title": "AbeBooks withdrawal recovery misses live listings when mk row is absent",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:13:50Z",
+        "updatedAt": "2026-07-07T21:29:07Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7173,
+        "kind": "issue",
+        "title": "Alibris inventory purge lacks observable freshness after withdrawn stock sale",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:24:59Z",
+        "updatedAt": "2026-07-07T20:48:49Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7176,
+        "kind": "pull_request",
+        "title": "fix: harden alibris inventory upload",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T20:47:35Z",
+        "updatedAt": "2026-07-07T22:09:39Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7177,
+        "kind": "issue",
+        "title": "Casa del Libro keeps active Mirakl offers for withdrawn stocks",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T21:34:11Z",
+        "updatedAt": "2026-07-07T21:46:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7179,
+        "kind": "pull_request",
+        "title": "fix: retry TodoColeccion price recovery as update",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T22:11:04Z",
+        "updatedAt": "2026-07-07T22:11:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7183,
+        "kind": "pull_request",
+        "title": "skills: add hamelyn-vercel-build-audit and hamelyn-b2b-order-intake",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T22:35:55Z",
+        "updatedAt": "2026-07-07T22:36:23Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7186,
+        "kind": "pull_request",
+        "title": "fix: enforce order transition validation",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-07T22:56:37Z",
+        "updatedAt": "2026-07-07T22:57:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7190,
+        "kind": "pull_request",
+        "title": "fix: remove dead profile addresses page",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-08T00:10:05Z",
+        "updatedAt": "2026-07-08T00:10:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7191,
+        "kind": "pull_request",
+        "title": "fix: unify coupon user identity filter",
+        "labels": [
+          "size/M",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-08T00:43:03Z",
+        "updatedAt": "2026-07-08T00:43:44Z",
+        "missingReason": "recently_created"
+      }
+    ],
+    "openArchived": [],
+    "staleItemRecords": [],
+    "duplicateRecords": [],
+    "protectedProposed": [],
+    "staleReviews": []
+  }
+}
