@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:05:02.141Z",
-  "updatedAt": "2026-07-08T14:56:20Z",
+  "generatedAt": "2026-07-08T22:03:42.304Z",
+  "updatedAt": "2026-07-08T21:55:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,53 +10,52 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7238",
     "state": "open",
     "labels": [
-      "size/XL",
+      "size/XXL",
+      "P1",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P1",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
       "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-07-08T11:07:56Z",
-    "updatedAt": "2026-07-08T14:56:20Z",
-    "headSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "updatedAt": "2026-07-08T21:55:45Z",
+    "headSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
   },
-  "lane": "merge_risk",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se debe bloquear este despliegue a producción hasta corregir el helper `uploadAdminPdfBase64` y confirmar los riesgos operativos de crons/data-platform?",
-  "rationale": "La PR es una release a `master`, toca datos sensibles y crons productivos, y hay un bug concreto en el flujo de Blob que puede romper URLs de PDFs admin al activar sufijos aleatorios.",
+  "question": "¿Debe bloquearse este deploy a producción hasta proteger `/eve/v1/cron*` y aportar prueba real del bundle completo?",
+  "rationale": "El cambio lleva a producción una app nueva con credenciales y ejecución programada; automatización no puede decidir aceptar una superficie cron pública en nombre del equipo.",
   "options": [
     {
-      "title": "Bloquear y corregir antes de producción",
-      "body": "Abrir o aplicar un fix acotado en `dev` para conservar la URL generada por `put`, repetir la release y pedir una nueva revisión.",
+      "title": "Bloquear y parchear crons",
+      "body": "Recomendado: corregir la autenticación de `/eve/v1/cron*` en `dev`, refrescar esta PR y añadir evidencia real de deploy antes de mergear a `master`.",
       "recommended": true
     },
     {
-      "title": "Enviar con aceptación explícita del riesgo",
-      "body": "Un maintainer puede decidir desplegar si el flujo V3 de Blob no se usa o si hay una vía operativa externa para recuperar las URLs generadas.",
+      "title": "Aceptar el riesgo del release",
+      "body": "Un maintainer puede mergear sabiendo que los crons de agents quedan expuestos a disparo externo y que la prueba de runtime aún es incompleta.",
       "recommended": false
     },
     {
-      "title": "Pausar la release",
-      "body": "Cerrar o dejar en espera esta PR si el bundle de `dev` necesita separarse en una release más pequeña.",
+      "title": "Separar `apps/agents` del release",
+      "body": "Si Fnac u otros fixes urgen, se puede preparar un release más estrecho sin la nueva app de agentes y desplegar agents después de su hardening.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear y corregir antes de producción",
-    "body": "Abrir o aplicar un fix acotado en `dev` para conservar la URL generada por `put`, repetir la release y pedir una nueva revisión.",
+    "title": "Bloquear y parchear crons",
+    "body": "Recomendado: corregir la autenticación de `/eve/v1/cron*` en `dev`, refrescar esta PR y añadir evidencia real de deploy antes de mergear a `master`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el owner histórico más cercano al cambio de Blob que introduce el bloqueo concreto de esta revisión.",
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo y endureció `apps/agents`, la superficie que requiere la decisión de seguridad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7238.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7238#issuecomment-4916230372",
-    "reviewedAt": "2026-07-08T15:05:02.141Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-08T22:03:42.304Z",
+    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
   }
 }
