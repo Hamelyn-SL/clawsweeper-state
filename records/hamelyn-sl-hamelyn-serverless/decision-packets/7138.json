@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T09:14:46.889Z",
+  "updatedAt": "2026-07-08T09:04:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7138,
+    "title": "BL-ecommerce-coupons-28: stripe bypass uses exact equality without rounding tolerance",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7138",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p3",
+      "feature",
+      "triage:pr-opened",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-07T12:13:58Z",
+    "updatedAt": "2026-07-08T09:04:47Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should ecommerce coupon validation waive Stripe payment when the rounded residual is at most €0.01, or should residual cents continue through payment handling?",
+  "rationale": "The code change is narrow, but deciding to treat a one-cent residual as free is a business and checkout policy choice rather than a purely mechanical refactor.",
+  "options": [
+    {
+      "title": "Accept one-cent tolerance",
+      "body": "Land the linked PR path if the ecommerce owner accepts waiving at most €0.01 to avoid Stripe charges for effectively free coupon orders.",
+      "recommended": true
+    },
+    {
+      "title": "Keep strict payment handling",
+      "body": "Close or revise the linked PR if every positive residual must still be charged or handled by Stripe/payment code.",
+      "recommended": false
+    },
+    {
+      "title": "Choose a different threshold",
+      "body": "Revise the PR to encode a different residual rule and add focused validation evidence for the selected boundary.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Accept one-cent tolerance",
+    "body": "Land the linked PR path if the ecommerce owner accepts waiving at most €0.01 to avoid Stripe charges for effectively free coupon orders.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "The issue and related BL mother issue identify MiguelHamelyn as the coupons business-rule owner for this policy choice.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7138.md",
+    "reviewedAt": "2026-07-08T09:14:46.889Z",
+    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+  }
+}
