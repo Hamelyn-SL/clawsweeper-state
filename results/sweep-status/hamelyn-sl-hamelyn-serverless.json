@@ -3,8 +3,8 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Apply comments synced",
-  "detail": "Comment-only apply checkpoint 1 finished. Synced durable review comments: 33. Result records: 33. Item numbers: 6525,6886,7171,7179,7183,7191,7193,7197,7198,7202,7203,7204,7205,7206,7208,7209,7210,7211,7212,7219,7226,7227,7233,7234,7237,7239,7240,7241,7252,7254,7256,7257,7258. Next cursor: none.",
+  "state": "Apply finished",
+  "detail": "Apply/comment-sync run finished with 0 fresh closes out of requested limit 0. See apply-report.json for per-item results.",
   "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/28975847937",
   "planned_count": null,
   "planned_capacity": null,
@@ -21,7 +21,7 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-07-08T21:14:40.832Z",
+    "generated_at": "2026-07-08T21:14:43.436Z",
     "target_repo": "Hamelyn-SL/hamelyn-serverless",
     "mode": "comment_sync",
     "status": "ok",
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-07-08T21:14:41.141Z"
+  "updated_at": "2026-07-08T21:14:43.752Z"
 }
