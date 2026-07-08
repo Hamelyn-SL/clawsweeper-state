@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T22:03:42.304Z",
-  "updatedAt": "2026-07-08T21:55:45Z",
+  "generatedAt": "2026-07-08T23:36:46.802Z",
+  "updatedAt": "2026-07-08T22:50:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P1",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P1",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
       "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-07-08T11:07:56Z",
-    "updatedAt": "2026-07-08T21:55:45Z",
-    "headSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
+    "updatedAt": "2026-07-08T22:50:28Z",
+    "headSha": "5841c4c58c71675185066a63205984fa2de43f0e"
   },
   "lane": "security_boundary",
   "priority": "P1",
   "question": "¿Debe bloquearse este deploy a producción hasta proteger `/eve/v1/cron*` y aportar prueba real del bundle completo?",
-  "rationale": "El cambio lleva a producción una app nueva con credenciales y ejecución programada; automatización no puede decidir aceptar una superficie cron pública en nombre del equipo.",
+  "rationale": "La PR lleva a `master` una app nueva capaz de ejecutar crons y tocar sistemas productivos; automatización no puede aceptar una superficie cron abierta ni validar por sí sola una barrera externa no documentada.",
   "options": [
     {
       "title": "Bloquear y parchear crons",
-      "body": "Recomendado: corregir la autenticación de `/eve/v1/cron*` en `dev`, refrescar esta PR y añadir evidencia real de deploy antes de mergear a `master`.",
+      "body": "Corregir la autenticación de `/eve/v1/cron*` en `dev`, refrescar esta PR y añadir evidencia real de deploy antes de mergear a `master`.",
       "recommended": true
     },
     {
       "title": "Aceptar el riesgo del release",
-      "body": "Un maintainer puede mergear sabiendo que los crons de agents quedan expuestos a disparo externo y que la prueba de runtime aún es incompleta.",
+      "body": "Un maintainer puede mergear si confirma manualmente que Eve/Vercel aplica una barrera equivalente y que los deploys fallidos no afectan producción.",
       "recommended": false
     },
     {
       "title": "Separar `apps/agents` del release",
-      "body": "Si Fnac u otros fixes urgen, se puede preparar un release más estrecho sin la nueva app de agentes y desplegar agents después de su hardening.",
+      "body": "Preparar un deploy más estrecho para los fixes urgentes y dejar `apps/agents` para una promoción posterior con hardening y prueba runtime.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Bloquear y parchear crons",
-    "body": "Recomendado: corregir la autenticación de `/eve/v1/cron*` en `dev`, refrescar esta PR y añadir evidencia real de deploy antes de mergear a `master`.",
+    "body": "Corregir la autenticación de `/eve/v1/cron*` en `dev`, refrescar esta PR y añadir evidencia real de deploy antes de mergear a `master`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien introdujo y endureció `apps/agents`, la superficie que requiere la decisión de seguridad.",
+    "reason": "Es el propietario histórico más claro de `apps/agents` y de la superficie exacta de autenticación/release que requiere decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7238.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7238#issuecomment-4916230372",
-    "reviewedAt": "2026-07-08T22:03:42.304Z",
-    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
+    "reviewedAt": "2026-07-08T23:36:46.802Z",
+    "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
   }
 }
