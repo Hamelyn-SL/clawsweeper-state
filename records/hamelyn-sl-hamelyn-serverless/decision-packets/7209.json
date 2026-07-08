@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T20:58:34.358Z",
-  "updatedAt": "2026-07-08T09:42:38Z",
+  "generatedAt": "2026-07-08T22:40:37.517Z",
+  "updatedAt": "2026-07-08T21:11:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,15 +15,20 @@
       "app:marketplace",
       "triage:done",
       "impact:other",
-      "P2"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-07-08T06:37:14Z",
-    "updatedAt": "2026-07-08T09:42:38Z"
+    "updatedAt": "2026-07-08T21:11:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
   "question": "¿Qué rango min/max debe enviarse a Amazon ES para `optimo`, `atascado` y `sin_grupo`, y debe ir sin `pricingRuleId` salvo en grupos aprobados?",
-  "rationale": "El cambio no es solo mecánico: modifica la política de umbrales enviada a Amazon para grupos que hoy se excluyen explícitamente de la regla de pricing, y esa decisión afecta recuperación, márgenes y automatización de precios.",
+  "rationale": "El cambio modifica una política comercial de pricing Amazon para grupos que hoy se excluyen explícitamente de la regla automática, así que no conviene automatizarlo sin confirmar el comportamiento deseado.",
   "options": [
     {
       "title": "Separar umbrales de regla automática",
@@ -31,13 +36,13 @@
       "recommended": true
     },
     {
-      "title": "Ampliar regla existente",
-      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, asumiendo que también pueden recibir el plan de pricing automático actual.",
+      "title": "Ampliar la regla existente",
+      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, aceptando que también puedan recibir el plan de pricing automático actual.",
       "recommended": false
     },
     {
-      "title": "Pausar recovery de 18155",
-      "body": "Mantener los listings suprimidos hasta definir política comercial de umbrales y evitar retries que repitan el error.",
+      "title": "Pausar recovery de `18155`",
+      "body": "Mantener esos listings suprimidos hasta definir la política comercial de umbrales y evitar retries que repitan el error.",
       "recommended": false
     }
   ],
@@ -48,13 +53,12 @@
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la mejor ruta inicial porque llevó el fix previo de recovery 14016/18155/18555 y documentó el riesgo de política de pricing asociado.",
+    "reason": "Es la mejor ruta inicial porque llevó el fix previo de recovery 14016/18155/18555 y conoce la frontera entre recuperación técnica y política de pricing.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7209.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7209#issuecomment-4919253706",
-    "reviewedAt": "2026-07-08T20:58:34.358Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-08T22:40:37.517Z",
+    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
   }
 }
