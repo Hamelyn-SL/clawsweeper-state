@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T15:28:57.597Z",
+  "updatedAt": "2026-07-08T15:20:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7250,
+    "title": "Move heavy read-only export/feed crons to BigQuery to flatten primary CPU",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250",
+    "state": "open",
+    "labels": [
+      "priority:p1",
+      "app:infrastructure",
+      "reporter:JavierHamelyn",
+      "feature",
+      "triage:running"
+    ],
+    "createdAt": "2026-07-08T15:18:34Z",
+    "updatedAt": "2026-07-08T15:20:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué fase debe patrocinarse primero para mover lecturas batch a BigQuery sin cambiar semánticas operativas de los feeds y reportes?",
+  "rationale": "El repo ya tiene la réplica BigQuery y el patrón recomendado, pero la issue agrupa varios workflows con distintos riesgos de frescura, escritura correctiva y coste de validación; hace falta una decisión de secuencia y alcance antes de implementar.",
+  "options": [
+    {
+      "title": "Fasear empezando por flash offers",
+      "body": "Atacar primero `rotate-flash-offers` reduce el mayor culpable descrito y valida el patrón BigQuery/materializado antes de tocar reportes marketplace o feeds internacionales.",
+      "recommended": true
+    },
+    {
+      "title": "Migrar todos los feeds en un bloque",
+      "body": "Un bloque único puede cerrar la iniciativa antes, pero aumenta el riesgo de cambios simultáneos en exportaciones, SFTP y decisiones `DB_ONLY`/`MK_ONLY`.",
+      "recommended": false
+    },
+    {
+      "title": "Endurecer Mongo como paso intermedio",
+      "body": "Mover lecturas restantes a usuario read-only, `secondaryPreferred`, `appName` y `maxTimeMS` reduce daño mientras se diseña la migración completa, pero no elimina la dependencia del primario si alguna ruta queda mal configurada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fasear empezando por flash offers",
+    "body": "Atacar primero `rotate-flash-offers` reduce el mayor culpable descrito y valida el patrón BigQuery/materializado antes de tocar reportes marketplace o feeds internacionales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el candidato más cercano para decidir el contrato BigQuery/CDC por su trabajo reciente en `bq-merge` y el precedente de consumo desde BigQuery.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
+    "reviewedAt": "2026-07-08T15:28:57.597Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+  }
+}

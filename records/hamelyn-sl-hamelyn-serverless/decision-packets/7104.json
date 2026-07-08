@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:08:15.408Z",
-  "updatedAt": "2026-07-08T08:52:23Z",
+  "generatedAt": "2026-07-08T15:27:39.280Z",
+  "updatedAt": "2026-07-08T10:33:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,6 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:queued",
       "business-logic",
       "hackathon",
       "impact:other",
@@ -26,42 +25,42 @@
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T09:14:36Z",
-    "updatedAt": "2026-07-08T08:52:23Z"
+    "updatedAt": "2026-07-08T10:33:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152 be accepted as the F1-F5 implementation for the Ecommerce SEO BL block, or should the block be split or restarted before merge?",
-  "rationale": "The issue asks for owner-validated business-logic extraction, and the open PR expands the estimated six-rule block into 65 rules across 84 changed files, so maintainer owner/reviewer judgment is required before this can be considered complete.",
+  "question": "¿Debe aceptarse https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7152 como implementación F1-F5 del bloque BL de SEO de Ecommerce, o debe dividirse/replantearse antes de fusionarse?",
+  "rationale": "La issue exige validación de owner en F2 y la PR candidata expande el barrido estimado a 65 reglas y 84 ficheros cambiados, así que la decisión de alcance y aceptación corresponde al responsable/reviewer del bloque.",
   "options": [
     {
-      "title": "Review and land PR 7152",
-      "body": "Accept the current split into SEO sub-subdomains if the owner/reviewer agree the 65 validated specs, isolated functions, and tests satisfy the block definition of done.",
+      "title": "Revisar e integrar la PR candidata",
+      "body": "Aceptar la división en subsubdominios si las 65 specs, las funciones aisladas y los tests cumplen la definición de done del pipeline BL.",
       "recommended": true
     },
     {
-      "title": "Narrow or split the block",
-      "body": "Ask the PR author to reduce the branch into smaller BL PRs if the current SEO surface is too large to review safely in one merge.",
+      "title": "Acotar o dividir el bloque",
+      "body": "Pedir una división en PRs más pequeñas si el alcance actual es demasiado grande para revisar con seguridad.",
       "recommended": false
     },
     {
-      "title": "Restart the implementation path",
-      "body": "Close the PR and keep this issue as the parent if maintainers decide the extraction needs a different boundary or owner validation pass.",
+      "title": "Replantear la implementación",
+      "body": "Mantener esta issue como padre y cerrar o rehacer la PR si la validación del owner decide otra frontera para SEO.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Review and land PR 7152",
-    "body": "Accept the current split into SEO sub-subdomains if the owner/reviewer agree the 65 validated specs, isolated functions, and tests satisfy the block definition of done.",
+    "title": "Revisar e integrar la PR candidata",
+    "body": "Aceptar la división en subsubdominios si las 65 specs, las funciones aisladas y los tests cumplen la definición de done del pipeline BL.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "alexcanHamelyn is the named owner, current assignee, and PR author for the linked implementation candidate.",
+    "reason": "Es el owner nombrado, assignee actual y autor de la PR candidata de cierre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7104.md",
-    "reviewedAt": "2026-07-08T09:08:15.408Z",
-    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+    "reviewedAt": "2026-07-08T15:27:39.280Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }
