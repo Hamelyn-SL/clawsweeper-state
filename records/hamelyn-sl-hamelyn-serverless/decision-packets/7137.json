@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:23:40.838Z",
-  "updatedAt": "2026-07-08T10:50:44Z",
+  "generatedAt": "2026-07-08T16:35:36.716Z",
+  "updatedAt": "2026-07-08T15:38:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,43 +25,42 @@
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
-    "updatedAt": "2026-07-08T10:50:44Z"
+    "updatedAt": "2026-07-08T15:38:12Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe resolverse primero este límite de confianza con un recálculo server-side acotado al endpoint de cupones, o debe aterrizar junto con el cálculo compartido de envío/total del checkout de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920?",
-  "rationale": "La vulnerabilidad concreta está clara, pero el arreglo anterior ya fue grande y se solapa con el límite de pago de checkout, así que la automatización no debería escoger sola la secuencia ni la frontera del servicio compartido.",
+  "question": "¿Debe corregirse primero la prevalidación de cupones con un parche acotado, o debe integrarse dentro del cálculo compartido de envío/total de checkout de `https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920`?",
+  "rationale": "El bug está confirmado, pero la PR centrada ya salió size/L y el límite correcto se solapa con checkout y seguridad; hace falta fijar la secuencia antes de abrir otro arreglo.",
   "options": [
     {
-      "title": "Compartir cálculo con checkout primero",
-      "body": "Construir el cálculo de envío común y conectar tanto checkout como prevalidación de cupones reduce duplicación y deriva entre ambos límites de confianza.",
+      "title": "Compartir cálculo con checkout",
+      "body": "Implementar primero un servicio común de envío/total en servidor y usarlo desde cupones y checkout para evitar divergencias.",
       "recommended": true
     },
     {
-      "title": "Parchear cupones primero",
-      "body": "Corregir ahora solo el endpoint de cupones reduce antes el riesgo de prevalidación, pero deja pendiente coordinar el mismo cálculo con checkout.",
+      "title": "Parche acotado de cupones",
+      "body": "Corregir solo el endpoint de cupones ahora, aceptando que checkout seguirá con su seguimiento separado.",
       "recommended": false
     },
     {
-      "title": "Esperar al bloque BL de cupones",
-      "body": "Aplazar el arreglo hasta que la PR BL de cupones se estabilice puede mejorar trazabilidad, pero retrasa el cierre de un bug de seguridad confirmado.",
+      "title": "Esperar al bloque BL",
+      "body": "Retener el arreglo hasta que el PR BL relacionado esté resuelto y las specs gobiernen el cambio de comportamiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Compartir cálculo con checkout primero",
-    "body": "Construir el cálculo de envío común y conectar tanto checkout como prevalidación de cupones reduce duplicación y deriva entre ambos límites de confianza.",
+    "title": "Compartir cálculo con checkout",
+    "body": "Implementar primero un servicio común de envío/total en servidor y usarlo desde cupones y checkout para evitar divergencias.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el owner asignado del bloque de cupones y quien mejor puede coordinar la frontera con checkout y BL.",
+    "reason": "Es el owner nombrado del bloque BL de Coupons & Promotions y aparece en el historial reciente de cupones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4916394281",
-    "reviewedAt": "2026-07-08T15:23:40.838Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-08T16:35:36.716Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

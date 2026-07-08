@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T16:35:33.597Z",
+  "updatedAt": "2026-07-08T15:38:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7236,
+    "title": "Revisión V3: product rejection + ratio de progreso al cerrar lote (nuevo diseño, mismo backend)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "reporter:banosdavidhamelyn",
+      "feature",
+      "triage:done",
+      "epic:revision-v3",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
+    ],
+    "createdAt": "2026-07-08T10:11:57Z",
+    "updatedAt": "2026-07-08T15:38:11Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe el equipo de Revisión V3 aterrizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7244 como implementación de este cierre con motivos, o devolverlo para correcciones antes del merge?",
+  "rationale": "El issue ya tiene un PR candidato contra la rama del epic, pero esa rama no está en `dev` y el PR tiene comentarios de revisión pendientes; hace falta una decisión humana de revisión, no un cierre automático ni un segundo fix paralelo.",
+  "options": [
+    {
+      "title": "Revisar y aterrizar el PR candidato",
+      "body": "Mantiene este issue como seguimiento canónico hasta que el PR de `EPIC/revision-v3` quede revisado, probado y fusionado.",
+      "recommended": true
+    },
+    {
+      "title": "Pedir correcciones en el PR candidato",
+      "body": "Conserva el issue abierto mientras se corrigen los puntos de revisión del modal, ratio o persistencia antes de fusionar.",
+      "recommended": false
+    },
+    {
+      "title": "Descartar el PR y redefinir el camino",
+      "body": "Solo encaja si el equipo decide que el diseño o el endpoint propuesto no son el enfoque deseado para Revisión V3.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar y aterrizar el PR candidato",
+    "body": "Mantiene este issue como seguimiento canónico hasta que el PR de `EPIC/revision-v3` quede revisado, probado y fusionado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Aparece como autor del epic padre y reviewer solicitado del PR candidato, así que es el mejor punto de decisión funcional disponible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7236.md",
+    "reviewedAt": "2026-07-08T16:35:33.597Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}

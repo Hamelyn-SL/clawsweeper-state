@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:22:59.868Z",
-  "updatedAt": "2026-07-08T10:50:47Z",
+  "generatedAt": "2026-07-08T16:36:30.705Z",
+  "updatedAt": "2026-07-08T15:38:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,43 +25,42 @@
       "impact:ux-friction"
     ],
     "createdAt": "2026-07-07T12:14:01Z",
-    "updatedAt": "2026-07-08T10:50:47Z"
+    "updatedAt": "2026-07-08T15:38:15Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el copy promocional de la cabecera derivarse de los documentos de cupón activos, de una configuración/CMS de promociones editable, o seguir siendo copy localizado estático retirando solo el banner heredado?",
-  "rationale": "La evidencia confirma deuda real, pero la fuente de verdad decide quién controla promociones, locales, vigencia y copy de marketing; automatizar esa elección introduciría un contrato de producto no aprobado.",
+  "question": "¿Cuál debe ser la fuente de verdad del copy promocional visible en ecommerce: datos del cupón activo, una configuración/CMS editable de promociones, o traducciones estáticas mantenidas manualmente?",
+  "rationale": "La inspección confirma la divergencia, pero cada solución cambia quién controla promociones, locales y condiciones visibles; la automatización no debería elegir ese contrato de producto.",
   "options": [
     {
-      "title": "Fuente de promociones editable",
-      "body": "Crear o seleccionar una configuración/API de promociones que referencie el cupón activo y exponga copy localizado más términos estructurados para `PromoStrip`.",
+      "title": "Fuente única de promociones",
+      "body": "Crear o reutilizar una configuración/API de promociones que referencie el cupón activo y exponga copy localizado junto con términos estructurados para `PromoStrip`.",
       "recommended": true
     },
     {
-      "title": "Derivar de cupones",
-      "body": "Construir el mensaje desde `discount.kind` y los datos del cupón activo por locale, reduciendo duplicación pero con menos flexibilidad de marketing.",
+      "title": "Derivar desde cupones",
+      "body": "Construir el mensaje desde `discount.kind`, cantidades y código del cupón activo por locale, aceptando menos flexibilidad editorial.",
       "recommended": false
     },
     {
       "title": "Mantener copy estático",
-      "body": "Eliminar o marcar obsoleto `CouponBanner` y aceptar que `PromoStrip` se actualice manualmente en los locales.",
+      "body": "Eliminar o deprecar el `CouponBanner` heredado y documentar que `PromoStrip` se sincroniza manualmente desde i18n, aceptando el riesgo operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fuente de promociones editable",
-    "body": "Crear o seleccionar una configuración/API de promociones que referencie el cupón activo y exponga copy localizado más términos estructurados para `PromoStrip`.",
+    "title": "Fuente única de promociones",
+    "body": "Crear o reutilizar una configuración/API de promociones que referencie el cupón activo y exponga copy localizado junto con términos estructurados para `PromoStrip`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el owner asignado del issue y del bloque BL de Coupons & Promotions donde se detectó la divergencia.",
+    "reason": "Es el owner indicado para Coupons & Promotions y la issue está asignada a él, por lo que es el mejor punto para decidir la fuente de verdad de promociones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7140.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7140#issuecomment-4916394535",
-    "reviewedAt": "2026-07-08T15:22:59.868Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-08T16:36:30.705Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
 }

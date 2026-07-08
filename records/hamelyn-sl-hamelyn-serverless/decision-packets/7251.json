@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T16:38:27.368Z",
+  "updatedAt": "2026-07-08T15:48:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7251,
+    "title": "feat: add agents app to the monorepo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7251",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-08T15:39:39Z",
+    "updatedAt": "2026-07-08T15:48:28Z",
+    "headSha": "b0fa1b3b1c812acf3d747ec5bb901232cb0a96e4"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe aceptarse `apps/agents` en `dev` con esta superficie operacional nueva, o debe bloquearse hasta cerrar los P1 de seguridad/disponibilidad y aportar prueba real de ejecución?",
+  "rationale": "El PR es una importación grande con crons y mutaciones productivas potenciales; la decisión de activar esa superficie no queda resuelta por typecheck/build ni por los tests unitarios incluidos.",
+  "options": [
+    {
+      "title": "Endurecer antes de merge",
+      "body": "Resolver el refresh concurrente, aislar `mongo_script`, corregir el reviewer bot y aportar prueba real antes de pedir merge humano.",
+      "recommended": true
+    },
+    {
+      "title": "Merge con activación operativa bloqueada",
+      "body": "Aceptar el código sabiendo que no se despliega hasta crear proyecto/secrets, pero manteniendo una deuda de seguridad que debe quedar explícitamente asumida.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir el PR",
+      "body": "Separar CI/deploy/docs de la app runtime y revisar por capas para reducir el riesgo de una importación XXL.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Endurecer antes de merge",
+    "body": "Resolver el refresh concurrente, aislar `mongo_script`, corregir el reviewer bot y aportar prueba real antes de pedir merge humano.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien trae la app y tiene historial reciente en deploy/marketplaces, así que puede decidir el umbral operativo junto con los reviewers asignados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7251.md",
+    "reviewedAt": "2026-07-08T16:38:27.368Z",
+    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+  }
+}
