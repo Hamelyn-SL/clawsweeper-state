@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T08:47:10.330Z",
+  "updatedAt": "2026-07-08T08:39:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7216,
+    "title": "feat: trazar reviewedAt/reviewedBy en cada revisión de producto (acepte o rechace)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7216",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "epic:revision-v3"
+    ],
+    "createdAt": "2026-07-08T08:32:51Z",
+    "updatedAt": "2026-07-08T08:39:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "How should historical `acceptedAt`/`acceptedBy` values be treated when introducing `reviewedAt`/`reviewedBy` per product?",
+  "rationale": "The code change is clear, but preserving or backfilling historical review semantics affects reports and BigQuery and needs an explicit data decision before implementation.",
+  "options": [
+    {
+      "title": "Compatibility read without backfill",
+      "body": "Add `reviewedAt`/`reviewedBy` going forward while mapping old `acceptedAt`/`acceptedBy` for accepted historical products where consumers need it.",
+      "recommended": true
+    },
+    {
+      "title": "Backfill historical accepted products",
+      "body": "Run a controlled backfill that copies accepted metadata into reviewed metadata for old accepted product rows, with no inferred reviewer for rejected rows unless another source is approved.",
+      "recommended": false
+    },
+    {
+      "title": "Hard rename only",
+      "body": "Rename consumers to the new fields without compatibility, accepting that historical acceptance timestamps may disappear from current reports until a separate migration runs.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Compatibility read without backfill",
+    "body": "Add `reviewedAt`/`reviewedBy` going forward while mapping old `acceptedAt`/`acceptedBy` for accepted historical products where consumers need it.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "The issue is assigned to AlexDiaz-Hamelyn and the requested behavior is scoped to the Admin review flow plus downstream data handling.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7216.md",
+    "reviewedAt": "2026-07-08T08:47:10.330Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
