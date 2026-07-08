@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:11:51.119Z",
+  "generatedAt": "2026-07-08T15:13:49.940Z",
   "updatedAt": "2026-07-08T10:55:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,53 +14,45 @@
       "priority:p2",
       "feature",
       "triage:done",
-      "reporter:AlexDiaz-Hamelyn",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 🐚 platinum hermit",
-      "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
     "updatedAt": "2026-07-08T10:55:06Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe ecommerce patrocinar ahora un autoservicio de cancelación guest con mutación pública protegida, o mantener la cancelación guest como gestión manual vía incidencia?",
-  "rationale": "La fuente confirma el hueco funcional, pero el cambio afecta UX multidioma, soporte y una mutación pública que requiere contrato de seguridad y producto antes de automatizar implementación.",
+  "question": "¿Debe ecommerce exponer cancelación guest por `codeIdentifier` + email, y con qué contrato de rate limit, copy y fallback a incidencia?",
+  "rationale": "La feature es viable, pero abre una mutación pública sensible; automatización no debe fijar por sí sola el umbral de verificación, abuso aceptable y experiencia de usuario.",
   "options": [
     {
-      "title": "Implementar flujo guest protegido",
-      "body": "Añadir endpoint y UI guest con validación pedido+email, rate limit, estados cancelables server-side y reutilización de la cancelación existente.",
+      "title": "Aprobar autoservicio guest acotado",
+      "body": "Implementar endpoint guest y UI con helper compartido, estados cancelables, 404 indistinguible, rate limit y pruebas del flujo logueado y guest.",
       "recommended": true
     },
     {
       "title": "Mantener incidencia manual",
-      "body": "Dejar el flujo actual y documentar que los guests solicitan cancelación vía incidencia hasta que se priorice autoservicio.",
+      "body": "Cerrar la brecha funcional solo con copy o routing a soporte, evitando una nueva mutación pública por ahora.",
       "recommended": false
     },
     {
-      "title": "Hacer una fase de diseño primero",
-      "body": "Cerrar contrato UX/copy/rate-limit y después abrir una issue técnica más estrecha para implementación.",
+      "title": "Limitar a herramienta interna",
+      "body": "Crear una ayuda para ATC en vez de exponer cancelación directa al cliente guest.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Implementar flujo guest protegido",
-    "body": "Añadir endpoint y UI guest con validación pedido+email, rate limit, estados cancelables server-side y reutilización de la cancelación existente.",
+    "title": "Aprobar autoservicio guest acotado",
+    "body": "Implementar endpoint guest y UI con helper compartido, estados cancelables, 404 indistinguible, rate limit y pruebas del flujo logueado y guest.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es quien más recientemente tocó la UI de contacto donde viviría la decisión de producto y experiencia guest.",
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato con más historial directo en verificación guest e incidencias, que son la base del contrato propuesto.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916288322",
-    "reviewedAt": "2026-07-08T15:11:51.119Z",
+    "reviewedAt": "2026-07-08T15:13:49.940Z",
     "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }
