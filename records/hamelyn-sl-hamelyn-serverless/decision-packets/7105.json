@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:57:14.651Z",
-  "updatedAt": "2026-07-08T03:46:30Z",
+  "generatedAt": "2026-07-08T03:50:14.670Z",
+  "updatedAt": "2026-07-07T13:40:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "hackathon"
     ],
     "createdAt": "2026-07-07T09:14:41Z",
-    "updatedAt": "2026-07-08T03:46:30Z"
+    "updatedAt": "2026-07-07T13:40:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the Public Catalog BL block proceed with the corrected F1 inventory, and should `constants/categories/SEO` be validated here or moved to the Ecommerce SEO BL block?",
-  "rationale": "The BL pipeline makes owner validation blocking, and the current issue discussion already identifies scope facts and a SEO/catalog boundary that cannot be safely settled by source inspection alone.",
+  "question": "Should Public Catalog F1 include constants/categories/SEO, or should that surface be moved to the separate BL-ecommerce-seo block before validation?",
+  "rationale": "The code shows SEO category data still has active consumers, but the issue and triage both identify its domain boundary as unresolved; automation should not decide that BL ownership before F2.",
   "options": [
     {
-      "title": "Proceed with corrected Public Catalog F1/F2",
-      "body": "Validate the current 30-item page size, unconditional 15-item availability batching, live filters/sorting/pagination, and decide the SEO constants boundary during owner review.",
+      "title": "Validate boundary during F2",
+      "body": "Proceed with F1 after correcting the known seed values and present constants/categories/SEO as an explicit owner flag before isolation or tests.",
       "recommended": true
     },
     {
-      "title": "Move SEO constants to the SEO block",
-      "body": "Treat `constants/categories/SEO` as content/routing SEO unless the owner explicitly wants those rules documented under Public Catalog.",
+      "title": "Move SEO categories to SEO block",
+      "body": "Keep this block focused on catalog listing/search behavior and handle constants/categories/SEO under https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7104 if the owner classifies it as SEO routing/content.",
       "recommended": false
     },
     {
       "title": "Pause until child cleanups land",
-      "body": "Review the open child PRs first, then run F1/F2 against the simplified catalog/search code to avoid documenting dead paths.",
+      "body": "Wait for the child cleanup PRs linked from https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7131 and https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7132 before isolating affected rules.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proceed with corrected Public Catalog F1/F2",
-    "body": "Validate the current 30-item page size, unconditional 15-item availability batching, live filters/sorting/pagination, and decide the SEO constants boundary during owner review.",
+    "title": "Validate boundary during F2",
+    "body": "Proceed with F1 after correcting the known seed values and present constants/categories/SEO as an explicit owner flag before isolation or tests.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "They are named as the block owner, assigned to the issue, and authored the related BL child issues discovered during extraction.",
+    "reason": "AlexDiaz-Hamelyn is the named and assigned owner for this BL block and opened the related child catalog issues from the extraction pass.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7105.md",
-    "reviewedAt": "2026-07-08T03:57:14.651Z",
+    "reviewedAt": "2026-07-08T03:50:14.670Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:50:05.841Z",
+  "updatedAt": "2026-07-07T11:09:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7103,
+    "title": "BL-ecommerce-coupons: Coupons & Promotions — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7103",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-07T09:14:32Z",
+    "updatedAt": "2026-07-07T11:09:32Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "Should the Coupons & Promotions BL block continue as the owner-approved 28-rule spin through F2, or should maintainers split it before F3/F4?",
+  "rationale": "Automation cannot validate the business wording or override the owner-approved block size; F2 is explicitly human-blocking in the BL pipeline.",
+  "options": [
+    {
+      "title": "Continue the 28-rule F2 block",
+      "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
+      "recommended": true
+    },
+    {
+      "title": "Split before isolation",
+      "body": "Break the block into smaller sub-blocks if reviewer load is too high, at the cost of revisiting the owner’s stated grouping decision.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Continue the 28-rule F2 block",
+    "body": "Honor the owner comment, finish bulk F2 validation, then publish the single BL PR when the specs are reviewable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "He is the assigned owner, confirmed F0/F1, and is the named blocker for F2 validation.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7103.md",
+    "reviewedAt": "2026-07-08T03:50:05.841Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:45:25.125Z",
+  "updatedAt": "2026-07-07T07:20:10Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7049,
+    "title": "Amazon: withdrawAmazonProduct marca WITHDRAWN todo el lote aunque el PATCH falle por sku",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7049",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace"
+    ],
+    "createdAt": "2026-07-06T23:14:05Z",
+    "updatedAt": "2026-07-07T07:20:10Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "Should the marketplace team merge the structural Amazon PATCH withdraw fix after repairing the retry-policy gap, or wait for a real `mk=amazon patch fail>0` event before changing behavior?",
+  "rationale": "The bug is source-reproducible on current `dev`, but the latest human issue comment explicitly prefers waiting for a real failure sample before proceeding.",
+  "options": [
+    {
+      "title": "Merge after PR repair",
+      "body": "Fix the retry-policy blocker in the linked PR, add the best available redacted proof, and land the preventive fix before the next partial PATCH failure.",
+      "recommended": true
+    },
+    {
+      "title": "Wait for live failure proof",
+      "body": "Pause the linked PR and keep monitoring BigQuery until a real request_id and failing SKU can be audited.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Merge after PR repair",
+    "body": "Fix the retry-policy blocker in the linked PR, add the best available redacted proof, and land the preventive fix before the next partial PATCH failure.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "The linked PR is already routed to MarcosTerroso for review and the sampled history shows strong ownership of the marketplace/retry files involved.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7049.md",
+    "reviewedAt": "2026-07-08T03:45:25.125Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
