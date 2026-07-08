@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:33:49.397Z",
-  "updatedAt": "2026-07-08T03:25:11Z",
+  "generatedAt": "2026-07-08T03:29:32.697Z",
+  "updatedAt": "2026-07-06T22:45:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,37 +25,37 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-07-08T03:25:11Z"
+    "updatedAt": "2026-07-06T22:45:04Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "Which approved legal/operational footer assets should replace the current ES and ENG embedded invoice footers?",
-  "rationale": "The code path is clear, but choosing a valid current signer, title, stamp, and signature is a business/legal decision that automation cannot infer safely.",
+  "question": "What approved ES and ENG footer assets, signer details, or no-signature policy should replace the current embedded commercial-invoice signature?",
+  "rationale": "The code change is narrow, but the actual signer/seal/footer content is a legal and business approval that cannot be inferred safely from the repository.",
   "options": [
     {
-      "title": "Provide approved ES/ENG PNG footers",
-      "body": "Supply the final two footer images so the fix can be a narrow constant replacement plus PDF render verification.",
+      "title": "Use approved replacement footers",
+      "body": "Provide or approve the two ES/ENG footer PNG/base64 assets and let a narrow PR replace the constants and verify rendered PDFs.",
       "recommended": true
     },
     {
-      "title": "Provide signer details for regeneration",
-      "body": "Provide the approved signer name, role, signature/stamp asset, and layout constraints so the team can regenerate both footers.",
+      "title": "Regenerate from approved signer data",
+      "body": "Provide the approved signer name, role, signature/seal source, and layout requirements so the footers can be regenerated before code changes.",
       "recommended": false
     },
     {
-      "title": "Defer footer replacement",
-      "body": "Keep the current implementation temporarily and leave this issue blocked until the approved legal asset exists.",
+      "title": "Remove signature from the footer",
+      "body": "If legal approves a no-signature footer, document that decision and replace both images with approved no-signature versions.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Provide approved ES/ENG PNG footers",
-    "body": "Supply the final two footer images so the fix can be a narrow constant replacement plus PDF render verification.",
+    "title": "Use approved replacement footers",
+    "body": "Provide or approve the two ES/ENG footer PNG/base64 assets and let a narrow PR replace the constants and verify rendered PDFs.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "He owns the current BL divergence context and authored the invoice BL extraction that surfaced the issue.",
+    "reason": "He authored the BL shipping/invoices spec that surfaced the divergence and is the clearest current routing point for owner-approved invoice rules.",
     "confidence": "high"
   },
   "source": {
