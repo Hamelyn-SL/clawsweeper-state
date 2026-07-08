@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T00:26:15.630Z",
+  "updatedAt": "2026-07-03T12:18:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6829,
+    "title": "Supply web: rutas localizadas por rewrites y SSR con Expo Router server output",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p2",
+      "feature",
+      "reporter:miguel",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-03T10:44:24Z",
+    "updatedAt": "2026-07-03T12:18:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should Supply web start this migration now with a phase-1 slug-source-of-truth PR, or wait until Expo Router server output is less alpha before investing in SSR and Vercel deployment changes?",
+  "rationale": "The current code confirms the requested architecture is still missing, but the full plan affects routing, deployment, SEO, client auth behavior, and alpha framework features, which requires maintainer rollout intent before implementation.",
+  "options": [
+    {
+      "title": "Split phase 1 first",
+      "body": "Create a small PR for the typed localized slug source and collision assertions while leaving server output and SSR for a later staging PoC.",
+      "recommended": true
+    },
+    {
+      "title": "Sponsor the full PoC now",
+      "body": "Treat this as a product/infra project and define staging, Vercel, Auth0, SEO, native-deeplink, and performance acceptance gates before implementation.",
+      "recommended": false
+    },
+    {
+      "title": "Pause until SDK 56+",
+      "body": "Keep the issue open but defer server-output work until the Expo Router SSR surface is more stable for this app.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Split phase 1 first",
+    "body": "Create a small PR for the typed localized slug source and collision assertions while leaving server output and SSR for a later staging PoC.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Miguel owns the issue and has recent Supply web area changes, so he is the best routing owner for rollout scope and phase ordering.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6829.md",
+    "reviewedAt": "2026-07-08T00:26:15.630Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
