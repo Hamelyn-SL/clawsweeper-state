@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:25:13.002Z",
+  "updatedAt": "2026-07-08T03:20:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6895,
+    "title": "BL-supply-domain: extracción por bloques",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p3",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-06T06:47:16Z",
+    "updatedAt": "2026-07-08T03:20:52Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "Should the next Supply BL PR proceed with the incidents block, and who should be the F2 owner/reviewer recorded on the mother issue?",
+  "rationale": "The BL skill requires owner validation and a reviewer for each block, while this mother issue currently names the first block as in progress but does not provide the full owner/reviewer handoff needed for an autonomous PR lane.",
+  "options": [
+    {
+      "title": "Proceed with incidents",
+      "body": "Use the current `incidents — en curso (javier)` line as the next block and add the missing reviewer/validation owner before implementation.",
+      "recommended": true
+    },
+    {
+      "title": "Choose another Supply block",
+      "body": "Keep the issue open but sponsor order-state-machine, lifecycle, suspicious-orders, reschedule-flow, or b2b-orders first instead.",
+      "recommended": false
+    },
+    {
+      "title": "Keep as tracking only",
+      "body": "Do not queue implementation from this issue yet; use it only to coordinate human-owned block PRs.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Proceed with incidents",
+    "body": "Use the current `incidents — en curso (javier)` line as the next block and add the missing reviewer/validation owner before implementation.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Javier authored the mother issue and the BL skill commits that define this workflow, and the checklist already names Javier on the incidents block.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
+    "reviewedAt": "2026-07-08T03:25:13.002Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
