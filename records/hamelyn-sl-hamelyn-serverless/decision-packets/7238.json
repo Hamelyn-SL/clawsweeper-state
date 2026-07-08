@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T15:04:35.916Z",
+  "updatedAt": "2026-07-08T14:56:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7238,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7238",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-08T11:07:56Z",
+    "updatedAt": "2026-07-08T14:56:20Z",
+    "headSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se pausa este deploy a producción hasta corregir el acceso a PDFs admin y verificar los prerrequisitos de `crons`/BigQuery, o se acepta desplegar con esos riesgos operativos?",
+  "rationale": "La PR es un release `dev`→`master`: el arreglo toca producción directamente y combina cambios de seguridad, datos y crons que no se pueden resolver solo con CI ni con una decisión automática sobre la rama `dev`.",
+  "options": [
+    {
+      "title": "Pausar y corregir antes de producción",
+      "body": "Añadir un fix en `dev` para devolver o persistir la URL real de Blob, confirmar env vars de `crons` y documentar el boundary de `config_historic` antes de regenerar el deploy PR.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el rollout con checklist operativo",
+      "body": "Mergear asumiendo que operaciones ya verificó las env vars y accesos, sabiendo que el flujo de PDFs admin puede requerir intervención inmediata si falla.",
+      "recommended": false
+    },
+    {
+      "title": "Rehacer un release más estrecho",
+      "body": "Cerrar o reemplazar esta PR con un release que excluya los commits de mayor riesgo hasta que tengan prueba operacional completa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pausar y corregir antes de producción",
+    "body": "Añadir un fix en `dev` para devolver o persistir la URL real de Blob, confirmar env vars de `crons` y documentar el boundary de `config_historic` antes de regenerar el deploy PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Aparece como merger reciente del cambio admin Blob y como contribuidor recurrente del área de release incluida en esta PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7238.md",
+    "reviewedAt": "2026-07-08T15:04:35.916Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+  }
+}
