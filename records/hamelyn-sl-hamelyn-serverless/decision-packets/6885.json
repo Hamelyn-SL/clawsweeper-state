@@ -14,14 +14,14 @@
       "app:admin",
       "priority:p3",
       "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
       "P2",
+      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "impact:ux-friction"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-05T10:46:42Z",
     "updatedAt": "2026-07-08T10:07:38Z"
@@ -54,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6885.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6885#issuecomment-4911142703",
     "reviewedAt": "2026-07-08T16:22:33.704Z",
     "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
   }
