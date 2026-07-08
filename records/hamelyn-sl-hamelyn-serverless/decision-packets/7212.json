@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T20:58:47.470Z",
-  "updatedAt": "2026-07-08T07:42:34Z",
+  "generatedAt": "2026-07-08T22:14:58.842Z",
+  "updatedAt": "2026-07-08T21:12:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,24 +16,24 @@
       "triage:done",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-08T07:31:00Z",
-    "updatedAt": "2026-07-08T07:42:34Z"
+    "updatedAt": "2026-07-08T21:12:15Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿El equipo Marketplace/Data prefiere ejecutar el recovery como job/backfill puntual desde `marketplace_snapshots.ebay_es_listings` o convertirlo primero en una ruta recurrente de reconciliación de eBay ES?",
-  "rationale": "La dirección técnica afecta a mutaciones reales sobre cientos de listings publicados y a si se versiona una capacidad recurrente o se ejecuta una corrección operativa puntual; no es una decisión segura para automatizar sin confirmación humana.",
+  "question": "¿El equipo Marketplace/Data prefiere ejecutar un recovery puntual controlado desde `marketplace_snapshots.ebay_es_listings` o convertirlo primero en una reconciliación recurrente de eBay ES?",
+  "rationale": "La decisión afecta a mutaciones reales sobre listings comprables y a si se versiona una capacidad recurrente o una corrección operativa puntual; no conviene automatizarla sin dueño humano.",
   "options": [
     {
-      "title": "Recovery controlado puntual",
-      "body": "Crear un script/backfill con dry-run, muestras, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
+      "title": "Recovery puntual controlado",
+      "body": "Crear un script/backfill con dry-run, muestras completas, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
       "recommended": true
     },
     {
@@ -42,25 +42,24 @@
       "recommended": false
     },
     {
-      "title": "Sembrar documentos `mk_ebayEs` mínimos",
-      "body": "Recrear filas locales mínimas para que el withdraw existente las procese, asumiendo el coste de una migración de datos muy acotada y auditada.",
+      "title": "Sembrar `mk_ebayEs` mínimos",
+      "body": "Recrear documentos locales mínimos para que el withdraw existente los procese, asumiendo una migración de datos acotada y auditada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recovery controlado puntual",
-    "body": "Crear un script/backfill con dry-run, muestras, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
+    "title": "Recovery puntual controlado",
+    "body": "Crear un script/backfill con dry-run, muestras completas, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aparece como autor reciente del flujo de withdraw/report y del issue, y tiene contexto directo de la evidencia operativa.",
+    "reason": "Tiene el rastro de historia más directo en el flujo de withdraw y el contexto operativo de eBay ES.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7212.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212#issuecomment-4919259558",
-    "reviewedAt": "2026-07-08T20:58:47.470Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-08T22:14:58.842Z",
+    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
   }
 }
