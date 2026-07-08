@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T04:19:25.305Z",
+  "generatedAt": "2026-07-08T04:10:21.931Z",
   "updatedAt": "2026-07-08T03:45:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,39 +22,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should MiguelHamelyn continue the Product Page BL block through F1/F2 as one mother issue before any isolation/tests, or should maintainers split/defer the block?",
-  "rationale": "The repository BL process requires owner validation of the business rules before F3/F4, and the open child divergence issues make this a maintainer/owner coordination step rather than a safe autonomous fix.",
+  "question": "Should the Product Page BL block proceed through MiguelHamelyn's F2 validation before any isolation or tests are merged?",
+  "rationale": "The repository BL pipeline makes owner validation blocking, and this block spans multiple live product-page business rules plus already-open divergence issues.",
   "options": [
     {
-      "title": "Continue current BL block",
-      "body": "MiguelHamelyn validates the Product Page rules in F2, then the team lands one BL PR with specs, isolation, tests, and linked divergences.",
+      "title": "Continue owner-led BL pipeline",
+      "body": "Keep this issue open for MiguelHamelyn to validate the extracted rules, then land one BL PR with specs, isolations, tests, and linked divergence handling.",
       "recommended": true
     },
     {
-      "title": "Split only if F1 expands too far",
-      "body": "If extraction grows beyond the issue's expected size, the owner can split after F1 with explicit boundaries instead of letting automation choose the split.",
+      "title": "Narrow the block before F1/F2",
+      "body": "Reduce scope if extraction shows more than a healthy block size, but keep the remaining Product Page BL work tracked explicitly.",
       "recommended": false
     },
     {
-      "title": "Defer the block",
-      "body": "Maintain the current Product Page code without BL specs/tests for now, accepting that child divergence work remains less anchored.",
+      "title": "Defer Product Page BL extraction",
+      "body": "Leave the live product page rules undocumented for now and rely on narrower bug issues, accepting continued BL coverage gaps.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continue current BL block",
-    "body": "MiguelHamelyn validates the Product Page rules in F2, then the team lands one BL PR with specs, isolation, tests, and linked divergences.",
+    "title": "Continue owner-led BL pipeline",
+    "body": "Keep this issue open for MiguelHamelyn to validate the extracted rules, then land one BL PR with specs, isolations, tests, and linked divergence handling.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "The issue body names MiguelHamelyn as the Product Page BL owner and GitHub shows the issue assigned to that account.",
+    "reason": "He is the assigned issue owner, named BL owner, and recent feature-history owner for the Product Page implementation.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7106.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7106#issuecomment-4911339298",
-    "reviewedAt": "2026-07-08T04:19:25.305Z",
+    "reviewedAt": "2026-07-08T04:10:21.931Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
