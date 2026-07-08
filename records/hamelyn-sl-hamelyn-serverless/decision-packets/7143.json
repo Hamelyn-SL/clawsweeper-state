@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:02:36.435Z",
-  "updatedAt": "2026-07-07T22:10:20Z",
+  "generatedAt": "2026-07-08T15:20:20.835Z",
+  "updatedAt": "2026-07-08T13:53:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,49 +11,48 @@
     "state": "open",
     "labels": [
       "size/M",
+      "P3",
       "rating: 🦐 gold shrimp",
-      "status: 📣 needs proof",
-      "P3"
+      "status: 📣 needs proof"
     ],
     "createdAt": "2026-07-07T12:35:59Z",
-    "updatedAt": "2026-07-07T22:10:20Z",
-    "headSha": "c4166f643dd6615f403e0ce11d847ff70fb19af6"
+    "updatedAt": "2026-07-08T13:53:23Z",
+    "headSha": "e77c55f751504f9aee2446635cf9bab52094594f"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "Should the unknown-product availability-alert fix preserve pending requests for products removed after signup, as this PR documents, or should the later current-dev PR mark those rows as notified in the cron?",
-  "rationale": "Both open PRs address the same issue but encode different business behavior for products that disappear after signup, and automation should not choose that BL policy without owner intent.",
+  "question": "¿Debe el arreglo canónico conservar pendientes las solicitudes de productos eliminados tras el alta, como documenta esta PR, o cerrar esas filas en el cron como propone https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198?",
+  "rationale": "Ambas PRs resuelven la misma divergencia de BL pero fijan comportamientos distintos para productos que pueden volver al catálogo, y la automatización no debería escoger esa política de negocio.",
   "options": [
     {
-      "title": "Preserve pending-after-removal policy",
-      "body": "Retarget this signup-time guard onto dev, preserve Zod validation, and avoid cron cleanup unless the BL owner reverses the documented decision.",
+      "title": "Preservar pendientes tras eliminación",
+      "body": "Retargetear esta vía, corregir la spec a Zod, añadir prueba real y cerrar o ajustar la PR solapada para no cerrar esas filas en el cron.",
       "recommended": true
     },
     {
-      "title": "Adopt cron cleanup path",
-      "body": "Use https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198 as the canonical PR if the owner accepts losing pending alerts for products removed from the catalog.",
+      "title": "Adoptar cierre en cron",
+      "body": "Usar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198 como vía canónica si el owner acepta que las solicitudes de productos eliminados sean terminales.",
       "recommended": false
     },
     {
-      "title": "Hold both until owner confirmation",
-      "body": "Pause both PRs until the BL owner confirms whether deleted-product pending rows should survive or be terminally closed.",
+      "title": "Pausar ambas PRs",
+      "body": "Mantener ambas en espera hasta que el owner confirme explícitamente la política de retención para productos retirados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preserve pending-after-removal policy",
-    "body": "Retarget this signup-time guard onto dev, preserve Zod validation, and avoid cron cleanup unless the BL owner reverses the documented decision.",
+    "title": "Preservar pendientes tras eliminación",
+    "body": "Retargetear esta vía, corregir la spec a Zod, añadir prueba real y cerrar o ajustar la PR solapada para no cerrar esas filas en el cron.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "They are the requested reviewer on this PR and have the clearest current-main history on the notify route.",
-    "confidence": "high"
+    "reason": "Es el revisor solicitado y el contribuidor reciente que tocó la misma ruta durante la migración a Zod.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7143.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143#issuecomment-4913218226",
-    "reviewedAt": "2026-07-08T09:02:36.435Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-08T15:20:20.835Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }

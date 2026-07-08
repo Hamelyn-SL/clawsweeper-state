@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:10:12.285Z",
-  "updatedAt": "2026-07-07T16:53:36Z",
+  "generatedAt": "2026-07-08T15:18:55.046Z",
+  "updatedAt": "2026-07-08T10:50:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,52 @@
       "app:ecommerce",
       "priority:p2",
       "triage:done",
-      "business-logic"
+      "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
-    "updatedAt": "2026-07-07T16:53:36Z"
+    "updatedAt": "2026-07-08T10:50:44Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "Should this coupon prevalidation fix land as a coupon-only server-side recalculation now, or be folded into the shared checkout shipping/total validation work tracked by https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920?",
-  "rationale": "The expected trust boundary is clear, but the previous correct-looking fix was size/L and overlaps with a broader payment-boundary calculation issue, so maintainers should choose the sequencing and shared-service boundary before another implementation attempt.",
+  "question": "¿Debe resolverse primero como servicio compartido de cálculo de envío para checkout y cupones, o como parche acotado del endpoint de cupones?",
+  "rationale": "El límite de confianza está claro, pero el arreglo toca una frontera de seguridad de importes y se solapa con el bug más amplio de checkout; hace falta decidir secuencia y propiedad antes de encolar otro fix grande.",
   "options": [
     {
-      "title": "Share calculation with checkout first",
-      "body": "Build the shared server-side shipping calculation once and wire both checkout validation and coupon prevalidation to it, reducing drift between the two trust boundaries.",
+      "title": "Servicio compartido primero",
+      "body": "Centralizar el cálculo server-side y conectar tanto checkout como prevalidación de cupones reduce divergencias entre límites de confianza.",
       "recommended": true
     },
     {
-      "title": "Patch coupon validation first",
-      "body": "Land a narrower coupon endpoint fix now using destination and priority inputs, accepting that checkout total validation will still need a coordinated follow-up.",
+      "title": "Parche acotado de cupones",
+      "body": "Corregir ya el endpoint de cupones con destino y prioridad reduce este riesgo antes, pero deja la validación de checkout para otro trabajo coordinado.",
       "recommended": false
     },
     {
-      "title": "Wait for BL mother issue",
-      "body": "Hold this child divergence until the Coupons & Promotions BL block publishes validated specs and tests, trading speed for stricter BL sequencing.",
+      "title": "Esperar a la PR BL",
+      "body": "Aterrizar primero la extracción BL puede dar tests y specs, pero retrasa el cierre del bug de comportamiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Share calculation with checkout first",
-    "body": "Build the shared server-side shipping calculation once and wire both checkout validation and coupon prevalidation to it, reducing drift between the two trust boundaries.",
+    "title": "Servicio compartido primero",
+    "body": "Centralizar el cálculo server-side y conectar tanto checkout como prevalidación de cupones reduce divergencias entre límites de confianza.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "He is the named Coupons & Promotions BL owner and recent coupon validation contributor, so he is the best available owner for the coupon-side sequencing choice.",
+    "reason": "Figura como owner del bloque Coupons & Promotions y la issue ya está asignada a él.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewedAt": "2026-07-08T09:10:12.285Z",
-    "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
+    "reviewedAt": "2026-07-08T15:18:55.046Z",
+    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
 }
