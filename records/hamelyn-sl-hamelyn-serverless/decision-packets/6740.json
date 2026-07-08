@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:57:37.015Z",
-  "updatedAt": "2026-07-07T23:51:07Z",
+  "generatedAt": "2026-07-07T23:57:21.289Z",
+  "updatedAt": "2026-06-30T17:55:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "triage:done"
     ],
     "createdAt": "2026-06-30T12:20:21Z",
-    "updatedAt": "2026-07-07T23:51:07Z"
+    "updatedAt": "2026-06-30T17:55:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should Mercado Pago refunds be operated by a Hamelyn flow that calls Mercado Pago and then reports the refund to Stripe, or should Mercado Pago checkout be migrated so Stripe processes and refunds the payment end to end?",
-  "rationale": "Current code proves Stripe is only a reporting surface for these payments, so the implementation depends on whether maintainers want Stripe visibility or Stripe to become the payment processor/refund executor.",
+  "question": "Should Hamelyn solve this as a unified internal refund action backed by Mercado Pago, or change the payment architecture so Stripe owns Mercado Pago refunds directly?",
+  "rationale": "The code already provides Stripe visibility for Mercado Pago payments, but direct Stripe refunds depend on the chosen payment-processor ownership model and external API capabilities.",
   "options": [
     {
-      "title": "Add Hamelyn refund action",
-      "body": "Implement a backoffice refund flow that executes the refund in Mercado Pago and records the refund result in Stripe for reconciliation.",
+      "title": "Add MP-backed internal refunds",
+      "body": "Build an admin/backoffice refund action that calls Mercado Pago for the real refund and records or reconciles the refund in Stripe when supported.",
       "recommended": true
     },
     {
-      "title": "Migrate to Stripe-native processing",
-      "body": "Rework the payment method so Stripe creates the charge and can execute refunds directly, if the product and provider constraints allow it.",
+      "title": "Move to Stripe-native processing",
+      "body": "Rework the payment method so Stripe creates the refundable payment object if the target Mercado Pago/Stripe setup supports it.",
       "recommended": false
     },
     {
-      "title": "Keep Mercado Pago manual refunds",
-      "body": "Keep Stripe as visibility-only and continue operating refunds directly in Mercado Pago or Meli.",
+      "title": "Keep Stripe reporting-only",
+      "body": "Document that Mercado Pago refunds remain operationally separate and must be handled in Mercado Pago or Mercado Libre.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Add Hamelyn refund action",
-    "body": "Implement a backoffice refund flow that executes the refund in Mercado Pago and records the refund result in Stripe for reconciliation.",
+    "title": "Add MP-backed internal refunds",
+    "body": "Build an admin/backoffice refund action that calls Mercado Pago for the real refund and records or reconciles the refund in Stripe when supported.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn has the strongest current history on the Mercado Pago checkout and Stripe payment-record integration.",
+    "reason": "He owns the most recent code and triage context for the current Mercado Pago and Stripe Payment Records integration.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6740.md",
-    "reviewedAt": "2026-07-07T23:57:37.015Z",
+    "reviewedAt": "2026-07-07T23:57:21.289Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

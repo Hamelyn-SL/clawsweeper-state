@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:57:41.275Z",
-  "updatedAt": "2026-07-07T23:51:07Z",
+  "generatedAt": "2026-07-07T23:56:04.415Z",
+  "updatedAt": "2026-07-01T06:06:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,37 +17,42 @@
       "reporter:victor"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
-    "updatedAt": "2026-07-07T23:51:07Z"
+    "updatedAt": "2026-07-01T06:06:02Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should this PDP redesign land as one coordinated feature PR or be split into smaller PRs for breadcrumb/details, author block, and best-seller carousel?",
-  "rationale": "The request is clear but spans visual layout, enriched data, cache behavior, and copy, so maintainers should decide the implementation boundary before a repair worker starts.",
+  "question": "Should this PDP layout update land as one coordinated feature PR, or should maintainers split the author, recommendation, breadcrumb, copy, and dimensions work first?",
+  "rationale": "The requested UI is clear, but the work crosses layout, copy by product type, author enrichment, recommendation ranking, and cache policy, so the delivery boundary needs maintainer intent before repair automation.",
   "options": [
     {
-      "title": "Split into focused PRs",
-      "body": "Land the low-risk breadcrumb/details work separately from the author-data and best-seller carousel work.",
+      "title": "Split into scoped PDP tasks",
+      "body": "Track breadcrumb/details/copy separately from author enrichment and best-seller caching to reduce review and release risk.",
       "recommended": true
     },
     {
-      "title": "One coordinated PDP PR",
-      "body": "Implement the full layout in one feature branch with stronger browser proof and product review before merge.",
+      "title": "Implement as one feature PR",
+      "body": "Build the full requested PDP layout in one branch if ecommerce maintainers can provide design and data acceptance criteria up front.",
+      "recommended": false
+    },
+    {
+      "title": "Pause for data/design acceptance",
+      "body": "Keep the issue open but wait for explicit cache, ranking, and visual acceptance criteria before implementation.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split into focused PRs",
-    "body": "Land the low-risk breadcrumb/details work separately from the author-data and best-seller carousel work.",
+    "title": "Split into scoped PDP tasks",
+    "body": "Track breadcrumb/details/copy separately from author enrichment and best-seller caching to reduce review and release risk.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Most closely tied to the current PDP variant implementation history.",
-    "confidence": "high"
+    "reason": "Recent PDP feature work makes this the strongest available owner for choosing how the layout/data update should be delivered.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
-    "reviewedAt": "2026-07-07T23:57:41.275Z",
+    "reviewedAt": "2026-07-07T23:56:04.415Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
