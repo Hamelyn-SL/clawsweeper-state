@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:41:07.218Z",
+  "updatedAt": "2026-07-08T03:35:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7022,
+    "title": "BL-buying-cart-04: la fecha de recogida solo bloquea domingos, no festivos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7022",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p2",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-06T13:06:17Z",
+    "updatedAt": "2026-07-08T03:35:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the holiday rule land with the linked PR’s national-holiday calculation for ES/PT/IT/FR, or should this issue require broader local/API-backed holiday coverage before merge?",
+  "rationale": "Current code has a confirmed backend gap, but the requested holiday source and locality scope affect checkout behavior on a revenue path and should be accepted by the Supply/BL owner before closing.",
+  "options": [
+    {
+      "title": "Accept national-holiday scope",
+      "body": "Review and land the linked PR after conflicts are resolved, treating local/regional holidays as a later follow-up if needed.",
+      "recommended": true
+    },
+    {
+      "title": "Require broader holiday source",
+      "body": "Keep the issue open until the implementation covers local holidays or an approved external holiday API for the supported countries.",
+      "recommended": false
+    },
+    {
+      "title": "Narrow to Spain first",
+      "body": "Ship a smaller Spain-only backend check aligned with the existing client list and track international coverage separately.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Accept national-holiday scope",
+    "body": "Review and land the linked PR after conflicts are resolved, treating local/regional holidays as a later follow-up if needed.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "MiguelHamelyn is the issue reporter/assignee and authored the candidate fix PR for the BL buying-cart divergence.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7022.md",
+    "reviewedAt": "2026-07-08T03:41:07.218Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
