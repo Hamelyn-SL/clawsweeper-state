@@ -14,7 +14,14 @@
       "app:infrastructure",
       "reporter:JavierHamelyn",
       "feature",
-      "triage:running"
+      "triage:running",
+      "P1",
+      "impact:crash-loop",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
     "updatedAt": "2026-07-08T15:20:20Z"
@@ -52,6 +59,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
     "reviewedAt": "2026-07-08T15:28:57.597Z",
     "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
   }
