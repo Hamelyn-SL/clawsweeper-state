@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:24:57.535Z",
+  "updatedAt": "2026-07-06T12:55:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6899,
+    "title": "BL-shipping-costs: Shipping Costs — specs, aislamiento y tests",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6899",
+    "state": "open",
+    "labels": [
+      "priority:p1",
+      "app:infrastructure",
+      "feature",
+      "triage:no-change",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-06T07:29:50Z",
+    "updatedAt": "2026-07-06T12:55:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should the remaining ecommerce Shipping Costs extraction in https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 stay sequenced behind the marketplace-domain work, or should it be rebased and moved forward now?",
+  "rationale": "The issue is not source-complete on current `dev`, and the remaining branch is intentionally draft due to owner sequencing rather than an unowned missing implementation.",
+  "options": [
+    {
+      "title": "Continue through the existing draft PR",
+      "body": "Keep this issue open, update the checklist numbering, and have the owner/reviewer rebase and review https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 when sequencing allows.",
+      "recommended": true
+    },
+    {
+      "title": "Rescope the parent issue",
+      "body": "If the ecommerce rules no longer belong under Shipping Costs, explicitly rewrite the parent checklist and move the remaining work to a new canonical BL issue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Continue through the existing draft PR",
+    "body": "Keep this issue open, update the checklist numbering, and have the owner/reviewer rebase and review https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 when sequencing allows.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Pablo is the issue owner, assignee, and author of the split/renumbering decision that left #7004 as the remaining work.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6899.md",
+    "reviewedAt": "2026-07-08T03:24:57.535Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

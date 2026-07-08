@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:19:17.080Z",
+  "updatedAt": "2026-07-05T02:12:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6882,
+    "title": "🐛 Producción: batería de errores recurrentes en logs de Vercel (admin 500 users, incidents 502, Serper 400, sharp, Amazon 429/confirmShipment, crons)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "reporter:JavierHamelyn",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-05T01:57:06Z",
+    "updatedAt": "2026-07-05T02:12:48Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "Should this production-log umbrella stay as a tracking issue, or should it be split into separate per-surface issues before any implementation work?",
+  "rationale": "The evidence supports multiple real bugs, but the work spans unrelated apps and includes operator actions, so automation should not choose the tracking structure or ownership unilaterally.",
+  "options": [
+    {
+      "title": "Split by surface",
+      "body": "Create or link narrow issues for admin users/order-products, Serper, Amazon confirmShipment/create throttling, Mercado Pago, cart conflict handling, PUDO timeout, and remaining ops-only actions.",
+      "recommended": true
+    },
+    {
+      "title": "Keep as umbrella",
+      "body": "Use this issue as a manual tracking checklist and assign owners for each cluster without asking one PR to solve the whole batch.",
+      "recommended": false
+    },
+    {
+      "title": "Close only after follow-ups exist",
+      "body": "Close this umbrella only once every still-relevant cluster is either fixed on dev or represented by a narrower canonical issue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Split by surface",
+    "body": "Create or link narrow issues for admin users/order-products, Serper, Amazon confirmShipment/create throttling, Mercado Pago, cart conflict handling, PUDO timeout, and remaining ops-only actions.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "They are the current assignee and have recent history on several central affected paths.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
+    "reviewedAt": "2026-07-08T03:19:17.080Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

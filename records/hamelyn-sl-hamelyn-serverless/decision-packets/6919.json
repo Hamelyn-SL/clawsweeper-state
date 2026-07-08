@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:27:41.508Z",
+  "updatedAt": "2026-07-07T04:41:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6919,
+    "title": "BL-shipping-costs-02: patrones de differentShippingCosts mal escapados en countries",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6919",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p3",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-06T08:48:03Z",
+    "updatedAt": "2026-07-07T04:41:04Z"
+  },
+  "lane": "manual_review",
+  "priority": "P3",
+  "question": "Should this issue be fixed as a controlled data operation plus a small cleanup PR now, or wait for the larger checkout BL draft to be sequenced?",
+  "rationale": "The source cleanup is small, but the canonical data mutation and BL spec target live partly outside current `dev`, so maintainers need to choose the sequencing and operational owner.",
+  "options": [
+    {
+      "title": "Fix data now, cleanup with BL draft",
+      "body": "Correct the single Mongo country entry now and coordinate removal of the fallback and spec update when the checkout BL draft is updated.",
+      "recommended": true
+    },
+    {
+      "title": "Bundle into the checkout BL PR",
+      "body": "Keep the issue open until the draft PR is ready, accepting that raw API consumers may still see the malformed match until then.",
+      "recommended": false
+    },
+    {
+      "title": "Ship a source-side sanitizer only",
+      "body": "Normalize at the repository/API boundary without touching stored data, but this leaves the owner-validated data debt unresolved.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fix data now, cleanup with BL draft",
+    "body": "Correct the single Mongo country entry now and coordinate removal of the fallback and spec update when the checkout BL draft is updated.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "They authored the BL split/draft context that records the divergence and can coordinate the renamed spec target.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6919.md",
+    "reviewedAt": "2026-07-08T03:27:41.508Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

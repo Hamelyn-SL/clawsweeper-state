@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:20:18.400Z",
+  "updatedAt": "2026-07-04T17:28:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6859,
+    "title": "MercadoLibre listings sold in Hamelyn remain live and purchasable",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-04T13:53:13Z",
+    "updatedAt": "2026-07-04T17:28:00Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "Should Marketplace maintainers consolidate this older MercadoLibre oversell report into https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178, or keep both open while the reconciliation/backfill plan is defined?",
+  "rationale": "Current dev does not implement the full fix, and the required remediation likely touches many production records/listings, so maintainer intent is needed before consolidation or a backfill path.",
+  "options": [
+    {
+      "title": "Use the newer issue as canonical",
+      "body": "Route code and data-reconciliation work through https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 while preserving this issue as historical evidence until a maintainer manually closes or links it.",
+      "recommended": true
+    },
+    {
+      "title": "Keep both active",
+      "body": "Leave both reports open as separate operational snapshots, accepting duplicate triage overhead until the reconciliation lands.",
+      "recommended": false
+    },
+    {
+      "title": "Manually close this as duplicate",
+      "body": "Close this issue only if maintainers want one tracker and explicitly decide that the newer issue preserves all needed context.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Use the newer issue as canonical",
+    "body": "Route code and data-reconciliation work through https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178 while preserving this issue as historical evidence until a maintainer manually closes or links it.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Marcos has the strongest recent code-history signal in the MercadoLibre listing/withdraw path and is the best available owner for deciding the implementation route.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6859.md",
+    "reviewedAt": "2026-07-08T03:20:18.400Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

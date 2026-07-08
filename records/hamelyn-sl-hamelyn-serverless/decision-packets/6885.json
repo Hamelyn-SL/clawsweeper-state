@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:19:09.967Z",
+  "updatedAt": "2026-07-05T10:54:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6885,
+    "title": "Admin: vista Data/Gráficas rota — dashboard de MongoDB Charts inexistente (error code 2)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6885",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "priority:p3",
+      "triage:needs-info"
+    ],
+    "createdAt": "2026-07-05T10:46:42Z",
+    "updatedAt": "2026-07-05T10:54:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should Admin Data -> Gráficas remain as an Atlas Charts dashboard, or should the admin route be removed?",
+  "rationale": "Both available fixes are mutually exclusive and depend on external Atlas/dashboard ownership rather than source-code evidence.",
+  "options": [
+    {
+      "title": "Replace the dashboard embed",
+      "body": "Provide or recreate a valid embeddable MongoDB Charts dashboard ID and update Charts.tsx while preserving the admin route.",
+      "recommended": true
+    },
+    {
+      "title": "Remove the view",
+      "body": "Delete the Charts screen and unregister the Data/Gráficas resource if this dashboard is no longer part of the admin product.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Replace the dashboard embed",
+    "body": "Provide or recreate a valid embeddable MongoDB Charts dashboard ID and update Charts.tsx while preserving the admin route.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "The current hardcoded embed line points to this current-main history, making them the best available routing candidate for the admin/data decision.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6885.md",
+    "reviewedAt": "2026-07-08T03:19:09.967Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

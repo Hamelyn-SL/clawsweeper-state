@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:23:01.426Z",
+  "updatedAt": "2026-07-06T22:26:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6920,
+    "title": "BL-shipping-costs-07: el checkout no valida en servidor el coste de envío ni el total enviados por el cliente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-06T08:48:19Z",
+    "updatedAt": "2026-07-06T22:26:09Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "Should checkout amount mismatches fail closed before persistence, or should the server recalculate and overwrite the submitted totals?",
+  "rationale": "Both choices fix the client-trust boundary, but they have different customer-facing failure behavior, analytics impact, and compatibility implications for cached checkout clients.",
+  "options": [
+    {
+      "title": "Reject mismatches before save",
+      "body": "Return a clear 400-style checkout error when client-sent shipping or total differs from the server calculation, preventing underpayment and surfacing stale client bugs.",
+      "recommended": true
+    },
+    {
+      "title": "Recalculate and overwrite totals",
+      "body": "Persist and charge the server-calculated values while logging the discrepancy, reducing customer interruption but hiding client drift unless monitored.",
+      "recommended": false
+    },
+    {
+      "title": "Sequence after BL extraction",
+      "body": "Wait for the draft BL extraction PR to land first, then implement the enforcement as a smaller follow-up on top of the shared pure functions.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reject mismatches before save",
+    "body": "Return a clear 400-style checkout error when client-sent shipping or total differs from the server calculation, preventing underpayment and surfacing stale client bugs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "The issue came from the Shipping Costs BL owner workflow, and the decision affects the validated BL spec for this rule.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6920.md",
+    "reviewedAt": "2026-07-08T03:23:01.426Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

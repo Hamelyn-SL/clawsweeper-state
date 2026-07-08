@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:26:33.230Z",
+  "updatedAt": "2026-07-06T18:28:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6978,
+    "title": "BL-shipping-carrier-03: migrate shipMatrix pattern notation to standard regex",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-06T10:16:53Z",
+    "updatedAt": "2026-07-06T18:28:20Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "How should the regex migration handle inactive rows and existing `X` semantics while preserving current matching?",
+  "rationale": "The issue direction is confirmed, but the triage comment identifies data semantics that require owner/operator choice before a safe Mongo plus code migration.",
+  "options": [
+    {
+      "title": "Preserve all current semantics except the known malformed row",
+      "body": "Convert all 25 rows to equivalent standard regex, keep inactive rows represented, and explicitly fix or retire `AMAZON PROMO NAVIDAD` as part of the migration.",
+      "recommended": true
+    },
+    {
+      "title": "Migrate only active rows first",
+      "body": "Convert the 21 active rows and leave inactive rows unchanged or retired, reducing runtime risk but leaving historical matrix cleanup unresolved.",
+      "recommended": false
+    },
+    {
+      "title": "Pause until live data policy is settled",
+      "body": "Keep code unchanged until the owner decides whether disabled rows should remain migration targets.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preserve all current semantics except the known malformed row",
+    "body": "Convert all 25 rows to equivalent standard regex, keep inactive rows represented, and explicitly fix or retire `AMAZON PROMO NAVIDAD` as part of the migration.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "JavierHamelyn authored the recent BL carrier work and reported this owner-approved follow-up with the concrete acceptance criteria.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
+    "reviewedAt": "2026-07-08T03:26:33.230Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:16:32.662Z",
+  "updatedAt": "2026-07-03T15:54:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6842,
+    "title": "[PRUEBA BL] BL dominio marketplace: extracción por bloques",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6842",
+    "state": "open",
+    "labels": [
+      "priority:p3",
+      "app:marketplace",
+      "feature",
+      "triage:needs-info",
+      "business-logic",
+      "hackathon"
+    ],
+    "createdAt": "2026-07-03T15:45:43Z",
+    "updatedAt": "2026-07-03T15:54:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "Should marketplace BL specs use `docs/business-logic/marketplace/` as the canonical location for the remaining block PRs?",
+  "rationale": "The current issue is blocked by a repository-structure decision that automation cannot infer safely from the prior closed Discogs PR and the newly merged BL skill.",
+  "options": [
+    {
+      "title": "Confirm `docs/business-logic/marketplace/`",
+      "body": "Keep this tracker open and let the first remaining block PR create or restore that canonical tree under the BL skill rules.",
+      "recommended": true
+    },
+    {
+      "title": "Choose another canonical location",
+      "body": "Update the issue body before more block PRs are opened so contributors do not split BL specs across competing paths.",
+      "recommended": false
+    },
+    {
+      "title": "Close the BL hackathon tracker",
+      "body": "Stop using this mother issue and require each marketplace block to stand alone, losing the cross-block coordination checklist.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirm `docs/business-logic/marketplace/`",
+    "body": "Keep this tracker open and let the first remaining block PR create or restore that canonical tree under the BL skill rules.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "He merged the BL workflow skill and posted the needs-info triage comment asking for the canonical specs location.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6842.md",
+    "reviewedAt": "2026-07-08T03:16:32.662Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

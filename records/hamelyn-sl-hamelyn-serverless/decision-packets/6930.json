@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:29:32.697Z",
+  "updatedAt": "2026-07-06T22:45:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6930,
+    "title": "BL-shipping-invoices-08: firma obsoleta en el pie de las facturas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:needs-info",
+      "business-logic"
+    ],
+    "createdAt": "2026-07-06T08:59:04Z",
+    "updatedAt": "2026-07-06T22:45:04Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "What approved ES and ENG footer assets, signer details, or no-signature policy should replace the current embedded commercial-invoice signature?",
+  "rationale": "The code change is narrow, but the actual signer/seal/footer content is a legal and business approval that cannot be inferred safely from the repository.",
+  "options": [
+    {
+      "title": "Use approved replacement footers",
+      "body": "Provide or approve the two ES/ENG footer PNG/base64 assets and let a narrow PR replace the constants and verify rendered PDFs.",
+      "recommended": true
+    },
+    {
+      "title": "Regenerate from approved signer data",
+      "body": "Provide the approved signer name, role, signature/seal source, and layout requirements so the footers can be regenerated before code changes.",
+      "recommended": false
+    },
+    {
+      "title": "Remove signature from the footer",
+      "body": "If legal approves a no-signature footer, document that decision and replace both images with approved no-signature versions.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Use approved replacement footers",
+    "body": "Provide or approve the two ES/ENG footer PNG/base64 assets and let a narrow PR replace the constants and verify rendered PDFs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "He authored the BL shipping/invoices spec that surfaced the divergence and is the clearest current routing point for owner-approved invoice rules.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
+    "reviewedAt": "2026-07-08T03:29:32.697Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

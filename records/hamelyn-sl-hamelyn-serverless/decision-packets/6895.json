@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:25:13.002Z",
-  "updatedAt": "2026-07-08T03:20:52Z",
+  "generatedAt": "2026-07-08T03:26:17.233Z",
+  "updatedAt": "2026-07-06T10:13:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,42 +18,42 @@
       "hackathon"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-07-08T03:20:52Z"
+    "updatedAt": "2026-07-06T10:13:26Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "Should the next Supply BL PR proceed with the incidents block, and who should be the F2 owner/reviewer recorded on the mother issue?",
-  "rationale": "The BL skill requires owner validation and a reviewer for each block, while this mother issue currently names the first block as in progress but does not provide the full owner/reviewer handoff needed for an autonomous PR lane.",
+  "question": "Should this Supply mother issue remain the umbrella, or should it be rewritten or superseded after mapping the remaining blocks to Buying, Shipping, and Warehouse block issues?",
+  "rationale": "Current dev has moved part of the work into narrower Buying and Shipping BL blocks, but the original Supply checklist still contains unresolved areas and automation should not choose the permanent domain taxonomy.",
   "options": [
     {
-      "title": "Proceed with incidents",
-      "body": "Use the current `incidents — en curso (javier)` line as the next block and add the missing reviewer/validation owner before implementation.",
+      "title": "Update and keep the umbrella",
+      "body": "Keep this issue open, rewrite its checklist to link the completed Buying/Shipping blocks and name the remaining Supply or Warehouse blocks explicitly.",
       "recommended": true
     },
     {
-      "title": "Choose another Supply block",
-      "body": "Keep the issue open but sponsor order-state-machine, lifecycle, suspicious-orders, reschedule-flow, or b2b-orders first instead.",
+      "title": "Supersede with narrower issues",
+      "body": "Create or identify canonical issues for the remaining incidents, suspicious-orders, B2B, and warehouse lifecycle work, then close this umbrella with those links.",
       "recommended": false
     },
     {
-      "title": "Keep as tracking only",
-      "body": "Do not queue implementation from this issue yet; use it only to coordinate human-owned block PRs.",
+      "title": "Pause until open BL PRs land",
+      "body": "Wait for the open Buying eligibility and account PRs to merge before deciding whether this umbrella still adds routing value.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proceed with incidents",
-    "body": "Use the current `incidents — en curso (javier)` line as the next block and add the missing reviewer/validation owner before implementation.",
+    "title": "Update and keep the umbrella",
+    "body": "Keep this issue open, rewrite its checklist to link the completed Buying/Shipping blocks and name the remaining Supply or Warehouse blocks explicitly.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Javier authored the mother issue and the BL skill commits that define this workflow, and the checklist already names Javier on the incidents block.",
+    "reason": "JavierHamelyn opened the umbrella and authored the BL pipeline skill, so they are the best available owner for the taxonomy decision.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewedAt": "2026-07-08T03:25:13.002Z",
+    "reviewedAt": "2026-07-08T03:26:17.233Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }

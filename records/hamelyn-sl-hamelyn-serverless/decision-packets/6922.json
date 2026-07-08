@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T03:25:36.508Z",
+  "updatedAt": "2026-07-06T14:58:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6922,
+    "title": "BL-shipping-costs-11: la urgencia de ventas de marketplace se infiere del importe de envío y no del flag del marketplace",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-06T08:48:48Z",
+    "updatedAt": "2026-07-06T14:58:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Which marketplace service-level codes should map to `ShipPriority.URGENT`, `NORMAL`, or fallback-by-price for eBay, Fnac, CDL, Discogs, AbeBooks, and TodoColeccion?",
+  "rationale": "The source bug is clear, but the correct SLA mapping is a Marketplace/business contract rather than a mechanical code repair.",
+  "options": [
+    {
+      "title": "Define mappings first",
+      "body": "Marketplace owners provide the provider-by-provider service-code table and fallback policy, then implementation can update formatters and BL artifacts safely.",
+      "recommended": true
+    },
+    {
+      "title": "Keep thresholds temporarily",
+      "body": "Current behavior remains documented while the team accepts ongoing false positive/negative urgency risk until provider contracts are confirmed.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Define mappings first",
+    "body": "Marketplace owners provide the provider-by-provider service-code table and fallback policy, then implementation can update formatters and BL artifacts safely.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "The parent BL issue identifies PabloMoran34 as the owner for this block, and this issue says the owner validated the desired behavior.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
+    "reviewedAt": "2026-07-08T03:25:36.508Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
