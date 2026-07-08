@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T22:35:02.440Z",
+  "updatedAt": "2026-07-08T22:29:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7227,
+    "title": "feat: botón \"Rechazar producto\" con modal de motivos en el puesto de revisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7227",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "triage:done",
+      "epic:revision-v3",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
+    ],
+    "createdAt": "2026-07-08T09:23:23Z",
+    "updatedAt": "2026-07-08T22:29:35Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe esta petición resolverse como sub-issue independiente en `EPIC/revision-v3`, separada del PR de motivos al cerrar lote?",
+  "rationale": "La issue está asignada, la superficie no existe en `dev` y el PR relacionado cubre otro momento del flujo; hace falta coordinación humana para decidir si se implementa como cambio independiente o se agrupa con el trabajo de cierre de lote.",
+  "options": [
+    {
+      "title": "Mantenerla separada en la épica",
+      "body": "Implementar el botón permanente de rechazo por producto en `EPIC/revision-v3` y dejar el PR de cierre de lote limitado a `productRejectionReasons`.",
+      "recommended": true
+    },
+    {
+      "title": "Fusionar con el PR de cierre de lote",
+      "body": "Ampliar `https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7244` para cubrir también el botón por fase, aceptando más alcance y más riesgo de revisión.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta cerrar la épica base",
+      "body": "Esperar a que Revisión V3 llegue a `dev` antes de implementar, reduciendo incertidumbre de rama pero retrasando la mejora del puesto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantenerla separada en la épica",
+    "body": "Implementar el botón permanente de rechazo por producto en `EPIC/revision-v3` y dejar el PR de cierre de lote limitado a `productRejectionReasons`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el asignado de la issue y aparece como autor principal del flujo kiosk V3 donde debe aterrizar el cambio.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7227.md",
+    "reviewedAt": "2026-07-08T22:35:02.440Z",
+    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
+  }
+}
