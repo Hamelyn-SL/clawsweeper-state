@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:16:32.662Z",
-  "updatedAt": "2026-07-03T15:54:57Z",
+  "generatedAt": "2026-07-08T08:40:57.350Z",
+  "updatedAt": "2026-07-08T06:35:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,51 @@
       "priority:p3",
       "app:marketplace",
       "feature",
-      "triage:needs-info",
       "business-logic",
       "hackathon",
-      "P3",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-03T15:45:43Z",
-    "updatedAt": "2026-07-03T15:54:57Z"
+    "updatedAt": "2026-07-08T06:35:15Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "Should marketplace BL specs use `docs/business-logic/marketplace/` as the canonical location for the remaining block PRs?",
-  "rationale": "The current issue is blocked by a repository-structure decision that automation cannot infer safely from the prior closed Discogs PR and the newly merged BL skill.",
+  "question": "Should this marketplace BL tracker continue as the canonical mother issue, and who owns/reviews the remaining marketplace blocks?",
+  "rationale": "The BL skill defines the workflow, but the tracker still lacks completed marketplace specs and a maintainer-owned block sequence; automation should not choose domain ownership or close the umbrella itself.",
   "options": [
     {
-      "title": "Confirm `docs/business-logic/marketplace/`",
-      "body": "Keep this tracker open and let the first remaining block PR create or restore that canonical tree under the BL skill rules.",
+      "title": "Continue this tracker",
+      "body": "Keep this issue open, add the owner/reviewer and confirmed block order, and let each marketplace block land through focused Part-of PRs.",
       "recommended": true
     },
     {
-      "title": "Choose another canonical location",
-      "body": "Update the issue body before more block PRs are opened so contributors do not split BL specs across competing paths.",
+      "title": "Replace with a newer tracker",
+      "body": "Create or designate a newer canonical marketplace BL tracker, then close this one only after linking the replacement and preserving its checklist context.",
       "recommended": false
     },
     {
-      "title": "Close the BL hackathon tracker",
-      "body": "Stop using this mother issue and require each marketplace block to stand alone, losing the cross-block coordination checklist.",
+      "title": "Stop the marketplace BL track",
+      "body": "Close the hackathon tracker intentionally and require any future marketplace BL work to be proposed as standalone scoped issues.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirm `docs/business-logic/marketplace/`",
-    "body": "Keep this tracker open and let the first remaining block PR create or restore that canonical tree under the BL skill rules.",
+    "title": "Continue this tracker",
+    "body": "Keep this issue open, add the owner/reviewer and confirmed block order, and let each marketplace block land through focused Part-of PRs.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "He merged the BL workflow skill and posted the needs-info triage comment asking for the canonical specs location.",
+    "reason": "He merged the BL workflow skill and posted the current triage question about how this tracker should be structured.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6842.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6842#issuecomment-4911138970",
-    "reviewedAt": "2026-07-08T03:16:32.662Z",
+    "reviewedAt": "2026-07-08T08:40:57.350Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
 }
