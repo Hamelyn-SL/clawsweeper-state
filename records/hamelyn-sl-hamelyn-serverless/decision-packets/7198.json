@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T20:59:17.302Z",
-  "updatedAt": "2026-07-08T04:27:46Z",
+  "generatedAt": "2026-07-08T22:55:11.886Z",
+  "updatedAt": "2026-07-08T21:10:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,14 +11,14 @@
     "state": "open",
     "labels": [
       "size/S",
+      "P3",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P3",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-07-08T04:27:03Z",
-    "updatedAt": "2026-07-08T04:27:46Z",
+    "updatedAt": "2026-07-08T21:10:13Z",
     "headSha": "c7fe7647c1a684ca575ac98b1e2d7d3c2f58d354"
   },
   "lane": "product_direction",
@@ -50,12 +50,11 @@
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
     "reason": "Tiene el contexto más directo del issue canónico y de la PR alternativa que documenta la decisión de retención.",
-    "confidence": "medium"
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7198.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198#issuecomment-4919242072",
-    "reviewedAt": "2026-07-08T20:59:17.302Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-08T22:55:11.886Z",
+    "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
   }
 }
