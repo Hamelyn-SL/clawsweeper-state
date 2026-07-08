@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T00:12:04.605Z",
+  "updatedAt": "2026-07-07T21:59:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7178,
+    "title": "MercadoLibre keeps active listings for stocks withdrawn before snapshot",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-07T21:34:11Z",
+    "updatedAt": "2026-07-07T21:59:57Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "Should Marketplace proceed with a guarded MercadoLibre reconciliation/backfill for orphan item IDs, followed by enabling or reviewing local `recoverWithdraw` for the recoverable backlog?",
+  "rationale": "The evidence points to a real over-sale risk, but the corrective path mutates marketplace state at scale and AGENTS.md requires human confirmation for this class of operation.",
+  "options": [
+    {
+      "title": "Run guarded reconciliation first",
+      "body": "Build or run a dry-run reconciler from snapshot/API item IDs by SKU, review samples, then close or rehydrate orphan listings and address local withdraw recovery.",
+      "recommended": true
+    },
+    {
+      "title": "Only enable local recoverWithdraw",
+      "body": "This is narrower and faster, but the triage data says it leaves the majority of orphan listings without local docs unresolved.",
+      "recommended": false
+    },
+    {
+      "title": "Consolidate under the older report",
+      "body": "Track the work under https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859 only if this issue's newer orphan-listing evidence is copied or linked there.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Run guarded reconciliation first",
+    "body": "Build or run a dry-run reconciler from snapshot/API item IDs by SKU, review samples, then close or rehydrate orphan listings and address local withdraw recovery.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "He supplied the current live evidence and recently worked on MercadoLibre withdraw observability, so he is the best visible owner for the operational go/no-go.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7178.md",
+    "reviewedAt": "2026-07-08T00:12:04.605Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}

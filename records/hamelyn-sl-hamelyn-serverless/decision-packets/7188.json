@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-08T00:12:11.939Z",
+  "updatedAt": "2026-07-07T23:18:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7188,
+    "title": "feat: run skill guardian on gpt-5.5 via codex subscription",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7188",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-07T23:18:08Z",
+    "updatedAt": "2026-07-07T23:18:31Z",
+    "headSha": "47657ff8dca2244bca1c9280c26a654f0870d579"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "Should Skill Guardian move from Vercel AI Gateway to the shared Codex subscription now, with the repository secrets and docs updated as part of this rollout?",
+  "rationale": "The code change is tightly coupled to operator-managed secrets, provider routing, and cost/auth ownership that cannot be validated by source review alone.",
+  "options": [
+    {
+      "title": "Proceed after rollout proof",
+      "body": "Update the skill docs, configure the new secrets, and require a redacted workflow or terminal proof of the Blob-token path before merge.",
+      "recommended": true
+    },
+    {
+      "title": "Keep Gateway for now",
+      "body": "Close or pause this PR until maintainers decide that Skill Guardian should share the Codex subscription with the marketplace agents.",
+      "recommended": false
+    },
+    {
+      "title": "Merge with manual ops risk",
+      "body": "Accept that the workflow may fail until the secrets are configured and document the manual recovery path in the PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Proceed after rollout proof",
+    "body": "Update the skill docs, configure the new secrets, and require a redacted workflow or terminal proof of the Blob-token path before merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Miguel has recent merged Skill Guardian changes and was explicitly requested for review on this PR based on file expertise.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7188.md",
+    "reviewedAt": "2026-07-08T00:12:11.939Z",
+    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+  }
+}
