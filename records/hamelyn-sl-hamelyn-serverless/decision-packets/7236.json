@@ -15,11 +15,13 @@
       "reporter:banosdavidhamelyn",
       "feature",
       "epic:revision-v3",
-      "P1",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "issue-rating: 🌊 off-meta tidepool"
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-08T10:11:57Z",
     "updatedAt": "2026-07-09T06:20:08Z"
@@ -52,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7236.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236#issuecomment-4916399745",
     "reviewedAt": "2026-07-09T08:09:56.703Z",
     "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
   }

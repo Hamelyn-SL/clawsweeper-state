@@ -13,7 +13,13 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:queued"
+      "triage:queued",
+      "P2",
+      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-09T07:22:44Z",
     "updatedAt": "2026-07-09T07:25:02Z"
@@ -51,7 +57,8 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7265.md",
-    "reviewedAt": "2026-07-09T08:17:01.787Z",
-    "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265#issuecomment-4923058510",
+    "reviewedAt": "2026-07-09T08:15:52.949Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
   }
 }
