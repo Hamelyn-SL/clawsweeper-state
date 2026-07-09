@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T10:21:19.807Z",
-  "updatedAt": "2026-07-09T10:15:47Z",
+  "generatedAt": "2026-07-09T11:55:47.560Z",
+  "updatedAt": "2026-07-09T10:23:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7283",
     "state": "open",
     "labels": [
-      "size/S"
+      "size/S",
+      "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
+      "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-07-09T10:09:54Z",
-    "updatedAt": "2026-07-09T10:15:47Z",
+    "updatedAt": "2026-07-09T10:23:38Z",
     "headSha": "f74ca18d74ec170cf8da86cc56ead7e80c5dea4e"
   },
-  "lane": "merge_risk",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "¿Puede este PR cerrar la issue enlazada solo con la auto-creación de tablas, o debe incluir/coordinar también las colecciones activas que siguen fuera de `MERGE_COLLECTIONS`?",
-  "rationale": "El cambio corrige la causa raíz del paso manual, pero la evidencia de la issue incluye colecciones concretas que no se materializarán si nadie las añade a la lista o mantiene otro PR canónico para ellas.",
+  "question": "¿Puede este PR cerrar la issue enlazada como arreglo de auto-provisión, o debe coordinar también las colecciones activas y la documentación operacional antes de merge?",
+  "rationale": "El código corrige la causa raíz de tabla ausente, pero el cierre completo de la issue depende de evidencia real visible y de no dejar fuera colecciones o docs operativas que el equipo espera cubrir.",
   "options": [
     {
-      "title": "Merge tras prueba y seguimiento de alcance",
-      "body": "Aceptar este PR como arreglo de auto-provisión solo cuando haya prueba visible y la issue enlazada no se cierre sin cubrir o enlazar las colecciones activas restantes.",
+      "title": "Merge tras prueba y coordinación",
+      "body": "Pedir un transcript o captura redacted de BigQuery, actualizar o coordinar la doc operativa y asegurar que las colecciones pendientes quedan cubiertas por este PR o por una PR canónica enlazada.",
       "recommended": true
     },
     {
-      "title": "Ampliar este PR",
-      "body": "Añadir aquí las colecciones activas y la documentación operativa necesaria, asumiendo un alcance mayor de data-platform.",
+      "title": "Aceptar el parche estrecho",
+      "body": "Un mantenedor puede aceptar el PR solo como auto-provisión y dejar las colecciones pendientes y docs en seguimiento separado.",
       "recommended": false
     },
     {
-      "title": "Delegar en PR canónica separada",
-      "body": "Mantener este PR como parche pequeño y dejar que otra PR viable cubra `mk_discogs`, `mk_decathlon` y `mk_alibris` antes de cerrar la issue.",
+      "title": "Unificar con la PR de Discogs",
+      "body": "Si la PR solapada es el camino canónico, conviene cerrar o pausar este PR solo cuando esa otra ruta sea claramente viable para el mismo arreglo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Merge tras prueba y seguimiento de alcance",
-    "body": "Aceptar este PR como arreglo de auto-provisión solo cuando haya prueba visible y la issue enlazada no se cierre sin cubrir o enlazar las colecciones activas restantes.",
+    "title": "Merge tras prueba y coordinación",
+    "body": "Pedir un transcript o captura redacted de BigQuery, actualizar o coordinar la doc operativa y asegurar que las colecciones pendientes quedan cubiertas por este PR o por una PR canónica enlazada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ya está solicitado como reviewer para este PR y el comentario de asignación lo vincula con el área `bq-merge`/BigQuery.",
+    "reason": "Ya está solicitado como reviewer y el comentario de asignación lo vincula con `bq-merge`/BigQuery.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7283.md",
-    "reviewedAt": "2026-07-09T10:21:19.807Z",
-    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+    "reviewedAt": "2026-07-09T11:55:47.560Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
   }
 }

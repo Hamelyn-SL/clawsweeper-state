@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:22:56.854Z",
-  "updatedAt": "2026-07-08T10:14:18Z",
+  "generatedAt": "2026-07-09T11:55:20.354Z",
+  "updatedAt": "2026-07-09T10:52:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🦪 silver shellfish",
       "status: 📣 needs proof",
-      "P0",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 compatibility",
+      "P0",
       "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-02T15:30:16Z",
-    "updatedAt": "2026-07-08T10:14:18Z",
+    "updatedAt": "2026-07-09T10:52:30Z",
     "headSha": "26a4a7ed0e31d3b098057422bb908b427c25bc19"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Qué contrato público debe conservar `featured` para Supply y cómo se debe sustituir `units` para limitar compras sin filtrar inventario real?",
-  "rationale": "El PR toca una frontera P0 de datos públicos y dos campos discutidos (`priceBuy` y `units`) tienen doble significado: pueden ser sensibles en ecommerce, pero también sostienen flujos públicos existentes.",
+  "question": "¿Debe `priceBuy` seguir siendo público en el endpoint `featured` de Supply mientras se oculta en superficies de ecommerce comprador?",
+  "rationale": "La misma palabra de campo representa coste interno en la tienda compradora y oferta pública de recompra en Supply; automatización no debe decidir esa frontera de producto/seguridad sin señal de mantenimiento.",
   "options": [
     {
       "title": "Separar contratos por superficie",
-      "body": "Mantener allowlist estricta para ecommerce, definir un serializer específico de Supply que conserve `priceBuy` público, y sustituir `units` por un cap/validación server-side no sensible.",
+      "body": "Mantener `priceBuy` en el contrato de Supply/featured y ocultarlo en ecommerce comprador mediante serializers distintos y documentados.",
       "recommended": true
     },
     {
-      "title": "Aceptar el cambio actual y documentar roturas",
-      "body": "Se cierra más agresivamente la fuga, pero Supply y el límite de carrito pueden degradarse hasta que haya seguimiento operativo.",
+      "title": "Ocultarlo también en Supply",
+      "body": "Eliminar `priceBuy` de featured solo si se actualiza Supply para mostrar un sustituto aprobado y se valida la UX de venta.",
       "recommended": false
     },
     {
-      "title": "Pausar y rehacer como PRs más pequeños",
-      "body": "Dividir ecommerce, disponibilidad/carrito y BFF Supply reduce riesgo, pero retrasa el cierre de la fuga P0.",
+      "title": "Pausar hasta rediseño de DTOs",
+      "body": "No mergear esta rama hasta acordar un contrato público común para buyer/seller que no dependa de denylists divergentes.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar contratos por superficie",
-    "body": "Mantener allowlist estricta para ecommerce, definir un serializer específico de Supply que conserve `priceBuy` público, y sustituir `units` por un cap/validación server-side no sensible.",
+    "body": "Mantener `priceBuy` en el contrato de Supply/featured y ocultarlo en ecommerce comprador mediante serializers distintos y documentados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Ya identificó los bloqueos concretos y tiene señal directa en ecommerce/APIs públicas según la revisión y el reparto automático.",
-    "confidence": "high"
+    "reason": "Ya detectó el cruce entre security boundary y contrato de Supply, y está solicitado como reviewer del PR.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6808.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6808#issuecomment-4911138293",
-    "reviewedAt": "2026-07-08T16:22:56.854Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-09T11:55:20.354Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
   }
 }

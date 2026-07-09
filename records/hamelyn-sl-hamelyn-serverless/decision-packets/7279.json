@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T10:17:38.639Z",
-  "updatedAt": "2026-07-09T09:40:52Z",
+  "generatedAt": "2026-07-09T11:56:58.583Z",
+  "updatedAt": "2026-07-09T11:39:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,51 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7279",
     "state": "open",
     "labels": [
-      "merge-risk: 🚨 compatibility",
+      "size/XXL",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
+      "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-07-09T09:37:36Z",
-    "updatedAt": "2026-07-09T09:40:52Z",
-    "headSha": "44b7725bf1783cdc079b9b48f41209e374317d27"
+    "updatedAt": "2026-07-09T11:39:13Z",
+    "headSha": "a9c335677095c5ef8802e69794ffaa361fed54b1"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se debe permitir que este PR dependa de crear tablas raw de BigQuery fuera del código antes del próximo deploy, o debe incluir una protección/migración que haga el deploy seguro por sí mismo?",
-  "rationale": "El PR declara el gate operativo, pero la rama cambia código que puede abortar jobs existentes si el orden de despliegue no se cumple; esa aceptación de riesgo requiere criterio de operación/release.",
+  "question": "¿Este PR debe bloquearse hasta tener prueba de precreación/backfill de `mk_discogs`, `mk_decathlon` y `mk_alibris`, o preferís cambiar `bq-merge` para tolerar tablas raw ausentes durante el despliegue?",
+  "rationale": "La rama introduce referencias directas a tablas BigQuery nuevas y el propio PR reconoce que un despliegue desordenado puede abortar el merge horario global; esa coordinación no se puede resolver solo con CI.",
   "options": [
     {
-      "title": "Bloquear hasta preparar tablas raw",
-      "body": "Crear/verificar las tres tablas raw y adjuntar prueba de upgrade antes de permitir el merge/deploy.",
+      "title": "Exigir prueba de upgrade antes de merge",
+      "body": "Crear las tablas raw, ejecutar/backfillear el flujo afectado y adjuntar salida redacted antes de permitir el deploy de data-platform.",
       "recommended": true
     },
     {
-      "title": "Hacer el merge tolerante",
-      "body": "Cambiar el pipeline para omitir o crear de forma segura tablas raw ausentes antes de añadirlas al flujo horario.",
+      "title": "Hacer el código tolerante a tablas ausentes",
+      "body": "Cambiar `bq-merge`/scheduled query para que la activación de nuevas `mk_*` no pare el merge global mientras se prepara la tabla.",
       "recommended": false
     },
     {
       "title": "Aceptar el gate manual",
-      "body": "Mergear solo si el equipo de data-platform asume explícitamente el orden de despliegue y backfill documentado en el PR.",
+      "body": "Mergear con el procedimiento documentado y asumir que el deploy queda coordinado manualmente por quien opere data-platform.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear hasta preparar tablas raw",
-    "body": "Crear/verificar las tres tablas raw y adjuntar prueba de upgrade antes de permitir el merge/deploy.",
+    "title": "Exigir prueba de upgrade antes de merge",
+    "body": "Crear las tablas raw, ejecutar/backfillear el flujo afectado y adjuntar salida redacted antes de permitir el deploy de data-platform.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es la señal histórica más reciente en `bq-merge`, que concentra el riesgo de release del PR.",
-    "confidence": "medium"
+    "reason": "Es el rastro más cercano en historial reciente para `bq-merge` y materialización BigQuery.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7279.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7279#issuecomment-4924064604",
-    "reviewedAt": "2026-07-09T10:17:38.639Z",
-    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+    "reviewedAt": "2026-07-09T11:56:58.583Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
   }
 }

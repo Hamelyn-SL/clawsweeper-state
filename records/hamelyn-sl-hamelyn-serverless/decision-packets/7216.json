@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T12:01:12.785Z",
-  "updatedAt": "2026-07-09T11:50:13Z",
+  "generatedAt": "2026-07-09T11:53:41.362Z",
+  "updatedAt": "2026-07-09T11:38:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,53 @@
       "app:admin",
       "priority:p1",
       "feature",
+      "triage:queued",
       "epic:revision-v3",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
       "P1",
       "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-08T08:32:51Z",
-    "updatedAt": "2026-07-09T11:50:13Z"
+    "updatedAt": "2026-07-09T11:38:43Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Aceptamos para esta issue la estrategia del PR abierto: `reviewedBy`/`reviewedAt` nuevos con fallback permanente a `acceptedBy`/`acceptedAt` y sin backfill histórico?",
-  "rationale": "La issue incluye explícitamente decidir el tratamiento de datos históricos y los consumidores aguas abajo; esa elección afecta métricas de productividad y no debe quedar cerrada solo por inspección automática.",
+  "question": "¿Debe resolverse esta issue aterrizando https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288 en la rama de la épica o retargeteándolo a `dev` antes del cierre?",
+  "rationale": "La issue ya tiene un PR candidato con cierre, pero combina una decisión de base de integración con el tratamiento de históricos sin backfill; automatización no debería abrir otro fix ni cerrar la issue antes de esa decisión.",
   "options": [
     {
-      "title": "Aceptar fallback sin backfill",
-      "body": "Mantiene compatibilidad de lectura y evita migración, pero deja campos legacy como parte permanente del contrato de datos.",
+      "title": "Revisar y aterrizar el PR candidato",
+      "body": "Mantiene una única implementación para la trazabilidad por producto y cierra esta issue cuando el PR esté validado y mergeado.",
       "recommended": true
     },
     {
-      "title": "Exigir backfill acotado",
-      "body": "Reduce ramas de lectura futuras, pero introduce operación de datos y validación adicional sobre Mongo/BigQuery.",
+      "title": "Retargetear primero a dev",
+      "body": "Alinea el trabajo con la política general de base del repo antes de completar la revisión técnica.",
       "recommended": false
     },
     {
-      "title": "Separar la decisión histórica",
-      "body": "Permite mergear la traza nueva y mover el tratamiento de históricos a una issue/PR más estrecha si reporting lo aprueba.",
+      "title": "Descartar el PR y reabrir alcance",
+      "body": "Solo conviene si el enfoque sin backfill o la base de la épica no son aceptables para el equipo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar fallback sin backfill",
-    "body": "Mantiene compatibilidad de lectura y evita migración, pero deja campos legacy como parte permanente del contrato de datos.",
+    "title": "Revisar y aterrizar el PR candidato",
+    "body": "Mantiene una única implementación para la trazabilidad por producto y cierra esta issue cuando el PR esté validado y mergeado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la mejor señal disponible para decidir el impacto de reporting/productividad y ya aparece como reviewer principal en el PR vinculado.",
-    "confidence": "medium"
+    "reason": "Tiene señal fuerte en las métricas afectadas y aparece como reviewer principal asignado en el PR candidato.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7216.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7216#issuecomment-4924250057",
-    "reviewedAt": "2026-07-09T12:01:12.785Z",
+    "reviewedAt": "2026-07-09T11:53:41.362Z",
     "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
   }
 }
