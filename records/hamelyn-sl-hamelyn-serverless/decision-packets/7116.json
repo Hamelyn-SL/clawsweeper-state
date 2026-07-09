@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:11:41.222Z",
+  "updatedAt": "2026-07-09T08:05:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7116,
+    "title": "feat: add BL invocation logging and business-logic graph dashboard",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7116",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "rating: 🧂 unranked krab",
+      "merge-risk: 🚨 security-boundary",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "proof: 📸 screenshot"
+    ],
+    "createdAt": "2026-07-07T10:01:49Z",
+    "updatedAt": "2026-07-09T08:05:31Z",
+    "headSha": "f1e4427b22fe66e0258da2a76bf876917ce2f8e9"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Aceptamos mergear esta telemetría BL con `blmetrics` temporal en Mongo mientras https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265 migra el destino a BigQuery?",
+  "rationale": "El código parece encaminado y protegido, pero la decisión afecta a writes runtime en hot paths, datos demo y una nueva superficie de métricas internas; eso no lo puede cerrar una revisión automática.",
+  "options": [
+    {
+      "title": "Aceptar Mongo temporal tras resolver conflictos",
+      "body": "Se mergea cuando el conflicto, Cursor y la limpieza de datos demo estén resueltos, dejando https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265 como follow-up obligatorio.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear hasta BigQuery",
+      "body": "Se pausa este PR y se aterriza primero el destino definitivo para evitar writes temporales en Mongo producción.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir dashboard e instrumentación",
+      "body": "Se separa el dashboard/spec explorer de las llamadas `logBlEntry` para reducir el blast radius del primer merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar Mongo temporal tras resolver conflictos",
+    "body": "Se mergea cuando el conflicto, Cursor y la limpieza de datos demo estén resueltos, dejando https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265 como follow-up obligatorio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ya aprobó el head actual y fue asignado como reviewer por familiaridad con el área tocada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7116.md",
+    "reviewedAt": "2026-07-09T08:11:41.222Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}

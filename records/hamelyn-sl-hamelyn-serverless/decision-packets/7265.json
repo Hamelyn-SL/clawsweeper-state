@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:15:52.949Z",
+  "updatedAt": "2026-07-09T07:25:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7265,
+    "title": "📊 Migrar telemetría BL de blmetrics (Mongo) a BigQuery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7265",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-09T07:22:44Z",
+    "updatedAt": "2026-07-09T07:25:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué vía debe ser la fuente canónica para la telemetría BL: derivar desde Vercel Log Drain, escribir directamente desde el sink o exportar temporalmente desde Mongo?",
+  "rationale": "La issue pide explícitamente evaluar la vía de ingesta, y esa elección afecta coste, latencia, garantías de pérdida y ownership entre Core, Data Dashboards y Data Platform.",
+  "options": [
+    {
+      "title": "Usar Log Drain y modelado BigQuery",
+      "body": "Aprovecha `hamelyn-vercel-logs` como transporte existente y añade parsing/staging/mart versionados para BL antes de conectar el grafo.",
+      "recommended": true
+    },
+    {
+      "title": "Streaming directo desde el sink",
+      "body": "Reduce parsing de logs pero mete BigQuery en el path runtime y requiere una política explícita de fallos/reintentos.",
+      "recommended": false
+    },
+    {
+      "title": "Exportar desde Mongo como puente",
+      "body": "Permite migrar después de `blmetrics`, pero mantiene temporalmente escritura operacional y no resuelve la granularidad de eventos si solo existen agregados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar Log Drain y modelado BigQuery",
+    "body": "Aprovecha `hamelyn-vercel-logs` como transporte existente y añade parsing/staging/mart versionados para BL antes de conectar el grafo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Tiene la señal más fuerte en Data Platform/BigQuery y en tablas de eventos recientes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7265.md",
+    "reviewedAt": "2026-07-09T08:15:52.949Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}

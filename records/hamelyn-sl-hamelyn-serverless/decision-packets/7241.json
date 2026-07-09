@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:11:20.433Z",
+  "updatedAt": "2026-07-09T07:45:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7241,
+    "title": "fix: align catalog page cap and drop dead search handler",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7241",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
+      "merge-risk: 🚨 compatibility"
+    ],
+    "createdAt": "2026-07-08T12:12:51Z",
+    "updatedAt": "2026-07-09T07:45:13Z",
+    "headSha": "57cec95ae49bcebd2b00f8335ca16f0f8b13d6fd"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Acepta el equipo de catálogo que las páginas fuera de la ventana servible pasen de 200 vacío a solicitud inválida en esta API?",
+  "rationale": "La decisión de owner sobre la regla BL está documentada, pero el propio seguimiento de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7150 pide valorar impacto SEO/clientes y esa compatibilidad no la puede cerrar una comprobación automática.",
+  "options": [
+    {
+      "title": "Aceptar el tope dinámico con prueba real",
+      "body": "Mantener el cambio de 400 para páginas profundas y pedir evidencia real redacted antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar 200 vacío por compatibilidad",
+      "body": "Ajustar la PR para documentar la ventana real sin romper clientes que ya dependan de páginas vacías.",
+      "recommended": false
+    },
+    {
+      "title": "Separar limpieza y paginación",
+      "body": "Fusionar primero la eliminación del handler muerto y dejar la paginación para una decisión de producto independiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el tope dinámico con prueba real",
+    "body": "Mantener el cambio de 400 para páginas profundas y pedir evidencia real redacted antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Ya figura como revisor solicitado y el comentario automático de asignación lo relaciona con los ficheros del catálogo tocados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7241.md",
+    "reviewedAt": "2026-07-09T08:11:20.433Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}

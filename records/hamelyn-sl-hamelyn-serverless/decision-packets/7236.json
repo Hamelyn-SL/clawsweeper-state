@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T06:17:38.809Z",
-  "updatedAt": "2026-07-09T06:08:19Z",
+  "generatedAt": "2026-07-09T08:09:56.703Z",
+  "updatedAt": "2026-07-09T06:20:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,45 @@
       "priority:p1",
       "reporter:banosdavidhamelyn",
       "feature",
-      "triage:queued",
       "epic:revision-v3",
       "P1",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-08T10:11:57Z",
-    "updatedAt": "2026-07-09T06:08:19Z"
+    "updatedAt": "2026-07-09T06:20:08Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
   "question": "¿Debe cerrarse esta issue solo cuando `EPIC/revision-v3` entre en `dev`, o queréis cerrarla manualmente ya por estar resuelta dentro del epic?",
   "rationale": "La implementación candidata existe en una rama de epic no presente en `dev`; la limpieza automática conservadora no debe cerrar como implementado algo que la rama canónica aún no contiene.",
   "options": [
     {
-      "title": "Esperar a que el epic llegue a dev",
-      "body": "Mantiene esta issue como seguimiento vivo hasta que la implementación esté en la rama canónica y pueda cerrarse con evidencia de `dev`.",
+      "title": "Esperar a `dev`",
+      "body": "Mantiene esta issue abierta hasta que el cambio esté en la rama canónica y pueda cerrarse con evidencia local de `dev`.",
       "recommended": true
     },
     {
       "title": "Cerrar manualmente por criterio V3",
-      "body": "Una persona puede cerrarla si el equipo considera que el merge en `EPIC/revision-v3` es suficiente para su tablero interno.",
+      "body": "Una persona del equipo puede cerrarla si el tablero del epic considera suficiente el merge en `EPIC/revision-v3`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar a que el epic llegue a dev",
-    "body": "Mantiene esta issue como seguimiento vivo hasta que la implementación esté en la rama canónica y pueda cerrarse con evidencia de `dev`.",
+    "title": "Esperar a `dev`",
+    "body": "Mantiene esta issue abierta hasta que el cambio esté en la rama canónica y pueda cerrarse con evidencia local de `dev`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está solicitado como reviewer del PR candidato y aparece como el punto de decisión funcional más claro para el epic de Revisión V3.",
+    "reason": "Fue señalado como reviewer del PR candidato por señales fuertes en Revisión V3 y encaja como punto de decisión del epic.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7236.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236#issuecomment-4916399745",
-    "reviewedAt": "2026-07-09T06:17:38.809Z",
-    "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
+    "reviewedAt": "2026-07-09T08:09:56.703Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
   }
 }

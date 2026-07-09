@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:15:04.834Z",
+  "updatedAt": "2026-07-09T07:25:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7263,
+    "title": "Amazon COM price-threshold issue 18155 errors persist after recovery",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7263",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-09T07:11:39Z",
+    "updatedAt": "2026-07-09T07:25:56Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué rango min/max debe enviarse a Amazon COM para `optimo`, `atascado` y `sin_grupo`, y debe enviarse sin `pricingRuleId` salvo en grupos aprobados?",
+  "rationale": "El cambio corrige un bug operativo, pero modifica una decisión explícita de pricing para grupos que hoy se excluyen de la regla automática; no conviene automatizarlo sin confirmar la política comercial.",
+  "options": [
+    {
+      "title": "Separar umbrales de regla automática",
+      "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo en grupos ya aprobados.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar la regla existente",
+      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, aceptando que también puedan recibir el plan de pricing automático actual.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el recovery de `18155`",
+      "body": "Evitar retries que repitan el error hasta definir el rango permitido y la política de regla automática.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar umbrales de regla automática",
+    "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo en grupos ya aprobados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien llevó el fix previo de recuperación 14016/18155/18555 y tiene el contexto más directo de la frontera entre recovery técnico y política de pricing.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7263.md",
+    "reviewedAt": "2026-07-09T08:15:04.834Z",
+    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+  }
+}
