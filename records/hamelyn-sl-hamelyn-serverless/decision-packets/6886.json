@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T20:57:28.104Z",
-  "updatedAt": "2026-07-08T16:34:54Z",
+  "generatedAt": "2026-07-09T10:01:59.999Z",
+  "updatedAt": "2026-07-09T09:37:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,51 +14,51 @@
       "priority:p3",
       "app:infrastructure",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "P2",
-      "impact:other"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-05T10:56:20Z",
-    "updatedAt": "2026-07-08T16:34:54Z"
+    "updatedAt": "2026-07-09T09:37:00Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Queréis resolver este barrido como un único PR frontend grande o dividirlo por patrón/app empezando por admin?",
-  "rationale": "La causa está clara, pero el alcance aceptado exige smoke visual/browser de varias apps y conviene que frontend mantenga la estrategia de entrega antes de automatizar un arreglo parcial.",
+  "question": "¿Debe el equipo abordar esta issue como barrido L transversal ahora o partirla en PRs más pequeños por patrón/app?",
+  "rationale": "La reproducción fuente es clara, pero el alcance cruza varias apps y requiere validación visual/browser que no encaja bien en un fix automático único.",
   "options": [
     {
-      "title": "Dividir por patrón y empezar por admin",
-      "body": "Primer PR para los patrones confirmados de admin y pagos, con validación de consola en las vistas citadas, dejando el resto del monorepo para PRs siguientes.",
+      "title": "Barrido transversal coordinado",
+      "body": "Un equipo frontend/admin corrige los patrones por familia y valida las rutas principales del monorepo en navegador.",
       "recommended": true
     },
     {
-      "title": "Un único barrido monorepo",
-      "body": "Resolver todos los patrones en una rama grande reduce deuda de una vez, pero aumenta coste de revisión y validación visual.",
+      "title": "Partir por patrón",
+      "body": "Crear issues/PRs separados para `DialogContentText`, dashboards, forms anidados y Tabs, reduciendo riesgo por PR pero alargando el cierre completo.",
       "recommended": false
     },
     {
-      "title": "Mantener como deuda planificada",
-      "body": "Conservar la issue abierta hasta que el equipo frontend pueda reservar una sesión de smoke completa.",
+      "title": "Solo hotfix admin",
+      "body": "Corregir primero las vistas admin confirmadas y dejar el resto del monorepo para un seguimiento explícito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir por patrón y empezar por admin",
-    "body": "Primer PR para los patrones confirmados de admin y pagos, con validación de consola en las vistas citadas, dejando el resto del monorepo para PRs siguientes.",
+    "title": "Barrido transversal coordinado",
+    "body": "Un equipo frontend/admin corrige los patrones por familia y valida las rutas principales del monorepo en navegador.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el candidato más directo por la proveniencia de varios patrones JSX actuales que producen el nesting inválido.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es quien aportó el smoke test completo y el contexto más concreto de aceptación del barrido.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6886.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6886#issuecomment-4911143556",
-    "reviewedAt": "2026-07-08T20:57:28.104Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-09T10:01:59.999Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }
