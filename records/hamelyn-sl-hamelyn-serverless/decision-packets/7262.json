@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T01:19:40.753Z",
-  "updatedAt": "2026-07-09T00:50:18Z",
+  "generatedAt": "2026-07-09T02:40:33.746Z",
+  "updatedAt": "2026-07-09T02:35:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,7 +15,7 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:running",
+      "triage:queued",
       "P1",
       "impact:other",
       "issue-rating: 🐚 platinum hermit",
@@ -25,43 +25,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-09T00:35:21Z",
-    "updatedAt": "2026-07-09T00:50:18Z"
+    "updatedAt": "2026-07-09T02:35:09Z"
   },
   "lane": "product_direction",
   "priority": "P1",
   "question": "¿Amazon MX debe seguir reintentando productos sin ASIN como `STALE` con cooldown de 24h, o debe marcarlos como no elegibles/terminales o pasarlos por enriquecimiento antes de volver a `create`?",
-  "rationale": "El código ya tiene recuperación parcial y lookup de ASIN, pero la señal viva no distingue si hay bug de cooldown o una política operativa no definida para EANs sin ASIN resoluble.",
+  "rationale": "El código ya tiene una recuperación parcial, pero la señal fresca no distingue entre bug de cooldown y política operativa de productos sin ASIN resoluble; esa elección afecta a catálogo y sincronización de marketplace.",
   "options": [
     {
       "title": "Validar recurrencia por SKU",
-      "body": "Mantener abierta la issue hasta comparar los SKUs recientes con timestamps, ASIN local, ASIN de producto y política de retry para saber si hay fuga real de cooldown.",
+      "body": "Mantener la issue abierta hasta comparar los SKUs recientes con `lastUpdatedTimestamp`, `retryPolicy`, `stock.asin` y `product.asin` para saber si hay fuga real de cooldown.",
       "recommended": true
     },
     {
       "title": "Marcar terminal/no elegible",
-      "body": "Si Amazon MX no resolverá ASIN para esos EANs, cambiar la política para que esos stocks no entren indefinidamente en `create`.",
+      "body": "Si Amazon no resolverá ASIN para esos EANs, cambiar la política para que esos stocks no entren indefinidamente en `create` de Amazon MX.",
       "recommended": false
     },
     {
-      "title": "Aceptar limitación documentada",
-      "body": "Si los reintentos diarios son intencionados y útiles, documentar la política y ajustar el watcher para no tratar ese ruido como incidencia nueva.",
+      "title": "Aceptar limitación externa documentada",
+      "body": "Si los reintentos diarios son intencionados y útiles, documentar la política y ajustar el watcher para que no reabra la canónica por ruido esperado.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Validar recurrencia por SKU",
-    "body": "Mantener abierta la issue hasta comparar los SKUs recientes con timestamps, ASIN local, ASIN de producto y política de retry para saber si hay fuga real de cooldown.",
+    "body": "Mantener la issue abierta hasta comparar los SKUs recientes con `lastUpdatedTimestamp`, `retryPolicy`, `stock.asin` y `product.asin` para saber si hay fuga real de cooldown.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Tiene la procedencia más directa en la ruta actual que resuelve ASIN por EAN y emite el error exacto.",
+    "person": "MarcosTerroso",
+    "reason": "Tiene la procedencia más directa en la activación y configuración reciente de Amazon MX como marketplace independiente.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7262.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262#issuecomment-4920630428",
-    "reviewedAt": "2026-07-09T01:19:40.753Z",
+    "reviewedAt": "2026-07-09T02:40:33.746Z",
     "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
   }
 }
