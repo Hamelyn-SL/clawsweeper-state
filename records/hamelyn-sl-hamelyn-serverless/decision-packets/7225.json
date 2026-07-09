@@ -17,10 +17,13 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
+      "impact:ux-friction",
       "reporter:AlexDiaz-Hamelyn",
       "P2",
-      "impact:ux-friction"
+      "impact:security",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
     "updatedAt": "2026-07-09T06:19:22Z"
@@ -59,7 +62,7 @@
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916322367",
-    "reviewedAt": "2026-07-09T06:25:22.962Z",
+    "reviewedAt": "2026-07-09T06:21:47.206Z",
     "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
   }
 }
