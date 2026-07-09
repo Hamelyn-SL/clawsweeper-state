@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:11:46.670Z",
-  "updatedAt": "2026-07-08T13:54:51Z",
+  "generatedAt": "2026-07-09T06:18:13.307Z",
+  "updatedAt": "2026-07-09T06:04:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 auth-provider",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-08T06:33:09Z",
-    "updatedAt": "2026-07-08T13:54:51Z",
-    "headSha": "984e368282ea35d35932f356773d4a12dfbd1dea"
+    "updatedAt": "2026-07-09T06:04:34Z",
+    "headSha": "09c633e69c0b1f7f7069bb01dcfa66773e9a2b1a"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Acepta el equipo Supply empaquetar credenciales E2E en la app de Device Cloud, o debe bloquearse el merge hasta mover el ROPC fuera del bundle Expo?",
-  "rationale": "El PR resuelve una parte real del E2E, pero decide una frontera de seguridad de credenciales y Auth0 que no conviene fijar por automatización.",
+  "question": "¿Puede la ruta E2E usar ROPC desde código cliente con una contraseña `EXPO_PUBLIC_*`, o debe exigirse una vía de inyección no pública antes de mergear?",
+  "rationale": "La decisión afecta al límite de secretos de la build Expo y al diseño permanente del login E2E; automatización puede proponer un arreglo mecánico, pero la política de credenciales de test debe validarla alguien con ownership de Supply/Auth0.",
   "options": [
     {
-      "title": "Corregir antes de merge",
-      "body": "Rehacer el bootstrap para que la contraseña no viva en `EXPO_PUBLIC_*` ni en el bundle y pedir prueba real del head actual.",
+      "title": "Bloquear hasta retirar la contraseña pública",
+      "body": "Requerir que el PR use una vía solo-test donde `PROFILE_PASSWORD` no se compile en la app y luego aporte prueba positiva del E2E.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo E2E",
-      "body": "Fusionar asumiendo explícitamente que la cuenta de test y el secreto de cliente pueden quedar expuestos en artefactos externos de E2E.",
-      "recommended": false
-    },
-    {
-      "title": "Separar el alcance",
-      "body": "Fusionar solo Node 22/testID/artefactos y dejar la autenticación ROPC en un PR específico para https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7242.",
+      "title": "Aceptar el riesgo para la cuenta E2E",
+      "body": "Mergear asumiendo que el usuario de test es rotatorio y que el binario de Device Cloud puede contener esa credencial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir antes de merge",
-    "body": "Rehacer el bootstrap para que la contraseña no viva en `EXPO_PUBLIC_*` ni en el bundle y pedir prueba real del head actual.",
+    "title": "Bloquear hasta retirar la contraseña pública",
+    "body": "Requerir que el PR use una vía solo-test donde `PROFILE_PASSWORD` no se compile en la app y luego aporte prueba positiva del E2E.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el revisor asignado para este PR y ya aparece como punto de revisión del área Supply/E2E.",
-    "confidence": "medium"
+    "reason": "Tiene historial directo en los workflows Maestro/auth de Supply y ya fue asignado como reviewer del PR.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7207.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7207#issuecomment-4916283645",
-    "reviewedAt": "2026-07-08T15:11:46.670Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-09T06:18:13.307Z",
+    "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
   }
 }
