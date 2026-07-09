@@ -14,7 +14,13 @@
       "app:infrastructure",
       "reporter:JavierHamelyn",
       "feature",
-      "triage:queued"
+      "triage:queued",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-09T08:27:22Z",
     "updatedAt": "2026-07-09T08:27:51Z"
@@ -47,6 +53,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7272.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7272#issuecomment-4923219804",
     "reviewedAt": "2026-07-09T08:36:00.704Z",
     "mainSha": "4b7ad0813396f813822d90a8451b556e31b523cf"
   }
