@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T08:25:13.985Z",
-  "updatedAt": "2026-07-09T08:06:21Z",
+  "generatedAt": "2026-07-09T10:09:31.130Z",
+  "updatedAt": "2026-07-09T09:52:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🦪 silver shellfish",
-      "status: ⏳ waiting on author",
       "P1",
+      "merge-risk: 🚨 automation",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "proof: sufficient",
+      "status: ⏳ waiting on author"
     ],
     "createdAt": "2026-07-07T23:18:08Z",
-    "updatedAt": "2026-07-09T08:06:21Z",
+    "updatedAt": "2026-07-09T09:52:20Z",
     "headSha": "1cbab5a5933a36b5fb638c9412469aaa3a07d829"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe el Skill Guardian recibir `BLOB_READ_WRITE_TOKEN`, `CODEX_TOKEN_KEY` y `REVIEWER_AGENT_TOKEN` directamente en el workflow de `pull_request`, o debe moverse esa llamada a un contexto de confianza antes de mergear?",
-  "rationale": "El PR necesita esos secretos para usar la suscripción Codex, pero también amplía el impacto de cualquier ejecución de código en el job de PR; esa frontera depende de la política de confianza del repo y no es una decisión puramente mecánica.",
+  "question": "¿Debe el Skill Guardian recibir el store Codex compartido dentro de un workflow `pull_request` que ejecuta el código de `.github/skill-guardian` del propio PR?",
+  "rationale": "El cambio reutiliza la infraestructura de agentes existente, pero amplía el valor de los secrets expuestos a este workflow y la decisión de frontera no se puede cerrar solo con un parche mecánico.",
   "options": [
     {
-      "title": "Endurecer antes de mergear",
-      "body": "Mover o condicionar el acceso a esos secretos para que solo se usen en contextos de confianza, y corregir además el wrapper de errores de Codex.",
+      "title": "Mover el acceso Codex a una ruta confiable",
+      "body": "Usar código de base/trusted wrapper, `workflow_dispatch` restringido o un servicio intermedio para que el PR no pueda ejecutar código arbitrario con `BLOB_READ_WRITE_TOKEN` y `CODEX_TOKEN_KEY`.",
       "recommended": true
     },
     {
-      "title": "Aceptar la frontera actual",
-      "body": "Mergear con la exposición de secretos documentada y asumir que solo ramas de confianza pueden ejecutar ese workflow con secrets.",
+      "title": "Aceptar exposición en ramas internas",
+      "body": "Mantener el diseño actual como política explícita para ramas no-fork, asumiendo que los secretos del repo pueden llegar a código modificado en el PR.",
       "recommended": false
     },
     {
-      "title": "Pausar la migración",
-      "body": "Mantener temporalmente AI Gateway hasta que exista un patrón compartido de ejecución Codex para workflows de PR.",
+      "title": "Usar credencial menos privilegiada",
+      "body": "Proveer al guardian un token de solo lectura o broker limitado que no pueda reescribir el store compartido ni reutilizarse fuera del flujo de revisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Endurecer antes de mergear",
-    "body": "Mover o condicionar el acceso a esos secretos para que solo se usen en contextos de confianza, y corregir además el wrapper de errores de Codex.",
+    "title": "Mover el acceso Codex a una ruta confiable",
+    "body": "Usar código de base/trusted wrapper, `workflow_dispatch` restringido o un servicio intermedio para que el PR no pueda ejecutar código arbitrario con `BLOB_READ_WRITE_TOKEN` y `CODEX_TOKEN_KEY`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien aparece con más historia en Skill Guardian y en la infraestructura Codex/usage que este cambio reutiliza.",
+    "reason": "Es quien más historial tiene en Skill Guardian y en la evolución reciente del workflow/modelo afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7188#issuecomment-4923131813",
-    "reviewedAt": "2026-07-09T08:25:13.985Z",
-    "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
+    "reviewedAt": "2026-07-09T10:09:31.130Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }

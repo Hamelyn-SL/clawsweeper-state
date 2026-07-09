@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:17:38.639Z",
+  "updatedAt": "2026-07-09T09:40:52Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7279,
+    "title": "refactor: add marketplace registry, derive consumers and coherence test",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7279",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-07-09T09:37:36Z",
+    "updatedAt": "2026-07-09T09:40:52Z",
+    "headSha": "44b7725bf1783cdc079b9b48f41209e374317d27"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se debe permitir que este PR dependa de crear tablas raw de BigQuery fuera del código antes del próximo deploy, o debe incluir una protección/migración que haga el deploy seguro por sí mismo?",
+  "rationale": "El PR declara el gate operativo, pero la rama cambia código que puede abortar jobs existentes si el orden de despliegue no se cumple; esa aceptación de riesgo requiere criterio de operación/release.",
+  "options": [
+    {
+      "title": "Bloquear hasta preparar tablas raw",
+      "body": "Crear/verificar las tres tablas raw y adjuntar prueba de upgrade antes de permitir el merge/deploy.",
+      "recommended": true
+    },
+    {
+      "title": "Hacer el merge tolerante",
+      "body": "Cambiar el pipeline para omitir o crear de forma segura tablas raw ausentes antes de añadirlas al flujo horario.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el gate manual",
+      "body": "Mergear solo si el equipo de data-platform asume explícitamente el orden de despliegue y backfill documentado en el PR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Bloquear hasta preparar tablas raw",
+    "body": "Crear/verificar las tres tablas raw y adjuntar prueba de upgrade antes de permitir el merge/deploy.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la señal histórica más reciente en `bq-merge`, que concentra el riesgo de release del PR.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7279.md",
+    "reviewedAt": "2026-07-09T10:17:38.639Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}

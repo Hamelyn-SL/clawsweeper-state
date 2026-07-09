@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:23:54.865Z",
-  "updatedAt": "2026-07-08T13:53:23Z",
+  "generatedAt": "2026-07-09T10:10:10.945Z",
+  "updatedAt": "2026-07-09T09:36:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/M",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
       "P3",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 other"
     ],
     "createdAt": "2026-07-07T12:35:59Z",
-    "updatedAt": "2026-07-08T13:53:23Z",
-    "headSha": "e77c55f751504f9aee2446635cf9bab52094594f"
+    "updatedAt": "2026-07-09T09:36:08Z",
+    "headSha": "e86d87c515402964a34130192aab6eb5077a0b8b"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el arreglo canónico para las alertas de disponibilidad limitarse a rechazar nuevas altas sin producto, preservando pendientes las solicitudes de productos eliminados, o debe marcar también esas filas como notificadas en el cron como propone https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7198?",
-  "rationale": "Las dos PRs abiertas resuelven el mismo issue con políticas de negocio distintas para productos que desaparecen después del alta, y la decisión afecta a si una alerta puede sobrevivir hasta que el producto vuelva al catálogo.",
+  "question": "¿Aceptamos como solución final validar solo el alta y no marcar ni borrar en el cron las solicitudes cuyo producto desaparece después?",
+  "rationale": "El código es acotado, pero la diferencia entre preservar avisos de productos retirados o cerrarlos como terminales es una política de negocio que no puede decidirse solo por el diff.",
   "options": [
     {
-      "title": "Confirmar la vía de alta solamente",
-      "body": "Mantiene vivas las solicitudes existentes si el producto vuelve, pero acepta que los huérfanos históricos sigan suponiendo una consulta diaria adicional.",
+      "title": "Confirmar ruta acotada",
+      "body": "Mergear el PR como arreglo canónico y conservar indefinidamente las solicitudes de productos retirados por la deduplicación de por vida.",
       "recommended": true
     },
     {
-      "title": "Adoptar la limpieza en cron",
-      "body": "Cierra también los huérfanos históricos y de producto eliminado, pero descarta esos avisos si el producto reaparece más tarde.",
+      "title": "Ampliar al cron",
+      "body": "Pedir un cambio adicional para marcar o limpiar huérfanos en el cron, asumiendo que productos que vuelvan al catálogo podrían perder el aviso previo.",
       "recommended": false
     },
     {
-      "title": "Pausar ambas PRs",
-      "body": "Evita cerrar el issue con una política implícita hasta que el owner de BL deje una decisión visible en el hilo.",
+      "title": "Pausar la política",
+      "body": "Dejar el PR abierto hasta que negocio confirme cómo debe tratarse la retención de avisos tras eliminar un producto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la vía de alta solamente",
-    "body": "Mantiene vivas las solicitudes existentes si el producto vuelve, pero acepta que los huérfanos históricos sigan suponiendo una consulta diaria adicional.",
+    "title": "Confirmar ruta acotada",
+    "body": "Mergear el PR como arreglo canónico y conservar indefinidamente las solicitudes de productos retirados por la deduplicación de por vida.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el reviewer solicitado en esta PR y tiene historial reciente directo en la ruta que ahora se modifica.",
-    "confidence": "high"
+    "reason": "Es el reviewer solicitado y tiene historial reciente en el endpoint que valida email/Zod.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7143.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7143#issuecomment-4916397016",
-    "reviewedAt": "2026-07-08T15:23:54.865Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-09T10:10:10.945Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }

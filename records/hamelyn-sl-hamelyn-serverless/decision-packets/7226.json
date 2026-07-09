@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T10:08:38.593Z",
+  "generatedAt": "2026-07-09T10:14:23.283Z",
   "updatedAt": "2026-07-09T10:05:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,43 +18,48 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: 🐚 platinum hermit",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-08T09:19:27Z",
     "updatedAt": "2026-07-09T10:05:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La issue debe considerarse resuelta con el PR abierto si solo añade entrada manual de lote, o debe mantenerse el alcance original con buscador integrado por EAN/Pedido de Compra en la misma pantalla?",
-  "rationale": "Las notas de aceptación piden dos capacidades y el PR vinculado parece resolver solo una; hace falta una decisión de alcance antes de cerrar o partir el trabajo.",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7278 ampliarse antes de mergear para incluir también el fallback por EAN/Pedido de Compra, o se acepta como primera fase solo de entrada manual?",
+  "rationale": "La issue pide dos capacidades y el PR abierto cubre una parte clara del flujo; cerrar o partir el resto requiere decisión de alcance del equipo de Revisión V3.",
   "options": [
     {
-      "title": "Mantener el alcance completo",
-      "body": "Pedir que el PR abierto incorpore también el fallback EAN/Pedido de Compra o que se deje una sub-issue clara antes de cerrar esta issue.",
+      "title": "Ampliar el PR antes de mergear",
+      "body": "Mantiene la issue alineada con sus notas de aceptación y evita cerrar el fallback EAN sin implementación.",
       "recommended": true
     },
     {
-      "title": "Aceptar solo entrada manual",
-      "body": "Cerrar esta issue con el PR abierto como mejora parcial y crear o mantener otra issue para el buscador EAN integrado.",
+      "title": "Mergear entrada manual y sub-issue EAN",
+      "body": "Entrega valor parcial rápido, pero exige dejar el buscador integrado por EAN/Pedido de Compra rastreado de forma explícita.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir alcance del fallback",
+      "body": "Si producto no quiere incrustar el buscador EAN en la pantalla principal, conviene documentar el flujo alternativo antes de cerrar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el alcance completo",
-    "body": "Pedir que el PR abierto incorpore también el fallback EAN/Pedido de Compra o que se deje una sub-issue clara antes de cerrar esta issue.",
+    "title": "Ampliar el PR antes de mergear",
+    "body": "Mantiene la issue alineada con sus notas de aceptación y evita cerrar el fallback EAN sin implementación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el assignee de la issue y autor del PR abierto que materializa la decisión de alcance.",
+    "reason": "Es el assignee de esta issue, autor del PR abierto y autor de varias piezas centrales de Revisión V3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7226.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226#issuecomment-4919262159",
-    "reviewedAt": "2026-07-09T10:08:38.593Z",
+    "reviewedAt": "2026-07-09T10:14:23.283Z",
     "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }
