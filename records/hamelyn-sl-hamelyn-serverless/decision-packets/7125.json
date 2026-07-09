@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T09:41:09.266Z",
-  "updatedAt": "2026-07-09T09:36:18Z",
+  "generatedAt": "2026-07-09T10:46:54.546Z",
+  "updatedAt": "2026-07-09T09:50:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,19 +13,18 @@
       "bug",
       "app:ecommerce",
       "priority:p3",
-      "triage:queued",
       "business-logic",
       "reporter:danielmenchen-hamelyn",
-      "P3",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "P3",
+      "clawsweeper:linked-pr-open"
     ],
     "createdAt": "2026-07-07T11:45:46Z",
-    "updatedAt": "2026-07-09T09:36:18Z"
+    "updatedAt": "2026-07-09T09:50:10Z"
   },
   "lane": "product_direction",
   "priority": "P3",
@@ -39,12 +38,12 @@
     },
     {
       "title": "Pedir limpieza en cron",
-      "body": "Reabrir o rehacer la ruta más amplia si negocio prefiere marcar como terminales las solicitudes cuyo producto ya no existe.",
+      "body": "Ampliar o reemplazar la PR si negocio prefiere marcar como terminales las solicitudes cuyo producto ya no existe.",
       "recommended": false
     },
     {
-      "title": "Dejarlo pendiente",
-      "body": "Mantener el comportamiento actual hasta que el owner confirme la política de retención, asumiendo el coste operativo diario.",
+      "title": "Pausar la política",
+      "body": "Mantener el comportamiento actual hasta que el owner confirme cómo debe tratarse la retención de avisos tras eliminar un producto.",
       "recommended": false
     }
   ],
@@ -60,8 +59,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7125.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7125#issuecomment-4913194076",
-    "reviewedAt": "2026-07-09T09:41:09.266Z",
-    "mainSha": "b9102cb541d0e18b284ddd11338d625003f1ea38"
+    "reviewedAt": "2026-07-09T10:46:54.546Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }
