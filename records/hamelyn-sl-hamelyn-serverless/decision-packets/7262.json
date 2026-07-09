@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T02:40:33.746Z",
-  "updatedAt": "2026-07-09T02:35:09Z",
+  "generatedAt": "2026-07-09T04:07:41.074Z",
+  "updatedAt": "2026-07-09T02:57:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,7 +15,7 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:queued",
+      "triage:done",
       "P1",
       "impact:other",
       "issue-rating: 🐚 platinum hermit",
@@ -25,43 +25,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-09T00:35:21Z",
-    "updatedAt": "2026-07-09T02:35:09Z"
+    "updatedAt": "2026-07-09T02:57:36Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Amazon MX debe seguir reintentando productos sin ASIN como `STALE` con cooldown de 24h, o debe marcarlos como no elegibles/terminales o pasarlos por enriquecimiento antes de volver a `create`?",
-  "rationale": "El código ya tiene una recuperación parcial, pero la señal fresca no distingue entre bug de cooldown y política operativa de productos sin ASIN resoluble; esa elección afecta a catálogo y sincronización de marketplace.",
+  "question": "¿Qué política debe aplicar Amazon MX cuando un stock activo no tiene ASIN y la búsqueda por EAN tampoco lo resuelve?",
+  "rationale": "El código ya identifica y enfría el error; la decisión pendiente es operativa/producto, no una reparación unívoca de código.",
   "options": [
     {
-      "title": "Validar recurrencia por SKU",
-      "body": "Mantener la issue abierta hasta comparar los SKUs recientes con `lastUpdatedTimestamp`, `retryPolicy`, `stock.asin` y `product.asin` para saber si hay fuga real de cooldown.",
+      "title": "Marcar como no elegible",
+      "body": "Los SKUs sin ASIN resoluble dejarían de reintentarse como errores de create y quedarían visibles como exclusión de publicación.",
       "recommended": true
     },
     {
-      "title": "Marcar terminal/no elegible",
-      "body": "Si Amazon no resolverá ASIN para esos EANs, cambiar la política para que esos stocks no entren indefinidamente en `create` de Amazon MX.",
+      "title": "Enriquecer antes de publicar",
+      "body": "El flujo bloquearía o derivaría estos SKUs a enriquecimiento de ASIN antes de intentar crear listings en Amazon MX.",
       "recommended": false
     },
     {
-      "title": "Aceptar limitación externa documentada",
-      "body": "Si los reintentos diarios son intencionados y útiles, documentar la política y ajustar el watcher para que no reabra la canónica por ruido esperado.",
+      "title": "Mantener retry diario y ajustar watcher",
+      "body": "El sistema conservaría el comportamiento actual y la alerta dejaría de tratar esta firma como incidente mientras esté dentro del cooldown.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar recurrencia por SKU",
-    "body": "Mantener la issue abierta hasta comparar los SKUs recientes con `lastUpdatedTimestamp`, `retryPolicy`, `stock.asin` y `product.asin` para saber si hay fuga real de cooldown.",
+    "title": "Marcar como no elegible",
+    "body": "Los SKUs sin ASIN resoluble dejarían de reintentarse como errores de create y quedarían visibles como exclusión de publicación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Tiene la procedencia más directa en la activación y configuración reciente de Amazon MX como marketplace independiente.",
-    "confidence": "medium"
+    "reason": "Activó Amazon MX y tocó la configuración que conecta este marketplace con el flujo común de creación y recuperación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7262.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262#issuecomment-4920630428",
-    "reviewedAt": "2026-07-09T02:40:33.746Z",
+    "reviewedAt": "2026-07-09T04:07:41.074Z",
     "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
   }
 }
