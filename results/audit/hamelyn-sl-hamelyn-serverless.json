@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-09T01:10:32.968Z",
+  "generatedAt": "2026-07-09T07:55:42.346Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 3,
-    "openItemsSeen": 230
+    "openItemsSeen": 227
   },
   "counts": {
-    "itemRecords": 229,
-    "closedRecords": 41,
-    "missingOpen": 1,
+    "itemRecords": 222,
+    "closedRecords": 49,
+    "missingOpen": 5,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 0,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 5,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -23,20 +23,79 @@
   "findings": {
     "missingOpen": [
       {
-        "number": 7262,
+        "number": 7263,
         "kind": "issue",
-        "title": "marketplace-crons: Amazon MX create falla cuando no encuentra ASIN para el EAN",
+        "title": "Amazon COM price-threshold issue 18155 errors persist after recovery",
         "labels": [
-          "marketplace-crons",
-          "codex",
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:11:39Z",
+        "updatedAt": "2026-07-09T07:25:56Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7264,
+        "kind": "issue",
+        "title": "🚀 CLI: distribución HTTP propia (instalador + self-update) para operaciones, sin GitHub ni brew",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "reporter:JavierHamelyn",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:21:09Z",
+        "updatedAt": "2026-07-09T07:24:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7265,
+        "kind": "issue",
+        "title": "📊 Migrar telemetría BL de blmetrics (Mongo) a BigQuery",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:22:44Z",
+        "updatedAt": "2026-07-09T07:25:02Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7266,
+        "kind": "issue",
+        "title": "Casa del Libro orphan live offers are not withdrawn when mk row is missing",
+        "labels": [
           "bug",
           "priority:p1",
           "app:marketplace",
-          "triage:running"
+          "triage:done"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T00:35:21Z",
-        "updatedAt": "2026-07-09T00:50:18Z",
+        "createdAt": "2026-07-09T07:32:48Z",
+        "updatedAt": "2026-07-09T07:43:56Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7267,
+        "kind": "issue",
+        "title": "TodoColeccion withdrawn listings stuck as UPLOADING_ERROR skip withdrawal",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:54:33Z",
+        "updatedAt": "2026-07-09T07:54:47Z",
         "missingReason": "recently_created"
       }
     ],
@@ -45,20 +104,79 @@
     "missingProtectedOpen": [],
     "missingRecentOpen": [
       {
-        "number": 7262,
+        "number": 7263,
         "kind": "issue",
-        "title": "marketplace-crons: Amazon MX create falla cuando no encuentra ASIN para el EAN",
+        "title": "Amazon COM price-threshold issue 18155 errors persist after recovery",
         "labels": [
-          "marketplace-crons",
-          "codex",
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:11:39Z",
+        "updatedAt": "2026-07-09T07:25:56Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7264,
+        "kind": "issue",
+        "title": "🚀 CLI: distribución HTTP propia (instalador + self-update) para operaciones, sin GitHub ni brew",
+        "labels": [
+          "priority:p1",
+          "app:infrastructure",
+          "reporter:JavierHamelyn",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:21:09Z",
+        "updatedAt": "2026-07-09T07:24:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7265,
+        "kind": "issue",
+        "title": "📊 Migrar telemetría BL de blmetrics (Mongo) a BigQuery",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:22:44Z",
+        "updatedAt": "2026-07-09T07:25:02Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7266,
+        "kind": "issue",
+        "title": "Casa del Libro orphan live offers are not withdrawn when mk row is missing",
+        "labels": [
           "bug",
           "priority:p1",
           "app:marketplace",
-          "triage:running"
+          "triage:done"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T00:35:21Z",
-        "updatedAt": "2026-07-09T00:50:18Z",
+        "createdAt": "2026-07-09T07:32:48Z",
+        "updatedAt": "2026-07-09T07:43:56Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7267,
+        "kind": "issue",
+        "title": "TodoColeccion withdrawn listings stuck as UPLOADING_ERROR skip withdrawal",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-09T07:54:33Z",
+        "updatedAt": "2026-07-09T07:54:47Z",
         "missingReason": "recently_created"
       }
     ],
