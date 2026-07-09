@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T15:13:49.940Z",
-  "updatedAt": "2026-07-08T10:55:06Z",
+  "generatedAt": "2026-07-09T06:21:47.206Z",
+  "updatedAt": "2026-07-09T05:07:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,50 +17,49 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "reporter:AlexDiaz-Hamelyn",
       "P2",
-      "impact:ux-friction",
       "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:needs-security-review"
+      "impact:ux-friction",
+      "clawsweeper:needs-security-review",
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
-    "updatedAt": "2026-07-08T10:55:06Z"
+    "updatedAt": "2026-07-09T05:07:22Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe ecommerce exponer cancelación guest por `codeIdentifier` + email, y con qué contrato de rate limit, copy y fallback a incidencia?",
-  "rationale": "La feature es viable, pero abre una mutación pública sensible; automatización no debe fijar por sí sola el umbral de verificación, abuso aceptable y experiencia de usuario.",
+  "question": "¿Debe el ecommerce exponer una cancelación guest con verificación por `codeIdentifier` + email y, si sí, con qué contrato de rate limit, estados cancelables y UX de fallback a incidencia?",
+  "rationale": "La petición es útil, pero cambia una acción sensible de autenticada a pública y la política del repo no permite resolver esa frontera de seguridad/producto como PR automático.",
   "options": [
     {
-      "title": "Aprobar autoservicio guest acotado",
-      "body": "Implementar endpoint guest y UI con helper compartido, estados cancelables, 404 indistinguible, rate limit y pruebas del flujo logueado y guest.",
+      "title": "Aprobar flujo guest acotado",
+      "body": "Implementar una ruta guest nueva con verificación indistinguible, rate limit, helper compartido de cancelación y UI que solo ofrezca cancelar cuando el servidor confirme que el pedido es cancelable.",
       "recommended": true
     },
     {
-      "title": "Mantener incidencia manual",
-      "body": "Cerrar la brecha funcional solo con copy o routing a soporte, evitando una nueva mutación pública por ahora.",
+      "title": "Mantener solo incidencia manual",
+      "body": "Cerrar o aplazar la feature y seguir derivando a ATC cuando el comprador guest quiera cancelar.",
       "recommended": false
     },
     {
-      "title": "Limitar a herramienta interna",
-      "body": "Crear una ayuda para ATC en vez de exponer cancelación directa al cliente guest.",
+      "title": "Exigir login para cancelar",
+      "body": "Mantener la cancelación como capacidad autenticada y usar el flujo guest solo para abrir incidencias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar autoservicio guest acotado",
-    "body": "Implementar endpoint guest y UI con helper compartido, estados cancelables, 404 indistinguible, rate limit y pruebas del flujo logueado y guest.",
+    "title": "Aprobar flujo guest acotado",
+    "body": "Implementar una ruta guest nueva con verificación indistinguible, rate limit, helper compartido de cancelación y UI que solo ofrezca cancelar cuando el servidor confirme que el pedido es cancelable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el candidato con más historial directo en verificación guest e incidencias, que son la base del contrato propuesto.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el assignee actual y tiene cambios recientes tanto en la cancelación autenticada como en el centro de ayuda postventa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916322367",
-    "reviewedAt": "2026-07-08T15:13:49.940Z",
-    "mainSha": "baa2b7603288f1c3d110ad76cf314d7ceb3766c2"
+    "reviewedAt": "2026-07-09T06:21:47.206Z",
+    "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
   }
 }
