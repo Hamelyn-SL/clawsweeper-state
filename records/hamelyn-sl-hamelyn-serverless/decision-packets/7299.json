@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T12:01:46.744Z",
+  "updatedAt": "2026-07-09T11:57:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7299,
+    "title": "feat: unify group price floors into PMin and drop PMaxMalvendido",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7299",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-09T11:53:03Z",
+    "updatedAt": "2026-07-09T11:57:03Z",
+    "headSha": "866304f1815990ee583de857e74603d9062d1c16"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe fusionarse este cambio de política de pricing solo después de confirmar la query operativa de Mongo que ajusta `PMax` y `daysNewProduct`, o se acepta que el código cambie el comportamiento antes de esa operación?",
+  "rationale": "La PR cambia límites económicos centrales y depende de configuración persistida fuera del diff; la corrección técnica no basta para decidir el orden seguro de despliegue.",
+  "options": [
+    {
+      "title": "Fusionar con rollout coordinado",
+      "body": "Exigir prueba o runbook de la query de Mongo y validar un cálculo real antes de aprobar el merge.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar hasta cerrar BL de Group Pricing",
+      "body": "Esperar a que el bloque de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7000 aclare specs y tests antes de cambiar comportamiento productivo.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo operativo",
+      "body": "Fusionar el cambio confiando en que la query externa se aplicará manualmente en el momento correcto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fusionar con rollout coordinado",
+    "body": "Exigir prueba o runbook de la query de Mongo y validar un cálculo real antes de aprobar el merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado explícitamente para esta PR y la decisión pendiente es de revisión/rollout del área de pricing.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7299.md",
+    "reviewedAt": "2026-07-09T12:01:46.744Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+  }
+}

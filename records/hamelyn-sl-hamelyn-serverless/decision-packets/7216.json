@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T08:47:10.330Z",
-  "updatedAt": "2026-07-08T08:39:50Z",
+  "generatedAt": "2026-07-09T12:01:12.785Z",
+  "updatedAt": "2026-07-09T11:50:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,52 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:done",
-      "epic:revision-v3"
+      "epic:revision-v3",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-08T08:32:51Z",
-    "updatedAt": "2026-07-08T08:39:50Z"
+    "updatedAt": "2026-07-09T11:50:13Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "How should historical `acceptedAt`/`acceptedBy` values be treated when introducing `reviewedAt`/`reviewedBy` per product?",
-  "rationale": "The code change is clear, but preserving or backfilling historical review semantics affects reports and BigQuery and needs an explicit data decision before implementation.",
+  "question": "¿Aceptamos para esta issue la estrategia del PR abierto: `reviewedBy`/`reviewedAt` nuevos con fallback permanente a `acceptedBy`/`acceptedAt` y sin backfill histórico?",
+  "rationale": "La issue incluye explícitamente decidir el tratamiento de datos históricos y los consumidores aguas abajo; esa elección afecta métricas de productividad y no debe quedar cerrada solo por inspección automática.",
   "options": [
     {
-      "title": "Compatibility read without backfill",
-      "body": "Add `reviewedAt`/`reviewedBy` going forward while mapping old `acceptedAt`/`acceptedBy` for accepted historical products where consumers need it.",
+      "title": "Aceptar fallback sin backfill",
+      "body": "Mantiene compatibilidad de lectura y evita migración, pero deja campos legacy como parte permanente del contrato de datos.",
       "recommended": true
     },
     {
-      "title": "Backfill historical accepted products",
-      "body": "Run a controlled backfill that copies accepted metadata into reviewed metadata for old accepted product rows, with no inferred reviewer for rejected rows unless another source is approved.",
+      "title": "Exigir backfill acotado",
+      "body": "Reduce ramas de lectura futuras, pero introduce operación de datos y validación adicional sobre Mongo/BigQuery.",
       "recommended": false
     },
     {
-      "title": "Hard rename only",
-      "body": "Rename consumers to the new fields without compatibility, accepting that historical acceptance timestamps may disappear from current reports until a separate migration runs.",
+      "title": "Separar la decisión histórica",
+      "body": "Permite mergear la traza nueva y mover el tratamiento de históricos a una issue/PR más estrecha si reporting lo aprueba.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Compatibility read without backfill",
-    "body": "Add `reviewedAt`/`reviewedBy` going forward while mapping old `acceptedAt`/`acceptedBy` for accepted historical products where consumers need it.",
+    "title": "Aceptar fallback sin backfill",
+    "body": "Mantiene compatibilidad de lectura y evita migración, pero deja campos legacy como parte permanente del contrato de datos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "The issue is assigned to AlexDiaz-Hamelyn and the requested behavior is scoped to the Admin review flow plus downstream data handling.",
+    "person": "JavierHamelyn",
+    "reason": "Es la mejor señal disponible para decidir el impacto de reporting/productividad y ya aparece como reviewer principal en el PR vinculado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7216.md",
-    "reviewedAt": "2026-07-08T08:47:10.330Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-09T12:01:12.785Z",
+    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
   }
 }
