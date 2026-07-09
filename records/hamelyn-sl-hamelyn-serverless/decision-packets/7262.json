@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T01:19:40.753Z",
+  "updatedAt": "2026-07-09T00:50:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7262,
+    "title": "marketplace-crons: Amazon MX create falla cuando no encuentra ASIN para el EAN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:running"
+    ],
+    "createdAt": "2026-07-09T00:35:21Z",
+    "updatedAt": "2026-07-09T00:50:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Amazon MX debe seguir reintentando productos sin ASIN como `STALE` con cooldown de 24h, o debe marcarlos como no elegibles/terminales o pasarlos por enriquecimiento antes de volver a `create`?",
+  "rationale": "El código ya tiene recuperación parcial y lookup de ASIN, pero la señal viva no distingue si hay bug de cooldown o una política operativa no definida para EANs sin ASIN resoluble.",
+  "options": [
+    {
+      "title": "Validar recurrencia por SKU",
+      "body": "Mantener abierta la issue hasta comparar los SKUs recientes con timestamps, ASIN local, ASIN de producto y política de retry para saber si hay fuga real de cooldown.",
+      "recommended": true
+    },
+    {
+      "title": "Marcar terminal/no elegible",
+      "body": "Si Amazon MX no resolverá ASIN para esos EANs, cambiar la política para que esos stocks no entren indefinidamente en `create`.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar limitación documentada",
+      "body": "Si los reintentos diarios son intencionados y útiles, documentar la política y ajustar el watcher para no tratar ese ruido como incidencia nueva.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar recurrencia por SKU",
+    "body": "Mantener abierta la issue hasta comparar los SKUs recientes con timestamps, ASIN local, ASIN de producto y política de retry para saber si hay fuga real de cooldown.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene la procedencia más directa en la ruta actual que resuelve ASIN por EAN y emite el error exacto.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7262.md",
+    "reviewedAt": "2026-07-09T01:19:40.753Z",
+    "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
+  }
+}
