@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T13:35:40.639Z",
+  "generatedAt": "2026-07-09T19:09:36.094Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 206
   },
   "counts": {
-    "itemRecords": 204,
+    "itemRecords": 206,
     "closedRecords": 99,
-    "missingOpen": 2,
+    "missingOpen": 0,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 0,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 0,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -21,57 +21,11 @@
     "staleReviews": 0
   },
   "findings": {
-    "missingOpen": [
-      {
-        "number": 7300,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T12:22:51Z",
-        "updatedAt": "2026-07-09T13:35:06Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7301,
-        "kind": "pull_request",
-        "title": "docs: sync hamelyn-knowledge for #7300",
-        "labels": [],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-09T12:23:49Z",
-        "updatedAt": "2026-07-09T12:24:12Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingOpen": [],
     "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [],
-    "missingRecentOpen": [
-      {
-        "number": 7300,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T12:22:51Z",
-        "updatedAt": "2026-07-09T13:35:06Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7301,
-        "kind": "pull_request",
-        "title": "docs: sync hamelyn-knowledge for #7300",
-        "labels": [],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-09T12:23:49Z",
-        "updatedAt": "2026-07-09T12:24:12Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingRecentOpen": [],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
