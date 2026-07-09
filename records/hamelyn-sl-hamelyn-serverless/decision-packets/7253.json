@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T21:26:00.543Z",
-  "updatedAt": "2026-07-08T18:39:08Z",
+  "generatedAt": "2026-07-09T08:24:15.685Z",
+  "updatedAt": "2026-07-09T08:18:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,49 @@
     "state": "open",
     "labels": [
       "size/M",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
       "merge-risk: 🚨 other"
     ],
     "createdAt": "2026-07-08T18:29:13Z",
-    "updatedAt": "2026-07-08T18:39:08Z",
+    "updatedAt": "2026-07-09T08:18:53Z",
     "headSha": "e6f48f919985541ef650dbc607fa1bf7d42fc225"
   },
-  "lane": "proof_sufficiency",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe exigirse prueba real redacted del reporte antes de mergear este cambio de comportamiento de MercadoLibre?",
-  "rationale": "El diff parece correcto, pero cambia una mutación productiva sobre Mongo y los checks aportados no demuestran el comportamiento runtime post-cambio.",
+  "question": "¿Acepta el equipo Marketplace dejar de marcar `onlyInDb` como error productivo hasta que exista validación viva de `/items/{marketplaceId}`, o debe añadirse esa validación antes del merge?",
+  "rationale": "El diff corrige una contaminación real, pero cambia una mutación productiva de Mongo y puede dejar ausencias reales sin señal operacional hasta que exista el chequeo vivo.",
   "options": [
     {
-      "title": "Pedir prueba real antes del merge",
-      "body": "Solicitar una salida redacted de ejecución controlada o dry-run que muestre que `onlyInDb` solo se loguea y no llama a la mutación de Mongo.",
+      "title": "Pedir prueba real y mergear el arreglo estrecho",
+      "body": "Requerir una ejecución controlada o dry-run redacted, actualizar la rama contra `dev` y mergear sin meter el backfill histórico en esta PR.",
       "recommended": true
     },
     {
-      "title": "Aceptar el tradeoff con seguimiento",
-      "body": "Mergear asumiendo que las ausencias reales quedan sin marcar hasta implementar validación viva de `/items/{marketplaceId}` y abrir el backfill histórico aparte.",
+      "title": "Exigir validación viva antes del merge",
+      "body": "Mantener la PR abierta hasta que el reporte consulte `/items/{marketplaceId}` para distinguir ausencias reales de huecos del snapshot antes de mutar Mongo.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el tradeoff sin más cambios",
+      "body": "Mergear el comportamiento propuesto y asumir que las ausencias reales se tratarán en trabajo posterior de reconciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pedir prueba real antes del merge",
-    "body": "Solicitar una salida redacted de ejecución controlada o dry-run que muestre que `onlyInDb` solo se loguea y no llama a la mutación de Mongo.",
+    "title": "Pedir prueba real y mergear el arreglo estrecho",
+    "body": "Requerir una ejecución controlada o dry-run redacted, actualizar la rama contra `dev` y mergear sin meter el backfill histórico en esta PR.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Ya está solicitado como revisor por conocimiento del archivo central del cambio.",
+    "person": "MarcosTerroso",
+    "reason": "Es el reviewer solicitado y tiene historial reciente en rutas adyacentes de MercadoLibre y repositorios de marketplace.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7253.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7253#issuecomment-4919345709",
-    "reviewedAt": "2026-07-08T21:26:00.543Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-09T08:24:15.685Z",
+    "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
   }
 }

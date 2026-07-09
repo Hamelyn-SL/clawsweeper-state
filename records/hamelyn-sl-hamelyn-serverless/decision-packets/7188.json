@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T00:12:11.939Z",
-  "updatedAt": "2026-07-07T23:18:31Z",
+  "generatedAt": "2026-07-09T08:25:13.985Z",
+  "updatedAt": "2026-07-09T08:06:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,43 +13,43 @@
       "size/XL"
     ],
     "createdAt": "2026-07-07T23:18:08Z",
-    "updatedAt": "2026-07-07T23:18:31Z",
-    "headSha": "47657ff8dca2244bca1c9280c26a654f0870d579"
+    "updatedAt": "2026-07-09T08:06:21Z",
+    "headSha": "1cbab5a5933a36b5fb638c9412469aaa3a07d829"
   },
-  "lane": "product_direction",
-  "priority": "P2",
-  "question": "Should Skill Guardian move from Vercel AI Gateway to the shared Codex subscription now, with the repository secrets and docs updated as part of this rollout?",
-  "rationale": "The code change is tightly coupled to operator-managed secrets, provider routing, and cost/auth ownership that cannot be validated by source review alone.",
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el Skill Guardian recibir `BLOB_READ_WRITE_TOKEN`, `CODEX_TOKEN_KEY` y `REVIEWER_AGENT_TOKEN` directamente en el workflow de `pull_request`, o debe moverse esa llamada a un contexto de confianza antes de mergear?",
+  "rationale": "El PR necesita esos secretos para usar la suscripción Codex, pero también amplía el impacto de cualquier ejecución de código en el job de PR; esa frontera depende de la política de confianza del repo y no es una decisión puramente mecánica.",
   "options": [
     {
-      "title": "Proceed after rollout proof",
-      "body": "Update the skill docs, configure the new secrets, and require a redacted workflow or terminal proof of the Blob-token path before merge.",
+      "title": "Endurecer antes de mergear",
+      "body": "Mover o condicionar el acceso a esos secretos para que solo se usen en contextos de confianza, y corregir además el wrapper de errores de Codex.",
       "recommended": true
     },
     {
-      "title": "Keep Gateway for now",
-      "body": "Close or pause this PR until maintainers decide that Skill Guardian should share the Codex subscription with the marketplace agents.",
+      "title": "Aceptar la frontera actual",
+      "body": "Mergear con la exposición de secretos documentada y asumir que solo ramas de confianza pueden ejecutar ese workflow con secrets.",
       "recommended": false
     },
     {
-      "title": "Merge with manual ops risk",
-      "body": "Accept that the workflow may fail until the secrets are configured and document the manual recovery path in the PR.",
+      "title": "Pausar la migración",
+      "body": "Mantener temporalmente AI Gateway hasta que exista un patrón compartido de ejecución Codex para workflows de PR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proceed after rollout proof",
-    "body": "Update the skill docs, configure the new secrets, and require a redacted workflow or terminal proof of the Blob-token path before merge.",
+    "title": "Endurecer antes de mergear",
+    "body": "Mover o condicionar el acceso a esos secretos para que solo se usen en contextos de confianza, y corregir además el wrapper de errores de Codex.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Miguel has recent merged Skill Guardian changes and was explicitly requested for review on this PR based on file expertise.",
+    "person": "JavierHamelyn",
+    "reason": "Es quien aparece con más historia en Skill Guardian y en la infraestructura Codex/usage que este cambio reutiliza.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7188.md",
-    "reviewedAt": "2026-07-08T00:12:11.939Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-09T08:25:13.985Z",
+    "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
   }
 }

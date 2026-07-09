@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T08:21:47.317Z",
+  "generatedAt": "2026-07-09T08:24:16.276Z",
   "updatedAt": "2026-07-09T08:16:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,39 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La oferta flash debe usar el umbral fijo de 6,5 € alineado con `/libros-baratos`, o debe calcular un margen dinámico desde el precio mínimo disponible?",
-  "rationale": "La issue propone 6,5 € y el PR lo implementa, pero el comentario reciente de PabloMoran34 plantea una alternativa de producto que no conviene resolver solo por automatización.",
+  "question": "¿La oferta flash debe usar un umbral fijo de 6,5 € o un margen calculado desde el precio mínimo disponible?",
+  "rationale": "El comentario humano más reciente plantea una alternativa de producto que cambia el criterio de elegibilidad; no es una decisión puramente mecánica de código.",
   "options": [
     {
       "title": "Usar 6,5 € fijo",
-      "body": "Mantiene alineados oferta flash, libros baratos y SEO con el umbral ya existente en `next-routes.config.mts`, y permite revisar/aterrizar el PR candidato con prueba real.",
+      "body": "Aterriza la solución ya propuesta en el PR y alinea la home con la URL/segmento de libros baratos.",
       "recommended": true
     },
     {
-      "title": "Usar margen dinámico",
-      "body": "Evita codificar un número fijo, pero requiere definir la regla de negocio y probablemente ajustar el PR antes de merge.",
-      "recommended": false
-    },
-    {
-      "title": "Cerrar el PR y rediseñar",
-      "body": "Pausa el fix actual para rediseñar la selección flash si el problema no debe resolverse ampliando el cap de precio.",
+      "title": "Usar margen desde mínimo",
+      "body": "Requiere ajustar el PR para calcular el umbral a partir del precio mínimo real y validar que la rotación no vuelva a quedarse sin suficientes productos.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Usar 6,5 € fijo",
-    "body": "Mantiene alineados oferta flash, libros baratos y SEO con el umbral ya existente en `next-routes.config.mts`, y permite revisar/aterrizar el PR candidato con prueba real.",
+    "body": "Aterriza la solución ya propuesta en el PR y alinea la home con la URL/segmento de libros baratos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Aparece en el historial central del flujo flash y fue señalado como revisor del PR por señales en home ecommerce, rutas y ofertas flash.",
+    "reason": "Es el reviewer solicitado para el PR y aparece como señal fuerte en los ficheros centrales de oferta flash y home ecommerce.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7224.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7224#issuecomment-4923099276",
-    "reviewedAt": "2026-07-09T08:21:47.317Z",
+    "reviewedAt": "2026-07-09T08:24:16.276Z",
     "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
   }
 }
