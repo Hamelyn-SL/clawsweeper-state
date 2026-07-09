@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T08:15:04.834Z",
+  "generatedAt": "2026-07-09T08:18:00.417Z",
   "updatedAt": "2026-07-09T07:25:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -20,38 +20,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué rango min/max debe enviarse a Amazon COM para `optimo`, `atascado` y `sin_grupo`, y debe enviarse sin `pricingRuleId` salvo en grupos aprobados?",
-  "rationale": "El cambio corrige un bug operativo, pero modifica una decisión explícita de pricing para grupos que hoy se excluyen de la regla automática; no conviene automatizarlo sin confirmar la política comercial.",
+  "question": "¿Qué rango `minimum_seller_allowed_price`/`maximum_seller_allowed_price` debe enviarse en Amazon COM para `optimo`, `atascado` y `sin_grupo`, y debe ir siempre sin `pricingRuleId` salvo en grupos ya aprobados?",
+  "rationale": "El código excluye explícitamente esos grupos de la regla de pricing, y cambiarlo puede modificar precios publicados o activar automatización comercial no prevista.",
   "options": [
     {
       "title": "Separar umbrales de regla automática",
-      "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo en grupos ya aprobados.",
+      "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin añadir `pricingRuleId`, manteniendo la regla automática solo en grupos aprobados.",
       "recommended": true
     },
     {
       "title": "Ampliar la regla existente",
-      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, aceptando que también puedan recibir el plan de pricing automático actual.",
+      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, aceptando que compartan el plan de pricing automático actual si el equipo lo aprueba.",
       "recommended": false
     },
     {
-      "title": "Pausar el recovery de `18155`",
-      "body": "Evitar retries que repitan el error hasta definir el rango permitido y la política de regla automática.",
+      "title": "Pausar recovery de `18155`",
+      "body": "Mantener las ofertas suprimidas hasta decidir la política de umbrales y evitar retries que repitan el mismo payload.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar umbrales de regla automática",
-    "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo en grupos ya aprobados.",
+    "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin añadir `pricingRuleId`, manteniendo la regla automática solo en grupos aprobados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien llevó el fix previo de recuperación 14016/18155/18555 y tiene el contexto más directo de la frontera entre recovery técnico y política de pricing.",
+    "reason": "Es la mejor ruta inicial porque llevó el recovery previo de `18155` y conoce el límite entre corrección técnica y política de pricing Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7263.md",
-    "reviewedAt": "2026-07-09T08:15:04.834Z",
-    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+    "reviewedAt": "2026-07-09T08:18:00.417Z",
+    "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
   }
 }
