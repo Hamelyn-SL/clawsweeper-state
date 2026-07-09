@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:00:35.258Z",
-  "updatedAt": "2026-07-07T18:25:54Z",
+  "generatedAt": "2026-07-09T10:20:31.897Z",
+  "updatedAt": "2026-07-09T09:34:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "priority:p2",
       "triage:done",
       "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "P2",
-      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-07T12:10:45Z",
-    "updatedAt": "2026-07-07T18:25:54Z"
+    "updatedAt": "2026-07-09T09:34:37Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Should this divergence be fixed now by creating/updating the BL-ecommerce-product-06 spec and test in the fix PR, or should it wait for the Product Page BL mother issue to land those artefacts first?",
-  "rationale": "The runtime bug is clear, but the repository BL workflow expects linked spec/function/test artefacts and the specific ecommerce Product Page spec is absent from dev.",
+  "question": "¿Debe ClawSweeper encolar un PR automático para esta divergencia aunque la issue ya esté asignada a `MiguelHamelyn`?",
+  "rationale": "El bug está confirmado y los artefactos BL ya existen, pero la asignación humana reciente y la etiqueta actual `clawsweeper:no-new-fix-pr` indican coordinación activa que la automatización no debería pisar sin una señal explícita.",
   "options": [
     {
-      "title": "Fix now with BL artefacts",
-      "body": "Create or update the BL-ecommerce-product-06 spec/test in the same narrow fix PR so the behavior and rule documentation land together.",
+      "title": "Coordinar con MiguelHamelyn primero",
+      "body": "Mantener la issue abierta y esperar confirmación del asignado antes de promover un fix automático.",
       "recommended": true
     },
     {
-      "title": "Wait for mother BL branch",
-      "body": "Keep this issue open until the Product Page BL block provides the spec/test files, then apply the behavior fix against that structure.",
+      "title": "Encolar fix acotado",
+      "body": "Autorizar a ClawSweeper a preparar una PR pequeña que toque helper, call sites y test/spec BL.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fix now with BL artefacts",
-    "body": "Create or update the BL-ecommerce-product-06 spec/test in the same narrow fix PR so the behavior and rule documentation land together.",
+    "title": "Coordinar con MiguelHamelyn primero",
+    "body": "Mantener la issue abierta y esperar confirmación del asignado antes de promover un fix automático.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is the issue reporter, named BL owner on the related Product Page block, and recent owner of the ProductPageB/C implementation history.",
+    "reason": "Es el asignado actual y quien llevó la extracción BL/Product Page relacionada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7130.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7130#issuecomment-4913207949",
-    "reviewedAt": "2026-07-08T09:00:35.258Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-09T10:20:31.897Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }

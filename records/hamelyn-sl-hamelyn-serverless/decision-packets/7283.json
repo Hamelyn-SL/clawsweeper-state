@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:21:19.807Z",
+  "updatedAt": "2026-07-09T10:15:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7283,
+    "title": "fix: auto-create missing bq-merge raw tables before merging",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7283",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-07-09T10:09:54Z",
+    "updatedAt": "2026-07-09T10:15:47Z",
+    "headSha": "f74ca18d74ec170cf8da86cc56ead7e80c5dea4e"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Puede este PR cerrar la issue enlazada solo con la auto-creación de tablas, o debe incluir/coordinar también las colecciones activas que siguen fuera de `MERGE_COLLECTIONS`?",
+  "rationale": "El cambio corrige la causa raíz del paso manual, pero la evidencia de la issue incluye colecciones concretas que no se materializarán si nadie las añade a la lista o mantiene otro PR canónico para ellas.",
+  "options": [
+    {
+      "title": "Merge tras prueba y seguimiento de alcance",
+      "body": "Aceptar este PR como arreglo de auto-provisión solo cuando haya prueba visible y la issue enlazada no se cierre sin cubrir o enlazar las colecciones activas restantes.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar este PR",
+      "body": "Añadir aquí las colecciones activas y la documentación operativa necesaria, asumiendo un alcance mayor de data-platform.",
+      "recommended": false
+    },
+    {
+      "title": "Delegar en PR canónica separada",
+      "body": "Mantener este PR como parche pequeño y dejar que otra PR viable cubra `mk_discogs`, `mk_decathlon` y `mk_alibris` antes de cerrar la issue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Merge tras prueba y seguimiento de alcance",
+    "body": "Aceptar este PR como arreglo de auto-provisión solo cuando haya prueba visible y la issue enlazada no se cierre sin cubrir o enlazar las colecciones activas restantes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya está solicitado como reviewer para este PR y el comentario de asignación lo vincula con el área `bq-merge`/BigQuery.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7283.md",
+    "reviewedAt": "2026-07-09T10:21:19.807Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}
