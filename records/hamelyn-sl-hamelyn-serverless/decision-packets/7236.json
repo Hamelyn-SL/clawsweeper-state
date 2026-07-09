@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:35:33.597Z",
-  "updatedAt": "2026-07-08T15:38:11Z",
+  "generatedAt": "2026-07-09T06:15:29.382Z",
+  "updatedAt": "2026-07-09T06:08:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "priority:p1",
       "reporter:banosdavidhamelyn",
       "feature",
-      "triage:done",
+      "triage:queued",
       "epic:revision-v3",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-08T10:11:57Z",
-    "updatedAt": "2026-07-08T15:38:11Z"
+    "updatedAt": "2026-07-09T06:08:19Z"
   },
-  "lane": "manual_review",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe el equipo de Revisión V3 aterrizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7244 como implementación de este cierre con motivos, o devolverlo para correcciones antes del merge?",
-  "rationale": "El issue ya tiene un PR candidato contra la rama del epic, pero esa rama no está en `dev` y el PR tiene comentarios de revisión pendientes; hace falta una decisión humana de revisión, no un cierre automático ni un segundo fix paralelo.",
+  "question": "¿Debe cerrarse este issue ahora porque https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7244 ya se fusionó en `EPIC/revision-v3`, o debe permanecer abierto hasta que Revisión V3 llegue a `dev`?",
+  "rationale": "La implementación candidata ya está fusionada en la rama del epic, pero la política de limpieza conservadora revisa `dev` y ahí la superficie no existe; solo un maintainer puede decidir el criterio de cierre para subtareas del epic.",
   "options": [
     {
-      "title": "Revisar y aterrizar el PR candidato",
-      "body": "Mantiene este issue como seguimiento canónico hasta que el PR de `EPIC/revision-v3` quede revisado, probado y fusionado.",
+      "title": "Cerrar por merge en el epic",
+      "body": "Cerrar manualmente este issue si el equipo considera `EPIC/revision-v3` como la rama de verdad para las subtareas de Revisión V3.",
       "recommended": true
     },
     {
-      "title": "Pedir correcciones en el PR candidato",
-      "body": "Conserva el issue abierto mientras se corrigen los puntos de revisión del modal, ratio o persistencia antes de fusionar.",
+      "title": "Mantener hasta dev",
+      "body": "Dejarlo abierto hasta que el epic se integre en `dev` y el comportamiento sea verificable en la rama canónica.",
       "recommended": false
     },
     {
-      "title": "Descartar el PR y redefinir el camino",
-      "body": "Solo encaja si el equipo decide que el diseño o el endpoint propuesto no son el enfoque deseado para Revisión V3.",
+      "title": "Reabrir trabajo de ajuste",
+      "body": "Usar el issue para pedir correcciones si el PR fusionado no cubre el diseño, persistencia o prueba real esperada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar y aterrizar el PR candidato",
-    "body": "Mantiene este issue como seguimiento canónico hasta que el PR de `EPIC/revision-v3` quede revisado, probado y fusionado.",
+    "title": "Cerrar por merge en el epic",
+    "body": "Cerrar manualmente este issue si el equipo considera `EPIC/revision-v3` como la rama de verdad para las subtareas de Revisión V3.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aparece como autor del epic padre y reviewer solicitado del PR candidato, así que es el mejor punto de decisión funcional disponible.",
+    "reason": "Aparece como candidato de revisión funcional del PR del epic y es el mejor punto disponible para decidir la política de cierre de Revisión V3.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7236.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236#issuecomment-4916399745",
-    "reviewedAt": "2026-07-08T16:35:33.597Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-09T06:15:29.382Z",
+    "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
   }
 }
