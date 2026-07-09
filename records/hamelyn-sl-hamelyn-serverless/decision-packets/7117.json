@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T08:53:21.827Z",
-  "updatedAt": "2026-07-07T10:13:39Z",
+  "generatedAt": "2026-07-09T08:36:12.485Z",
+  "updatedAt": "2026-07-09T08:24:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 7117,
-    "title": "Minihome - /libros/, /peliculas/, /musica/, /videojuegos/ - Nuevas secciones layour",
+    "title": "Minihome - /libros/, /peliculas/, /musica/, /videojuegos/ - Nuevas secciones layout",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117",
     "state": "open",
     "labels": [
@@ -14,54 +14,51 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:done",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-07T10:13:39Z"
+    "updatedAt": "2026-07-09T08:24:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should ecommerce implement this as one approved shared CategoryHub redesign now, and what exact design/copy scope from the external template is in bounds?",
-  "rationale": "The code path is clear, but the change is a broad storefront layout, SEO, and responsive-design feature rather than a narrow broken-behavior fix.",
+  "question": "¿Debe ecommerce implementar ahora este rediseño como una única evolución compartida de `CategoryHub`, y qué partes exactas de diseño/copy de la plantilla externa quedan aprobadas?",
+  "rationale": "La ruta técnica es clara, pero la petición define una feature amplia de layout, merchandising y SEO; automatizarla sin decisión de diseño/producto arriesga implementar una interpretación incorrecta.",
   "options": [
     {
-      "title": "Approve shared redesign",
-      "body": "Implement the four minihomes through shared CategoryHub subcomponents with explicit desktop/mobile visual QA and per-route copy data.",
+      "title": "Aprobar rediseño compartido",
+      "body": "Implementar las cuatro minihomes sobre `CategoryHub` con subcomponentes comunes y QA visual explícito por breakpoint y `routeKey`.",
       "recommended": true
     },
     {
-      "title": "Split into staged PRs",
-      "body": "Land hero/benefits, embedded catalog, and SEO/interlinking as separate reviewed increments if the team wants lower merge risk.",
+      "title": "Dividir por fases",
+      "body": "Separar hero/beneficios, catálogo/filtros y SEO/interlinking en PRs revisables si el equipo quiere reducir riesgo de revisión visual.",
       "recommended": false
     },
     {
-      "title": "Defer design work",
-      "body": "Keep the current minihomes until ecommerce has a finalized internal design spec that replaces the external template.",
+      "title": "Aplazar hasta spec interna",
+      "body": "Mantener las minihomes actuales hasta tener una especificación interna de diseño/copy que sustituya a la plantilla externa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Approve shared redesign",
-    "body": "Implement the four minihomes through shared CategoryHub subcomponents with explicit desktop/mobile visual QA and per-route copy data.",
+    "title": "Aprobar rediseño compartido",
+    "body": "Implementar las cuatro minihomes sobre `CategoryHub` con subcomponentes comunes y QA visual explícito por breakpoint y `routeKey`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "Recent CategoryHub discovery/interlinking work makes Alex the strongest routing candidate for the shared minihome surface.",
-    "confidence": "medium"
+    "reason": "Es el candidato más cercano por el trabajo reciente de discovery/interlinking en `CategoryHub`, que es la superficie compartida afectada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-08T08:53:21.827Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-09T08:36:12.485Z",
+    "mainSha": "4b7ad0813396f813822d90a8451b556e31b523cf"
   }
 }
