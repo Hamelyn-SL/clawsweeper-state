@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T01:04:47.254Z",
+  "updatedAt": "2026-07-09T00:35:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6405,
+    "title": "marketplace-crons: Amazon SE create falla cuando no encuentra ASIN para el EAN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6405",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace"
+    ],
+    "createdAt": "2026-06-13T04:37:33Z",
+    "updatedAt": "2026-07-09T00:35:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Amazon SE debe seguir reintentando productos sin ASIN como `STALE` con cooldown de 24h, o debe marcarlos como no elegibles/terminales o pasarlos por enriquecimiento antes de volver a `create`?",
+  "rationale": "El código ya tiene una solución parcial de recovery, pero la evidencia de producción posterior no distingue si falla el cooldown o si la política actual genera ruido aceptado; elegir entre reintento, exclusión o enriquecimiento es una decisión operativa del marketplace.",
+  "options": [
+    {
+      "title": "Validar recurrencia por SKU",
+      "body": "Mantener la issue abierta hasta comparar los SKUs recientes con `lastUpdatedTimestamp`, `retryPolicy`, `stock.asin` y `product.asin` para saber si hay fuga real de cooldown.",
+      "recommended": true
+    },
+    {
+      "title": "Marcar terminal/no elegible",
+      "body": "Si Amazon no resolverá ASIN para esos EANs, cambiar la política para que esos stocks no entren indefinidamente en `create` de Amazon SE.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar limitación externa documentada",
+      "body": "Si los reintentos diarios son intencionados y útiles, documentar la política y ajustar el watcher para que no reabra la canónica por ruido esperado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar recurrencia por SKU",
+    "body": "Mantener la issue abierta hasta comparar los SKUs recientes con `lastUpdatedTimestamp`, `retryPolicy`, `stock.asin` y `product.asin` para saber si hay fuga real de cooldown.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene la procedencia más directa en el código ASIN/EAN actual y en la documentación operativa de Amazon revisada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6405.md",
+    "reviewedAt": "2026-07-09T01:04:47.254Z",
+    "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
+  }
+}
