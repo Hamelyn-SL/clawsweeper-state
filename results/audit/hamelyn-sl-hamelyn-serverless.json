@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-09T07:55:42.346Z",
+  "generatedAt": "2026-07-09T13:35:40.639Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 3,
-    "openItemsSeen": 227
+    "openItemsSeen": 206
   },
   "counts": {
-    "itemRecords": 222,
-    "closedRecords": 49,
-    "missingOpen": 5,
+    "itemRecords": 204,
+    "closedRecords": 99,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 0,
-    "missingRecentOpen": 5,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -23,79 +23,25 @@
   "findings": {
     "missingOpen": [
       {
-        "number": 7263,
-        "kind": "issue",
-        "title": "Amazon COM price-threshold issue 18155 errors persist after recovery",
+        "number": 7300,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:done"
+          "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:11:39Z",
-        "updatedAt": "2026-07-09T07:25:56Z",
+        "createdAt": "2026-07-09T12:22:51Z",
+        "updatedAt": "2026-07-09T13:35:06Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7264,
-        "kind": "issue",
-        "title": "🚀 CLI: distribución HTTP propia (instalador + self-update) para operaciones, sin GitHub ni brew",
-        "labels": [
-          "priority:p1",
-          "app:infrastructure",
-          "reporter:JavierHamelyn",
-          "feature",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:21:09Z",
-        "updatedAt": "2026-07-09T07:24:48Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7265,
-        "kind": "issue",
-        "title": "📊 Migrar telemetría BL de blmetrics (Mongo) a BigQuery",
-        "labels": [
-          "priority:p2",
-          "app:infrastructure",
-          "feature",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:22:44Z",
-        "updatedAt": "2026-07-09T07:25:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7266,
-        "kind": "issue",
-        "title": "Casa del Libro orphan live offers are not withdrawn when mk row is missing",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:32:48Z",
-        "updatedAt": "2026-07-09T07:43:56Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7267,
-        "kind": "issue",
-        "title": "TodoColeccion withdrawn listings stuck as UPLOADING_ERROR skip withdrawal",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:54:33Z",
-        "updatedAt": "2026-07-09T07:54:47Z",
+        "number": 7301,
+        "kind": "pull_request",
+        "title": "docs: sync hamelyn-knowledge for #7300",
+        "labels": [],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-09T12:23:49Z",
+        "updatedAt": "2026-07-09T12:24:12Z",
         "missingReason": "recently_created"
       }
     ],
@@ -104,79 +50,25 @@
     "missingProtectedOpen": [],
     "missingRecentOpen": [
       {
-        "number": 7263,
-        "kind": "issue",
-        "title": "Amazon COM price-threshold issue 18155 errors persist after recovery",
+        "number": 7300,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:done"
+          "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:11:39Z",
-        "updatedAt": "2026-07-09T07:25:56Z",
+        "createdAt": "2026-07-09T12:22:51Z",
+        "updatedAt": "2026-07-09T13:35:06Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7264,
-        "kind": "issue",
-        "title": "🚀 CLI: distribución HTTP propia (instalador + self-update) para operaciones, sin GitHub ni brew",
-        "labels": [
-          "priority:p1",
-          "app:infrastructure",
-          "reporter:JavierHamelyn",
-          "feature",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:21:09Z",
-        "updatedAt": "2026-07-09T07:24:48Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7265,
-        "kind": "issue",
-        "title": "📊 Migrar telemetría BL de blmetrics (Mongo) a BigQuery",
-        "labels": [
-          "priority:p2",
-          "app:infrastructure",
-          "feature",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:22:44Z",
-        "updatedAt": "2026-07-09T07:25:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7266,
-        "kind": "issue",
-        "title": "Casa del Libro orphan live offers are not withdrawn when mk row is missing",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:32:48Z",
-        "updatedAt": "2026-07-09T07:43:56Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7267,
-        "kind": "issue",
-        "title": "TodoColeccion withdrawn listings stuck as UPLOADING_ERROR skip withdrawal",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-09T07:54:33Z",
-        "updatedAt": "2026-07-09T07:54:47Z",
+        "number": 7301,
+        "kind": "pull_request",
+        "title": "docs: sync hamelyn-knowledge for #7300",
+        "labels": [],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-09T12:23:49Z",
+        "updatedAt": "2026-07-09T12:24:12Z",
         "missingReason": "recently_created"
       }
     ],
