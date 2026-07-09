@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T22:23:32.445Z",
-  "updatedAt": "2026-07-09T19:45:11Z",
+  "generatedAt": "2026-07-09T22:30:24.240Z",
+  "updatedAt": "2026-07-09T22:26:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,44 +18,43 @@
       "merge-risk: 🚨 auth-provider"
     ],
     "createdAt": "2026-07-09T19:30:45Z",
-    "updatedAt": "2026-07-09T19:45:11Z",
+    "updatedAt": "2026-07-09T22:26:33Z",
     "headSha": "325dce38113204eb04eff7bd0c95d85ae945253f"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Confirmamos que `marketplace_api` debe fallar cerrado contra documentos `PROD` para todos los marketplaces de agents antes de mergear este PR?",
-  "rationale": "La corrección es coherente con el core, pero cambia el contrato operativo de credenciales en runtime y puede romper canales que dependieran accidentalmente de documentos sin `environment: \"PROD\"`.",
+  "question": "¿Confirmamos que `marketplace_api` debe fallar cerrado contra documentos `config` `PROD` para todos los marketplaces de agents antes de mergear este PR?",
+  "rationale": "La corrección es estrecha y coherente con el core, pero cambia el contrato operativo de credenciales y puede romper canales que dependieran accidentalmente de documentos sin `environment: \"PROD\"`.",
   "options": [
     {
       "title": "Verificar cobertura PROD antes de mergear",
-      "body": "Comprobar en Mongo que los config docs `PROD` existen para los marketplaces expuestos por `marketplace_api` y mergear si la cobertura es correcta.",
+      "body": "Comprobar en Mongo que los documentos `config` `PROD` existen para los marketplaces expuestos por `marketplace_api` y mergear si la cobertura es correcta.",
       "recommended": true
     },
     {
       "title": "Aceptar el fail-closed",
-      "body": "Mergear asumiendo que cualquier ausencia de doc `PROD` debe aparecer como fallo operativo visible y corregirse en configuración.",
+      "body": "Mergear asumiendo que cualquier ausencia de documento `PROD` debe aparecer como fallo operativo visible y corregirse en configuración.",
       "recommended": false
     },
     {
-      "title": "Pedir modo compatible",
-      "body": "Pausar el PR y pedir un fallback o flag solo si producción necesita seguir leyendo documentos legacy sin entorno.",
+      "title": "Pedir compatibilidad legacy",
+      "body": "Pausar el PR y pedir un fallback o flag solo si producción necesita seguir leyendo documentos sin entorno.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Verificar cobertura PROD antes de mergear",
-    "body": "Comprobar en Mongo que los config docs `PROD` existen para los marketplaces expuestos por `marketplace_api` y mergear si la cobertura es correcta.",
+    "body": "Comprobar en Mongo que los documentos `config` `PROD` existen para los marketplaces expuestos por `marketplace_api` y mergear si la cobertura es correcta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ya figura como reviewer solicitado para esta revisión sensible de credenciales marketplace/SP-API.",
+    "reason": "Ya figura como reviewer solicitado para este cambio sensible de credenciales marketplace/SP-API.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7307.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7307#issuecomment-4930103615",
-    "reviewedAt": "2026-07-09T22:23:32.445Z",
+    "reviewedAt": "2026-07-09T22:30:24.240Z",
     "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
   }
 }
