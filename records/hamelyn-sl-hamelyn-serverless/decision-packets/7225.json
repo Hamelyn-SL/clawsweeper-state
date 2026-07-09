@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T06:21:47.206Z",
-  "updatedAt": "2026-07-09T05:07:22Z",
+  "generatedAt": "2026-07-09T06:25:22.962Z",
+  "updatedAt": "2026-07-09T06:19:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,42 +24,42 @@
       "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
-    "updatedAt": "2026-07-09T05:07:22Z"
+    "updatedAt": "2026-07-09T06:19:22Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el ecommerce exponer una cancelación guest con verificación por `codeIdentifier` + email y, si sí, con qué contrato de rate limit, estados cancelables y UX de fallback a incidencia?",
-  "rationale": "La petición es útil, pero cambia una acción sensible de autenticada a pública y la política del repo no permite resolver esa frontera de seguridad/producto como PR automático.",
+  "question": "¿Debe exponerse una mutación pública de cancelación guest en ecommerce usando `codeIdentifier` + email, y con qué límites de rate limit/UX antes de implementarla?",
+  "rationale": "La feature iguala una capacidad sensible entre usuarios guest y logueados, pero cambia la superficie pública de pedidos y no debería entrar como reparación automática sin criterio de producto y seguridad.",
   "options": [
     {
       "title": "Aprobar flujo guest acotado",
-      "body": "Implementar una ruta guest nueva con verificación indistinguible, rate limit, helper compartido de cancelación y UI que solo ofrezca cancelar cuando el servidor confirme que el pedido es cancelable.",
+      "body": "Implementar endpoint guest con Zod, verificación indistinguible, rate limit y UI que solo ofrezca cancelar cuando el pedido esté en estado cancelable.",
       "recommended": true
     },
     {
-      "title": "Mantener solo incidencia manual",
-      "body": "Cerrar o aplazar la feature y seguir derivando a ATC cuando el comprador guest quiera cancelar.",
+      "title": "Mantener incidencia manual",
+      "body": "Seguir derivando a ATC mediante el flujo guest de incidencias para evitar una nueva mutación pública sin sesión.",
       "recommended": false
     },
     {
-      "title": "Exigir login para cancelar",
-      "body": "Mantener la cancelación como capacidad autenticada y usar el flujo guest solo para abrir incidencias.",
+      "title": "Pedir diseño previo",
+      "body": "Bloquear la implementación hasta cerrar copy, redirección a incidencia, estados parciales y mitigación de fuerza bruta.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar flujo guest acotado",
-    "body": "Implementar una ruta guest nueva con verificación indistinguible, rate limit, helper compartido de cancelación y UI que solo ofrezca cancelar cuando el servidor confirme que el pedido es cancelable.",
+    "body": "Implementar endpoint guest con Zod, verificación indistinguible, rate limit y UI que solo ofrezca cancelar cuando el pedido esté en estado cancelable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el assignee actual y tiene cambios recientes tanto en la cancelación autenticada como en el centro de ayuda postventa.",
+    "reason": "Es el assignee actual y tiene historial reciente sobre el flujo postsale de `ContactHelpCenter`, donde se decidiría la UX guest.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewedAt": "2026-07-09T06:21:47.206Z",
+    "reviewedAt": "2026-07-09T06:25:22.962Z",
     "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
   }
 }
