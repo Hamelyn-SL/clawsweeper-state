@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T08:21:47.317Z",
+  "updatedAt": "2026-07-09T08:16:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7224,
+    "title": "Oferta flash en home solo muestra 1 producto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7224",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "triage:queued",
+      "reporter:victor"
+    ],
+    "createdAt": "2026-07-08T09:12:37Z",
+    "updatedAt": "2026-07-09T08:16:11Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La oferta flash debe usar el umbral fijo de 6,5 € alineado con `/libros-baratos`, o debe calcular un margen dinámico desde el precio mínimo disponible?",
+  "rationale": "La issue propone 6,5 € y el PR lo implementa, pero el comentario reciente de PabloMoran34 plantea una alternativa de producto que no conviene resolver solo por automatización.",
+  "options": [
+    {
+      "title": "Usar 6,5 € fijo",
+      "body": "Mantiene alineados oferta flash, libros baratos y SEO con el umbral ya existente en `next-routes.config.mts`, y permite revisar/aterrizar el PR candidato con prueba real.",
+      "recommended": true
+    },
+    {
+      "title": "Usar margen dinámico",
+      "body": "Evita codificar un número fijo, pero requiere definir la regla de negocio y probablemente ajustar el PR antes de merge.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar el PR y rediseñar",
+      "body": "Pausa el fix actual para rediseñar la selección flash si el problema no debe resolverse ampliando el cap de precio.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Usar 6,5 € fijo",
+    "body": "Mantiene alineados oferta flash, libros baratos y SEO con el umbral ya existente en `next-routes.config.mts`, y permite revisar/aterrizar el PR candidato con prueba real.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Aparece en el historial central del flujo flash y fue señalado como revisor del PR por señales en home ecommerce, rutas y ofertas flash.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7224.md",
+    "reviewedAt": "2026-07-09T08:21:47.317Z",
+    "mainSha": "05eaad368047fcdfb1406cd176a8e6c6fe09418f"
+  }
+}
