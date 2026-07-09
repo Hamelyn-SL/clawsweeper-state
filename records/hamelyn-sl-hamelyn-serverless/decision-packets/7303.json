@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T14:54:26.403Z",
+  "generatedAt": "2026-07-09T14:54:30.790Z",
   "updatedAt": "2026-07-09T13:58:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,48 +15,40 @@
       "bug",
       "priority:p1",
       "triage:done",
-      "app:crons",
-      "P1",
-      "impact:message-loss",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "app:crons"
     ],
     "createdAt": "2026-07-09T13:43:18Z",
     "updatedAt": "2026-07-09T13:58:06Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Infra debe resolver esta incidencia aplicando `STOCK_KV_REST_API_URL` y `STOCK_KV_REST_API_TOKEN` en Vercel `crons` producción, o queréis reabrir una decisión técnica sobre fallback cuando falte KV?",
-  "rationale": "El código actual y la spec indican que KV es el camino intencionado, pero la corrección mínima es una operación de Vercel que ClawSweeper no puede aplicar ni verificar desde el repositorio.",
+  "question": "¿Infra/Operaciones debe resolver esta incidencia añadiendo `STOCK_KV_REST_API_URL` y `STOCK_KV_REST_API_TOKEN` en Vercel para `crons`, o se quiere cambiar el diseño del cron para tolerar ausencia de KV?",
+  "rationale": "El código actual falla de forma esperada sin esas variables y la decisión documentada es usar KV; elegir un fallback de código afectaría arquitectura/carga, no solo un bug local.",
   "options": [
     {
-      "title": "Aplicar env vars en Vercel",
-      "body": "Añadir las dos variables al proyecto `crons` producción y verificar el siguiente run mantiene la decisión de arquitectura actual sin tocar código.",
+      "title": "Configurar Vercel `crons`",
+      "body": "Añadir las variables existentes en producción, redeploy/retry de `/api/notify-availability` y conservar la ruta ligera basada en KV.",
       "recommended": true
     },
     {
-      "title": "Reabrir fallback en código",
-      "body": "Diseñar un fallback explícito a Mongo puede reducir fallos de configuración, pero cambia el perfil de carga del cron y necesita decisión técnica.",
+      "title": "Diseñar fallback explícito",
+      "body": "Abrir una decisión técnica separada para definir si el cron debe degradar a Mongo u otra fuente cuando KV no esté configurado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aplicar env vars en Vercel",
-    "body": "Añadir las dos variables al proyecto `crons` producción y verificar el siguiente run mantiene la decisión de arquitectura actual sin tocar código.",
+    "title": "Configurar Vercel `crons`",
+    "body": "Añadir las variables existentes en producción, redeploy/retry de `/api/notify-availability` y conservar la ruta ligera basada en KV.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es quien conectó este cron concreto al KV y dejó documentado el prerrequisito operativo que falta comprobar.",
+    "person": "Daniel",
+    "reason": "Es el candidato con mejor señal reciente sobre la regla de negocio y el uso de KV en este cron.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7303.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7303#issuecomment-4926410224",
-    "reviewedAt": "2026-07-09T14:54:26.403Z",
+    "reviewedAt": "2026-07-09T14:54:30.790Z",
     "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
   }
 }
