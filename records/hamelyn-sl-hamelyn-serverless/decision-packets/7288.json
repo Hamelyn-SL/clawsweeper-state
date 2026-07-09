@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T12:01:55.060Z",
-  "updatedAt": "2026-07-09T11:49:18Z",
+  "generatedAt": "2026-07-09T12:07:54.209Z",
+  "updatedAt": "2026-07-09T12:03:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288",
     "state": "open",
     "labels": [
-      "size/L",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 compatibility"
+      "size/L"
     ],
     "createdAt": "2026-07-09T10:25:01Z",
-    "updatedAt": "2026-07-09T11:49:18Z",
+    "updatedAt": "2026-07-09T12:03:02Z",
     "headSha": "69dd66b81fb710f0c596b687c4a92c346dfc0e24"
   },
   "lane": "manual_review",
   "priority": "P2",
   "question": "¿Este PR debe mantenerse contra `EPIC/revision-v3` como excepción de la épica o retargetearse a `dev` antes de mergear?",
-  "rationale": "`AGENTS.md` fija `dev` como base de PRs, pero la issue pertenece a `revision-v3` y ya hay revisión humana sobre la rama épica.",
+  "rationale": "`AGENTS.md` fija `dev` como base de PRs, pero la issue pertenece a Revision V3 y el PR está limpio contra la rama épica; esa excepción no debería resolverla una revisión automática.",
   "options": [
     {
       "title": "Retargetear a dev",
-      "body": "Alinea el PR con la política general y fuerza a validar el merge real contra la rama estándar.",
+      "body": "Alinea el PR con la política general del repositorio y obliga a validar el merge real contra la rama estándar.",
       "recommended": true
     },
     {
       "title": "Mantener la rama épica",
-      "body": "Permite coordinar dentro de `EPIC/revision-v3`, pero debería quedar aprobado explícitamente por un maintainer antes del merge.",
+      "body": "Permite integrar dentro de `EPIC/revision-v3`, pero debe quedar aprobado explícitamente por la persona responsable de la épica.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Retargetear a dev",
-    "body": "Alinea el PR con la política general y fuerza a validar el merge real contra la rama estándar.",
+    "body": "Alinea el PR con la política general del repositorio y obliga a validar el merge real contra la rama estándar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Fue seleccionado como reviewer principal para esta área y es el mejor candidato visible para decidir la excepción de base junto con la validación de reports.",
+    "reason": "Es la mejor señal disponible para reporting/productividad y ya aparece como reviewer principal asignado por el bot interno.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7288.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288#issuecomment-4924178891",
-    "reviewedAt": "2026-07-09T12:01:55.060Z",
+    "reviewedAt": "2026-07-09T12:07:54.209Z",
     "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
   }
 }
