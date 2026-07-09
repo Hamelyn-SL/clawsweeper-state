@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T12:07:54.209Z",
-  "updatedAt": "2026-07-09T12:03:02Z",
+  "generatedAt": "2026-07-09T15:00:58.217Z",
+  "updatedAt": "2026-07-09T12:34:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,19 +11,19 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-07-09T10:25:01Z",
-    "updatedAt": "2026-07-09T12:03:02Z",
+    "updatedAt": "2026-07-09T12:34:20Z",
     "headSha": "69dd66b81fb710f0c596b687c4a92c346dfc0e24"
   },
-  "lane": "manual_review",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Este PR debe mantenerse contra `EPIC/revision-v3` como excepción de la épica o retargetearse a `dev` antes de mergear?",
-  "rationale": "`AGENTS.md` fija `dev` como base de PRs, pero la issue pertenece a Revision V3 y el PR está limpio contra la rama épica; esa excepción no debería resolverla una revisión automática.",
+  "question": "¿Este PR debe mantenerse contra `EPIC/revision-v3` como excepción de la épica o retargetearse a `dev` antes de mergear el cambio de trazabilidad persistida?",
+  "rationale": "`AGENTS.md` fija `dev` como base general, pero el trabajo pertenece a Revision V3 y toca datos persistidos/reporting; automatización no debería decidir sola la rama ni el tratamiento final de compatibilidad.",
   "options": [
     {
       "title": "Retargetear a dev",
@@ -34,6 +34,11 @@
       "title": "Mantener la rama épica",
       "body": "Permite integrar dentro de `EPIC/revision-v3`, pero debe quedar aprobado explícitamente por la persona responsable de la épica.",
       "recommended": false
+    },
+    {
+      "title": "Pausar hasta cerrar reporting",
+      "body": "Mantiene el PR abierto sin merge hasta resolver el conteo de rechazos y adjuntar prueba real.",
+      "recommended": false
     }
   ],
   "recommendation": {
@@ -43,13 +48,12 @@
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la mejor señal disponible para reporting/productividad y ya aparece como reviewer principal asignado por el bot interno.",
-    "confidence": "medium"
+    "reason": "Tiene señal directa en el reporting afectado y fue asignado como reviewer principal para este PR.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7288.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288#issuecomment-4924178891",
-    "reviewedAt": "2026-07-09T12:07:54.209Z",
-    "mainSha": "499a3f88a16786ec48868f6474dc4f7582c0e2b6"
+    "reviewedAt": "2026-07-09T15:00:58.217Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
   }
 }
