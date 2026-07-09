@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T14:54:26.403Z",
+  "updatedAt": "2026-07-09T13:58:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7303,
+    "title": "Cron notify-availability falla por variables STOCK_KV ausentes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7303",
+    "state": "open",
+    "labels": [
+      "crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "triage:done",
+      "app:crons"
+    ],
+    "createdAt": "2026-07-09T13:43:18Z",
+    "updatedAt": "2026-07-09T13:58:06Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Infra debe resolver esta incidencia aplicando `STOCK_KV_REST_API_URL` y `STOCK_KV_REST_API_TOKEN` en Vercel `crons` producción, o queréis reabrir una decisión técnica sobre fallback cuando falte KV?",
+  "rationale": "El código actual y la spec indican que KV es el camino intencionado, pero la corrección mínima es una operación de Vercel que ClawSweeper no puede aplicar ni verificar desde el repositorio.",
+  "options": [
+    {
+      "title": "Aplicar env vars en Vercel",
+      "body": "Añadir las dos variables al proyecto `crons` producción y verificar el siguiente run mantiene la decisión de arquitectura actual sin tocar código.",
+      "recommended": true
+    },
+    {
+      "title": "Reabrir fallback en código",
+      "body": "Diseñar un fallback explícito a Mongo puede reducir fallos de configuración, pero cambia el perfil de carga del cron y necesita decisión técnica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar env vars en Vercel",
+    "body": "Añadir las dos variables al proyecto `crons` producción y verificar el siguiente run mantiene la decisión de arquitectura actual sin tocar código.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es quien conectó este cron concreto al KV y dejó documentado el prerrequisito operativo que falta comprobar.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7303.md",
+    "reviewedAt": "2026-07-09T14:54:26.403Z",
+    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+  }
+}
