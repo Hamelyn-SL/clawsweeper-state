@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-09T10:39:45.452Z",
+  "updatedAt": "2026-07-09T10:32:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7288,
+    "title": "feat: trace product review with reviewedBy/reviewedAt on accept and reject",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7288",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-09T10:25:01Z",
+    "updatedAt": "2026-07-09T10:32:44Z",
+    "headSha": "0d8f5b60965a2c2c97083468c81ccbb7b46f3333"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Este PR debe mantenerse contra `EPIC/revision-v3` como excepción de la épica o retargetearse a `dev` antes de mergear?",
+  "rationale": "`AGENTS.md` fija `dev` como base de PRs, pero la issue y las labels lo vinculan a `revision-v3`; esa excepción necesita señal humana.",
+  "options": [
+    {
+      "title": "Retargetear a dev",
+      "body": "Alinea el PR con la política general y obliga a validar el merge real contra la rama estándar.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la rama épica",
+      "body": "Permite coordinar el trabajo dentro de `EPIC/revision-v3`, pero debe quedar aprobado explícitamente por un maintainer.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retargetear a dev",
+    "body": "Alinea el PR con la política general y obliga a validar el merge real contra la rama estándar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Lyno lo asignó como reviewer principal y el historial lo conecta con el reporte afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7288.md",
+    "reviewedAt": "2026-07-09T10:39:45.452Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+  }
+}
