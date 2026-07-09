@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T21:02:21.122Z",
-  "updatedAt": "2026-07-08T09:42:34Z",
+  "generatedAt": "2026-07-09T10:08:38.593Z",
+  "updatedAt": "2026-07-09T10:05:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,48 @@
       "app:supply",
       "priority:p1",
       "feature",
-      "triage:done",
       "epic:revision-v3",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-08T09:19:27Z",
-    "updatedAt": "2026-07-08T09:42:34Z"
+    "updatedAt": "2026-07-09T10:05:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta mejora implementarse ahora dentro del modal legacy de revisión o esperar a la ruta definitiva de Revisión V3 del epic padre?",
-  "rationale": "La falta técnica está clara, pero la issue pertenece al epic de Revisión V3 y ya tiene responsable asignado; la automatización no debería decidir si tocar el modal actual o esperar al flujo táctil definitivo.",
+  "question": "¿La issue debe considerarse resuelta con el PR abierto si solo añade entrada manual de lote, o debe mantenerse el alcance original con buscador integrado por EAN/Pedido de Compra en la misma pantalla?",
+  "rationale": "Las notas de aceptación piden dos capacidades y el PR vinculado parece resolver solo una; hace falta una decisión de alcance antes de cerrar o partir el trabajo.",
   "options": [
     {
-      "title": "Implementar fallback compacto en el modal actual",
-      "body": "Añade el buscador por EAN/Pedido de Compra en `OrderReviewModal` reutilizando la lógica existente y deja el flujo operativo resuelto sin cambio de vista.",
+      "title": "Mantener el alcance completo",
+      "body": "Pedir que el PR abierto incorpore también el fallback EAN/Pedido de Compra o que se deje una sub-issue clara antes de cerrar esta issue.",
       "recommended": true
     },
     {
-      "title": "Resolverlo dentro de Revisión V3",
-      "body": "Mantiene esta issue como sub-tarea del epic y evita invertir en el modal legacy si la pantalla táctil nueva va a sustituirlo pronto.",
-      "recommended": false
-    },
-    {
-      "title": "Cerrar como fuera de alcance del modal actual",
-      "body": "Solo tendría sentido si el equipo confirma que el puesto nuevo no va a usar esta pantalla y que la búsqueda separada seguirá siendo el flujo oficial.",
+      "title": "Aceptar solo entrada manual",
+      "body": "Cerrar esta issue con el PR abierto como mejora parcial y crear o mantener otra issue para el buscador EAN integrado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Implementar fallback compacto en el modal actual",
-    "body": "Añade el buscador por EAN/Pedido de Compra en `OrderReviewModal` reutilizando la lógica existente y deja el flujo operativo resuelto sin cambio de vista.",
+    "title": "Mantener el alcance completo",
+    "body": "Pedir que el PR abierto incorpore también el fallback EAN/Pedido de Compra o que se deje una sub-issue clara antes de cerrar esta issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el responsable asignado de esta issue y aparece como contribuidor reciente en la superficie admin v4 relacionada.",
+    "reason": "Es el assignee de la issue y autor del PR abierto que materializa la decisión de alcance.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7226.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226#issuecomment-4919262159",
-    "reviewedAt": "2026-07-08T21:02:21.122Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-09T10:08:38.593Z",
+    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
   }
 }
