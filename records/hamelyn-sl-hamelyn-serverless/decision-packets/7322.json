@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T06:46:24.711Z",
+  "updatedAt": "2026-07-10T06:40:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7322,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7322",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-10T06:40:08Z",
+    "updatedAt": "2026-07-10T06:40:49Z",
+    "headSha": "08c8bb368c7fd5378ab82bc73cf1eba1a5ec857c"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe este deploy a `master` esperar a que se corrija el contrato de `BL-ecommerce-seo-sitemaps-04`, o se acepta desplegar producción con ese desajuste documentado?",
+  "rationale": "El PR es un release de producción y la decisión combina seguridad de release con dirección de contrato BL: automatización no debe decidir si preservar el comportamiento actual `\\d+`, endurecerlo a tres dígitos o aceptar el riesgo hasta un follow-up.",
+  "options": [
+    {
+      "title": "Esperar y corregir contrato",
+      "body": "Bloquear el deploy hasta que `dev` tenga spec, tests y validador alineados, más prueba runtime redactada de la salida SEO afectada.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar aceptando el riesgo",
+      "body": "Fusionar ahora llevaría a producción un contrato BL ambiguo que convendría rastrear como follow-up explícito.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar y corregir contrato",
+    "body": "Bloquear el deploy hasta que `dev` tenga spec, tests y validador alineados, más prueba runtime redactada de la salida SEO afectada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es quien introdujo y mergeó el bloque SEO que contiene el contrato afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7322.md",
+    "reviewedAt": "2026-07-10T06:46:24.711Z",
+    "mainSha": "08c8bb368c7fd5378ab82bc73cf1eba1a5ec857c"
+  }
+}

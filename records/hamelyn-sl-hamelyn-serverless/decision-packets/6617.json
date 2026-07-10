@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T08:55:45.827Z",
-  "updatedAt": "2026-07-08T08:33:28Z",
+  "generatedAt": "2026-07-10T06:46:05.716Z",
+  "updatedAt": "2026-07-10T06:26:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,51 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6617",
     "state": "open",
     "labels": [
-      "app:supply",
+      "app:admin",
       "priority:p1",
       "feature",
       "triage:done",
       "epic:revision-v3",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
-      "P1",
-      "impact:other"
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-06-23T17:18:57Z",
-    "updatedAt": "2026-07-08T08:33:28Z"
+    "updatedAt": "2026-07-10T06:26:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the Revision V3 umbrella stay open until the remaining analytics, hardware, and tracing children are resolved, or should maintainers explicitly split that remaining scope and close the umbrella now?",
-  "rationale": "The evidence shows meaningful work remains, but some of it is operational/hardware and product-scope coordination rather than a single source-code fix automation should decide.",
+  "question": "¿La épica de Revisión V3 debe seguir abierta hasta que todas las hijas restantes aterricen en `dev`, o queréis recortar explícitamente el alcance restante y cerrar el paraguas antes?",
+  "rationale": "La evidencia muestra trabajo real pendiente, pero parte de ese trabajo es decisión de producto, hardware y coordinación de rama de epic, no un fix autónomo de código.",
   "options": [
     {
-      "title": "Keep umbrella open",
-      "body": "Leave this issue as the canonical tracker until the open child issues are resolved or intentionally descoped.",
+      "title": "Mantener el paraguas abierto",
+      "body": "Conserva esta issue como rastreador canónico hasta que las hijas abiertas se resuelvan o se descarten con una decisión visible.",
       "recommended": true
     },
     {
-      "title": "Split remaining scope",
-      "body": "Move the remaining analytics, hardware, and tracing items to a maintainer-approved tracking path, then close the umbrella only after documenting the scope cut.",
+      "title": "Recortar el alcance restante",
+      "body": "Mueve analítica, hardware y trazabilidad a seguimiento independiente y cierra el paraguas solo tras documentar el recorte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep umbrella open",
-    "body": "Leave this issue as the canonical tracker until the open child issues are resolved or intentionally descoped.",
+    "title": "Mantener el paraguas abierto",
+    "body": "Conserva esta issue como rastreador canónico hasta que las hijas abiertas se resuelvan o se descarten con una decisión visible.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Alex is assigned on the epic and has the strongest recent Revision V3 PR history across the kiosk and coordination surfaces.",
+    "reason": "Está asignado en la épica y tiene señal fuerte en las superficies Admin de Revisión V3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6617.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6617#issuecomment-4913157237",
-    "reviewedAt": "2026-07-08T08:55:45.827Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-10T06:46:05.716Z",
+    "mainSha": "08c8bb368c7fd5378ab82bc73cf1eba1a5ec857c"
   }
 }
