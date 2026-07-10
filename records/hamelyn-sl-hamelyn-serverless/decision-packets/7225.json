@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T06:25:22.962Z",
-  "updatedAt": "2026-07-09T06:19:22Z",
+  "generatedAt": "2026-07-10T08:07:14.591Z",
+  "updatedAt": "2026-07-10T07:56:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,56 +13,55 @@
       "app:ecommerce",
       "priority:p2",
       "feature",
-      "triage:done",
+      "triage:queued",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "impact:ux-friction",
-      "reporter:AlexDiaz-Hamelyn",
       "P2",
-      "impact:security",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review"
+      "impact:ux-friction",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
-    "updatedAt": "2026-07-09T06:19:22Z"
+    "updatedAt": "2026-07-10T07:56:04Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe exponerse una mutación pública de cancelación guest en ecommerce usando `codeIdentifier` + email, y con qué límites de rate limit/UX antes de implementarla?",
-  "rationale": "La feature iguala una capacidad sensible entre usuarios guest y logueados, pero cambia la superficie pública de pedidos y no debería entrar como reparación automática sin criterio de producto y seguridad.",
+  "question": "¿Debe aceptarse una cancelación guest pública basada en `codeIdentifier` + email mediante https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329 y con qué garantía explícita de rate limit/anti-enumeración?",
+  "rationale": "La petición reduce fricción real, pero convierte una acción sensible de autenticada a pública; esa frontera no debe resolverse como cierre automático antes de la revisión del PR candidato.",
   "options": [
     {
-      "title": "Aprobar flujo guest acotado",
-      "body": "Implementar endpoint guest con Zod, verificación indistinguible, rate limit y UI que solo ofrezca cancelar cuando el pedido esté en estado cancelable.",
+      "title": "Revisar y mergear el PR acotado",
+      "body": "Validar el endpoint guest, rate limit/firewall, 404 indistinguible, estados cancelables y regresión del flujo autenticado antes de cerrar la issue por merge.",
       "recommended": true
     },
     {
-      "title": "Mantener incidencia manual",
-      "body": "Seguir derivando a ATC mediante el flujo guest de incidencias para evitar una nueva mutación pública sin sesión.",
+      "title": "Pedir cambios de seguridad/UX",
+      "body": "Mantener la issue abierta y bloquear el PR hasta que la protección anti-abuso y el fallback a incidencia estén probados.",
       "recommended": false
     },
     {
-      "title": "Pedir diseño previo",
-      "body": "Bloquear la implementación hasta cerrar copy, redirección a incidencia, estados parciales y mitigación de fuerza bruta.",
+      "title": "Aplazar la feature",
+      "body": "Mantener la cancelación guest como incidencia manual si producto decide no exponer una mutación pública ahora.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar flujo guest acotado",
-    "body": "Implementar endpoint guest con Zod, verificación indistinguible, rate limit y UI que solo ofrezca cancelar cuando el pedido esté en estado cancelable.",
+    "title": "Revisar y mergear el PR acotado",
+    "body": "Validar el endpoint guest, rate limit/firewall, 404 indistinguible, estados cancelables y regresión del flujo autenticado antes de cerrar la issue por merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el assignee actual y tiene historial reciente sobre el flujo postsale de `ContactHelpCenter`, donde se decidiría la UX guest.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Figura como reviewer asignado para validar el nuevo endpoint guest y la reutilización de cancelación en el PR candidato.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916322367",
-    "reviewedAt": "2026-07-09T06:21:47.206Z",
-    "mainSha": "412ac0da1a6c2f6e4e71ed23da5de4fecc58afc9"
+    "reviewedAt": "2026-07-10T08:07:14.591Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }
