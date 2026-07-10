@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T10:14:41.780Z",
+  "updatedAt": "2026-07-10T10:05:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7343,
+    "title": "Eliminar la app automations (API ATC paralela) y su proyecto de Vercel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7343",
+    "state": "open",
+    "labels": [
+      "priority:p1",
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:running"
+    ],
+    "createdAt": "2026-07-10T09:49:41Z",
+    "updatedAt": "2026-07-10T10:05:31Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se aprueba retirar `apps/automations` solo después de migrar o apagar el consumidor n8n de Auto ATC y validar que `/api/v6` cubre las consultas necesarias?",
+  "rationale": "La decisión cruza código, datos sensibles, consumidor externo activo y administración de Vercel/secrets; automatización no puede decidir el momento operativo sin riesgo de cortar el flujo ATC o dejar una brecha abierta.",
+  "options": [
+    {
+      "title": "Migrar y retirar en dos fases",
+      "body": "Primero mover n8n a `/api/v6` con PATs/scopes y prueba real, luego borrar `apps/automations` y apagar Vercel/secrets en una ventana controlada.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar ya y asumir corte",
+      "body": "Eliminar la app y el proyecto Vercel de inmediato reduce superficie, pero puede romper el flujo Auto ATC si aún depende del host actual.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener temporalmente con hardening",
+      "body": "Endurecer `apps/automations` como puente reduce riesgo inmediato, pero prolonga una API paralela que el issue quiere retirar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migrar y retirar en dos fases",
+    "body": "Primero mover n8n a `/api/v6` con PATs/scopes y prueba real, luego borrar `apps/automations` y apagar Vercel/secrets en una ventana controlada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado al issue y aparece como propietario reciente tanto de la superficie actual como de la API v6 de reemplazo.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7343.md",
+    "reviewedAt": "2026-07-10T10:14:41.780Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+  }
+}
