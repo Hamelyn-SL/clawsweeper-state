@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T08:16:41.354Z",
+  "updatedAt": "2026-07-10T08:10:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7325,
+    "title": "Picking Skypod: modo solo monobultos (solo EXOTEC, pedidos de 1 producto)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7325",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-10T07:36:09Z",
+    "updatedAt": "2026-07-10T08:10:14Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El modo “solo Skypod, solo monobultos” debe ser un checkbox compatible con `exotecProductLimit`, o una variante de modo que ignore ese límite?",
+  "rationale": "El código puede soportar ambas rutas, pero la issue deja abierta la semántica de UX y límites; esa elección afecta a cómo operaciones lanzará tandas reales.",
+  "options": [
+    {
+      "title": "Checkbox compatible con límite",
+      "body": "Añadir un booleano de modo monobulto y aplicar `exotecProductLimit` sobre la selección ya filtrada a EXOTEC de un producto.",
+      "recommended": true
+    },
+    {
+      "title": "Modo exclusivo sin límite",
+      "body": "Tratarlo como una variante de picking que ignora `exotecProductLimit` y vacía todos los monobultos EXOTEC elegibles.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar definición operativa",
+      "body": "Mantener la issue en triage hasta que operaciones confirme el volumen esperado y la interacción con límites.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Checkbox compatible con límite",
+    "body": "Añadir un booleano de modo monobulto y aplicar `exotecProductLimit` sobre la selección ya filtrada a EXOTEC de un producto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Tiene historial directo en Picking V3 y en la mejora Skypod relacionada de agrupación por cubeta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7325.md",
+    "reviewedAt": "2026-07-10T08:16:41.354Z",
+    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+  }
+}
