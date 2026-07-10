@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-10T07:50:14.768Z",
+  "generatedAt": "2026-07-10T13:19:35.626Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
-    "pagesScanned": 3,
-    "openItemsSeen": 214
+    "pagesScanned": 2,
+    "openItemsSeen": 196
   },
   "counts": {
-    "itemRecords": 207,
-    "closedRecords": 115,
-    "missingOpen": 7,
+    "itemRecords": 188,
+    "closedRecords": 150,
+    "missingOpen": 8,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 0,
-    "missingRecentOpen": 7,
+    "missingRecentOpen": 8,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -23,103 +23,109 @@
   "findings": {
     "missingOpen": [
       {
-        "number": 7324,
+        "number": 7346,
+        "kind": "pull_request",
+        "title": "chore: remove automations app and its references",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T10:14:13Z",
+        "updatedAt": "2026-07-10T12:46:06Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7355,
         "kind": "issue",
-        "title": "Ecommerce: las nuevas incidencias llegan vacías al listado de eDesk",
+        "title": "LOTES CELERITAS QUE COMPARTEN NUMERO DE LOTE",
         "labels": [
           "bug",
           "source:admin-panel",
-          "app:ecommerce",
-          "priority:p0",
-          "reporter:miguel",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:31:00Z",
-        "updatedAt": "2026-07-10T07:31:12Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7325,
-        "kind": "issue",
-        "title": "Picking Skypod: modo solo monobultos (solo EXOTEC, pedidos de 1 producto)",
-        "labels": [
-          "app:admin",
+          "app:supply",
           "priority:p1",
-          "feature",
-          "triage:queued"
+          "triage:pr-opened",
+          "reporter:daniellopez"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:36:09Z",
-        "updatedAt": "2026-07-10T07:36:24Z",
+        "createdAt": "2026-07-10T11:43:55Z",
+        "updatedAt": "2026-07-10T12:02:30Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7326,
-        "kind": "issue",
-        "title": "SEUR rechaza etiquetas por códigos postales internacionales rellenados a cinco dígitos",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "priority:p1",
-          "app:infrastructure",
-          "reporter:MiguelHamelyn",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:41:00Z",
-        "updatedAt": "2026-07-10T07:41:15Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7327,
+        "number": 7358,
         "kind": "pull_request",
-        "title": "fix: use canonical category hub links",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:42:05Z",
-        "updatedAt": "2026-07-10T07:46:54Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7328,
-        "kind": "issue",
-        "title": "Fnac batch retries Product not found as BATCHING_TO_MARKETPLACE",
-        "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:44:41Z",
-        "updatedAt": "2026-07-10T07:44:54Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7329,
-        "kind": "pull_request",
-        "title": "feat: add guest order cancellation to ecommerce help center",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:44:52Z",
-        "updatedAt": "2026-07-10T07:48:42Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7330,
-        "kind": "pull_request",
-        "title": "feat: wire revision-v3 phase training videos",
+        "title": "fix: prevent ambiguous review tracking matches",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:45:04Z",
-        "updatedAt": "2026-07-10T07:47:06Z",
+        "createdAt": "2026-07-10T12:01:03Z",
+        "updatedAt": "2026-07-10T12:56:34Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7359,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-15: checkout UI ignores server bypass tolerance for one-cent residuals",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:03:01Z",
+        "updatedAt": "2026-07-10T12:03:13Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7362,
+        "kind": "pull_request",
+        "title": "feat: align supply contact page layout with ecommerce help center",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:21:33Z",
+        "updatedAt": "2026-07-10T12:50:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7363,
+        "kind": "pull_request",
+        "title": "feat: add skypod-only single-product picking mode to picking v3",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:29:25Z",
+        "updatedAt": "2026-07-10T13:14:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7364,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:44:42Z",
+        "updatedAt": "2026-07-10T13:10:21Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7365,
+        "kind": "pull_request",
+        "title": "[BL] chore: relocate ecommerce checkout shipping cost rules",
+        "labels": [
+          "size/XXL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:47:14Z",
+        "updatedAt": "2026-07-10T12:54:40Z",
         "missingReason": "recently_created"
       }
     ],
@@ -128,103 +134,109 @@
     "missingProtectedOpen": [],
     "missingRecentOpen": [
       {
-        "number": 7324,
+        "number": 7346,
+        "kind": "pull_request",
+        "title": "chore: remove automations app and its references",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T10:14:13Z",
+        "updatedAt": "2026-07-10T12:46:06Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7355,
         "kind": "issue",
-        "title": "Ecommerce: las nuevas incidencias llegan vacías al listado de eDesk",
+        "title": "LOTES CELERITAS QUE COMPARTEN NUMERO DE LOTE",
         "labels": [
           "bug",
           "source:admin-panel",
-          "app:ecommerce",
-          "priority:p0",
-          "reporter:miguel",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:31:00Z",
-        "updatedAt": "2026-07-10T07:31:12Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7325,
-        "kind": "issue",
-        "title": "Picking Skypod: modo solo monobultos (solo EXOTEC, pedidos de 1 producto)",
-        "labels": [
-          "app:admin",
+          "app:supply",
           "priority:p1",
-          "feature",
-          "triage:queued"
+          "triage:pr-opened",
+          "reporter:daniellopez"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:36:09Z",
-        "updatedAt": "2026-07-10T07:36:24Z",
+        "createdAt": "2026-07-10T11:43:55Z",
+        "updatedAt": "2026-07-10T12:02:30Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7326,
-        "kind": "issue",
-        "title": "SEUR rechaza etiquetas por códigos postales internacionales rellenados a cinco dígitos",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "priority:p1",
-          "app:infrastructure",
-          "reporter:MiguelHamelyn",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:41:00Z",
-        "updatedAt": "2026-07-10T07:41:15Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7327,
+        "number": 7358,
         "kind": "pull_request",
-        "title": "fix: use canonical category hub links",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:42:05Z",
-        "updatedAt": "2026-07-10T07:46:54Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7328,
-        "kind": "issue",
-        "title": "Fnac batch retries Product not found as BATCHING_TO_MARKETPLACE",
-        "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:44:41Z",
-        "updatedAt": "2026-07-10T07:44:54Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7329,
-        "kind": "pull_request",
-        "title": "feat: add guest order cancellation to ecommerce help center",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:44:52Z",
-        "updatedAt": "2026-07-10T07:48:42Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7330,
-        "kind": "pull_request",
-        "title": "feat: wire revision-v3 phase training videos",
+        "title": "fix: prevent ambiguous review tracking matches",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-10T07:45:04Z",
-        "updatedAt": "2026-07-10T07:47:06Z",
+        "createdAt": "2026-07-10T12:01:03Z",
+        "updatedAt": "2026-07-10T12:56:34Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7359,
+        "kind": "issue",
+        "title": "BL-ecommerce-coupons-15: checkout UI ignores server bypass tolerance for one-cent residuals",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p3",
+          "triage:queued",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:03:01Z",
+        "updatedAt": "2026-07-10T12:03:13Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7362,
+        "kind": "pull_request",
+        "title": "feat: align supply contact page layout with ecommerce help center",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:21:33Z",
+        "updatedAt": "2026-07-10T12:50:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7363,
+        "kind": "pull_request",
+        "title": "feat: add skypod-only single-product picking mode to picking v3",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:29:25Z",
+        "updatedAt": "2026-07-10T13:14:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7364,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:44:42Z",
+        "updatedAt": "2026-07-10T13:10:21Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7365,
+        "kind": "pull_request",
+        "title": "[BL] chore: relocate ecommerce checkout shipping cost rules",
+        "labels": [
+          "size/XXL",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T12:47:14Z",
+        "updatedAt": "2026-07-10T12:54:40Z",
         "missingReason": "recently_created"
       }
     ],

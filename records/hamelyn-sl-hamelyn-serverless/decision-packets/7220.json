@@ -1,19 +1,19 @@
 {
   "version": 1,
   "generatedAt": "2026-07-08T09:06:46.399Z",
-  "updatedAt": "2026-07-08T08:57:51Z",
+  "updatedAt": "2026-07-08T12:02:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 7220,
     "title": "fix: stop retrying nonexistent amazon order items",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7220",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "size/XS"
     ],
     "createdAt": "2026-07-08T08:56:45Z",
-    "updatedAt": "2026-07-08T08:57:51Z",
+    "updatedAt": "2026-07-08T12:02:56Z",
     "headSha": "88b880ba9d0f5e542c5e360ae2e06e88734e8e43"
   },
   "lane": "product_direction",
@@ -48,7 +48,7 @@
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7220.md",
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7220.md",
     "reviewedAt": "2026-07-08T09:06:46.399Z",
     "mainSha": "26c3284211c5bc7d6b5463029b4c22f350436c14"
   }
