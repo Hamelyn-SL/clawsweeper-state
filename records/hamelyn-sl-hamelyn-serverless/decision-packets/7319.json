@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T10:06:22.583Z",
-  "updatedAt": "2026-07-10T08:35:32Z",
+  "generatedAt": "2026-07-10T18:02:33.353Z",
+  "updatedAt": "2026-07-10T15:09:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,49 +17,48 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-10T08:35:32Z"
+    "updatedAt": "2026-07-10T15:09:39Z"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿La release de Supply debe esperar a cerrar todo el alcance acordado o debe publicarse ahora con un subconjunto explícitamente aprobado?",
-  "rationale": "El código puede preparar el bump, pero elegir el corte de release y ejecutar publicación en stores depende de prioridad operativa, credenciales y aceptación de riesgo del equipo Supply.",
+  "question": "¿Confirma el equipo Supply cuándo están live los binarios `2.6.04` y, por tanto, cuándo puede mergearse el PR de bump a `dev`?",
+  "rationale": "El cambio de código del bump es acotado, pero el momento correcto depende del estado externo de EAS/stores y de la decisión de release ya documentada por Miguel.",
   "options": [
     {
-      "title": "Cerrar alcance y publicar manualmente",
-      "body": "Terminar o aceptar explícitamente las piezas incluidas, hacer el bump y publicar con `eas build`/`eas submit`, dejando evidencia en la issue.",
+      "title": "Esperar a stores live",
+      "body": "Mantener esta issue abierta hasta que los binarios `2.6.04` estén publicados y entonces mergear el bump a `dev`.",
       "recommended": true
     },
     {
-      "title": "Esperar la automatización EAS",
-      "body": "Mantener esta issue abierta hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté revisada, probada y mergeada como canal de publicación.",
+      "title": "Usar automatización EAS",
+      "body": "Esperar a que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté aprobado y probado si el equipo decide publicar mediante workflow.",
       "recommended": false
     },
     {
-      "title": "Publicar un subconjunto aprobado",
-      "body": "Recortar el alcance de esta release en un comentario de responsable y publicar solo ese corte, moviendo el resto a issues separadas.",
+      "title": "Mover o cancelar release",
+      "body": "Cerrar solo si el equipo cancela esta release o mueve el seguimiento operativo a otra issue canónica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cerrar alcance y publicar manualmente",
-    "body": "Terminar o aceptar explícitamente las piezas incluidas, hacer el bump y publicar con `eas build`/`eas submit`, dejando evidencia en la issue.",
+    "title": "Esperar a stores live",
+    "body": "Mantener esta issue abierta hasta que los binarios `2.6.04` estén publicados y entonces mergear el bump a `dev`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es quien abrió la release y fijó el alcance funcional que entra y queda fuera.",
+    "reason": "Es quien fijó el alcance y la secuencia de publicación en la discusión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-10T10:06:22.583Z",
-    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+    "reviewedAt": "2026-07-10T18:02:33.353Z",
+    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
