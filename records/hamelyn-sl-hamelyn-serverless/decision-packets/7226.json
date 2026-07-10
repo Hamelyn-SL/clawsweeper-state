@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T10:14:23.283Z",
-  "updatedAt": "2026-07-09T10:05:08Z",
+  "generatedAt": "2026-07-10T06:37:29.326Z",
+  "updatedAt": "2026-07-10T06:26:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,56 +10,55 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226",
     "state": "open",
     "labels": [
-      "app:supply",
+      "app:admin",
       "priority:p1",
       "feature",
       "epic:revision-v3",
-      "P2",
-      "impact:ux-friction",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-08T09:19:27Z",
-    "updatedAt": "2026-07-09T10:05:08Z"
+    "updatedAt": "2026-07-10T06:26:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7278 ampliarse antes de mergear para incluir también el fallback por EAN/Pedido de Compra, o se acepta como primera fase solo de entrada manual?",
-  "rationale": "La issue pide dos capacidades y el PR abierto cubre una parte clara del flujo; cerrar o partir el resto requiere decisión de alcance del equipo de Revisión V3.",
+  "question": "¿La PR mergeada en `EPIC/revision-v3` basta como primera fase de esta issue, o el fallback por EAN/Pedido de Compra debe implementarse antes de cerrar el requisito?",
+  "rationale": "La issue pide dos capacidades y la evidencia actual muestra una implementación parcial en una rama de epic, no en `dev`; cerrar, partir o ampliar el alcance requiere criterio del equipo de Revisión V3.",
   "options": [
     {
-      "title": "Ampliar el PR antes de mergear",
-      "body": "Mantiene la issue alineada con sus notas de aceptación y evita cerrar el fallback EAN sin implementación.",
+      "title": "Mantener abierta hasta cubrir EAN",
+      "body": "La issue queda alineada con sus notas de aceptación y se cierra solo cuando el flujo principal resuelva también el caso de lote no encontrado por EAN/Pedido de Compra.",
       "recommended": true
     },
     {
-      "title": "Mergear entrada manual y sub-issue EAN",
-      "body": "Entrega valor parcial rápido, pero exige dejar el buscador integrado por EAN/Pedido de Compra rastreado de forma explícita.",
+      "title": "Separar el fallback EAN",
+      "body": "Se puede aceptar la entrada manual como fase ya mergeada en la rama de epic, dejando una issue explícita para integrar el buscador EAN después.",
       "recommended": false
     },
     {
-      "title": "Reducir alcance del fallback",
-      "body": "Si producto no quiere incrustar el buscador EAN en la pantalla principal, conviene documentar el flujo alternativo antes de cerrar.",
+      "title": "Reducir alcance del flujo",
+      "body": "Si producto decide que el buscador separado es suficiente, conviene documentar esa decisión antes de cerrar esta petición.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ampliar el PR antes de mergear",
-    "body": "Mantiene la issue alineada con sus notas de aceptación y evita cerrar el fallback EAN sin implementación.",
+    "title": "Mantener abierta hasta cubrir EAN",
+    "body": "La issue queda alineada con sus notas de aceptación y se cierra solo cuando el flujo principal resuelva también el caso de lote no encontrado por EAN/Pedido de Compra.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el assignee de esta issue, autor del PR abierto y autor de varias piezas centrales de Revisión V3.",
+    "reason": "Es el assignee de la issue y autor de la PR relacionada que ya modifica la pantalla de escaneo en la rama de epic.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7226.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7226#issuecomment-4919262159",
-    "reviewedAt": "2026-07-09T10:14:23.283Z",
-    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+    "reviewedAt": "2026-07-10T06:37:29.326Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
   }
 }

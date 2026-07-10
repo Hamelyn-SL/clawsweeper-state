@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:38:51.937Z",
-  "updatedAt": "2026-06-29T21:13:06Z",
+  "generatedAt": "2026-07-10T06:36:39.809Z",
+  "updatedAt": "2026-07-10T06:26:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,49 +10,49 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623",
     "state": "open",
     "labels": [
-      "app:supply",
+      "app:admin",
       "priority:p2",
       "feature",
       "triage:done",
       "epic:revision-v3"
     ],
     "createdAt": "2026-06-23T17:19:08Z",
-    "updatedAt": "2026-06-29T21:13:06Z"
+    "updatedAt": "2026-07-10T06:26:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should Review V3 productivity aggregation be implemented as BigQuery fact/mart tables derived from orders.products[].reviewV3Session, and where should reviewerEmail be persisted for per-operator metrics?",
-  "rationale": "The issue explicitly leaves the aggregation model undefined, and the current evidence shows a real contract choice between deriving from order-level reviewer data or sealing operator identity in the Review V3 session/steps.",
+  "question": "¿La agregación de Revisión V3 debe sellar `reviewerEmail` en cada sesión/step o aceptar `orders.reviewer` como fuente de operario para el mart diario?",
+  "rationale": "La elección cambia el contrato persistido y la semántica del agregado por operario/día; no es una reparación mecánica que ClawSweeper deba decidir por su cuenta.",
   "options": [
     {
-      "title": "Use BigQuery fact/mart with sealed reviewer identity",
-      "body": "Persist reviewerEmail in the Review V3 contract, then build a step-grain fact table and daily mart without expanding opProductivity beyond compatibility reporting.",
+      "title": "Sellar reviewer en la sesión/step",
+      "body": "Añade identidad explícita al grano analítico y evita ambigüedad si un lote cambia de operario o se reanuda.",
       "recommended": true
     },
     {
-      "title": "Extend opProductivity for phase analytics",
-      "body": "Fold phase metrics into the existing productivity collection, trading faster UI reuse for a mixed operational/analytics data model.",
+      "title": "Usar `orders.reviewer` como fuente",
+      "body": "Reduce cambios de contrato ahora, pero el agregado hereda la suposición de un único operario por lote.",
       "recommended": false
     },
     {
-      "title": "Defer until EPIC branch lands on dev",
-      "body": "Keep the issue open until Review V3 session code is on dev, then decide against the final merged contract.",
+      "title": "Aplazar la analítica",
+      "body": "Mantiene solo `opProductivity` hasta que Revisión V3 llegue a `dev` y haya datos reales para validar el modelo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Use BigQuery fact/mart with sealed reviewer identity",
-    "body": "Persist reviewerEmail in the Review V3 contract, then build a step-grain fact table and daily mart without expanding opProductivity beyond compatibility reporting.",
+    "title": "Sellar reviewer en la sesión/step",
+    "body": "Añade identidad explícita al grano analítico y evita ambigüedad si un lote cambia de operario o se reanuda.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "He owns the issue context and current productivity/data-platform history most directly connected to the compatibility decision.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Es el mejor candidato por el historial de backend/datos de Revisión V3 y `opProductivity`.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6623.md",
-    "reviewedAt": "2026-07-07T23:38:51.937Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-10T06:36:39.809Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
   }
 }
