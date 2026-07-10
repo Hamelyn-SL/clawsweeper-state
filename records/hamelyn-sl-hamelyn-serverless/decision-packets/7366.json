@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T13:43:03.341Z",
-  "updatedAt": "2026-07-10T13:23:03Z",
+  "generatedAt": "2026-07-10T18:28:03.866Z",
+  "updatedAt": "2026-07-10T14:05:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/L",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 message-delivery",
-      "merge-risk: 🚨 automation"
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-07-10T13:19:44Z",
-    "updatedAt": "2026-07-10T13:23:03Z",
+    "updatedAt": "2026-07-10T14:05:46Z",
     "headSha": "6c4ebaa4dd18aaa8ec0f3e7401cbdf197299e28a"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse el cambio de política del reminder para mostrar tablas agrupadas sin menciones directas y con `daily_summary` de todas las PRs abiertas?",
-  "rationale": "El PR no solo reformatea el mensaje; también cambia quién aparece y cómo se activa la atención del equipo en Slack, así que conviene que el owner del workflow confirme esa dirección tras corregir los defectos funcionales.",
+  "question": "¿Debe aceptarse el cambio operativo de mostrar tablas agrupadas sin menciones directas y con `daily_summary` de todas las PRs abiertas?",
+  "rationale": "El PR no solo cambia formato: altera qué PRs se destacan y cómo el equipo recibe señales de revisión en Slack, así que necesita confirmación del owner del workflow además de fixes funcionales.",
   "options": [
     {
-      "title": "Aceptar la nueva política tras fixes",
-      "body": "Mantener tablas agrupadas y estados nuevos, pero preservar el contrato de `stale_reminder`, corregir enlaces/truncación y exigir prueba real del mensaje enviado.",
+      "title": "Aceptar tras fixes",
+      "body": "Mantener tablas y estados nuevos, pero corregir filtro, truncación y enlaces antes de exigir prueba real del mensaje enviado.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a reformato visual",
-      "body": "Conservar menciones y selección anterior, aplicando solo una presentación más legible para reducir el cambio de comportamiento.",
+      "title": "Limitar a reformato visual",
+      "body": "Conservar la selección y semántica anterior del reminder, aplicando solo una presentación más legible.",
       "recommended": false
     },
     {
-      "title": "Pausar el PR",
-      "body": "Esperar a que el equipo defina cómo quiere recibir avisos de PR antes de cambiar la automatización compartida.",
+      "title": "Pausar dirección",
+      "body": "Esperar a que el equipo confirme la política de avisos antes de cambiar la automatización compartida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la nueva política tras fixes",
-    "body": "Mantener tablas agrupadas y estados nuevos, pero preservar el contrato de `stale_reminder`, corregir enlaces/truncación y exigir prueba real del mensaje enviado.",
+    "title": "Aceptar tras fixes",
+    "body": "Mantener tablas y estados nuevos, pero corregir filtro, truncación y enlaces antes de exigir prueba real del mensaje enviado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien aparece con más historial en el workflow y ya figura como reviewer asignado para este PR.",
+    "reason": "Tiene el historial más claro en este workflow y ya figura como reviewer solicitado para este PR.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7366.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7366#issuecomment-4936107683",
-    "reviewedAt": "2026-07-10T13:43:03.341Z",
-    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+    "reviewedAt": "2026-07-10T18:28:03.866Z",
+    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }

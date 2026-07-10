@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T10:08:18.522Z",
-  "updatedAt": "2026-07-10T09:52:34Z",
+  "generatedAt": "2026-07-10T18:26:26.130Z",
+  "updatedAt": "2026-07-10T11:40:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 security-boundary"
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot"
     ],
     "createdAt": "2026-07-10T07:44:52Z",
-    "updatedAt": "2026-07-10T09:52:34Z",
-    "headSha": "918a29104c4bdcac31b42f646e352406c477171f"
+    "updatedAt": "2026-07-10T11:40:33Z",
+    "headSha": "78413058f6c012fc31abbf503f0a9c12986b9b47"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Acepta el equipo cubrir `PUT /api/v5/order-sell/cancel/guest` con una regla externa de Vercel ya probada, o debe añadirse rate limit dentro del código antes de mergear?",
-  "rationale": "La ruta nueva muta pedidos sin sesión; automatización no puede verificar la configuración privada de Vercel ni decidir si esa frontera externa basta como control de seguridad.",
+  "question": "¿Debe `/api/v5/order-sell/cancel/guest` depender de una regla externa de firewall/rate limit de Vercel demostrada, o debe añadirse un limiter en código antes de mergear?",
+  "rationale": "El PR introduce una ruta sin sesión que cambia estado de pedidos y stock; ClawSweeper puede detectar el riesgo, pero no puede verificar por sí solo la configuración operativa externa ni decidir la política de seguridad aceptable.",
   "options": [
     {
-      "title": "Exigir prueba de firewall de Vercel",
-      "body": "El PR puede avanzar si se aporta evidencia redactada de que `/api/v5/order-sell/cancel/guest` está cubierto por rate limit efectivo antes de producción.",
+      "title": "Exigir prueba de firewall/rate limit",
+      "body": "Antes de mergear, aportar evidencia redactada de que Vercel cubre explícitamente `/api/v5/order-sell/cancel/guest` y mantener el código como está salvo la corrección documental.",
       "recommended": true
     },
     {
       "title": "Añadir rate limit en código",
-      "body": "El PR mantiene la protección dentro del repo y reduce dependencia de configuración externa, a costa de una pequeña implementación adicional.",
+      "body": "Implementar un limiter server-side para esta ruta guest y validarlo junto con el flujo de cancelación real, reduciendo dependencia de configuración externa.",
       "recommended": false
     },
     {
       "title": "Pausar la feature guest",
-      "body": "El equipo puede dejar la cancelación guest fuera hasta decidir una política común para mutaciones ecommerce sin sesión.",
+      "body": "Dejar fuera la ruta guest destructiva y mantener solo refactor/UI no destructiva hasta que el equipo cierre la política de protección.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir prueba de firewall de Vercel",
-    "body": "El PR puede avanzar si se aporta evidencia redactada de que `/api/v5/order-sell/cancel/guest` está cubierto por rate limit efectivo antes de producción.",
+    "title": "Exigir prueba de firewall/rate limit",
+    "body": "Antes de mergear, aportar evidencia redactada de que Vercel cubre explícitamente `/api/v5/order-sell/cancel/guest` y mantener el código como está salvo la corrección documental.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es quien ya revisó el PR y formuló el bloqueo concreto sobre firewall/rate-limit para esta ruta.",
+    "reason": "Ya revisó el PR y formuló el bloqueo de rate limit específico que falta cerrar.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7329.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329#issuecomment-4933399394",
-    "reviewedAt": "2026-07-10T10:08:18.522Z",
-    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+    "reviewedAt": "2026-07-10T18:26:26.130Z",
+    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
