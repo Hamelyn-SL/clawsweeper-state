@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T08:11:20.421Z",
-  "updatedAt": "2026-07-09T07:28:17Z",
+  "generatedAt": "2026-07-10T08:13:13.004Z",
+  "updatedAt": "2026-07-10T07:19:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
       "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-07-07T06:23:18Z",
-    "updatedAt": "2026-07-09T07:28:17Z",
+    "updatedAt": "2026-07-10T07:19:57Z",
     "headSha": "73ac8737f1cf8aa283425eabb46c238d1c82cc99"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿La revisión de pricing considera suficiente la prueba de preservación de comportamiento para fusionar esta refactorización del batch de Group Pricing?",
-  "rationale": "El diff mueve lógica que escribe precios y grupos persistidos; los hallazgos de contrato son mecánicos, pero la aceptación del riesgo de compatibilidad del batch requiere criterio del área.",
+  "question": "¿La revisión de pricing acepta fusionar esta extracción del batch de Group Pricing una vez corregido el contrato BL y aportada prueba real/dry-run redactada?",
+  "rationale": "El PR toca una ruta que persiste grupos y precios; los hallazgos mecánicos son reparables, pero aceptar la equivalencia de comportamiento del batch requiere criterio del área.",
   "options": [
     {
-      "title": "Arreglar contrato BL y pedir prueba real",
-      "body": "Normaliza `isolated`, renombra los tests BL, añade salida redactada de una ejecución representativa y deja que Miguel/David validen el riesgo antes de merge.",
+      "title": "Corregir contrato BL y exigir prueba real",
+      "body": "Normalizar `isolated`, renombrar los tests BL y añadir salida redactada de una ejecución representativa antes de completar la revisión de pricing.",
       "recommended": true
     },
     {
-      "title": "Aceptar tras revisión manual de pricing",
-      "body": "Los reviewers pueden aceptar el riesgo si verifican manualmente que los tests y el dry-run cubren los bordes críticos del batch.",
+      "title": "Aceptar riesgo con revisión de pricing",
+      "body": "Los reviewers pueden fusionar si asumen explícitamente que la aprobación humana y la cobertura de tests bastan para este batch.",
       "recommended": false
     },
     {
-      "title": "Pausar el PR",
-      "body": "Si no hay capacidad para validar la equivalencia de comportamiento, conviene mantenerlo bloqueado hasta poder revisar el batch con datos representativos.",
+      "title": "Pausar hasta validación operativa",
+      "body": "Mantener el PR bloqueado si no hay capacidad para revisar la equivalencia con datos representativos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Arreglar contrato BL y pedir prueba real",
-    "body": "Normaliza `isolated`, renombra los tests BL, añade salida redactada de una ejecución representativa y deja que Miguel/David validen el riesgo antes de merge.",
+    "title": "Corregir contrato BL y exigir prueba real",
+    "body": "Normalizar `isolated`, renombrar los tests BL y añadir salida redactada de una ejecución representativa antes de completar la revisión de pricing.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está pedido como reviewer para este PR XXL y el comentario de asignación lo identifica con experiencia fuerte en pricing/product groups.",
+    "reason": "Ya aprobó el head actual y fue asignado por experiencia fuerte en pricing/product groups.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7068.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7068#issuecomment-4911339082",
-    "reviewedAt": "2026-07-09T08:11:20.421Z",
-    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+    "reviewedAt": "2026-07-10T08:13:13.004Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }

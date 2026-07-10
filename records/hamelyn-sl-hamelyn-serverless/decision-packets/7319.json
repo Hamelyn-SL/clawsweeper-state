@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T06:36:53.113Z",
-  "updatedAt": "2026-07-10T06:23:14Z",
+  "generatedAt": "2026-07-10T08:07:23.748Z",
+  "updatedAt": "2026-07-10T07:08:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "priority:p1",
       "feature",
       "reporter:miguel",
-      "triage:running"
+      "triage:queued"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-10T06:23:14Z"
+    "updatedAt": "2026-07-10T07:08:16Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Esta release de Supply debe ejecutarse ya con el proceso manual actual, o debe esperar a que el workflow EAS de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté corregido y aprobado?",
-  "rationale": "El código puede preparar el bump, pero publicar en stores y decidir el protocolo de release móvil afecta a usuarios existentes, credenciales y disponibilidad real de binarios.",
+  "question": "¿La release de Supply debe ejecutarse ahora de forma manual tras cerrar el alcance acordado, o debe esperar a que el workflow EAS de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté listo?",
+  "rationale": "El código puede preparar el bump, pero publicar builds móviles y decidir el corte exacto afecta a stores, credenciales, timing de usuarios y coordinación del equipo Supply.",
   "options": [
     {
-      "title": "Release manual ahora",
-      "body": "Hacer el bump en una rama acotada, construir/enviar con el proceso actual y comentar la versión final publicada en la issue.",
+      "title": "Release manual tras cerrar scope",
+      "body": "Terminar/verificar las piezas incluidas, hacer el bump a la siguiente versión y publicar con `eas build`/`eas submit` manual, dejando evidencia en la issue.",
       "recommended": true
     },
     {
-      "title": "Esperar al workflow EAS",
-      "body": "Mantener esta issue bloqueada hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 resuelva sus riesgos y pueda encargarse del build/submit.",
+      "title": "Esperar automatización EAS",
+      "body": "Mantener la issue bloqueada hasta que la PR de workflow EAS esté revisada, probada y mergeada para usarla como canal de publicación.",
       "recommended": false
     },
     {
       "title": "Separar bump y publicación",
-      "body": "Preparar el bump por código, pero no mergearlo a `dev` hasta tener los binarios disponibles o un gate operativo claro.",
+      "body": "Preparar una PR solo de versión, pero no tratar la issue como cerrada hasta que existan builds enviados o publicados en stores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Release manual ahora",
-    "body": "Hacer el bump en una rama acotada, construir/enviar con el proceso actual y comentar la versión final publicada en la issue.",
+    "title": "Release manual tras cerrar scope",
+    "body": "Terminar/verificar las piezas incluidas, hacer el bump a la siguiente versión y publicar con `eas build`/`eas submit` manual, dejando evidencia en la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es quien abrió la petición de release y tiene historial directo en el bump anterior de Supply.",
+    "reason": "Es quien abrió la release y acaba de fijar el alcance funcional que entra y queda fuera.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-10T06:36:53.113Z",
-    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+    "reviewedAt": "2026-07-10T08:07:23.748Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }

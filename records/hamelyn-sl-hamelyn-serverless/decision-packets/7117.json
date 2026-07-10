@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T08:36:12.485Z",
-  "updatedAt": "2026-07-09T08:24:27Z",
+  "generatedAt": "2026-07-10T08:07:38.989Z",
+  "updatedAt": "2026-07-10T07:43:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,53 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
+      "triage:pr-opened",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-09T08:24:27Z"
+    "updatedAt": "2026-07-10T07:43:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe ecommerce implementar ahora este rediseño como una única evolución compartida de `CategoryHub`, y qué partes exactas de diseño/copy de la plantilla externa quedan aprobadas?",
-  "rationale": "La ruta técnica es clara, pero la petición define una feature amplia de layout, merchandising y SEO; automatizarla sin decisión de diseño/producto arriesga implementar una interpretación incorrecta.",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327 aterrizar como arreglo parcial sin cerrar esta issue, y se planifica aparte el rediseño completo de las cuatro minihomes?",
+  "rationale": "La issue mezcla una corrección pequeña de enlaces con un rediseño L de ecommerce, copy, SEO y catálogo; automatización no debe decidir si ese alcance se mantiene unido, se divide o se reespecifica.",
   "options": [
     {
-      "title": "Aprobar rediseño compartido",
-      "body": "Implementar las cuatro minihomes sobre `CategoryHub` con subcomponentes comunes y QA visual explícito por breakpoint y `routeKey`.",
+      "title": "Mantener issue abierta y aterrizar el PR parcial",
+      "body": "Mergear o revisar el PR de URLs canónicas quitando el cierre automático, y dejar esta issue abierta para el rediseño grande.",
       "recommended": true
     },
     {
-      "title": "Dividir por fases",
-      "body": "Separar hero/beneficios, catálogo/filtros y SEO/interlinking en PRs revisables si el equipo quiere reducir riesgo de revisión visual.",
+      "title": "Dividir en subissues de diseño",
+      "body": "Crear tareas separadas para hero/buscador, beneficios, catálogo, ofertas e interlinking/SEO, dejando esta issue como épica de seguimiento.",
       "recommended": false
     },
     {
-      "title": "Aplazar hasta spec interna",
-      "body": "Mantener las minihomes actuales hasta tener una especificación interna de diseño/copy que sustituya a la plantilla externa.",
+      "title": "Cerrar el alcance grande",
+      "body": "Aceptar solo la corrección de URLs y cerrar la petición de rediseño si producto decide no priorizarla ahora.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar rediseño compartido",
-    "body": "Implementar las cuatro minihomes sobre `CategoryHub` con subcomponentes comunes y QA visual explícito por breakpoint y `routeKey`.",
+    "title": "Mantener issue abierta y aterrizar el PR parcial",
+    "body": "Mergear o revisar el PR de URLs canónicas quitando el cierre automático, y dejar esta issue abierta para el rediseño grande.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Es el candidato más cercano por el trabajo reciente de discovery/interlinking en `CategoryHub`, que es la superficie compartida afectada.",
-    "confidence": "high"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ya aparece como revisor recomendado del PR parcial y tiene señal reciente en componentes de home que la issue pide reutilizar.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-09T08:36:12.485Z",
-    "mainSha": "4b7ad0813396f813822d90a8451b556e31b523cf"
+    "reviewedAt": "2026-07-10T08:07:38.989Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }

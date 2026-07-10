@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T08:13:00.097Z",
+  "updatedAt": "2026-07-10T08:01:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7329,
+    "title": "feat: add guest order cancellation to ecommerce help center",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-10T07:44:52Z",
+    "updatedAt": "2026-07-10T08:01:06Z",
+    "headSha": "918a29104c4bdcac31b42f646e352406c477171f"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿La cancelación guest debe protegerse con rate limit en código o basta con una regla de firewall de Vercel ya aplicada a `/api/v5/order-sell/cancel/guest`?",
+  "rationale": "La PR abre una acción pública que modifica pedidos; el repo no muestra la protección y el propio cuerpo deja esa comprobación como pendiente operativa.",
+  "options": [
+    {
+      "title": "Exigir protección antes de merge",
+      "body": "Añadir rate limit en código o adjuntar evidencia de la regla de Vercel que cubre exactamente este endpoint antes de aprobar la PR.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar firewall externo",
+      "body": "Mergear solo si una persona responsable confirma que la protección externa existe y se mantendrá fuera del repo.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la feature",
+      "body": "Dejar la PR abierta hasta cerrar la decisión de seguridad de la issue enlazada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir protección antes de merge",
+    "body": "Añadir rate limit en código o adjuntar evidencia de la regla de Vercel que cubre exactamente este endpoint antes de aprobar la PR.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ya está solicitado para revisar el endpoint guest y la reutilización de cancelación, que es donde cae esta decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7329.md",
+    "reviewedAt": "2026-07-10T08:13:00.097Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+  }
+}

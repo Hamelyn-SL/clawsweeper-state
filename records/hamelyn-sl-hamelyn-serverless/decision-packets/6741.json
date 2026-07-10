@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:56:04.415Z",
-  "updatedAt": "2026-07-01T06:06:02Z",
+  "generatedAt": "2026-07-10T08:07:04.405Z",
+  "updatedAt": "2026-07-10T07:58:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,49 @@
       "priority:p1",
       "feature",
       "reporter:victor",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
-    "updatedAt": "2026-07-01T06:06:02Z"
+    "updatedAt": "2026-07-10T07:58:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should this PDP layout update land as one coordinated feature PR, or should maintainers split the author, recommendation, breadcrumb, copy, and dimensions work first?",
-  "rationale": "The requested UI is clear, but the work crosses layout, copy by product type, author enrichment, recommendation ranking, and cache policy, so the delivery boundary needs maintainer intent before repair automation.",
+  "question": "¿Debe esta actualización de PDP entregarse como una única PR de feature o dividirse primero en migas/detalles/textos, bloque de autor y carruseles cacheados?",
+  "rationale": "La petición es válida, pero cruza diseño de PDP, enriquecimiento de autor, ranking de recomendaciones y política de caché; automatizarlo sin un límite de entrega puede mezclar decisiones de producto con implementación.",
   "options": [
     {
-      "title": "Split into scoped PDP tasks",
-      "body": "Track breadcrumb/details/copy separately from author enrichment and best-seller caching to reduce review and release risk.",
+      "title": "Dividir en bloques de PDP",
+      "body": "Separar migas/detalles/textos del trabajo de autor y carruseles cacheados reduce el riesgo de revisión y permite cerrar partes independientes.",
       "recommended": true
     },
     {
-      "title": "Implement as one feature PR",
-      "body": "Build the full requested PDP layout in one branch if ecommerce maintainers can provide design and data acceptance criteria up front.",
+      "title": "Una PR coordinada",
+      "body": "Una sola PR puede servir si ecommerce define antes criterios de aceptación de layout, datos, ranking y caché para todos los tipos de producto.",
       "recommended": false
     },
     {
-      "title": "Pause for data/design acceptance",
-      "body": "Keep the issue open but wait for explicit cache, ranking, and visual acceptance criteria before implementation.",
+      "title": "Pausar hasta aceptación visual/datos",
+      "body": "Mantener la issue abierta sin implementación hasta tener una especificación cerrada evita construir una PDP que luego haya que rediseñar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split into scoped PDP tasks",
-    "body": "Track breadcrumb/details/copy separately from author enrichment and best-seller caching to reduce review and release risk.",
+    "title": "Dividir en bloques de PDP",
+    "body": "Separar migas/detalles/textos del trabajo de autor y carruseles cacheados reduce el riesgo de revisión y permite cerrar partes independientes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Recent PDP feature work makes this the strongest available owner for choosing how the layout/data update should be delivered.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Es el candidato con más historial reciente en la PDP y en los cambios de ProductPage C/autor que afectan directamente a esta decisión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741#issuecomment-4910171087",
-    "reviewedAt": "2026-07-07T23:56:04.415Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-10T08:07:04.405Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }

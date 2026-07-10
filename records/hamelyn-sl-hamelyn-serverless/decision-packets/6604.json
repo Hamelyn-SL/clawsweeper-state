@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:41:32.423Z",
-  "updatedAt": "2026-07-07T23:23:32Z",
+  "generatedAt": "2026-07-10T08:08:32.858Z",
+  "updatedAt": "2026-07-10T07:42:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,52 @@
       "priority:p1",
       "reporter:jesus",
       "feature",
-      "triage:done",
+      "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-07T23:23:32Z"
+    "updatedAt": "2026-07-10T07:42:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the public ecommerce catalog expand to a 30,000-product pagination window for SEO now, or should BL-ecommerce-catalog keep the current 500-result window and lower the API cap?",
-  "rationale": "Both directions are represented by open issues, and the 30,000-product path has SEO, latency, cost, and BL-spec implications that automation should not choose silently.",
+  "question": "¿Debe el catálogo público expandir ahora la ventana SEO a 30.000 productos, o debe conservarse la ventana real de 500 resultados y ajustar la API como plantea `https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7150`?",
+  "rationale": "Hay dos issues abiertas con direcciones incompatibles, y la elección afecta a SEO, coste de Atlas Search, latencia, caché y specs de BL; no es una reparación técnica que ClawSweeper deba elegir en silencio.",
   "options": [
     {
-      "title": "Confirm 30,000 SEO phase",
-      "body": "Implement the coordinated cap increase and retarget or close the conflicting BL issue so the product direction is unambiguous.",
+      "title": "Aprobar fase SEO de 30.000",
+      "body": "Implementar el aumento coordinado y reorientar o cerrar la issue opuesta para dejar una dirección de producto única.",
       "recommended": true
     },
     {
-      "title": "Keep the 500-result window",
-      "body": "Treat this request as superseded by the BL catalog cap work and update this issue with the SEO tradeoff.",
+      "title": "Mantener ventana de 500",
+      "body": "Usar la issue BL opuesta como canonical técnica y documentar aquí la contrapartida SEO aceptada por producto.",
       "recommended": false
     },
     {
-      "title": "Defer to BL F2 validation",
-      "body": "Pause implementation until the BL-ecommerce-catalog owner validates the pagination rule and monitoring requirements.",
+      "title": "Pausar hasta F2 de BL",
+      "body": "Esperar a la validación formal de Public Catalog antes de tocar límites compartidos de búsqueda y paginación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirm 30,000 SEO phase",
-    "body": "Implement the coordinated cap increase and retarget or close the conflicting BL issue so the product direction is unambiguous.",
+    "title": "Aprobar fase SEO de 30.000",
+    "body": "Implementar el aumento coordinado y reorientar o cerrar la issue opuesta para dejar una dirección de producto única.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "The BL catalog parent issue identifies this handle as owner, and the conflicting cap issue was created from that validation path.",
+    "reason": "Es el owner nombrado del bloque Public Catalog y abrió la issue relacionada que expresa la alternativa de 500 resultados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604#issuecomment-4910069554",
-    "reviewedAt": "2026-07-07T23:41:32.423Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-10T08:08:32.858Z",
+    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:07:14.591Z",
+  "generatedAt": "2026-07-10T08:07:15.334Z",
   "updatedAt": "2026-07-10T07:56:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -28,41 +28,40 @@
     "createdAt": "2026-07-08T09:17:43Z",
     "updatedAt": "2026-07-10T07:56:04Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse una cancelación guest pública basada en `codeIdentifier` + email mediante https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329 y con qué garantía explícita de rate limit/anti-enumeración?",
-  "rationale": "La petición reduce fricción real, pero convierte una acción sensible de autenticada a pública; esa frontera no debe resolverse como cierre automático antes de la revisión del PR candidato.",
+  "question": "¿Debe aprobarse el autoservicio de cancelación guest como mutación pública con verificación pedido/email y protección anti-abuso equivalente al flujo de incidencias?",
+  "rationale": "El comportamiento pedido es útil pero cambia una operación sensible de pedido/stock desde un flujo autenticado a uno guest; la decisión de producto y seguridad no puede resolverse solo con inspección de código.",
   "options": [
     {
-      "title": "Revisar y mergear el PR acotado",
-      "body": "Validar el endpoint guest, rate limit/firewall, 404 indistinguible, estados cancelables y regresión del flujo autenticado antes de cerrar la issue por merge.",
+      "title": "Revisar y landear el PR candidato",
+      "body": "Validar rate limit/firewall, UX y regresión del flujo autenticado en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329 y cerrar esta issue al merge.",
       "recommended": true
     },
     {
-      "title": "Pedir cambios de seguridad/UX",
-      "body": "Mantener la issue abierta y bloquear el PR hasta que la protección anti-abuso y el fallback a incidencia estén probados.",
+      "title": "Pedir endurecimiento antes de merge",
+      "body": "Mantener el PR abierto pero exigir protección explícita anti fuerza bruta o prueba operativa de firewall antes de aceptar la nueva ruta guest.",
       "recommended": false
     },
     {
-      "title": "Aplazar la feature",
-      "body": "Mantener la cancelación guest como incidencia manual si producto decide no exponer una mutación pública ahora.",
+      "title": "No exponer cancelación guest todavía",
+      "body": "Mantener la incidencia manual para invitados si el equipo no quiere abrir una mutación pública de cancelación con solo pedido/email.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar y mergear el PR acotado",
-    "body": "Validar el endpoint guest, rate limit/firewall, 404 indistinguible, estados cancelables y regresión del flujo autenticado antes de cerrar la issue por merge.",
+    "title": "Revisar y landear el PR candidato",
+    "body": "Validar rate limit/firewall, UX y regresión del flujo autenticado en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329 y cerrar esta issue al merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Figura como reviewer asignado para validar el nuevo endpoint guest y la reutilización de cancelación en el PR candidato.",
+    "person": "JavierHamelyn",
+    "reason": "Tiene la señal más fuerte en el historial del flujo guest de incidencias y del área postventa de ecommerce que esta feature reutiliza.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916322367",
-    "reviewedAt": "2026-07-10T08:07:14.591Z",
+    "reviewedAt": "2026-07-10T08:07:15.334Z",
     "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
 }
