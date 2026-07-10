@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T18:25:36.940Z",
+  "generatedAt": "2026-07-10T18:30:04.888Z",
   "updatedAt": "2026-07-10T15:00:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,11 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374",
     "state": "open",
     "labels": [
-      "size/S",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 other"
+      "size/S"
     ],
     "createdAt": "2026-07-10T14:57:18Z",
     "updatedAt": "2026-07-10T15:00:38Z",
@@ -22,39 +18,38 @@
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se debe promover ahora a producción el cambio de bypass de Stripe incluido desde `dev`, o esperar a una prueba real del checkout con residuo de `0.01` antes de mergear a `master`?",
-  "rationale": "La PR es técnicamente pequeña y está alineada con el bug cerrado, pero el merge a `master` activa producción y el propio PR incluido declara que no se ejecutó un checkout end-to-end con Stripe.",
+  "question": "¿Debe promoverse ahora a producción el fix de bypass de Stripe para cupones con residuo de `0.01`?",
+  "rationale": "El diff parece coherente y ya está en `dev`, pero el PR cambia una decisión de cobro y la evidencia disponible no incluye ejecución real del checkout.",
   "options": [
     {
-      "title": "Esperar prueba real",
-      "body": "Pedir una ejecución real o transcript redaccionado del checkout residual y mergear después si confirma el comportamiento esperado.",
+      "title": "Pedir prueba real antes de mergear",
+      "body": "Validar en staging un checkout con cupón residual de `0.01` y adjuntar salida, captura o logs redactados antes de desplegar a `master`.",
       "recommended": true
     },
     {
-      "title": "Mergear con riesgo aceptado",
-      "body": "Un maintainer puede aceptar el riesgo limitado por el guard de `0.01` si necesita desplegar ya el fix a producción.",
+      "title": "Desplegar con riesgo aceptado",
+      "body": "Mergear el PR a `master` aceptando que la prueba disponible es estática y que el primer ejercicio real completo será producción.",
       "recommended": false
     },
     {
-      "title": "Pausar la promoción",
-      "body": "Cerrar o pausar esta PR si el release de producción debe agrupar más cambios o esperar una ventana operativa.",
+      "title": "Pausar y regenerar release",
+      "body": "Cerrar o dejar aparcado este corte si se quieren agrupar más cambios o esperar a una ventana de despliegue distinta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar prueba real",
-    "body": "Pedir una ejecución real o transcript redaccionado del checkout residual y mergear después si confirma el comportamiento esperado.",
+    "title": "Pedir prueba real antes de mergear",
+    "body": "Validar en staging un checkout con cupón residual de `0.01` y adjuntar salida, captura o logs redactados antes de desplegar a `master`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Mergeó la PR incluida y aparece como el revisor con más contexto de checkout para decidir el release del cambio.",
+    "reason": "Mergeó el fix en `dev` y tiene contexto reciente del checkout afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7374.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374#issuecomment-4938365934",
-    "reviewedAt": "2026-07-10T18:25:36.940Z",
+    "reviewedAt": "2026-07-10T18:30:04.888Z",
     "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
