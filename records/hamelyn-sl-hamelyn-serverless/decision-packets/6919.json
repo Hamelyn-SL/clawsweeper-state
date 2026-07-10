@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:30:04.854Z",
-  "updatedAt": "2026-07-08T10:14:36Z",
+  "generatedAt": "2026-07-10T13:39:09.688Z",
+  "updatedAt": "2026-07-10T13:25:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "app:ecommerce",
       "priority:p3",
       "triage:done",
+      "impact:other",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "P3",
-      "impact:other",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T08:48:03Z",
-    "updatedAt": "2026-07-08T10:14:36Z"
+    "updatedAt": "2026-07-10T13:25:19Z"
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "¿Debe corregirse el dato de `countries` ahora con una operación controlada y dejar la limpieza de checkout/BL para el PR de ecommerce, o agrupar todo detrás del borrador https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004?",
-  "rationale": "La causa está confirmada, pero la mutación canónica vive en Mongo y la spec afectada está en una rama BL draft; automatizar un PR de código contra `dev` no resolvería la fuente de verdad ni la secuenciación documental.",
+  "question": "¿Debe ejecutarse ahora el saneamiento controlado de Mongo para ES/Baleares y coordinar la limpieza de código/spec en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365, o esperar a un follow-up posterior a esa PR?",
+  "rationale": "La causa está confirmada, pero el paso decisivo es una escritura controlada en Mongo y la limpieza de código vive en una PR BL abierta; ClawSweeper no debería abrir un PR paralelo ni simular una mutación de datos.",
   "options": [
     {
-      "title": "Corregir datos ahora y limpiar después",
-      "body": "Ejecutar el dry-run y update de ES/Baleares en Mongo ahora, mantener esta issue abierta hasta que un PR posterior retire el fallback y actualice la spec BL renumerada.",
+      "title": "Sanear datos ahora y ajustar la PR abierta",
+      "body": "Ejecutar dry-run/update del valor `^07d{3}$` a `^07\\d{3}$` y luego actualizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 para quitar fallback y test temporal.",
       "recommended": true
     },
     {
-      "title": "Agrupar con el borrador BL",
-      "body": "Esperar a que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 esté listo y resolver allí la corrección documental junto con la limpieza de código, aceptando que el dato siga roto mientras tanto.",
+      "title": "Dejarlo para follow-up",
+      "body": "Mergear o revisar la PR BL como extracción sin cambio de comportamiento y abrir después la limpieza de datos/código cuando haya ventana operativa.",
       "recommended": false
     },
     {
-      "title": "Saneador permanente en código",
-      "body": "Normalizar `match` en el repositorio/API para proteger consumidores nuevos, pero dejaría deuda de datos aunque reduzca el riesgo de lectura en crudo.",
+      "title": "Mantener normalización permanente",
+      "body": "Aceptar el fallback como defensa de consumidores, pero dejaría una deuda de datos explícita y dos fuentes de verdad para los patrones regionales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir datos ahora y limpiar después",
-    "body": "Ejecutar el dry-run y update de ES/Baleares en Mongo ahora, mantener esta issue abierta hasta que un PR posterior retire el fallback y actualice la spec BL renumerada.",
+    "title": "Sanear datos ahora y ajustar la PR abierta",
+    "body": "Ejecutar dry-run/update del valor `^07d{3}$` a `^07\\d{3}$` y luego actualizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 para quitar fallback y test temporal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es quien abrió la divergencia y quien coordina el bloque BL donde se renumeró la regla de checkout afectada.",
+    "reason": "Es quien está coordinando la relocalización BL y quien señaló la spec/test exactos que deben cambiar tras sanear datos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6919.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6919#issuecomment-4911150620",
-    "reviewedAt": "2026-07-08T16:30:04.854Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-10T13:39:09.688Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }
