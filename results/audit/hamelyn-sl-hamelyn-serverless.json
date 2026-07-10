@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-10T01:10:13.602Z",
+  "generatedAt": "2026-07-10T07:50:14.768Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 3,
-    "openItemsSeen": 215
+    "openItemsSeen": 214
   },
   "counts": {
-    "itemRecords": 215,
-    "closedRecords": 99,
-    "missingOpen": 0,
+    "itemRecords": 207,
+    "closedRecords": 115,
+    "missingOpen": 7,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 0,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 7,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -21,11 +21,213 @@
     "staleReviews": 0
   },
   "findings": {
-    "missingOpen": [],
+    "missingOpen": [
+      {
+        "number": 7324,
+        "kind": "issue",
+        "title": "Ecommerce: las nuevas incidencias llegan vacías al listado de eDesk",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p0",
+          "reporter:miguel",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:31:00Z",
+        "updatedAt": "2026-07-10T07:31:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7325,
+        "kind": "issue",
+        "title": "Picking Skypod: modo solo monobultos (solo EXOTEC, pedidos de 1 producto)",
+        "labels": [
+          "app:admin",
+          "priority:p1",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:36:09Z",
+        "updatedAt": "2026-07-10T07:36:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7326,
+        "kind": "issue",
+        "title": "SEUR rechaza etiquetas por códigos postales internacionales rellenados a cinco dígitos",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "priority:p1",
+          "app:infrastructure",
+          "reporter:MiguelHamelyn",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:41:00Z",
+        "updatedAt": "2026-07-10T07:41:15Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7327,
+        "kind": "pull_request",
+        "title": "fix: use canonical category hub links",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:42:05Z",
+        "updatedAt": "2026-07-10T07:46:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7328,
+        "kind": "issue",
+        "title": "Fnac batch retries Product not found as BATCHING_TO_MARKETPLACE",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:44:41Z",
+        "updatedAt": "2026-07-10T07:44:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7329,
+        "kind": "pull_request",
+        "title": "feat: add guest order cancellation to ecommerce help center",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:44:52Z",
+        "updatedAt": "2026-07-10T07:48:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7330,
+        "kind": "pull_request",
+        "title": "feat: wire revision-v3 phase training videos",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:45:04Z",
+        "updatedAt": "2026-07-10T07:47:06Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7324,
+        "kind": "issue",
+        "title": "Ecommerce: las nuevas incidencias llegan vacías al listado de eDesk",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p0",
+          "reporter:miguel",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:31:00Z",
+        "updatedAt": "2026-07-10T07:31:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7325,
+        "kind": "issue",
+        "title": "Picking Skypod: modo solo monobultos (solo EXOTEC, pedidos de 1 producto)",
+        "labels": [
+          "app:admin",
+          "priority:p1",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:36:09Z",
+        "updatedAt": "2026-07-10T07:36:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7326,
+        "kind": "issue",
+        "title": "SEUR rechaza etiquetas por códigos postales internacionales rellenados a cinco dígitos",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "priority:p1",
+          "app:infrastructure",
+          "reporter:MiguelHamelyn",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:41:00Z",
+        "updatedAt": "2026-07-10T07:41:15Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7327,
+        "kind": "pull_request",
+        "title": "fix: use canonical category hub links",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:42:05Z",
+        "updatedAt": "2026-07-10T07:46:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7328,
+        "kind": "issue",
+        "title": "Fnac batch retries Product not found as BATCHING_TO_MARKETPLACE",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:44:41Z",
+        "updatedAt": "2026-07-10T07:44:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7329,
+        "kind": "pull_request",
+        "title": "feat: add guest order cancellation to ecommerce help center",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:44:52Z",
+        "updatedAt": "2026-07-10T07:48:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7330,
+        "kind": "pull_request",
+        "title": "feat: wire revision-v3 phase training videos",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-10T07:45:04Z",
+        "updatedAt": "2026-07-10T07:47:06Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
