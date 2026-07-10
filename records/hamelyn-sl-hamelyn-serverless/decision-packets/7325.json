@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:32:05.207Z",
-  "updatedAt": "2026-07-10T08:17:44Z",
+  "generatedAt": "2026-07-10T10:06:27.540Z",
+  "updatedAt": "2026-07-10T08:56:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,52 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:queued"
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-10T07:36:09Z",
-    "updatedAt": "2026-07-10T08:17:44Z"
+    "updatedAt": "2026-07-10T08:56:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El modo “solo Skypod, solo monobultos” debe ser un checkbox compatible con `exotecProductLimit`, o una variante de modo que ignore ese límite?",
-  "rationale": "Ambas rutas son implementables, pero la elección afecta a cómo operaciones lanzará tandas reales y a la semántica del modal.",
+  "question": "¿El modo “solo Skypod, solo monobultos” debe ser un checkbox compatible con `exotecProductLimit`, o una variante exclusiva que ignore ese límite?",
+  "rationale": "Las dos opciones son implementables, pero cambian la semántica operativa del modal y el tamaño de las tandas reales que se lanzarán desde almacén.",
   "options": [
     {
       "title": "Checkbox compatible con límite",
-      "body": "Añadir un booleano de modo monobulto y aplicar `exotecProductLimit` sobre la selección ya filtrada a EXOTEC de un producto.",
+      "body": "Añadir un booleano independiente que filtre a monobultos EXOTEC y después aplique `exotecProductLimit` si está informado.",
       "recommended": true
     },
     {
       "title": "Modo exclusivo sin límite",
-      "body": "Tratarlo como una variante de picking que ignora `exotecProductLimit` y vacía todos los monobultos EXOTEC elegibles.",
+      "body": "Tratarlo como una variante que selecciona todos los monobultos EXOTEC elegibles y no usa `exotecProductLimit`.",
       "recommended": false
     },
     {
-      "title": "Esperar definición operativa",
-      "body": "Mantener la issue en triage hasta que operaciones confirme volumen esperado e interacción con límites.",
+      "title": "Esperar confirmación operativa",
+      "body": "Mantener la issue en revisión hasta que operaciones confirme volumen esperado y comportamiento de límites.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Checkbox compatible con límite",
-    "body": "Añadir un booleano de modo monobulto y aplicar `exotecProductLimit` sobre la selección ya filtrada a EXOTEC de un producto.",
+    "body": "Añadir un booleano independiente que filtre a monobultos EXOTEC y después aplique `exotecProductLimit` si está informado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "La issue está asignada a este usuario y su historial toca justo los límites y la UI de Picking V3/Skypod.",
-    "confidence": "high"
+    "reason": "La issue está asignada a este usuario y la pregunta pendiente es sobre el comportamiento operativo solicitado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7325.md",
-    "reviewedAt": "2026-07-10T08:32:05.207Z",
-    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+    "reviewedAt": "2026-07-10T10:06:27.540Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }

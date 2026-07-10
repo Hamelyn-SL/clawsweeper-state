@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:25:10.825Z",
-  "updatedAt": "2026-07-10T08:16:49Z",
+  "generatedAt": "2026-07-10T10:06:37.611Z",
+  "updatedAt": "2026-07-10T08:35:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -22,46 +22,45 @@
       "clawsweeper:needs-product-decision",
       "P2",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-10T08:16:49Z"
+    "updatedAt": "2026-07-10T08:35:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta issue seguir abierta como alcance L del rediseño de minihomes aunque se mergee el PR XS de URLs canónicas?",
-  "rationale": "El código muestra que la petición principal sigue sin implementar, pero el PR enlazado usa cierre automático y podría cerrar el paraguas por un subcaso.",
+  "question": "¿Debe el equipo Ecommerce implementar el rediseño completo de las cuatro minihomes como una sola entrega L o dividirlo en PRs por secciones manteniendo esta issue como épica?",
+  "rationale": "El código muestra una superficie clara, pero la issue decide diseño, orden de secciones, copy SEO y comportamiento responsive; no es una reparación estrecha que ClawSweeper deba automatizar sin criterio de producto/diseño.",
   "options": [
     {
-      "title": "Mantener como paraguas del rediseño",
-      "body": "Revisar/mergear el PR de URLs como parcial y conservar esta issue abierta para planificación de Ecommerce/diseño y QA visual.",
+      "title": "Dividir en PRs por secciones",
+      "body": "Mantiene esta issue como épica y permite revisar hero, beneficios, catálogo, ofertas e interlinking con QA visual incremental.",
       "recommended": true
     },
     {
-      "title": "Dividir en issues menores",
-      "body": "Cerrar esta issue solo después de crear issues canónicas separadas para hero, catálogo, beneficios, ofertas, interlinking y SEO.",
+      "title": "Implementar como PR grande",
+      "body": "Agrupa el rediseño completo en una entrega, pero concentra más riesgo visual y de SEO en una sola revisión.",
       "recommended": false
     },
     {
-      "title": "Aceptar cierre por el subcaso",
-      "body": "Mergear el PR actual como cierre completo aunque el layout pedido quede fuera, asumiendo que el rediseño no se va a perseguir ahora.",
+      "title": "Cerrar alcance al PR de URLs",
+      "body": "Solo tendría sentido si producto decide posponer el rediseño y dejar esta issue como solicitud histórica, lo que no encaja con el texto actual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener como paraguas del rediseño",
-    "body": "Revisar/mergear el PR de URLs como parcial y conservar esta issue abierta para planificación de Ecommerce/diseño y QA visual.",
+    "title": "Dividir en PRs por secciones",
+    "body": "Mantiene esta issue como épica y permite revisar hero, beneficios, catálogo, ofertas e interlinking con QA visual incremental.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Es la señal más directa en la historia reciente del ensamblado de `CategoryHub` que habría que rediseñar.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ya aparece como revisor asignado del PR relacionado y puede coordinar si el subcaso de URLs debe separarse del rediseño amplio.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewedAt": "2026-07-10T08:25:10.825Z",
-    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+    "reviewedAt": "2026-07-10T10:06:37.611Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }

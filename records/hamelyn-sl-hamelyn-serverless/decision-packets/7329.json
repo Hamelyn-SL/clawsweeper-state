@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:13:00.097Z",
-  "updatedAt": "2026-07-10T08:01:06Z",
+  "generatedAt": "2026-07-10T10:08:18.522Z",
+  "updatedAt": "2026-07-10T09:52:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/XL",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
       "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-10T07:44:52Z",
-    "updatedAt": "2026-07-10T08:01:06Z",
+    "updatedAt": "2026-07-10T09:52:34Z",
     "headSha": "918a29104c4bdcac31b42f646e352406c477171f"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿La cancelación guest debe protegerse con rate limit en código o basta con una regla de firewall de Vercel ya aplicada a `/api/v5/order-sell/cancel/guest`?",
-  "rationale": "La PR abre una acción pública que modifica pedidos; el repo no muestra la protección y el propio cuerpo deja esa comprobación como pendiente operativa.",
+  "question": "¿Acepta el equipo cubrir `PUT /api/v5/order-sell/cancel/guest` con una regla externa de Vercel ya probada, o debe añadirse rate limit dentro del código antes de mergear?",
+  "rationale": "La ruta nueva muta pedidos sin sesión; automatización no puede verificar la configuración privada de Vercel ni decidir si esa frontera externa basta como control de seguridad.",
   "options": [
     {
-      "title": "Exigir protección antes de merge",
-      "body": "Añadir rate limit en código o adjuntar evidencia de la regla de Vercel que cubre exactamente este endpoint antes de aprobar la PR.",
+      "title": "Exigir prueba de firewall de Vercel",
+      "body": "El PR puede avanzar si se aporta evidencia redactada de que `/api/v5/order-sell/cancel/guest` está cubierto por rate limit efectivo antes de producción.",
       "recommended": true
     },
     {
-      "title": "Aceptar firewall externo",
-      "body": "Mergear solo si una persona responsable confirma que la protección externa existe y se mantendrá fuera del repo.",
+      "title": "Añadir rate limit en código",
+      "body": "El PR mantiene la protección dentro del repo y reduce dependencia de configuración externa, a costa de una pequeña implementación adicional.",
       "recommended": false
     },
     {
-      "title": "Pausar la feature",
-      "body": "Dejar la PR abierta hasta cerrar la decisión de seguridad de la issue enlazada.",
+      "title": "Pausar la feature guest",
+      "body": "El equipo puede dejar la cancelación guest fuera hasta decidir una política común para mutaciones ecommerce sin sesión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir protección antes de merge",
-    "body": "Añadir rate limit en código o adjuntar evidencia de la regla de Vercel que cubre exactamente este endpoint antes de aprobar la PR.",
+    "title": "Exigir prueba de firewall de Vercel",
+    "body": "El PR puede avanzar si se aporta evidencia redactada de que `/api/v5/order-sell/cancel/guest` está cubierto por rate limit efectivo antes de producción.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Ya está solicitado para revisar el endpoint guest y la reutilización de cancelación, que es donde cae esta decisión.",
+    "person": "alexcanHamelyn",
+    "reason": "Es quien ya revisó el PR y formuló el bloqueo concreto sobre firewall/rate-limit para esta ruta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7329.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329#issuecomment-4933399394",
-    "reviewedAt": "2026-07-10T08:13:00.097Z",
-    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+    "reviewedAt": "2026-07-10T10:08:18.522Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }

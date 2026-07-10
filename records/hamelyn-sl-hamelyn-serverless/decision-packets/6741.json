@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:25:16.003Z",
-  "updatedAt": "2026-07-10T08:16:32Z",
+  "generatedAt": "2026-07-10T10:07:14.262Z",
+  "updatedAt": "2026-07-10T08:34:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,45 +20,46 @@
       "clawsweeper:needs-product-decision",
       "P2",
       "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear",
       "impact:ux-friction"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
-    "updatedAt": "2026-07-10T08:16:32Z"
+    "updatedAt": "2026-07-10T08:34:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta issue entregarse como un rediseño completo de PDP en una sola PR, o partirse en bloques independientes de migas/detalles físicos, sección de autor y carruseles cacheados?",
-  "rationale": "La implementación toca experiencia visual, estrategia de ranking, caché y datos enriquecidos; la automatización no puede elegir con seguridad el corte de producto ni la política final de recomendaciones.",
+  "question": "¿Qué alcance exacto debe tener la primera iteración de esta PDP: todo el layout del borrador en una sola PR o una entrega por bloques con ranking/caché definidos antes?",
+  "rationale": "La forma técnica está bastante localizada, pero la relevancia en cascada, duración de caché, invalidación por stock y contenido del autor son criterios de producto/datos que no conviene fijar por automatización.",
   "options": [
     {
-      "title": "Partir en bloques",
-      "body": "Separar migas y detalles físicos, bloque de autor, y carruseles deterministas reduce el riesgo de revisión y permite validar cada fuente de datos por separado.",
+      "title": "Dividir en bloques con ranking confirmado",
+      "body": "Implementar primero breadcrumb, detalles físicos y copy de H2, y dejar autor/recomendaciones/best sellers para una PR con reglas de ranking y caché cerradas.",
       "recommended": true
     },
     {
-      "title": "Rediseño completo",
-      "body": "Una única PR puede alinear mejor el layout final, pero concentraría UI, datos y caché en un cambio grande de mayor riesgo.",
+      "title": "Implementar el layout completo de una vez",
+      "body": "Aceptar una PR más grande que toque PDP, datos server-side, caché, i18n y carruseles, con QA visual y de rendimiento más amplio.",
       "recommended": false
     },
     {
-      "title": "Aplazar carruseles",
-      "body": "Se puede entregar primero la estructura visual y dejar ranking/caché para una issue posterior si producto aún no ha cerrado la estrategia.",
+      "title": "Esperar a estrategia de autores/contenido",
+      "body": "Mantener la issue en producto hasta resolver cómo se obtienen y muestran biografías e información clave de autores dentro de la PDP.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Partir en bloques",
-    "body": "Separar migas y detalles físicos, bloque de autor, y carruseles deterministas reduce el riesgo de revisión y permite validar cada fuente de datos por separado.",
+    "title": "Dividir en bloques con ranking confirmado",
+    "body": "Implementar primero breadcrumb, detalles físicos y copy de H2, y dejar autor/recomendaciones/best sellers para una PR con reglas de ranking y caché cerradas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es la persona con más señal reciente en la implementación de variantes de PDP y routing asociado.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es quien ya acotó el triaje y el siguiente paso de implementación por bloques para esta issue.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
-    "reviewedAt": "2026-07-10T08:25:16.003Z",
-    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+    "reviewedAt": "2026-07-10T10:07:14.262Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }

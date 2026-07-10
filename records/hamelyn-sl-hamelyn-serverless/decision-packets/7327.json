@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T10:09:46.995Z",
+  "updatedAt": "2026-07-10T08:35:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7327,
+    "title": "fix: use canonical category hub links",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish"
+    ],
+    "createdAt": "2026-07-10T07:42:05Z",
+    "updatedAt": "2026-07-10T08:35:56Z",
+    "headSha": "574d51428a92d56d66894a4e8f4b37236014146b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR cerrar el issue amplio de minihome o solo enlazarlo como arreglo parcial de URLs canónicas?",
+  "rationale": "El diff solo corrige enlaces de categorías, mientras que el issue enlazado describe un rediseño amplio con varias secciones pendientes; esa trazabilidad no la puede decidir la revisión automática.",
+  "options": [
+    {
+      "title": "No cerrar el issue amplio",
+      "body": "Recomendado: quitar el cierre automático y mantener el issue abierto para el rediseño pendiente, dejando este PR como fix parcial de SEO/interlinking.",
+      "recommended": true
+    },
+    {
+      "title": "Cerrar el issue con este PR",
+      "body": "Aceptar que el alcance restante ya no se persigue o se gestionará fuera del issue actual.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir el seguimiento",
+      "body": "Mergear este PR y abrir o enlazar un seguimiento explícito para el rediseño que queda fuera del cambio XS.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "No cerrar el issue amplio",
+    "body": "Recomendado: quitar el cierre automático y mantener el issue abierto para el rediseño pendiente, dejando este PR como fix parcial de SEO/interlinking.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor solicitado para este PR y puede decidir la trazabilidad del issue antes del merge.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7327.md",
+    "reviewedAt": "2026-07-10T10:09:46.995Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+  }
+}

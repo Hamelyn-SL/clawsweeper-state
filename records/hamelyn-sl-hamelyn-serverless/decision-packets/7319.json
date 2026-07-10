@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:30:28.442Z",
-  "updatedAt": "2026-07-10T08:17:16Z",
+  "generatedAt": "2026-07-10T10:06:22.583Z",
+  "updatedAt": "2026-07-10T08:35:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,15 +14,22 @@
       "priority:p1",
       "feature",
       "reporter:miguel",
-      "triage:done"
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-10T08:17:16Z"
+    "updatedAt": "2026-07-10T08:35:32Z"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿La release de Supply debe esperar a que se cierre todo el alcance acordado o debe publicarse ahora con un subconjunto explícitamente aprobado?",
-  "rationale": "El repositorio puede preparar el bump, pero elegir el corte de release y publicar en stores afecta a usuarios, credenciales y coordinación operativa del equipo Supply.",
+  "question": "¿La release de Supply debe esperar a cerrar todo el alcance acordado o debe publicarse ahora con un subconjunto explícitamente aprobado?",
+  "rationale": "El código puede preparar el bump, pero elegir el corte de release y ejecutar publicación en stores depende de prioridad operativa, credenciales y aceptación de riesgo del equipo Supply.",
   "options": [
     {
       "title": "Cerrar alcance y publicar manualmente",
@@ -36,7 +43,7 @@
     },
     {
       "title": "Publicar un subconjunto aprobado",
-      "body": "Recortar el alcance de esta release en un comentario de maintainer y publicar solo ese corte, dejando el resto en issues separadas.",
+      "body": "Recortar el alcance de esta release en un comentario de responsable y publicar solo ese corte, moviendo el resto a issues separadas.",
       "recommended": false
     }
   ],
@@ -52,7 +59,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewedAt": "2026-07-10T08:30:28.442Z",
-    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+    "reviewedAt": "2026-07-10T10:06:22.583Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }

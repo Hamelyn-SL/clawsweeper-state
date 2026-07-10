@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T10:14:41.780Z",
-  "updatedAt": "2026-07-10T10:05:31Z",
+  "generatedAt": "2026-07-10T10:13:11.250Z",
+  "updatedAt": "2026-07-10T09:50:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:done"
+      "triage:queued"
     ],
     "createdAt": "2026-07-10T09:49:41Z",
-    "updatedAt": "2026-07-10T10:05:31Z"
+    "updatedAt": "2026-07-10T09:50:00Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba retirar `apps/automations` solo después de migrar o apagar el consumidor n8n de Auto ATC y validar que `/api/v6` cubre las consultas necesarias?",
-  "rationale": "La decisión cruza código, datos sensibles, consumidor externo activo y administración de Vercel/secrets; automatización no puede decidir el momento operativo sin riesgo de cortar el flujo ATC o dejar una brecha abierta.",
+  "question": "¿Se debe migrar el flujo Auto ATC de n8n a una API canónica o descontinuarlo antes de borrar `apps/automations` y el proyecto Vercel `automations`?",
+  "rationale": "La fuente y la triage confirman que la superficie es sensible, pero también que tiene tráfico real; el orden de corte depende de una decisión operativa fuera del repo.",
   "options": [
     {
-      "title": "Migrar y retirar en dos fases",
-      "body": "Primero mover n8n a `/api/v6` con PATs/scopes y prueba real, luego borrar `apps/automations` y apagar Vercel/secrets en una ventana controlada.",
+      "title": "Migrar antes de borrar",
+      "body": "Coordinar un reemplazo en API v6/admin con scopes, auditoría y prueba de corte antes de retirar Vercel.",
       "recommended": true
     },
     {
-      "title": "Retirar ya y asumir corte",
-      "body": "Eliminar la app y el proyecto Vercel de inmediato reduce superficie, pero puede romper el flujo Auto ATC si aún depende del host actual.",
+      "title": "Descontinuar el flujo",
+      "body": "Si negocio confirma que Auto ATC ya no se necesita, apagar n8n y ejecutar una retirada más directa de app, Vercel y secrets externos.",
       "recommended": false
     },
     {
-      "title": "Mantener temporalmente con hardening",
-      "body": "Endurecer `apps/automations` como puente reduce riesgo inmediato, pero prolonga una API paralela que el issue quiere retirar.",
+      "title": "Endurecer temporalmente",
+      "body": "Si la retirada se retrasa, abrir trabajo separado para reducir exposición sin cambiar todavía el contrato del consumidor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migrar y retirar en dos fases",
-    "body": "Primero mover n8n a `/api/v6` con PATs/scopes y prueba real, luego borrar `apps/automations` y apagar Vercel/secrets en una ventana controlada.",
+    "title": "Migrar antes de borrar",
+    "body": "Coordinar un reemplazo en API v6/admin con scopes, auditoría y prueba de corte antes de retirar Vercel.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado al issue y aparece como propietario reciente tanto de la superficie actual como de la API v6 de reemplazo.",
+    "reason": "Es el owner operativo más claro por asignación de la issue e historia de `apps/automations`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7343.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7343#issuecomment-4934298759",
-    "reviewedAt": "2026-07-10T10:14:41.780Z",
+    "reviewedAt": "2026-07-10T10:13:11.250Z",
     "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }
