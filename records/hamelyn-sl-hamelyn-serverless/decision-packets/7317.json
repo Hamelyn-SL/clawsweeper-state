@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T06:14:44.378Z",
+  "generatedAt": "2026-07-10T06:16:30.990Z",
   "updatedAt": "2026-07-10T05:58:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,53 +14,45 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:done",
-      "P2",
-      "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "triage:done"
     ],
     "createdAt": "2026-07-10T05:45:42Z",
     "updatedAt": "2026-07-10T05:58:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Infra confirma que Blacksmith está habilitado con billing/permisos para este repositorio y qué 2-3 workflows deben entrar en el piloto inicial?",
-  "rationale": "La edición de código es pequeña, pero la seguridad operativa depende de una decisión externa al repo y de escoger un piloto medible sin romper crons productivos.",
+  "question": "¿Debe Infra habilitar Blacksmith para este repositorio y patrocinar el piloto en los workflows `Amazon Report Sync` y `Upload Google Merchant Countries`?",
+  "rationale": "El cambio de código es pequeño, pero depende de billing/permisos externos y puede afectar crons productivos si el runner no está disponible.",
   "options": [
     {
-      "title": "Confirmar y pilotar Amazon + Countries",
-      "body": "Validar Blacksmith en el repo y abrir una PR pequeña para `Amazon Report Sync` y `Upload Google Merchant Countries`, dejando Spain/US como control o tercer candidato opcional.",
+      "title": "Confirmar Blacksmith y pilotar",
+      "body": "Habilitar la integración/billing y abrir una PR limitada a los workflows piloto con medición de runs reales.",
       "recommended": true
     },
     {
-      "title": "Aplazar hasta tener cuenta/billing",
-      "body": "Mantener la issue abierta sin PR hasta que Infra confirme que los runners existen y pueden ejecutar jobs programados con secrets/cache.",
+      "title": "Aplazar el piloto",
+      "body": "Mantener `ubuntu-latest` mientras el coste de CI no justifique activar otro proveedor de runners.",
       "recommended": false
     },
     {
-      "title": "No migrar por ahora",
-      "body": "Cerrar la línea de trabajo si el ahorro esperado no compensa el riesgo operativo o la gestión de otro proveedor de runners.",
+      "title": "Optimizar setup en GitHub-hosted",
+      "body": "Atacar primero caché, instalación y build del monorepo sin introducir un runner externo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y pilotar Amazon + Countries",
-    "body": "Validar Blacksmith en el repo y abrir una PR pequeña para `Amazon Report Sync` y `Upload Google Merchant Countries`, dejando Spain/US como control o tercer candidato opcional.",
+    "title": "Confirmar Blacksmith y pilotar",
+    "body": "Habilitar la integración/billing y abrir una PR limitada a los workflows piloto con medición de runs reales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el autor/asignado de la issue y puede coordinar la confirmación externa que bloquea el piloto.",
+    "reason": "Es el assignee actual y el bloqueo principal es una confirmación externa de infraestructura, no una decisión de implementación local.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7317.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7317#issuecomment-4932552214",
-    "reviewedAt": "2026-07-10T06:14:44.378Z",
+    "reviewedAt": "2026-07-10T06:16:30.990Z",
     "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
   }
 }
