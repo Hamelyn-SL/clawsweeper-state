@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:43:03.341Z",
+  "updatedAt": "2026-07-10T13:23:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7366,
+    "title": "feat: format pr review reminder as grouped tables",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7366",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-10T13:19:44Z",
+    "updatedAt": "2026-07-10T13:23:03Z",
+    "headSha": "6c4ebaa4dd18aaa8ec0f3e7401cbdf197299e28a"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse el cambio de política del reminder para mostrar tablas agrupadas sin menciones directas y con `daily_summary` de todas las PRs abiertas?",
+  "rationale": "El PR no solo reformatea el mensaje; también cambia quién aparece y cómo se activa la atención del equipo en Slack, así que conviene que el owner del workflow confirme esa dirección tras corregir los defectos funcionales.",
+  "options": [
+    {
+      "title": "Aceptar la nueva política tras fixes",
+      "body": "Mantener tablas agrupadas y estados nuevos, pero preservar el contrato de `stale_reminder`, corregir enlaces/truncación y exigir prueba real del mensaje enviado.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo a reformato visual",
+      "body": "Conservar menciones y selección anterior, aplicando solo una presentación más legible para reducir el cambio de comportamiento.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el PR",
+      "body": "Esperar a que el equipo defina cómo quiere recibir avisos de PR antes de cambiar la automatización compartida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la nueva política tras fixes",
+    "body": "Mantener tablas agrupadas y estados nuevos, pero preservar el contrato de `stale_reminder`, corregir enlaces/truncación y exigir prueba real del mensaje enviado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien aparece con más historial en el workflow y ya figura como reviewer asignado para este PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7366.md",
+    "reviewedAt": "2026-07-10T13:43:03.341Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

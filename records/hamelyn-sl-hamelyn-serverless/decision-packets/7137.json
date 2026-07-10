@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:35:36.716Z",
-  "updatedAt": "2026-07-08T15:38:12Z",
+  "generatedAt": "2026-07-10T13:34:05.848Z",
+  "updatedAt": "2026-07-10T11:45:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 7137,
-    "title": "BL-ecommerce-coupons-27: coupon validation trusts client-sent shipping cost and regional surplus",
+    "title": "BL-ecommerce-coupons-14: coupon validation trusts client-sent shipping cost and regional surplus",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137",
     "state": "open",
     "labels": [
@@ -18,51 +18,50 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "P2",
+      "clawsweeper:fix-shape-clear",
       "impact:security",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
-    "updatedAt": "2026-07-08T15:38:12Z"
+    "updatedAt": "2026-07-10T11:45:03Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe corregirse primero la prevalidación de cupones con un parche acotado, o debe integrarse dentro del cálculo compartido de envío/total de checkout de `https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920`?",
-  "rationale": "El bug está confirmado, pero la PR centrada ya salió size/L y el límite correcto se solapa con checkout y seguridad; hace falta fijar la secuencia antes de abrir otro arreglo.",
+  "question": "¿Debe corregirse esta prevalidación con un servicio compartido de envío/total que también cubra checkout, o con un parche acotado solo al endpoint de cupones?",
+  "rationale": "El bug está confirmado, pero la corrección toca un límite de confianza sensible y se solapa con el seguimiento de checkout; automatizar otro PR sin fijar esa frontera puede crear lógica duplicada.",
   "options": [
     {
-      "title": "Compartir cálculo con checkout",
-      "body": "Implementar primero un servicio común de envío/total en servidor y usarlo desde cupones y checkout para evitar divergencias.",
+      "title": "Servicio compartido de envío",
+      "body": "Implementar primero una función server-side común y reutilizarla desde cupones y checkout para cerrar el límite de confianza sin divergencias.",
       "recommended": true
     },
     {
       "title": "Parche acotado de cupones",
-      "body": "Corregir solo el endpoint de cupones ahora, aceptando que checkout seguirá con su seguimiento separado.",
+      "body": "Corregir solo la prevalidación de cupones ahora, aceptando que checkout siga con su issue propio y revisando el riesgo de duplicación.",
       "recommended": false
     },
     {
       "title": "Esperar al bloque BL",
-      "body": "Retener el arreglo hasta que el PR BL relacionado esté resuelto y las specs gobiernen el cambio de comportamiento.",
+      "body": "Retener el arreglo hasta que la PR BL de cupones esté resuelta y sus specs gobiernen el cambio de comportamiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Compartir cálculo con checkout",
-    "body": "Implementar primero un servicio común de envío/total en servidor y usarlo desde cupones y checkout para evitar divergencias.",
+    "title": "Servicio compartido de envío",
+    "body": "Implementar primero una función server-side común y reutilizarla desde cupones y checkout para cerrar el límite de confianza sin divergencias.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el owner nombrado del bloque BL de Coupons & Promotions y aparece en el historial reciente de cupones.",
+    "reason": "Es el owner nombrado del bloque BL de cupones y el issue está asignado a él.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4913339931",
-    "reviewedAt": "2026-07-08T16:35:36.716Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-10T13:34:05.848Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }

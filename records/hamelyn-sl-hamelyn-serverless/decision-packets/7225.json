@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T10:06:22.800Z",
-  "updatedAt": "2026-07-10T09:52:44Z",
+  "generatedAt": "2026-07-10T13:39:00.929Z",
+  "updatedAt": "2026-07-10T11:50:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,26 +13,26 @@
       "app:ecommerce",
       "priority:p2",
       "feature",
-      "reporter:AlexDiaz-Hamelyn",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:security",
-      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "impact:ux-friction",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
-    "updatedAt": "2026-07-10T09:52:44Z"
+    "updatedAt": "2026-07-10T11:50:08Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
   "question": "¿Debe aprobarse la cancelación guest como mutación pública protegida por pedido/email, y con qué garantía anti-abuso antes de mergear el PR candidato?",
-  "rationale": "La solución traslada una acción sensible de pedido y stock desde sesión Auth0 a un flujo guest; el repo no puede decidir por sí solo si basta firewall externo o si debe haber rate limit en código.",
+  "rationale": "La solución traslada una acción sensible de pedido y stock desde sesión Auth0 a un flujo guest; automatización no puede verificar la configuración privada de Vercel ni decidir si esa frontera externa basta como control de seguridad.",
   "options": [
     {
       "title": "Aterrizar con protección demostrada",
@@ -56,14 +56,13 @@
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Está solicitado para revisar el endpoint guest y la reutilización de cancelación, que concentran la decisión de seguridad operativa.",
+    "person": "alexcanHamelyn",
+    "reason": "Ya formuló el bloqueo concreto de rate limit/firewall para esta ruta guest destructiva.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916322367",
-    "reviewedAt": "2026-07-10T10:06:22.800Z",
-    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+    "reviewedAt": "2026-07-10T13:39:00.929Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }

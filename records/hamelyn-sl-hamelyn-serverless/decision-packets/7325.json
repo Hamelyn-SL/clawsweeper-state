@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T10:06:27.540Z",
-  "updatedAt": "2026-07-10T08:56:28Z",
+  "generatedAt": "2026-07-10T13:34:38.584Z",
+  "updatedAt": "2026-07-10T12:50:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,50 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-10T07:36:09Z",
-    "updatedAt": "2026-07-10T08:56:28Z"
+    "updatedAt": "2026-07-10T12:50:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El modo “solo Skypod, solo monobultos” debe ser un checkbox compatible con `exotecProductLimit`, o una variante exclusiva que ignore ese límite?",
-  "rationale": "Las dos opciones son implementables, pero cambian la semántica operativa del modal y el tamaño de las tandas reales que se lanzarán desde almacén.",
+  "question": "¿El modo “Solo Skypod · monobultos” debe aceptarse con la semántica propuesta por la PR abierta: selector de modo explícito, `workers=1`, filtro de `products.length === 1` + drawer EXOTEC y composición con `exotecProductLimit`?",
+  "rationale": "La implementación es viable, pero decide cómo se lanzarán tandas reales de almacén y qué pedidos quedan fuera por consolidación o límite Skypod.",
   "options": [
     {
-      "title": "Checkbox compatible con límite",
-      "body": "Añadir un booleano independiente que filtre a monobultos EXOTEC y después aplique `exotecProductLimit` si está informado.",
+      "title": "Aceptar la semántica de la PR",
+      "body": "Revisar la PR abierta como solución canónica y exigir prueba operativa suficiente antes de mergear.",
       "recommended": true
     },
     {
-      "title": "Modo exclusivo sin límite",
-      "body": "Tratarlo como una variante que selecciona todos los monobultos EXOTEC elegibles y no usa `exotecProductLimit`.",
+      "title": "Ajustar la semántica antes del merge",
+      "body": "Pedir cambios en la PR si el límite Skypod, `workers=1` o la exclusión por dirección no reflejan el flujo operativo deseado.",
       "recommended": false
     },
     {
-      "title": "Esperar confirmación operativa",
-      "body": "Mantener la issue en revisión hasta que operaciones confirme volumen esperado y comportamiento de límites.",
+      "title": "Pausar hasta confirmación de operaciones",
+      "body": "Mantener issue y PR abiertas hasta que operaciones confirme volumen esperado y reglas exactas de exclusión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Checkbox compatible con límite",
-    "body": "Añadir un booleano independiente que filtre a monobultos EXOTEC y después aplique `exotecProductLimit` si está informado.",
+    "title": "Aceptar la semántica de la PR",
+    "body": "Revisar la PR abierta como solución canónica y exigir prueba operativa suficiente antes de mergear.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "La issue está asignada a este usuario y la pregunta pendiente es sobre el comportamiento operativo solicitado.",
-    "confidence": "medium"
+    "reason": "Es el asignado de la issue y autor de la PR candidata que fija la semántica propuesta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7325.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7325#issuecomment-4933397063",
-    "reviewedAt": "2026-07-10T10:06:27.540Z",
-    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
+    "reviewedAt": "2026-07-10T13:34:38.584Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }

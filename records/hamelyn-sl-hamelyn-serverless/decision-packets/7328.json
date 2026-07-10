@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T13:42:51.165Z",
+  "updatedAt": "2026-07-10T10:27:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7328,
+    "title": "Fnac batch retries Product not found as BATCHING_TO_MARKETPLACE",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "P2"
+    ],
+    "createdAt": "2026-07-10T07:44:41Z",
+    "updatedAt": "2026-07-10T10:27:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Fnac tratar `Product not found` como fallo permanente/no publicable mientras no exista integración Catalog API, o debe mantenerse como recuperable por un flujo previo de creación/validación de producto?",
+  "rationale": "El cambio técnico es pequeño, pero la decisión depende del contrato operativo con Fnac y puede afectar a cientos de miles de stocks.",
+  "options": [
+    {
+      "title": "Marcar como permanente",
+      "body": "Cambiar la regla de Fnac a `PERMANENT`, añadir cobertura de `classifyRetryPolicy` y planificar aparte el backfill dry-run de la cohorte existente.",
+      "recommended": true
+    },
+    {
+      "title": "Implementar recuperación de catálogo",
+      "body": "Mantener la firma como recuperable solo si se implementa antes un paso de catálogo/validación que pueda resolver `Product not found`.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener estado actual",
+      "body": "Aceptar el coste de reintentos mientras se recoge más evidencia operativa, dejando el bloqueo de publicación sin clasificación permanente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Marcar como permanente",
+    "body": "Cambiar la regla de Fnac a `PERMANENT`, añadir cobertura de `classifyRetryPolicy` y planificar aparte el backfill dry-run de la cohorte existente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el reporter y aparece en historial reciente de APIs de marketplace/Fnac, por lo que es el mejor punto de coordinación funcional disponible.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
+    "reviewedAt": "2026-07-10T13:42:51.165Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+  }
+}

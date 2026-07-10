@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T13:45:42.800Z",
+  "generatedAt": "2026-07-10T13:35:24.742Z",
   "updatedAt": "2026-07-10T12:54:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,54 +14,53 @@
       "app:ecommerce",
       "priority:p2",
       "triage:no-change",
-      "P0",
-      "impact:security",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0"
     ],
     "createdAt": "2026-07-06T08:48:19Z",
     "updatedAt": "2026-07-10T12:54:21Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Debe el checkout rechazar siempre cualquier discrepancia entre importes del cliente y recálculo server-side, o corregir el importe y continuar en casos tolerables como redondeos?",
-  "rationale": "La frontera de seguridad está clara, pero el comportamiento exacto afecta pagos reales, cupones, UX de checkout y posibles pedidos con clientes cacheados.",
+  "question": "¿El checkout debe rechazar con error las discrepancias de importe antes de persistir, o recalcular y sobrescribir los totales enviados por el cliente?",
+  "rationale": "Ambas opciones cierran el límite de confianza, pero cambian la experiencia de compra, la compatibilidad con clientes cacheados y la visibilidad operativa de divergencias de frontend.",
   "options": [
     {
-      "title": "Rechazar fail-closed",
-      "body": "Recalcular en servidor y devolver error cuando `shippingCost`, `newProductsShippingCost` o `totalPrice` no coincidan con la tarifa esperada, dejando el cliente volver a calcular.",
+      "title": "Rechazar discrepancias antes de guardar",
+      "body": "Devolver un 400 claro cuando envío, recargo o total no coincidan con el cálculo del servidor, evitando pagos insuficientes y haciendo visibles clientes obsoletos.",
       "recommended": true
     },
     {
-      "title": "Corregir y continuar",
-      "body": "Recalcular en servidor, sobrescribir los importes persistidos y cobrar el importe servidor, aceptando el riesgo de sorpresa en el cliente si la UI mostró otro total.",
+      "title": "Recalcular y sobrescribir",
+      "body": "Persistir y cobrar los importes calculados por el servidor, reduciendo fricción al cliente pero exigiendo logs/alertas para no ocultar divergencias.",
       "recommended": false
     },
     {
-      "title": "Tolerancia explícita",
-      "body": "Aceptar solo diferencias menores documentadas, por ejemplo redondeo de moneda, y rechazar cualquier discrepancia material.",
+      "title": "Secuenciar tras la PR BL",
+      "body": "Esperar a que `https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365` aporte helpers/specs y aplicar el enforcement encima, aceptando que el runtime sigue abierto hasta entonces.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rechazar fail-closed",
-    "body": "Recalcular en servidor y devolver error cuando `shippingCost`, `newProductsShippingCost` o `totalPrice` no coincidan con la tarifa esperada, dejando el cliente volver a calcular.",
+    "title": "Rechazar discrepancias antes de guardar",
+    "body": "Devolver un 400 claro cuando envío, recargo o total no coincidan con el cálculo del servidor, evitando pagos insuficientes y haciendo visibles clientes obsoletos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la señal más reciente en la ruta de checkout/BL ecommerce donde se debería integrar el contrato de validación.",
-    "confidence": "medium"
+    "person": "PabloMoran34",
+    "reason": "Es el propietario visible del bloque BL que detectó la divergencia y enlazó la spec destino que debe actualizar el fix.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6920.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920#issuecomment-4911151853",
-    "reviewedAt": "2026-07-10T13:45:42.800Z",
+    "reviewedAt": "2026-07-10T13:35:24.742Z",
     "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }

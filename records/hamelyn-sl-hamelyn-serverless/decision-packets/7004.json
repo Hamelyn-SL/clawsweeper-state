@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T08:09:54.718Z",
-  "updatedAt": "2026-07-09T07:27:09Z",
+  "generatedAt": "2026-07-10T13:35:46.522Z",
+  "updatedAt": "2026-07-10T12:47:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
       "merge-risk: 🚨 session-state"
     ],
     "createdAt": "2026-07-06T12:26:53Z",
-    "updatedAt": "2026-07-09T07:27:09Z",
+    "updatedAt": "2026-07-10T12:47:36Z",
     "headSha": "770a4f3154ac6114b83e590f34978f6bc7172670"
   },
-  "lane": "merge_risk",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe esta refactorización preservar obligatoriamente `cartId` en el payload de checkout antes de poder fusionarse?",
-  "rationale": "La PR pretende no cambiar comportamiento, pero el diff elimina un dato de sesión que `dev` usa para asociar y vaciar el carrito exacto tras el pago; aceptar esa pérdida sería una decisión explícita de producto/operación, no una reparación mecánica menor.",
+  "question": "¿Se debe cerrar esta PR ya en favor de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365, o esperar a que la sustituta tenga prueba/revisión suficiente o esté mergeada?",
+  "rationale": "La sustitución parece intencional y corrige los bloqueos conocidos, pero sigue abierta, con preview fallido y sin proof positivo visible; la política de limpieza conservadora no permite cerrarla automáticamente como superseded todavía.",
   "options": [
     {
-      "title": "Restaurar `cartId` antes del merge",
-      "body": "Volver a enviar `cartId` y `cart?._id` en dependencias conserva el contrato actual y permite que el resto de la refactorización BL avance sin cambiar el flujo de sesión.",
+      "title": "Esperar a que la sustituta sea segura",
+      "body": "Mantener esta PR abierta como contexto hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 esté probada y lista o mergeada, y entonces cerrar esta como sustituida.",
       "recommended": true
     },
     {
-      "title": "Aceptar el fallback por usuario",
-      "body": "Los mantenedores podrían decidir que ya no hace falta persistir el carrito exacto, pero entonces la PR debe documentar y probar ese cambio de comportamiento.",
+      "title": "Cerrar manualmente ahora",
+      "body": "Un maintainer puede cerrar esta PR si acepta que la sustituta ya es la única rama canónica aunque aún falten checks o prueba real.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta cerrar secuencia y prueba",
-      "body": "Mantener el draft hasta que el owner desbloquee la secuencia del bloque y exista prueba real de checkout/carrito.",
+      "title": "Reparar esta rama",
+      "body": "Si la sustituta se descarta, habría que restaurar `cartId`, alinear los artefactos BL y aportar proof real en esta PR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restaurar `cartId` antes del merge",
-    "body": "Volver a enviar `cartId` y `cart?._id` en dependencias conserva el contrato actual y permite que el resto de la refactorización BL avance sin cambiar el flujo de sesión.",
+    "title": "Esperar a que la sustituta sea segura",
+    "body": "Mantener esta PR abierta como contexto hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 esté probada y lista o mergeada, y entonces cerrar esta como sustituida.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la señal más fuerte en el historial reciente del contrato de `cartId` y vaciado de carrito que esta PR toca.",
-    "confidence": "high"
+    "person": "PabloMoran34",
+    "reason": "Figura como owner del bloque y publicó el comentario que declara la sustitución por https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7004.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004#issuecomment-4911163862",
-    "reviewedAt": "2026-07-09T08:09:54.718Z",
-    "mainSha": "1586c4457b8fe2cc43a825bb413529c12042355a"
+    "reviewedAt": "2026-07-10T13:35:46.522Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }

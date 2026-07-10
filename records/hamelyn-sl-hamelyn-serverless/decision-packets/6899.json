@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:30:17.963Z",
-  "updatedAt": "2026-07-08T10:13:50Z",
+  "generatedAt": "2026-07-10T13:35:30.083Z",
+  "updatedAt": "2026-07-10T12:47:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,46 +16,45 @@
       "triage:no-change",
       "business-logic",
       "hackathon",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P2",
-      "impact:other"
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-06T07:29:50Z",
-    "updatedAt": "2026-07-08T10:13:50Z"
+    "updatedAt": "2026-07-10T12:47:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la extracción ecommerce pendiente de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 seguir secuenciada como draft detrás del trabajo de dominios, o debe rebasarse y avanzar ahora?",
-  "rationale": "La parte restante existe como PR intencionalmente draft y conflictiva por una decisión de secuenciación del owner, no como una ausencia de implementación sin dueño.",
+  "question": "¿Debe la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 ser la ruta canónica para cerrar el bloque ecommerce restante de esta issue?",
+  "rationale": "El trabajo pendiente ya no necesita una PR nueva de ClawSweeper; requiere validar si el traslado de reglas de `shipping/costs` a `BL-ecommerce-checkout-19..26` es el encuadre definitivo.",
   "options": [
     {
-      "title": "Continuar por la PR draft existente",
-      "body": "Mantener esta issue abierta, actualizar la numeración del checklist y rebasar/revisar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 cuando el owner lo desbloquee.",
+      "title": "Usar PR 7365 como canónica",
+      "body": "Revisar y mergear esa PR si el traslado al dominio ecommerce es el encuadre aceptado para las reglas restantes.",
       "recommended": true
     },
     {
-      "title": "Reencuadrar el alcance",
-      "body": "Si las reglas ecommerce ya no pertenecen a Shipping Costs, mover explícitamente ese trabajo a una nueva issue canónica y ajustar esta issue madre.",
+      "title": "Reencuadrar antes de mergear",
+      "body": "Mantener esta issue abierta y documentar qué dominio o bloque debe absorber las reglas si la PR 7365 no es la ruta correcta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continuar por la PR draft existente",
-    "body": "Mantener esta issue abierta, actualizar la numeración del checklist y rebasar/revisar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7004 cuando el owner lo desbloquee.",
+    "title": "Usar PR 7365 como canónica",
+    "body": "Revisar y mergear esa PR si el traslado al dominio ecommerce es el encuadre aceptado para las reglas restantes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es el owner declarado, asignado actual y autor de la decisión de split/renumeración que dejó la parte ecommerce en la PR draft.",
+    "person": "JavierHamelyn",
+    "reason": "Es el reviewer declarado del bloque y tiene la review request abierta en la PR que cubre el tramo restante.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6899.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6899#issuecomment-4911148383",
-    "reviewedAt": "2026-07-08T16:30:17.963Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-10T13:35:30.083Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }
