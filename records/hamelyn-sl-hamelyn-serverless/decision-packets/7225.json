@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:30:07.209Z",
-  "updatedAt": "2026-07-10T08:20:14Z",
+  "generatedAt": "2026-07-10T10:07:40.677Z",
+  "updatedAt": "2026-07-10T09:52:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,6 +13,7 @@
       "app:ecommerce",
       "priority:p2",
       "feature",
+      "triage:queued",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
@@ -27,42 +28,37 @@
       "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
-    "updatedAt": "2026-07-10T08:20:14Z"
+    "updatedAt": "2026-07-10T09:52:44Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe aprobarse la cancelación guest como mutación pública protegida por pedido/email, y con qué garantía anti-abuso antes de mergear el PR candidato?",
-  "rationale": "La solución mueve una operación sensible de pedido/stock desde sesión Auth0 a un flujo guest; la decisión sobre rate limit/firewall y exposición pública necesita criterio de producto/seguridad.",
+  "question": "¿Debe aceptarse el modelo de cancelación guest basado en `codeIdentifier` + email y qué protección anti fuerza bruta/rate limit debe exigirse antes de mergear https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329?",
+  "rationale": "La feature añade una mutación pública que cambia estado de pedidos y recupera stock; la evidencia de código confirma el hueco, pero el nivel de protección y UX final requieren criterio de producto/seguridad.",
   "options": [
     {
-      "title": "Aterrizar el PR con protección demostrada",
-      "body": "Validar o añadir rate limit para `/api/v5/order-sell/cancel/guest`, revisar regresión del flujo autenticado y cerrar esta issue al merge.",
+      "title": "Revisar y endurecer el PR candidato",
+      "body": "Mantener esta issue abierta y usar el PR abierto como implementación candidata, exigiendo prueba real y confirmación de rate limit antes de mergear.",
       "recommended": true
     },
     {
-      "title": "Mantener guest solo por incidencia",
-      "body": "No exponer todavía la mutación pública y seguir derivando compradores guest a soporte manual.",
-      "recommended": false
-    },
-    {
-      "title": "Pedir una versión más estrecha",
-      "body": "Requerir un PR más pequeño que separe helper backend, endpoint guest y UI si el alcance actual dificulta la revisión.",
+      "title": "Rehacer la solución",
+      "body": "Descartar el PR candidato si el contrato guest no convence y pedir una implementación alternativa con protección explícita en aplicación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar el PR con protección demostrada",
-    "body": "Validar o añadir rate limit para `/api/v5/order-sell/cancel/guest`, revisar regresión del flujo autenticado y cerrar esta issue al merge.",
+    "title": "Revisar y endurecer el PR candidato",
+    "body": "Mantener esta issue abierta y usar el PR abierto como implementación candidata, exigiendo prueba real y confirmación de rate limit antes de mergear.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Está solicitado en el PR candidato para validar endpoint guest y reutilización de cancelación, que es donde cae la decisión de seguridad operativa.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Es la señal más directa sobre la ruta de cancelación y el límite de ownership que debe preservarse al añadir el flujo guest.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewedAt": "2026-07-10T08:30:07.209Z",
-    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
+    "reviewedAt": "2026-07-10T10:07:40.677Z",
+    "mainSha": "60bf09f90f8691effb916f37e29e6ba6d23a68f6"
   }
 }
