@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:26:14.929Z",
-  "updatedAt": "2026-07-08T10:14:42Z",
+  "generatedAt": "2026-07-10T13:45:42.800Z",
+  "updatedAt": "2026-07-10T12:54:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,54 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
-      "triage:done",
-      "P0",
-      "impact:security",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
+      "triage:no-change",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0"
     ],
     "createdAt": "2026-07-06T08:48:19Z",
-    "updatedAt": "2026-07-08T10:14:42Z"
+    "updatedAt": "2026-07-10T12:54:21Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿El checkout debe rechazar las discrepancias de importe antes de persistir, o recalcular y sobrescribir los totales enviados por el cliente?",
-  "rationale": "Ambas opciones cierran el límite de confianza, pero cambian la experiencia del cliente, la compatibilidad con sesiones cacheadas y la observabilidad de bugs de frontend.",
+  "question": "¿Debe el checkout rechazar siempre cualquier discrepancia entre importes del cliente y recálculo server-side, o corregir el importe y continuar en casos tolerables como redondeos?",
+  "rationale": "La frontera de seguridad está clara, pero el comportamiento exacto afecta pagos reales, cupones, UX de checkout y posibles pedidos con clientes cacheados.",
   "options": [
     {
-      "title": "Rechazar discrepancias antes de guardar",
-      "body": "Devolver un 400 claro cuando envío o total no coincidan con el cálculo del servidor, evitando pagos insuficientes y haciendo visibles clientes obsoletos.",
+      "title": "Rechazar fail-closed",
+      "body": "Recalcular en servidor y devolver error cuando `shippingCost`, `newProductsShippingCost` o `totalPrice` no coincidan con la tarifa esperada, dejando el cliente volver a calcular.",
       "recommended": true
     },
     {
-      "title": "Recalcular y sobrescribir",
-      "body": "Persistir y cobrar los valores calculados por el servidor, reduciendo fricción al cliente pero ocultando divergencias salvo que se registren y monitoricen.",
+      "title": "Corregir y continuar",
+      "body": "Recalcular en servidor, sobrescribir los importes persistidos y cobrar el importe servidor, aceptando el riesgo de sorpresa en el cliente si la UI mostró otro total.",
       "recommended": false
     },
     {
-      "title": "Secuenciar tras la extracción BL",
-      "body": "Esperar a que la extracción de reglas compartidas de la PR 7004 se resuelva y aplicar luego el enforcement encima de ese servicio.",
+      "title": "Tolerancia explícita",
+      "body": "Aceptar solo diferencias menores documentadas, por ejemplo redondeo de moneda, y rechazar cualquier discrepancia material.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rechazar discrepancias antes de guardar",
-    "body": "Devolver un 400 claro cuando envío o total no coincidan con el cálculo del servidor, evitando pagos insuficientes y haciendo visibles clientes obsoletos.",
+    "title": "Rechazar fail-closed",
+    "body": "Recalcular en servidor y devolver error cuando `shippingCost`, `newProductsShippingCost` o `totalPrice` no coincidan con la tarifa esperada, dejando el cliente volver a calcular.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es el propietario visible del bloque `BL-shipping-costs` y la decisión afecta directamente a la spec de esta divergencia.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la señal más reciente en la ruta de checkout/BL ecommerce donde se debería integrar el contrato de validación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6920.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920#issuecomment-4911151853",
-    "reviewedAt": "2026-07-08T16:26:14.929Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-10T13:45:42.800Z",
+    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
   }
 }
