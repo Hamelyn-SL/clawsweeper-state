@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-10T06:16:04.641Z",
+  "updatedAt": "2026-07-10T06:11:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7318,
+    "title": "Alta marketplace Amazon Francia (AMAZON_FR)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7318",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-10T06:02:47Z",
+    "updatedAt": "2026-07-10T06:11:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El equipo Marketplace quiere activar `AMAZON_FR` ahora como canal independiente y con qué secuencia exacta de despliegue frente a `AMAZON_ES`?",
+  "rationale": "La implementación no es una corrección local: cambia routing de pedidos, métricas, pricing y datos persistidos, y el propio reporte enumera gates manuales que deben coordinarse antes de activar el cron.",
+  "options": [
+    {
+      "title": "Coordinar alta completa por fases",
+      "body": "Mantener la issue abierta y preparar una PR de código con checklist operativo bloqueante para separar ES, crear `mk_amazonFr` y activar FR cuando datos/config estén listos.",
+      "recommended": true
+    },
+    {
+      "title": "Aplazar el canal FR",
+      "body": "Mantener las ventas francesas bajo `AMAZON_ES` hasta que Marketplace confirme capacidad operativa y datos para un canal propio.",
+      "recommended": false
+    },
+    {
+      "title": "Solo documentar el playbook",
+      "body": "Tratar esta petición como dependiente del playbook de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7315 y no iniciar implementación hasta que ese flujo esté validado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar alta completa por fases",
+    "body": "Mantener la issue abierta y preparar una PR de código con checklist operativo bloqueante para separar ES, crear `mk_amazonFr` y activar FR cuando datos/config estén listos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada y aparece en el historial reciente de registry/Amazon MX, el patrón más cercano para esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7318.md",
+    "reviewedAt": "2026-07-10T06:16:04.641Z",
+    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+  }
+}
