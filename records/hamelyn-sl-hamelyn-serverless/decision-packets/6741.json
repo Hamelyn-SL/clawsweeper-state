@@ -15,11 +15,12 @@
       "priority:p1",
       "feature",
       "reporter:victor",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
-      "impact:ux-friction"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
     "updatedAt": "2026-07-10T07:58:41Z"
@@ -57,6 +58,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741#issuecomment-4910171087",
     "reviewedAt": "2026-07-10T08:07:04.405Z",
     "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
   }
