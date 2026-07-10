@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:16:41.354Z",
-  "updatedAt": "2026-07-10T08:10:14Z",
+  "generatedAt": "2026-07-10T08:32:05.207Z",
+  "updatedAt": "2026-07-10T08:17:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,21 +13,15 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:queued",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "triage:queued"
     ],
     "createdAt": "2026-07-10T07:36:09Z",
-    "updatedAt": "2026-07-10T08:10:14Z"
+    "updatedAt": "2026-07-10T08:17:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
   "question": "¿El modo “solo Skypod, solo monobultos” debe ser un checkbox compatible con `exotecProductLimit`, o una variante de modo que ignore ese límite?",
-  "rationale": "El código puede soportar ambas rutas, pero la issue deja abierta la semántica de UX y límites; esa elección afecta a cómo operaciones lanzará tandas reales.",
+  "rationale": "Ambas rutas son implementables, pero la elección afecta a cómo operaciones lanzará tandas reales y a la semántica del modal.",
   "options": [
     {
       "title": "Checkbox compatible con límite",
@@ -41,7 +35,7 @@
     },
     {
       "title": "Esperar definición operativa",
-      "body": "Mantener la issue en triage hasta que operaciones confirme el volumen esperado y la interacción con límites.",
+      "body": "Mantener la issue en triage hasta que operaciones confirme volumen esperado e interacción con límites.",
       "recommended": false
     }
   ],
@@ -51,14 +45,13 @@
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Tiene historial directo en Picking V3 y en la mejora Skypod relacionada de agrupación por cubeta.",
+    "person": "banosdavidhamelyn",
+    "reason": "La issue está asignada a este usuario y su historial toca justo los límites y la UI de Picking V3/Skypod.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7325.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7325#issuecomment-4933397063",
-    "reviewedAt": "2026-07-10T08:16:41.354Z",
+    "reviewedAt": "2026-07-10T08:32:05.207Z",
     "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
   }
 }

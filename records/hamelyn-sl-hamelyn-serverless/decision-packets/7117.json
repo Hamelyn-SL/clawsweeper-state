@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:07:38.989Z",
-  "updatedAt": "2026-07-10T07:43:50Z",
+  "generatedAt": "2026-07-10T08:25:10.825Z",
+  "updatedAt": "2026-07-10T08:16:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,53 +16,52 @@
       "feature",
       "triage:pr-opened",
       "reporter:victor",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:fix-shape-clear",
       "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-10T07:43:50Z"
+    "updatedAt": "2026-07-10T08:16:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327 aterrizar como arreglo parcial sin cerrar esta issue, y se planifica aparte el rediseño completo de las cuatro minihomes?",
-  "rationale": "La issue mezcla una corrección pequeña de enlaces con un rediseño L de ecommerce, copy, SEO y catálogo; automatización no debe decidir si ese alcance se mantiene unido, se divide o se reespecifica.",
+  "question": "¿Debe esta issue seguir abierta como alcance L del rediseño de minihomes aunque se mergee el PR XS de URLs canónicas?",
+  "rationale": "El código muestra que la petición principal sigue sin implementar, pero el PR enlazado usa cierre automático y podría cerrar el paraguas por un subcaso.",
   "options": [
     {
-      "title": "Mantener issue abierta y aterrizar el PR parcial",
-      "body": "Mergear o revisar el PR de URLs canónicas quitando el cierre automático, y dejar esta issue abierta para el rediseño grande.",
+      "title": "Mantener como paraguas del rediseño",
+      "body": "Revisar/mergear el PR de URLs como parcial y conservar esta issue abierta para planificación de Ecommerce/diseño y QA visual.",
       "recommended": true
     },
     {
-      "title": "Dividir en subissues de diseño",
-      "body": "Crear tareas separadas para hero/buscador, beneficios, catálogo, ofertas e interlinking/SEO, dejando esta issue como épica de seguimiento.",
+      "title": "Dividir en issues menores",
+      "body": "Cerrar esta issue solo después de crear issues canónicas separadas para hero, catálogo, beneficios, ofertas, interlinking y SEO.",
       "recommended": false
     },
     {
-      "title": "Cerrar el alcance grande",
-      "body": "Aceptar solo la corrección de URLs y cerrar la petición de rediseño si producto decide no priorizarla ahora.",
+      "title": "Aceptar cierre por el subcaso",
+      "body": "Mergear el PR actual como cierre completo aunque el layout pedido quede fuera, asumiendo que el rediseño no se va a perseguir ahora.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener issue abierta y aterrizar el PR parcial",
-    "body": "Mergear o revisar el PR de URLs canónicas quitando el cierre automático, y dejar esta issue abierta para el rediseño grande.",
+    "title": "Mantener como paraguas del rediseño",
+    "body": "Revisar/mergear el PR de URLs como parcial y conservar esta issue abierta para planificación de Ecommerce/diseño y QA visual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Ya aparece como revisor recomendado del PR parcial y tiene señal reciente en componentes de home que la issue pide reutilizar.",
+    "person": "Alex Cantón",
+    "reason": "Es la señal más directa en la historia reciente del ensamblado de `CategoryHub` que habría que rediseñar.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-10T08:07:38.989Z",
-    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+    "reviewedAt": "2026-07-10T08:25:10.825Z",
+    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
   }
 }

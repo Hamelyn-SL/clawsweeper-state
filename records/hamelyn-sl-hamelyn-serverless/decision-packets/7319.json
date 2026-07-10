@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:15:42.883Z",
-  "updatedAt": "2026-07-10T08:05:26Z",
+  "generatedAt": "2026-07-10T08:30:28.442Z",
+  "updatedAt": "2026-07-10T08:17:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,45 @@
       "priority:p1",
       "feature",
       "reporter:miguel",
-      "triage:done",
-      "P1",
-      "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "triage:done"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-10T08:05:26Z"
+    "updatedAt": "2026-07-10T08:17:16Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Esta release de Supply debe ejecutarse ahora con el proceso manual actual o debe esperar a que el workflow EAS de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté corregido y aprobado?",
-  "rationale": "El código puede preparar un bump, pero publicar builds en stores y decidir el protocolo de release afecta a usuarios existentes, credenciales y disponibilidad real de binarios fuera del repositorio.",
+  "question": "¿La release de Supply debe esperar a que se cierre todo el alcance acordado o debe publicarse ahora con un subconjunto explícitamente aprobado?",
+  "rationale": "El repositorio puede preparar el bump, pero elegir el corte de release y publicar en stores afecta a usuarios, credenciales y coordinación operativa del equipo Supply.",
   "options": [
     {
-      "title": "Release manual ahora",
-      "body": "Hacer el bump acotado, construir y enviar con el proceso manual actual, y dejar evidencia de builds/publicación en la issue.",
+      "title": "Cerrar alcance y publicar manualmente",
+      "body": "Terminar o aceptar explícitamente las piezas incluidas, hacer el bump y publicar con `eas build`/`eas submit`, dejando evidencia en la issue.",
       "recommended": true
     },
     {
-      "title": "Esperar al workflow EAS",
-      "body": "Mantener esta issue abierta hasta que el PR de automatización resuelva sus riesgos y pueda encargarse del build/submit.",
+      "title": "Esperar la automatización EAS",
+      "body": "Mantener esta issue abierta hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté revisada, probada y mergeada como canal de publicación.",
       "recommended": false
     },
     {
-      "title": "Separar bump y publicación",
-      "body": "Preparar el cambio de versión, pero no mergearlo hasta que los binarios estén listos o exista un gate operativo claro.",
+      "title": "Publicar un subconjunto aprobado",
+      "body": "Recortar el alcance de esta release en un comentario de maintainer y publicar solo ese corte, dejando el resto en issues separadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Release manual ahora",
-    "body": "Hacer el bump acotado, construir y enviar con el proceso manual actual, y dejar evidencia de builds/publicación en la issue.",
+    "title": "Cerrar alcance y publicar manualmente",
+    "body": "Terminar o aceptar explícitamente las piezas incluidas, hacer el bump y publicar con `eas build`/`eas submit`, dejando evidencia en la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es quien abrió la release y añadió el alcance operativo acordado; además aparece en el historial del bump previo.",
+    "reason": "Es quien abrió la release y fijó el alcance funcional que entra y queda fuera.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-10T08:15:42.883Z",
+    "reviewedAt": "2026-07-10T08:30:28.442Z",
     "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
   }
 }

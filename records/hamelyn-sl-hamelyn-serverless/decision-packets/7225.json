@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:07:15.334Z",
-  "updatedAt": "2026-07-10T07:56:04Z",
+  "generatedAt": "2026-07-10T08:30:07.209Z",
+  "updatedAt": "2026-07-10T08:20:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,58 +13,56 @@
       "app:ecommerce",
       "priority:p2",
       "feature",
-      "triage:queued",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "reporter:AlexDiaz-Hamelyn",
-      "P2",
-      "impact:security",
-      "impact:ux-friction",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-08T09:17:43Z",
-    "updatedAt": "2026-07-10T07:56:04Z"
+    "updatedAt": "2026-07-10T08:20:14Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe aprobarse el autoservicio de cancelación guest como mutación pública con verificación pedido/email y protección anti-abuso equivalente al flujo de incidencias?",
-  "rationale": "El comportamiento pedido es útil pero cambia una operación sensible de pedido/stock desde un flujo autenticado a uno guest; la decisión de producto y seguridad no puede resolverse solo con inspección de código.",
+  "question": "¿Debe aprobarse la cancelación guest como mutación pública protegida por pedido/email, y con qué garantía anti-abuso antes de mergear el PR candidato?",
+  "rationale": "La solución mueve una operación sensible de pedido/stock desde sesión Auth0 a un flujo guest; la decisión sobre rate limit/firewall y exposición pública necesita criterio de producto/seguridad.",
   "options": [
     {
-      "title": "Revisar y landear el PR candidato",
-      "body": "Validar rate limit/firewall, UX y regresión del flujo autenticado en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329 y cerrar esta issue al merge.",
+      "title": "Aterrizar el PR con protección demostrada",
+      "body": "Validar o añadir rate limit para `/api/v5/order-sell/cancel/guest`, revisar regresión del flujo autenticado y cerrar esta issue al merge.",
       "recommended": true
     },
     {
-      "title": "Pedir endurecimiento antes de merge",
-      "body": "Mantener el PR abierto pero exigir protección explícita anti fuerza bruta o prueba operativa de firewall antes de aceptar la nueva ruta guest.",
+      "title": "Mantener guest solo por incidencia",
+      "body": "No exponer todavía la mutación pública y seguir derivando compradores guest a soporte manual.",
       "recommended": false
     },
     {
-      "title": "No exponer cancelación guest todavía",
-      "body": "Mantener la incidencia manual para invitados si el equipo no quiere abrir una mutación pública de cancelación con solo pedido/email.",
+      "title": "Pedir una versión más estrecha",
+      "body": "Requerir un PR más pequeño que separe helper backend, endpoint guest y UI si el alcance actual dificulta la revisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar y landear el PR candidato",
-    "body": "Validar rate limit/firewall, UX y regresión del flujo autenticado en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7329 y cerrar esta issue al merge.",
+    "title": "Aterrizar el PR con protección demostrada",
+    "body": "Validar o añadir rate limit para `/api/v5/order-sell/cancel/guest`, revisar regresión del flujo autenticado y cerrar esta issue al merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Tiene la señal más fuerte en el historial del flujo guest de incidencias y del área postventa de ecommerce que esta feature reutiliza.",
+    "person": "MiguelHamelyn",
+    "reason": "Está solicitado en el PR candidato para validar endpoint guest y reutilización de cancelación, que es donde cae la decisión de seguridad operativa.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7225.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7225#issuecomment-4916322367",
-    "reviewedAt": "2026-07-10T08:07:15.334Z",
-    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+    "reviewedAt": "2026-07-10T08:30:07.209Z",
+    "mainSha": "96f7ff10931c8d4d15a8cce923f72f85cb7c5f49"
   }
 }
