@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-11T18:41:39.110Z",
-  "updatedAt": "2026-07-11T18:32:45Z",
+  "generatedAt": "2026-07-11T19:48:41.189Z",
+  "updatedAt": "2026-07-11T18:57:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,7 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:queued",
+      "triage:done",
       "P1",
       "impact:other",
       "issue-rating: 🐚 platinum hermit",
@@ -23,43 +23,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-11T18:32:34Z",
-    "updatedAt": "2026-07-11T18:32:45Z"
+    "updatedAt": "2026-07-11T18:57:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Amazon ES resolverse rehidratando filas `mk_amazonEs` para los huérfanos activos o enviando una retirada/cantidad 0 directa desde el snapshot/SP-API?",
-  "rationale": "Las dos rutas corrigen el síntoma, pero implican mutaciones masivas o llamadas externas a Amazon y necesitan la confirmación operativa exigida por AGENTS.md antes de ejecutarse.",
+  "question": "¿Debe Amazon ES resolverse rehidratando filas `mk_amazonEs` mínimas para los huérfanos activos o retirando/cantidad 0 directamente desde SP-API usando el snapshot externo?",
+  "rationale": "Ambas rutas pueden corregir el problema, pero cambian datos internos o listings externos en masa y el repo exige confirmación operativa antes de ejecutarlas.",
   "options": [
     {
       "title": "Dry-run y rehidratación controlada",
-      "body": "Contar la cohorte exacta, mostrar 3 muestras y filtro literal, crear filas mk mínimas para los huérfanos validados y dejar que la retirada canónica procese el estado.",
+      "body": "Contar la cohorte exacta, mostrar 3 muestras y filtro literal, crear filas `mk_amazonEs` mínimas para los huérfanos validados y dejar que la retirada canónica procese el estado.",
       "recommended": true
     },
     {
-      "title": "Feed SP-API directo de cantidad 0",
-      "body": "Usar el snapshot externo y muestras live para retirar directamente en Amazon, aceptando una reconciliación posterior de trazabilidad local.",
+      "title": "Retirada SP-API directa",
+      "body": "Usar snapshot y muestra live para enviar cantidad 0 directamente a Amazon ES, aceptando después una reconciliación local para recuperar trazabilidad.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta nueva muestra live",
-      "body": "Mantener la issue abierta hasta validar varios SKUs con SP-API en una ventana fresca si el equipo prefiere reducir el riesgo de actuar sobre snapshot obsoleto.",
+      "title": "Esperar nueva muestra live",
+      "body": "Mantener la issue abierta hasta validar varios SKUs con SP-API en una ventana fresca antes de elegir remediación masiva.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Dry-run y rehidratación controlada",
-    "body": "Contar la cohorte exacta, mostrar 3 muestras y filtro literal, crear filas mk mínimas para los huérfanos validados y dejar que la retirada canónica procese el estado.",
+    "body": "Contar la cohorte exacta, mostrar 3 muestras y filtro literal, crear filas `mk_amazonEs` mínimas para los huérfanos validados y dejar que la retirada canónica procese el estado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aporta la señal operativa de Amazon ES y tiene historial reciente en el reporte que detecta la cohorte.",
+    "reason": "Es quien aporta la señal operativa concreta y tiene historial reciente en el reporte Amazon que identifica estas cohortes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7379.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7379#issuecomment-4948332519",
-    "reviewedAt": "2026-07-11T18:41:39.110Z",
+    "reviewedAt": "2026-07-11T19:48:41.189Z",
     "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
