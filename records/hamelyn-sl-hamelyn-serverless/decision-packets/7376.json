@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-11T09:12:47.766Z",
+  "generatedAt": "2026-07-11T09:14:50.515Z",
   "updatedAt": "2026-07-11T08:48:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,11 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7376",
     "state": "open",
     "labels": [
-      "size/L",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 security-boundary"
+      "size/L"
     ],
     "createdAt": "2026-07-11T08:41:49Z",
     "updatedAt": "2026-07-11T08:48:28Z",
@@ -22,34 +18,38 @@
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Acepta el equipo de marketplace que el fichero de inventario de Alibris pueda viajar por canal de datos claro solo como fallback ante errores PASV/timeout?",
-  "rationale": "El PR cambia una propiedad de confidencialidad del upload de producción; CI y self-test no pueden decidir si ese riesgo operativo compensa recuperar el catálogo diario.",
+  "question": "¿Acepta mantenimiento que el inventario Alibris use `ftps-passive-clear-data` como fallback automático tras errores PASV/timeout, o debe exigirse otra ruta antes de merge?",
+  "rationale": "El PR cambia deliberadamente la confidencialidad del canal de datos para desbloquear un flujo de producción, y esa decisión no se puede resolver solo con lint o self-test.",
   "options": [
     {
-      "title": "Aceptar fallback acotado",
-      "body": "Se permite `ftps-passive-clear-data` solo para status `13`/`28` con errores PASV/timeout reconocidos, dejando audit por intento y prueba real antes de mergear.",
+      "title": "Exigir prueba real y aprobar el fallback",
+      "body": "Hacer `workflow_dispatch` o esperar el run diario, verificar `filesUploaded=1` y aprobar explícitamente el tradeoff de canal de datos claro para este fichero.",
       "recommended": true
     },
     {
-      "title": "Mantener datos privados",
-      "body": "Se retira el fallback claro y el PR queda limitado a `--ftp-skip-pasv-ip` y mejor diagnóstico hasta tener una alternativa cifrada.",
+      "title": "Mantener solo datos privados",
+      "body": "Retirar el fallback claro y buscar una alternativa FTPS/SFTP que conserve `PROT P` si la política de datos no permite el canal claro.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el merge",
+      "body": "Dejar el PR abierto hasta que AUS o la red permitan reproducir una subida real con suficiente evidencia operacional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar fallback acotado",
-    "body": "Se permite `ftps-passive-clear-data` solo para status `13`/`28` con errores PASV/timeout reconocidos, dejando audit por intento y prueba real antes de mergear.",
+    "title": "Exigir prueba real y aprobar el fallback",
+    "body": "Hacer `workflow_dispatch` o esperar el run diario, verificar `filesUploaded=1` y aprobar explícitamente el tradeoff de canal de datos claro para este fichero.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Ya está asignado por el flujo de revisión como reviewer de área para este cambio sensible en `marketplace-crons`.",
+    "reason": "Es el revisor solicitado en el PR y la asignación automática lo eligió por experiencia reciente en el área afectada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7376.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7376#issuecomment-4944246424",
-    "reviewedAt": "2026-07-11T09:12:47.766Z",
+    "reviewedAt": "2026-07-11T09:14:50.515Z",
     "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
