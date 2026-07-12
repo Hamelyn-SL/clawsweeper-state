@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T15:13:37.100Z",
+  "updatedAt": "2026-07-12T14:53:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7401,
+    "title": "Prune products catalog: 95% of 30M docs have no commercial activity (48GB)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-12T13:55:52Z",
+    "updatedAt": "2026-07-12T14:53:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué contrato de retención debe aplicarse a `products` antes de aligerar o borrar documentos AI sin actividad?",
+  "rationale": "La evidencia justifica actuar, pero el filtro final decide qué catálogo se conserva, qué referencias bloquean borrado, cómo se reconstruye BigQuery y cuánto riesgo de pérdida de datos acepta el negocio.",
+  "options": [
+    {
+      "title": "Fasear retención y poda reversible",
+      "body": "Aprobar primero el contrato, cortar nuevos upserts sin señal y ejecutar `$unset` de textos pesados antes de cualquier `deleteMany` masivo.",
+      "recommended": true
+    },
+    {
+      "title": "Purga completa con lista de exclusión",
+      "body": "Permitir borrado por lotes solo después de anti-joins completos contra `stocks`, `orders`, `ordersells`, `mk_*` y reconstrucción de `mongodata.products`.",
+      "recommended": false
+    },
+    {
+      "title": "Solo cortar crecimiento nuevo",
+      "body": "Posponer la limpieza histórica y limitar el trabajo inicial a impedir que Argos siga creando productos sin señal comercial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fasear retención y poda reversible",
+    "body": "Aprobar primero el contrato, cortar nuevos upserts sin señal y ejecutar `$unset` de textos pesados antes de cualquier `deleteMany` masivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien aportó el contexto operativo y las cifras de impacto; la decisión principal es de retención de catálogo antes que una reparación de línea concreta.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
+    "reviewedAt": "2026-07-12T15:13:37.100Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}
