@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T08:34:57.391Z",
-  "updatedAt": "2026-07-12T08:08:37Z",
+  "generatedAt": "2026-07-12T09:45:11.527Z",
+  "updatedAt": "2026-07-12T09:00:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,51 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374",
     "state": "open",
     "labels": [
-      "size/S",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
+      "size/L",
       "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 other"
     ],
     "createdAt": "2026-07-10T14:57:18Z",
-    "updatedAt": "2026-07-12T08:08:37Z",
-    "headSha": "eeea2581a238fb4b6c0f599a412e376823e77efe"
+    "updatedAt": "2026-07-12T09:00:19Z",
+    "headSha": "13a55e0499c21dd6bfbc01b4b089f856a27af700"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se debe promocionar ahora a producción el cambio de bypass de Stripe para cupones residuales junto con el fix i18n del recomendador?",
-  "rationale": "El código parece acotado y coherente, pero la PR base es una promoción a producción desde `dev` a `master` y falta evidencia real del flujo de pago afectado.",
+  "question": "¿Se debe mergear ahora esta promoción `dev` → `master` con cambios de checkout, i18n y automatizaciones, o esperar a prueba real adicional?",
+  "rationale": "La corrección de código parece acotada, pero publicar a producción toca un flujo de pago y comportamiento operativo de watchers; esa aceptación de release no la puede resolver una revisión automática sin evidencia real.",
   "options": [
     {
       "title": "Aprobar tras prueba real",
-      "body": "Añadir captura, logs o transcript redactado de staging que muestre el checkout con cupón residual omitiendo Stripe y entonces mergear si la release está aceptada.",
+      "body": "Añadir evidencia redactada de staging o producción controlada para el checkout residual, comprobar visualmente el recomendador y observar un run sano de watchers antes de mergear.",
       "recommended": true
     },
     {
-      "title": "Retrasar la promoción",
-      "body": "Dejar el PR abierto hasta tener una ventana de release o una prueba manual de checkout más completa.",
+      "title": "Aceptar riesgo de release",
+      "body": "Un maintainer puede mergear si la urgencia de los fixes compensa la falta de prueba real adjunta y asume vigilancia posterior al despliegue.",
       "recommended": false
     },
     {
-      "title": "Sacar solo el fix i18n",
-      "body": "Si el riesgo de checkout no se quiere asumir ahora, preparar otra promoción más estrecha con solo el namespace `productPage`.",
+      "title": "Dividir la promoción",
+      "body": "Preparar una promoción más estrecha si se quiere publicar solo el fix i18n o separar checkout de automatizaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar tras prueba real",
-    "body": "Añadir captura, logs o transcript redactado de staging que muestre el checkout con cupón residual omitiendo Stripe y entonces mergear si la release está aceptada.",
+    "body": "Añadir evidencia redactada de staging o producción controlada para el checkout residual, comprobar visualmente el recomendador y observar un run sano de watchers antes de mergear.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el merge owner del fix de checkout incluido y el riesgo principal de release está en ese flujo de pago.",
+    "reason": "Es el candidato de revisión ya señalado por el bot y el riesgo principal de release pasa por checkout y las guías operativas incluidas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7374.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374#issuecomment-4938365934",
-    "reviewedAt": "2026-07-12T08:34:57.391Z",
-    "mainSha": "eeea2581a238fb4b6c0f599a412e376823e77efe"
+    "reviewedAt": "2026-07-12T09:45:11.527Z",
+    "mainSha": "13a55e0499c21dd6bfbc01b4b089f856a27af700"
   }
 }
