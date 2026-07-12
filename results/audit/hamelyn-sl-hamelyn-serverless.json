@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T18:55:49.536Z",
+  "generatedAt": "2026-07-12T01:08:10.495Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 199
   },
   "counts": {
-    "itemRecords": 197,
+    "itemRecords": 199,
     "closedRecords": 157,
-    "missingOpen": 2,
+    "missingOpen": 0,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 0,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 0,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -21,67 +21,11 @@
     "staleReviews": 0
   },
   "findings": {
-    "missingOpen": [
-      {
-        "number": 7377,
-        "kind": "issue",
-        "title": "MercadoLibre: la retirada devuelve http=200 con returnedStatus=inactive en vez de closed (posible falso éxito)",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-11T18:17:54Z",
-        "updatedAt": "2026-07-11T18:42:14Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7378,
-        "kind": "pull_request",
-        "title": "fix: treat mercadolibre inactive withdraw as terminal",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-11T18:30:15Z",
-        "updatedAt": "2026-07-11T18:35:01Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingOpen": [],
     "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [],
-    "missingRecentOpen": [
-      {
-        "number": 7377,
-        "kind": "issue",
-        "title": "MercadoLibre: la retirada devuelve http=200 con returnedStatus=inactive en vez de closed (posible falso éxito)",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-11T18:17:54Z",
-        "updatedAt": "2026-07-11T18:42:14Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7378,
-        "kind": "pull_request",
-        "title": "fix: treat mercadolibre inactive withdraw as terminal",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-11T18:30:15Z",
-        "updatedAt": "2026-07-11T18:35:01Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingRecentOpen": [],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
