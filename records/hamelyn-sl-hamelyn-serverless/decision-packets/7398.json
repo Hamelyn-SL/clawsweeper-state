@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T13:16:38.915Z",
+  "updatedAt": "2026-07-12T13:07:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7398,
+    "title": "GitHub Actions: Upload Products, Sync Azeta y Sync Arnoia llevan meses fallando sin alertar",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7398",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-12T12:59:16Z",
+    "updatedAt": "2026-07-12T13:07:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué superficie debe ser la fuente canónica del dead man's switch de crons y en qué canal/secretos de Slack debe alertar?",
+  "rationale": "El fallo de los tres workflows es claro, pero la red de seguridad común afecta a decenas de schedules y requiere elegir diseño operativo, ownership y umbrales antes de automatizarlo con seguridad.",
+  "options": [
+    {
+      "title": "Separar tres PRs operativas",
+      "body": "Primero arreglar `products.py`, después secretos KV de Azeta/Arnoia, y por último implementar el supervisor externo con canal y umbrales aprobados.",
+      "recommended": true
+    },
+    {
+      "title": "Solo reparar workflows afectados",
+      "body": "Dejar los tres crons en verde ahora y abrir una issue separada para la observabilidad global.",
+      "recommended": false
+    },
+    {
+      "title": "Diseñar plataforma de alertas común primero",
+      "body": "Pausar fixes parciales hasta definir una solución común para todos los workflows programados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar tres PRs operativas",
+    "body": "Primero arreglar `products.py`, después secretos KV de Azeta/Arnoia, y por último implementar el supervisor externo con canal y umbrales aprobados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el assignee actual y el comentario de triage lo nombra como coordinador junto al equipo de infraestructura.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7398.md",
+    "reviewedAt": "2026-07-12T13:16:38.915Z",
+    "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
+  }
+}
