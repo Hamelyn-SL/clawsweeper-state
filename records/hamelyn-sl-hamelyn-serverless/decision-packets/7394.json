@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T12:15:49.304Z",
+  "generatedAt": "2026-07-12T12:16:15.891Z",
   "updatedAt": "2026-07-12T11:38:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,38 +18,33 @@
   },
   "lane": "release_inclusion",
   "priority": "P0",
-  "question": "¿Debe desplegarse ahora a `master` el hotfix de validación server-side de checkout incluido en este PR, aceptando el riesgo de rechazos 400 en clientes desalineados?",
-  "rationale": "El cambio corrige un bypass de cobro real, pero toca la frontera de pagos y puede bloquear checkouts legítimos si el cliente o los tipos de cambio no coinciden con el servidor; esa compensación corresponde a release/operaciones.",
+  "question": "¿Debe este despliegue de producción esperar al ajuste de `cartId`/`promotionCode` vacíos, o se acepta ese riesgo para cerrar ya el bypass P0 de checkout?",
+  "rationale": "El arreglo principal cierra un vector real de manipulación de cobro, pero el bloqueo detectado puede afectar a usuarios legítimos si algún cliente envía campos opcionales como cadena vacía.",
   "options": [
     {
-      "title": "Desplegar tras triage de hilos",
-      "body": "Resolver o contestar los tres hilos de Gemini y mergear si el equipo acepta el fail-closed como comportamiento de producción.",
+      "title": "Corregir antes de mergear",
+      "body": "Eliminar `.min(1)` o preprocesar `\"\"` a `undefined` mantiene el hotfix de seguridad y reduce el riesgo de 400 falsos en producción.",
       "recommended": true
     },
     {
-      "title": "Pausar para reparación menor",
-      "body": "Aplicar cambios defensivos estrechos en `dev` si el equipo quiere eliminar cualquier duda sobre campos vacíos o fallbacks antes de producción.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar el release",
-      "body": "Mantener el hotfix en `dev` si operaciones necesita más prueba manual de checkout real antes de exponerlo en `master`.",
+      "title": "Desplegar aceptando el riesgo",
+      "body": "Puede cerrar antes el bypass P0, pero producción podría rechazar algunos checkouts sin cupón o sin carrito hasta un follow-up inmediato.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desplegar tras triage de hilos",
-    "body": "Resolver o contestar los tres hilos de Gemini y mergear si el equipo acepta el fail-closed como comportamiento de producción.",
+    "title": "Corregir antes de mergear",
+    "body": "Eliminar `.min(1)` o preprocesar `\"\"` a `undefined` mantiene el hotfix de seguridad y reduce el riesgo de 400 falsos en producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien introdujo el hotfix funcional y puede valorar mejor si los hilos de Gemini son falsos positivos o merecen reparación previa.",
+    "reason": "Es quien introdujo el hotfix principal y tiene el contexto más directo del balance seguridad/checkout en este cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7394.md",
-    "reviewedAt": "2026-07-12T12:15:49.304Z",
+    "reviewedAt": "2026-07-12T12:16:15.891Z",
     "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
   }
 }
