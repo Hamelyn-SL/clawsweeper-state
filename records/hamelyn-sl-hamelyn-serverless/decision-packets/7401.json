@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T15:13:37.100Z",
+  "generatedAt": "2026-07-12T15:12:06.605Z",
   "updatedAt": "2026-07-12T14:53:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,53 +13,45 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:done",
-      "P2",
-      "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "triage:done"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
     "updatedAt": "2026-07-12T14:53:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención debe aplicarse a `products` antes de aligerar o borrar documentos AI sin actividad?",
-  "rationale": "La evidencia justifica actuar, pero el filtro final decide qué catálogo se conserva, qué referencias bloquean borrado, cómo se reconstruye BigQuery y cuánto riesgo de pérdida de datos acepta el negocio.",
+  "question": "¿Qué contrato de retención debe aplicarse a productos IA sin actividad antes de tocar millones de documentos de `products`?",
+  "rationale": "La decisión cambia datos persistidos a gran escala y afecta catálogo, proveedores, pedidos históricos y materializaciones analíticas; no se puede inferir de forma segura solo desde el código.",
   "options": [
     {
-      "title": "Fasear retención y poda reversible",
-      "body": "Aprobar primero el contrato, cortar nuevos upserts sin señal y ejecutar `$unset` de textos pesados antes de cualquier `deleteMany` masivo.",
+      "title": "Aprobar fases conservadoras",
+      "body": "Primero cortar nuevas altas sin señal, después poda suave reversible y solo más tarde purga con anti-joins completos y plan de recuperación.",
       "recommended": true
     },
     {
-      "title": "Purga completa con lista de exclusión",
-      "body": "Permitir borrado por lotes solo después de anti-joins completos contra `stocks`, `orders`, `ordersells`, `mk_*` y reconstrucción de `mongodata.products`.",
+      "title": "Solo poda suave",
+      "body": "Recupera parte del almacenamiento eliminando textos pesados sin borrar productos ni cambiar todavía la política de retención.",
       "recommended": false
     },
     {
-      "title": "Solo cortar crecimiento nuevo",
-      "body": "Posponer la limpieza histórica y limitar el trabajo inicial a impedir que Argos siga creando productos sin señal comercial.",
+      "title": "Purga agresiva",
+      "body": "Maximiza ahorro de almacenamiento, pero requiere asumir explícitamente el riesgo operativo y completar pruebas de restauración antes de producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fasear retención y poda reversible",
-    "body": "Aprobar primero el contrato, cortar nuevos upserts sin señal y ejecutar `$unset` de textos pesados antes de cualquier `deleteMany` masivo.",
+    "title": "Aprobar fases conservadoras",
+    "body": "Primero cortar nuevas altas sin señal, después poda suave reversible y solo más tarde purga con anti-joins completos y plan de recuperación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es quien aportó el contexto operativo y las cifras de impacto; la decisión principal es de retención de catálogo antes que una reparación de línea concreta.",
+    "person": "HamelynDev",
+    "reason": "Es quien dejó la triaje técnica con las fases, riesgos y evidencias de BigQuery/código para esta decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-12T15:13:37.100Z",
+    "reviewedAt": "2026-07-12T15:12:06.605Z",
     "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
   }
 }
