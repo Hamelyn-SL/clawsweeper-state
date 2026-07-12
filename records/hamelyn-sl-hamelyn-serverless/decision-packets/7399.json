@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T15:07:13.153Z",
+  "updatedAt": "2026-07-12T14:23:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7399,
+    "title": "Credenciales duplicadas como variables de repo en GitHub Actions (rotación pendiente)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:blocked"
+    ],
+    "createdAt": "2026-07-12T13:55:30Z",
+    "updatedAt": "2026-07-12T14:23:12Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Quién debe ejecutar la rotación/revocación de Drive, la comprobación de Atlas y la limpieza de variables de deploy, y se pueden eliminar ya `ADMIN_DEV/PROD`, `PUBLIC_DEV/PROD` y `SUPPLY_DEV/PROD` como variables?",
+  "rationale": "La evidencia de código solo prueba que los workflows usan secrets; la remediación real toca credenciales y configuración administrada fuera del repositorio.",
+  "options": [
+    {
+      "title": "Completar remediación operativa",
+      "body": "Rotar la clave de Drive, validar/desactivar `rmwjb` y borrar las variables de deploy duplicadas tras confirmar que no hay consumidores externos.",
+      "recommended": true
+    },
+    {
+      "title": "Separar la decisión de deploy hooks",
+      "body": "Cerrar primero la rotación de Drive/Mongo y abrir una tarea operativa separada para auditar los deploy hooks duplicados.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener variables de deploy por compatibilidad",
+      "body": "Documentar explícitamente qué integración externa las usa y revisar de nuevo más adelante.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Completar remediación operativa",
+    "body": "Rotar la clave de Drive, validar/desactivar `rmwjb` y borrar las variables de deploy duplicadas tras confirmar que no hay consumidores externos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el reporter y aparece como contribuidor reciente de automatización/workflows, además de ser el punto más cercano al contexto operativo indicado por el triage.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7399.md",
+    "reviewedAt": "2026-07-12T15:07:13.153Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+  }
+}
