@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T18:26:44.761Z",
-  "updatedAt": "2026-07-10T11:17:52Z",
+  "generatedAt": "2026-07-12T07:45:17.312Z",
+  "updatedAt": "2026-07-12T07:35:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XS",
-      "proof: sufficient",
-      "proof: 🎥 video",
-      "rating: 🐚 platinum hermit",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "rating: 🐚 platinum hermit",
+      "proof: 🎥 video"
     ],
     "createdAt": "2026-07-10T07:42:05Z",
-    "updatedAt": "2026-07-10T11:17:52Z",
+    "updatedAt": "2026-07-12T07:35:37Z",
     "headSha": "574d51428a92d56d66894a4e8f4b37236014146b"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR cerrar la issue amplia de minihomes o solo referenciarla como arreglo parcial de URLs canónicas?",
-  "rationale": "La implementación corrige una parte concreta y probada, pero la issue enlazada contiene diseño, layout, catálogo, SEO y secciones pendientes; automatizar su cierre puede borrar el seguimiento del trabajo restante.",
+  "question": "¿Debe este PR cerrar la issue amplia de rediseño de minihomes o solo referenciarla como arreglo parcial de URLs canónicas?",
+  "rationale": "El código resuelve bien el subcaso añadido por Victor, pero la issue vinculada contiene layout, catálogo, beneficios, SEO e interlinking pendientes; esa trazabilidad no la debe decidir una limpieza automática.",
   "options": [
     {
-      "title": "Usar referencia no cerrante",
-      "body": "Cambiar `Closes #7117` por una referencia tipo `Parte de` o `Related` permite mergear el fix sin cerrar el rediseño amplio.",
+      "title": "Referenciar como arreglo parcial",
+      "body": "Cambiar `Closes #7117` por una referencia no cerrante y mergear este fix sin cerrar el rediseño completo.",
       "recommended": true
     },
     {
-      "title": "Aceptar el cierre con follow-up",
-      "body": "Mantener el cierre solo si un maintainer confirma que el resto ya está cubierto por otro seguimiento canónico.",
+      "title": "Cerrar la issue amplia",
+      "body": "Aceptar que el equipo da por suficiente el fix de enlaces y no persigue el resto del rediseño en esa issue.",
       "recommended": false
     },
     {
-      "title": "Pausar el merge",
-      "body": "Esperar si el equipo quiere revisar primero cómo dividir la issue amplia antes de aterrizar este arreglo parcial.",
+      "title": "Dividir antes de mergear",
+      "body": "Abrir subtareas para el rediseño restante y permitir que este PR cierre solo un seguimiento estrecho de URLs canónicas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar referencia no cerrante",
-    "body": "Cambiar `Closes #7117` por una referencia tipo `Parte de` o `Related` permite mergear el fix sin cerrar el rediseño amplio.",
+    "title": "Referenciar como arreglo parcial",
+    "body": "Cambiar `Closes #7117` por una referencia no cerrante y mergear este fix sin cerrar el rediseño completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ya está pedido como reviewer del PR y el comentario de asignación lo señala como persona con contexto ecommerce para este archivo.",
+    "reason": "Es el revisor solicitado para este PR y puede decidir la trazabilidad inmediata antes del merge.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7327.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327#issuecomment-4933397725",
-    "reviewedAt": "2026-07-10T18:26:44.761Z",
+    "reviewedAt": "2026-07-12T07:45:17.312Z",
     "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
