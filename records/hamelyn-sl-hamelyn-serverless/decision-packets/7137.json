@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T19:48:17.392Z",
-  "updatedAt": "2026-07-12T19:37:33Z",
+  "generatedAt": "2026-07-12T21:27:49.958Z",
+  "updatedAt": "2026-07-12T21:14:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,54 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
-      "triage:queued",
+      "triage:no-change",
       "business-logic",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "P2",
-      "impact:security"
+      "impact:security",
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
-    "updatedAt": "2026-07-12T19:37:33Z"
+    "updatedAt": "2026-07-12T21:14:17Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la corrección de esta prevalidación reutilizar el cálculo server-side de checkout ya mergeado o crear un helper específico de cupones con contrato propio?",
-  "rationale": "El bug está confirmado, pero el fix toca una frontera de confianza y ahora existe lógica de checkout server-side relacionada; decidir la frontera evita duplicar reglas de envío y descuento.",
+  "question": "¿Debe la corrección canónica reutilizar el cálculo server-side de checkout ya mergeado o publicar/revisar el WIP asignado como implementación propia de cupones?",
+  "rationale": "El bug está confirmado, pero el fix toca una frontera de confianza económica y ya existe lógica server-side relacionada; hace falta decidir la frontera para no duplicar reglas ni abrir una PR competidora contra el WIP asignado.",
   "options": [
     {
-      "title": "Reutilizar cálculo compartido de checkout",
-      "body": "Extraer la parte común necesaria y hacer que cupones y checkout calculen envío desde la misma fuente server-side.",
+      "title": "Publicar y revisar el WIP asignado",
+      "body": "MiguelHamelyn publica la rama WIP indicada y esa PR pasa a ser la ruta canónica con revisión de seguridad.",
       "recommended": true
     },
     {
-      "title": "Helper específico para cupones",
-      "body": "Corregir solo la prevalidación actual con un helper acotado, aceptando una revisión explícita para evitar deriva con checkout.",
+      "title": "Extraer cálculo compartido desde checkout",
+      "body": "El equipo promueve un helper común para checkout y prevalidación de cupones antes de tocar el contrato del cliente.",
       "recommended": false
     },
     {
-      "title": "Continuar el WIP asignado",
-      "body": "Esperar a que MiguelHamelyn publique la rama WIP indicada y revisar esa implementación como ruta canónica.",
+      "title": "Revivir el enfoque de la PR cerrada",
+      "body": "Se usa https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7156 solo como referencia técnica, no como rama de aterrizaje directa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reutilizar cálculo compartido de checkout",
-    "body": "Extraer la parte común necesaria y hacer que cupones y checkout calculen envío desde la misma fuente server-side.",
+    "title": "Publicar y revisar el WIP asignado",
+    "body": "MiguelHamelyn publica la rama WIP indicada y esa PR pasa a ser la ruta canónica con revisión de seguridad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue, figura como owner del bloque BL de cupones y dejó contexto de una rama WIP para continuar la corrección.",
+    "reason": "Está asignado a la issue y dejó el contexto operativo del WIP pendiente de publicar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4913339931",
-    "reviewedAt": "2026-07-12T19:48:17.392Z",
+    "reviewedAt": "2026-07-12T21:27:49.958Z",
     "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
   }
 }
