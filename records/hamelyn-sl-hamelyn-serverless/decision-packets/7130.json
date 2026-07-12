@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T10:20:31.897Z",
-  "updatedAt": "2026-07-09T09:34:37Z",
+  "generatedAt": "2026-07-12T20:15:29.008Z",
+  "updatedAt": "2026-07-12T19:37:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,48 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
-      "triage:done",
+      "triage:queued",
       "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "P2",
-      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-07T12:10:45Z",
-    "updatedAt": "2026-07-09T09:34:37Z"
+    "updatedAt": "2026-07-12T19:37:32Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe ClawSweeper encolar un PR automático para esta divergencia aunque la issue ya esté asignada a `MiguelHamelyn`?",
-  "rationale": "El bug está confirmado y los artefactos BL ya existen, pero la asignación humana reciente y la etiqueta actual `clawsweeper:no-new-fix-pr` indican coordinación activa que la automatización no debería pisar sin una señal explícita.",
+  "question": "¿Debe ClawSweeper esperar al WIP asignado a `MiguelHamelyn` o encolar un nuevo PR de arreglo para esta issue?",
+  "rationale": "La forma técnica del fix es clara, pero hay una rama remota y WIP local anunciado por el assignee; decidir si coordinar o duplicar trabajo requiere intención humana.",
   "options": [
     {
-      "title": "Coordinar con MiguelHamelyn primero",
-      "body": "Mantener la issue abierta y esperar confirmación del asignado antes de promover un fix automático.",
+      "title": "Esperar al WIP asignado",
+      "body": "Mantiene una sola línea de trabajo y evita que una reparación automática pise cambios locales todavía no publicados.",
       "recommended": true
     },
     {
-      "title": "Encolar fix acotado",
-      "body": "Autorizar a ClawSweeper a preparar una PR pequeña que toque helper, call sites y test/spec BL.",
+      "title": "Encolar nuevo fix PR",
+      "body": "Permite avanzar si el WIP se abandona, pero debe coordinarse primero con el assignee para no duplicar trabajo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar con MiguelHamelyn primero",
-    "body": "Mantener la issue abierta y esperar confirmación del asignado antes de promover un fix automático.",
+    "title": "Esperar al WIP asignado",
+    "body": "Mantiene una sola línea de trabajo y evita que una reparación automática pise cambios locales todavía no publicados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y quien llevó la extracción BL/Product Page relacionada.",
+    "reason": "Es el assignee actual y autor del comentario que describe el WIP local pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7130.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7130#issuecomment-4913207949",
-    "reviewedAt": "2026-07-09T10:20:31.897Z",
-    "mainSha": "041bf27bd20f293dfcff578800215d4e71bf8a01"
+    "reviewedAt": "2026-07-12T20:15:29.008Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
   }
 }
