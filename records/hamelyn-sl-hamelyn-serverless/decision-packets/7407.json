@@ -16,8 +16,12 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 🐚 platinum hermit",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-12T18:02:13Z",
     "updatedAt": "2026-07-12T18:16:01Z"
@@ -55,6 +59,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7407.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7407#issuecomment-4952220070",
     "reviewedAt": "2026-07-12T19:19:40.802Z",
     "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
   }
