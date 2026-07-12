@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T10:29:40.982Z",
-  "updatedAt": "2026-07-12T10:09:57Z",
+  "generatedAt": "2026-07-12T12:08:16.299Z",
+  "updatedAt": "2026-07-12T11:50:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,55 +14,54 @@
       "priority:p1",
       "app:infrastructure",
       "reporter:JavierHamelyn",
-      "triage:queued",
+      "triage:done",
       "P1",
-      "impact:crash-loop",
-      "impact:message-loss",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "impact:crash-loop",
+      "impact:message-loss"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-12T10:09:57Z"
+    "updatedAt": "2026-07-12T11:50:37Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta issue seguir como paraguas de seguimiento o dividirse ya en canónicas obligatorias por cluster antes de permitir nuevos fix PRs?",
-  "rationale": "La evidencia muestra bugs reales, pero el alcance cruza demasiados workspaces y algunas acciones son operativas; hace falta criterio humano para priorizar y repartir ownership sin generar un PR demasiado amplio.",
+  "question": "¿Qué clusters restantes deben convertirse en canónicas estrechas y cuáles deben quedar como acciones operativas fuera de código?",
+  "rationale": "La issue mezcla fixes de código, límites de Vercel, rate limits, errores externos y tareas de operador; automatizar un único arreglo no preserva ownership ni validación por superficie.",
   "options": [
     {
-      "title": "Dividir por cluster P1",
-      "body": "Crear o enlazar canónicas estrechas para `admin_users_204`, Serper, eDesk rate limit, Stripe Mercado Pago y los 500 de carrito/orders, manteniendo esta issue como índice hasta que todas cierren.",
+      "title": "Desglosar por cluster restante",
+      "body": "Crear o enlazar issues canónicas para Serper, eDesk 429/persistencia, carrito, `priceBuy`, admin 500 y acciones operativas, manteniendo este paraguas como índice hasta cerrar el mapa.",
       "recommended": true
     },
     {
-      "title": "Mantener como paraguas activo",
-      "body": "Usar esta issue solo para seguimiento de logs y exigir que cada fix mencione qué cluster reduce, sin cerrar el paraguas aún.",
+      "title": "Cerrar tras los P1 ya corregidos",
+      "body": "Cerraría el paraguas por avance parcial, pero dejaría sin seguimiento explícito varios clusters activos mencionados en la foto fresca.",
       "recommended": false
     },
     {
-      "title": "Cerrar piezas resueltas y abrir backlog nuevo",
-      "body": "Cerrar esta issue cuando las piezas ya mitigadas queden documentadas y mover los restos a un backlog priorizado por el equipo.",
+      "title": "Intentar un PR único",
+      "body": "Un único PR cruzaría demasiados workspaces y haría la validación de producción más frágil.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir por cluster P1",
-    "body": "Crear o enlazar canónicas estrechas para `admin_users_204`, Serper, eDesk rate limit, Stripe Mercado Pago y los 500 de carrito/orders, manteniendo esta issue como índice hasta que todas cierren.",
+    "title": "Desglosar por cluster restante",
+    "body": "Crear o enlazar issues canónicas para Serper, eDesk 429/persistencia, carrito, `priceBuy`, admin 500 y acciones operativas, manteniendo este paraguas como índice hasta cerrar el mapa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura como asignado y acaba de aportar la priorización operativa con la foto fresca de BigQuery.",
-    "confidence": "medium"
+    "reason": "Es el assignee, aportó la actualización fresca de BigQuery y ya está coordinando los primeros fixes P1.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-12T10:29:40.982Z",
-    "mainSha": "13a55e0499c21dd6bfbc01b4b089f856a27af700"
+    "reviewedAt": "2026-07-12T12:08:16.299Z",
+    "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
   }
 }
