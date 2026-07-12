@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T10:18:35.643Z",
+  "generatedAt": "2026-07-12T10:23:03.872Z",
   "updatedAt": "2026-07-12T10:08:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,43 +14,43 @@
       "app:ecommerce",
       "priority:p0",
       "triage:queued",
-      "P0",
-      "impact:security",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0"
     ],
     "createdAt": "2026-07-06T08:48:19Z",
     "updatedAt": "2026-07-12T10:08:52Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Cuál debe ser el comportamiento de seguridad del checkout cuando el total, el envío, los precios de producto o el `paymentStatus` recibidos no coinciden con el recálculo server-side?",
-  "rationale": "El bug es reproducible por código y ya tiene evidencia de producción, pero el fix decide una frontera de cobro: rechazar, corregir, registrar alerta y cómo tratar pedidos gratuitos o cupones antes de crear `OrderSell`.",
+  "question": "¿Cuál debe ser el comportamiento de seguridad del checkout cuando el total, los precios de producto, el envío, los descuentos o el `paymentStatus` recibidos no coinciden con el recálculo server-side?",
+  "rationale": "El bug está confirmado por código y por evidencia de producción, pero el fix define una frontera de cobro sensible: rechazar, corregir, alertar y tratar pedidos gratuitos antes de persistir o crear `OrderSell`.",
   "options": [
     {
       "title": "Fail closed en checkout",
-      "body": "Recalcular todo en servidor, devolver 4xx ante cualquier discrepancia y mantener `OrderSell` bloqueado hasta pago confirmado o total cero recalculado.",
+      "body": "Recalcular todo en servidor, devolver 4xx ante cualquier discrepancia y bloquear `OrderSell` hasta pago confirmado o total cero recalculado.",
       "recommended": true
     },
     {
       "title": "Corregir y alertar",
-      "body": "Reescribir los importes server-side y registrar alerta, aceptando más continuidad de UX a cambio de menor dureza antifraude.",
+      "body": "Reescribir los importes server-side y registrar alerta, priorizando continuidad de UX a cambio de una frontera antifraude menos estricta.",
       "recommended": false
     },
     {
-      "title": "Separar hotfix mínimo y refactor BL",
-      "body": "Primero bloquear `paymentStatus`/`order-sell` y discrepancias de total, y después mover helpers y specs BL en una PR estructural aparte.",
+      "title": "Hotfix mínimo más refactor BL",
+      "body": "Cerrar primero `paymentStatus`, `order-sell` y discrepancias de total, y mover helpers/specs BL en una PR estructural separada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Fail closed en checkout",
-    "body": "Recalcular todo en servidor, devolver 4xx ante cualquier discrepancia y mantener `OrderSell` bloqueado hasta pago confirmado o total cero recalculado.",
+    "body": "Recalcular todo en servidor, devolver 4xx ante cualquier discrepancia y bloquear `OrderSell` hasta pago confirmado o total cero recalculado.",
     "recommended": true
   },
   "likelyOwner": {
@@ -60,8 +60,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6920.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6920#issuecomment-4911151853",
-    "reviewedAt": "2026-07-12T10:18:35.643Z",
+    "reviewedAt": "2026-07-12T10:23:03.872Z",
     "mainSha": "13a55e0499c21dd6bfbc01b4b089f856a27af700"
   }
 }
