@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-12T08:57:58.534Z",
+  "updatedAt": "2026-07-12T07:42:54Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7380,
+    "title": "Casa del Libro: updatePipeline errors remain permanently stuck in SYNC_ERROR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "P2"
+    ],
+    "createdAt": "2026-07-12T07:26:25Z",
+    "updatedAt": "2026-07-12T07:42:54Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe Data Platform ejecutar ahora un dry-run/backfill acotado de las 901 SKUs CDL y revisar la pérdida de CDC, o esperar a otra confirmación viva antes de tocar BigQuery?",
+  "rationale": "La causa de producto parece resuelta en Mongo vivo, pero la corrección restante implica escritura/reconciliación de cientos de filas analíticas y una posible investigación operativa de CDC que requiere confirmación humana según la política del repo.",
+  "options": [
+    {
+      "title": "Ejecutar dry-run/backfill acotado",
+      "body": "Recomendado: contar la cohorte, imprimir muestras y filtro literal, pedir confirmación y reconciliar las tablas BQ desde Mongo vivo si el resultado coincide con el triaje.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar nueva confirmación viva",
+      "body": "Mantiene la issue abierta sin mutar datos hasta que un nuevo heartbeat confirme que las 901 filas siguen visibles en `mongodata.stocks_marketplace`.",
+      "recommended": false
+    },
+    {
+      "title": "Convertirlo en investigación CDC",
+      "body": "Trata el caso como señal de posible pérdida recurrente de CDC y prioriza encontrar la causa antes de limpiar la cohorte histórica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Ejecutar dry-run/backfill acotado",
+    "body": "Recomendado: contar la cohorte, imprimir muestras y filtro literal, pedir confirmación y reconciliar las tablas BQ desde Mongo vivo si el resultado coincide con el triaje.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la señal más reciente y directa en el historial de `bq-merge`, que es el punto de reconciliación raw implicado por el triaje.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7380.md",
+    "reviewedAt": "2026-07-12T08:57:58.534Z",
+    "mainSha": "eeea2581a238fb4b6c0f599a412e376823e77efe"
+  }
+}
