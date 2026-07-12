@@ -11,10 +11,11 @@
     "state": "open",
     "labels": [
       "size/L",
-      "P2",
-      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
       "rating: 🦪 silver shellfish",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 automation"
     ],
     "createdAt": "2026-07-10T14:57:18Z",
     "updatedAt": "2026-07-12T09:00:19Z",
@@ -53,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7374.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374#issuecomment-4938365934",
     "reviewedAt": "2026-07-12T09:45:11.527Z",
     "mainSha": "13a55e0499c21dd6bfbc01b4b089f856a27af700"
   }
