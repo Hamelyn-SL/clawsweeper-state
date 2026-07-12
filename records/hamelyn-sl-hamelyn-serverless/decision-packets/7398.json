@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T13:16:38.915Z",
-  "updatedAt": "2026-07-12T13:07:24Z",
+  "generatedAt": "2026-07-12T15:44:44.137Z",
+  "updatedAt": "2026-07-12T15:38:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,53 @@
       "bug",
       "priority:p1",
       "app:infrastructure",
-      "triage:done",
+      "triage:queued",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-12T12:59:16Z",
-    "updatedAt": "2026-07-12T13:07:24Z"
+    "updatedAt": "2026-07-12T15:38:19Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Qué superficie debe ser la fuente canónica del dead man's switch de crons y en qué canal/secretos de Slack debe alertar?",
-  "rationale": "El fallo de los tres workflows es claro, pero la red de seguridad común afecta a decenas de schedules y requiere elegir diseño operativo, ownership y umbrales antes de automatizarlo con seguridad.",
+  "question": "¿Debe aceptarse `https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7406` como solución completa para esta incidencia, incluido el export recortado y el dead man's switch semanal?",
+  "rationale": "La reproducción es clara y la PR ya existe, pero el cambio combina recuperación de crons productivos, contrato de export y observabilidad común; cerrar o automatizar más trabajo antes de la revisión humana saltaría una decisión operativa real.",
   "options": [
     {
-      "title": "Separar tres PRs operativas",
-      "body": "Primero arreglar `products.py`, después secretos KV de Azeta/Arnoia, y por último implementar el supervisor externo con canal y umbrales aprobados.",
+      "title": "Revisar y mergear la PR candidata",
+      "body": "Si MiguelHamelyn valida el contrato del CSV, los secrets y la alerta Slack, esta issue debería cerrarse al merge de la PR abierta.",
       "recommended": true
     },
     {
-      "title": "Solo reparar workflows afectados",
-      "body": "Dejar los tres crons en verde ahora y abrir una issue separada para la observabilidad global.",
+      "title": "Partir la solución en PRs más pequeñas",
+      "body": "Separar streaming de `products.py`, secrets KV y supervisor de crons reduce riesgo si el cambio conjunto es demasiado amplio.",
       "recommended": false
     },
     {
-      "title": "Diseñar plataforma de alertas común primero",
-      "body": "Pausar fixes parciales hasta definir una solución común para todos los workflows programados.",
+      "title": "Cerrar la PR y mantener esta issue",
+      "body": "Si el enfoque de dead man's switch o export recortado no es aceptable, esta issue debe seguir abierta con un diseño operativo nuevo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar tres PRs operativas",
-    "body": "Primero arreglar `products.py`, después secretos KV de Azeta/Arnoia, y por último implementar el supervisor externo con canal y umbrales aprobados.",
+    "title": "Revisar y mergear la PR candidata",
+    "body": "Si MiguelHamelyn valida el contrato del CSV, los secrets y la alerta Slack, esta issue debería cerrarse al merge de la PR abierta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el assignee actual y el comentario de triage lo nombra como coordinador junto al equipo de infraestructura.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado en la PR candidata y el comentario de asignación lo identifica por experiencia directa en los archivos tocados.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7398.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7398#issuecomment-4951319129",
-    "reviewedAt": "2026-07-12T13:16:38.915Z",
-    "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
+    "reviewedAt": "2026-07-12T15:44:44.137Z",
+    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
   }
 }
