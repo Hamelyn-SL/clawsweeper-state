@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T07:45:17.312Z",
+  "generatedAt": "2026-07-12T07:48:18.277Z",
   "updatedAt": "2026-07-12T07:35:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XS",
-      "proof: sufficient",
-      "proof: 🎥 video",
-      "rating: 🐚 platinum hermit",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "rating: 🐚 platinum hermit",
+      "proof: 🎥 video"
     ],
     "createdAt": "2026-07-10T07:42:05Z",
     "updatedAt": "2026-07-12T07:35:37Z",
     "headSha": "574d51428a92d56d66894a4e8f4b37236014146b"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe este PR cerrar la issue amplia de rediseño de minihomes o solo referenciarla como arreglo parcial de URLs canónicas?",
-  "rationale": "El código resuelve bien el subcaso añadido por Victor, pero la issue vinculada contiene layout, catálogo, beneficios, SEO e interlinking pendientes; esa trazabilidad no la debe decidir una limpieza automática.",
+  "question": "¿Debe este PR cerrar automáticamente la issue amplia de minihomes o debe quedar como arreglo parcial enlazado sin `Closes`?",
+  "rationale": "La implementación corrige el subcaso de las bolitas, pero la issue enlazada incluye hero, buscador, catálogo, beneficios, SEO e interlinking; decidir la trazabilidad no es una reparación mecánica del diff.",
   "options": [
     {
-      "title": "Referenciar como arreglo parcial",
-      "body": "Cambiar `Closes #7117` por una referencia no cerrante y mergear este fix sin cerrar el rediseño completo.",
+      "title": "Cambiar a referencia parcial",
+      "body": "Reemplazar el cierre automático por una referencia a https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117 y dejar esa issue abierta para el rediseño pendiente.",
       "recommended": true
     },
     {
-      "title": "Cerrar la issue amplia",
-      "body": "Aceptar que el equipo da por suficiente el fix de enlaces y no persigue el resto del rediseño en esa issue.",
+      "title": "Cerrar la issue amplia con este PR",
+      "body": "Aceptar que el alcance restante se abandona o se gestionará fuera de esa issue, asumiendo la pérdida de trazabilidad del rediseño completo.",
       "recommended": false
     },
     {
-      "title": "Dividir antes de mergear",
-      "body": "Abrir subtareas para el rediseño restante y permitir que este PR cierre solo un seguimiento estrecho de URLs canónicas.",
+      "title": "Abrir seguimientos antes del merge",
+      "body": "Dividir hero, catálogo, beneficios, SEO/interlinking y caché en tareas concretas y entonces permitir que este PR cierre solo el subcaso cubierto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Referenciar como arreglo parcial",
-    "body": "Cambiar `Closes #7117` por una referencia no cerrante y mergear este fix sin cerrar el rediseño completo.",
+    "title": "Cambiar a referencia parcial",
+    "body": "Reemplazar el cierre automático por una referencia a https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117 y dejar esa issue abierta para el rediseño pendiente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el revisor solicitado para este PR y puede decidir la trazabilidad inmediata antes del merge.",
+    "reason": "Es el revisor solicitado del PR y está mejor situado para decidir la trazabilidad inmediata antes de mergear.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7327.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7327#issuecomment-4933397725",
-    "reviewedAt": "2026-07-12T07:45:17.312Z",
+    "reviewedAt": "2026-07-12T07:48:18.277Z",
     "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
   }
 }
