@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-12T07:26:18.057Z",
+  "generatedAt": "2026-07-12T12:56:54.270Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
-    "pagesScanned": 2,
-    "openItemsSeen": 199
+    "pagesScanned": 3,
+    "openItemsSeen": 201
   },
   "counts": {
-    "itemRecords": 199,
-    "closedRecords": 157,
-    "missingOpen": 0,
+    "itemRecords": 200,
+    "closedRecords": 165,
+    "missingOpen": 1,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
-    "missingProtectedOpen": 0,
+    "missingProtectedOpen": 1,
     "missingRecentOpen": 0,
     "openArchived": 0,
     "staleItemRecords": 0,
@@ -21,10 +21,44 @@
     "staleReviews": 0
   },
   "findings": {
-    "missingOpen": [],
+    "missingOpen": [
+      {
+        "number": 7396,
+        "kind": "issue",
+        "title": "GET /api/v5/checkout/[id] leaks buyer PII via enumerable id",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p1",
+          "security",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-12T11:43:07Z",
+        "updatedAt": "2026-07-12T12:22:05Z",
+        "missingReason": "protected_label"
+      }
+    ],
     "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
-    "missingProtectedOpen": [],
+    "missingProtectedOpen": [
+      {
+        "number": 7396,
+        "kind": "issue",
+        "title": "GET /api/v5/checkout/[id] leaks buyer PII via enumerable id",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "priority:p1",
+          "security",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-12T11:43:07Z",
+        "updatedAt": "2026-07-12T12:22:05Z",
+        "missingReason": "protected_label"
+      }
+    ],
     "missingRecentOpen": [],
     "openArchived": [],
     "staleItemRecords": [],
