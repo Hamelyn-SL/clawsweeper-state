@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:24:48.744Z",
-  "updatedAt": "2026-07-08T10:14:25Z",
+  "generatedAt": "2026-07-12T10:25:59.918Z",
+  "updatedAt": "2026-07-12T10:09:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,55 +14,54 @@
       "priority:p1",
       "app:infrastructure",
       "reporter:JavierHamelyn",
-      "triage:done",
+      "triage:queued",
+      "P1",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "P1",
-      "impact:crash-loop",
-      "impact:message-loss",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-product-decision"
+      "impact:crash-loop",
+      "impact:message-loss"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-08T10:14:25Z"
+    "updatedAt": "2026-07-12T10:09:57Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Debe esta issue seguir abierta como paraguas manual hasta completar el desglose, o cerrarse cuando los subfallos restantes tengan issues canónicas separadas?",
-  "rationale": "La evidencia confirma varios bugs reales, pero la automatización no debería decidir unilateralmente la estructura de seguimiento ni la propiedad entre admin, public, ecommerce, crons, marketplace-crons y operaciones externas.",
+  "question": "¿Debe Javier mantener esta issue como tracker paraguas mientras se abren canónicas estrechas por cada cluster activo, o cerrarla tras mover todo el trabajo pendiente a issues específicas?",
+  "rationale": "La evidencia muestra varios fallos reales, pero también fixes parciales y acciones externas; la decisión útil es de coordinación y ownership, no de un cambio automático único.",
   "options": [
     {
-      "title": "Dividir por superficie",
-      "body": "Crear o enlazar issues estrechas para los clusters pendientes y usar esta issue solo como índice hasta que el desglose esté completo.",
+      "title": "Mantener paraguas y partir canónicas",
+      "body": "Conservar esta issue abierta, enlazar cada issue/PR estrecho y cerrar el paraguas solo cuando los clusters principales queden resueltos o delegados.",
       "recommended": true
     },
     {
-      "title": "Mantener paraguas manual",
-      "body": "Conservar esta issue como checklist de coordinación multi-equipo y evitar cualquier PR único que intente resolver todo el lote.",
+      "title": "Cerrar tras migrar todo a canónicas",
+      "body": "Abrir primero issues estrechas para cada cluster pendiente y cerrar este paraguas como supersedido por esa lista.",
       "recommended": false
     },
     {
-      "title": "Cerrar tras canónicas",
-      "body": "Cerrar esta issue solo cuando cada cluster todavía relevante esté resuelto en `dev` o representado por una issue canónica más estrecha.",
+      "title": "Intentar un PR único",
+      "body": "Resolver muchos clusters en una rama amplia aceleraría algo el cierre, pero aumentaría el riesgo de regresiones y revisión incompleta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir por superficie",
-    "body": "Crear o enlazar issues estrechas para los clusters pendientes y usar esta issue solo como índice hasta que el desglose esté completo.",
+    "title": "Mantener paraguas y partir canónicas",
+    "body": "Conservar esta issue abierta, enlazar cada issue/PR estrecho y cerrar el paraguas solo cuando los clusters principales queden resueltos o delegados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual y aparece en el historial de varias superficies afectadas, así que es el mejor punto de coordinación para decidir el seguimiento.",
+    "reason": "Es assignee y quien aportó la actualización operativa más reciente de BigQuery.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-08T16:24:48.744Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-12T10:25:59.918Z",
+    "mainSha": "13a55e0499c21dd6bfbc01b4b089f856a27af700"
   }
 }
