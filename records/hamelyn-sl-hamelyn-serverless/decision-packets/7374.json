@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T18:30:04.888Z",
-  "updatedAt": "2026-07-10T15:00:38Z",
+  "generatedAt": "2026-07-12T08:34:57.391Z",
+  "updatedAt": "2026-07-12T08:08:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/S",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 other"
     ],
     "createdAt": "2026-07-10T14:57:18Z",
-    "updatedAt": "2026-07-10T15:00:38Z",
-    "headSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+    "updatedAt": "2026-07-12T08:08:37Z",
+    "headSha": "eeea2581a238fb4b6c0f599a412e376823e77efe"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe promoverse ahora a producción el fix de bypass de Stripe para cupones con residuo de `0.01`?",
-  "rationale": "El diff parece coherente y ya está en `dev`, pero el PR cambia una decisión de cobro y la evidencia disponible no incluye ejecución real del checkout.",
+  "question": "¿Se debe promocionar ahora a producción el cambio de bypass de Stripe para cupones residuales junto con el fix i18n del recomendador?",
+  "rationale": "El código parece acotado y coherente, pero la PR base es una promoción a producción desde `dev` a `master` y falta evidencia real del flujo de pago afectado.",
   "options": [
     {
-      "title": "Pedir prueba real antes de mergear",
-      "body": "Validar en staging un checkout con cupón residual de `0.01` y adjuntar salida, captura o logs redactados antes de desplegar a `master`.",
+      "title": "Aprobar tras prueba real",
+      "body": "Añadir captura, logs o transcript redactado de staging que muestre el checkout con cupón residual omitiendo Stripe y entonces mergear si la release está aceptada.",
       "recommended": true
     },
     {
-      "title": "Desplegar con riesgo aceptado",
-      "body": "Mergear el PR a `master` aceptando que la prueba disponible es estática y que el primer ejercicio real completo será producción.",
+      "title": "Retrasar la promoción",
+      "body": "Dejar el PR abierto hasta tener una ventana de release o una prueba manual de checkout más completa.",
       "recommended": false
     },
     {
-      "title": "Pausar y regenerar release",
-      "body": "Cerrar o dejar aparcado este corte si se quieren agrupar más cambios o esperar a una ventana de despliegue distinta.",
+      "title": "Sacar solo el fix i18n",
+      "body": "Si el riesgo de checkout no se quiere asumir ahora, preparar otra promoción más estrecha con solo el namespace `productPage`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pedir prueba real antes de mergear",
-    "body": "Validar en staging un checkout con cupón residual de `0.01` y adjuntar salida, captura o logs redactados antes de desplegar a `master`.",
+    "title": "Aprobar tras prueba real",
+    "body": "Añadir captura, logs o transcript redactado de staging que muestre el checkout con cupón residual omitiendo Stripe y entonces mergear si la release está aceptada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Mergeó el fix en `dev` y tiene contexto reciente del checkout afectado.",
+    "reason": "Es el merge owner del fix de checkout incluido y el riesgo principal de release está en ese flujo de pago.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7374.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7374#issuecomment-4938365934",
-    "reviewedAt": "2026-07-10T18:30:04.888Z",
-    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+    "reviewedAt": "2026-07-12T08:34:57.391Z",
+    "mainSha": "eeea2581a238fb4b6c0f599a412e376823e77efe"
   }
 }
