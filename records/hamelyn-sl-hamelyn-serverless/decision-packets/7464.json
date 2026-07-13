@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T10:51:11.511Z",
+  "updatedAt": "2026-07-13T10:39:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7464,
+    "title": "Test A/B de precio de compra por buckets sobre RCV en óptimos y malvendidos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7464",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "priority:p1",
+      "feature",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-13T10:38:55Z",
+    "updatedAt": "2026-07-13T10:39:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se debe implementar ya el test A/B de precio de compra detrás de kill switch, o esperar a que pricing confirme la subida de `PBMin`/`PBMax` en PROD y el contrato analítico de BigQuery?",
+  "rationale": "El cambio es técnicamente acotado, pero altera ofertas de compra reales y depende de una decisión operativa de pricing citada en la issue, no verificable solo desde el código.",
+  "options": [
+    {
+      "title": "Implementar desactivado por defecto",
+      "body": "Añadir el código y tests con `enabled: false`, dejando la activación y la subida de límites como paso operativo separado.",
+      "recommended": true
+    },
+    {
+      "title": "Esperar confirmación de pricing",
+      "body": "Mantener la issue en espera hasta que el owner confirme los valores PROD, el salt y el esquema exacto de análisis en BigQuery.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir alcance a diseño técnico",
+      "body": "Abrir primero un PR de especificación/config schema sin tocar el cálculo de compra, para cerrar dudas antes del experimento.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Implementar desactivado por defecto",
+    "body": "Añadir el código y tests con `enabled: false`, dejando la activación y la subida de límites como paso operativo separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el assignee y el contribuidor reciente más claro del motor de pricing que tendría que coordinar código y decisión operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7464.md",
+    "reviewedAt": "2026-07-13T10:51:11.511Z",
+    "mainSha": "17bb5933d3797de3893e45ec21aa392fc5093e76"
+  }
+}

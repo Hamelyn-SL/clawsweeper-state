@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T09:21:47.530Z",
-  "updatedAt": "2026-07-13T09:12:02Z",
+  "generatedAt": "2026-07-13T10:50:33.419Z",
+  "updatedAt": "2026-07-13T10:28:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,48 +18,47 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P2",
+      "issue-rating: 🌊 off-meta tidepool",
       "impact:ux-friction"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
-    "updatedAt": "2026-07-13T09:12:02Z"
+    "updatedAt": "2026-07-13T10:28:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué alcance exacto debe entrar en la primera entrega de la nueva PDP: layout completo, solo interlinking determinista, o una implementación por fases?",
-  "rationale": "La petición combina diseño visual, SEO interno, reglas de ranking y caché/invalidation; el código muestra piezas parciales, pero falta una decisión de producto sobre el contrato permanente antes de automatizar una implementación grande.",
+  "question": "¿Qué alcance debe entrar en la primera entrega de esta PDP: interlinking determinista primero, layout completo, o una separación explícita entre SEO/recomendaciones y UI visual?",
+  "rationale": "La petición combina comportamiento de ranking/caché con diseño y contenido nuevo; el código muestra piezas parciales, pero la frontera de producto y SEO no está cerrada para una reparación autónoma segura.",
   "options": [
     {
       "title": "Fasear interlinking primero",
-      "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout para una segunda entrega visual.",
+      "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout visual para una segunda entrega.",
       "recommended": true
     },
     {
       "title": "Rediseño completo en un PR grande",
-      "body": "Cubrir layout, autor, detalles físicos, migas y carruseles juntos, con más coste de QA y mayor riesgo de regresión en PDP.",
+      "body": "Cubrir layout, autor, detalles físicos, migas y carruseles juntos, asumiendo más coste de QA y más riesgo de regresión en PDP.",
       "recommended": false
     },
     {
-      "title": "Cerrar solo la parte visual",
-      "body": "Limitar el alcance al layout y textos, manteniendo las reglas de recomendaciones actuales para una issue SEO separada.",
+      "title": "Separar UI y SEO",
+      "body": "Mantener esta issue para layout/contenido y abrir o enlazar una tarea específica para ranking, caché e invalidación de interlinking.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Fasear interlinking primero",
-    "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout para una segunda entrega visual.",
+    "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout visual para una segunda entrega.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Ya hizo la triage funcional de esta issue y está conectado con el historial reciente de recomendaciones/PDP.",
+    "person": "alexcanHamelyn",
+    "reason": "Es el assignee actual y puede decidir si coordina el alcance con ecommerce/SEO o lo reparte en fases.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741#issuecomment-4910171087",
-    "reviewedAt": "2026-07-13T09:21:47.530Z",
-    "mainSha": "f8a7364dcca47d6adc9197a7fe57533e0a8dee68"
+    "reviewedAt": "2026-07-13T10:50:33.419Z",
+    "mainSha": "17bb5933d3797de3893e45ec21aa392fc5093e76"
   }
 }
