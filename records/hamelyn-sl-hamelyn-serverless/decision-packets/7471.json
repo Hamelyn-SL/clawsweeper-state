@@ -15,7 +15,14 @@
       "app:ecommerce",
       "priority:p1",
       "triage:pr-opened",
-      "reporter:irenegarcia"
+      "reporter:irenegarcia",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: 🦀 challenger crab",
+      "clawsweeper:current-main-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-13T11:47:30Z",
     "updatedAt": "2026-07-13T15:15:00Z"
@@ -48,6 +55,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7471.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7471#issuecomment-4959373522",
     "reviewedAt": "2026-07-13T20:14:38.431Z",
     "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
   }
