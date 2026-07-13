@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T13:34:52.451Z",
-  "updatedAt": "2026-07-10T13:24:36Z",
+  "generatedAt": "2026-07-13T09:21:47.530Z",
+  "updatedAt": "2026-07-13T09:12:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,52 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:done",
       "reporter:victor",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P2",
-      "impact:ux-friction",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
-    "updatedAt": "2026-07-10T13:24:36Z"
+    "updatedAt": "2026-07-13T09:12:02Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué alcance exacto debe tener la primera iteración de esta PDP y qué reglas cerradas deben gobernar ranking, caché e invalidación de los carruseles?",
-  "rationale": "La superficie técnica está localizada, pero el comportamiento de interlinking, autor y best sellers afecta SEO, datos y producto; automatizarlo sin criterio humano puede consolidar una estrategia equivocada.",
+  "question": "¿Qué alcance exacto debe entrar en la primera entrega de la nueva PDP: layout completo, solo interlinking determinista, o una implementación por fases?",
+  "rationale": "La petición combina diseño visual, SEO interno, reglas de ranking y caché/invalidation; el código muestra piezas parciales, pero falta una decisión de producto sobre el contrato permanente antes de automatizar una implementación grande.",
   "options": [
     {
-      "title": "Dividir en bloques con reglas aprobadas",
-      "body": "Implementar primero los cambios de UI/proyección claros y preparar una segunda PR para recomendaciones/best sellers cuando ranking e invalidación estén definidos.",
+      "title": "Fasear interlinking primero",
+      "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout para una segunda entrega visual.",
       "recommended": true
     },
     {
-      "title": "Implementar todo el layout completo",
-      "body": "Aceptar una PR más grande que toque PDP, datos server-side, caché, i18n y QA visual/rendimiento de una vez.",
+      "title": "Rediseño completo en un PR grande",
+      "body": "Cubrir layout, autor, detalles físicos, migas y carruseles juntos, con más coste de QA y mayor riesgo de regresión en PDP.",
       "recommended": false
     },
     {
-      "title": "Esperar a estrategia de contenido de autor",
-      "body": "Mantener la issue en producto hasta cerrar cómo se obtiene y muestra la biografía e información clave del autor dentro de la PDP.",
+      "title": "Cerrar solo la parte visual",
+      "body": "Limitar el alcance al layout y textos, manteniendo las reglas de recomendaciones actuales para una issue SEO separada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir en bloques con reglas aprobadas",
-    "body": "Implementar primero los cambios de UI/proyección claros y preparar una segunda PR para recomendaciones/best sellers cuando ranking e invalidación estén definidos.",
+    "title": "Fasear interlinking primero",
+    "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout para una segunda entrega visual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ya acotó el triaje de esta issue y dejó indicado que el alcance supera una corrección mínima automática.",
+    "reason": "Ya hizo la triage funcional de esta issue y está conectado con el historial reciente de recomendaciones/PDP.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741#issuecomment-4910171087",
-    "reviewedAt": "2026-07-10T13:34:52.451Z",
-    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+    "reviewedAt": "2026-07-13T09:21:47.530Z",
+    "mainSha": "f8a7364dcca47d6adc9197a7fe57533e0a8dee68"
   }
 }
