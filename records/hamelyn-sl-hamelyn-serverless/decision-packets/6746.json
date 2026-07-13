@@ -16,13 +16,13 @@
       "priority:p2",
       "triage:done",
       "reporter:victor",
-      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
       "clawsweeper:fix-shape-clear",
-      "no-stale",
-      "clawsweeper:queueable-fix",
-      "impact:ux-friction"
+      "P2",
+      "impact:ux-friction",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
     ],
     "createdAt": "2026-06-30T13:16:42Z",
     "updatedAt": "2026-07-13T05:51:41Z"
@@ -55,6 +55,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6746.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6746#issuecomment-4910172147",
     "reviewedAt": "2026-07-13T05:55:46.997Z",
     "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
   }
