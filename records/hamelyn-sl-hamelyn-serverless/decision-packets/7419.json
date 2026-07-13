@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T06:44:44.857Z",
+  "updatedAt": "2026-07-13T06:38:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7419,
+    "title": "Cron semanal de autores (Wikidata) falla por timeout y duplicados de authorId sin índice único",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p1",
+      "app:infrastructure",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-13T06:38:18Z",
+    "updatedAt": "2026-07-13T06:38:29Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué estrategia de consolidación de autores duplicados debe aprobarse antes de mutar producción y crear el índice único de `authors.authorId`?",
+  "rationale": "La parte de código es acotable, pero fusionar documentos de autores afecta URLs SEO, enlaces desde productos y datos enriquecidos existentes; esa política no debe decidirla una reparación automática.",
+  "options": [
+    {
+      "title": "Backfill auditado con ficha canónica",
+      "body": "Elegir una ficha canónica por `authorId`, conservar o redirigir slugs heredados y crear el índice único solo tras un dry-run con muestras.",
+      "recommended": true
+    },
+    {
+      "title": "Solo parchear el cron ahora",
+      "body": "Propagar errores y reducir runtime sin tocar duplicados deja el síntoma operativo más visible mejor cubierto, pero no elimina la causa estructural.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el cron",
+      "body": "Desactivar temporalmente el workflow evita más ruido mientras se define la migración, pero mantiene las fichas de alto tráfico sin enriquecer.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Backfill auditado con ficha canónica",
+    "body": "Elegir una ficha canónica por `authorId`, conservar o redirigir slugs heredados y crear el índice único solo tras un dry-run con muestras.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es quien introdujo y ha mantenido los cambios centrales de este flujo y además tiene el issue asignado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
+    "reviewedAt": "2026-07-13T06:44:44.857Z",
+    "mainSha": "4b8b33dbc7e859586117e96baea32f09fdb90259"
+  }
+}
