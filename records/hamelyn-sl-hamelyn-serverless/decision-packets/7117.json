@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:34:36.662Z",
+  "generatedAt": "2026-07-13T10:37:13.968Z",
   "updatedAt": "2026-07-13T10:25:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -30,38 +30,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta issue seguir como épica única del rediseño completo de minihomes o dividirse en PRs/tareas separadas para hero, catálogo, beneficios, SEO/interlinking y caché?",
-  "rationale": "La fuente confirma que el trabajo central sigue pendiente, pero la forma de implementación requiere criterios de diseño, desglose y QA visual que una reparación automática no debe decidir.",
+  "question": "¿Qué desglose y alcance de diseño debe seguir Ecommerce para implementar el rediseño completo de estas cuatro minihomes después de la corrección parcial de URLs?",
+  "rationale": "La fuente confirma que el rediseño pendiente cruza layout, catálogo, SEO, caché y copy; esa priorización no es una reparación mecánica segura para automatizar.",
   "options": [
     {
-      "title": "Mantener como épica de rediseño",
-      "body": "Conservar esta issue abierta como seguimiento amplio de Ecommerce y crear PRs planificados contra `CategoryHub` y subcomponentes cuando diseño confirme el alcance.",
+      "title": "Planificar rediseño por bloques",
+      "body": "Mantener esta issue abierta y dividir hero/buscador, beneficios, catálogo, railes/cache e interlinking/SEO en PRs pequeños con validación visual.",
       "recommended": true
     },
     {
-      "title": "Dividir en subtareas",
-      "body": "Abrir seguimientos separados para hero, catálogo embebido, beneficios, ofertas/interlinking, SEO y caché estática antes de cerrar esta issue.",
+      "title": "Reducir alcance de la wishlist",
+      "body": "Cerrar o recortar partes del rediseño que producto ya no quiera implementar antes de pedir código.",
       "recommended": false
     },
     {
-      "title": "Reducir alcance",
-      "body": "Confirmar que solo se quería el arreglo de URLs ya mergeado y cerrar explícitamente el resto del rediseño como no perseguido por ahora.",
+      "title": "Un único PR de rediseño L",
+      "body": "Aceptar un PR grande coordinado por Ecommerce, asumiendo más carga de review visual y regresión responsive.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener como épica de rediseño",
-    "body": "Conservar esta issue abierta como seguimiento amplio de Ecommerce y crear PRs planificados contra `CategoryHub` y subcomponentes cuando diseño confirme el alcance.",
+    "title": "Planificar rediseño por bloques",
+    "body": "Mantener esta issue abierta y dividir hero/buscador, beneficios, catálogo, railes/cache e interlinking/SEO en PRs pequeños con validación visual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Fue quien mergeó el PR parcial y reabrió la issue para preservar el alcance pendiente, así que es el mejor punto de coordinación inmediata.",
+    "reason": "Reabrió la issue tras el cierre accidental y ya revisó la PR parcial relacionada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewedAt": "2026-07-13T10:34:36.662Z",
+    "reviewedAt": "2026-07-13T10:37:13.968Z",
     "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
   }
 }
