@@ -9,7 +9,14 @@
     "title": "fix: recalculate shipping server-side in coupon validation",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7422",
     "state": "open",
-    "labels": [],
+    "labels": [
+      "rating: 🧂 unranked krab",
+      "status: 📣 needs proof",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
     "createdAt": "2026-07-13T06:49:04Z",
     "updatedAt": "2026-07-13T07:44:16Z",
     "headSha": "2f6885eca7530ed1abccd1ca9120ea87baacf5ca"
@@ -47,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7422.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7422#issuecomment-4955988283",
     "reviewedAt": "2026-07-13T08:16:21.358Z",
     "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
   }
