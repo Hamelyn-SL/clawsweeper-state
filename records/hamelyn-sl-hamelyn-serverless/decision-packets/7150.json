@@ -1,14 +1,14 @@
 {
   "version": 1,
   "generatedAt": "2026-07-07T23:56:43.888Z",
-  "updatedAt": "2026-07-07T23:25:48Z",
+  "updatedAt": "2026-07-08T09:41:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 7150,
     "title": "BL-ecommerce-catalog-13: lower max page hard cap to match the 500-result search window",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7150",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "app:ecommerce",
       "priority:p3",
@@ -17,7 +17,7 @@
       "business-logic"
     ],
     "createdAt": "2026-07-07T12:58:27Z",
-    "updatedAt": "2026-07-07T23:25:48Z"
+    "updatedAt": "2026-07-08T09:41:44Z"
   },
   "lane": "product_direction",
   "priority": "P3",
@@ -51,7 +51,7 @@
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7150.md",
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7150.md",
     "reviewedAt": "2026-07-07T23:56:43.888Z",
     "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
   }
