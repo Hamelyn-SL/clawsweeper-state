@@ -13,7 +13,16 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:queued"
+      "triage:queued",
+      "P1",
+      "impact:other",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:fix-shape-clear",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-13T08:05:07Z",
     "updatedAt": "2026-07-13T10:15:28Z"
@@ -46,6 +55,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7432.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432#issuecomment-4956045560",
     "reviewedAt": "2026-07-13T10:26:40.095Z",
     "mainSha": "495b5eecf896337152c99658a2eedd0e6a591c6e"
   }
