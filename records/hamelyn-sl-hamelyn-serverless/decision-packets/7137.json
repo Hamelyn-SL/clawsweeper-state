@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T21:27:49.958Z",
-  "updatedAt": "2026-07-12T21:14:17Z",
+  "generatedAt": "2026-07-13T08:07:02.117Z",
+  "updatedAt": "2026-07-13T07:12:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,56 +13,54 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
-      "triage:no-change",
       "business-logic",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "P2",
+      "clawsweeper:fix-shape-clear",
       "impact:security",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-07T12:13:30Z",
-    "updatedAt": "2026-07-12T21:14:17Z"
+    "updatedAt": "2026-07-13T07:12:01Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la corrección canónica reutilizar el cálculo server-side de checkout ya mergeado o publicar/revisar el WIP asignado como implementación propia de cupones?",
-  "rationale": "El bug está confirmado, pero el fix toca una frontera de confianza económica y ya existe lógica server-side relacionada; hace falta decidir la frontera para no duplicar reglas ni abrir una PR competidora contra el WIP asignado.",
+  "question": "¿Debe esta issue esperar a que el PR abierto se limpie y se retargetee, o queréis extraer una PR estrecha solo con la corrección de prevalidación de cupones?",
+  "rationale": "El bug está confirmado y hay un PR candidato con prueba manual, pero el PR actual está conflictivo y mezcla mucho alcance ajeno; decidir si se aprovecha o se sustituye requiere criterio de owner/seguridad.",
   "options": [
     {
-      "title": "Publicar y revisar el WIP asignado",
-      "body": "MiguelHamelyn publica la rama WIP indicada y esa PR pasa a ser la ruta canónica con revisión de seguridad.",
+      "title": "Extraer una PR estrecha",
+      "body": "Mantiene la corrección centrada en `valid/route.ts`, cliente ecommerce y helpers de pricing necesarios, reduciendo el riesgo de merge.",
       "recommended": true
     },
     {
-      "title": "Extraer cálculo compartido desde checkout",
-      "body": "El equipo promueve un helper común para checkout y prevalidación de cupones antes de tocar el contrato del cliente.",
+      "title": "Seguir con el PR abierto",
+      "body": "Aprovecha el WIP y la prueba manual ya publicada, pero exige resolver conflictos y separar o justificar el alcance ajeno antes de merge.",
       "recommended": false
     },
     {
-      "title": "Revivir el enfoque de la PR cerrada",
-      "body": "Se usa https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7156 solo como referencia técnica, no como rama de aterrizaje directa.",
+      "title": "Esperar al bloque BL",
+      "body": "Mantiene la dependencia con el PR de extracción BL, pero prolonga la ventana en la que `dev` sigue aceptando importes manipulables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicar y revisar el WIP asignado",
-    "body": "MiguelHamelyn publica la rama WIP indicada y esa PR pasa a ser la ruta canónica con revisión de seguridad.",
+    "title": "Extraer una PR estrecha",
+    "body": "Mantiene la corrección centrada en `valid/route.ts`, cliente ecommerce y helpers de pricing necesarios, reduciendo el riesgo de merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y dejó el contexto operativo del WIP pendiente de publicar.",
-    "confidence": "high"
+    "reason": "Figura como owner del bloque de cupones y autor del PR candidato enlazado a esta issue.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7137.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7137#issuecomment-4913339931",
-    "reviewedAt": "2026-07-12T21:27:49.958Z",
-    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+    "reviewedAt": "2026-07-13T08:07:02.117Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
   }
 }

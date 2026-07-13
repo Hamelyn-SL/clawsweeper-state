@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T08:05:10.257Z",
+  "updatedAt": "2026-07-13T06:21:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7355,
+    "title": "LOTES CELERITAS QUE COMPARTEN NUMERO DE LOTE",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7355",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "priority:p1",
+      "triage:pr-opened",
+      "P1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:fix-shape-clear",
+      "impact:data-loss",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-07-10T11:43:55Z",
+    "updatedAt": "2026-07-13T06:21:34Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe `AlexDiaz-Hamelyn` reabrir/adoptar el enfoque del PR cerrado o pedir una implementación nueva centrada en una búsqueda exacta de backend para el puesto de revisión?",
+  "rationale": "La issue ya está asignada y el PR automático anterior cerró sin merge por falta de prueba; elegir entre recuperar ese parche o sustituirlo por una solución más estrecha requiere coordinación humana para no abrir trabajo paralelo.",
+  "options": [
+    {
+      "title": "Adoptar o reabrir el PR cerrado",
+      "body": "Recupera el trabajo ya hecho si se añade prueba real de revisión y se valida que el enfoque frontend más flag exacto cubre el caso operativo.",
+      "recommended": false
+    },
+    {
+      "title": "Pedir un fix nuevo más estrecho",
+      "body": "Implementa una búsqueda exacta específica para revisión y conserva el modal como consumidor de esa semántica, reduciendo el riesgo de tocar filtros compartidos.",
+      "recommended": true
+    },
+    {
+      "title": "Dejarlo en análisis manual",
+      "body": "Mantiene la issue asignada sin automatización hasta decidir si también se corrige la generación/deduplicación histórica de códigos de lote.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pedir un fix nuevo más estrecho",
+    "body": "Implementa una búsqueda exacta específica para revisión y conserva el modal como consumidor de esa semántica, reduciendo el riesgo de tocar filtros compartidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el asignado actual de la issue y tiene señales recientes de trabajo en rutas de admin/logística cercanas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7355.md",
+    "reviewedAt": "2026-07-13T08:05:10.257Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+  }
+}

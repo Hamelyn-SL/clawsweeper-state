@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T00:14:52.396Z",
-  "updatedAt": "2026-07-07T22:11:18Z",
+  "generatedAt": "2026-07-13T08:01:00.996Z",
+  "updatedAt": "2026-07-13T07:50:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,49 @@
     "state": "open",
     "labels": [
       "size/M",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
       "merge-risk: 🚨 automation"
     ],
     "createdAt": "2026-07-01T11:58:22Z",
-    "updatedAt": "2026-07-07T22:11:18Z",
+    "updatedAt": "2026-07-13T07:50:37Z",
     "headSha": "4a891e9d4a7c97614c99a1c5ded3619a96b909f8"
   },
-  "lane": "merge_risk",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "When should Hamelyn enable semver-major Dependabot groups relative to the prerequisite Dependabot/autofix PR and the manual major-upgrade cleanup?",
-  "rationale": "The code direction is straightforward, but the safe landing point depends on repository maintenance timing and tolerance for major dependency PR volume.",
+  "question": "¿Cuándo se considera seguro activar los PRs major agrupados de Dependabot en `dev`?",
+  "rationale": "El propio PR declara que antes de mergear hay que poner al día manualmente las majors actuales; esa preparación externa y el tamaño aceptable de la primera oleada no se pueden decidir solo desde el diff.",
   "options": [
     {
-      "title": "Keep draft until ready",
-      "body": "Land the prerequisite first, clear or intentionally accept the current major-upgrade backlog, then refresh this PR and review it against dev.",
+      "title": "Mantener draft hasta limpiar majors",
+      "body": "Esperar a que las majors pendientes estén actualizadas manualmente, resolver la rama `DIRTY` y entonces revisar el primer comportamiento de Dependabot.",
       "recommended": true
     },
     {
-      "title": "Enable majors earlier",
-      "body": "Merge after resolving the config conflicts and accept that Dependabot may open several major-update PRs immediately.",
+      "title": "Activar con riesgo asumido",
+      "body": "Mergear tras resolver la rama aunque aún queden majors pendientes, aceptando más PRs automáticos y posible ruido de CI/autofix.",
       "recommended": false
     },
     {
-      "title": "Defer major grouping",
-      "body": "Close or park this follow-up until maintainers explicitly want major-update automation active.",
+      "title": "Cerrar y reabrir cuando toque",
+      "body": "Cerrar este intento si la activación no es prioritaria ahora y abrir un PR fresco cuando el backlog de majors esté preparado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep draft until ready",
-    "body": "Land the prerequisite first, clear or intentionally accept the current major-upgrade backlog, then refresh this PR and review it against dev.",
+    "title": "Mantener draft hasta limpiar majors",
+    "body": "Esperar a que las majors pendientes estén actualizadas manualmente, resolver la rama `DIRTY` y entonces revisar el primer comportamiento de Dependabot.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Javier has the strongest recent review and CI automation signal around the prerequisite Dependabot work and the current dev workflow shape.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona solicitada para revisar este PR y la decisión pendiente es de readiness operativa, no solo de autoría del fichero.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6766.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6766#issuecomment-4910266043",
-    "reviewedAt": "2026-07-08T00:14:52.396Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-13T08:01:00.996Z",
+    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
   }
 }
