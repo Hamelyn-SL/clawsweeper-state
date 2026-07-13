@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T09:10:49.377Z",
+  "updatedAt": "2026-07-13T08:59:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7436,
+    "title": "feat: resolve authors by canonical authorId across duplicate fichas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7436",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-13T08:14:41Z",
+    "updatedAt": "2026-07-13T08:59:38Z",
+    "headSha": "c5377eb7649cfe98970ec3bc91b73c116d0b9ccd"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿SEO acepta que los slugs no canónicos respondan con 308 mediante `permanentRedirect`, o esta implementación debe emitir 301 real como dice la aceptación?",
+  "rationale": "El PR y la issue usan lenguaje de 301, pero la prueba descrita observa 308; esa diferencia puede ser aceptable o no según la política SEO de Hamelyn, y no conviene inferirla desde código.",
+  "options": [
+    {
+      "title": "Mantener 301 real",
+      "body": "Exigir que la implementación emita y pruebe un 301 si la aceptación SEO depende de ese código exacto.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar 308 permanente",
+      "body": "Actualizar el criterio de aceptación y la prueba del PR para dejar claro que el redirect permanente de Next es suficiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener 301 real",
+    "body": "Exigir que la implementación emita y pruebe un 301 si la aceptación SEO depende de ese código exacto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es quien abrió la issue canónica y la rama candidata, y también aparece en la historia del cron afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7436.md",
+    "reviewedAt": "2026-07-13T09:10:49.377Z",
+    "mainSha": "d7ed6cbdd1efbccb349e99e2646bc7754916c037"
+  }
+}
