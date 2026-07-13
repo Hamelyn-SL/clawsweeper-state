@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-13T13:25:22.394Z",
+  "generatedAt": "2026-07-13T19:04:11.768Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 179
+    "openItemsSeen": 172
   },
   "counts": {
-    "itemRecords": 165,
-    "closedRecords": 248,
-    "missingOpen": 14,
+    "itemRecords": 170,
+    "closedRecords": 255,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 13,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,177 +39,15 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7443,
+        "number": 7486,
         "kind": "pull_request",
-        "title": "fix: offset product offers anchor below navbar",
+        "title": "fix: preserve product titles in refund orders",
         "labels": [
           "size/XS"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T09:03:58Z",
-        "updatedAt": "2026-07-13T09:08:41Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7450,
-        "kind": "pull_request",
-        "title": "fix: attribute wikipedia bios and commons author portraits",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T09:20:30Z",
-        "updatedAt": "2026-07-13T09:24:30Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7451,
-        "kind": "pull_request",
-        "title": "fix: scope marketplace price confirmations",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T09:36:08Z",
-        "updatedAt": "2026-07-13T09:39:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7470,
-        "kind": "issue",
-        "title": "Buscalibre no archiva el CSV de stock en Drive",
-        "labels": [
-          "crons",
-          "codex",
-          "bug",
-          "priority:p1",
-          "triage:queued",
-          "app:crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T11:44:47Z",
-        "updatedAt": "2026-07-13T13:05:24Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7471,
-        "kind": "issue",
-        "title": "Error de vista en los to cancel del ecommerce ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:ecommerce",
-          "priority:p1",
-          "triage:queued",
-          "reporter:irenegarcia"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T11:47:30Z",
-        "updatedAt": "2026-07-13T13:20:26Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7472,
-        "kind": "issue",
-        "title": "🚀 Sustituir Dependabot npm por un updater agrupado del monorepo",
-        "labels": [
-          "priority:p2",
-          "app:infrastructure",
-          "feature",
-          "triage:queued",
-          "reporter:danielmenchen-hamelyn"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:04:17Z",
-        "updatedAt": "2026-07-13T12:57:37Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7473,
-        "kind": "pull_request",
-        "title": "refactor: drop priority attribute from ecommerce sitemaps",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:23:30Z",
-        "updatedAt": "2026-07-13T13:18:38Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7474,
-        "kind": "pull_request",
-        "title": "ci: automate grouped dependency updates",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:25:11Z",
-        "updatedAt": "2026-07-13T12:40:55Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7477,
-        "kind": "pull_request",
-        "title": "fix: unify free urgent shipping threshold boundary across surfaces",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:55:05Z",
-        "updatedAt": "2026-07-13T13:23:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7478,
-        "kind": "pull_request",
-        "title": "perf: bulk azeta and arnoia product syncs",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:56:02Z",
-        "updatedAt": "2026-07-13T13:23:43Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7480,
-        "kind": "issue",
-        "title": "Review gutemberg admin-api backend mode and stale ATC_TOKEN reference",
-        "labels": [
-          "priority:p3",
-          "app:infrastructure",
-          "question",
-          "reporter:javier",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T13:02:51Z",
-        "updatedAt": "2026-07-13T13:03:25Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7481,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T13:07:43Z",
-        "updatedAt": "2026-07-13T13:11:17Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7482,
-        "kind": "pull_request",
-        "title": "refactor: remove admin dashboards and redesign home with recent pages",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T13:16:25Z",
-        "updatedAt": "2026-07-13T13:16:38Z",
+        "createdAt": "2026-07-13T15:04:29Z",
+        "updatedAt": "2026-07-13T15:14:27Z",
         "missingReason": "recently_created"
       }
     ],
@@ -235,177 +73,15 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 7443,
+        "number": 7486,
         "kind": "pull_request",
-        "title": "fix: offset product offers anchor below navbar",
+        "title": "fix: preserve product titles in refund orders",
         "labels": [
           "size/XS"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T09:03:58Z",
-        "updatedAt": "2026-07-13T09:08:41Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7450,
-        "kind": "pull_request",
-        "title": "fix: attribute wikipedia bios and commons author portraits",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T09:20:30Z",
-        "updatedAt": "2026-07-13T09:24:30Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7451,
-        "kind": "pull_request",
-        "title": "fix: scope marketplace price confirmations",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T09:36:08Z",
-        "updatedAt": "2026-07-13T09:39:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7470,
-        "kind": "issue",
-        "title": "Buscalibre no archiva el CSV de stock en Drive",
-        "labels": [
-          "crons",
-          "codex",
-          "bug",
-          "priority:p1",
-          "triage:queued",
-          "app:crons"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T11:44:47Z",
-        "updatedAt": "2026-07-13T13:05:24Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7471,
-        "kind": "issue",
-        "title": "Error de vista en los to cancel del ecommerce ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:ecommerce",
-          "priority:p1",
-          "triage:queued",
-          "reporter:irenegarcia"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T11:47:30Z",
-        "updatedAt": "2026-07-13T13:20:26Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7472,
-        "kind": "issue",
-        "title": "🚀 Sustituir Dependabot npm por un updater agrupado del monorepo",
-        "labels": [
-          "priority:p2",
-          "app:infrastructure",
-          "feature",
-          "triage:queued",
-          "reporter:danielmenchen-hamelyn"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:04:17Z",
-        "updatedAt": "2026-07-13T12:57:37Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7473,
-        "kind": "pull_request",
-        "title": "refactor: drop priority attribute from ecommerce sitemaps",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:23:30Z",
-        "updatedAt": "2026-07-13T13:18:38Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7474,
-        "kind": "pull_request",
-        "title": "ci: automate grouped dependency updates",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:25:11Z",
-        "updatedAt": "2026-07-13T12:40:55Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7477,
-        "kind": "pull_request",
-        "title": "fix: unify free urgent shipping threshold boundary across surfaces",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:55:05Z",
-        "updatedAt": "2026-07-13T13:23:02Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7478,
-        "kind": "pull_request",
-        "title": "perf: bulk azeta and arnoia product syncs",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T12:56:02Z",
-        "updatedAt": "2026-07-13T13:23:43Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7480,
-        "kind": "issue",
-        "title": "Review gutemberg admin-api backend mode and stale ATC_TOKEN reference",
-        "labels": [
-          "priority:p3",
-          "app:infrastructure",
-          "question",
-          "reporter:javier",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T13:02:51Z",
-        "updatedAt": "2026-07-13T13:03:25Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7481,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T13:07:43Z",
-        "updatedAt": "2026-07-13T13:11:17Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7482,
-        "kind": "pull_request",
-        "title": "refactor: remove admin dashboards and redesign home with recent pages",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-13T13:16:25Z",
-        "updatedAt": "2026-07-13T13:16:38Z",
+        "createdAt": "2026-07-13T15:04:29Z",
+        "updatedAt": "2026-07-13T15:14:27Z",
         "missingReason": "recently_created"
       }
     ],
