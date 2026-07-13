@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T20:38:36.879Z",
-  "updatedAt": "2026-07-13T20:13:27Z",
+  "generatedAt": "2026-07-13T22:20:48.785Z",
+  "updatedAt": "2026-07-13T21:29:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,38 @@
       "P2"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
-    "updatedAt": "2026-07-13T20:13:27Z",
-    "headSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+    "updatedAt": "2026-07-13T21:29:59Z",
+    "headSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe esta release retirar ya `atctoken` en producción pese a que no se pueden descartar consumidores externos activos?",
-  "rationale": "La retirada elimina un bypass con privilegios administrativos y mejora la frontera de seguridad, pero también puede cortar integraciones M2M existentes; esa aceptación o separación del riesgo requiere intención explícita de quien decide la release.",
+  "question": "¿Debe esta release incluir ahora la retirada incompatible de `atctoken` y el nuevo fallo cerrado de OAuth de Codex, o deben separarse hasta completar la migración y la prueba operativa?",
+  "rationale": "Ambos cambios son deliberados y pueden detener integraciones o agentes existentes; CI no demuestra la seguridad de upgrade ni decide si el corte operativo es aceptable en esta ventana de producción.",
   "options": [
     {
-      "title": "Verificar, migrar y desplegar",
-      "body": "Inventariar o migrar consumidores a Auth0/PAT, aportar prueba real y desplegar después la retirada junto con los demás cambios corregidos.",
+      "title": "Separar hasta probar",
+      "body": "Excluir temporalmente los cambios sensibles de esta promoción y desplegarlos después con inventario, migración, runbook y prueba operativa completos.",
       "recommended": true
     },
     {
-      "title": "Separar la retirada de auth",
-      "body": "Revertir temporalmente la retirada mediante un PR a `dev` y promover el resto cuando los otros bloqueos estén resueltos.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el corte legacy",
-      "body": "Después de corregir los demás hallazgos, desplegar asumiendo expresamente que cualquier consumidor `atctoken` restante dejará de funcionar.",
+      "title": "Aceptar el corte operativo",
+      "body": "Mantenerlos en la release con aprobación humana explícita, ventana asistida, monitorización activa y rollback/re-seed preparados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar, migrar y desplegar",
-    "body": "Inventariar o migrar consumidores a Auth0/PAT, aportar prueba real y desplegar después la retirada junto con los demás cambios corregidos.",
+    "title": "Separar hasta probar",
+    "body": "Excluir temporalmente los cambios sensibles de esta promoción y desplegarlos después con inventario, migración, runbook y prueba operativa completos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Integró la retirada de auth, revisó el bloque BL y ha fusionado promociones recientes a producción.",
+    "reason": "Es autor e integrador reciente de ambos cambios sensibles y de su documentación operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-13T20:38:36.879Z",
-    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+    "reviewedAt": "2026-07-13T22:20:48.785Z",
+    "mainSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
   }
 }
