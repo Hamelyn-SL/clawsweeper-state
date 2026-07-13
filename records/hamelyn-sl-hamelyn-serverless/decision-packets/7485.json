@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T15:03:52.352Z",
-  "updatedAt": "2026-07-13T14:32:53Z",
+  "generatedAt": "2026-07-13T20:25:39.677Z",
+  "updatedAt": "2026-07-13T20:13:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 automation",
+      "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 other"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
-    "updatedAt": "2026-07-13T14:32:53Z",
-    "headSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "updatedAt": "2026-07-13T20:13:27Z",
+    "headSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe pausarse este despliegue hasta corregir y volver a probar `pr-review-reminder`, o debe promoverse únicamente la corrección de marketplaces?",
-  "rationale": "La reparación del workflow es mecánica, pero decidir qué subconjunto de `dev` se incorpora ahora a `master` pertenece a la coordinación humana de la release.",
+  "question": "¿Debe promoverse ahora este head de `dev` a `master` pese a los tres fallos abiertos del recordatorio, la falta de prueba operativa y la posible interrupción de consumidores `atctoken`?",
+  "rationale": "La decisión combina aceptación de una ruptura de compatibilidad, riesgo operativo de producción y selección del contenido de la release; no puede resolverse de forma segura mediante un repair automático.",
   "options": [
     {
-      "title": "Pausar y corregir",
-      "body": "Corregir el workflow mediante una PR estrecha contra `dev`, probar ambos modos y dejar que este despliegue incorpore el nuevo head antes del merge.",
+      "title": "Corregir y verificar antes de producción",
+      "body": "Incorporar en `dev` los tres ajustes del workflow, aportar prueba real de Slack, batch y auth, y revisar de nuevo el head actualizado antes de mergear.",
       "recommended": true
     },
     {
-      "title": "Desplegar solo marketplaces",
-      "body": "Preparar una promoción que excluya temporalmente el rediseño del recordatorio y contenga únicamente la corrección batch.",
+      "title": "Aceptar expresamente el riesgo",
+      "body": "Mergear el head actual asumiendo los defectos conocidos del recordatorio y la posible caída de integraciones externas que aún usen `atctoken`.",
       "recommended": false
     },
     {
-      "title": "Aceptar el riesgo",
-      "body": "Promover ambos cambios asumiendo los errores de selección, enlaces y truncado del recordatorio y la falta de prueba after-fix del batch.",
+      "title": "Pausar esta release",
+      "body": "Mantener la promoción detenida hasta decidir si alguno de los tres cambios debe retirarse o sustituirse en `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pausar y corregir",
-    "body": "Corregir el workflow mediante una PR estrecha contra `dev`, probar ambos modos y dejar que este despliegue incorpore el nuevo head antes del merge.",
+    "title": "Corregir y verificar antes de producción",
+    "body": "Incorporar en `dev` los tres ajustes del workflow, aportar prueba real de Slack, batch y auth, y revisar de nuevo el head actualizado antes de mergear.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Integró ambos cambios en `dev` y tiene el historial reciente más directo sobre el workflow y la composición de este despliegue.",
-    "confidence": "medium"
+    "reason": "Integró los tres cambios incluidos y es la persona con mayor continuidad reciente sobre despliegue, automatización y autenticación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-13T15:03:52.352Z",
-    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "reviewedAt": "2026-07-13T20:25:39.677Z",
+    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T20:25:32.004Z",
+  "updatedAt": "2026-07-13T15:15:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7473,
+    "title": "refactor: drop priority attribute from ecommerce sitemaps",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-13T12:23:30Z",
+    "updatedAt": "2026-07-13T15:15:05Z",
+    "headSha": "c3e6db94d64437663dddc928f8236742f2b61648"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe este PR volver al slice original que solo elimina `<priority>` o convertirse explícitamente en la implementación amplia de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221?",
+  "rationale": "El cuerpo afirma que segmentación, hubs, `<lastmod>` y `noindex` quedan fuera, pero el branch los implementa; además, la fuente de fecha de stock y la transición del sitemap antiguo necesitan una decisión explícita.",
+  "options": [
+    {
+      "title": "Volver al slice estrecho",
+      "body": "Conservar únicamente la retirada de `<priority>` y mover segmentación, hubs, `<lastmod>` y `noindex` a cambios posteriores con decisiones y pruebas propias.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar el alcance completo",
+      "body": "Actualizar título y cuerpo, preservar la compatibilidad, resolver la fecha de stock y demostrar la migración completa antes de integrar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Volver al slice estrecho",
+    "body": "Conservar únicamente la retirada de `<priority>` y mover segmentación, hubs, `<lastmod>` y `noindex` a cambios posteriores con decisiones y pruebas propias.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Tiene asignada la issue canónica y concentra el historial reciente del bloque SEO y de autores.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
+    "reviewedAt": "2026-07-13T20:25:32.004Z",
+    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T20:26:42.612Z",
+  "updatedAt": "2026-07-13T20:01:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7486,
+    "title": "fix: preserve product titles in refund orders",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7486",
+    "state": "open",
+    "labels": [
+      "size/XS"
+    ],
+    "createdAt": "2026-07-13T15:04:29Z",
+    "updatedAt": "2026-07-13T20:01:34Z",
+    "headSha": "52482704eafa49ea665888722d505a50d7d81365"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe esta solución cubrir también los pedidos históricos ya persistidos o se acepta que el arreglo sea únicamente prospectivo?",
+  "rationale": "Los ejemplos que motivaron el reporte no cambian con este parche, y esa decisión de alcance determina si la issue puede cerrarse al fusionarlo.",
+  "options": [
+    {
+      "title": "Cubrir nuevos e históricos",
+      "body": "Mantener el arreglo prospectivo y añadir una resolución segura en lectura para mostrar el título de catálogo en placeholders históricos, sin backfill destructivo.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar alcance prospectivo",
+      "body": "Fusionar tras corregir el fallback y dejar explícito que los pedidos ya creados conservarán el marcador técnico.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cubrir nuevos e históricos",
+    "body": "Mantener el arreglo prospectivo y añadir una resolución segura en lectura para mostrar el título de catálogo en placeholders históricos, sin backfill destructivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor solicitado y tiene historial reciente en la lista de OrderSells donde debe evaluarse el alcance visual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7486.md",
+    "reviewedAt": "2026-07-13T20:26:42.612Z",
+    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+  }
+}
