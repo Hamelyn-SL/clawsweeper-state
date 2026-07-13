@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T22:10:01.998Z",
+  "generatedAt": "2026-07-13T22:14:48.041Z",
   "updatedAt": "2026-07-13T21:46:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,53 +13,45 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:done",
-      "P2",
-      "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "triage:done"
     ],
     "createdAt": "2026-07-13T21:37:33Z",
     "updatedAt": "2026-07-13T21:46:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse F1 como iniciativa de plataforma dividida en varios PRs, comenzando por un piloto manual `/proof` antes de activar ejecución automática por paths?",
-  "rationale": "El repositorio demuestra viabilidad técnica, pero no decide la política de activación, el presupuesto, el grado de confianza otorgado a pruebas generadas ni la frontera operativa entre controlador y código no confiable.",
+  "question": "¿Debe aprobarse F1 como iniciativa de plataforma dividida en varios PRs, empezando por un piloto manual `/proof` antes de activar ejecución automática por paths?",
+  "rationale": "El código demuestra viabilidad parcial, pero no puede decidir la política de activación, el presupuesto, el grado de confianza de la evidencia ni la frontera operativa entre controlador privilegiado y código no confiable.",
   "options": [
     {
       "title": "Piloto manual por fases",
-      "body": "Implementar primero controlador/router, snapshot y proof card+barrera mediante `/proof`, dejando GIF y triggers automáticos para una fase posterior.",
+      "body": "Implementar primero controlador, snapshot y proof card más barrera mediante `/proof`, aplazando el GIF y los triggers automáticos hasta validar seguridad, coste y utilidad.",
       "recommended": true
     },
     {
       "title": "F1 completa coordinada",
-      "body": "Aprobar desde el inicio los tres modos y los triggers automáticos, distribuyendo la iniciativa en varios PRs con revisión de seguridad conjunta.",
+      "body": "Aprobar desde el inicio los tres modos y la automatización por paths, distribuyendo el trabajo en varios PRs con revisión de seguridad conjunta.",
       "recommended": false
     },
     {
       "title": "Posponer la iniciativa",
-      "body": "Conservar la PoC y las métricas como referencia hasta disponer de capacidad de plataforma y presupuesto operativo.",
+      "body": "Conservar la PoC y sus métricas como referencia hasta disponer de capacidad de plataforma y presupuesto operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Piloto manual por fases",
-    "body": "Implementar primero controlador/router, snapshot y proof card+barrera mediante `/proof`, dejando GIF y triggers automáticos para una fase posterior.",
+    "body": "Implementar primero controlador, snapshot y proof card más barrera mediante `/proof`, aplazando el GIF y los triggers automáticos hasta validar seguridad, coste y utilidad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual y el principal autor histórico de las dos bases técnicas que la propuesta reutilizaría.",
+    "reason": "Es el asignado actual y el principal autor histórico de las primitivas técnicas que la iniciativa reutilizaría.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7488#issuecomment-4963247077",
-    "reviewedAt": "2026-07-13T22:10:01.998Z",
+    "reviewedAt": "2026-07-13T22:14:48.041Z",
     "mainSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
   }
 }
