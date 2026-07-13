@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T23:46:22.588Z",
+  "updatedAt": "2026-07-13T23:36:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5781,
+    "title": "marketplace-crons: ship bloqueado por pedidos PICKED_UP sin datos de envío",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5781",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:no-change"
+    ],
+    "createdAt": "2026-05-09T12:34:10Z",
+    "updatedAt": "2026-07-13T23:36:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Los pedidos identificados de forma fiable como Amazon Buy Shipping deben pasar internamente a `SHIPPED` sin ejecutar `confirmShipment`?",
+  "rationale": "Esta decisión separa los datos realmente incompletos que deben recuperarse de los envíos para los que Amazon no requiere confirmación manual; automatizar sin esa política podría falsear estados.",
+  "options": [
+    {
+      "title": "Regla explícita de Buy Shipping",
+      "body": "Persistir o derivar una señal fiable de Buy Shipping y avanzar únicamente esos pedidos a `SHIPPED` sin confirmación manual.",
+      "recommended": true
+    },
+    {
+      "title": "Confirmación siempre obligatoria",
+      "body": "Mantener todos los pedidos bloqueados hasta recuperar carrier y tracking suficientes para ejecutar `confirmShipment`.",
+      "recommended": false
+    },
+    {
+      "title": "Saneamiento por incidente",
+      "body": "Continuar corrigiendo manualmente cada recurrencia sin cambiar el flujo permanente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Regla explícita de Buy Shipping",
+    "body": "Persistir o derivar una señal fiable de Buy Shipping y avanzar únicamente esos pedidos a `SHIPPED` sin confirmación manual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado actual, realizó los saneamientos previos y ya participó en la revisión del contrato Amazon shipment vigente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5781.md",
+    "reviewedAt": "2026-07-13T23:46:22.588Z",
+    "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
+  }
+}
