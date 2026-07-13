@@ -15,13 +15,13 @@
       "app:supply",
       "priority:p1",
       "triage:pr-opened",
-      "reporter:daniellopez",
-      "P1",
-      "impact:data-loss",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "reporter:daniellopez",
+      "P1",
+      "impact:data-loss"
     ],
     "createdAt": "2026-07-10T11:43:55Z",
     "updatedAt": "2026-07-13T06:21:34Z"
