@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T22:20:48.785Z",
+  "generatedAt": "2026-07-13T22:26:42.308Z",
   "updatedAt": "2026-07-13T21:29:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,7 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🦪 silver shellfish",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 automation"
+      "P2"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
     "updatedAt": "2026-07-13T21:29:59Z",
@@ -24,34 +19,38 @@
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe esta release incluir ahora la retirada incompatible de `atctoken` y el nuevo fallo cerrado de OAuth de Codex, o deben separarse hasta completar la migración y la prueba operativa?",
-  "rationale": "Ambos cambios son deliberados y pueden detener integraciones o agentes existentes; CI no demuestra la seguridad de upgrade ni decide si el corte operativo es aceptable en esta ventana de producción.",
+  "question": "¿Debe promoverse ahora a producción la retirada incompatible de `atctoken` y el nuevo comportamiento fail-closed del token OAuth de Codex?",
+  "rationale": "El código permite entender el comportamiento, pero no confirma si quedan consumidores M2M legacy ni si el procedimiento de re-seed está probado y disponible durante el despliegue.",
   "options": [
     {
-      "title": "Separar hasta probar",
-      "body": "Excluir temporalmente los cambios sensibles de esta promoción y desplegarlos después con inventario, migración, runbook y prueba operativa completos.",
+      "title": "Validar antes de promover",
+      "body": "Corregir el workflow y demostrar la actualización Auth0/PAT y la recuperación OAuth antes del merge a producción.",
       "recommended": true
     },
     {
-      "title": "Aceptar el corte operativo",
-      "body": "Mantenerlos en la release con aprobación humana explícita, ventana asistida, monitorización activa y rollback/re-seed preparados.",
+      "title": "Aceptar el riesgo operativo",
+      "body": "Promover el lote únicamente si operaciones confirma que no quedan consumidores de `atctoken` y que puede ejecutar un re-seed inmediato.",
+      "recommended": false
+    },
+    {
+      "title": "Reducir el lote",
+      "body": "Posponer los cambios sensibles y promover solo los componentes que puedan validarse con seguridad en esta ventana.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar hasta probar",
-    "body": "Excluir temporalmente los cambios sensibles de esta promoción y desplegarlos después con inventario, migración, runbook y prueba operativa completos.",
+    "title": "Validar antes de promover",
+    "body": "Corregir el workflow y demostrar la actualización Auth0/PAT y la recuperación OAuth antes del merge a producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es autor e integrador reciente de ambos cambios sensibles y de su documentación operativa.",
+    "reason": "Integró el lote y es el autor reciente de los dos cambios cuya inclusión requiere la decisión operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-13T22:20:48.785Z",
+    "reviewedAt": "2026-07-13T22:26:42.308Z",
     "mainSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
   }
 }
