@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T06:09:53.714Z",
-  "updatedAt": "2026-07-13T05:44:51Z",
+  "generatedAt": "2026-07-13T08:38:30.446Z",
+  "updatedAt": "2026-07-13T08:23:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,20 +11,20 @@
     "state": "open",
     "labels": [
       "size/L",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-07-13T05:42:50Z",
-    "updatedAt": "2026-07-13T05:44:51Z",
-    "headSha": "da5e189f63c31a9c911e2595eb77f7a3bee67a6b"
+    "updatedAt": "2026-07-13T08:23:33Z",
+    "headSha": "487000e5348bf10abf947703e9cebf360c3cc8ce"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Puede `AMAZON_FR` activarse ya en `dev` con tabla BQ, índices Atlas, config Mongo, seed/reconciliación y verificación de pedidos preparados, o debe seguir en draft hasta completar esos gates?",
+  "question": "¿Puede activarse `AMAZON_FR` en `dev` ya con BQ, Atlas, `marketplaceBatch`, seed/reconciliación y verificación de pedidos preparados, o debe seguir en draft hasta completar esos gates?",
   "rationale": "El código sigue el playbook, pero el merge activa rutas y crons que dependen de estado externo no versionado y de coordinación operativa de Marketplace.",
   "options": [
     {
@@ -38,8 +38,8 @@
       "recommended": false
     },
     {
-      "title": "Reducir alcance a código no activo",
-      "body": "Separar el alta estructural de la activación de `processOrders`/cron para poder revisar el wiring sin arrancar tráfico FR todavía.",
+      "title": "Separar alta y activación",
+      "body": "Partir la activación de cron/pedidos a una PR posterior para revisar primero el wiring estructural sin arrancar tráfico FR.",
       "recommended": false
     }
   ],
@@ -50,13 +50,12 @@
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien aparece en el historial reciente del alta equivalente de Amazon MX y en la issue/PR de `AMAZON_FR`.",
+    "reason": "Es quien aparece con más historial reciente en el patrón Amazon/registry que esta PR replica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7413.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7413#issuecomment-4954917371",
-    "reviewedAt": "2026-07-13T06:09:53.714Z",
-    "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+    "reviewedAt": "2026-07-13T08:38:30.446Z",
+    "mainSha": "fb3f98beface316ca6aa33cd919e812c379b841e"
   }
 }
