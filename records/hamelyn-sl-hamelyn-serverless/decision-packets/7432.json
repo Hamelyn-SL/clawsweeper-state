@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:26:40.095Z",
-  "updatedAt": "2026-07-13T10:15:28Z",
+  "generatedAt": "2026-07-13T14:57:15.510Z",
+  "updatedAt": "2026-07-13T10:35:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,53 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:queued",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-13T08:05:07Z",
-    "updatedAt": "2026-07-13T10:15:28Z"
+    "updatedAt": "2026-07-13T10:35:06Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿SEO acepta que los slugs duplicados usen el redirect permanente que genera Next (`308`) o la implementación debe emitir un `301` real como pide la aceptación?",
-  "rationale": "La issue pide 301, mientras el PR candidato documenta una verificación con 308; esa diferencia afecta política SEO y no debe decidirla el barrido automático.",
+  "question": "¿Debe el PR candidato limitarse a la resolución canónica solicitada con redirección 301, o se aprueban también `nonPerson`, los 404, el uso de 308 y la dependencia del backfill asociado?",
+  "rationale": "Estas elecciones cambian la política SEO, la visibilidad pública de fichas y la frontera operativa respecto al contrato explícito de la issue; no consta una aprobación humana que resuelva esas diferencias.",
   "options": [
     {
-      "title": "Exigir 301 real",
-      "body": "Mantener el criterio de aceptación escrito y pedir al PR candidato que implemente y pruebe un 301 explícito.",
+      "title": "Limitar al contrato de la issue",
+      "body": "Implementar la selección canónica, la unión de catálogo, los enlaces y el guard del cron con 301, dejando `nonPerson` y la fusión física para trabajos separados.",
       "recommended": true
     },
     {
-      "title": "Aceptar 308 permanente",
-      "body": "Actualizar el criterio de aceptación en la issue/PR y considerar suficiente el redirect permanente de Next si SEO lo valida.",
+      "title": "Aprobar el alcance ampliado",
+      "body": "Aceptar `nonPerson`, 404, 308 y el backfill, documentando y validando expresamente tanto la política SEO como la operación de datos.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el PR",
+      "body": "Dividir la resolución canónica y el filtrado de entidades no-persona en dos PRs revisables de manera independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir 301 real",
-    "body": "Mantener el criterio de aceptación escrito y pedir al PR candidato que implemente y pruebe un 301 explícito.",
+    "title": "Limitar al contrato de la issue",
+    "body": "Implementar la selección canónica, la unión de catálogo, los enlaces y el guard del cron con 301, dejando `nonPerson` y la fusión física para trabajos separados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Abrió la issue, abrió el PR candidato y aparece en el historial del cron afectado.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor humano solicitado para el PR candidato y la persona mejor situada en el contexto actual para confirmar el alcance antes de adaptar la rama.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432#issuecomment-4956045560",
-    "reviewedAt": "2026-07-13T10:26:40.095Z",
-    "mainSha": "495b5eecf896337152c99658a2eedd0e6a591c6e"
+    "reviewedAt": "2026-07-13T14:57:15.510Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
   }
 }

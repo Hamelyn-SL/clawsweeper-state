@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T15:07:37.172Z",
+  "updatedAt": "2026-07-13T13:16:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7482,
+    "title": "refactor: remove admin dashboards and redesign home with recent pages",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7482",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-13T13:16:25Z",
+    "updatedAt": "2026-07-13T13:16:38Z",
+    "headSha": "2e8117490b1555fea639a80201280ce03888f759"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Se aprueba retirar también las cuatro rutas públicas de dashboards y su acceso por token en esta misma pull request?",
+  "rationale": "La issue dejó esta decisión abierta y el parche escoge la retirada completa sin una confirmación humana visible; el código no permite determinar si todavía existen consumidores externos.",
+  "options": [
+    {
+      "title": "Conservar las rutas públicas",
+      "body": "Limitar el borrado a los dashboards internos y mantener la superficie pública hasta acordar y comunicar su retirada.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar la retirada completa",
+      "body": "Eliminar las rutas públicas tras confirmar que no quedan consumidores operativos ni enlaces compartidos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar las rutas públicas",
+    "body": "Limitar el borrado a los dashboards internos y mantener la superficie pública hasta acordar y comunicar su retirada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Tiene historial previo en el admin y está coordinando la issue y la implementación, aunque la decisión debe validarse con el equipo responsable de Admin.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7482.md",
+    "reviewedAt": "2026-07-13T15:07:37.172Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  }
+}

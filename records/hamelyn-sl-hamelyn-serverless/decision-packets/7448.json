@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:28:14.006Z",
-  "updatedAt": "2026-07-13T10:12:09Z",
+  "generatedAt": "2026-07-13T15:04:19.670Z",
+  "updatedAt": "2026-07-13T10:29:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "app:ecommerce",
       "priority:p3",
       "reporter:MiguelHamelyn",
-      "triage:running",
-      "P3",
+      "triage:pr-opened",
       "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "P3",
+      "clawsweeper:linked-pr-open"
     ],
     "createdAt": "2026-07-13T09:13:39Z",
-    "updatedAt": "2026-07-13T10:12:09Z"
+    "updatedAt": "2026-07-13T10:29:39Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe migrarse el cupón legacy activo ` APOLOGY15` a un `_id` canónico antes de mergear el PR de lookup normalizado, o debe retirarse/deprecarse?",
-  "rationale": "El cambio de código es estrecho, pero el efecto sobre un cupón activo de producción requiere una decisión operativa que no se puede resolver solo desde el repositorio.",
+  "question": "¿Debe conservarse ` APOLOGY15` mediante una migración a un `_id` canónico o retirarse antes de mergear https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7460?",
+  "rationale": "El código puede simplificarse de forma segura, pero la decisión sobre la vigencia del cupón activo depende de negocio y condiciona la operación previa al merge.",
   "options": [
     {
-      "title": "Migrar antes del merge",
-      "body": "Renombrar o recrear el cupón activo con `_id` canónico mantiene compatibilidad para usuarios y permite mergear el lookup único con menor riesgo.",
+      "title": "Migrar el cupón activo",
+      "body": "Recrear o renombrar ` APOLOGY15` con su `_id` canónico antes del merge para mantener su vigencia hasta 2027.",
       "recommended": true
     },
     {
-      "title": "Retirar el cupón legacy",
-      "body": "Desactivar o deprecar explícitamente el cupón evita la migración, pero acepta que el código deje de funcionar para cualquier usuario que aún lo tenga.",
+      "title": "Retirar el cupón activo",
+      "body": "Desactivar o eliminar el cupón legacy si ecommerce confirma que ya no debe seguir disponible.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migrar antes del merge",
-    "body": "Renombrar o recrear el cupón activo con `_id` canónico mantiene compatibilidad para usuarios y permite mergear el lookup único con menor riesgo.",
+    "title": "Migrar el cupón activo",
+    "body": "Recrear o renombrar ` APOLOGY15` con su `_id` canónico antes del merge para mantener su vigencia hasta 2027.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el candidato con historial más directo en normalización de cupones y el área afectada.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado y el contribuidor reciente con mayor historial directo en el bloque de cupones.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7448.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7448#issuecomment-4956992923",
-    "reviewedAt": "2026-07-13T10:28:14.006Z",
-    "mainSha": "495b5eecf896337152c99658a2eedd0e6a591c6e"
+    "reviewedAt": "2026-07-13T15:04:19.670Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
   }
 }

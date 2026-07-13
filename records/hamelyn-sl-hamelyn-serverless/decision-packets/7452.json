@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:34:52.528Z",
-  "updatedAt": "2026-07-13T09:44:15Z",
+  "generatedAt": "2026-07-13T14:56:40.928Z",
+  "updatedAt": "2026-07-13T11:00:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,52 @@
       "app:admin",
       "priority:p3",
       "feature",
-      "triage:queued",
-      "reporter:AlexDiaz-Hamelyn",
-      "P3",
-      "impact:ux-friction",
-      "issue-rating: 🌊 off-meta tidepool",
+      "triage:needs-info",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: 🌊 off-meta tidepool",
+      "impact:ux-friction",
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-13T09:44:03Z",
-    "updatedAt": "2026-07-13T09:44:15Z"
+    "updatedAt": "2026-07-13T11:00:31Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Deben desaparecer también las rutas públicas `/public/dashboard/{sales,stocks,supply,pricing}` o deben conservarse moviendo los paneles a una ubicación pública antes de borrar los dashboards internos del admin?",
-  "rationale": "El alcance del issue pide borrar `Dashboards/`, pero el código actual lo reutiliza desde rutas públicas sin login; esa decisión cambia producto y no se puede resolver de forma segura solo con limpieza técnica.",
+  "question": "¿Se aprueba el alcance del PR vinculado, que elimina también `/public/dashboard/*` y sustituye la home por tarjetas de páginas recientes persistidas por usuario?",
+  "rationale": "La retirada del menú y de los recursos internos está delimitada, pero eliminar rutas públicas y crear una experiencia de inicio nueva son decisiones de producto que no se deducen de la limpieza de código muerto.",
   "options": [
     {
-      "title": "Conservar rutas públicas moviendo paneles",
-      "body": "Mover los paneles reutilizados a una carpeta pública o compartida, retirar solo el menú y las rutas `dashboard/*` de react-admin, y dejar `/public/dashboard/*` funcionando.",
+      "title": "Separar el rediseño",
+      "body": "Conservar por ahora las rutas públicas, acotar el PR a la retirada interna y tratar la nueva home en un alcance funcional independiente.",
       "recommended": true
     },
     {
-      "title": "Eliminar también rutas públicas",
-      "body": "Borrar las páginas `/public/dashboard/*`, sus enlaces en `PublicAdminLayout` y todos los paneles de Atlas Charts asociados.",
+      "title": "Aprobar el alcance completo",
+      "body": "Aceptar la desaparición de las rutas públicas y revisar el PR actual como implementación canónica de la nueva home.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar todos los dashboards sin rediseño",
+      "body": "Eliminar también las rutas públicas, pero usar una ruta de inicio explícita y dejar las páginas recientes para otro cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar rutas públicas moviendo paneles",
-    "body": "Mover los paneles reutilizados a una carpeta pública o compartida, retirar solo el menú y las rutas `dashboard/*` de react-admin, y dejar `/public/dashboard/*` funcionando.",
+    "title": "Separar el rediseño",
+    "body": "Conservar por ahora las rutas públicas, acotar el PR a la retirada interna y tratar la nueva home en un alcance funcional independiente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el candidato con historial reciente más directo en el layout y registro de dashboards del admin.",
+    "reason": "Tiene el historial reciente más directo sobre el layout y la integración de dashboards que condicionan la decisión de navegación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7452.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7452#issuecomment-4957054247",
-    "reviewedAt": "2026-07-13T10:34:52.528Z",
-    "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
+    "reviewedAt": "2026-07-13T14:56:40.928Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
   }
 }

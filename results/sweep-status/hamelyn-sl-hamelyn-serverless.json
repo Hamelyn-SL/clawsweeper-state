@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review comments checked",
-  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 2. Item numbers: 7471,7472.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29259585533",
-  "planned_count": 2,
-  "planned_capacity": 2,
-  "planned_shards": 2,
+  "state": "Review publish complete",
+  "detail": "Merged 21 review artifacts for run 29259587027. Captured 11 shard metrics; 3 shards reported non-success review status. Folder reconciliation moved tracked files to match current GitHub open/closed state.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29259587027",
+  "planned_count": 21,
+  "planned_capacity": 33,
+  "planned_shards": 11,
   "active_codex": 0,
   "due_backlog": 21,
   "oldest_unreviewed_at": "2026-07-13T09:03:58Z",
-  "capacity_reason": "saturated: due backlog filled planned capacity",
+  "capacity_reason": "under capacity: due backlog below planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-07-13T15:02:14.690Z"
+  "updated_at": "2026-07-13T15:12:46.233Z"
 }

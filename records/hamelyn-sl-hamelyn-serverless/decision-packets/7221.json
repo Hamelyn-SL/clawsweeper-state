@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T14:57:55.713Z",
+  "updatedAt": "2026-07-13T11:58:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7221,
+    "title": "Reestructurar sitemaps ecommerce venta",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "reporter:victor"
+    ],
+    "createdAt": "2026-07-08T09:00:53Z",
+    "updatedAt": "2026-07-13T11:58:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe considerarse obligatorio registrar una fecha específica de cambio de stock para cumplir `lastmod`, o se acepta temporalmente el máximo entre `lastUpdated` y `lastPriceUpdate` del PR abierto?",
+  "rationale": "El modelo actual no conserva una marca temporal inequívoca para cambios de `activeUnits`; aceptar la aproximación modifica el criterio de aceptación, mientras que exigir precisión puede requerir persistencia adicional y cambios en los flujos que actualizan stock.",
+  "options": [
+    {
+      "title": "Exigir `lastmod` completo",
+      "body": "Mantener el requisito original y no dar por terminada la issue hasta que contenido, precio y stock tengan una fecha fiable y verificable.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar aproximación temporal",
+      "body": "Fusionar la segmentación con `lastUpdated` y `lastPriceUpdate`, documentando expresamente que los cambios exclusivos de stock no actualizan todavía `lastmod`.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el seguimiento de stock",
+      "body": "Fusionar los cambios estructurales y abrir una issue canónica específica para persistir y propagar la fecha del último cambio de stock.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir `lastmod` completo",
+    "body": "Mantener el requisito original y no dar por terminada la issue hasta que contenido, precio y stock tengan una fecha fiable y verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el asignado actual, autor del PR candidato y contribuidor reciente tanto del bloque SEO como de la superficie de autores.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7221.md",
+    "reviewedAt": "2026-07-13T14:57:55.713Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  }
+}

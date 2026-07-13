@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T15:03:52.352Z",
+  "updatedAt": "2026-07-13T14:32:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7485,
+    "title": "Deploy to Prod",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-13T14:17:35Z",
+    "updatedAt": "2026-07-13T14:32:53Z",
+    "headSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe pausarse este despliegue hasta corregir y volver a probar `pr-review-reminder`, o debe promoverse únicamente la corrección de marketplaces?",
+  "rationale": "La reparación del workflow es mecánica, pero decidir qué subconjunto de `dev` se incorpora ahora a `master` pertenece a la coordinación humana de la release.",
+  "options": [
+    {
+      "title": "Pausar y corregir",
+      "body": "Corregir el workflow mediante una PR estrecha contra `dev`, probar ambos modos y dejar que este despliegue incorpore el nuevo head antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Desplegar solo marketplaces",
+      "body": "Preparar una promoción que excluya temporalmente el rediseño del recordatorio y contenga únicamente la corrección batch.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el riesgo",
+      "body": "Promover ambos cambios asumiendo los errores de selección, enlaces y truncado del recordatorio y la falta de prueba after-fix del batch.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pausar y corregir",
+    "body": "Corregir el workflow mediante una PR estrecha contra `dev`, probar ambos modos y dejar que este despliegue incorpore el nuevo head antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Integró ambos cambios en `dev` y tiene el historial reciente más directo sobre el workflow y la composición de este despliegue.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
+    "reviewedAt": "2026-07-13T15:03:52.352Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+  }
+}
