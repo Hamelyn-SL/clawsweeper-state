@@ -11,12 +11,12 @@
     "state": "open",
     "labels": [
       "size/XS",
-      "P3",
-      "status: 👀 ready for maintainer look",
-      "merge-risk: 🚨 security-boundary",
-      "rating: 🐚 platinum hermit",
       "dependencies",
-      "github_actions"
+      "github_actions",
+      "rating: 🐚 platinum hermit",
+      "status: 👀 ready for maintainer look",
+      "P3",
+      "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-13T07:55:45Z",
     "updatedAt": "2026-07-13T10:44:37Z",
@@ -50,6 +50,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7431.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7431#issuecomment-4955995526",
     "reviewedAt": "2026-07-13T11:21:27.929Z",
     "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
   }
