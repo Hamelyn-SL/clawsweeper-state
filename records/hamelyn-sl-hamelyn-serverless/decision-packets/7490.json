@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T23:21:43.852Z",
+  "updatedAt": "2026-07-13T22:49:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7490,
+    "title": "feat: add PR proof-agent for automated change evidence",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7490",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-13T22:44:24Z",
+    "updatedAt": "2026-07-13T22:49:32Z",
+    "headSha": "24314bd82bd94a81825d7a8e215e354b139cf919"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se acepta operar esta nueva superficie de ejecución de código de PR con Vercel Sandbox y credenciales del repositorio, y bajo qué requisitos obligatorios de aislamiento, privacidad y activación?",
+  "rationale": "Los defectos mecánicos pueden corregirse, pero decidir si los artefactos pueden salir del repositorio privado, qué credencial puede entrar en la VM y si la primera fase puede cerrar la iniciativa requiere intención explícita de quien sea responsable de la plataforma.",
+  "options": [
+    {
+      "title": "Endurecer antes del merge",
+      "body": "Exigir artefactos privados, credenciales efímeras o externas a la VM, dependencias bloqueadas, aislamiento verificable y prueba real de los tres modos antes de aprobar.",
+      "recommended": true
+    },
+    {
+      "title": "Mergear desactivado con gate externo",
+      "body": "Aceptar el código sin configurar secretos, dejando documentado que la activación necesita una revisión de seguridad independiente y que la issue vinculada sigue abierta.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la iniciativa",
+      "body": "No incorporar esta superficie XXL si no se asigna propiedad operativa y el coste de aislamiento supera el valor esperado para las revisiones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Endurecer antes del merge",
+    "body": "Exigir artefactos privados, credenciales efímeras o externas a la VM, dependencias bloqueadas, aislamiento verificable y prueba real de los tres modos antes de aprobar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor historial en Skill Guardian, Vercel Sandbox y telemetría de agentes, y figura asignada a la iniciativa canónica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7490.md",
+    "reviewedAt": "2026-07-13T23:21:43.852Z",
+    "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
+  }
+}
