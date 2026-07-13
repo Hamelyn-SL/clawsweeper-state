@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T06:04:01.213Z",
+  "updatedAt": "2026-07-13T05:44:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7413,
+    "title": "feat: add amazon fr marketplace",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7413",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-13T05:42:50Z",
+    "updatedAt": "2026-07-13T05:44:51Z",
+    "headSha": "da5e189f63c31a9c911e2595eb77f7a3bee67a6b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Aceptamos mergear el alta de Amazon FR con gates operativos externos y el panel de snapshots como follow-up, o debe quedarse en draft hasta que todo el rollout esté cerrado?",
+  "rationale": "El cambio añade un marketplace real con pedidos y cron propio; la decisión de cortar el alcance antes de snapshots/backfill completos y de coordinar pasos fuera del repo no la puede resolver CI ni una reparación automática.",
+  "options": [
+    {
+      "title": "Mantener draft hasta gates cerrados",
+      "body": "Esperar a que BQ, índices Atlas, `config.marketplaceBatch.amazonFr`, seed/backfill y plan de snapshots estén confirmados antes de mergear.",
+      "recommended": true
+    },
+    {
+      "title": "Mergear con rollout coordinado",
+      "body": "Permitir el merge si MarcosTerroso u otra persona responsable confirma que los pasos externos se ejecutarán antes de activar tráfico real.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir el alcance",
+      "body": "Separar el alta mínima de runtime del trabajo de dashboards/snapshots si el equipo quiere reducir riesgo de release.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener draft hasta gates cerrados",
+    "body": "Esperar a que BQ, índices Atlas, `config.marketplaceBatch.amazonFr`, seed/backfill y plan de snapshots estén confirmados antes de mergear.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien ha llevado el hilo de Amazon FR y los cambios recientes del área en el historial local y en el PR vinculado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7413.md",
+    "reviewedAt": "2026-07-13T06:04:01.213Z",
+    "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T06:03:39.288Z",
+  "updatedAt": "2026-07-13T05:50:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7412,
+    "title": "Alta marketplace Amazon Italia (AMAZON_IT)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7412",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:marketplace",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-13T05:31:29Z",
+    "updatedAt": "2026-07-13T05:50:48Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Marketplace priorizar ahora el alta completa de `AMAZON_IT`, o mantenerla planificada hasta que estén listos los gates operativos de datos/config?",
+  "rationale": "La forma técnica está clara, pero activar un marketplace completo cambia sincronización, pricing, pedidos y operación; hace falta coordinación humana porque la issue ya está asignada y depende de pasos externos al repo.",
+  "options": [
+    {
+      "title": "Planificar alta coordinada",
+      "body": "Mantener esta issue abierta y ejecutar una PR de código junto con tabla BQ, índices, config, seed, reconciliación y deduplicación antes del primer `processOrders`.",
+      "recommended": true
+    },
+    {
+      "title": "Preparar código sin activar pedidos",
+      "body": "Añadir enums, registry y capa de datos, pero dejar cron/procesado desactivado hasta que los gates externos estén completos.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el canal",
+      "body": "No tocar código todavía y revisar la prioridad cuando Marketplace confirme capacidad operativa para Italia.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Planificar alta coordinada",
+    "body": "Mantener esta issue abierta y ejecutar una PR de código junto con tabla BQ, índices, config, seed, reconciliación y deduplicación antes del primer `processOrders`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la issue y aparece en el historial reciente del patrón equivalente de Amazon MX y del registry.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7412.md",
+    "reviewedAt": "2026-07-13T06:03:39.288Z",
+    "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+  }
+}
