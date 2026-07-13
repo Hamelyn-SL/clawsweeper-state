@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T10:28:14.006Z",
+  "updatedAt": "2026-07-13T10:12:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7448,
+    "title": "Simplificar lookup de cupones: una sola búsqueda normalizada",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7448",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p3",
+      "reporter:MiguelHamelyn",
+      "triage:running"
+    ],
+    "createdAt": "2026-07-13T09:13:39Z",
+    "updatedAt": "2026-07-13T10:12:09Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe migrarse el cupón legacy activo ` APOLOGY15` a un `_id` canónico antes de mergear el PR de lookup normalizado, o debe retirarse/deprecarse?",
+  "rationale": "El cambio de código es estrecho, pero el efecto sobre un cupón activo de producción requiere una decisión operativa que no se puede resolver solo desde el repositorio.",
+  "options": [
+    {
+      "title": "Migrar antes del merge",
+      "body": "Renombrar o recrear el cupón activo con `_id` canónico mantiene compatibilidad para usuarios y permite mergear el lookup único con menor riesgo.",
+      "recommended": true
+    },
+    {
+      "title": "Retirar el cupón legacy",
+      "body": "Desactivar o deprecar explícitamente el cupón evita la migración, pero acepta que el código deje de funcionar para cualquier usuario que aún lo tenga.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migrar antes del merge",
+    "body": "Renombrar o recrear el cupón activo con `_id` canónico mantiene compatibilidad para usuarios y permite mergear el lookup único con menor riesgo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato con historial más directo en normalización de cupones y el área afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7448.md",
+    "reviewedAt": "2026-07-13T10:28:14.006Z",
+    "mainSha": "495b5eecf896337152c99658a2eedd0e6a591c6e"
+  }
+}

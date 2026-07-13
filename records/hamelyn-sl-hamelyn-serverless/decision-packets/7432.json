@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T10:26:40.095Z",
+  "updatedAt": "2026-07-13T10:15:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7432,
+    "title": "Ecommerce: resolver autores por authorId canónico gestionando fichas duplicadas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-13T08:05:07Z",
+    "updatedAt": "2026-07-13T10:15:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿SEO acepta que los slugs duplicados usen el redirect permanente que genera Next (`308`) o la implementación debe emitir un `301` real como pide la aceptación?",
+  "rationale": "La issue pide 301, mientras el PR candidato documenta una verificación con 308; esa diferencia afecta política SEO y no debe decidirla el barrido automático.",
+  "options": [
+    {
+      "title": "Exigir 301 real",
+      "body": "Mantener el criterio de aceptación escrito y pedir al PR candidato que implemente y pruebe un 301 explícito.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar 308 permanente",
+      "body": "Actualizar el criterio de aceptación en la issue/PR y considerar suficiente el redirect permanente de Next si SEO lo valida.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir 301 real",
+    "body": "Mantener el criterio de aceptación escrito y pedir al PR candidato que implemente y pruebe un 301 explícito.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Abrió la issue, abrió el PR candidato y aparece en el historial del cron afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7432.md",
+    "reviewedAt": "2026-07-13T10:26:40.095Z",
+    "mainSha": "495b5eecf896337152c99658a2eedd0e6a591c6e"
+  }
+}
