@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T06:03:47.268Z",
+  "generatedAt": "2026-07-13T06:09:27.670Z",
   "updatedAt": "2026-07-13T05:46:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,12 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7411",
     "state": "open",
     "labels": [
-      "size/XL",
-      "rating: 🧂 unranked krab",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "size/XL"
     ],
     "createdAt": "2026-07-13T05:21:12Z",
     "updatedAt": "2026-07-13T05:46:38Z",
@@ -24,7 +19,7 @@
   "lane": "security_boundary",
   "priority": "P1",
   "question": "¿Debe esta release a `master` esperar a que se demuestre o implemente la protección de rate limit/firewall de `/api/v5/order-sell/cancel/guest`, o el equipo acepta desplegarla así?",
-  "rationale": "La PR mueve a producción una ruta sin sesión que muta pedidos y stock; ClawSweeper puede señalar el riesgo, pero no puede verificar la regla externa de Vercel ni decidir la política de seguridad aceptable.",
+  "rationale": "La PR mueve a producción una ruta sin sesión que muta pedidos y stock; esta revisión puede señalar el riesgo, pero no puede verificar la regla externa de Vercel ni decidir la política de seguridad aceptable.",
   "options": [
     {
       "title": "Bloquear hasta cerrar protección",
@@ -48,14 +43,13 @@
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Ya dejó el bloqueo específico de rate limit sobre la ruta guest destructiva y es el mejor propietario visible para cerrar esa decisión de seguridad.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el propietario histórico más claro de la ruta guest que define el riesgo principal de seguridad y operación en esta release.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7411.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7411#issuecomment-4954915448",
-    "reviewedAt": "2026-07-13T06:03:47.268Z",
+    "reviewedAt": "2026-07-13T06:09:27.670Z",
     "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
   }
 }
