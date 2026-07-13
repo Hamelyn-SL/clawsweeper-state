@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:37:13.968Z",
-  "updatedAt": "2026-07-13T10:25:31Z",
+  "generatedAt": "2026-07-13T14:47:20.039Z",
+  "updatedAt": "2026-07-13T11:51:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -26,43 +26,42 @@
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-13T10:25:31Z"
+    "updatedAt": "2026-07-13T11:51:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué desglose y alcance de diseño debe seguir Ecommerce para implementar el rediseño completo de estas cuatro minihomes después de la corrección parcial de URLs?",
-  "rationale": "La fuente confirma que el rediseño pendiente cruza layout, catálogo, SEO, caché y copy; esa priorización no es una reparación mecánica segura para automatizar.",
+  "question": "¿Debe ejecutarse el rediseño como una única iniciativa L o dividirse en entregas con aceptación visual y de datos independiente?",
+  "rationale": "El código permite centralizar las cuatro rutas, pero la plantilla externa no define por sí sola la política de ranking, invalidación de caché, reutilización del catálogo ni el orden de entrega; esas decisiones afectan producto, SEO y operativa.",
   "options": [
     {
-      "title": "Planificar rediseño por bloques",
-      "body": "Mantener esta issue abierta y dividir hero/buscador, beneficios, catálogo, railes/cache e interlinking/SEO en PRs pequeños con validación visual.",
+      "title": "Desglosar por capacidades",
+      "body": "Mantener esta issue como paraguas y crear tareas separadas para layout, catálogo, ranking y caché, y SEO, cada una con criterios desktop y móvil.",
       "recommended": true
     },
     {
-      "title": "Reducir alcance de la wishlist",
-      "body": "Cerrar o recortar partes del rediseño que producto ya no quiera implementar antes de pedir código.",
+      "title": "Una única implementación L",
+      "body": "Aprobar una sola PR coordinada que modifique todo `CategoryHub`, asumiendo una revisión visual, funcional y SEO de mayor tamaño.",
       "recommended": false
     },
     {
-      "title": "Un único PR de rediseño L",
-      "body": "Aceptar un PR grande coordinado por Ecommerce, asumiendo más carga de review visual y regresión responsive.",
+      "title": "Priorizar solo conversión",
+      "body": "Implementar primero hero, buscador, beneficios y catálogo, dejando SEO e interlinking adicionales para una fase posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificar rediseño por bloques",
-    "body": "Mantener esta issue abierta y dividir hero/buscador, beneficios, catálogo, railes/cache e interlinking/SEO en PRs pequeños con validación visual.",
+    "title": "Desglosar por capacidades",
+    "body": "Mantener esta issue como paraguas y crear tareas separadas para layout, catálogo, ranking y caché, y SEO, cada una con criterios desktop y móvil.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Reabrió la issue tras el cierre accidental y ya revisó la PR parcial relacionada.",
-    "confidence": "medium"
+    "reason": "Está asignado a la issue y fue quien reabrió el seguimiento al confirmar que el rediseño continuaba pendiente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-13T10:37:13.968Z",
-    "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
+    "reviewedAt": "2026-07-13T14:47:20.039Z",
+    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
   }
 }
