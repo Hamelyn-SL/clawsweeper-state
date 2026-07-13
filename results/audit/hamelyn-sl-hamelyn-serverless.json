@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-13T01:08:38.592Z",
+  "generatedAt": "2026-07-13T07:44:51.841Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
-    "pagesScanned": 3,
-    "openItemsSeen": 201
+    "pagesScanned": 2,
+    "openItemsSeen": 183
   },
   "counts": {
-    "itemRecords": 200,
-    "closedRecords": 174,
-    "missingOpen": 1,
+    "itemRecords": 172,
+    "closedRecords": 207,
+    "missingOpen": 11,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 10,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,140 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-12T12:22:05Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7417,
+        "kind": "pull_request",
+        "title": "fix: full-width two-column newsletter layout on desktop",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:28:07Z",
+        "updatedAt": "2026-07-13T06:50:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7420,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:43:52Z",
+        "updatedAt": "2026-07-13T07:44:36Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7421,
+        "kind": "pull_request",
+        "title": "fix: apply x1.37 reference price fallback on product page",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:48:55Z",
+        "updatedAt": "2026-07-13T06:50:40Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7422,
+        "kind": "pull_request",
+        "title": "fix: recalculate shipping server-side in coupon validation",
+        "labels": [],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:49:04Z",
+        "updatedAt": "2026-07-13T07:44:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7423,
+        "kind": "pull_request",
+        "title": "fix: keep author pages resolvable after authorId merges",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:56:23Z",
+        "updatedAt": "2026-07-13T07:00:15Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7424,
+        "kind": "issue",
+        "title": "Migrar la validación de cupones de admin a ecommerce (admin solo crea, no valida)",
+        "labels": [
+          "app:ecommerce",
+          "priority:p2",
+          "feature",
+          "reporter:miguel",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:00:41Z",
+        "updatedAt": "2026-07-13T07:36:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7425,
+        "kind": "issue",
+        "title": "Desaparece info de campos personalizados en eDesk ecommerce ",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p0",
+          "triage:running",
+          "reporter:irenegarcia"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:13:06Z",
+        "updatedAt": "2026-07-13T07:42:01Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7426,
+        "kind": "pull_request",
+        "title": "feat: move coupon validation into ecommerce",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:21:13Z",
+        "updatedAt": "2026-07-13T07:30:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7427,
+        "kind": "issue",
+        "title": "Casa del Libro: valid stock prices are sent as undefined during offer creation",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:28:57Z",
+        "updatedAt": "2026-07-13T07:29:08Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7428,
+        "kind": "issue",
+        "title": "marketplace-agents se despliega en cada push del monorepo sin filtrar cambios",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "reporter:miguel",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:37:27Z",
+        "updatedAt": "2026-07-13T07:37:40Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +193,142 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7417,
+        "kind": "pull_request",
+        "title": "fix: full-width two-column newsletter layout on desktop",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:28:07Z",
+        "updatedAt": "2026-07-13T06:50:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7420,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:43:52Z",
+        "updatedAt": "2026-07-13T07:44:36Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7421,
+        "kind": "pull_request",
+        "title": "fix: apply x1.37 reference price fallback on product page",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:48:55Z",
+        "updatedAt": "2026-07-13T06:50:40Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7422,
+        "kind": "pull_request",
+        "title": "fix: recalculate shipping server-side in coupon validation",
+        "labels": [],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:49:04Z",
+        "updatedAt": "2026-07-13T07:44:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7423,
+        "kind": "pull_request",
+        "title": "fix: keep author pages resolvable after authorId merges",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T06:56:23Z",
+        "updatedAt": "2026-07-13T07:00:15Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7424,
+        "kind": "issue",
+        "title": "Migrar la validación de cupones de admin a ecommerce (admin solo crea, no valida)",
+        "labels": [
+          "app:ecommerce",
+          "priority:p2",
+          "feature",
+          "reporter:miguel",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:00:41Z",
+        "updatedAt": "2026-07-13T07:36:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7425,
+        "kind": "issue",
+        "title": "Desaparece info de campos personalizados en eDesk ecommerce ",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "priority:p0",
+          "triage:running",
+          "reporter:irenegarcia"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:13:06Z",
+        "updatedAt": "2026-07-13T07:42:01Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7426,
+        "kind": "pull_request",
+        "title": "feat: move coupon validation into ecommerce",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:21:13Z",
+        "updatedAt": "2026-07-13T07:30:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7427,
+        "kind": "issue",
+        "title": "Casa del Libro: valid stock prices are sent as undefined during offer creation",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:marketplace",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:28:57Z",
+        "updatedAt": "2026-07-13T07:29:08Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7428,
+        "kind": "issue",
+        "title": "marketplace-agents se despliega en cada push del monorepo sin filtrar cambios",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "reporter:miguel",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-13T07:37:27Z",
+        "updatedAt": "2026-07-13T07:37:40Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
