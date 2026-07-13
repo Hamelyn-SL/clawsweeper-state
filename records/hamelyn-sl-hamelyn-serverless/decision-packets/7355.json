@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T08:05:10.257Z",
-  "updatedAt": "2026-07-13T06:21:34Z",
+  "generatedAt": "2026-07-13T10:34:02.380Z",
+  "updatedAt": "2026-07-13T09:27:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,51 @@
       "source:admin-panel",
       "app:supply",
       "priority:p1",
-      "triage:pr-opened",
-      "reporter:daniellopez",
       "P1",
-      "impact:data-loss",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "impact:data-loss",
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-07-10T11:43:55Z",
-    "updatedAt": "2026-07-13T06:21:34Z"
+    "updatedAt": "2026-07-13T09:27:03Z"
   },
-  "lane": "manual_review",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe `AlexDiaz-Hamelyn` reabrir/adoptar el enfoque del PR cerrado o pedir una implementación nueva centrada en una búsqueda exacta de backend para el puesto de revisión?",
-  "rationale": "La issue ya está asignada y el PR automático anterior cerró sin merge por falta de prueba; elegir entre recuperar ese parche o sustituirlo por una solución más estrecha requiere coordinación humana para no abrir trabajo paralelo.",
+  "question": "¿Debe `AlexDiaz-Hamelyn` backportar el fix de `EPIC/revision-v3` a `dev` o mantener esta issue abierta hasta que la rama épica llegue a la rama por defecto?",
+  "rationale": "El fix existe como PR mergeada fuera de `dev`, pero ClawSweeper solo puede cerrar como implementado cuando la rama por defecto resuelve el problema; la elección entre backport y esperar a la épica requiere criterio de release/coordinación humana.",
   "options": [
     {
-      "title": "Adoptar o reabrir el PR cerrado",
-      "body": "Recupera el trabajo ya hecho si se añade prueba real de revisión y se valida que el enfoque frontend más flag exacto cubre el caso operativo.",
-      "recommended": false
-    },
-    {
-      "title": "Pedir un fix nuevo más estrecho",
-      "body": "Implementa una búsqueda exacta específica para revisión y conserva el modal como consumidor de esa semántica, reduciendo el riesgo de tocar filtros compartidos.",
+      "title": "Backport a dev",
+      "body": "Trae a `dev` el comportamiento exacto y sus tests para cerrar el riesgo operativo sin esperar al rollout completo de revisión v3.",
       "recommended": true
     },
     {
-      "title": "Dejarlo en análisis manual",
-      "body": "Mantiene la issue asignada sin automatización hasta decidir si también se corrige la generación/deduplicación histórica de códigos de lote.",
+      "title": "Esperar a EPIC/revision-v3",
+      "body": "Mantiene esta issue abierta hasta que la rama épica se integre en `dev`, evitando un backport duplicado si el rollout es inmediato.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar solo al merge en dev",
+      "body": "No se hace trabajo adicional ahora, pero la issue no se cierra hasta que `dev` contenga el fix verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pedir un fix nuevo más estrecho",
-    "body": "Implementa una búsqueda exacta específica para revisión y conserva el modal como consumidor de esa semántica, reduciendo el riesgo de tocar filtros compartidos.",
+    "title": "Backport a dev",
+    "body": "Trae a `dev` el comportamiento exacto y sus tests para cerrar el riesgo operativo sin esperar al rollout completo de revisión v3.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual de la issue y tiene señales recientes de trabajo en rutas de admin/logística cercanas.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y el autor de la PR mergeada que ya implementa el enfoque para revisión v3.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7355#issuecomment-4936092401",
-    "reviewedAt": "2026-07-13T08:05:10.257Z",
-    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+    "reviewedAt": "2026-07-13T10:34:02.380Z",
+    "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
   }
 }

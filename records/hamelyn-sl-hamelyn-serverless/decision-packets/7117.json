@@ -1,67 +1,67 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T13:34:33.455Z",
-  "updatedAt": "2026-07-10T12:36:37Z",
+  "generatedAt": "2026-07-13T10:34:36.662Z",
+  "updatedAt": "2026-07-13T10:25:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 7117,
     "title": "Minihome - /libros/, /peliculas/, /musica/, /videojuegos/ - Nuevas secciones layout",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "source:admin-panel",
       "app:ecommerce",
       "priority:p1",
       "feature",
+      "triage:queued",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-10T12:36:37Z"
+    "updatedAt": "2026-07-13T10:25:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta issue seguir siendo el seguimiento del rediseño completo de minihomes o debe dividirse en tareas más pequeñas después del PR parcial de URLs?",
-  "rationale": "La fuente actual no implementa el nuevo layout, pero el alcance mezcla diseño, catálogo, SEO y rendimiento; una automatización no puede decidir el desglose ni los criterios visuales finales.",
+  "question": "¿Debe esta issue seguir como épica única del rediseño completo de minihomes o dividirse en PRs/tareas separadas para hero, catálogo, beneficios, SEO/interlinking y caché?",
+  "rationale": "La fuente confirma que el trabajo central sigue pendiente, pero la forma de implementación requiere criterios de diseño, desglose y QA visual que una reparación automática no debe decidir.",
   "options": [
     {
-      "title": "Mantener como rediseño completo",
-      "body": "Conservar esta issue abierta como trabajo L de Ecommerce y quitar el cierre automático del PR parcial para no cerrar el alcance pendiente.",
+      "title": "Mantener como épica de rediseño",
+      "body": "Conservar esta issue abierta como seguimiento amplio de Ecommerce y crear PRs planificados contra `CategoryHub` y subcomponentes cuando diseño confirme el alcance.",
       "recommended": true
     },
     {
       "title": "Dividir en subtareas",
-      "body": "Cerrar esta issue solo después de abrir seguimientos concretos para hero, catálogo, beneficios, SEO/interlinking y caché estática con criterios de QA claros.",
+      "body": "Abrir seguimientos separados para hero, catálogo embebido, beneficios, ofertas/interlinking, SEO y caché estática antes de cerrar esta issue.",
       "recommended": false
     },
     {
       "title": "Reducir alcance",
-      "body": "Confirmar que solo interesa el fix de URLs canónicas y cerrar el resto del rediseño como no perseguido por ahora.",
+      "body": "Confirmar que solo se quería el arreglo de URLs ya mergeado y cerrar explícitamente el resto del rediseño como no perseguido por ahora.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener como rediseño completo",
-    "body": "Conservar esta issue abierta como trabajo L de Ecommerce y quitar el cierre automático del PR parcial para no cerrar el alcance pendiente.",
+    "title": "Mantener como épica de rediseño",
+    "body": "Conservar esta issue abierta como seguimiento amplio de Ecommerce y crear PRs planificados contra `CategoryHub` y subcomponentes cuando diseño confirme el alcance.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el revisor solicitado en el PR parcial y puede decidir la trazabilidad inmediata antes del merge.",
+    "reason": "Fue quien mergeó el PR parcial y reabrió la issue para preservar el alcance pendiente, así que es el mejor punto de coordinación inmediata.",
     "confidence": "medium"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-10T13:34:33.455Z",
-    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
+    "reviewedAt": "2026-07-13T10:34:36.662Z",
+    "mainSha": "5ec4066ffd1101adf111edbcc6b7c3be0fc74a58"
   }
 }
