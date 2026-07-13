@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T22:10:01.998Z",
+  "updatedAt": "2026-07-13T21:46:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7488,
+    "title": "🤖 Proof-agent: evidencia automática del cambio en cada PR (GIF + proof card en Vercel Sandbox)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7488",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-13T21:37:33Z",
+    "updatedAt": "2026-07-13T21:46:23Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aprobarse F1 como iniciativa de plataforma dividida en varios PRs, comenzando por un piloto manual `/proof` antes de activar ejecución automática por paths?",
+  "rationale": "El repositorio demuestra viabilidad técnica, pero no decide la política de activación, el presupuesto, el grado de confianza otorgado a pruebas generadas ni la frontera operativa entre controlador y código no confiable.",
+  "options": [
+    {
+      "title": "Piloto manual por fases",
+      "body": "Implementar primero controlador/router, snapshot y proof card+barrera mediante `/proof`, dejando GIF y triggers automáticos para una fase posterior.",
+      "recommended": true
+    },
+    {
+      "title": "F1 completa coordinada",
+      "body": "Aprobar desde el inicio los tres modos y los triggers automáticos, distribuyendo la iniciativa en varios PRs con revisión de seguridad conjunta.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la iniciativa",
+      "body": "Conservar la PoC y las métricas como referencia hasta disponer de capacidad de plataforma y presupuesto operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto manual por fases",
+    "body": "Implementar primero controlador/router, snapshot y proof card+barrera mediante `/proof`, dejando GIF y triggers automáticos para una fase posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el asignado actual y el principal autor histórico de las dos bases técnicas que la propuesta reutilizaría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7488.md",
+    "reviewedAt": "2026-07-13T22:10:01.998Z",
+    "mainSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
+  }
+}
