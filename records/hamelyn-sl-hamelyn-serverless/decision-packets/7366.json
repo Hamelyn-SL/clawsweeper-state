@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T18:28:03.866Z",
-  "updatedAt": "2026-07-10T14:05:46Z",
+  "generatedAt": "2026-07-13T11:28:17.735Z",
+  "updatedAt": "2026-07-13T09:51:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,20 +11,20 @@
     "state": "open",
     "labels": [
       "size/L",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 message-delivery",
-      "merge-risk: 🚨 automation"
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-07-10T13:19:44Z",
-    "updatedAt": "2026-07-10T14:05:46Z",
+    "updatedAt": "2026-07-13T09:51:45Z",
     "headSha": "6c4ebaa4dd18aaa8ec0f3e7401cbdf197299e28a"
   },
   "lane": "product_direction",
   "priority": "P2",
   "question": "¿Debe aceptarse el cambio operativo de mostrar tablas agrupadas sin menciones directas y con `daily_summary` de todas las PRs abiertas?",
-  "rationale": "El PR no solo cambia formato: altera qué PRs se destacan y cómo el equipo recibe señales de revisión en Slack, así que necesita confirmación del owner del workflow además de fixes funcionales.",
+  "rationale": "El PR no solo cambia presentación: altera qué PRs se destacan y cómo el equipo recibe señales de revisión en Slack, así que necesita confirmación del owner del workflow además de fixes funcionales.",
   "options": [
     {
       "title": "Aceptar tras fixes",
@@ -38,7 +38,7 @@
     },
     {
       "title": "Pausar dirección",
-      "body": "Esperar a que el equipo confirme la política de avisos antes de cambiar la automatización compartida.",
+      "body": "Esperar a que el equipo confirme la política de avisos antes de cambiar esta automatización compartida.",
       "recommended": false
     }
   ],
@@ -49,13 +49,12 @@
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Tiene el historial más claro en este workflow y ya figura como reviewer solicitado para este PR.",
+    "reason": "Es el candidato con más historial reciente en el workflow y ya aparece como reviewer solicitado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7366.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7366#issuecomment-4936107683",
-    "reviewedAt": "2026-07-10T18:28:03.866Z",
-    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+    "reviewedAt": "2026-07-13T11:28:17.735Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
   }
 }
