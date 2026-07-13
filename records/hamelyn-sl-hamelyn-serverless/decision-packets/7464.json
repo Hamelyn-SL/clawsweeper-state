@@ -13,7 +13,7 @@
       "app:supply",
       "priority:p1",
       "feature",
-      "triage:queued"
+      "triage:done"
     ],
     "createdAt": "2026-07-13T10:38:55Z",
     "updatedAt": "2026-07-13T10:39:15Z"
@@ -51,6 +51,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7464.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7464#issuecomment-4957204041",
     "reviewedAt": "2026-07-13T10:51:11.511Z",
     "mainSha": "17bb5933d3797de3893e45ec21aa392fc5093e76"
   }

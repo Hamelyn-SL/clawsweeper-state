@@ -18,9 +18,10 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
       "issue-rating: 🌊 off-meta tidepool",
-      "impact:ux-friction"
+      "P2",
+      "impact:ux-friction",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
     "updatedAt": "2026-07-13T10:28:32Z"
@@ -58,6 +59,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741#issuecomment-4910171087",
     "reviewedAt": "2026-07-13T10:50:33.419Z",
     "mainSha": "17bb5933d3797de3893e45ec21aa392fc5093e76"
   }
