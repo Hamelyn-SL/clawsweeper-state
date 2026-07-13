@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T11:08:30.047Z",
+  "updatedAt": "2026-07-13T11:00:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7468,
+    "title": "feat: add amazon italy marketplace onboarding",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-13T10:56:12Z",
+    "updatedAt": "2026-07-13T11:00:42Z",
+    "headSha": "4fce6d5a923f7313dd6b804d921d59f6e0244f3d"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Se puede activar `AMAZON_IT` en `dev` ahora, o debe quedarse en draft hasta completar y probar los gates operativos de BQ, Atlas, config batch, seed y deduplicación?",
+  "rationale": "El código está bien encaminado, pero la decisión segura depende de preparación operativa fuera del repo y del momento de activación de un canal de pedidos real.",
+  "options": [
+    {
+      "title": "Mantener draft hasta smoke real",
+      "body": "Completar tabla BQ, índices Atlas, `marketplaceBatch.amazonIt`, seed/reconciliación y adjuntar logs o salida redaccionada de un smoke real antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Merge coordinado con ventana operativa",
+      "body": "Aceptar el riesgo solo si Marketplace y Data confirman que los gates externos estarán listos antes de desplegar el cron nuevo.",
+      "recommended": false
+    },
+    {
+      "title": "Dividir activación y preparación",
+      "body": "Separar wiring pasivo de la activación del cron/procesado si el equipo quiere revisar código antes de habilitar pedidos reales.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener draft hasta smoke real",
+    "body": "Completar tabla BQ, índices Atlas, `marketplaceBatch.amazonIt`, seed/reconciliación y adjuntar logs o salida redaccionada de un smoke real antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien aparece como owner histórico más claro del patrón Amazon FR/MX y del alta canónica enlazada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7468.md",
+    "reviewedAt": "2026-07-13T11:08:30.047Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
+  }
+}
