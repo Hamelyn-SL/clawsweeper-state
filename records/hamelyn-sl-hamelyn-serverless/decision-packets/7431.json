@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T11:21:27.929Z",
+  "updatedAt": "2026-07-13T10:44:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7431,
+    "title": "chore: bump pascalgn/size-label-action from 0.5.5 to 0.5.7 in the github-actions group across 1 directory",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7431",
+    "state": "open",
+    "labels": [
+      "size/XS",
+      "P3",
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🐚 platinum hermit",
+      "dependencies",
+      "github_actions"
+    ],
+    "createdAt": "2026-07-13T07:55:45Z",
+    "updatedAt": "2026-07-13T10:44:37Z",
+    "headSha": "c91482ada9a965148c626a8eda17efd37c709a85"
+  },
+  "lane": "security_boundary",
+  "priority": "P3",
+  "question": "¿Aceptamos ejecutar `pascalgn/size-label-action@v0.5.7` con el token de escritura actual del workflow `PR Lifecycle`?",
+  "rationale": "El diff es correcto, pero la decisión de confianza sobre código externo que recibe permisos de issues/pull-requests no se puede resolver solo con CI.",
+  "options": [
+    {
+      "title": "Aceptar el bump patch",
+      "body": "Mergear el PR si los checks están en verde y el equipo acepta el tag upstream `v0.5.7` para esta automatización.",
+      "recommended": true
+    },
+    {
+      "title": "Endurecer el pin antes de mergear",
+      "body": "Cambiar a un SHA verificado o a una alternativa interna si el equipo quiere reducir el riesgo supply-chain de acciones por tag.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el bump patch",
+    "body": "Mergear el PR si los checks están en verde y el equipo acepta el tag upstream `v0.5.7` para esta automatización.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con historial más directo en el workflow `PR Lifecycle` que este PR modifica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7431.md",
+    "reviewedAt": "2026-07-13T11:21:27.929Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
+  }
+}
