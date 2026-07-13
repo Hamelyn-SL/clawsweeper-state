@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T20:26:42.612Z",
+  "generatedAt": "2026-07-13T20:29:17.794Z",
   "updatedAt": "2026-07-13T20:01:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,11 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7486",
     "state": "open",
     "labels": [
-      "size/XS",
-      "rating: 🧂 unranked krab",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 compatibility"
+      "size/XS"
     ],
     "createdAt": "2026-07-13T15:04:29Z",
     "updatedAt": "2026-07-13T20:01:34Z",
@@ -22,34 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta solución cubrir también los pedidos históricos ya persistidos o se acepta que el arreglo sea únicamente prospectivo?",
-  "rationale": "Los ejemplos que motivaron el reporte no cambian con este parche, y esa decisión de alcance determina si la issue puede cerrarse al fusionarlo.",
+  "question": "¿Debe este PR resolver también la visualización de los pedidos históricos afectados, o se acepta una corrección únicamente para pedidos nuevos?",
+  "rationale": "El cambio corrige la causa para futuros placeholders, pero no los pedidos usados como reproducción; esa elección de alcance determina si la issue enlazada puede cerrarse al fusionarlo.",
   "options": [
     {
       "title": "Cubrir nuevos e históricos",
-      "body": "Mantener el arreglo prospectivo y añadir una resolución segura en lectura para mostrar el título de catálogo en placeholders históricos, sin backfill destructivo.",
+      "body": "Mantener el arreglo prospectivo con fallback y añadir una recuperación segura del título para registros ya persistidos, sin un backfill destructivo.",
       "recommended": true
     },
     {
-      "title": "Aceptar alcance prospectivo",
-      "body": "Fusionar tras corregir el fallback y dejar explícito que los pedidos ya creados conservarán el marcador técnico.",
+      "title": "Aceptar solo pedidos nuevos",
+      "body": "Fusionar el arreglo prospectivo, pero mantener abierta o acotar la issue enlazada para que el alcance histórico no se dé por resuelto.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Cubrir nuevos e históricos",
-    "body": "Mantener el arreglo prospectivo y añadir una resolución segura en lectura para mostrar el título de catálogo en placeholders históricos, sin backfill destructivo.",
+    "body": "Mantener el arreglo prospectivo con fallback y añadir una recuperación segura del título para registros ya persistidos, sin un backfill destructivo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el revisor solicitado y tiene historial reciente en la lista de OrderSells donde debe evaluarse el alcance visual.",
+    "reason": "Es el revisor solicitado y conoce la superficie visible de OrderSells en Admin donde debe validarse el alcance para datos históricos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7486.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7486#issuecomment-4962384544",
-    "reviewedAt": "2026-07-13T20:26:42.612Z",
+    "reviewedAt": "2026-07-13T20:29:17.794Z",
     "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
   }
 }

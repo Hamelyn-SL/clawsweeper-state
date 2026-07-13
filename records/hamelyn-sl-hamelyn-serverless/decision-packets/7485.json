@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T20:25:39.677Z",
+  "generatedAt": "2026-07-13T20:38:36.879Z",
   "updatedAt": "2026-07-13T20:13:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,48 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485",
     "state": "open",
     "labels": [
-      "size/XXL",
-      "P2"
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
+      "rating: 🦪 silver shellfish",
+      "merge-risk: 🚨 other"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
     "updatedAt": "2026-07-13T20:13:27Z",
     "headSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
   },
   "lane": "release_inclusion",
-  "priority": "P2",
-  "question": "¿Debe promoverse ahora este head de `dev` a `master` pese a los tres fallos abiertos del recordatorio, la falta de prueba operativa y la posible interrupción de consumidores `atctoken`?",
-  "rationale": "La decisión combina aceptación de una ruptura de compatibilidad, riesgo operativo de producción y selección del contenido de la release; no puede resolverse de forma segura mediante un repair automático.",
+  "priority": "P1",
+  "question": "¿Debe esta release retirar ya `atctoken` en producción pese a que no se pueden descartar consumidores externos activos?",
+  "rationale": "La retirada elimina un bypass con privilegios administrativos y mejora la frontera de seguridad, pero también puede cortar integraciones M2M existentes; esa aceptación o separación del riesgo requiere intención explícita de quien decide la release.",
   "options": [
     {
-      "title": "Corregir y verificar antes de producción",
-      "body": "Incorporar en `dev` los tres ajustes del workflow, aportar prueba real de Slack, batch y auth, y revisar de nuevo el head actualizado antes de mergear.",
+      "title": "Verificar, migrar y desplegar",
+      "body": "Inventariar o migrar consumidores a Auth0/PAT, aportar prueba real y desplegar después la retirada junto con los demás cambios corregidos.",
       "recommended": true
     },
     {
-      "title": "Aceptar expresamente el riesgo",
-      "body": "Mergear el head actual asumiendo los defectos conocidos del recordatorio y la posible caída de integraciones externas que aún usen `atctoken`.",
+      "title": "Separar la retirada de auth",
+      "body": "Revertir temporalmente la retirada mediante un PR a `dev` y promover el resto cuando los otros bloqueos estén resueltos.",
       "recommended": false
     },
     {
-      "title": "Pausar esta release",
-      "body": "Mantener la promoción detenida hasta decidir si alguno de los tres cambios debe retirarse o sustituirse en `dev`.",
+      "title": "Aceptar el corte legacy",
+      "body": "Después de corregir los demás hallazgos, desplegar asumiendo expresamente que cualquier consumidor `atctoken` restante dejará de funcionar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y verificar antes de producción",
-    "body": "Incorporar en `dev` los tres ajustes del workflow, aportar prueba real de Slack, batch y auth, y revisar de nuevo el head actualizado antes de mergear.",
+    "title": "Verificar, migrar y desplegar",
+    "body": "Inventariar o migrar consumidores a Auth0/PAT, aportar prueba real y desplegar después la retirada junto con los demás cambios corregidos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Integró los tres cambios incluidos y es la persona con mayor continuidad reciente sobre despliegue, automatización y autenticación.",
+    "reason": "Integró la retirada de auth, revisó el bloque BL y ha fusionado promociones recientes a producción.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-13T20:25:39.677Z",
+    "reviewedAt": "2026-07-13T20:38:36.879Z",
     "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
   }
 }
