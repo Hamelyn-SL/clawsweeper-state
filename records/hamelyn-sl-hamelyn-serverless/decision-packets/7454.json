@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-13T10:05:35.890Z",
+  "updatedAt": "2026-07-13T09:49:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7454,
+    "title": "Estado lote ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:supply",
+      "priority:p1",
+      "reporter:arineligrigore"
+    ],
+    "createdAt": "2026-07-13T09:48:16Z",
+    "updatedAt": "2026-07-13T09:49:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe una cancelación/expiración posterior de eDesk o Celeritas prevalecer sobre un lote Supply que ya está `PICKED_UP`/recibido?",
+  "rationale": "El estado actual permite cancelar desde `PICKED_UP`, pero el cron deja de sincronizar tras `ENTREGADO`; cambiar esa prioridad es una decisión operativa con impacto en lotes recibidos.",
+  "options": [
+    {
+      "title": "Cancelar si eDesk confirma expirado",
+      "body": "Tratar eDesk/cancelación como fuente de verdad para este caso y añadir una regla acotada que pase el lote a `CANCELLED` con auditoría.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener recibido como final logístico",
+      "body": "Dejar `PICKED_UP` como estado prevalente tras entrega y resolver el caso mediante corrección operativa puntual si eDesk está desalineado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cancelar si eDesk confirma expirado",
+    "body": "Tratar eDesk/cancelación como fuente de verdad para este caso y añadir una regla acotada que pase el lote a `CANCELLED` con auditoría.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Tiene el contexto más reciente de la regla Celeritas/PUP que se cruza con este bug.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7454.md",
+    "reviewedAt": "2026-07-13T10:05:35.890Z",
+    "mainSha": "4c13dc14b1f4798d38f141bf03cce4cdba787fd9"
+  }
+}

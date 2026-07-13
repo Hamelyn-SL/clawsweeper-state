@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T08:14:33.201Z",
-  "updatedAt": "2026-07-13T06:47:15Z",
+  "generatedAt": "2026-07-13T10:02:57.380Z",
+  "updatedAt": "2026-07-13T09:54:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,6 @@
       "bug",
       "priority:p1",
       "app:infrastructure",
-      "triage:done",
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -25,43 +24,42 @@
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-13T06:38:18Z",
-    "updatedAt": "2026-07-13T06:47:15Z"
+    "updatedAt": "2026-07-13T09:54:07Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué estrategia de consolidación de autores duplicados debe aprobarse antes de fusionar documentos en producción y crear el índice único de `authors.authorId`?",
-  "rationale": "La parte de código es acotable, pero elegir ficha canónica, slugs heredados y enlaces de producto afecta SEO y datos existentes; esa política requiere decisión humana.",
+  "question": "¿Qué política exacta debe aprobarse para consolidar los autores duplicados por `authorId` antes de crear el índice único en producción?",
+  "rationale": "La reparación mezcla código, SEO y una mutación masiva de datos; automatizarla sin decidir ficha canónica, slugs heredados y preservación de enlaces sería demasiado arriesgado.",
   "options": [
     {
       "title": "Backfill auditado con ficha canónica",
-      "body": "Elegir una ficha canónica por `authorId`, preservar o redirigir slugs heredados y crear el índice único solo tras dry-run con muestras.",
+      "body": "Elegir una regla canónica, validar count/muestras/filtro en dry-run, preservar o redirigir slugs y crear el índice único solo después de verificar la consolidación.",
       "recommended": true
     },
     {
-      "title": "Parchear solo el cron primero",
-      "body": "Propagar errores y acotar runtime mejora la visibilidad operativa, pero deja la causa estructural de duplicados pendiente.",
+      "title": "Parche operativo primero",
+      "body": "Aterrizar antes el fallo de exit code y el acotado incremental del cron para recuperar visibilidad, dejando la fusión física y el índice como intervención separada.",
       "recommended": false
     },
     {
-      "title": "Pausar el workflow temporalmente",
-      "body": "Desactivar el cron evita más ruido mientras se define la migración, pero mantiene sin enriquecer fichas de alto tráfico.",
+      "title": "Pausar el cron temporalmente",
+      "body": "Desactivar o limitar el workflow evita más ruido mientras se aprueba la migración, pero mantiene sin enriquecer autores de alto tráfico.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Backfill auditado con ficha canónica",
-    "body": "Elegir una ficha canónica por `authorId`, preservar o redirigir slugs heredados y crear el índice único solo tras dry-run con muestras.",
+    "body": "Elegir una regla canónica, validar count/muestras/filtro en dry-run, preservar o redirigir slugs y crear el índice único solo después de verificar la consolidación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el autor y responsable más cercano del flujo y ya tiene el issue asignado.",
+    "reason": "Es quien introdujo y mantiene la superficie afectada y ya coordina la issue y el PR relacionado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
-    "reviewedAt": "2026-07-13T08:14:33.201Z",
-    "mainSha": "3507f660b3c32cda93c23d3a81815c97a689226e"
+    "reviewedAt": "2026-07-13T10:02:57.380Z",
+    "mainSha": "4c13dc14b1f4798d38f141bf03cce4cdba787fd9"
   }
 }
