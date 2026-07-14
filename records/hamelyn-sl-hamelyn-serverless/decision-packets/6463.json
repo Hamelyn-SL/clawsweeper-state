@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:30:36.816Z",
-  "updatedAt": "2026-07-14T12:24:04Z",
+  "generatedAt": "2026-07-14T17:13:26.450Z",
+  "updatedAt": "2026-07-14T16:00:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,49 +18,49 @@
       "triage:needs-info",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:fix-shape-clear",
       "impact:security",
       "clawsweeper:needs-security-review",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-07-14T12:24:04Z"
+    "updatedAt": "2026-07-14T16:00:21Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué manual, contacto operativo y ubicación segura de credenciales de Celeritas deben declararse canónicos, y debe documentarse el alcance actual como tracking de marketplace más creación RMA para Supply?",
-  "rationale": "El código permite reconstruir los flujos técnicos, pero la vigencia contractual, el responsable externo y la custodia autorizada de secretos son decisiones operativas y de seguridad que no puede resolver una revisión automática.",
+  "question": "¿Qué manual vigente, contacto técnico y ubicación segura de credenciales deben declararse canónicos para Celeritas, y se confirma que marketplace usa solo tracking mientras Supply mantiene creación RMA?",
+  "rationale": "El código prueba los flujos técnicos, pero no permite decidir la vigencia contractual, el responsable operativo ni la custodia autorizada de secretos.",
   "options": [
     {
       "title": "Confirmar contrato, alcance y custodia",
-      "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply, y migra o rota las credenciales si siguen activas antes de actualizar los tres documentos.",
+      "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply y autoriza la referencia segura antes de actualizar los tres documentos.",
       "recommended": true
     },
     {
       "title": "Documentar solo lo verificable",
-      "body": "Se aclaran ahora los dos flujos observables en código y se mantienen manual, contacto y referencia segura como pendientes explícitos hasta recibir confirmación.",
+      "body": "Se aclaran ahora los flujos visibles en código y se mantienen manual, contacto y referencia segura como pendientes explícitos.",
       "recommended": false
     },
     {
       "title": "Separar la regularización de secretos",
-      "body": "Se completa la ficha contractual cuando llegue la información y se gestiona la migración o rotación de constantes en un seguimiento de seguridad independiente.",
+      "body": "Se completa la ficha contractual cuando llegue la información y la migración o rotación de constantes se gestiona como seguimiento de seguridad independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Confirmar contrato, alcance y custodia",
-    "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply, y migra o rota las credenciales si siguen activas antes de actualizar los tres documentos.",
+    "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply y autoriza la referencia segura antes de actualizar los tres documentos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y concentra el historial reciente de los runbooks y de la migración REST de Celeritas.",
+    "reason": "Está asignado y concentra el historial reciente de los runbooks y de la integración REST de Celeritas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewedAt": "2026-07-14T15:30:36.816Z",
+    "reviewedAt": "2026-07-14T17:13:26.450Z",
     "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }
