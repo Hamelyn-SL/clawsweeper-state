@@ -11,13 +11,13 @@
     "state": "open",
     "labels": [
       "size/L",
-      "P2",
+      "conflicts:needs-human",
+      "rating: 🥉 bronze",
       "status: 📣 needs proof",
-      "rating: 🦪 silver shellfish",
+      "P2",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability",
       "merge-risk: 🚨 message-delivery",
-      "conflicts:needs-human"
+      "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-07-13T10:56:12Z",
     "updatedAt": "2026-07-14T12:31:35Z",
@@ -51,6 +51,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7468.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468#issuecomment-4957352943",
     "reviewedAt": "2026-07-14T22:08:00.188Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
