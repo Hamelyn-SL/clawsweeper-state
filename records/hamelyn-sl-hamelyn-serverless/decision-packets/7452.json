@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T14:56:40.928Z",
-  "updatedAt": "2026-07-13T11:00:31Z",
+  "generatedAt": "2026-07-14T16:48:50.715Z",
+  "updatedAt": "2026-07-13T15:14:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "triage:needs-info",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
-      "reporter:AlexDiaz-Hamelyn",
       "P3",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool",
       "impact:ux-friction",
-      "clawsweeper:linked-pr-open"
+      "reporter:AlexDiaz-Hamelyn"
     ],
     "createdAt": "2026-07-13T09:44:03Z",
-    "updatedAt": "2026-07-13T11:00:31Z"
+    "updatedAt": "2026-07-13T15:14:22Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Se aprueba el alcance del PR vinculado, que elimina también `/public/dashboard/*` y sustituye la home por tarjetas de páginas recientes persistidas por usuario?",
-  "rationale": "La retirada del menú y de los recursos internos está delimitada, pero eliminar rutas públicas y crear una experiencia de inicio nueva son decisiones de producto que no se deducen de la limpieza de código muerto.",
+  "question": "¿Se aprueba retirar también `/public/dashboard/{sales,stocks,supply,pricing}` y sustituir la home por páginas recientes en el mismo cambio?",
+  "rationale": "La limpieza interna está delimitada, pero la issue dejó abiertas ambas decisiones y el PR adopta una retirada completa más un rediseño sin aprobación humana visible ni auditoría de consumidores.",
   "options": [
     {
-      "title": "Separar el rediseño",
-      "body": "Conservar por ahora las rutas públicas, acotar el PR a la retirada interna y tratar la nueva home en un alcance funcional independiente.",
+      "title": "Conservar rutas públicas",
+      "body": "Acotar el PR a la retirada interna, mantener los paneles públicos y validar o separar el rediseño de la home.",
       "recommended": true
     },
     {
-      "title": "Aprobar el alcance completo",
-      "body": "Aceptar la desaparición de las rutas públicas y revisar el PR actual como implementación canónica de la nueva home.",
+      "title": "Aprobar retirada completa",
+      "body": "Eliminar también las rutas públicas tras auditar sus consumidores y aceptar explícitamente la ruptura de enlaces existentes.",
       "recommended": false
     },
     {
-      "title": "Retirar todos los dashboards sin rediseño",
-      "body": "Eliminar también las rutas públicas, pero usar una ruta de inicio explícita y dejar las páginas recientes para otro cambio.",
+      "title": "Retirar sin páginas recientes",
+      "body": "Eliminar todas las vistas acordadas, definir una ruta de inicio explícita y posponer la experiencia persistida para otro cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el rediseño",
-    "body": "Conservar por ahora las rutas públicas, acotar el PR a la retirada interna y tratar la nueva home en un alcance funcional independiente.",
+    "title": "Conservar rutas públicas",
+    "body": "Acotar el PR a la retirada interna, mantener los paneles públicos y validar o separar el rediseño de la home.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Tiene el historial reciente más directo sobre el layout y la integración de dashboards que condicionan la decisión de navegación.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Coordina la issue y el PR, y es la persona mejor situada para obtener la validación funcional del equipo de Admin.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7452.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7452#issuecomment-4957054247",
-    "reviewedAt": "2026-07-13T14:56:40.928Z",
-    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "reviewedAt": "2026-07-14T16:48:50.715Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

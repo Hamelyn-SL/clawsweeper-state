@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T10:33:45.932Z",
-  "updatedAt": "2026-07-14T10:16:08Z",
+  "generatedAt": "2026-07-14T16:43:27.057Z",
+  "updatedAt": "2026-07-14T10:54:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "app:infrastructure",
       "triage:done",
       "P1",
-      "impact:data-loss",
-      "impact:message-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
-    "updatedAt": "2026-07-14T10:16:08Z"
+    "updatedAt": "2026-07-14T10:54:56Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué contrato operativo debe adoptar la cola de incidencias respecto a idempotencia, retención del payload y transición final a `FAILED`?",
-  "rationale": "Estas decisiones determinan cuánto tiempo se conservan datos personales, cuándo deja de reintentarse una incidencia y cómo se evitan duplicados tras éxitos parciales; no pueden inferirse con seguridad del flujo actual.",
+  "question": "¿Qué política definitiva debe aplicar el outbox para la retención y purga de datos personales, el agotamiento de reintentos y el rescate de registros `FAILED`?",
+  "rationale": "La decisión define cuánto tiempo se almacenan email, texto libre y adjuntos, cuándo deja de reintentarse una entrega y qué recuperación operativa se permite; el código actual no establece esos límites.",
   "options": [
     {
-      "title": "Outbox con etapas y TTL",
-      "body": "Persistir el payload validado, reanudar desde `ticketId` cuando proceda y aplicar límites, alerta y TTL explícitos por estado.",
+      "title": "Retención por estado y ventana de rescate",
+      "body": "Conservar las entregas activas, purgar el contenido personal al llegar a `SENT`, guardar metadatos mínimos durante 90 días y purgar `FAILED` tras 30 días, con 12 intentos o 24 horas como límite.",
       "recommended": true
     },
     {
-      "title": "Extender los documentos de pedido",
-      "body": "Guardar estado pendiente en `orders` y `ordersells`, aceptando que las solicitudes sin pedido necesitarían otro mecanismo paralelo.",
+      "title": "TTL uniforme corto",
+      "body": "Aplicar un TTL único a todos los estados para reducir almacenamiento, aceptando menor capacidad de rescate y diagnóstico.",
       "recommended": false
     },
     {
-      "title": "Mantener retry y logs",
-      "body": "Conservar el comportamiento actual y asumir recuperación manual de las incidencias que agoten el 429.",
+      "title": "Mantener recuperación por logs",
+      "body": "No persistir el payload y aceptar que los fallos sostenidos sigan requiriendo una recuperación manual incompleta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Outbox con etapas y TTL",
-    "body": "Persistir el payload validado, reanudar desde `ticketId` cuando proceda y aplicar límites, alerta y TTL explícitos por estado.",
+    "title": "Retención por estado y ventana de rescate",
+    "body": "Conservar las entregas activas, purgar el contenido personal al llegar a `SENT`, guardar metadatos mínimos durante 90 días y purgar `FAILED` tras 30 días, con 12 intentos o 24 horas como límite.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el propietario reciente del tratamiento de rate limits y aportó la canónica y la evidencia operativa que motivan esta decisión.",
+    "reason": "Está asignado a la issue, introdujo el retry vigente y ya ha concretado el diseño funcional del fallback.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-14T10:33:45.932Z",
-    "mainSha": "4c4a8ab30b3f67ec20f74e724a70d50341a05083"
+    "reviewedAt": "2026-07-14T16:43:27.057Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }
