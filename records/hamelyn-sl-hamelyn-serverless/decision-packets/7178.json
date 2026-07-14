@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T00:12:04.605Z",
-  "updatedAt": "2026-07-07T21:59:57Z",
+  "generatedAt": "2026-07-14T07:30:20.146Z",
+  "updatedAt": "2026-07-08T09:39:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,42 +16,42 @@
       "triage:done"
     ],
     "createdAt": "2026-07-07T21:34:11Z",
-    "updatedAt": "2026-07-07T21:59:57Z"
+    "updatedAt": "2026-07-08T09:39:28Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "Should Marketplace proceed with a guarded MercadoLibre reconciliation/backfill for orphan item IDs, followed by enabling or reviewing local `recoverWithdraw` for the recoverable backlog?",
-  "rationale": "The evidence points to a real over-sale risk, but the corrective path mutates marketplace state at scale and AGENTS.md requires human confirmation for this class of operation.",
+  "question": "¿Qué reglas de identidad, límites de lote y aprobación operativa deben exigirse antes de rehidratar o cerrar en masa los listings huérfanos de MercadoLibre?",
+  "rationale": "El comportamiento esperado está definido, pero el repositorio no puede determinar por sí solo cuándo varios `item_id` para un SKU son duplicados seguros de cerrar ni qué umbral operativo permite mutar miles de listings externos.",
   "options": [
     {
-      "title": "Run guarded reconciliation first",
-      "body": "Build or run a dry-run reconciler from snapshot/API item IDs by SKU, review samples, then close or rehydrate orphan listings and address local withdraw recovery.",
+      "title": "Reconciliación segura por fases",
+      "body": "Implementar primero un dry-run auditable, aprobar muestras y cerrar después en lotes limitados con métricas y rollback.",
       "recommended": true
     },
     {
-      "title": "Only enable local recoverWithdraw",
-      "body": "This is narrower and faster, but the triage data says it leaves the majority of orphan listings without local docs unresolved.",
+      "title": "Recuperar solo documentos locales",
+      "body": "Activar `recoverWithdraw` únicamente para filas locales recuperables, manteniendo pendiente el grupo mayoritario sin documento o ID válido.",
       "recommended": false
     },
     {
-      "title": "Consolidate under the older report",
-      "body": "Track the work under https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859 only if this issue's newer orphan-listing evidence is copied or linked there.",
+      "title": "Mantener solo monitorización",
+      "body": "No mutar listings hasta definir una regla inequívoca para mapear cada SKU a todos sus `item_id` remotos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Run guarded reconciliation first",
-    "body": "Build or run a dry-run reconciler from snapshot/API item IDs by SKU, review samples, then close or rehydrate orphan listings and address local withdraw recovery.",
+    "title": "Reconciliación segura por fases",
+    "body": "Implementar primero un dry-run auditable, aprobar muestras y cerrar después en lotes limitados con métricas y rollback.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "He supplied the current live evidence and recently worked on MercadoLibre withdraw observability, so he is the best visible owner for the operational go/no-go.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente cubre la implementación central de MercadoLibre, los selectores de retirada y los guards de identidad remota implicados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7178.md",
-    "reviewedAt": "2026-07-08T00:12:04.605Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T07:30:20.146Z",
+    "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
   }
 }
