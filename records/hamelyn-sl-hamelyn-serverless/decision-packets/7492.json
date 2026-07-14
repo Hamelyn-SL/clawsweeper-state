@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T07:31:51.636Z",
+  "generatedAt": "2026-07-14T07:38:09.852Z",
   "updatedAt": "2026-07-14T07:23:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,45 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "triage:done"
     ],
     "createdAt": "2026-07-14T06:20:38Z",
     "updatedAt": "2026-07-14T07:23:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe cada trasvase persistirse como una entidad operativa propia con estados y eventos, o como historial embebido en los documentos `drawers` de origen y destino?",
-  "rationale": "Esta decisión determina la recuperación ante fallos parciales, la auditoría, el crecimiento de los documentos y cómo se ampliarán en el futuro las direcciones admitidas.",
+  "question": "¿Qué contrato permanente debe tener el trasvase estantería → BIN: entidad de auditoría, estados visibles y política de reintento o compensación cuando Mongo y Exotec divergen?",
+  "rationale": "La implementación depende de decisiones de producto y operación que el código actual no resuelve; elegirlas condiciona el modelo persistido, la idempotencia y la recuperación tras fallos parciales.",
   "options": [
     {
-      "title": "Entidad de trasvase",
-      "body": "Persistir cada operación con origen, destino, operador, stocks, estados, intentos, eventos y errores, dejando en `drawers` solo referencias o resúmenes.",
+      "title": "Operación persistida por estados",
+      "body": "Crear una entidad de trasvase con idempotency key, eventos, estados por paso, errores y reintentos antes de añadir la UI.",
       "recommended": true
     },
     {
-      "title": "Historial en drawers",
-      "body": "Guardar eventos en los documentos de origen y destino, asumiendo la complejidad de mantener ambas copias consistentes y acotadas.",
+      "title": "Historial embebido en drawers",
+      "body": "Ampliar `drawers` con un historial acotado y una máquina de estados, asumiendo crecimiento y concurrencia sobre esos documentos.",
+      "recommended": false
+    },
+    {
+      "title": "Composición desde Admin",
+      "body": "Encadenar inventario, transferencia y BIN IN en el cliente, aceptando resultados parciales y recuperación operativa manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Entidad de trasvase",
-    "body": "Persistir cada operación con origen, destino, operador, stocks, estados, intentos, eventos y errores, dejando en `drawers` solo referencias o resúmenes.",
+    "title": "Operación persistida por estados",
+    "body": "Crear una entidad de trasvase con idempotency key, eventos, estados por paso, errores y reintentos antes de añadir la UI.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre tanto la orquestación y consistencia de MergeAuto como la interfaz de fusión que se reutilizaría.",
+    "reason": "Su historial reciente concentra MergeAuto, el panel de fusionado, Inventory y el repositorio de drawers.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7492.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492#issuecomment-4966435214",
-    "reviewedAt": "2026-07-14T07:31:51.636Z",
+    "reviewedAt": "2026-07-14T07:38:09.852Z",
     "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
   }
 }
