@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:23:10.651Z",
+  "generatedAt": "2026-07-14T22:37:35.296Z",
   "updatedAt": "2026-07-13T14:48:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,46 +16,50 @@
       "feature",
       "triage:no-change",
       "reporter:victor",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a"
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
     "updatedAt": "2026-07-13T14:48:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe ejecutarse el rediseño como una entrega integral o por fases, y cuál será la fuente canónica y la política de caché para los railes ordenados por ventas y stock?",
-  "rationale": "El alcance y la arquitectura dependen de decisiones visuales y de datos que no están cerradas en `work-plan.md`, `guidelines.md` ni en la implementación actual.",
+  "question": "¿Se aprueba dividir el rediseño de las cuatro minihomes en entregas acotadas, y qué contrato definitivo deben seguir el ranking, la caché, el copy y los layouts responsive?",
+  "rationale": "La implementación cruza diseño, catálogo, consultas de producto, caché, traducciones y SEO; el código permite reutilizar piezas, pero no determina por sí solo la experiencia final ni la política de datos.",
   "options": [
     {
-      "title": "Desglosar por fases",
-      "body": "Separar hero/beneficios, catálogo, railes y SEO en entregas visualmente verificables, cerrando antes la fuente de ranking y la invalidación de caché.",
+      "title": "Aprobar implementación por fases",
+      "body": "Mantener esta issue como iniciativa y abrir tareas acotadas para hero y beneficios, selección y caché, catálogo embebido, y SEO/interlinking con criterios visuales compartidos.",
       "recommended": true
     },
     {
-      "title": "Entrega integral",
-      "body": "Implementar todo el rediseño en una iniciativa grande con diseño cerrado y QA dedicado para las cuatro rutas.",
+      "title": "Ejecutar un único proyecto L",
+      "body": "Aprobar todo el rediseño como una sola entrega coordinada, aceptando un PR amplio y una validación visual y funcional más costosa.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el rediseño",
+      "body": "Conservar únicamente las mejoras actuales y posponer nuevas secciones hasta disponer de diseño, copy y política de ranking definitivos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desglosar por fases",
-    "body": "Separar hero/beneficios, catálogo, railes y SEO en entregas visualmente verificables, cerrando antes la fuente de ranking y la invalidación de caché.",
+    "title": "Aprobar implementación por fases",
+    "body": "Mantener esta issue como iniciativa y abrir tareas acotadas para hero y beneficios, selección y caché, catálogo embebido, y SEO/interlinking con criterios visuales compartidos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Reabrió la issue, aclaró el alcance pendiente y figura como asignado para coordinar su seguimiento.",
+    "reason": "Es el asignado actual y quien restauró explícitamente el seguimiento del rediseño completo después de fusionar la corrección parcial.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-14T22:23:10.651Z",
+    "reviewedAt": "2026-07-14T22:37:35.296Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

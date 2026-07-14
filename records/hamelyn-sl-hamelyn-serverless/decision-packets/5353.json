@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:55:34.652Z",
-  "updatedAt": "2026-07-08T16:33:46Z",
+  "generatedAt": "2026-07-14T22:21:49.096Z",
+  "updatedAt": "2026-07-14T22:11:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,45 +17,44 @@
       "app:marketplace",
       "P1",
       "impact:other",
-      "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-08T16:33:46Z"
+    "updatedAt": "2026-07-14T22:11:42Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta issue considerarse resuelta cuando desaparezca la recurrencia específica `400/errorId 25002`, aunque `/api/ebay` siga respondiendo HTTP 200 a otros fallos parciales cubiertos por https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622?",
-  "rationale": "La implementación específica de eBay y el contrato compartido del cron tienen responsables y riesgos distintos; hace falta confirmar el límite de esta issue antes de promover otro arreglo.",
+  "question": "¿Debe esta issue quedar limitada a las causas 400 específicas de eBay y dejar el contrato HTTP de fallos parciales en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622?",
+  "rationale": "El tratamiento de `errorId 25002` ya existe, mientras que cambiar el status HTTP o la severidad de cualquier rechazo afecta a numerosos crons y requiere una política operativa común.",
   "options": [
     {
-      "title": "Separar ambos alcances",
-      "body": "Mantener esta issue centrada en eliminar la recurrencia 400 de eBay y dejar toda decisión sobre HTTP 200 y severidad compartida en la issue transversal.",
+      "title": "Separar responsabilidades",
+      "body": "Mantener esta issue para un payload 400 vivo de eBay y decidir la señal HTTP compartida en la issue transversal.",
       "recommended": true
     },
     {
-      "title": "Resolver ambos aquí",
-      "body": "Mantener esta issue abierta hasta cambiar también el contrato HTTP del handler, aceptando un alcance multi-marketplace y mayor complejidad.",
+      "title": "Ampliar esta issue",
+      "body": "Incluir también el contrato HTTP común, aumentando el alcance y el riesgo de cambiar cómo se monitorizan otros crons.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar ambos alcances",
-    "body": "Mantener esta issue centrada en eliminar la recurrencia 400 de eBay y dejar toda decisión sobre HTTP 200 y severidad compartida en la issue transversal.",
+    "title": "Separar responsabilidades",
+    "body": "Mantener esta issue para un payload 400 vivo de eBay y decidir la señal HTTP compartida en la issue transversal.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta tanto el cliente eBay como el handler compartido, por lo que puede coordinar mejor el límite entre ambas issues.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado actual y tiene el historial más directo sobre la reconciliación reciente de `updatePrice` de eBay.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewedAt": "2026-07-14T21:55:34.652Z",
+    "reviewedAt": "2026-07-14T22:21:49.096Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
