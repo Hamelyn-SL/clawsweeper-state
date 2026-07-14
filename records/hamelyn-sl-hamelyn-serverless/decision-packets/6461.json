@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:34:19.909Z",
-  "updatedAt": "2026-07-14T10:57:36Z",
+  "generatedAt": "2026-07-14T12:36:56.955Z",
+  "updatedAt": "2026-07-14T12:23:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,40 +16,46 @@
       "reporter:JavierHamelyn",
       "feature",
       "triage:done",
-      "area:coupons"
+      "area:coupons",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T15:02:00Z",
-    "updatedAt": "2026-07-14T10:57:36Z"
+    "updatedAt": "2026-07-14T12:23:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Esta entrega debe conservar un único `description` o separar la descripción interna del texto visible al cliente en checkout?",
-  "rationale": "La separación no es una decisión de maquetación: modifica datos persistidos y obliga a definir compatibilidad, fallback y comportamiento en Admin, APIs y Ecommerce.",
+  "question": "¿La primera entrega debe conservar el único campo `description` actual o separar una descripción interna de un texto visible al cliente?",
+  "rationale": "La primera opción mantiene el trabajo dentro del rediseño de Admin, mientras que la segunda introduce un nuevo contrato de datos y cambios coordinados en Ecommerce que no pueden deducirse con seguridad de la petición de UX.",
   "options": [
     {
-      "title": "Rediseñar sin cambiar datos",
-      "body": "Implementar el flujo guiado, la vista previa y el duplicado usando el `description` actual, y tratar una posible separación en una petición posterior.",
+      "title": "Conservar `description`",
+      "body": "Entregar el asistente, la vista previa y la duplicación sobre el contrato actual, dejando la separación de textos para una issue específica.",
       "recommended": true
     },
     {
       "title": "Separar ambos textos",
-      "body": "Ampliar esta entrega con un nuevo campo, migración compatible, actualización de APIs y fallback de checkout para registros existentes.",
+      "body": "Ampliar esta entrega con schema, compatibilidad de datos, APIs, formulario y presentación diferenciada en checkout.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rediseñar sin cambiar datos",
-    "body": "Implementar el flujo guiado, la vista previa y el duplicado usando el `description` actual, y tratar una posible separación en una petición posterior.",
+    "title": "Conservar `description`",
+    "body": "Entregar el asistente, la vista previa y la duplicación sobre el contrato actual, dejando la separación de textos para una issue específica.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual de la issue y participó en la revisión de la integración original de cupones, por lo que es el mejor punto de decisión disponible.",
+    "reason": "Es la persona asignada a esta issue y la candidata más directa para confirmar la frontera de producto con el equipo de cupones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6461.md",
-    "reviewedAt": "2026-07-14T11:34:19.909Z",
+    "reviewedAt": "2026-07-14T12:36:56.955Z",
     "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

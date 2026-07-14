@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:56:02.574Z",
+  "generatedAt": "2026-07-14T12:45:43.447Z",
   "updatedAt": "2026-07-14T12:24:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,47 +16,52 @@
       "reporter:jesus",
       "feature",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
     "updatedAt": "2026-07-14T12:24:24Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿La primera entrega debe cubrir y activar solo México, dejando Brasil y el despliegue global para fases posteriores, o debe bloquearse hasta confirmar todas las cuentas del Excel?",
-  "rationale": "La issue exige una prueba inicial conjunta en México, mientras Brasil aparece en el contrato adjunto pero carece de configuración versionada y de una confirmación visible sobre su cuenta habilitada.",
+  "question": "¿Debe implementarse primero el nuevo contrato de salida y probarse en MX sobre el pipeline actual, o combinarse con la migración de origen a BigQuery de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663?",
+  "rationale": "Ambas direcciones son técnicamente posibles, pero cambian el tamaño, la secuencia de validación y el riesgo operativo; además, Jesús debe confirmar cuentas, límites y la inclusión de Brasil.",
   "options": [
     {
-      "title": "Validar México primero",
-      "body": "Implementar el generador completo con México como primera activación, mantener Brasil deshabilitado y desplegar los demás países tras aprobar cada fase.",
+      "title": "Separar contrato y origen",
+      "body": "Implementar primero mapeos, metadata y orquestación con piloto MX, dejando la migración a BigQuery como trabajo independiente.",
       "recommended": true
     },
     {
-      "title": "Cerrar el alcance global antes",
-      "body": "Esperar a confirmar cuentas, credenciales, límites y nomenclatura de todos los países, incluido Brasil, antes de implementar o activar el nuevo flujo.",
+      "title": "Unificar con BigQuery",
+      "body": "Cambiar simultáneamente el contrato de salida y el origen de datos, aceptando una entrega y validación considerablemente mayores.",
+      "recommended": false
+    },
+    {
+      "title": "Acotar la primera fase a MX",
+      "body": "Cubrir únicamente MX y abrir después un seguimiento explícito para el resto de cuentas y Brasil.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar México primero",
-    "body": "Implementar el generador completo con México como primera activación, mantener Brasil deshabilitado y desplegar los demás países tras aprobar cada fase.",
+    "title": "Separar contrato y origen",
+    "body": "Implementar primero mapeos, metadata y orquestación con piloto MX, dejando la migración a BigQuery como trabajo independiente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el responsable asignado y la persona con mayor historial técnico sobre el generador afectado.",
+    "reason": "Está asignado a la issue y mantiene los cambios recientes que separan los pipelines de US, ES y MX.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-07-14T12:56:02.574Z",
+    "reviewedAt": "2026-07-14T12:45:43.447Z",
     "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

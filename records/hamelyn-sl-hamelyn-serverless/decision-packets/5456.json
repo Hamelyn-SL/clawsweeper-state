@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:54:41.823Z",
+  "generatedAt": "2026-07-14T12:31:28.338Z",
   "updatedAt": "2026-07-14T12:22:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,50 +19,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
     "updatedAt": "2026-07-14T12:22:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe TodoColeccion mantener un único presupuesto de rate limit para todas las operaciones de `products`, o aislar `create` y `updatePrice` con backoff y límites independientes?",
-  "rationale": "La alternativa cambia el volumen de llamadas, la duración del cron y el riesgo de cascada, y ni el contrato disponible ni el código actual fijan qué política operativa debe prevalecer.",
+  "question": "¿Debe TodoColeccion aislar el rate limit por operación dentro de `products` y reanudar el trabajo pendiente con backoff, o se considera intencional abortar todo el lote de `create` y compartir el breaker con precio?",
+  "rationale": "El repositorio demuestra el efecto actual, pero no contiene el contrato de cuota del proveedor ni una decisión estable sobre el equilibrio entre throughput, protección ante 429 y frescura de precios.",
   "options": [
     {
-      "title": "Aislar por operación",
-      "body": "Crear scopes separados para `create` y `updatePrice`, con reintentos acotados y `Retry-After`/jitter, para preservar trabajo útil sin eliminar la protección.",
+      "title": "Aislar operaciones y aplicar backoff",
+      "body": "Crear scopes distintos para `create` y precio, usar `Retry-After` o backoff acotado y conservar los stocks pendientes para una ejecución posterior.",
       "recommended": true
     },
     {
-      "title": "Mantener scope compartido",
-      "body": "Conservar `products` como presupuesto común y ajustar únicamente backoff, métricas y señal de fallo del cron.",
+      "title": "Mantener el corte actual",
+      "body": "Conservar el scope `products` compartido y el aborto al primer rate limit, documentándolo como protección deliberada y reforzando alertas y métricas de trabajo pendiente.",
       "recommended": false
     },
     {
-      "title": "Aceptar el corte actual",
-      "body": "Mantener el aborto preventivo y cerrar solo si datos recientes de producción confirman que el impacto residual es tolerable.",
+      "title": "Reducir carga por configuración",
+      "body": "Mantener el diseño actual pero reducir límites o frecuencia de `create` hasta quedar por debajo de la cuota observada del proveedor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar por operación",
-    "body": "Crear scopes separados para `create` y `updatePrice`, con reintentos acotados y `Retry-After`/jitter, para preservar trabajo útil sin eliminar la protección.",
+    "title": "Aislar operaciones y aplicar backoff",
+    "body": "Crear scopes distintos para `create` y precio, usar `Retry-After` o backoff acotado y conservar los stocks pendientes para una ejecución posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el asignado actual y autor del primer cambio de scoping, por lo que es el mejor punto de coordinación para la decisión operativa.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es quien acumula la mayor parte del historial reciente sobre clasificación de rate limits y errores de TodoColeccion en el código vigente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-14T12:54:41.823Z",
+    "reviewedAt": "2026-07-14T12:31:28.338Z",
     "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }
