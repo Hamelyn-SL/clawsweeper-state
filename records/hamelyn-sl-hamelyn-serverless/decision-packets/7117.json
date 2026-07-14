@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T14:47:20.039Z",
-  "updatedAt": "2026-07-13T11:51:31Z",
+  "generatedAt": "2026-07-14T22:23:10.651Z",
+  "updatedAt": "2026-07-13T14:48:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,45 @@
       "feature",
       "triage:no-change",
       "reporter:victor",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P2",
-      "impact:other"
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-13T11:51:31Z"
+    "updatedAt": "2026-07-13T14:48:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe ejecutarse el rediseño como una única iniciativa L o dividirse en entregas con aceptación visual y de datos independiente?",
-  "rationale": "El código permite centralizar las cuatro rutas, pero la plantilla externa no define por sí sola la política de ranking, invalidación de caché, reutilización del catálogo ni el orden de entrega; esas decisiones afectan producto, SEO y operativa.",
+  "question": "¿Debe ejecutarse el rediseño como una entrega integral o por fases, y cuál será la fuente canónica y la política de caché para los railes ordenados por ventas y stock?",
+  "rationale": "El alcance y la arquitectura dependen de decisiones visuales y de datos que no están cerradas en `work-plan.md`, `guidelines.md` ni en la implementación actual.",
   "options": [
     {
-      "title": "Desglosar por capacidades",
-      "body": "Mantener esta issue como paraguas y crear tareas separadas para layout, catálogo, ranking y caché, y SEO, cada una con criterios desktop y móvil.",
+      "title": "Desglosar por fases",
+      "body": "Separar hero/beneficios, catálogo, railes y SEO en entregas visualmente verificables, cerrando antes la fuente de ranking y la invalidación de caché.",
       "recommended": true
     },
     {
-      "title": "Una única implementación L",
-      "body": "Aprobar una sola PR coordinada que modifique todo `CategoryHub`, asumiendo una revisión visual, funcional y SEO de mayor tamaño.",
-      "recommended": false
-    },
-    {
-      "title": "Priorizar solo conversión",
-      "body": "Implementar primero hero, buscador, beneficios y catálogo, dejando SEO e interlinking adicionales para una fase posterior.",
+      "title": "Entrega integral",
+      "body": "Implementar todo el rediseño en una iniciativa grande con diseño cerrado y QA dedicado para las cuatro rutas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desglosar por capacidades",
-    "body": "Mantener esta issue como paraguas y crear tareas separadas para layout, catálogo, ranking y caché, y SEO, cada una con criterios desktop y móvil.",
+    "title": "Desglosar por fases",
+    "body": "Separar hero/beneficios, catálogo, railes y SEO en entregas visualmente verificables, cerrando antes la fuente de ranking y la invalidación de caché.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Está asignado a la issue y fue quien reabrió el seguimiento al confirmar que el rediseño continuaba pendiente.",
+    "reason": "Reabrió la issue, aclaró el alcance pendiente y figura como asignado para coordinar su seguimiento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-13T14:47:20.039Z",
-    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "reviewedAt": "2026-07-14T22:23:10.651Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
