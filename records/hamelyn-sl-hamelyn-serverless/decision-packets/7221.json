@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T14:57:55.713Z",
-  "updatedAt": "2026-07-13T11:58:25Z",
+  "generatedAt": "2026-07-14T07:08:34.999Z",
+  "updatedAt": "2026-07-14T06:39:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,51 +14,51 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
+      "triage:done",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-08T09:00:53Z",
-    "updatedAt": "2026-07-13T11:58:25Z"
+    "updatedAt": "2026-07-14T06:39:03Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe considerarse obligatorio registrar una fecha específica de cambio de stock para cumplir `lastmod`, o se acepta temporalmente el máximo entre `lastUpdated` y `lastPriceUpdate` del PR abierto?",
-  "rationale": "El modelo actual no conserva una marca temporal inequívoca para cambios de `activeUnits`; aceptar la aproximación modifica el criterio de aceptación, mientras que exigir precisión puede requerir persistencia adicional y cambios en los flujos que actualizan stock.",
+  "question": "¿Se acepta que `lastmod` refleje solo el último cambio de precio, o debe cubrir desde esta entrega los cambios de contenido, precio y stock?",
+  "rationale": "La PR modifica expresamente un criterio de aceptación y el modelo actual no acredita una marca temporal fiable para cada cambio exclusivo de stock.",
   "options": [
     {
-      "title": "Exigir `lastmod` completo",
-      "body": "Mantener el requisito original y no dar por terminada la issue hasta que contenido, precio y stock tengan una fecha fiable y verificable.",
+      "title": "Mantener el requisito completo",
+      "body": "Exigir una fecha fiable que cambie con contenido, precio o stock antes de considerar terminada la issue.",
       "recommended": true
     },
     {
-      "title": "Aceptar aproximación temporal",
-      "body": "Fusionar la segmentación con `lastUpdated` y `lastPriceUpdate`, documentando expresamente que los cambios exclusivos de stock no actualizan todavía `lastmod`.",
+      "title": "Aceptar precio temporalmente",
+      "body": "Fusionar la nueva estructura con `lastPriceUpdate` y documentar expresamente la limitación de contenido y stock.",
       "recommended": false
     },
     {
-      "title": "Separar el seguimiento de stock",
-      "body": "Fusionar los cambios estructurales y abrir una issue canónica específica para persistir y propagar la fecha del último cambio de stock.",
+      "title": "Separar el seguimiento",
+      "body": "Fusionar la parte estructural y crear una issue canónica específica para completar después la semántica de `lastmod`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir `lastmod` completo",
-    "body": "Mantener el requisito original y no dar por terminada la issue hasta que contenido, precio y stock tengan una fecha fiable y verificable.",
+    "title": "Mantener el requisito completo",
+    "body": "Exigir una fecha fiable que cambie con contenido, precio o stock antes de considerar terminada la issue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el asignado actual, autor del PR candidato y contribuidor reciente tanto del bloque SEO como de la superficie de autores.",
+    "reason": "Es el asignado y responsable de la implementación activa, con contexto directo sobre el modelo de datos y el coste de completar el requisito.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7221.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221#issuecomment-4959487465",
-    "reviewedAt": "2026-07-13T14:57:55.713Z",
-    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "reviewedAt": "2026-07-14T07:08:34.999Z",
+    "mainSha": "b74b3873429dbd39c3eea22fba7a945ff8940bfc"
   }
 }
