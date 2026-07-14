@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T22:30:24.240Z",
-  "updatedAt": "2026-07-09T22:26:33Z",
+  "generatedAt": "2026-07-14T15:20:52.777Z",
+  "updatedAt": "2026-07-14T12:32:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,51 @@
     "state": "open",
     "labels": [
       "size/S",
+      "P2",
+      "status: 👀 ready for maintainer look",
       "proof: sufficient",
       "rating: 🐚 platinum hermit",
-      "status: 👀 ready for maintainer look",
-      "P2",
-      "merge-risk: 🚨 auth-provider"
+      "merge-risk: 🚨 auth-provider",
+      "conflicts:needs-human"
     ],
     "createdAt": "2026-07-09T19:30:45Z",
-    "updatedAt": "2026-07-09T22:26:33Z",
+    "updatedAt": "2026-07-14T12:32:08Z",
     "headSha": "325dce38113204eb04eff7bd0c95d85ae945253f"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Confirmamos que `marketplace_api` debe fallar cerrado contra documentos `config` `PROD` para todos los marketplaces de agents antes de mergear este PR?",
-  "rationale": "La corrección es estrecha y coherente con el core, pero cambia el contrato operativo de credenciales y puede romper canales que dependieran accidentalmente de documentos sin `environment: \"PROD\"`.",
+  "question": "¿Debe `marketplace_api` usar siempre documentos `PROD` también desde previews y ejecuciones no productivas de `apps/agents`, y se acepta validar la rotación de MercadoLibre mediante una comprobación controlada sin consumir un token live adicional?",
+  "rationale": "El PR cambia un límite operativo de credenciales y la rama conflictiva no permite que la automatización preserve con seguridad todas las defensas posteriores ni determine la política de entornos.",
   "options": [
     {
-      "title": "Verificar cobertura PROD antes de mergear",
-      "body": "Comprobar en Mongo que los documentos `config` `PROD` existen para los marketplaces expuestos por `marketplace_api` y mergear si la cobertura es correcta.",
+      "title": "Portar y validar el contrato `PROD`",
+      "body": "Reaplicar el parche sobre `dev`, confirmar explícitamente el uso de `PROD` en agents y verificar de forma controlada la actualización de MercadoLibre.",
       "recommended": true
     },
     {
-      "title": "Aceptar el fail-closed",
-      "body": "Mergear asumiendo que cualquier ausencia de documento `PROD` debe aparecer como fallo operativo visible y corregirse en configuración.",
+      "title": "Introducir selección por despliegue",
+      "body": "Adaptar la carga a una política de entorno explícita si previews o ejecuciones no productivas no deben acceder a credenciales `PROD`.",
       "recommended": false
     },
     {
-      "title": "Pedir compatibilidad legacy",
-      "body": "Pausar el PR y pedir un fallback o flag solo si producción necesita seguir leyendo documentos sin entorno.",
+      "title": "Pausar la integración",
+      "body": "Mantener el PR abierto hasta que el propietario operativo confirme la política de credenciales y el método seguro de validación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar cobertura PROD antes de mergear",
-    "body": "Comprobar en Mongo que los documentos `config` `PROD` existen para los marketplaces expuestos por `marketplace_api` y mergear si la cobertura es correcta.",
+    "title": "Portar y validar el contrato `PROD`",
+    "body": "Reaplicar el parche sobre `dev`, confirmar explícitamente el uso de `PROD` en agents y verificar de forma controlada la actualización de MercadoLibre.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Ya figura como reviewer solicitado para este cambio sensible de credenciales marketplace/SP-API.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Tiene el mayor contexto histórico del helper y es autor de los endurecimientos que deben reconciliarse.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7307.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7307#issuecomment-4930103615",
-    "reviewedAt": "2026-07-09T22:30:24.240Z",
-    "mainSha": "8883e80d43347813e2a0696912d00d8c537ab607"
+    "reviewedAt": "2026-07-14T15:20:52.777Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }
