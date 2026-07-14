@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T07:31:51.636Z",
+  "updatedAt": "2026-07-14T07:23:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7492,
+    "title": "Trasvase: panel de inventario de gaveta de estantería con fusión a BIN de Skypod, estilo Review y Ecommerce V3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:admin",
+      "priority:p1",
+      "feature",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-14T06:20:38Z",
+    "updatedAt": "2026-07-14T07:23:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe cada trasvase persistirse como una entidad operativa propia con estados y eventos, o como historial embebido en los documentos `drawers` de origen y destino?",
+  "rationale": "Esta decisión determina la recuperación ante fallos parciales, la auditoría, el crecimiento de los documentos y cómo se ampliarán en el futuro las direcciones admitidas.",
+  "options": [
+    {
+      "title": "Entidad de trasvase",
+      "body": "Persistir cada operación con origen, destino, operador, stocks, estados, intentos, eventos y errores, dejando en `drawers` solo referencias o resúmenes.",
+      "recommended": true
+    },
+    {
+      "title": "Historial en drawers",
+      "body": "Guardar eventos en los documentos de origen y destino, asumiendo la complejidad de mantener ambas copias consistentes y acotadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Entidad de trasvase",
+    "body": "Persistir cada operación con origen, destino, operador, stocks, estados, intentos, eventos y errores, dejando en `drawers` solo referencias o resúmenes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre tanto la orquestación y consistencia de MergeAuto como la interfaz de fusión que se reutilizaría.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7492.md",
+    "reviewedAt": "2026-07-14T07:31:51.636Z",
+    "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
+  }
+}
