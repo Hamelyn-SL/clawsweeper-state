@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T00:08:34.970Z",
+  "generatedAt": "2026-07-14T00:14:48.875Z",
   "updatedAt": "2026-07-13T22:48:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,12 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P1",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P1",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 auth-provider",
-      "merge-risk: 🚨 automation"
+      "merge-risk: 🚨 auth-provider"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
     "updatedAt": "2026-07-13T22:48:54Z",
@@ -24,39 +24,38 @@
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe este release retirar ya el bypass `atctoken` y asumir el modo fail-closed del token OAuth de Codex, o deben aplazarse esos cambios hasta demostrar la migración y la recuperación operativa?",
-  "rationale": "La compatibilidad de integraciones externas y la aceptación del fallo cerrado son decisiones operativas de producción que el código, los previews y CI no pueden resolver por sí solos.",
+  "question": "¿Debe este release incluir ahora la retirada de `atctoken` y el modo OAuth fail-closed de Codex pese al impacto potencial sobre consumidores externos y recuperación operativa?",
+  "rationale": "Ambos cambios alteran contratos de producción y su aceptación no puede deducirse de CI ni de la corrección local del código.",
   "options": [
     {
-      "title": "Corregir, probar y desplegar",
-      "body": "Mantener ambos cambios después de reparar el workflow y aportar prueba operativa del head exacto, incluida la migración de auth y el procedimiento de re-seed.",
+      "title": "Corregir y validar antes",
+      "body": "Mantener el PR abierto, corregir el workflow y aportar prueba operativa y de actualización antes del merge.",
       "recommended": true
     },
     {
-      "title": "Aplazar cambios sensibles",
-      "body": "Reconstruir temporalmente el release sin la retirada de `atctoken` o sin el cambio OAuth hasta completar la validación operativa.",
+      "title": "Aceptar el riesgo operativo",
+      "body": "Promover el release asumiendo que integraciones `atctoken` y agentes con token expirado pueden dejar de funcionar.",
       "recommended": false
     },
     {
-      "title": "Aceptar el riesgo ahora",
-      "body": "Promover el release documentando expresamente la posible rotura de integraciones externas y la recuperación manual mediante re-seed.",
+      "title": "Separar cambios sensibles",
+      "body": "Retirar temporalmente autenticación y OAuth del release y desplegarlos después con validación específica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir, probar y desplegar",
-    "body": "Mantener ambos cambios después de reparar el workflow y aportar prueba operativa del head exacto, incluida la migración de auth y el procedimiento de re-seed.",
+    "title": "Corregir y validar antes",
+    "body": "Mantener el PR abierto, corregir el workflow y aportar prueba operativa y de actualización antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el mejor candidato disponible por su historial recurrente gestionando las promociones automatizadas de `dev` a producción.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Es el integrador reciente de los cambios de autenticación/OAuth y del workflow incluido.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-14T00:08:34.970Z",
+    "reviewedAt": "2026-07-14T00:14:48.875Z",
     "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
   }
 }
