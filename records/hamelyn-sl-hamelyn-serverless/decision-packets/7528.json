@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:42:19.476Z",
+  "updatedAt": "2026-07-14T10:30:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7528,
+    "title": "🐛 increment-visit agota los 300s de maxDuration — un contador no puede tardar 5 minutos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7528",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-14T09:49:05Z",
+    "updatedAt": "2026-07-14T10:30:57Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe el primer arreglo introducir un helper compartido para operaciones Mongo cortas o limitarse al contador mientras se audita el alcance global?",
+  "rationale": "La causa está confirmada, pero elegir un timeout global, un helper opt-in o un parche específico cambia el riesgo para todas las consultas que comparten la conexión.",
+  "options": [
+    {
+      "title": "Helper compartido opt-in",
+      "body": "Crear un helper con deadline o cancelación para escrituras cortas e idempotentes, aplicarlo primero a `increment-visit` y ampliar su uso tras validación.",
+      "recommended": true
+    },
+    {
+      "title": "Timeout global del cliente",
+      "body": "Configurar un límite global del driver después de auditar y excepcionar las consultas que legítimamente necesitan más tiempo.",
+      "recommended": false
+    },
+    {
+      "title": "Parche solo en el contador",
+      "body": "Añadir un límite únicamente a `incrementEcommerceVisits`, reduciendo el impacto inmediato pero dejando el riesgo compartido sin resolver.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Helper compartido opt-in",
+    "body": "Crear un helper con deadline o cancelación para escrituras cortas e idempotentes, aplicarlo primero a `increment-visit` y ampliar su uso tras validación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es quien ha diseñado y endurecido más recientemente el ciclo de vida de la conexión Mongo compartida.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7528.md",
+    "reviewedAt": "2026-07-14T10:42:19.476Z",
+    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
+  }
+}
