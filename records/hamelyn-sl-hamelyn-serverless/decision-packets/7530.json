@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T12:34:15.021Z",
+  "updatedAt": "2026-07-14T11:46:56Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7530,
+    "title": "❓ Verificar si los 501 Not Implemented de public/admin vienen de clientes vivos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530",
+    "state": "open",
+    "labels": [
+      "priority:p3",
+      "app:infrastructure",
+      "question",
+      "triage:done",
+      "clawsweeper:needs-live-repro",
+      "P3",
+      "issue-rating: ⚪ platinum"
+    ],
+    "createdAt": "2026-07-14T09:49:10Z",
+    "updatedAt": "2026-07-14T11:46:56Z"
+  },
+  "lane": "manual_review",
+  "priority": "P3",
+  "question": "¿Debe cerrarse esta pregunta como investigación resuelta y abrir seguimientos estrechos para observabilidad y mapeo HTTP, o debe reconvertirse esta misma issue en esa tarea de implementación?",
+  "rationale": "La atribución a clientes vivos ya está demostrada, pero las causas y superficies de código son varias; cambiar el alcance de una pregunta operativa a un bug compuesto requiere una decisión explícita de organización del trabajo.",
+  "options": [
+    {
+      "title": "Cerrar y dividir",
+      "body": "Cerrar esta pregunta tras enlazar bugs separados para profile/payment y para la observabilidad de cart/drop-off.",
+      "recommended": true
+    },
+    {
+      "title": "Reconvertir la issue",
+      "body": "Cambiar título, tipo y aceptación para que esta issue sea la tarea canónica de observabilidad y mapeo HTTP de las tres rutas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cerrar y dividir",
+    "body": "Cerrar esta pregunta tras enlazar bugs separados para profile/payment y para la observabilidad de cart/drop-off.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ya llevó el arreglo previo del mismo patrón de 501 y el índice de estabilidad relacionado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7530.md",
+    "reviewedAt": "2026-07-14T12:34:15.021Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+  }
+}
