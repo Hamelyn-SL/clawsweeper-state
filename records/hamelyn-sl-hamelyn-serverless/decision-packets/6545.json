@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:37:03.504Z",
-  "updatedAt": "2026-07-07T23:23:35Z",
+  "generatedAt": "2026-07-14T12:56:02.574Z",
+  "updatedAt": "2026-07-14T12:24:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,51 +18,45 @@
       "triage:done",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-07-07T23:23:35Z"
+    "updatedAt": "2026-07-14T12:24:24Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the team proceed with one coordinated Merchant Center feed redesign under MiguelHamelyn, including MX-first validation with Jesús and any missing country config, or split the mapper/code work from live upload operations?",
-  "rationale": "The code gap is clear, but the requested rollout order, Brazil coverage, and live Merchant Center upload sequence require human operational ownership rather than an autonomous cleanup close.",
+  "question": "¿La primera entrega debe cubrir y activar solo México, dejando Brasil y el despliegue global para fases posteriores, o debe bloquearse hasta confirmar todas las cuentas del Excel?",
+  "rationale": "La issue exige una prueba inicial conjunta en México, mientras Brasil aparece en el contrato adjunto pero carece de configuración versionada y de una confirmación visible sobre su cuenta habilitada.",
   "options": [
     {
-      "title": "Coordinate one owned feed redesign",
-      "body": "Keep this issue open under the assigned owner, implement the mapper and country orchestration together, and run MX proof with Jesús before other countries.",
+      "title": "Validar México primero",
+      "body": "Implementar el generador completo con México como primera activación, mantener Brasil deshabilitado y desplegar los demás países tras aprobar cada fase.",
       "recommended": true
     },
     {
-      "title": "Split code and operations",
-      "body": "Open a narrower code issue/PR for mapper and country support while tracking live uploads separately with the operations owner.",
-      "recommended": false
-    },
-    {
-      "title": "Defer Brazil or unconfirmed countries",
-      "body": "Limit the first implementation to countries with confirmed config and document the remaining country enablement as follow-up.",
+      "title": "Cerrar el alcance global antes",
+      "body": "Esperar a confirmar cuentas, credenciales, límites y nomenclatura de todos los países, incluido Brasil, antes de implementar o activar el nuevo flujo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinate one owned feed redesign",
-    "body": "Keep this issue open under the assigned owner, implement the mapper and country orchestration together, and run MX proof with Jesús before other countries.",
+    "title": "Validar México primero",
+    "body": "Implementar el generador completo con México como primera activación, mantener Brasil deshabilitado y desplegar los demás países tras aprobar cada fase.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is assigned to this issue and authored the recent Merchant feed refactor, US upload, and MX routing cleanup.",
+    "reason": "Es el responsable asignado y la persona con mayor historial técnico sobre el generador afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-07-07T23:37:03.504Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T12:56:02.574Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:55:12.759Z",
+  "generatedAt": "2026-07-14T12:54:41.823Z",
   "updatedAt": "2026-07-14T12:22:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,52 +17,51 @@
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond"
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
     "updatedAt": "2026-07-14T12:22:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el rate limit de TodoColeccion seguir bloqueando conjuntamente todas las operaciones de `/products`, o queremos una política por operación que permita reintentos acotados de `create` sin detener `updatePrice` y `withdraw`?",
-  "rationale": "El código actual aplica deliberadamente una protección conservadora, pero el repositorio no contiene el contrato de cuota del proveedor ni una decisión sobre el coste aceptable entre throughput, duración del cron y riesgo de nuevos 429; automatizar esa elección podría empeorar producción.",
+  "question": "¿Debe TodoColeccion mantener un único presupuesto de rate limit para todas las operaciones de `products`, o aislar `create` y `updatePrice` con backoff y límites independientes?",
+  "rationale": "La alternativa cambia el volumen de llamadas, la duración del cron y el riesgo de cascada, y ni el contrato disponible ni el código actual fijan qué política operativa debe prevalecer.",
   "options": [
     {
-      "title": "Breaker por operación y backoff remoto",
-      "body": "Separar `create`, `updatePrice` y `withdraw`, respetar `Retry-After` y reintentar `create` de forma acotada antes de aplazar únicamente el trabajo restante.",
+      "title": "Aislar por operación",
+      "body": "Crear scopes separados para `create` y `updatePrice`, con reintentos acotados y `Retry-After`/jitter, para preservar trabajo útil sin eliminar la protección.",
       "recommended": true
     },
     {
-      "title": "Mantener scope `products` y ajustar tiempos",
-      "body": "Conservar el bloqueo compartido, pero calibrar ventana, lote y espera con telemetría del proveedor para reducir cortes sin cambiar la semántica actual.",
+      "title": "Mantener scope compartido",
+      "body": "Conservar `products` como presupuesto común y ajustar únicamente backoff, métricas y señal de fallo del cron.",
       "recommended": false
     },
     {
-      "title": "Mantener comportamiento y monitorizar",
-      "body": "No cambiar la política hasta obtener nuevas respuestas completas, headers de rate limit y frecuencia reciente por operación.",
+      "title": "Aceptar el corte actual",
+      "body": "Mantener el aborto preventivo y cerrar solo si datos recientes de producción confirman que el impacto residual es tolerable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Breaker por operación y backoff remoto",
-    "body": "Separar `create`, `updatePrice` y `withdraw`, respetar `Retry-After` y reintentar `create` de forma acotada antes de aplazar únicamente el trabajo restante.",
+    "title": "Aislar por operación",
+    "body": "Crear scopes separados para `create` y `updatePrice`, con reintentos acotados y `Retry-After`/jitter, para preservar trabajo útil sin eliminar la protección.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Fusionó la mitigación inicial, activó las fases afectadas del cron y aparece en el mantenimiento operativo reciente del área, por lo que es el mejor candidato disponible para decidir la política transversal.",
+    "person": "HamelynDev",
+    "reason": "Es el asignado actual y autor del primer cambio de scoping, por lo que es el mejor punto de coordinación para la decisión operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-14T12:55:12.759Z",
-    "mainSha": "877a3f1828e0d5f916760f5b23c4f3697b375108"
+    "reviewedAt": "2026-07-14T12:54:41.823Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }
