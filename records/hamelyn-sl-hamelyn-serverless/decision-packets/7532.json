@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T10:11:25.045Z",
-  "updatedAt": "2026-07-14T09:56:44Z",
+  "generatedAt": "2026-07-14T21:54:32.001Z",
+  "updatedAt": "2026-07-14T12:47:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,44 +13,43 @@
       "size/XL"
     ],
     "createdAt": "2026-07-14T09:55:19Z",
-    "updatedAt": "2026-07-14T09:56:44Z",
-    "headSha": "e1c84e9cb7c7bea601b2d33c4bd22ec76bcf509c"
+    "updatedAt": "2026-07-14T12:47:03Z",
+    "headSha": "6524e4416122132006d0b30be766fd7533fa9b4f"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la primera versión permitir pushes automáticos solo en PRs del mismo repositorio y de autores internos incluidos en una allowlist, o también en ramas de contribuidores externos?",
-  "rationale": "El código no puede decidir por sí solo qué ramas son de confianza para ejecutar contenido y recibir escrituras automáticas; la issue vinculada dejó esta política pendiente de Infraestructura.",
+  "question": "¿Debe la primera versión aceptar únicamente PRs del mismo repositorio y exigir validación previa al push, como propuso la discusión de la issue canónica?",
+  "rationale": "El head amplía el límite de confianza a forks y sustituye la validación previa por CI posterior; ambas son decisiones de seguridad y operación que necesitan intención humana explícita.",
   "options": [
     {
-      "title": "Allowlist interna primero",
-      "body": "Limitar el piloto a ramas del mismo repositorio y autores internos, con un worker sin secretos y un controlador confiable separado.",
+      "title": "Restringir y validar",
+      "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar una validación acotada antes de cualquier push automatizado.",
       "recommended": true
     },
     {
-      "title": "Solo diagnóstico",
-      "body": "Detectar, explicar y etiquetar conflictos sin hacer push hasta definir una política de confianza más amplia.",
+      "title": "Aceptar el alcance ampliado",
+      "body": "Permitir forks y CI posterior solo con permisos mínimos demostrados, aislamiento revisado y aprobación explícita del riesgo.",
       "recommended": false
     },
     {
-      "title": "Cobertura general endurecida",
-      "body": "Permitir contribuidores externos únicamente después de demostrar aislamiento de secretos, permisos mínimos y prueba adversarial del sandbox.",
+      "title": "Pausar el resolver",
+      "body": "Mantener el PR sin merge hasta rediseñar la custodia del token y la estrategia de validación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Allowlist interna primero",
-    "body": "Limitar el piloto a ramas del mismo repositorio y autores internos, con un worker sin secretos y un controlador confiable separado.",
+    "title": "Restringir y validar",
+    "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar una validación acotada antes de cualquier push automatizado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien concentra la propiedad histórica del runner cloud, sus credenciales y sus mecanismos de idempotencia.",
+    "reason": "Es la señal histórica más fuerte para los patrones de sandbox, claims y automatización de `apps/agents`, y ya está solicitado como reviewer.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7532.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7532#issuecomment-4968078149",
-    "reviewedAt": "2026-07-14T10:11:25.045Z",
-    "mainSha": "5b08be57087cb9f43c6f9c5d83a33fbfe5c6ffb6"
+    "reviewedAt": "2026-07-14T21:54:32.001Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-11T19:48:41.189Z",
-  "updatedAt": "2026-07-11T18:57:12Z",
+  "generatedAt": "2026-07-14T21:49:31.943Z",
+  "updatedAt": "2026-07-11T19:49:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "priority:p1",
       "app:marketplace",
       "triage:done",
+      "P1",
+      "impact:other",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-11T18:32:34Z",
-    "updatedAt": "2026-07-11T18:57:12Z"
+    "updatedAt": "2026-07-11T19:49:21Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Amazon ES resolverse rehidratando filas `mk_amazonEs` mínimas para los huérfanos activos o retirando/cantidad 0 directamente desde SP-API usando el snapshot externo?",
-  "rationale": "Ambas rutas pueden corregir el problema, pero cambian datos internos o listings externos en masa y el repo exige confirmación operativa antes de ejecutarlas.",
+  "question": "¿La ruta canónica para listings Amazon sin fila mk debe rehidratar un estado mínimo antes de retirar o retirar directamente por SP-API y reconciliar después?",
+  "rationale": "La elección define la fuente de verdad, la trazabilidad y las garantías de concurrencia de una operación que puede afectar a cientos de ofertas externas.",
   "options": [
     {
-      "title": "Dry-run y rehidratación controlada",
-      "body": "Contar la cohorte exacta, mostrar 3 muestras y filtro literal, crear filas `mk_amazonEs` mínimas para los huérfanos validados y dejar que la retirada canónica procese el estado.",
+      "title": "Rehidratar y retirar",
+      "body": "Crear únicamente el estado mínimo validado para que el pipeline canónico retire y audite cada listing.",
       "recommended": true
     },
     {
-      "title": "Retirada SP-API directa",
-      "body": "Usar snapshot y muestra live para enviar cantidad 0 directamente a Amazon ES, aceptando después una reconciliación local para recuperar trazabilidad.",
+      "title": "Retirar y reconciliar",
+      "body": "Enviar cantidad 0 directamente por SP-API y reconstruir después el estado local, priorizando reducir el tiempo de exposición comercial.",
       "recommended": false
     },
     {
-      "title": "Esperar nueva muestra live",
-      "body": "Mantener la issue abierta hasta validar varios SKUs con SP-API en una ventana fresca antes de elegir remediación masiva.",
+      "title": "Reconciliador periódico común",
+      "body": "Diseñar primero un sweep multi-región que absorba también la cohorte de Amazon COM y ejecute la remediación de forma recurrente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dry-run y rehidratación controlada",
-    "body": "Contar la cohorte exacta, mostrar 3 muestras y filtro literal, crear filas `mk_amazonEs` mínimas para los huérfanos validados y dejar que la retirada canónica procese el estado.",
+    "title": "Rehidratar y retirar",
+    "body": "Crear únicamente el estado mínimo validado para que el pipeline canónico retire y audite cada listing.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien aporta la señal operativa concreta y tiene historial reciente en el reporte Amazon que identifica estas cohortes.",
+    "reason": "Tiene el historial más directo en el batch, el reporte operativo y la prevención reciente de huérfanos Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7379.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7379#issuecomment-4948332519",
-    "reviewedAt": "2026-07-11T19:48:41.189Z",
-    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+    "reviewedAt": "2026-07-14T21:49:31.943Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

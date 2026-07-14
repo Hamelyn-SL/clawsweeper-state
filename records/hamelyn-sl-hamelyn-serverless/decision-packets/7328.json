@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T13:42:51.165Z",
-  "updatedAt": "2026-07-10T10:27:09Z",
+  "generatedAt": "2026-07-14T21:49:16.781Z",
+  "updatedAt": "2026-07-10T13:58:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
-    "updatedAt": "2026-07-10T10:27:09Z"
+    "updatedAt": "2026-07-10T13:58:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Fnac tratar `Product not found` como fallo permanente/no publicable mientras no exista integración Catalog API, o debe mantenerse como recuperable por un flujo previo de creación/validación de producto?",
-  "rationale": "El cambio técnico es pequeño, pero la decisión depende del contrato operativo con Fnac y puede afectar a cientos de miles de stocks.",
+  "question": "¿Debe `Product not found` de Fnac quedar como error permanente mientras no exista integración de Catalog API, o debe mantenerse recuperable y desarrollar primero ese flujo de catálogo?",
+  "rationale": "El código puede cambiarse de forma pequeña, pero la elección determina si se corta el churn a costa de excluir productos o si se asume una integración de catálogo nueva y más amplia.",
   "options": [
     {
-      "title": "Marcar como permanente",
-      "body": "Cambiar la regla de Fnac a `PERMANENT`, añadir cobertura de `classifyRetryPolicy` y planificar aparte el backfill dry-run de la cohorte existente.",
+      "title": "Clasificar como permanente",
+      "body": "Cambiar Fnac a `RetryPolicy.PERMANENT`, añadir cobertura focalizada y tratar los datos existentes mediante un backfill separado.",
       "recommended": true
     },
     {
-      "title": "Implementar recuperación de catálogo",
-      "body": "Mantener la firma como recuperable solo si se implementa antes un paso de catálogo/validación que pueda resolver `Product not found`.",
+      "title": "Construir recuperación de catálogo",
+      "body": "Mantener la firma recuperable únicamente después de implementar creación o validación de catálogo y demostrar que resuelve el rechazo antes de reenviar la oferta.",
       "recommended": false
     },
     {
-      "title": "Mantener estado actual",
-      "body": "Aceptar el coste de reintentos mientras se recoge más evidencia operativa, dejando el bloqueo de publicación sin clasificación permanente.",
+      "title": "Mantener la rotación actual",
+      "body": "Aceptar los reintentos y el bloqueo de publicación mientras se obtiene una decisión contractual adicional de Fnac.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Marcar como permanente",
-    "body": "Cambiar la regla de Fnac a `PERMANENT`, añadir cobertura de `classifyRetryPolicy` y planificar aparte el backfill dry-run de la cohorte existente.",
+    "title": "Clasificar como permanente",
+    "body": "Cambiar Fnac a `RetryPolicy.PERMANENT`, añadir cobertura focalizada y tratar los datos existentes mediante un backfill separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el reporter y aparece en historial reciente de APIs de marketplace/Fnac, por lo que es el mejor punto de coordinación funcional disponible.",
-    "confidence": "medium"
+    "reason": "Introdujo la arquitectura de `retryPolicy`, endureció el barrido `STALE` y aporta el contexto operativo más directo sobre esta firma.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
-    "reviewedAt": "2026-07-10T13:42:51.165Z",
-    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+    "reviewedAt": "2026-07-14T21:49:16.781Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
