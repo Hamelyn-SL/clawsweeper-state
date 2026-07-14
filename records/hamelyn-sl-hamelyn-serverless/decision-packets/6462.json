@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:19:13.496Z",
-  "updatedAt": "2026-07-07T23:05:12Z",
+  "generatedAt": "2026-07-14T11:33:19.887Z",
+  "updatedAt": "2026-07-08T10:14:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,52 +16,46 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "P2",
-      "impact:security",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "impact:security",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-06-16T21:39:40Z",
-    "updatedAt": "2026-07-07T23:05:12Z"
+    "updatedAt": "2026-07-08T10:14:45Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "Should the first implementation be limited to local safe tooling around `Hamelyn_DEV_BASE` sandboxes, or should it also define the refresh/anonymization pipeline now?",
-  "rationale": "Current code provides partial guard patterns, but maintainers need to choose how much data-governance policy belongs in the first PR before automation can safely implement it.",
+  "question": "¿Debe la generación y el refresh de `Hamelyn_DEV_BASE` ejecutarse exclusivamente en un pipeline restringido que publique datos ya anonimizados, o podrán ejecutarlos desarrolladores con credenciales de lectura de producción?",
+  "rationale": "Esta elección determina quién puede acceder a PII de producción, dónde se ejecuta la anonimización y qué identidad puede copiar o borrar bases; el código actual no establece ese límite de forma segura.",
   "options": [
     {
-      "title": "Start with safe local tooling",
-      "body": "Build audit, index comparison, create/drop sandbox commands and docs first, leaving refresh/anonymization as a follow-up once the operational policy is clearer.",
+      "title": "Pipeline restringido",
+      "body": "Centralizar lectura, anonimización y refresh con credenciales mínimas, entregando a desarrollo únicamente una base ya saneada y clonable.",
       "recommended": true
     },
     {
-      "title": "Design full data pipeline first",
-      "body": "Pause implementation until maintainers specify how `Hamelyn_DEV_BASE` is refreshed, anonymized, owned, and reviewed.",
-      "recommended": false
-    },
-    {
-      "title": "Keep manual for now",
-      "body": "Document the existing fulfillment sandbox pattern and defer generalized tooling until repeated use proves the workflow shape.",
+      "title": "Tooling local privilegiado",
+      "body": "Permitir ejecuciones desde equipos de desarrollo con acceso a producción, confirmaciones y guardas reforzadas, asumiendo una superficie de exposición mayor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Start with safe local tooling",
-    "body": "Build audit, index comparison, create/drop sandbox commands and docs first, leaving refresh/anonymization as a follow-up once the operational policy is clearer.",
+    "title": "Pipeline restringido",
+    "body": "Centralizar lectura, anonimización y refresh con credenciales mínimas, entregando a desarrollo únicamente una base ya saneada y clonable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn authored the issue and also introduced the closest existing sandbox/audit patterns in git history.",
+    "reason": "Abrió la propuesta e introdujo los dos precedentes técnicos que habría que evolucionar o reemplazar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6462#issuecomment-4909962993",
-    "reviewedAt": "2026-07-07T23:19:13.496Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T11:33:19.887Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

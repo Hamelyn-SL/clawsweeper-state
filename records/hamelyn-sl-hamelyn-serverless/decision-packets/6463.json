@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:18:52.067Z",
-  "updatedAt": "2026-07-07T23:05:12Z",
+  "generatedAt": "2026-07-14T11:28:32.451Z",
+  "updatedAt": "2026-07-08T10:15:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,50 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "P2",
-      "impact:security",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "impact:security",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-07-07T23:05:12Z"
+    "updatedAt": "2026-07-08T10:15:50Z"
   },
-  "lane": "manual_review",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "Which Celeritas operational source, owner/contact, and credential reference should be treated as canonical for the docs update?",
-  "rationale": "The remaining facts depend on operations/vendor knowledge and secret-management policy that cannot be safely inferred from code or old Slack references.",
+  "question": "¿Qué fuente contractual, contacto operativo y referencia segura de credenciales de Celeritas deben considerarse canónicos para cerrar esta documentación?",
+  "rationale": "El repositorio acredita el tracking REST y las constantes legacy, pero no puede determinar por sí solo la vigencia del contrato externo, el responsable operativo ni la ubicación autorizada de secretos.",
   "options": [
     {
-      "title": "Confirm and document canonical operations",
-      "body": "Have the Celeritas owner or operations contact confirm the current manual, active API scope, and safe config reference, then patch the integration docs.",
+      "title": "Confirmar y sanear referencias",
+      "body": "Operaciones confirma manual, contacto, alcance tracking-only y ubicación segura; si las constantes siguen activas, se migran o rotan antes de documentar la referencia.",
       "recommended": true
     },
     {
-      "title": "Split secret migration first",
-      "body": "If the legacy credential references are still live, open a separate security/config task before publishing any stable credential-location guidance.",
+      "title": "Cerrar el alcance en tracking",
+      "body": "Se declara Celeritas formalmente como tracking-only y se documenta que creación/label no está soportado, manteniendo aparte la regularización de secretos.",
       "recommended": false
     },
     {
-      "title": "Close only with explicit operations decision",
-      "body": "Close this issue only if operations confirms there is no active Celeritas contract or documentation path worth preserving.",
+      "title": "Reactivar creación de envíos",
+      "body": "Se abre una iniciativa técnica separada para validar el endpoint `order`, etiquetas, pruebas y custodia de credenciales antes de ampliar el runbook.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirm and document canonical operations",
-    "body": "Have the Celeritas owner or operations contact confirm the current manual, active API scope, and safe config reference, then patch the integration docs.",
+    "title": "Confirmar y sanear referencias",
+    "body": "Operaciones confirma manual, contacto, alcance tracking-only y ubicación segura; si las constantes siguen activas, se migran o rotan antes de documentar la referencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn owns the current docs/history trail and is already assigned on the live issue.",
+    "reason": "Está asignado a la issue y concentra el historial reciente de los runbooks y de la migración REST relacionada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463#issuecomment-4909963944",
-    "reviewedAt": "2026-07-07T23:18:52.067Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T11:28:32.451Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:18:52.617Z",
+  "generatedAt": "2026-07-14T11:34:34.867Z",
   "updatedAt": "2026-07-08T15:33:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,51 +15,51 @@
       "reporter:JavierHamelyn",
       "feature",
       "triage:done",
+      "P1",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:crash-loop",
-      "issue-rating: ➖ n/a"
+      "impact:crash-loop"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
     "updatedAt": "2026-07-08T15:33:39Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué carga debe ser el primer corte y qué reportes conservarán escrituras correctivas en MongoDB después de trasladar sus lecturas masivas a BigQuery?",
-  "rationale": "La decisión define la frescura, el modelo de materialización, la propiedad entre Data Platform y los workflows, y el riesgo operativo de actuar sobre datos con retraso.",
+  "question": "¿Qué secuencia de migración, tolerancia de frescura y política de fallback debe aprobarse para cada carga incluida en esta iniciativa?",
+  "rationale": "Los flujos tienen requisitos distintos de frescura, ubicación de ejecución, credenciales y escrituras correctivas; el repositorio demuestra que BigQuery es viable, pero no determina una única transición segura ni el reparto de ownership.",
   "options": [
     {
-      "title": "Flash offers primero",
-      "body": "Crear un pool horario de candidatos en BigQuery, cambiar únicamente la rotación y medir el descenso de CPU antes de ampliar el programa.",
+      "title": "Empezar por flash offers",
+      "body": "Migrar primero el mayor generador documentado de full scans a un pool horario de BigQuery y usar su reducción de CPU como validación del patrón.",
       "recommended": true
     },
     {
-      "title": "Google Merchant primero",
-      "body": "Priorizar la issue específica, elevar la frescura y cobertura de productos y migrar los feeds con una validación de paridad separada.",
+      "title": "Priorizar Google Merchant",
+      "body": "Completar primero https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663, ampliando la materialización de productos antes de migrar el feed de libros nuevos.",
       "recommended": false
     },
     {
-      "title": "Programa transversal",
-      "body": "Diseñar todos los feeds, reportes, exports y dashboards como una migración coordinada, asumiendo mayor plazo y riesgo de integración.",
+      "title": "Diseñar todo el programa primero",
+      "body": "Acordar arquitectura, frescura y ownership de feeds, reportes, exports y dashboards antes de abrir los PRs por cortes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Flash offers primero",
-    "body": "Crear un pool horario de candidatos en BigQuery, cambiar únicamente la rotación y medir el descenso de CPU antes de ampliar el programa.",
+    "title": "Empezar por flash offers",
+    "body": "Migrar primero el mayor generador documentado de full scans a un pool horario de BigQuery y usar su reducción de CPU como validación del patrón.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo el flujo central de flash offers, aportó el diagnóstico operativo y definió el alcance global de la migración.",
+    "reason": "Es la persona con la conexión histórica más amplia entre flash offers, CDC, exports, reportes y el diagnóstico operativo que originó la iniciativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-14T12:18:52.617Z",
+    "reviewedAt": "2026-07-14T11:34:34.867Z",
     "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

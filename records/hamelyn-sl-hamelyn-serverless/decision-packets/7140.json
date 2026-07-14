@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:36:30.705Z",
-  "updatedAt": "2026-07-08T15:38:15Z",
+  "generatedAt": "2026-07-14T11:41:46.407Z",
+  "updatedAt": "2026-07-08T16:39:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,50 +18,44 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:fix-shape-clear",
-      "P3",
-      "impact:ux-friction",
       "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro"
+      "clawsweeper:source-repro",
+      "P3",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-07T12:14:01Z",
-    "updatedAt": "2026-07-08T15:38:15Z"
+    "updatedAt": "2026-07-08T16:39:26Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Cuál debe ser la fuente de verdad del copy promocional visible en ecommerce: datos del cupón activo, una configuración/CMS editable de promociones, o traducciones estáticas mantenidas manualmente?",
-  "rationale": "La inspección confirma la divergencia, pero cada solución cambia quién controla promociones, locales y condiciones visibles; la automatización no debería elegir ese contrato de producto.",
+  "question": "¿Debe la fuente canónica del strip ser una configuración de campaña editorial que referencia un cupón o una selección automática basada en nuevos campos del modelo de cupón?",
+  "rationale": "El modelo actual no distingue qué cupón activo se promociona ni por qué locale, y la decisión determina el ownership del copy, la traducción, la caducidad y el fallback.",
   "options": [
     {
-      "title": "Fuente única de promociones",
-      "body": "Crear o reutilizar una configuración/API de promociones que referencie el cupón activo y exponga copy localizado junto con términos estructurados para `PromoStrip`.",
+      "title": "Configuración de campaña validada",
+      "body": "Guardar por locale la campaña y el cupón referenciado, validando en backend que existe, está activo y coincide con las condiciones mostradas.",
       "recommended": true
     },
     {
-      "title": "Derivar desde cupones",
-      "body": "Construir el mensaje desde `discount.kind`, cantidades y código del cupón activo por locale, aceptando menos flexibilidad editorial.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener copy estático",
-      "body": "Eliminar o deprecar el `CouponBanner` heredado y documentar que `PromoStrip` se sincroniza manualmente desde i18n, aceptando el riesgo operativo.",
+      "title": "Ampliar el modelo de cupón",
+      "body": "Añadir campos de promoción, locale y prioridad al cupón y seleccionar automáticamente la campaña vigente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fuente única de promociones",
-    "body": "Crear o reutilizar una configuración/API de promociones que referencie el cupón activo y exponga copy localizado junto con términos estructurados para `PromoStrip`.",
+    "title": "Configuración de campaña validada",
+    "body": "Guardar por locale la campaña y el cupón referenciado, validando en backend que existe, está activo y coincide con las condiciones mostradas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el owner indicado para Coupons & Promotions y la issue está asignada a él, por lo que es el mejor punto para decidir la fuente de verdad de promociones.",
+    "reason": "Es el owner funcional explícito de Coupons & Promotions y también ha mantenido históricamente el copy de campañas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7140.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7140#issuecomment-4913348731",
-    "reviewedAt": "2026-07-08T16:36:30.705Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T11:41:46.407Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

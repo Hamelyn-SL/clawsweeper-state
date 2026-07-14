@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:29:32.697Z",
-  "updatedAt": "2026-07-06T22:45:04Z",
+  "generatedAt": "2026-07-14T11:45:47.058Z",
+  "updatedAt": "2026-07-14T08:49:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,47 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
-      "P2",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-07-06T22:45:04Z"
+    "updatedAt": "2026-07-14T08:49:06Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "What approved ES and ENG footer assets, signer details, or no-signature policy should replace the current embedded commercial-invoice signature?",
-  "rationale": "The code change is narrow, but the actual signer/seal/footer content is a legal and business approval that cannot be inferred safely from the repository.",
+  "question": "¿Qué identidad, cargo y firma o sello oficiales deben aparecer en los pies ES y ENG de las facturas comerciales?",
+  "rationale": "El repositorio permite localizar y sustituir los activos, pero no puede determinar quién está legal u operativamente autorizado para firmar documentación aduanera ni inventar el material gráfico vigente.",
   "options": [
     {
-      "title": "Use approved replacement footers",
-      "body": "Provide or approve the two ES/ENG footer PNG/base64 assets and let a narrow PR replace the constants and verify rendered PDFs.",
+      "title": "Aportar footers oficiales ES/ENG",
+      "body": "Logística o la persona responsable de la documentación comercial aprueba dos PNG definitivos y se realiza una sustitución focalizada con prueba de PDF.",
       "recommended": true
     },
     {
-      "title": "Regenerate from approved signer data",
-      "body": "Provide the approved signer name, role, signature/seal source, and layout requirements so the footers can be regenerated before code changes.",
-      "recommended": false
-    },
-    {
-      "title": "Remove signature from the footer",
-      "body": "If legal approves a no-signature footer, document that decision and replace both images with approved no-signature versions.",
+      "title": "Usar un sello corporativo sin persona",
+      "body": "Si el criterio legal lo permite, se elimina la dependencia de una persona concreta y se aprueba un footer corporativo estable en ambos idiomas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Use approved replacement footers",
-    "body": "Provide or approve the two ES/ENG footer PNG/base64 assets and let a narrow PR replace the constants and verify rendered PDFs.",
+    "title": "Aportar footers oficiales ES/ENG",
+    "body": "Logística o la persona responsable de la documentación comercial aprueba dos PNG definitivos y se realiza una sustitución focalizada con prueba de PDF.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "He authored the BL shipping/invoices spec that surfaced the divergence and is the clearest current routing point for owner-approved invoice rules.",
+    "reason": "Es el owner funcional documentado del bloque, abrió la divergencia y ya gestionó una actualización histórica de esta misma firma.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930#issuecomment-4911156878",
-    "reviewedAt": "2026-07-08T03:29:32.697Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T11:45:47.058Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

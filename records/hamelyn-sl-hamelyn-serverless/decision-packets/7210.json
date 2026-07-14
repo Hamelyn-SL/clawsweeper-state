@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T21:01:49.890Z",
-  "updatedAt": "2026-07-08T08:31:04Z",
+  "generatedAt": "2026-07-14T11:40:15.313Z",
+  "updatedAt": "2026-07-08T21:11:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,44 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-07-08T07:12:19Z",
-    "updatedAt": "2026-07-08T08:31:04Z"
+    "updatedAt": "2026-07-08T21:11:44Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el equipo Marketplace/Data resolver Amazon COM rehidratando `mk_amazonCom` para los huérfanos `WITHDRAWN` o enviando una retirada/cantidad 0 directamente desde el snapshot externo?",
-  "rationale": "Las dos rutas cambian datos o listings externos en masa y AGENTS.md exige dry-run, muestras, filtro literal y confirmación humana antes de ejecutar mutaciones de más de 10 registros.",
+  "question": "¿La reconciliación de listings Amazon sin fila mk debe rehidratar un documento `mk_amazonCom` mínimo y reutilizar el withdraw canónico, o debe enviar cantidad cero directamente por SP-API y persistir el resultado mediante otro mecanismo?",
+  "rationale": "La elección define la fuente de verdad, los reintentos, la auditoría y el contrato permanente del modelo mk; automatización no puede resolverla con seguridad a partir del código actual.",
   "options": [
     {
-      "title": "Dry-run y rehidratación controlada",
-      "body": "Ejecutar un dry-run sobre los 550 huérfanos vendibles, crear filas `mk_amazonCom` mínimas cuando los IDs estén resueltos y reconciliar las retiradas después.",
+      "title": "Rehidratar y retirar",
+      "body": "Crear de forma idempotente una fila mk coherente con `stockStatus: WITHDRAWN`, `status: ACTIVE` y metadatos suficientes para que el orquestador existente gestione retirada, errores y reintentos.",
       "recommended": true
     },
     {
-      "title": "Feed SP-API directo de cantidad 0",
-      "body": "Usar el snapshot externo para enviar una retirada/cantidad 0 sin rehidratar primero, aceptando una reconciliación local posterior para recuperar trazabilidad.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar hasta validar SP-API live",
-      "body": "Mantener este issue abierto mientras se consigue validación live de Amazon para una muestra, reduciendo el riesgo de actuar sobre un snapshot obsoleto.",
+      "title": "Retirar directamente",
+      "body": "Enviar cantidad cero desde el reconciliador externo y guardar un resultado específico sin reconstruir previamente la fila mk.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dry-run y rehidratación controlada",
-    "body": "Ejecutar un dry-run sobre los 550 huérfanos vendibles, crear filas `mk_amazonCom` mínimas cuando los IDs estén resueltos y reconciliar las retiradas después.",
+    "title": "Rehidratar y retirar",
+    "body": "Crear de forma idempotente una fila mk coherente con `stockStatus: WITHDRAWN`, `status: ACTIVE` y metadatos suficientes para que el orquestador existente gestione retirada, errores y reintentos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Tiene la señal más directa en los informes operativos de Amazon y en la evidencia concreta de este issue.",
+    "reason": "Su historial incluye el batch de retirada Amazon, la mitigación preventiva reciente y el saneamiento operativo relacionado con listings huérfanos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7210.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7210#issuecomment-4919255280",
-    "reviewedAt": "2026-07-08T21:01:49.890Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T11:40:15.313Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

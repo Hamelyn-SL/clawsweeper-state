@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:25:10.000Z",
-  "updatedAt": "2026-07-07T23:05:19Z",
+  "generatedAt": "2026-07-14T11:27:41.961Z",
+  "updatedAt": "2026-07-08T10:16:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,46 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-07-07T23:05:19Z"
+    "updatedAt": "2026-07-08T10:16:49Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "Which confirmed Buscalibre and Milanuncios operational facts should be recorded as stable runbook documentation?",
-  "rationale": "Repository source maps the active flows, but the remaining host/portal, CSV contract, contact, credential-reference, API permission, and conditions-of-use answers require operational or partner confirmation.",
+  "question": "¿Hay confirmación operativa o contractual suficiente para documentar como estables los formatos, accesos y condiciones de Buscalibre y Milanuncios, o debe mantenerse Milanuncios como experimental y los datos restantes como desconocidos?",
+  "rationale": "El repositorio permite reconstruir la implementación, pero no puede acreditar contratos privados, permisos de uso, contactos vigentes ni la ubicación canónica de credenciales sin una decisión de operaciones o del responsable partner.",
   "options": [
     {
-      "title": "Wait for confirmed partner details",
-      "body": "Keep this issue open under needs-info until Buscalibre and Milanuncios owners provide contract-safe answers for the docs.",
+      "title": "Esperar confirmación operativa",
+      "body": "Obtener las respuestas de los responsables o partners y actualizar después los cuatro runbooks con información contractual verificable.",
       "recommended": true
     },
     {
-      "title": "Document as explicitly unknown",
-      "body": "Update the docs now to mark each unanswered item as unknown or experimental, accepting that the runbook remains incomplete.",
+      "title": "Formalizar límites desconocidos",
+      "body": "Documentar expresamente qué datos siguen sin confirmar y conservar Milanuncios como integración experimental hasta disponer de autorización contractual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Wait for confirmed partner details",
-    "body": "Keep this issue open under needs-info until Buscalibre and Milanuncios owners provide contract-safe answers for the docs.",
+    "title": "Esperar confirmación operativa",
+    "body": "Obtener las respuestas de los responsables o partners y actualizar después los cuatro runbooks con información contractual verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn created the runbooks and opened this follow-up specifically for these remaining operational gaps.",
+    "reason": "Creó los runbooks, abrió y tiene asignado este seguimiento, y ya incorporó una confirmación operativa posterior sobre pricing de Buscalibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6464#issuecomment-4909965108",
-    "reviewedAt": "2026-07-07T23:25:10.000Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T11:27:41.961Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

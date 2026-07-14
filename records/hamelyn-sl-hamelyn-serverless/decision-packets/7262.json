@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:49:35.103Z",
-  "updatedAt": "2026-07-14T11:29:23Z",
+  "generatedAt": "2026-07-14T11:54:29.321Z",
+  "updatedAt": "2026-07-14T11:21:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,55 +15,54 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:no-change",
+      "triage:queued",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:fix-shape-clear",
-      "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-09T00:35:21Z",
-    "updatedAt": "2026-07-14T11:29:23Z"
+    "updatedAt": "2026-07-14T11:21:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política debe aplicar Amazon MX a los EAN que no tienen ASIN resoluble en su catálogo regional?",
-  "rationale": "El flujo técnico ya conserva y reintenta los stocks correctamente; cambiar a exclusión, enriquecimiento previo o distinto alertado modifica la política de publicación y la señal operativa.",
+  "question": "¿Qué política debe aplicar Amazon MX cuando un EAN no tiene ASIN resoluble en su catálogo regional?",
+  "rationale": "El código ya implementa correctamente la detección, persistencia y recuperación; elegir entre esperar, enriquecer o excluir determina cobertura comercial, carga operativa y semántica del alertado, y no puede deducirse únicamente del código.",
   "options": [
     {
-      "title": "Mantener retry y ajustar alertado",
-      "body": "Conservar `SYNC_ERROR`/`STALE` con cooldown de 24 horas y hacer que el watcher acumule o silencie la señal esperada en esta canónica.",
+      "title": "Mantener STALE y ajustar alertas",
+      "body": "Conservar el cooldown de 24 horas y tratar el volumen base como esperado, alertando solo por desviaciones o fallos de recuperación.",
       "recommended": true
     },
     {
-      "title": "Marcar como no elegible",
-      "body": "Excluir el inventario sin ASIN regional de la publicación en MX hasta que cambien sus datos, evitando reintentos periódicos.",
+      "title": "Enriquecer antes de publicar",
+      "body": "Añadir una etapa previa que resuelva o valide el ASIN regional antes de incluir el stock en la cola de creación de Amazon MX.",
       "recommended": false
     },
     {
-      "title": "Enriquecer antes de publicar",
-      "body": "Crear un proceso previo que obtenga o confirme el ASIN de Amazon MX antes de incluir el stock en la cola de creación.",
+      "title": "Marcar como no elegible",
+      "body": "Excluir de Amazon MX los EAN confirmados sin catálogo regional, definiendo además cuándo y cómo se revisa esa decisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener retry y ajustar alertado",
-    "body": "Conservar `SYNC_ERROR`/`STALE` con cooldown de 24 horas y hacer que el watcher acumule o silencie la señal esperada en esta canónica.",
+    "title": "Mantener STALE y ajustar alertas",
+    "body": "Conservar el cooldown de 24 horas y tratar el volumen base como esperado, alertando solo por desviaciones o fallos de recuperación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo la integración independiente de Amazon MX y ha definido en la discusión el tratamiento regional actual.",
+    "reason": "Introdujo el runtime independiente de Amazon MX y ha formulado la decisión operativa pendiente con mayor contexto del área.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7262.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262#issuecomment-4920630428",
-    "reviewedAt": "2026-07-14T11:49:35.103Z",
+    "reviewedAt": "2026-07-14T11:54:29.321Z",
     "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }

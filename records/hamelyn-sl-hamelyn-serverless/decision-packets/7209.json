@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T22:40:37.517Z",
-  "updatedAt": "2026-07-08T21:11:39Z",
+  "generatedAt": "2026-07-14T11:46:25.486Z",
+  "updatedAt": "2026-07-08T22:42:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "P2",
-      "impact:other",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-08T06:37:14Z",
-    "updatedAt": "2026-07-08T21:11:39Z"
+    "updatedAt": "2026-07-08T22:42:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué rango min/max debe enviarse a Amazon ES para `optimo`, `atascado` y `sin_grupo`, y debe ir sin `pricingRuleId` salvo en grupos aprobados?",
-  "rationale": "El cambio modifica una política comercial de pricing Amazon para grupos que hoy se excluyen explícitamente de la regla automática, así que no conviene automatizarlo sin confirmar el comportamiento deseado.",
+  "question": "¿Qué límites deben enviarse para `OPTIMO`, `ATASCADO`, `ELIMINADO` y `SIN_GRUPO`, y debe omitirse siempre `pricingRuleId` para esos grupos?",
+  "rationale": "El repositorio demuestra que el retry necesita umbrales, pero no define de forma inequívoca los valores comerciales permitidos ni si esos grupos deben participar en automated pricing.",
   "options": [
     {
-      "title": "Separar umbrales de regla automática",
-      "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo para grupos ya aprobados.",
+      "title": "Umbrales sin regla automática",
+      "body": "Enviar un rango aprobado que contenga `stock.price` y omitir `pricingRuleId` para los grupos sin regla explícita.",
       "recommended": true
     },
     {
-      "title": "Ampliar la regla existente",
-      "body": "Incluir esos grupos en `getAmazonPricingRuleConfig`, aceptando que también puedan recibir el plan de pricing automático actual.",
+      "title": "Extender automated pricing",
+      "body": "Definir rangos y asociar también la regla automática a estos grupos, aceptando el cambio de política comercial.",
       "recommended": false
     },
     {
-      "title": "Pausar recovery de `18155`",
-      "body": "Mantener esos listings suprimidos hasta definir la política comercial de umbrales y evitar retries que repitan el error.",
+      "title": "No recuperar automáticamente",
+      "body": "Mantener el payload actual y reclasificar `18155` como no recuperable para evitar reintentos que no pueden corregirlo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar umbrales de regla automática",
-    "body": "Enviar min/max que contengan `stock.price` para los grupos afectados sin adjuntar `pricingRuleId`, dejando la regla automática solo para grupos ya aprobados.",
+    "title": "Umbrales sin regla automática",
+    "body": "Enviar un rango aprobado que contenga `stock.price` y omitir `pricingRuleId` para los grupos sin regla explícita.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es la mejor ruta inicial porque llevó el fix previo de recovery 14016/18155/18555 y conoce la frontera entre recuperación técnica y política de pricing.",
+    "person": "PabloMoran34",
+    "reason": "Es quien presenta la trazabilidad más fuerte sobre el contrato de reglas, los límites por grupo y la configuración de `pricingRuleId`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7209.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7209#issuecomment-4919253706",
-    "reviewedAt": "2026-07-08T22:40:37.517Z",
-    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
+    "reviewedAt": "2026-07-14T11:46:25.486Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }
