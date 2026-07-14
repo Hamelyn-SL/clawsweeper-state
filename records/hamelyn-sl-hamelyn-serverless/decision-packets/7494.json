@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T07:00:41.891Z",
+  "updatedAt": "2026-07-14T06:43:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7494,
+    "title": "Monitorizar scraping malicioso en ecommerce y alertar por Slack",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7494",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "priority:p1",
+      "app:infrastructure",
+      "reporter:MiguelHamelyn",
+      "feature",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-14T06:43:16Z",
+    "updatedAt": "2026-07-14T06:43:26Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Aprobamos una primera política en modo observación con umbrales conservadores, allowlist canónica de crawlers y muestras de IP enmascaradas antes de activar las alertas recurrentes?",
+  "rationale": "La selección de umbrales, excepciones de crawlers y tratamiento de IPs determina el límite entre observabilidad útil, falsos positivos y exposición innecesaria de datos; no puede resolverse únicamente desde el código actual.",
+  "options": [
+    {
+      "title": "Observación conservadora",
+      "body": "Empezar con umbrales altos, allowlist explícita, IPs enmascaradas y ninguna acción automática, revisando incidentes antes de aumentar sensibilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Detección sensible",
+      "body": "Usar umbrales más bajos y muestras operativas más detalladas para detectar antes los bursts, aceptando más falsos positivos y mayor exposición en Slack.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Observación conservadora",
+    "body": "Empezar con umbrales altos, allowlist explícita, IPs enmascaradas y ninguna acción automática, revisando incidentes antes de aumentar sensibilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Ha definido el objetivo operativo y mantiene el tratamiento reciente de tráfico bot en ecommerce; `JavierHamelyn` sería el referente técnico para integrarlo en Horus.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7494.md",
+    "reviewedAt": "2026-07-14T07:00:41.891Z",
+    "mainSha": "88ba61f6a0649b977be032bf6a07ea648f284a5d"
+  }
+}
