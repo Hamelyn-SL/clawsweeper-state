@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-14T07:19:58.160Z",
+  "generatedAt": "2026-07-14T12:57:42.785Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 153
+    "openItemsSeen": 176
   },
   "counts": {
-    "itemRecords": 142,
-    "closedRecords": 289,
-    "missingOpen": 11,
+    "itemRecords": 158,
+    "closedRecords": 303,
+    "missingOpen": 18,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 10,
+    "missingRecentOpen": 17,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,62 +39,6 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7492,
-        "kind": "issue",
-        "title": "Trasvase: panel de inventario de gaveta de estantería con fusión a BIN de Skypod, estilo Review y Ecommerce V3",
-        "labels": [
-          "source:admin-panel",
-          "app:admin",
-          "priority:p1",
-          "feature",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:20:38Z",
-        "updatedAt": "2026-07-14T06:32:31Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7493,
-        "kind": "pull_request",
-        "title": "chore: update workspace dependencies",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:20:39Z",
-        "updatedAt": "2026-07-14T07:06:31Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7495,
-        "kind": "issue",
-        "title": "Autotriage checkout principal queda sucio por next-env.d.ts",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "priority:p2",
-          "app:infrastructure",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:52:16Z",
-        "updatedAt": "2026-07-14T07:01:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7497,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:53:25Z",
-        "updatedAt": "2026-07-14T07:16:59Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7498,
         "kind": "pull_request",
         "title": "feat: add ecommerce scraping investigator",
@@ -103,34 +47,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-14T06:57:33Z",
-        "updatedAt": "2026-07-14T07:13:00Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7499,
-        "kind": "pull_request",
-        "title": "fix: ignore legacy automations next env file",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T07:00:56Z",
-        "updatedAt": "2026-07-14T07:01:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7500,
-        "kind": "pull_request",
-        "title": "chore: bump the npm-security group across 1 directory with 4 updates",
-        "labels": [
-          "size/XL",
-          "dependencies",
-          "javascript",
-          "autofix-failed"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-14T07:03:16Z",
-        "updatedAt": "2026-07-14T07:14:33Z",
+        "updatedAt": "2026-07-14T09:59:53Z",
         "missingReason": "recently_created"
       },
       {
@@ -145,35 +62,193 @@
         ],
         "authorAssociation": "NONE",
         "createdAt": "2026-07-14T07:06:21Z",
-        "updatedAt": "2026-07-14T07:14:42Z",
+        "updatedAt": "2026-07-14T08:50:46Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7502,
-        "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-c502f8b4cf",
+        "number": 7507,
+        "kind": "pull_request",
+        "title": "chore: sync missing runtime files into worktrees on dev:run",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:infrastructure"
+          "size/M"
         ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-14T07:09:57Z",
-        "updatedAt": "2026-07-14T07:09:57Z",
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T08:06:40Z",
+        "updatedAt": "2026-07-14T08:08:09Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7503,
-        "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-1ca78cdc6a",
+        "number": 7510,
+        "kind": "pull_request",
+        "title": "fix: include db-only marked stocks in mercadolibre withdraw",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:infrastructure"
+          "size/S"
         ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-14T07:14:44Z",
-        "updatedAt": "2026-07-14T07:14:44Z",
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T08:24:58Z",
+        "updatedAt": "2026-07-14T09:11:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7516,
+        "kind": "pull_request",
+        "title": "fix: gutemberg service deployment config and print file naming",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T08:53:05Z",
+        "updatedAt": "2026-07-14T09:08:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7531,
+        "kind": "pull_request",
+        "title": "feat: inject per-checkout portless urls in dev:run",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T09:54:08Z",
+        "updatedAt": "2026-07-14T10:07:07Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7535,
+        "kind": "pull_request",
+        "title": "chore: bump Supply to 2.6.04 and improve mobile sales layout",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T09:58:53Z",
+        "updatedAt": "2026-07-14T10:11:52Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7537,
+        "kind": "pull_request",
+        "title": "fix: return 409 conflict for cart user mismatch and log 500s",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:25:31Z",
+        "updatedAt": "2026-07-14T10:40:00Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7538,
+        "kind": "pull_request",
+        "title": "fix: return 422 when checkout address is not found",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:25:54Z",
+        "updatedAt": "2026-07-14T10:26:23Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7539,
+        "kind": "pull_request",
+        "title": "fix: respect BaseError status in admin route catches",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:26:24Z",
+        "updatedAt": "2026-07-14T10:56:40Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7540,
+        "kind": "pull_request",
+        "title": "fix: return 404 when label has no blob content",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:26:50Z",
+        "updatedAt": "2026-07-14T10:39:52Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7545,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:36:16Z",
+        "updatedAt": "2026-07-14T12:57:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7552,
+        "kind": "pull_request",
+        "title": "fix: correct standard delivery estimate",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T11:53:42Z",
+        "updatedAt": "2026-07-14T11:54:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7553,
+        "kind": "pull_request",
+        "title": "refactor: move business logic link to tools section",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:28:05Z",
+        "updatedAt": "2026-07-14T12:29:00Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7556,
+        "kind": "issue",
+        "title": "CI: ejecutar lint, typecheck y tests solo en los workspaces afectados",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:running"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:53:46Z",
+        "updatedAt": "2026-07-14T12:57:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7557,
+        "kind": "issue",
+        "title": "CI: acotar los inputs de la task lint de turbo para lograr cache hits en el gate",
+        "labels": [
+          "priority:p3",
+          "app:infrastructure",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:53:47Z",
+        "updatedAt": "2026-07-14T12:53:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7558,
+        "kind": "pull_request",
+        "title": "ci: require structured dependency triage outcomes",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:56:39Z",
+        "updatedAt": "2026-07-14T12:57:31Z",
         "missingReason": "recently_created"
       }
     ],
@@ -199,62 +274,6 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 7492,
-        "kind": "issue",
-        "title": "Trasvase: panel de inventario de gaveta de estantería con fusión a BIN de Skypod, estilo Review y Ecommerce V3",
-        "labels": [
-          "source:admin-panel",
-          "app:admin",
-          "priority:p1",
-          "feature",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:20:38Z",
-        "updatedAt": "2026-07-14T06:32:31Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7493,
-        "kind": "pull_request",
-        "title": "chore: update workspace dependencies",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:20:39Z",
-        "updatedAt": "2026-07-14T07:06:31Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7495,
-        "kind": "issue",
-        "title": "Autotriage checkout principal queda sucio por next-env.d.ts",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "priority:p2",
-          "app:infrastructure",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:52:16Z",
-        "updatedAt": "2026-07-14T07:01:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7497,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T06:53:25Z",
-        "updatedAt": "2026-07-14T07:16:59Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7498,
         "kind": "pull_request",
         "title": "feat: add ecommerce scraping investigator",
@@ -263,34 +282,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-14T06:57:33Z",
-        "updatedAt": "2026-07-14T07:13:00Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7499,
-        "kind": "pull_request",
-        "title": "fix: ignore legacy automations next env file",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T07:00:56Z",
-        "updatedAt": "2026-07-14T07:01:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7500,
-        "kind": "pull_request",
-        "title": "chore: bump the npm-security group across 1 directory with 4 updates",
-        "labels": [
-          "size/XL",
-          "dependencies",
-          "javascript",
-          "autofix-failed"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-14T07:03:16Z",
-        "updatedAt": "2026-07-14T07:14:33Z",
+        "updatedAt": "2026-07-14T09:59:53Z",
         "missingReason": "recently_created"
       },
       {
@@ -305,35 +297,193 @@
         ],
         "authorAssociation": "NONE",
         "createdAt": "2026-07-14T07:06:21Z",
-        "updatedAt": "2026-07-14T07:14:42Z",
+        "updatedAt": "2026-07-14T08:50:46Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7502,
-        "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-c502f8b4cf",
+        "number": 7507,
+        "kind": "pull_request",
+        "title": "chore: sync missing runtime files into worktrees on dev:run",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:infrastructure"
+          "size/M"
         ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-14T07:09:57Z",
-        "updatedAt": "2026-07-14T07:09:57Z",
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T08:06:40Z",
+        "updatedAt": "2026-07-14T08:08:09Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7503,
-        "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-1ca78cdc6a",
+        "number": 7510,
+        "kind": "pull_request",
+        "title": "fix: include db-only marked stocks in mercadolibre withdraw",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:infrastructure"
+          "size/S"
         ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-14T07:14:44Z",
-        "updatedAt": "2026-07-14T07:14:44Z",
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T08:24:58Z",
+        "updatedAt": "2026-07-14T09:11:25Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7516,
+        "kind": "pull_request",
+        "title": "fix: gutemberg service deployment config and print file naming",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T08:53:05Z",
+        "updatedAt": "2026-07-14T09:08:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7531,
+        "kind": "pull_request",
+        "title": "feat: inject per-checkout portless urls in dev:run",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T09:54:08Z",
+        "updatedAt": "2026-07-14T10:07:07Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7535,
+        "kind": "pull_request",
+        "title": "chore: bump Supply to 2.6.04 and improve mobile sales layout",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T09:58:53Z",
+        "updatedAt": "2026-07-14T10:11:52Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7537,
+        "kind": "pull_request",
+        "title": "fix: return 409 conflict for cart user mismatch and log 500s",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:25:31Z",
+        "updatedAt": "2026-07-14T10:40:00Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7538,
+        "kind": "pull_request",
+        "title": "fix: return 422 when checkout address is not found",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:25:54Z",
+        "updatedAt": "2026-07-14T10:26:23Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7539,
+        "kind": "pull_request",
+        "title": "fix: respect BaseError status in admin route catches",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:26:24Z",
+        "updatedAt": "2026-07-14T10:56:40Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7540,
+        "kind": "pull_request",
+        "title": "fix: return 404 when label has no blob content",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:26:50Z",
+        "updatedAt": "2026-07-14T10:39:52Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7545,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T10:36:16Z",
+        "updatedAt": "2026-07-14T12:57:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7552,
+        "kind": "pull_request",
+        "title": "fix: correct standard delivery estimate",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T11:53:42Z",
+        "updatedAt": "2026-07-14T11:54:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7553,
+        "kind": "pull_request",
+        "title": "refactor: move business logic link to tools section",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:28:05Z",
+        "updatedAt": "2026-07-14T12:29:00Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7556,
+        "kind": "issue",
+        "title": "CI: ejecutar lint, typecheck y tests solo en los workspaces afectados",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:running"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:53:46Z",
+        "updatedAt": "2026-07-14T12:57:14Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7557,
+        "kind": "issue",
+        "title": "CI: acotar los inputs de la task lint de turbo para lograr cache hits en el gate",
+        "labels": [
+          "priority:p3",
+          "app:infrastructure",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:53:47Z",
+        "updatedAt": "2026-07-14T12:53:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7558,
+        "kind": "pull_request",
+        "title": "ci: require structured dependency triage outcomes",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T12:56:39Z",
+        "updatedAt": "2026-07-14T12:57:31Z",
         "missingReason": "recently_created"
       }
     ],
