@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T06:29:53.663Z",
-  "updatedAt": "2026-07-14T06:19:23Z",
+  "generatedAt": "2026-07-14T22:08:00.188Z",
+  "updatedAt": "2026-07-14T12:31:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -16,47 +16,42 @@
       "rating: 🦪 silver shellfish",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "conflicts:needs-human"
     ],
     "createdAt": "2026-07-13T10:56:12Z",
-    "updatedAt": "2026-07-14T06:19:23Z",
+    "updatedAt": "2026-07-14T12:31:35Z",
     "headSha": "4fce6d5a923f7313dd6b804d921d59f6e0244f3d"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se autoriza el merge y despliegue de Amazon IT únicamente después de completar los gates de BQ, Atlas, Mongo, seed/reconciliación y una prueba real del canal?",
-  "rationale": "El código puede ser correcto y aun así dejar pedidos sin ingerir, precios desactivados o crons fallando si la infraestructura externa y la ventana de activación no están coordinadas.",
+  "question": "¿Se autoriza activar Amazon IT cuando la rama esté actualizada y estén verificados los requisitos externos y una ejecución real del canal?",
+  "rationale": "El merge despliega un cron activo y habilita pedidos y precios sobre servicios externos compartidos; la ventana y preparación operativas requieren intención humana.",
   "options": [
     {
-      "title": "Bloquear hasta gates y smoke",
-      "body": "Mantener el PR abierto hasta resolver conflictos, completar todos los gates externos y adjuntar evidencia redaccionada de una ejecución real de Amazon IT.",
+      "title": "Activar tras validación",
+      "body": "Resolver la rama, verificar infraestructura y aportar prueba real antes de mergear a `dev`.",
       "recommended": true
     },
     {
-      "title": "Despliegue coordinado con riesgo aceptado",
-      "body": "Mergear solo si el equipo operativo confirma por escrito la preparación de datos, configuración, cuotas y monitorización inmediata del primer ciclo.",
-      "recommended": false
-    },
-    {
-      "title": "Separar preparación y activación",
-      "body": "Dividir el trabajo para aterrizar primero superficies inertes y activar cron, pedidos y precios en un cambio posterior con los gates ya listos.",
+      "title": "Mantener en pausa",
+      "body": "Dejar el PR abierto hasta disponer de ventana operativa y confirmación de todos los requisitos externos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear hasta gates y smoke",
-    "body": "Mantener el PR abierto hasta resolver conflictos, completar todos los gates externos y adjuntar evidencia redaccionada de una ejecución real de Amazon IT.",
+    "title": "Activar tras validación",
+    "body": "Resolver la rama, verificar infraestructura y aportar prueba real antes de mergear a `dev`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien ha llevado el registry-first, la segregación ES/FR/IT y el precedente de Amazon FR, y aparece como owner más cercano de la secuencia de activación.",
+    "reason": "Tiene la continuidad técnica más directa por el registry, la separación previa de ES y el onboarding de Amazon FR.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7468.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468#issuecomment-4957352943",
-    "reviewedAt": "2026-07-14T06:29:53.663Z",
-    "mainSha": "9c70224079f5c6db7b7f6873138c02133f74e7ac"
+    "reviewedAt": "2026-07-14T22:08:00.188Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
