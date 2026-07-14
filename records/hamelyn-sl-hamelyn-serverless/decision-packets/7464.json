@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T20:24:42.090Z",
-  "updatedAt": "2026-07-13T15:14:45Z",
+  "generatedAt": "2026-07-14T10:25:12.694Z",
+  "updatedAt": "2026-07-14T10:12:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,44 @@
       "app:supply",
       "priority:p1",
       "feature",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-07-13T10:38:55Z",
-    "updatedAt": "2026-07-13T15:14:45Z"
+    "updatedAt": "2026-07-14T10:12:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo deben tratarse los productos `featured` para que el experimento respete un techo y una señal estadística inequívocos?",
-  "rationale": "El comportamiento existente suma `featuredPriceIncrement` después del clamp, pero la issue declara `PBMax × 2` como techo absoluto y la PR documenta una excepción distinta; esa política no debe inferirse solo desde el código.",
+  "question": "¿El techo final de un producto `featured` tratado debe seguir siendo `PBMax × 2` —6 € con la configuración prevista— o puede sumar además `featuredPriceIncrement`?",
+  "rationale": "La issue define un techo absoluto de `PBMax × 2`, pero la implementación y su discusión han contemplado una excepción `featured`; esa elección cambia el gasto máximo y la interpretación del experimento.",
   "options": [
     {
-      "title": "Excluir featured",
-      "body": "Dejar los productos `featured` fuera del experimento y mantener su cálculo actual, evitando mezclar el incentivo fijo con los buckets.",
+      "title": "Mantener el techo absoluto",
+      "body": "Limitar el resultado final a `PBMax × 2`, incluido `featured`, y alinear la PR con el criterio de aceptación publicado.",
       "recommended": true
     },
     {
-      "title": "Aplicar techo absoluto",
-      "body": "Incluirlos en el test, pero limitar el resultado final —incremento incluido— a `PBMax × 2`, aceptando compresión en algunos buckets.",
-      "recommended": false
-    },
-    {
-      "title": "Documentar la excepción",
-      "body": "Permitir `PBMax × 2 + featuredPriceIncrement` y analizar `featured` como cohorte separada con aceptación y auditoría explícitas.",
+      "title": "Aprobar la excepción featured",
+      "body": "Permitir `PBMax × 2 + featuredPriceIncrement` y actualizar explícitamente la issue, la spec, la auditoría y el análisis para reflejar ese tratamiento distinto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir featured",
-    "body": "Dejar los productos `featured` fuera del experimento y mantener su cálculo actual, evitando mezclar el incentivo fijo con los buckets.",
+    "title": "Mantener el techo absoluto",
+    "body": "Limitar el resultado final a `PBMax × 2`, incluido `featured`, y alinear la PR con el criterio de aceptación publicado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el responsable asignado, el principal contribuidor reciente del flujo y quien está llevando la implementación y la discusión de fórmula.",
+    "reason": "Es el responsable asignado, autor de la implementación candidata y principal propietario reciente del flujo de pricing afectado; puede recabar y dejar registrada la decisión de negocio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7464.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7464#issuecomment-4957204041",
-    "reviewedAt": "2026-07-13T20:24:42.090Z",
-    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+    "reviewedAt": "2026-07-14T10:25:12.694Z",
+    "mainSha": "4c4a8ab30b3f67ec20f74e724a70d50341a05083"
   }
 }
