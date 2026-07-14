@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T23:15:38.080Z",
+  "updatedAt": "2026-07-14T22:12:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6658,
+    "title": "Cron amazon-notifications-pull falla por stock inexistente",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658",
+    "state": "open",
+    "labels": [
+      "crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "triage:done",
+      "app:crons",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-06-24T22:50:08Z",
+    "updatedAt": "2026-07-14T22:12:39Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe `MarcosTerroso` continuar como responsable de esta corrección o se debe liberar la asignación para promover una nueva PR automatizada?",
+  "rationale": "La incidencia es válida y la reparación parece acotada, pero ya tiene una persona asignada y las labels actuales indican que no debe abrirse otra PR de arreglo sin coordinación humana.",
+  "options": [
+    {
+      "title": "Mantener la asignación actual",
+      "body": "`MarcosTerroso` implementa o coordina la corrección estrecha del flujo `ORDER_CHANGE`.",
+      "recommended": true
+    },
+    {
+      "title": "Liberar y promover reparación",
+      "body": "Se retira la asignación y se habilita una PR automatizada con el alcance y la validación descritos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener la asignación actual",
+    "body": "`MarcosTerroso` implementa o coordina la corrección estrecha del flujo `ORDER_CHANGE`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada y el principal autor histórico del procesamiento Amazon `ORDER_CHANGE` por SQS.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6658.md",
+    "reviewedAt": "2026-07-14T23:15:38.080Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

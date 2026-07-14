@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T08:12:55.174Z",
-  "updatedAt": "2026-07-14T07:55:27Z",
+  "generatedAt": "2026-07-14T23:15:48.577Z",
+  "updatedAt": "2026-07-14T08:53:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,48 +11,47 @@
     "state": "open",
     "labels": [
       "size/XL",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "status: ⏳ waiting on author",
       "dependencies",
       "javascript",
       "autofix-failed",
-      "rating: 🥈 silver",
-      "status: ⏳ waiting on author",
-      "P2",
-      "merge-risk: 🚨 compatibility"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-14T07:03:16Z",
-    "updatedAt": "2026-07-14T07:55:27Z",
-    "headSha": "b0dda04faa87af64bd04e4e70bf33426a3ffd4dc"
+    "updatedAt": "2026-07-14T08:53:25Z",
+    "headSha": "405bf1a8d4239ede7872109cc160d523acbd68ee"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe repararse este PR agrupado conservando versiones distintas por workspace, o regenerarse la actualización como PRs separados para evitar la rebaja y el churn del lockfile?",
-  "rationale": "La reparación exige modificar la selección de versiones o la agrupación de Dependabot, mientras el skill de autofix está diseñado para adaptar código sin editar manifiestos ni lockfiles; hace falta elegir el candidato y la estrategia de actualización.",
+  "question": "¿Debe repararse este PR como candidato único o regenerarse la actualización en grupos separados para evitar la rebaja y el churn adicional del lockfile?",
+  "rationale": "Los dos PRs de Dependabot se solapan y ambos presentan la misma rebaja, mientras que el autofix del repositorio no puede modificar manifiestos ni lockfiles; hace falta elegir qué rama conservar y cómo agrupar las actualizaciones.",
   "options": [
     {
       "title": "Regenerar por grupos compatibles",
-      "body": "Cerrar o sustituir los PRs solapados por actualizaciones separadas que no rebajen la raíz y permitan validar cada salto mayor de forma aislada.",
+      "body": "Separar las actualizaciones para conservar la versión raíz vigente y validar cada salto mayor con un lockfile más acotado.",
       "recommended": true
     },
     {
       "title": "Reparar este PR manualmente",
-      "body": "Mantener este candidato, corregir los manifiestos y regenerar el lockfile de manera focalizada antes de repetir toda la validación.",
+      "body": "Mantener este candidato, corregir sus manifiestos y lockfile y ejecutar la validación completa antes del merge.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Regenerar por grupos compatibles",
-    "body": "Cerrar o sustituir los PRs solapados por actualizaciones separadas que no rebajen la raíz y permitan validar cada salto mayor de forma aislada.",
+    "body": "Separar las actualizaciones para conservar la versión raíz vigente y validar cada salto mayor con un lockfile más acotado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el propietario histórico más directo del updater agrupado, del workflow de autofix y de la versión raíz actualmente en `dev`.",
+    "reason": "Es la persona con el historial más directo en la configuración del updater agrupado y el workflow de autofix que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7500.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500#issuecomment-4966675836",
-    "reviewedAt": "2026-07-14T08:12:55.174Z",
-    "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
+    "reviewedAt": "2026-07-14T23:15:48.577Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

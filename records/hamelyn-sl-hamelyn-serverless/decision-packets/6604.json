@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:06:44.592Z",
-  "updatedAt": "2026-07-14T06:41:59Z",
+  "generatedAt": "2026-07-14T23:15:44.674Z",
+  "updatedAt": "2026-07-14T22:12:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,45 @@
       "reporter:jesus",
       "feature",
       "triage:done",
-      "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:fix-shape-clear"
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-14T06:41:59Z"
+    "updatedAt": "2026-07-14T22:12:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe conservarse la regla BL vigente de 500 resultados o se autoriza reabrir el catálogo a una primera fase de 30.000 productos para el experimento SEO?",
-  "rationale": "Las dos direcciones son incompatibles y la política de 500 se validó y fusionó después de abrir esta petición; automatizar una ampliación la revocaría sin autorización y asumiría un coste operativo no medido.",
+  "question": "¿Debe mantenerse la política BL recién fusionada de una ventana máxima de 500 resultados o se aprueba un piloto explícito para ampliar el catálogo hasta 30.000 productos?",
+  "rationale": "El comportamiento vigente fue validado y fusionado en sentido contrario, y el impacto SEO y operativo de 30.000 resultados requiere intención de producto y criterios de éxito que no pueden inferirse del código.",
   "options": [
     {
-      "title": "Conservar 500 resultados",
-      "body": "Mantener la regla BL vigente y cerrar esta petición, salvo que nuevos datos SEO justifiquen otro experimento.",
+      "title": "Mantener 500 resultados",
+      "body": "Conservar la política BL actual y cerrar la iniciativa mientras no exista evidencia o patrocinio para asumir el aumento de coste y latencia.",
       "recommended": true
     },
     {
-      "title": "Autorizar un piloto gradual",
-      "body": "Definir un límite inicial, métricas de éxito y guardas de latencia/coste antes de implementar una profundidad superior.",
-      "recommended": false
-    },
-    {
-      "title": "Aprobar 30.000 directamente",
-      "body": "Aceptar explícitamente el mayor coste y rediseñar búsqueda, rerank y caché para que la ampliación sea servible.",
+      "title": "Aprobar piloto de 30.000",
+      "body": "Definir métricas SEO y operativas, despliegue gradual y rollback antes de implementar coordinadamente todos los límites.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar 500 resultados",
-    "body": "Mantener la regla BL vigente y cerrar esta petición, salvo que nuevos datos SEO justifiquen otro experimento.",
+    "title": "Mantener 500 resultados",
+    "body": "Conservar la política BL actual y cerrar la iniciativa mientras no exista evidencia o patrocinio para asumir el aumento de coste y latencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el owner documentado de Public Catalog y authored la política de paginación que habría que conservar o revocar.",
+    "reason": "Figura como owner del bloque de catálogo y autor de la política vigente de 500 resultados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewedAt": "2026-07-14T22:06:44.592Z",
+    "reviewedAt": "2026-07-14T23:15:44.674Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
