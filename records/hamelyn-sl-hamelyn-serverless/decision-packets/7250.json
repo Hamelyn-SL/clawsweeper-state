@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:34:34.867Z",
-  "updatedAt": "2026-07-08T15:33:39Z",
+  "generatedAt": "2026-07-14T15:08:14.117Z",
+  "updatedAt": "2026-07-14T12:19:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "feature",
       "triage:done",
       "P1",
-      "issue-rating: 🐚 platinum hermit",
-      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "impact:crash-loop"
+      "impact:crash-loop",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-08T15:33:39Z"
+    "updatedAt": "2026-07-14T12:19:36Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué secuencia de migración, tolerancia de frescura y política de fallback debe aprobarse para cada carga incluida en esta iniciativa?",
-  "rationale": "Los flujos tienen requisitos distintos de frescura, ubicación de ejecución, credenciales y escrituras correctivas; el repositorio demuestra que BigQuery es viable, pero no determina una única transición segura ni el reparto de ownership.",
+  "question": "¿Qué carga debe ser el primer corte patrocinado y qué contrato de frescura, fallback y escrituras correctivas debe tener cada consumidor?",
+  "rationale": "El orden y la frontera elegidos determinan el modelo de materialización, la propiedad entre Data Platform y workflows, y el riesgo de actuar sobre datos con retraso.",
   "options": [
     {
-      "title": "Empezar por flash offers",
-      "body": "Migrar primero el mayor generador documentado de full scans a un pool horario de BigQuery y usar su reducción de CPU como validación del patrón.",
+      "title": "Flash offers primero",
+      "body": "Crear un pool horario de candidatos en BigQuery, cambiar únicamente la rotación y medir el descenso de CPU antes de ampliar el programa.",
       "recommended": true
     },
     {
-      "title": "Priorizar Google Merchant",
-      "body": "Completar primero https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663, ampliando la materialización de productos antes de migrar el feed de libros nuevos.",
+      "title": "Google Merchant primero",
+      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663 y resolver antes la frescura y cobertura de `mongodata.products`.",
       "recommended": false
     },
     {
-      "title": "Diseñar todo el programa primero",
-      "body": "Acordar arquitectura, frescura y ownership de feeds, reportes, exports y dashboards antes de abrir los PRs por cortes.",
+      "title": "Programa transversal",
+      "body": "Diseñar feeds, reportes, exports y dashboards como una migración coordinada, asumiendo mayor plazo y riesgo de integración inicial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Empezar por flash offers",
-    "body": "Migrar primero el mayor generador documentado de full scans a un pool horario de BigQuery y usar su reducción de CPU como validación del patrón.",
+    "title": "Flash offers primero",
+    "body": "Crear un pool horario de candidatos en BigQuery, cambiar únicamente la rotación y medir el descenso de CPU antes de ampliar el programa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con la conexión histórica más amplia entre flash offers, CDC, exports, reportes y el diagnóstico operativo que originó la iniciativa.",
+    "reason": "Aportó el diagnóstico operativo, definió el alcance completo y ha mantenido una de las rutas de reportes afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewedAt": "2026-07-14T11:34:34.867Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T15:08:14.117Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }
