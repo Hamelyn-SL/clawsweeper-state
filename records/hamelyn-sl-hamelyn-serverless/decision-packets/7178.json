@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T07:30:20.146Z",
-  "updatedAt": "2026-07-08T09:39:28Z",
+  "generatedAt": "2026-07-14T09:54:51.282Z",
+  "updatedAt": "2026-07-14T08:07:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,43 +23,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T21:34:11Z",
-    "updatedAt": "2026-07-08T09:39:28Z"
+    "updatedAt": "2026-07-14T08:07:45Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué reglas de identidad, límites de lote y aprobación operativa deben exigirse antes de rehidratar o cerrar en masa los listings huérfanos de MercadoLibre?",
-  "rationale": "El comportamiento esperado está definido, pero el repositorio no puede determinar por sí solo cuándo varios `item_id` para un SKU son duplicados seguros de cerrar ni qué umbral operativo permite mutar miles de listings externos.",
+  "question": "¿Qué reglas y fuente de verdad deben autorizar la rehidratación o retirada de `item_id` huérfanos de MercadoLibre?",
+  "rationale": "El estado local ya no conserva identidad suficiente para la mayoría de casos y una asociación incorrecta puede cerrar listings válidos; esta política operativa no puede decidirse solo desde el código actual.",
   "options": [
     {
-      "title": "Reconciliación segura por fases",
-      "body": "Implementar primero un dry-run auditable, aprobar muestras y cerrar después en lotes limitados con métricas y rollback.",
+      "title": "Snapshot más API viva",
+      "body": "Usar el snapshot para descubrir candidatos y confirmar SKU, estado e `item_id` con la API viva antes de rehidratar o retirar.",
       "recommended": true
     },
     {
-      "title": "Recuperar solo documentos locales",
-      "body": "Activar `recoverWithdraw` únicamente para filas locales recuperables, manteniendo pendiente el grupo mayoritario sin documento o ID válido.",
+      "title": "Solo snapshot controlado",
+      "body": "Operar desde el último snapshot con umbrales estrictos de antigüedad y muestras, aceptando mayor riesgo de obsolescencia.",
       "recommended": false
     },
     {
-      "title": "Mantener solo monitorización",
-      "body": "No mutar listings hasta definir una regla inequívoca para mapear cada SKU a todos sus `item_id` remotos.",
+      "title": "Solo API viva",
+      "body": "Reconstruir íntegramente desde la API para máxima frescura, asumiendo mayor coste, límites y complejidad de exploración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliación segura por fases",
-    "body": "Implementar primero un dry-run auditable, aprobar muestras y cerrar después en lotes limitados con métricas y rollback.",
+    "title": "Snapshot más API viva",
+    "body": "Usar el snapshot para descubrir candidatos y confirmar SKU, estado e `item_id` con la API viva antes de rehidratar o retirar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reciente cubre la implementación central de MercadoLibre, los selectores de retirada y los guards de identidad remota implicados.",
+    "reason": "Es la persona asignada y el principal contribuidor reciente de las rutas de MercadoLibre afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7178.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7178#issuecomment-4966493325",
-    "reviewedAt": "2026-07-14T07:30:20.146Z",
-    "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
+    "reviewedAt": "2026-07-14T09:54:51.282Z",
+    "mainSha": "0969519c14acc6d65fa272019b7fe211c7087a2e"
   }
 }
