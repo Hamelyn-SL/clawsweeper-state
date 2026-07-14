@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:27:41.961Z",
-  "updatedAt": "2026-07-08T10:16:49Z",
+  "generatedAt": "2026-07-14T15:47:33.299Z",
+  "updatedAt": "2026-07-14T12:24:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -21,41 +21,40 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: 🌊 off-meta tidepool",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-07-08T10:16:49Z"
+    "updatedAt": "2026-07-14T12:24:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Hay confirmación operativa o contractual suficiente para documentar como estables los formatos, accesos y condiciones de Buscalibre y Milanuncios, o debe mantenerse Milanuncios como experimental y los datos restantes como desconocidos?",
-  "rationale": "El repositorio permite reconstruir la implementación, pero no puede acreditar contratos privados, permisos de uso, contactos vigentes ni la ubicación canónica de credenciales sin una decisión de operaciones o del responsable partner.",
+  "question": "¿Hay evidencia operativa o contractual suficiente para documentar como estables los flujos de Buscalibre y Milanuncios, o debe mantenerse Milanuncios como automatización experimental y los datos restantes como desconocidos?",
+  "rationale": "El código permite reconstruir el comportamiento actual, pero no acredita permisos de uso, contratos privados, contactos vigentes ni la ubicación canónica de credenciales.",
   "options": [
     {
       "title": "Esperar confirmación operativa",
-      "body": "Obtener las respuestas de los responsables o partners y actualizar después los cuatro runbooks con información contractual verificable.",
+      "body": "Obtener respuestas de operaciones o de los partners y actualizar después los cuatro runbooks con información verificable.",
       "recommended": true
     },
     {
       "title": "Formalizar límites desconocidos",
-      "body": "Documentar expresamente qué datos siguen sin confirmar y conservar Milanuncios como integración experimental hasta disponer de autorización contractual.",
+      "body": "Documentar expresamente lo no confirmado y mantener Milanuncios como integración experimental hasta disponer de autorización contractual.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Esperar confirmación operativa",
-    "body": "Obtener las respuestas de los responsables o partners y actualizar después los cuatro runbooks con información contractual verificable.",
+    "body": "Obtener respuestas de operaciones o de los partners y actualizar después los cuatro runbooks con información verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Creó los runbooks, abrió y tiene asignado este seguimiento, y ya incorporó una confirmación operativa posterior sobre pricing de Buscalibre.",
+    "reason": "Es el asignado actual, creó la documentación y ya incorporó una confirmación operativa posterior de Buscalibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewedAt": "2026-07-14T11:27:41.961Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T15:47:33.299Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

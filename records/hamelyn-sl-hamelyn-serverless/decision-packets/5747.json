@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:30:45.841Z",
-  "updatedAt": "2026-06-29T21:12:29Z",
+  "generatedAt": "2026-07-14T15:46:20.100Z",
+  "updatedAt": "2026-07-08T09:37:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -21,37 +21,37 @@
       "area:marketplace-orders"
     ],
     "createdAt": "2026-05-08T02:35:52Z",
-    "updatedAt": "2026-06-29T21:12:29Z"
+    "updatedAt": "2026-07-08T09:37:29Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "Should Hamelyn add bounded local retry/backoff for Amazon Orders `getOrder` 500s in the notification pull flow, or leave this as provider escalation with SQS-level retry only?",
-  "rationale": "The code path is clear, but the safe handling depends on current SP-API behavior and Hamelyn's quota/error-budget tolerance.",
+  "question": "¿Debe `amazon-notifications-pull` hacer un retry local y limitado de `getOrder`, o mantener únicamente el reintento diferido de SQS y escalar los `InternalFailure` sostenidos a Amazon?",
+  "rationale": "Ambas estrategias evitan pérdida de mensajes, pero cambian el equilibrio entre latencia de pedidos, consumo de cuota SP-API y riesgo de agotar los 150 segundos del cron; el repositorio no define todavía esa política para `getOrder`.",
   "options": [
     {
-      "title": "Add bounded retry",
-      "body": "Wrap `getOrder` with the shared HTTP retry helper using a small retry budget and preserve failed-message retention.",
+      "title": "Retry local condicionado al presupuesto",
+      "body": "Hacer uno o dos reintentos transitorios solo en el procesamiento de notificaciones, cancelando nuevos intentos cuando no quede margen suficiente y conservando SQS como fallback.",
       "recommended": true
     },
     {
-      "title": "Provider escalation only",
-      "body": "Keep current SQS retry behavior and track the failing request/order IDs with Amazon until SP-API recovers.",
+      "title": "Mantener solo el retry de SQS",
+      "body": "No multiplicar llamadas dentro de una ejecución y tratar los `500` sostenidos como incidencia operativa con Amazon, reforzando únicamente métricas y alertas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Add bounded retry",
-    "body": "Wrap `getOrder` with the shared HTTP retry helper using a small retry budget and preserve failed-message retention.",
+    "title": "Retry local condicionado al presupuesto",
+    "body": "Hacer uno o dos reintentos transitorios solo en el procesamiento de notificaciones, cancelando nuevos intentos cuando no quede margen suficiente y conservando SQS como fallback.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Recent blame places the central notification processor and Amazon order API wrapper on this path.",
+    "person": "MarcosTerroso",
+    "reason": "Es quien introdujo tanto el poller como el procesamiento `ORDER_CHANGE` y conoce mejor el presupuesto y la semántica original del flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5747.md",
-    "reviewedAt": "2026-07-07T22:30:45.841Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T15:46:20.100Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

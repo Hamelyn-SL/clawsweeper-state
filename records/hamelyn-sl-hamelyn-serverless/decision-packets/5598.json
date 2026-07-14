@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:27:40.571Z",
-  "updatedAt": "2026-07-07T22:09:48Z",
+  "generatedAt": "2026-07-14T15:31:43.489Z",
+  "updatedAt": "2026-07-08T10:25:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,43 +25,42 @@
       "clawsweeper:needs-maintainer-review"
     ],
     "createdAt": "2026-04-30T01:34:27Z",
-    "updatedAt": "2026-07-07T22:09:48Z"
+    "updatedAt": "2026-07-08T10:25:33Z"
   },
   "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "Are the post-recovery Amazon ES logs showing the same SKUs bypassing the 24h cooldown, or only expected retries/new products with no resolvable ASIN?",
-  "rationale": "Source inspection shows an intended cooldown path, but the issue’s production reopens say the signature is still live; deciding closure or code work requires live SKU-level proof.",
+  "question": "¿La recurrencia de Amazon ES corresponde a los mismos SKU reintentados antes de 24 horas, o a SKU distintos/reintentos esperados cuyo EAN sigue sin ASIN?",
+  "rationale": "El código actual implementa el cooldown, mientras que los comentarios prueban que la firma sigue apareciendo pero no enlazan cada SKU con su estado y timestamps; esa evidencia operativa determina si existe un bug de código o una limitación externa esperada.",
   "options": [
     {
-      "title": "Verify live recurrence first",
-      "body": "Keep the issue open until BigQuery and Mongo evidence shows whether the same SKUs are violating cooldown or the logs are expected no-ASIN retries.",
+      "title": "Verificar recurrencia por SKU",
+      "body": "Cruzar logs y Mongo para medir el intervalo real por SKU antes de decidir cierre o reparación.",
       "recommended": true
     },
     {
-      "title": "Promote a narrow fix",
-      "body": "If the same SKUs are retried too soon, repair the exact recovery selector or timestamp update path.",
+      "title": "Corregir fuga de cooldown",
+      "body": "Si un mismo SKU entra antes de 24 horas, reparar la selección o persistencia y añadir una regresión enfocada.",
       "recommended": false
     },
     {
-      "title": "Close as external catalog limitation",
-      "body": "If cooldown is respected and the products simply have no Amazon ASIN, close only after documenting the intended exclusion or retry policy.",
+      "title": "Aceptar limitación de catálogo",
+      "body": "Si el cooldown se cumple, documentar y aplicar una política explícita de exclusión o reintento lento para EAN sin ASIN.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verify live recurrence first",
-    "body": "Keep the issue open until BigQuery and Mongo evidence shows whether the same SKUs are violating cooldown or the logs are expected no-ASIN retries.",
+    "title": "Verificar recurrencia por SKU",
+    "body": "Cruzar logs y Mongo para medir el intervalo real por SKU antes de decidir cierre o reparación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "HamelynDev owns the current issue assignment and authored the merged partial recovery for this exact signature.",
+    "reason": "Es el responsable asignado y el autor del retry exacto que debe contrastarse con la evidencia operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5598.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5598#issuecomment-4909648222",
-    "reviewedAt": "2026-07-07T22:27:40.571Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T15:31:43.489Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

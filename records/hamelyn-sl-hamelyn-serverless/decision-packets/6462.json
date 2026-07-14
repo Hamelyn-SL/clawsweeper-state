@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:33:19.887Z",
-  "updatedAt": "2026-07-08T10:14:45Z",
+  "generatedAt": "2026-07-14T15:40:03.076Z",
+  "updatedAt": "2026-07-14T12:24:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,42 +20,47 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: 🌊 off-meta tidepool",
       "impact:security",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:39:40Z",
-    "updatedAt": "2026-07-08T10:14:45Z"
+    "updatedAt": "2026-07-14T12:24:00Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la generación y el refresh de `Hamelyn_DEV_BASE` ejecutarse exclusivamente en un pipeline restringido que publique datos ya anonimizados, o podrán ejecutarlos desarrolladores con credenciales de lectura de producción?",
-  "rationale": "Esta elección determina quién puede acceder a PII de producción, dónde se ejecuta la anonimización y qué identidad puede copiar o borrar bases; el código actual no establece ese límite de forma segura.",
+  "question": "¿Qué frontera de acceso a producción y anonimización se autoriza para construir y refrescar `Hamelyn_DEV_BASE` antes de permitir el clonado de sandboxes?",
+  "rationale": "El repositorio aporta patrones técnicos parciales, pero la identidad de servicio, el conjunto de datos exportable, las transformaciones irreversibles y la responsabilidad de aprobar cada refresh son decisiones de seguridad y operación que no pueden inferirse del código.",
   "options": [
     {
-      "title": "Pipeline restringido",
-      "body": "Centralizar lectura, anonimización y refresh con credenciales mínimas, entregando a desarrollo únicamente una base ya saneada y clonable.",
+      "title": "Aprobar una implantación por fases",
+      "body": "Definir primero la política de acceso y anonimización, aterrizar el tooling read-only y habilitar el clonado solo desde una base curada ya aprobada.",
       "recommended": true
     },
     {
-      "title": "Tooling local privilegiado",
-      "body": "Permitir ejecuciones desde equipos de desarrollo con acceso a producción, confirmaciones y guardas reforzadas, asumiendo una superficie de exposición mayor.",
+      "title": "Limitarse inicialmente a solo lectura",
+      "body": "Entregar únicamente auditoría y comparación de índices, posponiendo cualquier copia de documentos hasta disponer de una política formal de datos.",
+      "recommended": false
+    },
+    {
+      "title": "Aprobar el programa integral",
+      "body": "Construir refresh, anonimización y ciclo de vida en una misma iniciativa, asumiendo una revisión de seguridad y operación más amplia antes de desplegarla.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pipeline restringido",
-    "body": "Centralizar lectura, anonimización y refresh con credenciales mínimas, entregando a desarrollo únicamente una base ya saneada y clonable.",
+    "title": "Aprobar una implantación por fases",
+    "body": "Definir primero la política de acceso y anonimización, aterrizar el tooling read-only y habilitar el clonado solo desde una base curada ya aprobada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Abrió la propuesta e introdujo los dos precedentes técnicos que habría que evolucionar o reemplazar.",
+    "reason": "Es el autor de los dos precedentes técnicos centrales y de la propuesta que debe concretar la frontera operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewedAt": "2026-07-14T11:33:19.887Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T15:40:03.076Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

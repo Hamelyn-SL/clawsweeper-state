@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:48:21.115Z",
-  "updatedAt": "2026-07-08T16:34:11Z",
+  "generatedAt": "2026-07-14T15:43:29.093Z",
+  "updatedAt": "2026-07-14T12:24:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,50 +12,45 @@
     "labels": [
       "size/L",
       "P2",
-      "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
       "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-06-18T13:37:49Z",
-    "updatedAt": "2026-07-08T16:34:11Z",
+    "updatedAt": "2026-07-14T12:24:22Z",
     "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué autorización debe exigir la lane `release` para construir y enviar un binario desde una rama antes de que el bump llegue a `dev`?",
-  "rationale": "El repositorio no define si los permisos normales de escritura son suficientes para operar sobre las stores ni qué ramas pueden usar las credenciales de producción; esa frontera no debe decidirla automáticamente una reparación de código.",
+  "question": "¿Debe la lane `release` exigir un GitHub environment protegido con aprobación humana antes de usar `EXPO_TOKEN` y enviar a producción?",
+  "rationale": "El código no puede decidir qué personas deben poder iniciar un submit de producción; esa frontera de autorización afecta a credenciales y publicaciones reales en las stores.",
   "options": [
     {
-      "title": "Entorno protegido de release",
-      "body": "Usar un GitHub Environment separado con required reviewers, secretos de producción y una política explícita de ramas, manteniendo beta en un entorno menos restrictivo.",
+      "title": "Proteger producción",
+      "body": "Asignar un environment protegido a la lane `release`, con aprobación humana antes de exponer credenciales o iniciar el submit.",
       "recommended": true
     },
     {
-      "title": "Permisos normales del repositorio",
-      "body": "Permitir el dispatch de producción a usuarios con acceso de escritura y documentar el runbook y la responsabilidad operativa.",
-      "recommended": false
-    },
-    {
-      "title": "Automatizar solo beta por ahora",
-      "body": "Limitar este PR a TestFlight y Play internal hasta que el equipo defina y apruebe la frontera de producción.",
+      "title": "Usar permisos generales",
+      "body": "Aceptar que cualquier actor autorizado para ejecutar el workflow pueda iniciar beta o producción utilizando el mismo secreto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Entorno protegido de release",
-    "body": "Usar un GitHub Environment separado con required reviewers, secretos de producción y una política explícita de ramas, manteniendo beta en un entorno menos restrictivo.",
+    "title": "Proteger producción",
+    "body": "Asignar un environment protegido a la lane `release`, con aprobación humana antes de exponer credenciales o iniciar el submit.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor asignado y ya estableció el protocolo operativo de la release móvil más reciente.",
+    "reason": "Es el revisor solicitado y la persona con señal histórica más directa sobre EAS, el endpoint de versión y el release anterior.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
-    "reviewedAt": "2026-07-14T11:48:21.115Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T15:43:29.093Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

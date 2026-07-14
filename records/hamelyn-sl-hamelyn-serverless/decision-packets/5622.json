@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:27:42.795Z",
-  "updatedAt": "2026-07-05T01:08:52Z",
+  "generatedAt": "2026-07-14T15:35:26.771Z",
+  "updatedAt": "2026-07-08T10:25:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,51 +20,50 @@
       "area:cron-reliability",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
-    "updatedAt": "2026-07-05T01:08:52Z"
+    "updatedAt": "2026-07-08T10:25:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should the first implementation phase keep HTTP 200 and add structured partial-failure status/severity, or should selected cron routes start returning 207/5xx immediately?",
-  "rationale": "The source confirms the shared handler behavior, but changing response status affects many marketplace, general, data, and admin crons with different tolerance for partial batch failures.",
+  "question": "¿Debe la primera fase mantener HTTP 200 para todos los parciales y añadir solo señal estructurada, o deben algunas rutas o severidades elevar ya 207/5xx?",
+  "rationale": "La fuente confirma el defecto de observabilidad, pero no permite deducir qué fallos parciales son tolerables según negocio; una decisión global puede cambiar reintentos, alertas y compatibilidad de numerosos crons.",
   "options": [
     {
-      "title": "Start with compatible structured signal",
-      "body": "Add status, rejected counts, summarized reasons, and severity to responses/logs while keeping HTTP 200 until route-specific escalation is agreed.",
+      "title": "Señal compatible primero",
+      "body": "Añadir el contrato estructurado en ambos handlers, conservar HTTP 200 por defecto y posponer 207/5xx hasta clasificar rutas y severidades.",
       "recommended": true
     },
     {
-      "title": "Escalate selected routes now",
-      "body": "Define the first route/fase severity matrix and change only those routes to 207/5xx with matching docs and validation.",
+      "title": "Elevación selectiva inicial",
+      "body": "Añadir el contrato estructurado y declarar desde la primera entrega una lista reducida de rutas o severidades que devuelvan 207/5xx.",
       "recommended": false
     },
     {
-      "title": "Keep current 200 contract intentionally",
-      "body": "Close the behavior as intentional only if maintainers decide that log-based partial-failure detection is sufficient for these cron surfaces.",
+      "title": "Fallo global estricto",
+      "body": "Hacer que cualquier rechazo parcial cambie inmediatamente el estado HTTP para todos los consumidores del handler compartido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Start with compatible structured signal",
-    "body": "Add status, rejected counts, summarized reasons, and severity to responses/logs while keeping HTTP 200 until route-specific escalation is agreed.",
+    "title": "Señal compatible primero",
+    "body": "Añadir el contrato estructurado en ambos handlers, conservar HTTP 200 por defecto y posponer 207/5xx hasta clasificar rutas y severidades.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "The current handler implementation and recent cron/marketplace documentation history point to JavierHamelyn as the best available owner for the severity-contract decision.",
+    "reason": "Es quien más recientemente ha trabajado tanto el contrato común de rutas como la observabilidad por fase y además ha desarrollado el análisis de política de esta issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
-    "reviewedAt": "2026-07-07T22:27:42.795Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T15:35:26.771Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

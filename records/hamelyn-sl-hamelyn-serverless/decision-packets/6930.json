@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:45:47.058Z",
-  "updatedAt": "2026-07-14T08:49:06Z",
+  "generatedAt": "2026-07-14T15:39:41.221Z",
+  "updatedAt": "2026-07-14T12:24:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,45 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear"
+      "P2"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-07-14T08:49:06Z"
+    "updatedAt": "2026-07-14T12:24:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué identidad, cargo y firma o sello oficiales deben aparecer en los pies ES y ENG de las facturas comerciales?",
-  "rationale": "El repositorio permite localizar y sustituir los activos, pero no puede determinar quién está legal u operativamente autorizado para firmar documentación aduanera ni inventar el material gráfico vigente.",
+  "question": "¿Qué footers oficiales ES y ENG deben utilizarse, y quién confirma que la identidad, el cargo, la firma o sello y los datos societarios son válidos para las facturas comerciales?",
+  "rationale": "La modificación de código es mecánica, pero elegir o regenerar una firma corporativa requiere una fuente y aprobación que no existen en el repositorio ni en la conversación.",
   "options": [
     {
-      "title": "Aportar footers oficiales ES/ENG",
-      "body": "Logística o la persona responsable de la documentación comercial aprueba dos PNG definitivos y se realiza una sustitución focalizada con prueba de PDF.",
+      "title": "Entregar los PNG aprobados",
+      "body": "El equipo aporta los dos activos finales ES/ENG y confirma su aprobación, permitiendo una sustitución estrecha y comprobable.",
       "recommended": true
     },
     {
-      "title": "Usar un sello corporativo sin persona",
-      "body": "Si el criterio legal lo permite, se elimina la dependencia de una persona concreta y se aprueba un footer corporativo estable en ambos idiomas.",
+      "title": "Aprobar contenido para regenerarlos",
+      "body": "El responsable confirma identidad, cargo, firma o sello, datos societarios y maquetación antes de que se generen ambos PNG.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar temporalmente la firma",
+      "body": "El responsable autoriza expresamente un footer corporativo sin firma personal mientras se define el reemplazo permanente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar footers oficiales ES/ENG",
-    "body": "Logística o la persona responsable de la documentación comercial aprueba dos PNG definitivos y se realiza una sustitución focalizada con prueba de PDF.",
+    "title": "Entregar los PNG aprobados",
+    "body": "El equipo aporta los dos activos finales ES/ENG y confirma su aprobación, permitiendo una sustitución estrecha y comprobable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el owner funcional documentado del bloque, abrió la divergencia y ya gestionó una actualización histórica de esta misma firma.",
+    "reason": "Está identificado como owner funcional de shipping/invoices y documentó esta divergencia durante la validación del bloque.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewedAt": "2026-07-14T11:45:47.058Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T15:39:41.221Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

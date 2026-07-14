@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:26:33.230Z",
-  "updatedAt": "2026-07-06T18:28:20Z",
+  "generatedAt": "2026-07-14T15:50:50.430Z",
+  "updatedAt": "2026-07-08T10:27:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,52 @@
       "feature",
       "triage:done",
       "business-logic",
-      "P2",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T10:16:53Z",
-    "updatedAt": "2026-07-06T18:28:20Z"
+    "updatedAt": "2026-07-08T10:27:39Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "How should the regex migration handle inactive rows and existing `X` semantics while preserving current matching?",
-  "rationale": "The issue direction is confirmed, but the triage comment identifies data semantics that require owner/operator choice before a safe Mongo plus code migration.",
+  "question": "¿Cómo debe preservar la migración el comportamiento de las cuatro filas inactivas y de los usos actuales de `X`, incluida la corrección excepcional de `AMAZON PROMO NAVIDAD`?",
+  "rationale": "El código demuestra la forma técnica, pero no puede decidir si las filas deshabilitadas conservan valor histórico ni qué diferencias deben considerarse correcciones intencionadas frente a incompatibilidades de datos.",
   "options": [
     {
-      "title": "Preserve all current semantics except the known malformed row",
-      "body": "Convert all 25 rows to equivalent standard regex, keep inactive rows represented, and explicitly fix or retire `AMAZON PROMO NAVIDAD` as part of the migration.",
+      "title": "Preservar las 25 filas",
+      "body": "Convertir todas las filas a regex equivalentes, mantener la semántica actual de `X` y tratar la fila malformada como una excepción explícita corregida o retirada.",
       "recommended": true
     },
     {
-      "title": "Migrate only active rows first",
-      "body": "Convert the 21 active rows and leave inactive rows unchanged or retired, reducing runtime risk but leaving historical matrix cleanup unresolved.",
+      "title": "Migrar solo las activas",
+      "body": "Convertir las 21 filas con `priority > 0` y retirar o dejar bloqueadas las cuatro inactivas hasta revisarlas individualmente.",
       "recommended": false
     },
     {
-      "title": "Pause until live data policy is settled",
-      "body": "Keep code unchanged until the owner decides whether disabled rows should remain migration targets.",
+      "title": "Definir una nueva semántica",
+      "body": "Normalizar literales como `MX` y reconstruir las filas inactivas, aceptando divergencias documentadas y validadas por Operaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preserve all current semantics except the known malformed row",
-    "body": "Convert all 25 rows to equivalent standard regex, keep inactive rows represented, and explicitly fix or retire `AMAZON PROMO NAVIDAD` as part of the migration.",
+    "title": "Preservar las 25 filas",
+    "body": "Convertir todas las filas a regex equivalentes, mantener la semántica actual de `X` y tratar la fila malformada como una excepción explícita corregida o retirada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn authored the recent BL carrier work and reported this owner-approved follow-up with the concrete acceptance criteria.",
+    "reason": "Es el owner funcional declarado del bloque y concentra la introducción y el mantenimiento reciente de ShipMatrix.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978#issuecomment-4911160747",
-    "reviewedAt": "2026-07-08T03:26:33.230Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T15:50:50.430Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

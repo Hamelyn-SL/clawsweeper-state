@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:47:44.152Z",
-  "updatedAt": "2026-06-27T12:57:21Z",
+  "generatedAt": "2026-07-14T15:31:01.217Z",
+  "updatedAt": "2026-07-08T09:39:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,42 +17,42 @@
       "triage:done"
     ],
     "createdAt": "2026-06-25T07:29:25Z",
-    "updatedAt": "2026-06-27T12:57:21Z"
+    "updatedAt": "2026-07-08T09:39:00Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the first implementation keep Google Merchant generation in GitHub Actions and migrate used feeds to BigQuery first, or move the whole pipeline into `apps/data-platform` now?",
-  "rationale": "Both paths are plausible, but the issue explicitly leaves deployment location and fallback strategy open, and the new-books feed has a known schema dependency that changes rollout order.",
+  "question": "¿Se aprueba una migración en dos fases que mantenga inicialmente la ejecución en GitHub Actions y deje el feed de libros nuevos para después de materializar `newData.logista`?",
+  "rationale": "La elección determina el primer alcance desplegable, la frontera operativa entre workflows y Data Platform, y si se acepta algún fallback temporal a MongoDB.",
   "options": [
     {
-      "title": "Phase in place first",
-      "body": "Keep the existing GitHub Actions and SFTP flow, migrate used feeds to BigQuery, then add `newData.logista` materialization before new-books cutover.",
+      "title": "Dos fases en workflows",
+      "body": "Migrar primero España, Estados Unidos y países internacionales, ampliar después `mongodata.products` y cortar finalmente libros nuevos.",
       "recommended": true
     },
     {
-      "title": "Move to data-platform now",
-      "body": "Relocate feed generation under `apps/data-platform` as part of the migration, accepting a larger first PR and deployment-surface change.",
+      "title": "Corte conjunto",
+      "body": "Esperar a completar la materialización de Logista y migrar los cuatro feeds en una única entrega coordinada.",
       "recommended": false
     },
     {
-      "title": "Keep Mongo fallback",
-      "body": "Allow a temporary Mongo fallback for new books while BigQuery parity is proven, but document when it must be removed.",
+      "title": "Mover ejecución a Data Platform",
+      "body": "Rediseñar también el alojamiento y la propiedad operativa de los generadores antes de hacer el primer corte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Phase in place first",
-    "body": "Keep the existing GitHub Actions and SFTP flow, migrate used feeds to BigQuery, then add `newData.logista` materialization before new-books cutover.",
+    "title": "Dos fases en workflows",
+    "body": "Migrar primero España, Estados Unidos y países internacionales, ampliar después `mongodata.products` y cortar finalmente libros nuevos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn already produced the viability analysis and two-phase recommendation on the issue.",
-    "confidence": "medium"
+    "reason": "Definió el programa transversal, documentó sus contratos operativos y también tiene historial directo en el feed de libros nuevos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
-    "reviewedAt": "2026-07-07T23:47:44.152Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T15:31:01.217Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:28:32.451Z",
-  "updatedAt": "2026-07-08T10:15:50Z",
+  "generatedAt": "2026-07-14T15:30:36.816Z",
+  "updatedAt": "2026-07-14T12:24:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,47 +19,48 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "P2",
-      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear",
       "impact:security",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-07-08T10:15:50Z"
+    "updatedAt": "2026-07-14T12:24:04Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué fuente contractual, contacto operativo y referencia segura de credenciales de Celeritas deben considerarse canónicos para cerrar esta documentación?",
-  "rationale": "El repositorio acredita el tracking REST y las constantes legacy, pero no puede determinar por sí solo la vigencia del contrato externo, el responsable operativo ni la ubicación autorizada de secretos.",
+  "question": "¿Qué manual, contacto operativo y ubicación segura de credenciales de Celeritas deben declararse canónicos, y debe documentarse el alcance actual como tracking de marketplace más creación RMA para Supply?",
+  "rationale": "El código permite reconstruir los flujos técnicos, pero la vigencia contractual, el responsable externo y la custodia autorizada de secretos son decisiones operativas y de seguridad que no puede resolver una revisión automática.",
   "options": [
     {
-      "title": "Confirmar y sanear referencias",
-      "body": "Operaciones confirma manual, contacto, alcance tracking-only y ubicación segura; si las constantes siguen activas, se migran o rotan antes de documentar la referencia.",
+      "title": "Confirmar contrato, alcance y custodia",
+      "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply, y migra o rota las credenciales si siguen activas antes de actualizar los tres documentos.",
       "recommended": true
     },
     {
-      "title": "Cerrar el alcance en tracking",
-      "body": "Se declara Celeritas formalmente como tracking-only y se documenta que creación/label no está soportado, manteniendo aparte la regularización de secretos.",
+      "title": "Documentar solo lo verificable",
+      "body": "Se aclaran ahora los dos flujos observables en código y se mantienen manual, contacto y referencia segura como pendientes explícitos hasta recibir confirmación.",
       "recommended": false
     },
     {
-      "title": "Reactivar creación de envíos",
-      "body": "Se abre una iniciativa técnica separada para validar el endpoint `order`, etiquetas, pruebas y custodia de credenciales antes de ampliar el runbook.",
+      "title": "Separar la regularización de secretos",
+      "body": "Se completa la ficha contractual cuando llegue la información y se gestiona la migración o rotación de constantes en un seguimiento de seguridad independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y sanear referencias",
-    "body": "Operaciones confirma manual, contacto, alcance tracking-only y ubicación segura; si las constantes siguen activas, se migran o rotan antes de documentar la referencia.",
+    "title": "Confirmar contrato, alcance y custodia",
+    "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply, y migra o rota las credenciales si siguen activas antes de actualizar los tres documentos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y concentra el historial reciente de los runbooks y de la migración REST relacionada.",
+    "reason": "Está asignado a la issue y concentra el historial reciente de los runbooks y de la migración REST de Celeritas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewedAt": "2026-07-14T11:28:32.451Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T15:30:36.816Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:49:26.237Z",
-  "updatedAt": "2026-07-07T23:23:44Z",
+  "generatedAt": "2026-07-14T15:38:41.463Z",
+  "updatedAt": "2026-07-08T10:24:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,50 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool"
     ],
     "createdAt": "2026-06-23T10:23:55Z",
-    "updatedAt": "2026-07-07T23:23:44Z"
+    "updatedAt": "2026-07-08T10:24:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "What internal order source and eligibility criteria should replace the Mercado Libre browser view for this daily Segmail label email?",
-  "rationale": "The code has the building blocks, but the browser source was rejected and the replacement business criteria are not specified in the issue or current docs.",
+  "question": "¿Qué fuente y criterio deben considerarse canónicos para el correo diario: pedidos internos reconciliados con Mercado Libre, una previsualización manual desde admin o mantener el proceso completamente manual?",
+  "rationale": "El código no permite inferir con seguridad qué etiquetas se necesitan ni excluir cancelaciones posteriores; elegir el origen, el momento de corte y el nivel de automatización es una decisión operativa y de producto.",
   "options": [
     {
-      "title": "Use internal order data",
-      "body": "Implement the automation only after operations defines the internal statuses, date window, and cancellation exclusion for eligible Mercado Libre orders.",
+      "title": "Origen interno reconciliado",
+      "body": "Procesar primero cancelaciones y cambios de Mercado Libre, definir el corte diario y automatizar después el correo con idempotencia y auditoría.",
       "recommended": true
     },
     {
-      "title": "Keep blocked",
-      "body": "Leave the issue blocked until Mercado Libre or operations provides a reliable non-browser source for the daily list.",
+      "title": "Envío asistido desde admin",
+      "body": "Añadir una pantalla que previsualice pedidos y etiquetas elegibles y requiera confirmación humana antes de enviar el correo.",
       "recommended": false
     },
     {
-      "title": "Sponsor browser automation",
-      "body": "Explicitly accept the maintenance risk of browser/profile automation for the current manual flow.",
+      "title": "Mantener proceso manual",
+      "body": "Cerrar la petición si el coste de reconciliar pedidos y operar una automatización fiable no compensa el ahorro operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Use internal order data",
-    "body": "Implement the automation only after operations defines the internal statuses, date window, and cancellation exclusion for eligible Mercado Libre orders.",
+    "title": "Origen interno reconciliado",
+    "body": "Procesar primero cancelaciones y cambios de Mercado Libre, definir el corte diario y automatizar después el correo con idempotencia y auditoría.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn already pushed back on browser automation in the discussion and has recent Meli/FedEx implementation history.",
-    "confidence": "medium"
+    "reason": "Ya fijó en la discusión el límite de no automatizar el navegador y aparece en el historial reciente del flujo y su documentación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6605.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6605#issuecomment-4910070807",
-    "reviewedAt": "2026-07-07T23:49:26.237Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-14T15:38:41.463Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

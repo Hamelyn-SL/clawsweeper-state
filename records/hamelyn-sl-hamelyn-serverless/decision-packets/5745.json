@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:30:34.769Z",
-  "updatedAt": "2026-06-20T00:34:56Z",
+  "generatedAt": "2026-07-14T15:33:02.403Z",
+  "updatedAt": "2026-07-08T09:37:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,42 +17,42 @@
       "app:marketplace"
     ],
     "createdAt": "2026-05-08T00:34:01Z",
-    "updatedAt": "2026-06-20T00:34:56Z"
+    "updatedAt": "2026-07-08T09:37:33Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "Should recoverable Catalog API 429 warnings remain monitored only, or should marketplace-crons proactively slow or change Catalog lookup behavior now?",
-  "rationale": "The warning is real after the merged mitigation, but the discussion says observed requests still completed and persisted ASINs, so automation should not choose the latency-versus-throttling tradeoff alone.",
+  "question": "¿Debe esta canónica seguir abierta como seguimiento de throttling recuperable hasta observar retries agotados, o se considera el warning aislado comportamiento esperado y se ajusta el watcher?",
+  "rationale": "El código ya se recupera y el arreglo anterior solo redujo una fuente de presión; decidir si el warning por sí mismo justifica más trabajo depende del umbral operativo que quiera mantener el equipo.",
   "options": [
     {
-      "title": "Keep monitoring until terminal impact",
-      "body": "Leave this issue open as the canonical thread and only start code work when `Error buscando` or correlated `No ASIN found for this EAN` failures increase.",
+      "title": "Mantener la canónica con umbral terminal",
+      "body": "Conservarla abierta y actuar solo cuando aparezcan retries agotados, timeouts o correlación demostrada con fallos de creación.",
       "recommended": true
     },
     {
-      "title": "Tighten Catalog retry behavior now",
-      "body": "Apply a focused change to use the existing retry helper or respect `Retry-After`, accepting slower Amazon create enrichment to reduce warning volume.",
+      "title": "Cerrar y ajustar el watcher",
+      "body": "Tratar el primer `429` recuperado como comportamiento esperado y evitar que el watcher reabra la incidencia sin impacto terminal.",
       "recommended": false
     },
     {
-      "title": "Retune the Catalog budget globally",
-      "body": "Revisit the Catalog rate budget across Amazon ES/COM/SE and serverless concurrency, which is broader but more likely to address shared quota pressure.",
+      "title": "Investigar coordinación distribuida ahora",
+      "body": "Patrocinar ya una investigación del rate limit entre invocaciones y marketplaces aunque todavía no haya fallo terminal probado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep monitoring until terminal impact",
-    "body": "Leave this issue open as the canonical thread and only start code work when `Error buscando` or correlated `No ASIN found for this EAN` failures increase.",
+    "title": "Mantener la canónica con umbral terminal",
+    "body": "Conservarla abierta y actuar solo cuando aparezcan retries agotados, timeouts o correlación demostrada con fallos de creación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn owns the recent mitigation and is assigned to the issue, making him the best available routing owner for the next threshold decision.",
+    "reason": "Es el assignee actual y autor del arreglo fusionado más reciente sobre esta incidencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5745.md",
-    "reviewedAt": "2026-07-07T22:30:34.769Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T15:33:02.403Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

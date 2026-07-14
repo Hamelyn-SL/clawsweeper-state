@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:15:34.965Z",
-  "updatedAt": "2026-06-18T05:34:35Z",
+  "generatedAt": "2026-07-14T15:32:03.688Z",
+  "updatedAt": "2026-07-08T10:25:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,44 @@
       "codex",
       "bug",
       "priority:p1",
-      "app:marketplace"
+      "app:marketplace",
+      "P1",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro"
     ],
     "createdAt": "2026-04-30T07:33:46Z",
-    "updatedAt": "2026-06-18T05:34:35Z"
+    "updatedAt": "2026-07-08T10:25:30Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "Should MercadoLibre label 429s fail visibly after a bounded retry budget, or should the queue keep deferring them until a real label is obtained?",
-  "rationale": "The current code already has a bounded 10-delivery retry budget; changing that budget or the terminal behavior affects operator visibility, queue pressure, and whether orders remain blocked for hours.",
+  "question": "¿Los HTTP 429 recientes terminan creando la etiqueta dentro de las diez entregas, o existen mensajes que se reconocen sin PDF al agotar el presupuesto?",
+  "rationale": "La fuente confirma las mitigaciones, pero solo alguien con acceso a la telemetría operacional puede correlacionar los intentos con el estado final del pedido y decidir si el comportamiento actual basta.",
   "options": [
     {
-      "title": "Bounded retry plus visible error",
-      "body": "Respect `Retry-After` when present, keep a bounded retry budget, and persist a retriable label error on the orderSell when the budget is exhausted.",
+      "title": "Verificar desenlaces en producción",
+      "body": "Correlacionar `orderSellId`, `deliveryCount`, respuesta 429 y `labelCreatedDate`, manteniendo abierta la incidencia hasta disponer de resultados terminales.",
       "recommended": true
     },
     {
-      "title": "Indefinite deferred retry",
-      "body": "Keep labels pending and keep deferring 429s until MercadoLibre allows the download, accepting longer queue occupancy to avoid manual recovery.",
-      "recommended": false
-    },
-    {
-      "title": "Operational-only tuning",
-      "body": "Leave code as-is and handle remaining 429s through provider quota or deployment/runtime tuning outside this issue.",
+      "title": "Aceptar la mitigación actual",
+      "body": "Cerrar basándose en que el código ya aplica backoff, asumiendo que la mera reaparición de 429 no demuestra pérdida de etiquetas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bounded retry plus visible error",
-    "body": "Respect `Retry-After` when present, keep a bounded retry budget, and persist a retriable label error on the orderSell when the budget is exhausted.",
+    "title": "Verificar desenlaces en producción",
+    "body": "Correlacionar `orderSellId`, `deliveryCount`, respuesta 429 y `labelCreatedDate`, manteniendo abierta la incidencia hasta disponer de resultados terminales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is assigned and authored the latest merged mitigation for this exact issue.",
+    "reason": "Es el asignado actual y autor del ajuste operativo más reciente de esta cola.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5607.md",
-    "reviewedAt": "2026-07-07T22:15:34.965Z",
-    "mainSha": "3842c1e6c854cdda44736d8aba388698896fc2f7"
+    "reviewedAt": "2026-07-14T15:32:03.688Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }
