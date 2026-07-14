@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T11:21:27.929Z",
-  "updatedAt": "2026-07-13T10:44:37Z",
+  "generatedAt": "2026-07-14T06:34:25.307Z",
+  "updatedAt": "2026-07-14T06:19:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,44 @@
     "state": "open",
     "labels": [
       "size/XS",
-      "dependencies",
-      "github_actions",
-      "rating: 🐚 platinum hermit",
-      "status: 👀 ready for maintainer look",
       "P3",
-      "merge-risk: 🚨 security-boundary"
+      "dependencies",
+      "github_actions"
     ],
     "createdAt": "2026-07-13T07:55:45Z",
-    "updatedAt": "2026-07-13T10:44:37Z",
+    "updatedAt": "2026-07-14T06:19:08Z",
     "headSha": "c91482ada9a965148c626a8eda17efd37c709a85"
   },
   "lane": "security_boundary",
   "priority": "P3",
-  "question": "¿Aceptamos ejecutar `pascalgn/size-label-action@v0.5.7` con el token de escritura actual del workflow `PR Lifecycle`?",
-  "rationale": "El diff es correcto, pero la decisión de confianza sobre código externo que recibe permisos de issues/pull-requests no se puede resolver solo con CI.",
+  "question": "¿Se acepta `pascalgn/size-label-action@v0.5.7` siguiendo el patrón actual de tags del repositorio, o se quiere fijar esta acción al SHA revisado?",
+  "rationale": "El PR sustituye código de terceros ejecutado con permisos de escritura; elegir entre coherencia con la política actual y una referencia inmutable requiere criterio humano de supply chain.",
   "options": [
     {
-      "title": "Aceptar el bump patch",
-      "body": "Mergear el PR si los checks están en verde y el equipo acepta el tag upstream `v0.5.7` para esta automatización.",
+      "title": "Aceptar `v0.5.7` tras revisión",
+      "body": "Mantener el patrón existente de tags y mergear después de verificar la release y una ejecución correcta del workflow.",
       "recommended": true
     },
     {
-      "title": "Endurecer el pin antes de mergear",
-      "body": "Cambiar a un SHA verificado o a una alternativa interna si el equipo quiere reducir el riesgo supply-chain de acciones por tag.",
+      "title": "Fijar el SHA de `v0.5.7`",
+      "body": "Usar `56b489b027932ec0cf60438a1a5f1a19c8fc71ff` con un comentario de versión para hacer inmutable esta dependencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el bump patch",
-    "body": "Mergear el PR si los checks están en verde y el equipo acepta el tag upstream `v0.5.7` para esta automatización.",
+    "title": "Aceptar `v0.5.7` tras revisión",
+    "body": "Mantener el patrón existente de tags y mergear después de verificar la release y una ejecución correcta del workflow.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con historial más directo en el workflow `PR Lifecycle` que este PR modifica.",
+    "reason": "Es el propietario histórico del workflow y el revisor solicitado para este cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7431.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7431#issuecomment-4955995526",
-    "reviewedAt": "2026-07-13T11:21:27.929Z",
-    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
+    "reviewedAt": "2026-07-14T06:34:25.307Z",
+    "mainSha": "9c70224079f5c6db7b7f6873138c02133f74e7ac"
   }
 }
