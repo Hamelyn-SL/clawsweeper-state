@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:27:53.571Z",
+  "generatedAt": "2026-07-14T21:34:20.718Z",
   "updatedAt": "2026-07-12T15:15:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,51 +14,52 @@
       "app:infrastructure",
       "feature",
       "triage:done",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
     "updatedAt": "2026-07-12T15:15:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención debe regir `products` y qué primera fase se autoriza: frenar altas, poda reversible de texto o purga física de documentos?",
-  "rationale": "La decisión fija qué datos comerciales pueden desaparecer y condiciona filtros irreversibles sobre decenas de millones de documentos desnormalizados; el código no puede determinar por sí solo esa política.",
+  "question": "¿Qué señales y ventana temporal obligan a conservar una ficha `products`, y se autoriza eliminar documentos o únicamente aligerar sus campos pesados?",
+  "rationale": "El filtro irreversible, el coste aceptable de regeneración y la retención de referencias históricas son decisiones de Catálogo y Datos que el código actual no define.",
   "options": [
     {
-      "title": "Poda por fases",
-      "body": "Frenar primero las altas sin señal, ejecutar después una poda reversible y reservar la purga para cuando los anti-joins, el benchmark y la recuperación estén aprobados.",
+      "title": "Tres fases conservadoras",
+      "body": "Frenar nuevos productos sin señal, aplicar una poda reversible y autorizar la purga solo después de aprobar un dry-run referencial y un plan de recuperación.",
       "recommended": true
     },
     {
-      "title": "Solo poda suave",
-      "body": "Eliminar campos de texto pesados de candidatos seguros reduce almacenamiento sin borrar EANs, aunque mantiene gran parte del volumen documental.",
+      "title": "Solo poda reversible",
+      "body": "Eliminar campos pesados de candidatos inactivos y posponer el borrado de documentos hasta disponer de una política de retención completa.",
       "recommended": false
     },
     {
-      "title": "Purga física inmediata",
-      "body": "Eliminar los candidatos tras un único dry-run recupera más espacio antes, pero asume un riesgo alto de referencias omitidas y exige reconstrucción coordinada de BigQuery.",
+      "title": "Purga prioritaria",
+      "body": "Definir ahora exclusiones, ventana temporal y recuperación para ejecutar eliminaciones por lotes antes de abordar el pipeline de creación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Poda por fases",
-    "body": "Frenar primero las altas sin señal, ejecutar después una poda reversible y reservar la purga para cuando los anti-joins, el benchmark y la recuperación estén aprobados.",
+    "title": "Tres fases conservadoras",
+    "body": "Frenar nuevos productos sin señal, aplicar una poda reversible y autorizar la purga solo después de aprobar un dry-run referencial y un plan de recuperación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el mejor candidato disponible porque aportó el análisis operativo y aparece conectado en el historial a las dos superficies centrales de Argos y materialización.",
-    "confidence": "medium"
+    "reason": "Combina historial en el pipeline con la evidencia operativa y los counts que originaron la decisión pendiente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-14T21:27:53.571Z",
+    "reviewedAt": "2026-07-14T21:34:20.718Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
