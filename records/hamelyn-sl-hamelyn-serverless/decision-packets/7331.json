@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T13:10:43.292Z",
+  "updatedAt": "2026-07-14T12:42:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7331,
+    "title": "TodoColeccion live listings stuck as empty UPLOADING_ERROR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7331",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "impact:other",
+      "issue-rating: 🐚 platinum hermit",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:linked-pr-open"
+    ],
+    "createdAt": "2026-07-10T07:52:31Z",
+    "updatedAt": "2026-07-14T12:42:15Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe la verificación remota de listings vivos ejecutarse antes y quedar excluida mutuamente del recovery que retira errores `UPLOADING` obsoletos de TodoColeccion?",
+  "rationale": "La PR y `dev` contienen políticas potencialmente contradictorias para la misma familia de documentos, y resolver el conflicto exige confirmar la precedencia operativa deseada.",
+  "options": [
+    {
+      "title": "Separar y priorizar la reconciliación",
+      "body": "Actualizar la PR con `dev`, hacer las queries mutuamente excluyentes y exigir prueba real antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la retirada como canónica",
+      "body": "Cerrar la PR candidata y documentar por qué los listings vivos no deben normalizarse automáticamente a `ACTIVE`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar y priorizar la reconciliación",
+    "body": "Actualizar la PR con `dev`, hacer las queries mutuamente excluyentes y exigir prueba real antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor solicitado y tiene historial reciente tanto en la API como en el recovery de TodoColeccion.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7331.md",
+    "reviewedAt": "2026-07-14T13:10:43.292Z",
+    "mainSha": "be349447c63690ea12e07ad6c7120b87d2d23362"
+  }
+}
