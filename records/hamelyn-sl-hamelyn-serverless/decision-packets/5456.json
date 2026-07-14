@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:11:49.376Z",
-  "updatedAt": "2026-06-29T21:05:45Z",
+  "generatedAt": "2026-07-14T12:55:12.759Z",
+  "updatedAt": "2026-07-14T12:22:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -26,43 +26,42 @@
       "clawsweeper:source-repro"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-06-29T21:05:45Z"
+    "updatedAt": "2026-07-14T12:22:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should TodoColeccion product throttling be solved by tuning create/backoff behavior inside the products scope, by further splitting create and updatePrice breaker/scheduling, or by treating the current abort as acceptable provider protection?",
-  "rationale": "The source still has the protective abort, but the safe permanent fix depends on current production frequency and the provider’s real rate-limit semantics rather than a purely local code preference.",
+  "question": "¿Debe el rate limit de TodoColeccion seguir bloqueando conjuntamente todas las operaciones de `/products`, o queremos una política por operación que permita reintentos acotados de `create` sin detener `updatePrice` y `withdraw`?",
+  "rationale": "El código actual aplica deliberadamente una protección conservadora, pero el repositorio no contiene el contrato de cuota del proveedor ni una decisión sobre el coste aceptable entre throughput, duración del cron y riesgo de nuevos 429; automatizar esa elección podría empeorar producción.",
   "options": [
     {
-      "title": "Tune products throttling first",
-      "body": "Use fresh logs/provider evidence to add a narrow create-side backoff or budget while preserving the scoped breaker protection.",
+      "title": "Breaker por operación y backoff remoto",
+      "body": "Separar `create`, `updatePrice` y `withdraw`, respetar `Retry-After` y reintentar `create` de forma acotada antes de aplazar únicamente el trabajo restante.",
       "recommended": true
     },
     {
-      "title": "Split create and price isolation",
-      "body": "Separate create and updatePrice breaker or cron behavior if current logs show one products subflow still starves the other.",
+      "title": "Mantener scope `products` y ajustar tiempos",
+      "body": "Conservar el bloqueo compartido, pero calibrar ventana, lote y espera con telemetría del proveedor para reducir cortes sin cambiar la semántica actual.",
       "recommended": false
     },
     {
-      "title": "Accept current protection",
-      "body": "Leave the abort behavior in place if current production data shows the remaining rate limits are rare and safer than continuing the batch.",
+      "title": "Mantener comportamiento y monitorizar",
+      "body": "No cambiar la política hasta obtener nuevas respuestas completas, headers de rate limit y frecuencia reciente por operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Tune products throttling first",
-    "body": "Use fresh logs/provider evidence to add a narrow create-side backoff or budget while preserving the scoped breaker protection.",
+    "title": "Breaker por operación y backoff remoto",
+    "body": "Separar `create`, `updatePrice` y `withdraw`, respetar `Retry-After` y reintentar `create` de forma acotada antes de aplazar únicamente el trabajo restante.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Recent TodoColeccion API and error-classification work makes this the strongest code-history owner for the rate-limit behavior.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Fusionó la mitigación inicial, activó las fases afectadas del cron y aparece en el mantenimiento operativo reciente del área, por lo que es el mejor candidato disponible para decidir la política transversal.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-07T22:11:49.376Z",
-    "mainSha": "d7265db4024f86eb6518f87fc6033676bcf71d18"
+    "reviewedAt": "2026-07-14T12:55:12.759Z",
+    "mainSha": "877a3f1828e0d5f916760f5b23c4f3697b375108"
   }
 }
