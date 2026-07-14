@@ -14,7 +14,13 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:done"
+      "triage:done",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-14T06:20:38Z",
     "updatedAt": "2026-07-14T07:23:36Z"
@@ -52,6 +58,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7492.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492#issuecomment-4966435214",
     "reviewedAt": "2026-07-14T07:38:09.852Z",
     "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
   }
