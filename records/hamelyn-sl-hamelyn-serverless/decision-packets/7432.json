@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T14:57:15.510Z",
-  "updatedAt": "2026-07-13T10:35:06Z",
+  "generatedAt": "2026-07-14T17:02:20.471Z",
+  "updatedAt": "2026-07-13T15:13:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,50 +15,44 @@
       "feature",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:linked-pr-open"
     ],
     "createdAt": "2026-07-13T08:05:07Z",
-    "updatedAt": "2026-07-13T10:35:06Z"
+    "updatedAt": "2026-07-13T15:13:59Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el PR candidato limitarse a la resolución canónica solicitada con redirección 301, o se aprueban también `nonPerson`, los 404, el uso de 308 y la dependencia del backfill asociado?",
-  "rationale": "Estas elecciones cambian la política SEO, la visibilidad pública de fichas y la frontera operativa respecto al contrato explícito de la issue; no consta una aprobación humana que resuelva esas diferencias.",
+  "question": "¿Debe el PR candidato acotarse a la canonicalización definida en esta issue o aprobarse también el nuevo filtrado `nonPerson` y su política de URLs?",
+  "rationale": "La rama introduce comportamiento de producto adicional y diverge en la regla de desempate y en la redirección observada, por lo que no basta con una decisión técnica automática.",
   "options": [
     {
-      "title": "Limitar al contrato de la issue",
-      "body": "Implementar la selección canónica, la unión de catálogo, los enlaces y el guard del cron con 301, dejando `nonPerson` y la fusión física para trabajos separados.",
+      "title": "Acotar y separar",
+      "body": "Mantener en este trabajo la canonicalización, unión de catálogo, enlaces y guard compartido, y mover `nonPerson` a seguimiento independiente.",
       "recommended": true
     },
     {
-      "title": "Aprobar el alcance ampliado",
-      "body": "Aceptar `nonPerson`, 404, 308 y el backfill, documentando y validando expresamente tanto la política SEO como la operación de datos.",
-      "recommended": false
-    },
-    {
-      "title": "Separar el PR",
-      "body": "Dividir la resolución canónica y el filtrado de entidades no-persona en dos PRs revisables de manera independiente.",
+      "title": "Aprobar alcance ampliado",
+      "body": "Aceptar canonicalización más `nonPerson`, fijando explícitamente la regla canónica y la política 301/308/404 con prueba de upgrade y SEO.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar al contrato de la issue",
-    "body": "Implementar la selección canónica, la unión de catálogo, los enlaces y el guard del cron con 301, dejando `nonPerson` y la fusión física para trabajos separados.",
+    "title": "Acotar y separar",
+    "body": "Mantener en este trabajo la canonicalización, unión de catálogo, enlaces y guard compartido, y mover `nonPerson` a seguimiento independiente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el revisor humano solicitado para el PR candidato y la persona mejor situada en el contexto actual para confirmar el alcance antes de adaptar la rama.",
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona del historial más cercana a la página y al repositorio de autores, donde se materializa la decisión de experiencia y SEO.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432#issuecomment-4956045560",
-    "reviewedAt": "2026-07-13T14:57:15.510Z",
-    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "reviewedAt": "2026-07-14T17:02:20.471Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

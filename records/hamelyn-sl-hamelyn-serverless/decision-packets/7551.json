@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:40:23.256Z",
-  "updatedAt": "2026-07-14T12:19:43Z",
+  "generatedAt": "2026-07-14T17:03:55.653Z",
+  "updatedAt": "2026-07-14T13:24:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,44 @@
     "state": "open",
     "labels": [
       "size/M",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-14T11:47:52Z",
-    "updatedAt": "2026-07-14T12:19:43Z",
+    "updatedAt": "2026-07-14T13:24:50Z",
     "headSha": "26a0be28871e6fdb283d184dd2cda3ab7bb90309"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba sustituir la regla basada solo en `pickedUpDate` por `LOST_BY_CARRIER` → `IN_TRANSIT` y `LOST_BY_HAMELYN` → `PICKED_UP`?",
-  "rationale": "`BL-buying-account-19` fue validada con el criterio anterior; la incidencia exige ocultar `SUSPICIOUS`, pero no confirma por sí sola los dos estados sustitutos para todos los casos.",
+  "question": "¿Se valida que `BL-buying-account-19` priorice `suspiciousReason`, usando `LOST_BY_CARRIER` → `IN_TRANSIT` y `LOST_BY_HAMELYN` → `PICKED_UP`, con `pickedUpDate` solo como fallback?",
+  "rationale": "La regla vigente se validó con un criterio basado únicamente en `pickedUpDate`; decidir qué fase logística comunicar según la responsabilidad de la pérdida es una decisión de negocio que no puede deducirse del código.",
   "options": [
     {
-      "title": "Revalidar el mapeo por motivo",
-      "body": "El owner confirma los estados propuestos y se actualizan la spec y sus pruebas antes del merge.",
+      "title": "Validar el criterio por motivo",
+      "body": "Aceptar el mapeo propuesto y exigir que spec, tests, guía operativa y prueba real queden alineados.",
       "recommended": true
     },
     {
-      "title": "Conservar la regla anterior",
-      "body": "El PR se limita a aplicar en los serializers el fallback ya validado mediante `pickedUpDate`.",
-      "recommended": false
-    },
-    {
-      "title": "Acordar otra representación",
-      "body": "Se pausa el merge hasta definir un estado o copy que no pueda inducir a error al vendedor.",
+      "title": "Mantener el criterio por fecha",
+      "body": "Conservar la regla vigente y limitar la corrección a aplicar ese mapeo existente en los serializers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revalidar el mapeo por motivo",
-    "body": "El owner confirma los estados propuestos y se actualizan la spec y sus pruebas antes del merge.",
+    "title": "Validar el criterio por motivo",
+    "body": "Aceptar el mapeo propuesto y exigir que spec, tests, guía operativa y prueba real queden alineados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La issue madre lo nombra owner de Seller Account y responsable de la validación F2.",
+    "reason": "Aprobó la extracción y validación original de la regla en el PR 7100, por lo que dispone de la señal histórica más directa para confirmar o derivar el cambio de criterio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7551.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7551#issuecomment-4969253308",
-    "reviewedAt": "2026-07-14T12:40:23.256Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-14T17:03:55.653Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

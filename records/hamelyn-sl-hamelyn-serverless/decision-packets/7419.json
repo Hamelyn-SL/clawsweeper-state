@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:02:57.380Z",
-  "updatedAt": "2026-07-13T09:54:07Z",
+  "generatedAt": "2026-07-14T17:00:39.220Z",
+  "updatedAt": "2026-07-13T10:20:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,47 @@
       "bug",
       "priority:p1",
       "app:infrastructure",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear",
-      "P1",
-      "impact:other"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-13T06:38:18Z",
-    "updatedAt": "2026-07-13T09:54:07Z"
+    "updatedAt": "2026-07-13T10:20:36Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política exacta debe aprobarse para consolidar los autores duplicados por `authorId` antes de crear el índice único en producción?",
-  "rationale": "La reparación mezcla código, SEO y una mutación masiva de datos; automatizarla sin decidir ficha canónica, slugs heredados y preservación de enlaces sería demasiado arriesgado.",
+  "question": "¿Qué regla canónica y política de URLs debe aplicarse al fusionar los documentos que comparten `authorId`?",
+  "rationale": "La elección determina qué ficha sobrevive, si los slugs retirados redirigen o devuelven 404 y cómo preservar enlaces durante una corrección masiva de producción.",
   "options": [
     {
-      "title": "Backfill auditado con ficha canónica",
-      "body": "Elegir una regla canónica, validar count/muestras/filtro en dry-run, preservar o redirigir slugs y crear el índice único solo después de verificar la consolidación.",
+      "title": "Conservar URLs mediante redirects",
+      "body": "Elegir una ficha canónica determinista, fusionar los datos y mantener los slugs retirados como redirects hacia ella.",
       "recommended": true
     },
     {
-      "title": "Parche operativo primero",
-      "body": "Aterrizar antes el fallo de exit code y el acotado incremental del cron para recuperar visibilidad, dejando la fusión física y el índice como intervención separada.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el cron temporalmente",
-      "body": "Desactivar o limitar el workflow evita más ruido mientras se aprueba la migración, pero mantiene sin enriquecer autores de alto tráfico.",
+      "title": "Retirar los slugs duplicados",
+      "body": "Elegir una ficha canónica y aceptar que las URLs de las fichas eliminadas pasen a devolver 404.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Backfill auditado con ficha canónica",
-    "body": "Elegir una regla canónica, validar count/muestras/filtro en dry-run, preservar o redirigir slugs y crear el índice único solo después de verificar la consolidación.",
+    "title": "Conservar URLs mediante redirects",
+    "body": "Elegir una ficha canónica determinista, fusionar los datos y mantener los slugs retirados como redirects hacia ella.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es quien introdujo y mantiene la superficie afectada y ya coordina la issue y el PR relacionado.",
+    "reason": "Está asignado a esta issue y es el autor del pipeline, del diagnóstico y de la propuesta relacionada de canonicalización.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
-    "reviewedAt": "2026-07-13T10:02:57.380Z",
-    "mainSha": "4c13dc14b1f4798d38f141bf03cce4cdba787fd9"
+    "reviewedAt": "2026-07-14T17:00:39.220Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }

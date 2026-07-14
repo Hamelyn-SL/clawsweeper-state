@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:05:35.890Z",
-  "updatedAt": "2026-07-13T09:49:40Z",
+  "generatedAt": "2026-07-14T16:59:50.719Z",
+  "updatedAt": "2026-07-13T10:20:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,38 +24,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-13T09:48:16Z",
-    "updatedAt": "2026-07-13T09:49:40Z"
+    "updatedAt": "2026-07-13T10:20:49Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe una cancelación/expiración posterior de eDesk o Celeritas prevalecer sobre un lote Supply que ya está `PICKED_UP`/recibido?",
-  "rationale": "El estado actual permite cancelar desde `PICKED_UP`, pero el cron deja de sincronizar tras `ENTREGADO`; cambiar esa prioridad es una decisión operativa con impacto en lotes recibidos.",
+  "question": "Tras confirmar si el pago del 16 de junio de 2026 se ejecutó, ¿qué estado debe prevalecer para un lote físicamente recibido que también conserva una cancelación por expiración?",
+  "rationale": "El código define transiciones posibles, pero no puede decidir si este registro debe terminar en `PAID` o `CANCELLED` sin conocer el resultado financiero y la regla operativa aplicable a cancelaciones tardías.",
   "options": [
     {
-      "title": "Cancelar si eDesk confirma expirado",
-      "body": "Tratar eDesk/cancelación como fuente de verdad para este caso y añadir una regla acotada que pase el lote a `CANCELLED` con auditoría.",
+      "title": "Resolver según el pago real",
+      "body": "Auditar el pago y las transiciones; dejar `PAID` si se abonó al cliente o `CANCELLED` si no se abonó, limpiando todos los metadatos incompatibles.",
       "recommended": true
     },
     {
-      "title": "Mantener recibido como final logístico",
-      "body": "Dejar `PICKED_UP` como estado prevalente tras entrega y resolver el caso mediante corrección operativa puntual si eDesk está desalineado.",
+      "title": "Priorizar la recepción física",
+      "body": "Mantener `PICKED_UP` y eliminar los metadatos de pago y cancelación únicamente si ambos se confirman como registros erróneos.",
+      "recommended": false
+    },
+    {
+      "title": "Priorizar la expiración",
+      "body": "Pasar el lote a `CANCELLED` aunque conste entregado, siempre que negocio confirme que la expiración tardía invalida el flujo posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cancelar si eDesk confirma expirado",
-    "body": "Tratar eDesk/cancelación como fuente de verdad para este caso y añadir una regla acotada que pase el lote a `CANCELLED` con auditoría.",
+    "title": "Resolver según el pago real",
+    "body": "Auditar el pago y las transiciones; dejar `PAID` si se abonó al cliente o `CANCELLED` si no se abonó, limpiando todos los metadatos incompatibles.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Tiene el contexto más reciente de la regla Celeritas/PUP que se cruza con este bug.",
-    "confidence": "medium"
+    "reason": "Es la persona con el historial más reciente y directo sobre las reglas y validaciones del ciclo de vida de lotes Supply.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7454.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454#issuecomment-4956923389",
-    "reviewedAt": "2026-07-13T10:05:35.890Z",
-    "mainSha": "4c13dc14b1f4798d38f141bf03cce4cdba787fd9"
+    "reviewedAt": "2026-07-14T16:59:50.719Z",
+    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
   }
 }
