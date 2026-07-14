@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:28:39.202Z",
-  "updatedAt": "2026-07-08T10:14:55Z",
+  "generatedAt": "2026-07-14T21:35:45.175Z",
+  "updatedAt": "2026-07-08T16:35:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-07-08T10:14:55Z"
+    "updatedAt": "2026-07-08T16:35:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué códigos o métodos de envío deben mapearse a `ShipPriority.URGENT` para cada marketplace, y en qué canales debe seguir existiendo fallback por importe?",
-  "rationale": "La corrección cambia decisiones de SLA y depende de semántica externa por marketplace; el código muestra señales parciales, pero no define cuáles son contractualmente urgentes.",
+  "question": "¿Qué matriz de señales, valores urgentes y fallbacks debe regir cada marketplace activo, incluido el tratamiento del override de Amazon para España?",
+  "rationale": "El código determina dónde aplicar el cambio, pero los contratos y SLAs externos son necesarios para decidir qué valores representan urgencia y cuándo sigue siendo aceptable inferirla por importe.",
   "options": [
     {
-      "title": "Mapping por marketplace con fallback acotado",
-      "body": "Definir la tabla de códigos urgentes por canal y usar el importe solo cuando el importador no exponga señal fiable.",
+      "title": "Matriz completa por canal",
+      "body": "Validar la señal, los valores urgentes y el fallback de todos los marketplaces antes de realizar un único cambio coordinado.",
       "recommended": true
     },
     {
-      "title": "Mantener umbrales hasta tener datos completos",
-      "body": "Dejar el comportamiento actual mientras se recopilan muestras reales de métodos de envío por marketplace.",
+      "title": "Corrección por fases",
+      "body": "Aplicar primero eBay, Fnac y Casa del Libro, que ya conservan señales, y mantener seguimientos explícitos para los canales cuyo parser no las expone.",
       "recommended": false
     },
     {
-      "title": "Mover la regla a un bloque Marketplace",
-      "body": "Esperar a abrir el dominio BL de Marketplace y resolver allí esta prioridad junto con el parsing de órdenes.",
+      "title": "Mantener los umbrales",
+      "body": "Conservar temporalmente la conducta actual hasta disponer de evidencia contractual suficiente para clasificar cada canal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mapping por marketplace con fallback acotado",
-    "body": "Definir la tabla de códigos urgentes por canal y usar el importe solo cuando el importador no exponga señal fiable.",
+    "title": "Matriz completa por canal",
+    "body": "Validar la señal, los valores urgentes y el fallback de todos los marketplaces antes de realizar un único cambio coordinado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Figura como owner del bloque BL y abrió la divergencia con el contexto funcional necesario.",
+    "reason": "Es el owner declarado de la regla BL y la persona mejor situada para validar la matriz y el nuevo enunciado de negocio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
-    "reviewedAt": "2026-07-08T16:28:39.202Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T21:35:45.175Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

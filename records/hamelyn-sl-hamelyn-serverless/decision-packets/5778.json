@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:40:44.025Z",
-  "updatedAt": "2026-07-07T22:32:59Z",
+  "generatedAt": "2026-07-14T21:40:16.967Z",
+  "updatedAt": "2026-07-08T10:26:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -26,43 +26,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-07T22:32:59Z"
+    "updatedAt": "2026-07-08T10:26:34Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should eBay account-limited and policy-block create failures be treated as SKU-level permanent catalog errors, marketplace-level operational incidents, or a split between those two paths?",
-  "rationale": "The reopened evidence mixes item-policy rejects with seller-account limitation text; choosing the wrong bucket can either keep retrying impossible SKUs or hide an account-level outage.",
+  "question": "¿Debe un bloqueo de cuenta o vendedor de eBay marcar cada SKU como `PERMANENT`, o debe tratarse como una pausa global recuperable del canal antes de reactivar `create`?",
+  "rationale": "El mismo flujo recibe rechazos terminales de contenido y restricciones de cuenta potencialmente reversibles; elegir una única política por SKU puede causar reintentos masivos o inmovilizar inventario recuperable.",
   "options": [
     {
-      "title": "Split by failure family",
-      "body": "Classify item-policy and counterfeit rejects as permanent per SKU, but route account-limited signatures to an operational marketplace-level incident path before re-enabling create.",
+      "title": "Separar contenido y cuenta",
+      "body": "Clasificar el contenido prohibido como `PERMANENT` por SKU y convertir las restricciones de cuenta en una pausa global recuperable con reencolado controlado.",
       "recommended": true
     },
     {
-      "title": "Treat all as permanent",
-      "body": "Mark the whole reopened signature family permanent per SKU, reducing retry pressure but risking silent masking of seller-account blocks.",
+      "title": "Todo permanente por SKU",
+      "body": "Clasificar todas las variantes conocidas como `PERMANENT`, aceptando una reactivación manual masiva si eBay levanta la restricción de cuenta.",
       "recommended": false
     },
     {
-      "title": "Keep create disabled",
-      "body": "Leave eBay create off until operations confirms the seller-account/policy state and provides current production evidence.",
+      "title": "Mantener create deshabilitado",
+      "body": "Conservar la mitigación actual hasta que operaciones confirme la causa y aporte una ejecución canaria con la cuenta plenamente habilitada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split by failure family",
-    "body": "Classify item-policy and counterfeit rejects as permanent per SKU, but route account-limited signatures to an operational marketplace-level incident path before re-enabling create.",
+    "title": "Separar contenido y cuenta",
+    "body": "Clasificar el contenido prohibido como `PERMANENT` por SKU y convertir las restricciones de cuenta en una pausa global recuperable con reencolado controlado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "JavierHamelyn is tied to the current eBay controller state and recent eBay integration work, so this policy choice likely belongs closest to that area.",
+    "reason": "Es el contribuidor con mayor actividad reciente en el adaptador, diagnóstico y recuperación de eBay, y puede coordinar la frontera entre clasificación técnica y recuperación operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
-    "reviewedAt": "2026-07-07T22:40:44.025Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T21:40:16.967Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:28:09.394Z",
-  "updatedAt": "2026-07-08T10:14:30Z",
+  "generatedAt": "2026-07-14T21:37:20.025Z",
+  "updatedAt": "2026-07-08T16:35:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,52 +16,46 @@
       "feature",
       "triage:pr-opened",
       "reporter:victor",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P2",
-      "impact:other",
+      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T08:33:34Z",
-    "updatedAt": "2026-07-08T10:14:30Z"
+    "updatedAt": "2026-07-08T16:35:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe resolverse esta issue como un cambio acotado de biografía propia para Zafón ahora, o debe esperar a la estrategia de licencias/contenido de autor de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515?",
-  "rationale": "La forma técnica es pequeña, pero decidir la fuente del texto largo y si se permite contenido derivado de Wikipedia/Commons es una decisión de producto/legal que no conviene automatizar.",
+  "question": "¿Queremos mantener una segunda biografía editorial propia, separada del extracto de Wikipedia ya atribuido, y qué flujo será la fuente de verdad para ese contenido?",
+  "rationale": "El PR de atribución fusionado resolvió la licencia conservando Wikipedia, mientras esta issue propone otro contenido y otro campo; decidir si ambos deben coexistir y cómo se administran es una elección editorial y operativa.",
   "options": [
     {
-      "title": "Recrear el cambio acotado",
-      "body": "Añadir `author.biography`, renderizarlo solo en `Sobre {Autor}` y cargar una bio propia revisada para Carlos Ruiz Zafón sin tocar `description`.",
+      "title": "Añadir biografía editorial separada",
+      "body": "Crear `biography` localizada con contenido basado en hechos autorizados y un proceso auditable de alta y actualización, manteniendo `description` atribuida como resumen.",
       "recommended": true
     },
     {
-      "title": "Integrarlo con licencias de autor",
-      "body": "Mantener esta issue abierta hasta que la estrategia de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6515 defina cómo se generan o atribuyen biografías e imágenes.",
-      "recommended": false
-    },
-    {
-      "title": "Cerrar por cambio de alcance",
-      "body": "Cerrar solo si producto decide que las páginas de autor no deben tener biografías largas específicas.",
+      "title": "Conservar un único texto atribuido",
+      "body": "Mantener `description` de Wikipedia con atribución tanto en el hero como en el bloque colapsable y descartar la segunda fuente editorial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recrear el cambio acotado",
-    "body": "Añadir `author.biography`, renderizarlo solo en `Sobre {Autor}` y cargar una bio propia revisada para Carlos Ruiz Zafón sin tocar `description`.",
+    "title": "Añadir biografía editorial separada",
+    "body": "Crear `biography` localizada con contenido basado en hechos autorizados y un proceso auditable de alta y actualización, manteniendo `description` atribuida como resumen.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Tiene el contexto reciente más claro sobre la decisión de licencias que condiciona la fuente del contenido.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona con trabajo fusionado más reciente en la UI, el modelo y la política de atribución de autores.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6914.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6914#issuecomment-4911149508",
-    "reviewedAt": "2026-07-08T16:28:09.394Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T21:37:20.025Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

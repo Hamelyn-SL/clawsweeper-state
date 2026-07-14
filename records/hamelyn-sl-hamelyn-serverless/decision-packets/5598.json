@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:31:43.489Z",
-  "updatedAt": "2026-07-08T10:25:33Z",
+  "generatedAt": "2026-07-14T21:22:08.591Z",
+  "updatedAt": "2026-07-14T15:59:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,48 +19,42 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 🐚 platinum hermit",
-      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-04-30T01:34:27Z",
-    "updatedAt": "2026-07-08T10:25:33Z"
+    "updatedAt": "2026-07-14T15:59:24Z"
   },
   "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "¿La recurrencia de Amazon ES corresponde a los mismos SKU reintentados antes de 24 horas, o a SKU distintos/reintentos esperados cuyo EAN sigue sin ASIN?",
-  "rationale": "El código actual implementa el cooldown, mientras que los comentarios prueban que la firma sigue apareciendo pero no enlazan cada SKU con su estado y timestamps; esa evidencia operativa determina si existe un bug de código o una limitación externa esperada.",
+  "question": "¿Exigimos una correlación por SKU que demuestre un retry anticipado o ausente antes de tratar esta señal como un bug residual de código?",
+  "rationale": "La implementación actual cumple el contrato de cooldown en fuente, mientras que los datos publicados solo prueban que la firma sigue apareciendo en producción y no que falle la recuperación del mismo stock.",
   "options": [
     {
-      "title": "Verificar recurrencia por SKU",
-      "body": "Cruzar logs y Mongo para medir el intervalo real por SKU antes de decidir cierre o reparación.",
+      "title": "Correlacionar por SKU",
+      "body": "Mantener abierta la canónica y obtener para varios SKU `lastUpdatedTimestamp`, intentos de `recover` y resultado después de 24 horas antes de autorizar código nuevo.",
       "recommended": true
     },
     {
-      "title": "Corregir fuga de cooldown",
-      "body": "Si un mismo SKU entra antes de 24 horas, reparar la selección o persistencia y añadir una regresión enfocada.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar limitación de catálogo",
-      "body": "Si el cooldown se cumple, documentar y aplicar una política explícita de exclusión o reintento lento para EAN sin ASIN.",
+      "title": "Tratar la firma como esperada",
+      "body": "Confirmar que los primeros fallos de EAN sin ASIN son comportamiento de catálogo esperado y limitar el seguimiento a reincidencias que incumplan el cooldown.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar recurrencia por SKU",
-    "body": "Cruzar logs y Mongo para medir el intervalo real por SKU antes de decidir cierre o reparación.",
+    "title": "Correlacionar por SKU",
+    "body": "Mantener abierta la canónica y obtener para varios SKU `lastUpdatedTimestamp`, intentos de `recover` y resultado después de 24 horas antes de autorizar código nuevo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el responsable asignado y el autor del retry exacto que debe contrastarse con la evidencia operativa.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre la clasificación `STALE`, la concurrencia y las consultas que determinan cuándo un stock vuelve a ser elegible.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5598.md",
-    "reviewedAt": "2026-07-14T15:31:43.489Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T21:22:08.591Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

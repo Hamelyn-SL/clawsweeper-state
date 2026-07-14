@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:44:50.357Z",
-  "updatedAt": "2026-06-23T08:00:06Z",
+  "generatedAt": "2026-07-14T21:20:57.322Z",
+  "updatedAt": "2026-07-08T09:37:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,37 +17,37 @@
       "epic:seo"
     ],
     "createdAt": "2026-05-28T05:49:21Z",
-    "updatedAt": "2026-06-23T08:00:06Z"
+    "updatedAt": "2026-07-08T09:37:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should this SEO audit epic remain open as the canonical tracker for the deferred/debated HAM audit buckets, or should it be closed now that the 12 created child issues are closed?",
-  "rationale": "The repository evidence proves the selected child work progressed, but the issue explicitly leaves multiple audit buckets deferred or unconfirmed and current dev lacks the referenced selection document, so automation cannot safely decide the product tracking boundary.",
+  "question": "¿Deben evaluarse y convertirse en seguimiento las 19 tareas del plan aún no creadas, o se consideran descartadas o diferidas fuera de este epic?",
+  "rationale": "El epic declara que estas tareas se evaluarían después, pero no existe una decisión posterior ni documentación versionada que cierre ese alcance.",
   "options": [
     {
-      "title": "Keep as SEO epic",
-      "body": "Leave this issue open and update it with the current owner decision for the remaining default-plan, debated, and unconfirmed HAM audit buckets.",
+      "title": "Completar el inventario",
+      "body": "Recuperar los 40 puntos, enlazar o crear seguimiento para los que sigan vigentes y documentar el descarte o aplazamiento del resto antes de cerrar el epic.",
       "recommended": true
     },
     {
-      "title": "Close as completed selection",
-      "body": "Close it manually if the owner confirms the 12 closed child issues plus documented exclusions exhaust the intended scope of this epic.",
+      "title": "Cerrar la selección actual",
+      "body": "Declarar expresamente fuera de alcance las tareas no creadas y preservar las decisiones restantes en una referencia versionada antes de cerrar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep as SEO epic",
-    "body": "Leave this issue open and update it with the current owner decision for the remaining default-plan, debated, and unconfirmed HAM audit buckets.",
+    "title": "Completar el inventario",
+    "body": "Recuperar los 40 puntos, enlazar o crear seguimiento para los que sigan vigentes y documentar el descarte o aplazamiento del resto antes de cerrar el epic.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is the current assignee and has recent ecommerce SEO/product metadata history in the affected area.",
+    "reason": "Es el assignee actual del epic y ha coordinado el cierre y la implementación de varias de sus superficies principales.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6109.md",
-    "reviewedAt": "2026-07-07T22:44:50.357Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T21:20:57.322Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

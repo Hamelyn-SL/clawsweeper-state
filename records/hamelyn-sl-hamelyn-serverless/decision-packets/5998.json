@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T21:23:30.702Z",
+  "updatedAt": "2026-07-08T09:37:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5998,
+    "title": "marketplace-crons: eBay withdrawOffer falla porque listingId llega undefined",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5998",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:confirmed-live",
+      "area:marketplace-sync"
+    ],
+    "createdAt": "2026-05-22T12:34:19Z",
+    "updatedAt": "2026-07-08T09:37:50Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿El deployment activo de `marketplace-crons` contiene `602efebc6522437dc8b30e2db76892018fb07dcb` y han cesado las ocurrencias de `withdrawOffer` con `path: listingId` después de ese despliegue?",
+  "rationale": "El código actual cubre el caso, pero existe una confirmación humana posterior de actividad en producción y no hay evidencia operativa posterior visible que permita resolver la contradicción automáticamente.",
+  "options": [
+    {
+      "title": "Verificar y cerrar",
+      "body": "Cerrar si el SHA desplegado contiene el fix y BigQuery no muestra nuevas ocurrencias posteriores.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener y aislar",
+      "body": "Mantener abierta y adjuntar SHA, stack y muestra reciente si la firma continúa con el fix desplegado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Verificar y cerrar",
+    "body": "Cerrar si el SHA desplegado contiene el fix y BigQuery no muestra nuevas ocurrencias posteriores.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está asignado a la issue, implementó el fix y aplicó la señal posterior `triage:confirmed-live`.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5998.md",
+    "reviewedAt": "2026-07-14T21:23:30.702Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:33:02.403Z",
-  "updatedAt": "2026-07-08T09:37:33Z",
+  "generatedAt": "2026-07-14T21:19:24.914Z",
+  "updatedAt": "2026-07-14T16:00:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,51 @@
       "codex",
       "bug",
       "priority:p1",
-      "app:marketplace"
+      "app:marketplace",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-08T00:34:01Z",
-    "updatedAt": "2026-07-08T09:37:33Z"
+    "updatedAt": "2026-07-14T16:00:00Z"
   },
   "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "¿Debe esta canónica seguir abierta como seguimiento de throttling recuperable hasta observar retries agotados, o se considera el warning aislado comportamiento esperado y se ajusta el watcher?",
-  "rationale": "El código ya se recupera y el arreglo anterior solo redujo una fuente de presión; decidir si el warning por sí mismo justifica más trabajo depende del umbral operativo que quiera mantener el equipo.",
+  "question": "¿Qué evidencia debe convertir los 429 recuperados de Catalog API en trabajo de ingeniería: una tasa sostenida, errores terminales o correlación por request/EAN con creates fallidos?",
+  "rationale": "El código ya recupera las muestras documentadas y Amazon puede responder 429 aun con un limitador local correcto; elegir el umbral aceptable requiere criterio operativo que no puede deducirse solo del repositorio.",
   "options": [
     {
-      "title": "Mantener la canónica con umbral terminal",
-      "body": "Conservarla abierta y actuar solo cuando aparezcan retries agotados, timeouts o correlación demostrada con fallos de creación.",
+      "title": "Definir umbral y monitorizar",
+      "body": "Mantener esta canónica y exigir una ventana fresca con tasa, errores terminales y correlación por request/EAN antes de cambiar el limitador.",
       "recommended": true
     },
     {
-      "title": "Cerrar y ajustar el watcher",
-      "body": "Tratar el primer `429` recuperado como comportamiento esperado y evitar que el watcher reabra la incidencia sin impacto terminal.",
+      "title": "Cerrar como retry esperado",
+      "body": "Cerrar mientras todos los 429 terminen en HTTP 200 y persistencia de ASINs, reabriendo solo ante un fallo terminal demostrado.",
       "recommended": false
     },
     {
-      "title": "Investigar coordinación distribuida ahora",
-      "body": "Patrocinar ya una investigación del rate limit entre invocaciones y marketplaces aunque todavía no haya fallo terminal probado.",
+      "title": "Coordinar cuota global ahora",
+      "body": "Priorizar un limitador distribuido por operación y marketplace aunque todavía no se haya cuantificado pérdida efectiva.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la canónica con umbral terminal",
-    "body": "Conservarla abierta y actuar solo cuando aparezcan retries agotados, timeouts o correlación demostrada con fallos de creación.",
+    "title": "Definir umbral y monitorizar",
+    "body": "Mantener esta canónica y exigir una ventana fresca con tasa, errores terminales y correlación por request/EAN antes de cambiar el limitador.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el assignee actual y autor del arreglo fusionado más reciente sobre esta incidencia.",
+    "reason": "Está asignado a la issue y es el autor del arreglo fusionado más directamente relacionado con la reducción de llamadas a Catalog API.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5745.md",
-    "reviewedAt": "2026-07-14T15:33:02.403Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T21:19:24.914Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

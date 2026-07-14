@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T06:46:05.716Z",
-  "updatedAt": "2026-07-10T06:26:12Z",
+  "generatedAt": "2026-07-14T21:32:10.841Z",
+  "updatedAt": "2026-07-10T06:47:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,51 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "issue-rating: 🌊 off-meta tidepool",
-      "P1",
-      "impact:other",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-23T17:18:57Z",
-    "updatedAt": "2026-07-10T06:26:12Z"
+    "updatedAt": "2026-07-10T06:47:12Z"
   },
-  "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿La épica de Revisión V3 debe seguir abierta hasta que todas las hijas restantes aterricen en `dev`, o queréis recortar explícitamente el alcance restante y cerrar el paraguas antes?",
-  "rationale": "La evidencia muestra trabajo real pendiente, pero parte de ese trabajo es decisión de producto, hardware y coordinación de rama de epic, no un fix autónomo de código.",
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se prepara ya la integración de `EPIC/revision-v3` en `dev`, y la analítica de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623 se considera requisito de ese merge o seguimiento posterior?",
+  "rationale": "La implementación funcional está concentrada y sin PRs abiertos en la rama épica, pero la rama está divergida y el único pendiente original requiere una frontera de producto antes de declarar V3 lista para `dev`.",
   "options": [
     {
-      "title": "Mantener el paraguas abierto",
-      "body": "Conserva esta issue como rastreador canónico hasta que las hijas abiertas se resuelvan o se descarten con una decisión visible.",
+      "title": "Abrir integración y diferir analítica",
+      "body": "Crear el PR de integración ahora, exigir validación completa del kiosk y conservar la analítica como seguimiento posterior explícito.",
       "recommended": true
     },
     {
-      "title": "Recortar el alcance restante",
-      "body": "Mueve analítica, hardware y trazabilidad a seguimiento independiente y cierra el paraguas solo tras documentar el recorte.",
+      "title": "Completar analítica antes del merge",
+      "body": "Mantener la épica en estabilización hasta acordar e implementar también el modelo de agregación de tiempos.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la integración",
+      "body": "Conservar la rama épica sin PR a `dev` hasta una nueva decisión de rollout, documentando el motivo y el criterio para retomarla.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el paraguas abierto",
-    "body": "Conserva esta issue como rastreador canónico hasta que las hijas abiertas se resuelvan o se descarten con una decisión visible.",
+    "title": "Abrir integración y diferir analítica",
+    "body": "Crear el PR de integración ahora, exigir validación completa del kiosk y conservar la analítica como seguimiento posterior explícito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Está asignado en la épica y tiene señal fuerte en las superficies Admin de Revisión V3.",
+    "reason": "Está asignado a la épica y tiene el historial más transversal entre flujo, configuración, historial, formación y correcciones del kiosk.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6617.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6617#issuecomment-4913157237",
-    "reviewedAt": "2026-07-10T06:46:05.716Z",
-    "mainSha": "08c8bb368c7fd5378ab82bc73cf1eba1a5ec857c"
+    "reviewedAt": "2026-07-14T21:32:10.841Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

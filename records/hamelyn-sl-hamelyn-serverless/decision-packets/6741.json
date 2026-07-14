@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T10:50:33.419Z",
-  "updatedAt": "2026-07-13T10:28:32Z",
+  "generatedAt": "2026-07-14T21:39:55.935Z",
+  "updatedAt": "2026-07-13T10:56:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,49 +18,43 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P2",
-      "impact:ux-friction",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-06-30T12:25:24Z",
-    "updatedAt": "2026-07-13T10:28:32Z"
+    "updatedAt": "2026-07-13T10:56:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué alcance debe entrar en la primera entrega de esta PDP: interlinking determinista primero, layout completo, o una separación explícita entre SEO/recomendaciones y UI visual?",
-  "rationale": "La petición combina comportamiento de ranking/caché con diseño y contenido nuevo; el código muestra piezas parciales, pero la frontera de producto y SEO no está cerrada para una reparación autónoma segura.",
+  "question": "¿Debe dividirse esta iniciativa en una entrega de layout/datos y otra de interlinking SEO con ranking, caché e invalidación?",
+  "rationale": "La petición combina una decisión visible de producto con reglas SEO y operativas de gran alcance; el plan de Ecommerce indica que no deben asumirse decisiones que no estén documentadas.",
   "options": [
     {
-      "title": "Fasear interlinking primero",
-      "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout visual para una segunda entrega.",
+      "title": "Dos entregas coordinadas",
+      "body": "Implementar primero layout, breadcrumb, autor y dimensiones, y abordar después los dos módulos SEO y su invalidación con un contrato ya aprobado.",
       "recommended": true
     },
     {
-      "title": "Rediseño completo en un PR grande",
-      "body": "Cubrir layout, autor, detalles físicos, migas y carruseles juntos, asumiendo más coste de QA y más riesgo de regresión en PDP.",
-      "recommended": false
-    },
-    {
-      "title": "Separar UI y SEO",
-      "body": "Mantener esta issue para layout/contenido y abrir o enlazar una tarea específica para ranking, caché e invalidación de interlinking.",
+      "title": "Entrega integral",
+      "body": "Diseñar, implementar y validar conjuntamente todo el alcance visual, de ranking, caché e invalidación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fasear interlinking primero",
-    "body": "Implementar primero los dos módulos server-side deterministas con deduplicación e invalidación por stock, dejando autor/detalles/layout visual para una segunda entrega.",
+    "title": "Dos entregas coordinadas",
+    "body": "Implementar primero layout, breadcrumb, autor y dimensiones, y abordar después los dos módulos SEO y su invalidación con un contrato ya aprobado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el assignee actual y puede decidir si coordina el alcance con ecommerce/SEO o lo reparte en fases.",
-    "confidence": "medium"
+    "reason": "Es el assignee actual y tiene historial reciente tanto en la PDP como en la lógica SEO asociada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6741.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6741#issuecomment-4910171087",
-    "reviewedAt": "2026-07-13T10:50:33.419Z",
-    "mainSha": "17bb5933d3797de3893e45ec21aa392fc5093e76"
+    "reviewedAt": "2026-07-14T21:39:55.935Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

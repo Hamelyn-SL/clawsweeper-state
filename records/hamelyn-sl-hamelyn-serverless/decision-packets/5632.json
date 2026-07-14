@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T21:32:09.585Z",
+  "updatedAt": "2026-07-14T15:59:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5632,
+    "title": "marketplace-crons: Amazon COM agota el límite de Vercel tras 800s",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:no-change",
+      "P1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "impact:crash-loop",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-05-03T01:34:14Z",
+    "updatedAt": "2026-07-14T15:59:44Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Hay trazas de fase suficientes para atribuir los timeouts recientes de Amazon COM a una operación concreta antes de autorizar una reparación?",
+  "rationale": "La fuente demuestra que el handler puede esperar hasta el límite, pero no identifica qué fase debe cancelarse; elegir un presupuesto global sin esa evidencia puede ocultar trabajo tardío o efectos parciales.",
+  "options": [
+    {
+      "title": "Exigir correlación de fase",
+      "body": "Recoger la última fase iniciada de varios `request_id` afectados y reparar esa operación con cancelación verificable.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar un presupuesto global",
+      "body": "Limitar el handler común aun asumiendo que las promesas subyacentes podrían continuar después de responder.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir correlación de fase",
+    "body": "Recoger la última fase iniciada de varios `request_id` afectados y reparar esa operación con cancelación verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona que mejor conecta la ruta Amazon, el handler compartido y la instrumentación de fases necesaria para resolver esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
+    "reviewedAt": "2026-07-14T21:32:09.585Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

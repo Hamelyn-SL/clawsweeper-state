@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:45:39.972Z",
-  "updatedAt": "2026-06-29T21:06:37Z",
+  "generatedAt": "2026-07-14T21:28:23.113Z",
+  "updatedAt": "2026-07-08T09:37:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,42 +19,37 @@
       "area:marketplace-sync"
     ],
     "createdAt": "2026-05-25T20:33:08Z",
-    "updatedAt": "2026-06-29T21:06:37Z"
+    "updatedAt": "2026-07-08T09:37:57Z"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "Has production `marketplace-crons` run with the merged missing-price fix, and do `Price must be defined` complete-failure logs still occur after that deployed build?",
-  "rationale": "The repository code contains the intended local guard, but the issue was reopened with post-merge live evidence and needs production deployment/log proof that is outside the checkout.",
+  "question": "¿Debe reactivarse ahora `ebay.create()` con el arreglo por SKU ya desplegado, o mantenerse pausado hasta disponer de una validación controlada contra eBay?",
+  "rationale": "El cambio de código está presente, pero activar el cron puede crear listings reales y la evidencia disponible no demuestra una ejecución posterior segura con la fase habilitada.",
   "options": [
     {
-      "title": "Verify deployed logs",
-      "body": "Confirm the deployed marketplace-crons build includes the fix and check fresh `/api/ebay` logs before closing or coding another change.",
+      "title": "Validar y reactivar",
+      "body": "Ejecutar un lote controlado con un SKU válido y otro sin precio, comprobar el resultado individual y reactivar la fase si no hay aborto global.",
       "recommended": true
     },
     {
-      "title": "Close if clean",
-      "body": "If fresh production logs after the deployed build have no `Price must be defined` complete-failure signature, close this as implemented by the merged fix.",
-      "recommended": false
-    },
-    {
-      "title": "Narrow a second fix",
-      "body": "If the signature persists after the deployed build, treat it as a remaining eBay create error path and open a focused follow-up against `bulkCreateOffer`/`createEbayProduct`.",
+      "title": "Mantener la pausa",
+      "body": "Conservar la creación desactivada y documentar el mecanismo operativo alternativo y el criterio concreto para reabrir el flujo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verify deployed logs",
-    "body": "Confirm the deployed marketplace-crons build includes the fix and check fresh `/api/ebay` logs before closing or coding another change.",
+    "title": "Validar y reactivar",
+    "body": "Ejecutar un lote controlado con un SKU válido y otro sin precio, comprobar el resultado individual y reactivar la fase si no hay aborto global.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "He owns the current assignment and authored the merged fix that needs deployment/live verification.",
+    "reason": "Es el assignee actual y el autor del arreglo específico que debe validarse antes de reactivar el cron.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
-    "reviewedAt": "2026-07-07T22:45:39.972Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T21:28:23.113Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

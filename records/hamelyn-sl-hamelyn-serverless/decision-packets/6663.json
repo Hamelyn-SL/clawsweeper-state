@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:31:01.217Z",
-  "updatedAt": "2026-07-08T09:39:00Z",
+  "generatedAt": "2026-07-14T21:32:35.886Z",
+  "updatedAt": "2026-07-14T16:01:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,46 @@
       "app:infrastructure",
       "reporter:PabloMoran34",
       "feature",
-      "triage:done"
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-25T07:29:25Z",
-    "updatedAt": "2026-07-08T09:39:00Z"
+    "updatedAt": "2026-07-14T16:01:07Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una migración en dos fases que mantenga inicialmente la ejecución en GitHub Actions y deje el feed de libros nuevos para después de materializar `newData.logista`?",
-  "rationale": "La elección determina el primer alcance desplegable, la frontera operativa entre workflows y Data Platform, y si se acepta algún fallback temporal a MongoDB.",
+  "question": "¿Qué frontera operativa debe adoptarse: conservar los GitHub Actions y sustituir solo la lectura por BigQuery, o trasladar también generación y programación a `apps/data-platform`?",
+  "rationale": "La elección afecta a credenciales, despliegue, propiedad operativa, cadencia de materialización y tamaño de los PRs; el código no determina por sí solo esa dirección.",
   "options": [
     {
-      "title": "Dos fases en workflows",
-      "body": "Migrar primero España, Estados Unidos y países internacionales, ampliar después `mongodata.products` y cortar finalmente libros nuevos.",
+      "title": "Migración por fases en Actions",
+      "body": "Mantener workflows, SFTP y formateadores actuales, sustituir primero la lectura de feeds usados y mover la ejecución solo si después aporta valor.",
       "recommended": true
     },
     {
-      "title": "Corte conjunto",
-      "body": "Esperar a completar la materialización de Logista y migrar los cuatro feeds en una única entrega coordinada.",
-      "recommended": false
-    },
-    {
-      "title": "Mover ejecución a Data Platform",
-      "body": "Rediseñar también el alojamiento y la propiedad operativa de los generadores antes de hacer el primer corte.",
+      "title": "Traslado completo a Data Platform",
+      "body": "Mover consultas, generación y scheduling a `apps/data-platform`, asumiendo una migración transversal y una validación operativa más amplia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dos fases en workflows",
-    "body": "Migrar primero España, Estados Unidos y países internacionales, ampliar después `mongodata.products` y cortar finalmente libros nuevos.",
+    "title": "Migración por fases en Actions",
+    "body": "Mantener workflows, SFTP y formateadores actuales, sustituir primero la lectura de feeds usados y mover la ejecución solo si después aporta valor.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Definió el programa transversal, documentó sus contratos operativos y también tiene historial directo en el feed de libros nuevos.",
+    "person": "PabloMoran34",
+    "reason": "Es el asignado actual y el contribuidor con mayor actividad reciente en Data Platform, por lo que está mejor situado para coordinar la frontera técnica con los propietarios de Merchant.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
-    "reviewedAt": "2026-07-14T15:31:01.217Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T21:32:35.886Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

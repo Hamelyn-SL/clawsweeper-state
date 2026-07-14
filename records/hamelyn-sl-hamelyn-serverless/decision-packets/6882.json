@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T12:08:16.299Z",
-  "updatedAt": "2026-07-12T11:50:37Z",
+  "generatedAt": "2026-07-14T21:34:12.825Z",
+  "updatedAt": "2026-07-12T12:09:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,53 +16,47 @@
       "reporter:JavierHamelyn",
       "triage:done",
       "P1",
-      "impact:crash-loop",
-      "impact:message-loss",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "impact:crash-loop",
+      "impact:message-loss"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-12T11:50:37Z"
+    "updatedAt": "2026-07-12T12:09:06Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué clusters restantes deben convertirse en canónicas estrechas y cuáles deben quedar como acciones operativas fuera de código?",
-  "rationale": "La issue mezcla fixes de código, límites de Vercel, rate limits, errores externos y tareas de operador; automatizar un único arreglo no preserva ownership ni validación por superficie.",
+  "question": "Para los 429 sostenidos de eDesk, ¿debe persistirse la incidencia en una cola durable antes de confirmar el envío al cliente, o se acepta el fallo tras agotar reintentos acotados?",
+  "rationale": "El retry ya fusionado reduce fallos transitorios, pero no garantiza la conservación de la incidencia ante un rate limit prolongado; elegir durabilidad, respuesta al cliente y operativa de recuperación requiere una decisión explícita.",
   "options": [
     {
-      "title": "Desglosar por cluster restante",
-      "body": "Crear o enlazar issues canónicas para Serper, eDesk 429/persistencia, carrito, `priceBuy`, admin 500 y acciones operativas, manteniendo este paraguas como índice hasta cerrar el mapa.",
+      "title": "Persistir antes de confirmar",
+      "body": "Guardar la incidencia de forma durable y procesarla asíncronamente evita pérdidas durante rate limits prolongados y permite recuperación observable.",
       "recommended": true
     },
     {
-      "title": "Cerrar tras los P1 ya corregidos",
-      "body": "Cerraría el paraguas por avance parcial, pero dejaría sin seguimiento explícito varios clusters activos mencionados en la foto fresca.",
-      "recommended": false
-    },
-    {
-      "title": "Intentar un PR único",
-      "body": "Un único PR cruzaría demasiados workspaces y haría la validación de producción más frágil.",
+      "title": "Mantener reintentos acotados",
+      "body": "Conservar el flujo síncrono limita la complejidad, pero acepta que algunas incidencias se pierdan cuando eDesk permanece limitado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desglosar por cluster restante",
-    "body": "Crear o enlazar issues canónicas para Serper, eDesk 429/persistencia, carrito, `priceBuy`, admin 500 y acciones operativas, manteniendo este paraguas como índice hasta cerrar el mapa.",
+    "title": "Persistir antes de confirmar",
+    "body": "Guardar la incidencia de forma durable y procesarla asíncronamente evita pérdidas durante rate limits prolongados y permite recuperación observable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el assignee, aportó la actualización fresca de BigQuery y ya está coordinando los primeros fixes P1.",
+    "person": "MiguelHamelyn",
+    "reason": "Implementó el retry actual de eDesk y es el propietario histórico más cercano al comportamiento que debe evolucionar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-12T12:08:16.299Z",
-    "mainSha": "16fef08a90ae778ae4457ed6b919fe1d3ace1a0c"
+    "reviewedAt": "2026-07-14T21:34:12.825Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

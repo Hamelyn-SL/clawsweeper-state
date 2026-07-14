@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T06:36:39.809Z",
-  "updatedAt": "2026-07-10T06:26:24Z",
+  "generatedAt": "2026-07-14T21:30:35.914Z",
+  "updatedAt": "2026-07-10T06:39:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-23T17:19:08Z",
-    "updatedAt": "2026-07-10T06:26:24Z"
+    "updatedAt": "2026-07-10T06:39:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La agregación de Revisión V3 debe sellar `reviewerEmail` en cada sesión/step o aceptar `orders.reviewer` como fuente de operario para el mart diario?",
-  "rationale": "La elección cambia el contrato persistido y la semántica del agregado por operario/día; no es una reparación mecánica que ClawSweeper deba decidir por su cuenta.",
+  "question": "¿Debe el contrato final de `ReviewStep` volver a sellar `phase` y `reviewerEmail` por evento, o se acepta derivar esas dimensiones desde el flujo y la traza final del producto?",
+  "rationale": "El contrato actual ha eliminado `phase` y solo registra el reviewer al finalizar el producto; ninguna implementación automática puede elegir con seguridad si esa pérdida de detalle es intencionada o incompatible con la analítica solicitada.",
   "options": [
     {
-      "title": "Sellar reviewer en la sesión/step",
-      "body": "Añade identidad explícita al grano analítico y evita ambigüedad si un lote cambia de operario o se reanuda.",
+      "title": "Sellar fase y operario por step",
+      "body": "Añadir dimensiones estables a cada evento permite agregados deterministas, sesiones reanudadas y recomputación histórica sin depender del orden de pantallas.",
       "recommended": true
     },
     {
-      "title": "Usar `orders.reviewer` como fuente",
-      "body": "Reduce cambios de contrato ahora, pero el agregado hereda la suposición de un único operario por lote.",
+      "title": "Derivar desde flujo y producto",
+      "body": "Mantener steps mínimos reduce almacenamiento, pero obliga a reconstruir fase y operario mediante supuestos frágiles sobre secuencia y último reviewer.",
       "recommended": false
     },
     {
-      "title": "Aplazar la analítica",
-      "body": "Mantiene solo `opProductivity` hasta que Revisión V3 llegue a `dev` y haya datos reales para validar el modelo.",
+      "title": "Reducir el alcance analítico",
+      "body": "Limitar la feature a tiempo total por producto u operario evita cambiar el contrato, pero renuncia al análisis solicitado de dónde se va el tiempo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sellar reviewer en la sesión/step",
-    "body": "Añade identidad explícita al grano analítico y evita ambigüedad si un lote cambia de operario o se reanuda.",
+    "title": "Sellar fase y operario por step",
+    "body": "Añadir dimensiones estables a cada evento permite agregados deterministas, sesiones reanudadas y recomputación histórica sin depender del orden de pantallas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el mejor candidato por el historial de backend/datos de Revisión V3 y `opProductivity`.",
+    "reason": "Es la persona más vinculada al contrato backend de sesión y al cambio que retiró `phase`, por lo que dispone del mejor contexto para validar si debe recuperarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6623.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623#issuecomment-4932689420",
-    "reviewedAt": "2026-07-10T06:36:39.809Z",
-    "mainSha": "fbd4b55db934eeae5175d1c95f53b976aa46f86b"
+    "reviewedAt": "2026-07-14T21:30:35.914Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

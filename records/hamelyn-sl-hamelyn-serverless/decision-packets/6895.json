@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:28:19.887Z",
-  "updatedAt": "2026-07-08T10:12:40Z",
+  "generatedAt": "2026-07-14T21:39:34.086Z",
+  "updatedAt": "2026-07-08T16:35:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,48 +19,47 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🌊 off-meta tidepool",
       "P3",
+      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-07-08T10:12:40Z"
+    "updatedAt": "2026-07-08T16:35:04Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe esta issue seguir siendo el paraguas de Supply, o debe reescribirse/sustituirse por issues de bloque de Buying, Shipping y Warehouse?",
-  "rationale": "El código actual ya cubre partes del antiguo dominio Supply bajo otras carpetas BL, pero decidir la taxonomía permanente y qué bloques quedan pendientes es una decisión de dominio, no un arreglo mecánico.",
+  "question": "¿En qué dominio BL canónico deben vivir los restos de B2B e incidencias antes de actualizar esta épica?",
+  "rationale": "La mayoría del alcance ya se trasladó a `buying`, pero el repositorio no define una frontera inequívoca para esos dos bloques; crear directamente `docs/business-logic/supply/` podría duplicar fuentes de verdad.",
   "options": [
     {
-      "title": "Mantener y actualizar el paraguas",
-      "body": "Actualizar el checklist con enlaces a los bloques ya cerrados y dejar explícitos los bloques Supply/Warehouse pendientes.",
+      "title": "Absorber en Buying",
+      "body": "Crear bloques `buying/b2b` y `buying/incidents`, o equivalentes, y utilizar esta épica como índice hasta completarlos.",
       "recommended": true
     },
     {
-      "title": "Sustituir por issues estrechas",
-      "body": "Crear o identificar issues canónicas por bloque restante y cerrar esta issue solo cuando esos enlaces preserven el contexto.",
+      "title": "Conservar Supply residual",
+      "body": "Mantener `supply` únicamente para B2B e incidencias, documentando expresamente sus fronteras con `buying` y `shipping`.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta cerrar más bloques",
-      "body": "Esperar a que aterricen los bloques BL relacionados y reevaluar después si el paraguas aún aporta coordinación.",
+      "title": "Separar responsabilidades",
+      "body": "Ubicar B2B e incidencias en dominios distintos si sus responsables y ciclos de cambio no coinciden.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener y actualizar el paraguas",
-    "body": "Actualizar el checklist con enlaces a los bloques ya cerrados y dejar explícitos los bloques Supply/Warehouse pendientes.",
+    "title": "Absorber en Buying",
+    "body": "Crear bloques `buying/b2b` y `buying/incidents`, o equivalentes, y utilizar esta épica como índice hasta completarlos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Abrió la issue y versionó la skill que define el flujo BL, así que es el mejor owner disponible para decidir la taxonomía del paraguas.",
+    "reason": "Es el autor de la épica y del pipeline BL, y la señal histórica más directa para validar la taxonomía del alcance restante.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-07-08T16:28:19.887Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T21:39:34.086Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

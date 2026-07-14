@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:35:26.771Z",
-  "updatedAt": "2026-07-08T10:25:31Z",
+  "generatedAt": "2026-07-14T21:29:44.714Z",
+  "updatedAt": "2026-07-14T15:59:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,47 +23,46 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
-    "updatedAt": "2026-07-08T10:25:31Z"
+    "updatedAt": "2026-07-14T15:59:29Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la primera fase mantener HTTP 200 para todos los parciales y añadir solo señal estructurada, o deben algunas rutas o severidades elevar ya 207/5xx?",
-  "rationale": "La fuente confirma el defecto de observabilidad, pero no permite deducir qué fallos parciales son tolerables según negocio; una decisión global puede cambiar reintentos, alertas y compatibilidad de numerosos crons.",
+  "question": "¿Debe la primera fase conservar HTTP 200 por defecto y añadir solo señal estructurada, o debe elevar ya 207/5xx para severidades o rutas seleccionadas?",
+  "rationale": "La fuente confirma el problema de observabilidad, pero no permite deducir qué fallos parciales son tolerables según cada flujo de negocio; una decisión global puede cambiar reintentos, alertas y compatibilidad de 39 rutas.",
   "options": [
     {
       "title": "Señal compatible primero",
-      "body": "Añadir el contrato estructurado en ambos handlers, conservar HTTP 200 por defecto y posponer 207/5xx hasta clasificar rutas y severidades.",
+      "body": "Añadir `status`, recuentos, razones sanitizadas y `severity` en ambos handlers, manteniendo HTTP 200 por defecto hasta clasificar las rutas.",
       "recommended": true
     },
     {
       "title": "Elevación selectiva inicial",
-      "body": "Añadir el contrato estructurado y declarar desde la primera entrega una lista reducida de rutas o severidades que devuelvan 207/5xx.",
+      "body": "Añadir la señal estructurada y declarar desde la primera entrega una lista acotada de rutas o severidades que respondan 207/5xx.",
       "recommended": false
     },
     {
       "title": "Fallo global estricto",
-      "body": "Hacer que cualquier rechazo parcial cambie inmediatamente el estado HTTP para todos los consumidores del handler compartido.",
+      "body": "Hacer que cualquier rechazo parcial cambie inmediatamente el estado HTTP de todos los consumidores del handler compartido.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Señal compatible primero",
-    "body": "Añadir el contrato estructurado en ambos handlers, conservar HTTP 200 por defecto y posponer 207/5xx hasta clasificar rutas y severidades.",
+    "body": "Añadir `status`, recuentos, razones sanitizadas y `severity` en ambos handlers, manteniendo HTTP 200 por defecto hasta clasificar las rutas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien más recientemente ha trabajado tanto el contrato común de rutas como la observabilidad por fase y además ha desarrollado el análisis de política de esta issue.",
+    "reason": "Es la persona con trabajo más reciente tanto en el contrato común de rutas como en la observabilidad por fase, además de haber desarrollado el análisis de política de esta issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
-    "reviewedAt": "2026-07-14T15:35:26.771Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T21:29:44.714Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
