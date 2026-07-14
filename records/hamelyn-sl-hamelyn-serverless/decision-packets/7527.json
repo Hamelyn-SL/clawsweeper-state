@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:58:49.996Z",
+  "updatedAt": "2026-07-14T10:46:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7527,
+    "title": "🐛 Dropshipping: un fallo de parseo de azeta/arnoia marca el OrderSell como TO_CANCEL",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "priority:p2",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-14T09:49:02Z",
+    "updatedAt": "2026-07-14T10:46:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué estado y SLA deben representar una confirmación dropshipping ambigua, y qué garantía de idempotencia o reconciliación se exige antes de reintentar automáticamente en Azeta y Arnoia?",
+  "rationale": "El código confirma el defecto, pero decidir el nuevo estado, su vencimiento y cuándo se puede repetir una creación externa afecta al contrato operativo y puede duplicar pedidos al proveedor.",
+  "options": [
+    {
+      "title": "Estado pendiente con revisión segura",
+      "body": "Introducir `PENDING_PROVIDER_CONFIRMATION`, alertar y reconciliar manualmente hasta disponer de una garantía de deduplicación del proveedor.",
+      "recommended": true
+    },
+    {
+      "title": "Reintento automático condicionado",
+      "body": "Añadir reintentos solo para proveedores que acepten una referencia idempotente o permitan consultar el pedido por referencia local.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener cancelación inmediata",
+      "body": "Conservar `TO_CANCEL` para toda excepción, aceptando cancelaciones falsas para evitar pedidos externos duplicados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Estado pendiente con revisión segura",
+    "body": "Introducir `PENDING_PROVIDER_CONFIRMATION`, alertar y reconciliar manualmente hasta disponer de una garantía de deduplicación del proveedor.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con mayor continuidad histórica en la introducción y el mantenimiento del ciclo de vida dropshipping.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
+    "reviewedAt": "2026-07-14T10:58:49.996Z",
+    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
+  }
+}

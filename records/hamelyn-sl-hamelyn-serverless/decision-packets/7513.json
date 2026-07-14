@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T09:41:12.559Z",
-  "updatedAt": "2026-07-14T09:21:57Z",
+  "generatedAt": "2026-07-14T10:52:43.337Z",
+  "updatedAt": "2026-07-14T10:12:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "app:infrastructure",
       "feature",
       "reporter:danielmenchen-hamelyn",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T08:32:59Z",
-    "updatedAt": "2026-07-14T09:21:57Z"
+    "updatedAt": "2026-07-14T10:12:14Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué PRs y autores pueden ejecutar código de su rama en el resolver automático antes de permitir un push sobre el head?",
-  "rationale": "La decisión define la exposición a código no confiable y si una credencial de escritura puede compartir entorno con scripts procedentes del PR.",
+  "question": "¿Qué PRs y autores pueden ejecutar código dentro del sandbox y bajo qué controles puede el resolver pushear a sus ramas?",
+  "rationale": "La funcionalidad cruza una frontera de seguridad al ejecutar código procedente de ramas de PR y disponer de autenticación capaz de mutarlas, por lo que el alcance permitido requiere una decisión explícita de Infraestructura.",
   "options": [
     {
-      "title": "Solo PRs internos",
-      "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores aprobados, con `enabled=false` y `dry_run=true` durante la validación inicial.",
+      "title": "Solo ramas internas confiables",
+      "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores autorizados, con kill-switch y `dry_run` activados por defecto.",
       "recommended": true
     },
     {
-      "title": "Solo diagnóstico",
-      "body": "Detectar y explicar conflictos sin ejecutar validaciones de la rama ni modificar el head del PR.",
+      "title": "Admitir forks con aislamiento reforzado",
+      "body": "Incluir PRs externos solo tras separar secretos, restringir permisos y demostrar que el código no confiable no puede exfiltrar credenciales ni alterar ramas sin autorización.",
       "recommended": false
     },
     {
-      "title": "Incluir forks",
-      "body": "Diseñar primero una fase de ejecución sin secretos y una separación estricta entre sandbox y controlador antes de admitir ramas externas.",
+      "title": "Automatizar solo el diagnóstico",
+      "body": "Permitir detección, comentarios y labels automáticos, manteniendo la resolución y el push como pasos humanos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo PRs internos",
-    "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores aprobados, con `enabled=false` y `dry_run=true` durante la validación inicial.",
+    "title": "Solo ramas internas confiables",
+    "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores autorizados, con kill-switch y `dry_run` activados por defecto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el propietario histórico más claro del runner cloud y de sus límites operativos, de cola y de credenciales.",
+    "reason": "Presenta la señal histórica más fuerte sobre `apps/agents`, el triage cloud y los sandboxes que sustentan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513#issuecomment-4967152411",
-    "reviewedAt": "2026-07-14T09:41:12.559Z",
-    "mainSha": "0969519c14acc6d65fa272019b7fe211c7087a2e"
+    "reviewedAt": "2026-07-14T10:52:43.337Z",
+    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
   }
 }
