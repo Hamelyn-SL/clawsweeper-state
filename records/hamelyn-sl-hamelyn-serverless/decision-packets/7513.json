@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T09:34:25.410Z",
+  "updatedAt": "2026-07-14T09:21:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7513,
+    "title": "Auto-resolución de conflictos de PRs contra dev con agente cloud en apps/agents",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-07-14T08:32:59Z",
+    "updatedAt": "2026-07-14T09:21:57Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué PRs y autores pueden ejecutar código de su rama en el resolver automático antes de permitir un push sobre el head?",
+  "rationale": "La respuesta define la exposición a código no confiable y si una credencial de escritura puede entrar en el mismo entorno que ejecuta scripts procedentes del PR.",
+  "options": [
+    {
+      "title": "Solo PRs internos",
+      "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores aprobados, con `enabled=false` y `dry_run=true` durante la validación inicial.",
+      "recommended": true
+    },
+    {
+      "title": "Solo diagnóstico",
+      "body": "Detectar y explicar conflictos sin ejecutar validaciones de la rama ni modificar el head del PR.",
+      "recommended": false
+    },
+    {
+      "title": "Incluir forks",
+      "body": "Diseñar primero una fase de ejecución sin secretos y una separación estricta entre sandbox y controlador antes de admitir ramas externas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solo PRs internos",
+    "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores aprobados, con `enabled=false` y `dry_run=true` durante la validación inicial.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el propietario histórico más claro del runner cloud y de sus límites operativos y de credenciales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
+    "reviewedAt": "2026-07-14T09:34:25.410Z",
+    "mainSha": "0969519c14acc6d65fa272019b7fe211c7087a2e"
+  }
+}
