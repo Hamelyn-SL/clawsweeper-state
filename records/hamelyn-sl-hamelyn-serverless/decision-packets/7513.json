@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T09:34:25.410Z",
+  "generatedAt": "2026-07-14T09:41:12.559Z",
   "updatedAt": "2026-07-14T09:21:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,14 +13,7 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "reporter:danielmenchen-hamelyn",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-07-14T08:32:59Z",
     "updatedAt": "2026-07-14T09:21:57Z"
@@ -28,7 +21,7 @@
   "lane": "security_boundary",
   "priority": "P2",
   "question": "¿Qué PRs y autores pueden ejecutar código de su rama en el resolver automático antes de permitir un push sobre el head?",
-  "rationale": "La respuesta define la exposición a código no confiable y si una credencial de escritura puede entrar en el mismo entorno que ejecuta scripts procedentes del PR.",
+  "rationale": "La decisión define la exposición a código no confiable y si una credencial de escritura puede compartir entorno con scripts procedentes del PR.",
   "options": [
     {
       "title": "Solo PRs internos",
@@ -53,13 +46,12 @@
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el propietario histórico más claro del runner cloud y de sus límites operativos y de credenciales.",
+    "reason": "Es el propietario histórico más claro del runner cloud y de sus límites operativos, de cola y de credenciales.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513#issuecomment-4967152411",
-    "reviewedAt": "2026-07-14T09:34:25.410Z",
+    "reviewedAt": "2026-07-14T09:41:12.559Z",
     "mainSha": "0969519c14acc6d65fa272019b7fe211c7087a2e"
   }
 }
