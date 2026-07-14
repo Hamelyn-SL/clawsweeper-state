@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T22:26:42.308Z",
-  "updatedAt": "2026-07-13T21:29:59Z",
+  "generatedAt": "2026-07-14T00:08:34.970Z",
+  "updatedAt": "2026-07-13T22:48:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 automation",
-      "merge-risk: 🚨 compatibility",
+      "P1",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P1",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 auth-provider"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
-    "updatedAt": "2026-07-13T21:29:59Z",
-    "headSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
+    "updatedAt": "2026-07-13T22:48:54Z",
+    "headSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe promoverse ahora a producción la retirada incompatible de `atctoken` y el nuevo comportamiento fail-closed del token OAuth de Codex?",
-  "rationale": "El código permite entender el comportamiento, pero no confirma si quedan consumidores M2M legacy ni si el procedimiento de re-seed está probado y disponible durante el despliegue.",
+  "question": "¿Debe este release retirar ya el bypass `atctoken` y asumir el modo fail-closed del token OAuth de Codex, o deben aplazarse esos cambios hasta demostrar la migración y la recuperación operativa?",
+  "rationale": "La compatibilidad de integraciones externas y la aceptación del fallo cerrado son decisiones operativas de producción que el código, los previews y CI no pueden resolver por sí solos.",
   "options": [
     {
-      "title": "Validar antes de promover",
-      "body": "Corregir el workflow y demostrar la actualización Auth0/PAT y la recuperación OAuth antes del merge a producción.",
+      "title": "Corregir, probar y desplegar",
+      "body": "Mantener ambos cambios después de reparar el workflow y aportar prueba operativa del head exacto, incluida la migración de auth y el procedimiento de re-seed.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo operativo",
-      "body": "Promover el lote únicamente si operaciones confirma que no quedan consumidores de `atctoken` y que puede ejecutar un re-seed inmediato.",
+      "title": "Aplazar cambios sensibles",
+      "body": "Reconstruir temporalmente el release sin la retirada de `atctoken` o sin el cambio OAuth hasta completar la validación operativa.",
       "recommended": false
     },
     {
-      "title": "Reducir el lote",
-      "body": "Posponer los cambios sensibles y promover solo los componentes que puedan validarse con seguridad en esta ventana.",
+      "title": "Aceptar el riesgo ahora",
+      "body": "Promover el release documentando expresamente la posible rotura de integraciones externas y la recuperación manual mediante re-seed.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar antes de promover",
-    "body": "Corregir el workflow y demostrar la actualización Auth0/PAT y la recuperación OAuth antes del merge a producción.",
+    "title": "Corregir, probar y desplegar",
+    "body": "Mantener ambos cambios después de reparar el workflow y aportar prueba operativa del head exacto, incluida la migración de auth y el procedimiento de re-seed.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Integró el lote y es el autor reciente de los dos cambios cuya inclusión requiere la decisión operativa.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Es el mejor candidato disponible por su historial recurrente gestionando las promociones automatizadas de `dev` a producción.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-13T22:26:42.308Z",
-    "mainSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
+    "reviewedAt": "2026-07-14T00:08:34.970Z",
+    "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
   }
 }
