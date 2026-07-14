@@ -13,6 +13,7 @@
       "app:supply",
       "priority:p1",
       "feature",
+      "triage:queued",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "P2",
@@ -50,6 +51,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7464.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7464#issuecomment-4957204041",
     "reviewedAt": "2026-07-14T10:25:12.694Z",
     "mainSha": "4c4a8ab30b3f67ec20f74e724a70d50341a05083"
   }
