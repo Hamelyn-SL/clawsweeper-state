@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T08:08:32.858Z",
-  "updatedAt": "2026-07-10T07:42:31Z",
+  "generatedAt": "2026-07-14T06:27:38.215Z",
+  "updatedAt": "2026-07-14T06:20:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,52 @@
       "priority:p1",
       "reporter:jesus",
       "feature",
-      "triage:no-change",
+      "triage:running",
       "P1",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-10T07:42:31Z"
+    "updatedAt": "2026-07-14T06:20:20Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Debe el catálogo público expandir ahora la ventana SEO a 30.000 productos, o debe conservarse la ventana real de 500 resultados y ajustar la API como plantea `https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7150`?",
-  "rationale": "Hay dos issues abiertas con direcciones incompatibles, y la elección afecta a SEO, coste de Atlas Search, latencia, caché y specs de BL; no es una reparación técnica que ClawSweeper deba elegir en silencio.",
+  "priority": "P2",
+  "question": "Tras la decisión fusionada el 13 de julio de 2026 de mantener una ventana real de 500, ¿debe reabrirse esa regla BL para ejecutar la fase SEO de 30.000 resultados?",
+  "rationale": "La petición contradice una decisión BL muy reciente y altera coste, latencia, caché y comportamiento de crawlers; el repositorio no puede elegir entre ambas políticas mediante una reparación automática.",
   "options": [
     {
-      "title": "Aprobar fase SEO de 30.000",
-      "body": "Implementar el aumento coordinado y reorientar o cerrar la issue opuesta para dejar una dirección de producto única.",
+      "title": "Mantener 500 y cerrar",
+      "body": "Conservar la regla BL fusionada y cerrar esta petición dejando documentada la contrapartida SEO aceptada.",
       "recommended": true
     },
     {
-      "title": "Mantener ventana de 500",
-      "body": "Usar la issue BL opuesta como canonical técnica y documentar aquí la contrapartida SEO aceptada por producto.",
+      "title": "Aprobar piloto gradual",
+      "body": "Reabrir la regla BL y aumentar la ventana por escalones, con benchmark, métricas SEO y rollback antes de cada incremento.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta F2 de BL",
-      "body": "Esperar a la validación formal de Public Catalog antes de tocar límites compartidos de búsqueda y paginación.",
+      "title": "Aprobar 30.000 directamente",
+      "body": "Actualizar conjuntamente búsqueda, caché, paginación y specs, asumiendo desde el despliegue inicial el incremento operativo completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar fase SEO de 30.000",
-    "body": "Implementar el aumento coordinado y reorientar o cerrar la issue opuesta para dejar una dirección de producto única.",
+    "title": "Mantener 500 y cerrar",
+    "body": "Conservar la regla BL fusionada y cerrar esta petición dejando documentada la contrapartida SEO aceptada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el owner nombrado del bloque Public Catalog y abrió la issue relacionada que expresa la alternativa de 500 resultados.",
+    "reason": "Es el owner declarado de Public Catalog y el autor principal de la regla BL vigente y de su último cambio de comportamiento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604#issuecomment-4910069554",
-    "reviewedAt": "2026-07-10T08:08:32.858Z",
-    "mainSha": "219124864d44219ad43d9810e111a90ffd8e3fd1"
+    "reviewedAt": "2026-07-14T06:27:38.215Z",
+    "mainSha": "9c70224079f5c6db7b7f6873138c02133f74e7ac"
   }
 }
