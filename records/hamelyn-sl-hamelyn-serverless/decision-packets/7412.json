@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T06:03:39.288Z",
-  "updatedAt": "2026-07-13T05:50:48Z",
+  "generatedAt": "2026-07-14T14:31:37.360Z",
+  "updatedAt": "2026-07-14T12:35:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,46 @@
       "priority:p2",
       "app:marketplace",
       "feature",
-      "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-13T05:31:29Z",
-    "updatedAt": "2026-07-13T05:50:48Z"
+    "updatedAt": "2026-07-14T12:35:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Marketplace priorizar ahora el alta completa de `AMAZON_IT`, o mantenerla planificada hasta que estén listos los gates operativos de datos/config?",
-  "rationale": "La forma técnica está clara, pero activar un marketplace completo cambia sincronización, pricing, pedidos y operación; hace falta coordinación humana porque la issue ya está asignada y depende de pasos externos al repo.",
+  "question": "¿Se aprueba activar Amazon Italia como canal completo ahora, resolviendo el conflicto del PR y coordinando los gates externos en una ventana operativa monitorizada?",
+  "rationale": "La implementación habilita pedidos, stock y precios sobre credenciales y cuotas SP-API compartidas, y su activación depende de infraestructura y configuración externas que requieren decisión humana.",
   "options": [
     {
-      "title": "Planificar alta coordinada",
-      "body": "Mantener esta issue abierta y ejecutar una PR de código junto con tabla BQ, índices, config, seed, reconciliación y deduplicación antes del primer `processOrders`.",
+      "title": "Activación coordinada",
+      "body": "Resolver el conflicto conservando el comportamiento actual de `dev`, completar los gates externos y activar el canal con monitorización del primer ciclo.",
       "recommended": true
     },
     {
-      "title": "Preparar código sin activar pedidos",
-      "body": "Añadir enums, registry y capa de datos, pero dejar cron/procesado desactivado hasta que los gates externos estén completos.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el canal",
-      "body": "No tocar código todavía y revisar la prioridad cuando Marketplace confirme capacidad operativa para Italia.",
+      "title": "Pausar el alta",
+      "body": "Mantener issue y PR abiertos hasta disponer de infraestructura, configuración y capacidad operativa para una activación segura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificar alta coordinada",
-    "body": "Mantener esta issue abierta y ejecutar una PR de código junto con tabla BQ, índices, config, seed, reconciliación y deduplicación antes del primer `processOrders`.",
+    "title": "Activación coordinada",
+    "body": "Resolver el conflicto conservando el comportamiento actual de `dev`, completar los gates externos y activar el canal con monitorización del primer ciclo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la issue y aparece en el historial reciente del patrón equivalente de Amazon MX y del registry.",
+    "reason": "Es la persona asignada y quien ha liderado el registry y las altas recientes de la familia Amazon.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7412.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7412#issuecomment-4954837339",
-    "reviewedAt": "2026-07-13T06:03:39.288Z",
-    "mainSha": "fb7384330fc78b73a5fb40058023be0075c3b9b1"
+    "reviewedAt": "2026-07-14T14:31:37.360Z",
+    "mainSha": "8512d2e10c06a4ddc052bc7f2f1c3e77ff3e68ce"
   }
 }
