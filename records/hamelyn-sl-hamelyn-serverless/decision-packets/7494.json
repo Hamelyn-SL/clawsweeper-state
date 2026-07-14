@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T07:00:41.891Z",
-  "updatedAt": "2026-07-14T06:43:26Z",
+  "generatedAt": "2026-07-14T08:30:03.196Z",
+  "updatedAt": "2026-07-14T08:18:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,41 +15,45 @@
       "app:infrastructure",
       "reporter:MiguelHamelyn",
       "feature",
-      "triage:done"
+      "triage:queued"
     ],
     "createdAt": "2026-07-14T06:43:16Z",
-    "updatedAt": "2026-07-14T06:43:26Z"
+    "updatedAt": "2026-07-14T08:18:20Z"
   },
-  "lane": "security_boundary",
-  "priority": "P2",
-  "question": "¿Aprobamos una primera política en modo observación con umbrales conservadores, allowlist canónica de crawlers y muestras de IP enmascaradas antes de activar las alertas recurrentes?",
-  "rationale": "La selección de umbrales, excepciones de crawlers y tratamiento de IPs determina el límite entre observabilidad útil, falsos positivos y exposición innecesaria de datos; no puede resolverse únicamente desde el código actual.",
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe mantenerse la detección cada 15 minutos con ventana corta, como pide la issue, o aceptarse el análisis diario de 24 horas propuesto por el PR?",
+  "rationale": "La elección modifica la latencia de detección, el volumen de datos consultado, el coste operativo y la probabilidad de ruido; el código no puede decidir por sí solo qué compromiso quiere asumir el equipo.",
   "options": [
     {
-      "title": "Observación conservadora",
-      "body": "Empezar con umbrales altos, allowlist explícita, IPs enmascaradas y ninguna acción automática, revisando incidentes antes de aumentar sensibilidad.",
+      "title": "Mantener 15 minutos",
+      "body": "Conservar la aceptación original con consultas acotadas y deduplicación robusta para detectar bursts mientras siguen activos.",
       "recommended": true
     },
     {
-      "title": "Detección sensible",
-      "body": "Usar umbrales más bajos y muestras operativas más detalladas para detectar antes los bursts, aceptando más falsos positivos y mayor exposición en Slack.",
+      "title": "Aceptar ejecución diaria",
+      "body": "Actualizar explícitamente la aceptación y asumir que el watcher sirve para análisis retrospectivo, no para respuesta operativa cercana al incidente.",
+      "recommended": false
+    },
+    {
+      "title": "Usar una cadencia intermedia",
+      "body": "Calibrar una frecuencia horaria o similar con datos reales y documentar el umbral de coste y latencia aceptado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Observación conservadora",
-    "body": "Empezar con umbrales altos, allowlist explícita, IPs enmascaradas y ninguna acción automática, revisando incidentes antes de aumentar sensibilidad.",
+    "title": "Mantener 15 minutos",
+    "body": "Conservar la aceptación original con consultas acotadas y deduplicación robusta para detectar bursts mientras siguen activos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha definido el objetivo operativo y mantiene el tratamiento reciente de tráfico bot en ecommerce; `JavierHamelyn` sería el referente técnico para integrarlo en Horus.",
+    "reason": "Es el asignado de la issue y está implementando la propuesta que introdujo el cambio de cadencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7494.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7494#issuecomment-4966273337",
-    "reviewedAt": "2026-07-14T07:00:41.891Z",
-    "mainSha": "88ba61f6a0649b977be032bf6a07ea648f284a5d"
+    "reviewedAt": "2026-07-14T08:30:03.196Z",
+    "mainSha": "f065729bd15cb1cb1f7d99ed173a8d98ff5c0d75"
   }
 }
