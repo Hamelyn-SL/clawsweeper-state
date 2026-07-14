@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T06:29:53.663Z",
-  "updatedAt": "2026-07-14T06:19:23Z",
+  "generatedAt": "2026-07-13T11:08:30.047Z",
+  "updatedAt": "2026-07-13T11:00:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,52 @@
     "state": "open",
     "labels": [
       "size/L",
-      "P2",
-      "status: 📣 needs proof",
       "rating: 🦪 silver shellfish",
+      "status: 📣 needs proof",
+      "P2",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-07-13T10:56:12Z",
-    "updatedAt": "2026-07-14T06:19:23Z",
+    "updatedAt": "2026-07-13T11:00:42Z",
     "headSha": "4fce6d5a923f7313dd6b804d921d59f6e0244f3d"
   },
-  "lane": "release_inclusion",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Se autoriza el merge y despliegue de Amazon IT únicamente después de completar los gates de BQ, Atlas, Mongo, seed/reconciliación y una prueba real del canal?",
-  "rationale": "El código puede ser correcto y aun así dejar pedidos sin ingerir, precios desactivados o crons fallando si la infraestructura externa y la ventana de activación no están coordinadas.",
+  "question": "¿Se puede activar `AMAZON_IT` en `dev` ahora, o debe quedarse en draft hasta completar y probar los gates operativos de BQ, Atlas, config batch, seed y deduplicación?",
+  "rationale": "El código está bien encaminado, pero la decisión segura depende de preparación operativa fuera del repo y del momento de activación de un canal de pedidos real.",
   "options": [
     {
-      "title": "Bloquear hasta gates y smoke",
-      "body": "Mantener el PR abierto hasta resolver conflictos, completar todos los gates externos y adjuntar evidencia redaccionada de una ejecución real de Amazon IT.",
+      "title": "Mantener draft hasta smoke real",
+      "body": "Completar tabla BQ, índices Atlas, `marketplaceBatch.amazonIt`, seed/reconciliación y adjuntar logs o salida redaccionada de un smoke real antes del merge.",
       "recommended": true
     },
     {
-      "title": "Despliegue coordinado con riesgo aceptado",
-      "body": "Mergear solo si el equipo operativo confirma por escrito la preparación de datos, configuración, cuotas y monitorización inmediata del primer ciclo.",
+      "title": "Merge coordinado con ventana operativa",
+      "body": "Aceptar el riesgo solo si Marketplace y Data confirman que los gates externos estarán listos antes de desplegar el cron nuevo.",
       "recommended": false
     },
     {
-      "title": "Separar preparación y activación",
-      "body": "Dividir el trabajo para aterrizar primero superficies inertes y activar cron, pedidos y precios en un cambio posterior con los gates ya listos.",
+      "title": "Dividir activación y preparación",
+      "body": "Separar wiring pasivo de la activación del cron/procesado si el equipo quiere revisar código antes de habilitar pedidos reales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bloquear hasta gates y smoke",
-    "body": "Mantener el PR abierto hasta resolver conflictos, completar todos los gates externos y adjuntar evidencia redaccionada de una ejecución real de Amazon IT.",
+    "title": "Mantener draft hasta smoke real",
+    "body": "Completar tabla BQ, índices Atlas, `marketplaceBatch.amazonIt`, seed/reconciliación y adjuntar logs o salida redaccionada de un smoke real antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien ha llevado el registry-first, la segregación ES/FR/IT y el precedente de Amazon FR, y aparece como owner más cercano de la secuencia de activación.",
+    "reason": "Es quien aparece como owner histórico más claro del patrón Amazon FR/MX y del alta canónica enlazada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7468.md",
-    "reviewedAt": "2026-07-14T06:29:53.663Z",
-    "mainSha": "9c70224079f5c6db7b7f6873138c02133f74e7ac"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468#issuecomment-4957352943",
+    "reviewedAt": "2026-07-13T11:08:30.047Z",
+    "mainSha": "17a4a6b6ca2fd73d5d0aa9b04dbf01ae937203df"
   }
 }
