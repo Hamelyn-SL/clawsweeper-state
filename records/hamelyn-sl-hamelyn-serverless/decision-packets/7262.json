@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-09T04:07:41.074Z",
-  "updatedAt": "2026-07-09T02:57:36Z",
+  "generatedAt": "2026-07-14T11:40:08.036Z",
+  "updatedAt": "2026-07-14T11:21:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,54 +15,54 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:done",
+      "triage:queued",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-09T00:35:21Z",
-    "updatedAt": "2026-07-09T02:57:36Z"
+    "updatedAt": "2026-07-14T11:21:38Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicar Amazon MX cuando un stock activo no tiene ASIN y la búsqueda por EAN tampoco lo resuelve?",
-  "rationale": "El código ya identifica y enfría el error; la decisión pendiente es operativa/producto, no una reparación unívoca de código.",
+  "question": "¿Qué política debe aplicar Amazon MX cuando un EAN no existe en su catálogo regional: excluir el stock, enriquecer ASIN antes de publicar o mantener `SYNC_ERROR` con retry diario y rebajar la alerta?",
+  "rationale": "Las tres alternativas cambian elegibilidad, carga operativa y monitorización; el código actual ya implementa correctamente el retry diario y no existe una corrección técnica única que pueda elegirse sin intención de producto.",
   "options": [
     {
-      "title": "Marcar como no elegible",
-      "body": "Los SKUs sin ASIN resoluble dejarían de reintentarse como errores de create y quedarían visibles como exclusión de publicación.",
+      "title": "Mantener retry y ajustar watcher",
+      "body": "Conservar `SYNC_ERROR` y el retry diario, acumular los recuentos en esta canónica y alertar solo ante desviaciones del volumen esperado.",
       "recommended": true
     },
     {
-      "title": "Enriquecer antes de publicar",
-      "body": "El flujo bloquearía o derivaría estos SKUs a enriquecimiento de ASIN antes de intentar crear listings en Amazon MX.",
+      "title": "Marcar como no elegible",
+      "body": "Clasificar los stocks sin ASIN regional como no elegibles y evitar reintentos hasta que cambien sus datos o la disponibilidad del catálogo.",
       "recommended": false
     },
     {
-      "title": "Mantener retry diario y ajustar watcher",
-      "body": "El sistema conservaría el comportamiento actual y la alerta dejaría de tratar esta firma como incidente mientras esté dentro del cooldown.",
+      "title": "Enriquecer antes de crear",
+      "body": "Añadir una fase previa de enriquecimiento y no enviar el stock al flujo de creación hasta resolver un ASIN de Amazon MX.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Marcar como no elegible",
-    "body": "Los SKUs sin ASIN resoluble dejarían de reintentarse como errores de create y quedarían visibles como exclusión de publicación.",
+    "title": "Mantener retry y ajustar watcher",
+    "body": "Conservar `SYNC_ERROR` y el retry diario, acumular los recuentos en esta canónica y alertar solo ante desviaciones del volumen esperado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Activó Amazon MX y tocó la configuración que conecta este marketplace con el flujo común de creación y recuperación.",
+    "reason": "Es el propietario histórico más claro de Amazon MX y la persona que ha aportado la decisión operativa más reciente en la discusión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7262.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262#issuecomment-4920630428",
-    "reviewedAt": "2026-07-09T04:07:41.074Z",
-    "mainSha": "5841c4c58c71675185066a63205984fa2de43f0e"
+    "reviewedAt": "2026-07-14T11:40:08.036Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }
