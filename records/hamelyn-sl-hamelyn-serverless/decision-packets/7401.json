@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T15:12:06.605Z",
-  "updatedAt": "2026-07-12T14:53:40Z",
+  "generatedAt": "2026-07-14T21:27:53.571Z",
+  "updatedAt": "2026-07-12T15:15:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
-    "updatedAt": "2026-07-12T14:53:40Z"
+    "updatedAt": "2026-07-12T15:15:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención debe aplicarse a productos IA sin actividad antes de tocar millones de documentos de `products`?",
-  "rationale": "La decisión cambia datos persistidos a gran escala y afecta catálogo, proveedores, pedidos históricos y materializaciones analíticas; no se puede inferir de forma segura solo desde el código.",
+  "question": "¿Qué contrato de retención debe regir `products` y qué primera fase se autoriza: frenar altas, poda reversible de texto o purga física de documentos?",
+  "rationale": "La decisión fija qué datos comerciales pueden desaparecer y condiciona filtros irreversibles sobre decenas de millones de documentos desnormalizados; el código no puede determinar por sí solo esa política.",
   "options": [
     {
-      "title": "Aprobar fases conservadoras",
-      "body": "Primero cortar nuevas altas sin señal, después poda suave reversible y solo más tarde purga con anti-joins completos y plan de recuperación.",
+      "title": "Poda por fases",
+      "body": "Frenar primero las altas sin señal, ejecutar después una poda reversible y reservar la purga para cuando los anti-joins, el benchmark y la recuperación estén aprobados.",
       "recommended": true
     },
     {
       "title": "Solo poda suave",
-      "body": "Recupera parte del almacenamiento eliminando textos pesados sin borrar productos ni cambiar todavía la política de retención.",
+      "body": "Eliminar campos de texto pesados de candidatos seguros reduce almacenamiento sin borrar EANs, aunque mantiene gran parte del volumen documental.",
       "recommended": false
     },
     {
-      "title": "Purga agresiva",
-      "body": "Maximiza ahorro de almacenamiento, pero requiere asumir explícitamente el riesgo operativo y completar pruebas de restauración antes de producción.",
+      "title": "Purga física inmediata",
+      "body": "Eliminar los candidatos tras un único dry-run recupera más espacio antes, pero asume un riesgo alto de referencias omitidas y exige reconstrucción coordinada de BigQuery.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar fases conservadoras",
-    "body": "Primero cortar nuevas altas sin señal, después poda suave reversible y solo más tarde purga con anti-joins completos y plan de recuperación.",
+    "title": "Poda por fases",
+    "body": "Frenar primero las altas sin señal, ejecutar después una poda reversible y reservar la purga para cuando los anti-joins, el benchmark y la recuperación estén aprobados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es quien dejó la triaje técnica con las fases, riesgos y evidencias de BigQuery/código para esta decisión.",
+    "person": "JavierHamelyn",
+    "reason": "Es el mejor candidato disponible porque aportó el análisis operativo y aparece conectado en el historial a las dos superficies centrales de Argos y materialización.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-12T15:12:06.605Z",
-    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+    "reviewedAt": "2026-07-14T21:27:53.571Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

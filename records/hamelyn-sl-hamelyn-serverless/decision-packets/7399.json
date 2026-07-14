@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T15:07:13.153Z",
-  "updatedAt": "2026-07-12T14:23:12Z",
+  "generatedAt": "2026-07-14T21:29:36.206Z",
+  "updatedAt": "2026-07-12T15:08:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,47 @@
       "app:infrastructure",
       "triage:blocked",
       "P1",
-      "impact:security",
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "clawsweeper:fix-shape-clear",
+      "impact:security",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-12T13:55:30Z",
-    "updatedAt": "2026-07-12T14:23:12Z"
+    "updatedAt": "2026-07-12T15:08:24Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Quién debe ejecutar la rotación/revocación de Drive, la comprobación de Atlas y la limpieza de variables de deploy, y se pueden eliminar ya `ADMIN_DEV/PROD`, `PUBLIC_DEV/PROD` y `SUPPLY_DEV/PROD` como variables?",
-  "rationale": "La evidencia de código solo prueba que los workflows usan secrets; la remediación real toca credenciales y configuración administrada fuera del repositorio.",
+  "question": "¿Debe infraestructura retirar las seis variables de deploy duplicadas después de confirmar que ninguna integración externa las consume?",
+  "rationale": "El repositorio demuestra que los workflows usan `secrets.*`, pero no puede descartar consumidores externos ni decidir por sí solo la política de almacenamiento de estos hooks.",
   "options": [
     {
-      "title": "Completar remediación operativa",
-      "body": "Rotar la clave de Drive, validar/desactivar `rmwjb` y borrar las variables de deploy duplicadas tras confirmar que no hay consumidores externos.",
+      "title": "Retirar las variables",
+      "body": "Inventariar consumidores externos y eliminar las seis variables, manteniendo los secrets como única fuente.",
       "recommended": true
     },
     {
-      "title": "Separar la decisión de deploy hooks",
-      "body": "Cerrar primero la rotación de Drive/Mongo y abrir una tarea operativa separada para auditar los deploy hooks duplicados.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener variables de deploy por compatibilidad",
-      "body": "Documentar explícitamente qué integración externa las usa y revisar de nuevo más adelante.",
+      "title": "Mantenerlas con caducidad",
+      "body": "Conservarlas temporalmente, documentar el consumidor que las requiere y fijar responsable y fecha de retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar remediación operativa",
-    "body": "Rotar la clave de Drive, validar/desactivar `rmwjb` y borrar las variables de deploy duplicadas tras confirmar que no hay consumidores externos.",
+    "title": "Retirar las variables",
+    "body": "Inventariar consumidores externos y eliminar las seis variables, manteniendo los secrets como única fuente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el reporter y aparece como contribuidor reciente de automatización/workflows, además de ser el punto más cercano al contexto operativo indicado por el triage.",
-    "confidence": "medium"
+    "reason": "Tiene el contexto más reciente del hallazgo, del inventario de GitHub Actions y de los workflows relacionados.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7399.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399#issuecomment-4951659866",
-    "reviewedAt": "2026-07-12T15:07:13.153Z",
-    "mainSha": "2c99c92624003a8a11306f66bf6efb6d2e2af0fc"
+    "reviewedAt": "2026-07-14T21:29:36.206Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
