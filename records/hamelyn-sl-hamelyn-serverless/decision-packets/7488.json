@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T22:14:48.041Z",
-  "updatedAt": "2026-07-13T21:46:23Z",
+  "generatedAt": "2026-07-14T06:13:11.164Z",
+  "updatedAt": "2026-07-14T05:35:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,51 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-13T21:37:33Z",
-    "updatedAt": "2026-07-13T21:46:23Z"
+    "updatedAt": "2026-07-14T05:35:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse F1 como iniciativa de plataforma dividida en varios PRs, empezando por un piloto manual `/proof` antes de activar ejecución automática por paths?",
-  "rationale": "El código demuestra viabilidad parcial, pero no puede decidir la política de activación, el presupuesto, el grado de confianza de la evidencia ni la frontera operativa entre controlador privilegiado y código no confiable.",
+  "question": "¿Debe incorporarse el proof-agent al ciclo central de PRs y, si se aprueba, debe empezar como piloto manual/acotado o con activación automática general?",
+  "rationale": "La adopción combina valor interno, gasto recurrente, operación de plataforma y una frontera de seguridad para ejecutar código no confiable; la corrección técnica por sí sola no decide ese compromiso.",
   "options": [
     {
-      "title": "Piloto manual por fases",
-      "body": "Implementar primero controlador, snapshot y proof card más barrera mediante `/proof`, aplazando el GIF y los triggers automáticos hasta validar seguridad, coste y utilidad.",
+      "title": "Piloto manual acotado",
+      "body": "Activar `/proof` o un conjunto reducido de apps y ampliar solo tras medir seguridad, fiabilidad y coste.",
       "recommended": true
     },
     {
-      "title": "F1 completa coordinada",
-      "body": "Aprobar desde el inicio los tres modos y la automatización por paths, distribuyendo el trabajo en varios PRs con revisión de seguridad conjunta.",
+      "title": "Activación automática general",
+      "body": "Habilitar desde la primera entrega todas las PRs elegibles y asumir la operación continua de los tres modos.",
       "recommended": false
     },
     {
-      "title": "Posponer la iniciativa",
-      "body": "Conservar la PoC y sus métricas como referencia hasta disponer de capacidad de plataforma y presupuesto operativo.",
+      "title": "No incorporar",
+      "body": "Mantener la evidencia real como responsabilidad manual de cada contribución y evitar esta nueva plataforma.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto manual por fases",
-    "body": "Implementar primero controlador, snapshot y proof card más barrera mediante `/proof`, aplazando el GIF y los triggers automáticos hasta validar seguridad, coste y utilidad.",
+    "title": "Piloto manual acotado",
+    "body": "Activar `/proof` o un conjunto reducido de apps y ampliar solo tras medir seguridad, fiabilidad y coste.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual y el principal autor histórico de las primitivas técnicas que la iniciativa reutilizaría.",
+    "reason": "Es el propietario histórico más claro de las primitivas reutilizadas y el asignado actual de la iniciativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7488#issuecomment-4963247077",
-    "reviewedAt": "2026-07-13T22:14:48.041Z",
-    "mainSha": "2fff59c89851ec4b1a3c318c797ac0f7d2edddb5"
+    "reviewedAt": "2026-07-14T06:13:11.164Z",
+    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
   }
 }

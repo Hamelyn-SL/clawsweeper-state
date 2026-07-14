@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T18:02:33.353Z",
-  "updatedAt": "2026-07-10T15:09:39Z",
+  "generatedAt": "2026-07-14T06:18:24.473Z",
+  "updatedAt": "2026-07-14T06:06:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "feature",
       "reporter:miguel",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "issue-rating: 🌊 off-meta tidepool",
-      "P1",
-      "impact:other",
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-10T15:09:39Z"
+    "updatedAt": "2026-07-14T06:06:43Z"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Confirma el equipo Supply cuándo están live los binarios `2.6.04` y, por tanto, cuándo puede mergearse el PR de bump a `dev`?",
-  "rationale": "El cambio de código del bump es acotado, pero el momento correcto depende del estado externo de EAS/stores y de la decisión de release ya documentada por Miguel.",
+  "question": "¿Están ya live los binarios `2.6.04` en App Store y Play Store para autorizar el merge final del bump a `dev`?",
+  "rationale": "La disponibilidad en stores es un estado externo al repositorio y determina si integrar el bump es seguro para usuarios existentes.",
   "options": [
     {
-      "title": "Esperar a stores live",
-      "body": "Mantener esta issue abierta hasta que los binarios `2.6.04` estén publicados y entonces mergear el bump a `dev`.",
+      "title": "Esperar a ambas stores",
+      "body": "Mantener la issue abierta y el bump fuera de `dev` hasta confirmar `2.6.04` live en iOS y Android.",
       "recommended": true
     },
     {
-      "title": "Usar automatización EAS",
-      "body": "Esperar a que https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 esté aprobado y probado si el equipo decide publicar mediante workflow.",
+      "title": "Completar build y submit",
+      "body": "Generar y enviar ambos binarios desde la rama de release, registrar sus identificadores y volver a comprobar las stores.",
       "recommended": false
     },
     {
-      "title": "Mover o cancelar release",
-      "body": "Cerrar solo si el equipo cancela esta release o mueve el seguimiento operativo a otra issue canónica.",
+      "title": "Cancelar o replanificar",
+      "body": "Cerrar únicamente si el equipo cancela esta versión o traslada explícitamente la publicación a otro seguimiento canónico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar a stores live",
-    "body": "Mantener esta issue abierta hasta que los binarios `2.6.04` estén publicados y entonces mergear el bump a `dev`.",
+    "title": "Esperar a ambas stores",
+    "body": "Mantener la issue abierta y el bump fuera de `dev` hasta confirmar `2.6.04` live en iOS y Android.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es quien fijó el alcance y la secuencia de publicación en la discusión.",
+    "reason": "Está asignado a esta issue y definió la secuencia operativa que gobierna su cierre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-10T18:02:33.353Z",
-    "mainSha": "bdba2474cde79bb8997d7effa9430aff3f604ded"
+    "reviewedAt": "2026-07-14T06:18:24.473Z",
+    "mainSha": "86e149264235f25256c21b5c31403e60bfcac17d"
   }
 }

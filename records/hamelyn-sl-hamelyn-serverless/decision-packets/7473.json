@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T20:25:32.004Z",
-  "updatedAt": "2026-07-13T15:15:05Z",
+  "generatedAt": "2026-07-14T06:16:22.455Z",
+  "updatedAt": "2026-07-14T06:05:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XL",
+      "P2",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P2",
       "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-07-13T12:23:30Z",
-    "updatedAt": "2026-07-13T15:15:05Z",
+    "updatedAt": "2026-07-14T06:05:12Z",
     "headSha": "c3e6db94d64437663dddc928f8236742f2b61648"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR volver al slice original que solo elimina `<priority>` o convertirse explícitamente en la implementación amplia de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221?",
-  "rationale": "El cuerpo afirma que segmentación, hubs, `<lastmod>` y `noindex` quedan fuera, pero el branch los implementa; además, la fuente de fecha de stock y la transición del sitemap antiguo necesitan una decisión explícita.",
+  "question": "¿Debe patrocinarse este branch como migración completa con `lastmod` real de stock, o reducirse al slice de eliminación de `<priority>` anunciado por el título?",
+  "rationale": "El branch implementa casi toda la issue enlazada y cambia contratos públicos de sitemap; decidir el alcance y si se mantiene el requisito exacto de stock no es una reparación mecánica.",
   "options": [
     {
-      "title": "Volver al slice estrecho",
-      "body": "Conservar únicamente la retirada de `<priority>` y mover segmentación, hubs, `<lastmod>` y `noindex` a cambios posteriores con decisiones y pruebas propias.",
+      "title": "Patrocinar la migración completa",
+      "body": "Mantener el alcance actual, exigir compatibilidad, aislamiento de hubs, fecha fiable de stock y prueba real de todos los endpoints.",
       "recommended": true
     },
     {
-      "title": "Adoptar el alcance completo",
-      "body": "Actualizar título y cuerpo, preservar la compatibilidad, resolver la fecha de stock y demostrar la migración completa antes de integrar.",
+      "title": "Reducir al slice mínimo",
+      "body": "Conservar solo la retirada de `<priority>` y mover segmentación, hubs, `lastmod` y `noindex` a PR separados con aceptación propia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Volver al slice estrecho",
-    "body": "Conservar únicamente la retirada de `<priority>` y mover segmentación, hubs, `<lastmod>` y `noindex` a cambios posteriores con decisiones y pruebas propias.",
+    "title": "Patrocinar la migración completa",
+    "body": "Mantener el alcance actual, exigir compatibilidad, aislamiento de hubs, fecha fiable de stock y prueba real de todos los endpoints.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Tiene asignada la issue canónica y concentra el historial reciente del bloque SEO y de autores.",
+    "reason": "Es el asignado de la issue canónica y propietario reciente de las superficies SEO y de autores afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
-    "reviewedAt": "2026-07-13T20:25:32.004Z",
-    "mainSha": "288257a8db9236bc80539882a62b0ed2c7ff00df"
+    "reviewedAt": "2026-07-14T06:16:22.455Z",
+    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
   }
 }
