@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-14T01:04:00.490Z",
+  "generatedAt": "2026-07-14T07:19:58.160Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 172
+    "openItemsSeen": 153
   },
   "counts": {
-    "itemRecords": 171,
-    "closedRecords": 259,
-    "missingOpen": 1,
+    "itemRecords": 142,
+    "closedRecords": 289,
+    "missingOpen": 11,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 10,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,144 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-12T12:22:05Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7492,
+        "kind": "issue",
+        "title": "Trasvase: panel de inventario de gaveta de estantería con fusión a BIN de Skypod, estilo Review y Ecommerce V3",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "priority:p1",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:20:38Z",
+        "updatedAt": "2026-07-14T06:32:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7493,
+        "kind": "pull_request",
+        "title": "chore: update workspace dependencies",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:20:39Z",
+        "updatedAt": "2026-07-14T07:06:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7495,
+        "kind": "issue",
+        "title": "Autotriage checkout principal queda sucio por next-env.d.ts",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:52:16Z",
+        "updatedAt": "2026-07-14T07:01:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7497,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:53:25Z",
+        "updatedAt": "2026-07-14T07:16:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7498,
+        "kind": "pull_request",
+        "title": "feat: add ecommerce scraping investigator",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:57:33Z",
+        "updatedAt": "2026-07-14T07:13:00Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7499,
+        "kind": "pull_request",
+        "title": "fix: ignore legacy automations next env file",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T07:00:56Z",
+        "updatedAt": "2026-07-14T07:01:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7500,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security group across 1 directory with 4 updates",
+        "labels": [
+          "size/XL",
+          "dependencies",
+          "javascript",
+          "autofix-failed"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:03:16Z",
+        "updatedAt": "2026-07-14T07:14:33Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7501,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security group across 1 directory with 3 updates",
+        "labels": [
+          "size/XL",
+          "dependencies",
+          "javascript",
+          "autofix-failed"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:06:21Z",
+        "updatedAt": "2026-07-14T07:14:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7502,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-c502f8b4cf",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:09:57Z",
+        "updatedAt": "2026-07-14T07:09:57Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7503,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-1ca78cdc6a",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:14:44Z",
+        "updatedAt": "2026-07-14T07:14:44Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +197,146 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7492,
+        "kind": "issue",
+        "title": "Trasvase: panel de inventario de gaveta de estantería con fusión a BIN de Skypod, estilo Review y Ecommerce V3",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "priority:p1",
+          "feature",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:20:38Z",
+        "updatedAt": "2026-07-14T06:32:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7493,
+        "kind": "pull_request",
+        "title": "chore: update workspace dependencies",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:20:39Z",
+        "updatedAt": "2026-07-14T07:06:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7495,
+        "kind": "issue",
+        "title": "Autotriage checkout principal queda sucio por next-env.d.ts",
+        "labels": [
+          "bug",
+          "source:admin-panel",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:52:16Z",
+        "updatedAt": "2026-07-14T07:01:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7497,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:53:25Z",
+        "updatedAt": "2026-07-14T07:16:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7498,
+        "kind": "pull_request",
+        "title": "feat: add ecommerce scraping investigator",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T06:57:33Z",
+        "updatedAt": "2026-07-14T07:13:00Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7499,
+        "kind": "pull_request",
+        "title": "fix: ignore legacy automations next env file",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T07:00:56Z",
+        "updatedAt": "2026-07-14T07:01:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7500,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security group across 1 directory with 4 updates",
+        "labels": [
+          "size/XL",
+          "dependencies",
+          "javascript",
+          "autofix-failed"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:03:16Z",
+        "updatedAt": "2026-07-14T07:14:33Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7501,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security group across 1 directory with 3 updates",
+        "labels": [
+          "size/XL",
+          "dependencies",
+          "javascript",
+          "autofix-failed"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:06:21Z",
+        "updatedAt": "2026-07-14T07:14:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7502,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-c502f8b4cf",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:09:57Z",
+        "updatedAt": "2026-07-14T07:09:57Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7503,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en dependabot/npm_and_yarn/npm-security-1ca78cdc6a",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-14T07:14:44Z",
+        "updatedAt": "2026-07-14T07:14:44Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
