@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T12:57:42.785Z",
+  "generatedAt": "2026-07-14T18:57:43.367Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 176
   },
   "counts": {
-    "itemRecords": 158,
-    "closedRecords": 303,
-    "missingOpen": 18,
+    "itemRecords": 161,
+    "closedRecords": 307,
+    "missingOpen": 15,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 17,
+    "missingRecentOpen": 14,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -170,19 +170,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-14T10:26:50Z",
-        "updatedAt": "2026-07-14T10:39:52Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7545,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T10:36:16Z",
-        "updatedAt": "2026-07-14T12:57:12Z",
+        "updatedAt": "2026-07-14T13:06:58Z",
         "missingReason": "recently_created"
       },
       {
@@ -198,57 +186,30 @@
         "missingReason": "recently_created"
       },
       {
-        "number": 7553,
+        "number": 7566,
         "kind": "pull_request",
-        "title": "refactor: move business logic link to tools section",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:28:05Z",
-        "updatedAt": "2026-07-14T12:29:00Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7556,
-        "kind": "issue",
-        "title": "CI: ejecutar lint, typecheck y tests solo en los workspaces afectados",
-        "labels": [
-          "priority:p2",
-          "app:infrastructure",
-          "feature",
-          "triage:running"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:53:46Z",
-        "updatedAt": "2026-07-14T12:57:14Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7557,
-        "kind": "issue",
-        "title": "CI: acotar los inputs de la task lint de turbo para lograr cache hits en el gate",
-        "labels": [
-          "priority:p3",
-          "app:infrastructure",
-          "feature",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:53:47Z",
-        "updatedAt": "2026-07-14T12:53:59Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7558,
-        "kind": "pull_request",
-        "title": "ci: require structured dependency triage outcomes",
+        "title": "Deploy to Prod",
         "labels": [
           "size/S"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:56:39Z",
-        "updatedAt": "2026-07-14T12:57:31Z",
+        "createdAt": "2026-07-14T17:59:37Z",
+        "updatedAt": "2026-07-14T18:11:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7567,
+        "kind": "issue",
+        "title": "MercadoLibre duplicate-listing reconciliation leaves active stock unpublished",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T18:02:41Z",
+        "updatedAt": "2026-07-14T18:10:35Z",
         "missingReason": "recently_created"
       }
     ],
@@ -405,19 +366,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-14T10:26:50Z",
-        "updatedAt": "2026-07-14T10:39:52Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7545,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T10:36:16Z",
-        "updatedAt": "2026-07-14T12:57:12Z",
+        "updatedAt": "2026-07-14T13:06:58Z",
         "missingReason": "recently_created"
       },
       {
@@ -433,57 +382,30 @@
         "missingReason": "recently_created"
       },
       {
-        "number": 7553,
+        "number": 7566,
         "kind": "pull_request",
-        "title": "refactor: move business logic link to tools section",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:28:05Z",
-        "updatedAt": "2026-07-14T12:29:00Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7556,
-        "kind": "issue",
-        "title": "CI: ejecutar lint, typecheck y tests solo en los workspaces afectados",
-        "labels": [
-          "priority:p2",
-          "app:infrastructure",
-          "feature",
-          "triage:running"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:53:46Z",
-        "updatedAt": "2026-07-14T12:57:14Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7557,
-        "kind": "issue",
-        "title": "CI: acotar los inputs de la task lint de turbo para lograr cache hits en el gate",
-        "labels": [
-          "priority:p3",
-          "app:infrastructure",
-          "feature",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:53:47Z",
-        "updatedAt": "2026-07-14T12:53:59Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7558,
-        "kind": "pull_request",
-        "title": "ci: require structured dependency triage outcomes",
+        "title": "Deploy to Prod",
         "labels": [
           "size/S"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-14T12:56:39Z",
-        "updatedAt": "2026-07-14T12:57:31Z",
+        "createdAt": "2026-07-14T17:59:37Z",
+        "updatedAt": "2026-07-14T18:11:16Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7567,
+        "kind": "issue",
+        "title": "MercadoLibre duplicate-listing reconciliation leaves active stock unpublished",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:done"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-14T18:02:41Z",
+        "updatedAt": "2026-07-14T18:10:35Z",
         "missingReason": "recently_created"
       }
     ],
