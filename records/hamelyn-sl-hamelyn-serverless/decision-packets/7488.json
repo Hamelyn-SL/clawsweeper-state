@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T06:13:11.164Z",
+  "generatedAt": "2026-07-14T06:03:41.086Z",
   "updatedAt": "2026-07-14T05:35:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -24,41 +24,40 @@
     "createdAt": "2026-07-13T21:37:33Z",
     "updatedAt": "2026-07-14T05:35:10Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe incorporarse el proof-agent al ciclo central de PRs y, si se aprueba, debe empezar como piloto manual/acotado o con activación automática general?",
-  "rationale": "La adopción combina valor interno, gasto recurrente, operación de plataforma y una frontera de seguridad para ejecutar código no confiable; la corrección técnica por sí sola no decide ese compromiso.",
+  "question": "¿Debe aprobarse el proof-agent con ejecución de código de PRs en Vercel Sandbox y publicación automática de artefactos mediante las credenciales actuales de `apps/agents`?",
+  "rationale": "La elección fija una frontera privilegiada entre código no confiable, credenciales de publicación, coste recurrente y automatización aplicada a todos los PRs; no puede resolverse como una reparación mecánica.",
   "options": [
     {
-      "title": "Piloto manual acotado",
-      "body": "Activar `/proof` o un conjunto reducido de apps y ampliar solo tras medir seguridad, fiabilidad y coste.",
+      "title": "Aprobar un piloto acotado",
+      "body": "Empezar con invocación manual y modos limitados, promoviendo la activación automática solo después de demostrar aislamiento, utilidad y coste real.",
       "recommended": true
     },
     {
-      "title": "Activación automática general",
-      "body": "Habilitar desde la primera entrega todas las PRs elegibles y asumir la operación continua de los tres modos.",
+      "title": "Aprobar la F1 completa",
+      "body": "Aceptar el alcance integral del PR enlazado una vez resueltas sus revisiones y aportada una ejecución real end-to-end sobre un PR representativo.",
       "recommended": false
     },
     {
-      "title": "No incorporar",
-      "body": "Mantener la evidencia real como responsabilidad manual de cada contribución y evitar esta nueva plataforma.",
+      "title": "No adoptar la iniciativa",
+      "body": "Cerrar el candidato si el riesgo de seguridad, coste y mantenimiento supera el beneficio esperado para las revisiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto manual acotado",
-    "body": "Activar `/proof` o un conjunto reducido de apps y ampliar solo tras medir seguridad, fiabilidad y coste.",
+    "title": "Aprobar un piloto acotado",
+    "body": "Empezar con invocación manual y modos limitados, promoviendo la activación automática solo después de demostrar aislamiento, utilidad y coste real.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el propietario histórico más claro de las primitivas reutilizadas y el asignado actual de la iniciativa.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Es uno de los revisores expresamente solicitados para el candidato de infraestructura sensible y está mejor situado para confirmar o rechazar esta frontera operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7488.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7488#issuecomment-4963247077",
-    "reviewedAt": "2026-07-14T06:13:11.164Z",
+    "reviewedAt": "2026-07-14T06:03:41.086Z",
     "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
   }
 }

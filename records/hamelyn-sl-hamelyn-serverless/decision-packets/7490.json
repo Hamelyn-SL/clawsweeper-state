@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T00:59:43.167Z",
-  "updatedAt": "2026-07-13T23:30:03Z",
+  "generatedAt": "2026-07-14T06:12:40.294Z",
+  "updatedAt": "2026-07-14T05:32:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P1",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-13T22:44:24Z",
-    "updatedAt": "2026-07-13T23:30:03Z",
+    "updatedAt": "2026-07-14T05:32:44Z",
     "headSha": "1bf07872732db290fb2df27a2850ec0350c0cc0c"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe aprobarse un piloto limitado del proof-agent después del endurecimiento, o se acepta ya su ejecución automática sobre todas las PRs?",
-  "rationale": "Aunque los defectos mecánicos son reparables, la frecuencia de activación, el coste, la retención de evidencias y la frontera entre código no confiable y credenciales son decisiones operativas y de seguridad que necesitan intención mantenedora.",
+  "question": "¿Debe el proof-agent empezar como piloto manual o activarse automáticamente en todas las PR una vez cerrados los bloqueos técnicos?",
+  "rationale": "Incluso con los defectos mecánicos corregidos, la frecuencia de ejecución, el coste, la exposición de artefactos y la frontera entre el orquestador privilegiado y el código no confiable son decisiones de operación y seguridad que requieren intención mantenedora explícita.",
   "options": [
     {
-      "title": "Pilotar manualmente tras endurecer",
-      "body": "Corregir los bloqueos, limitar temporalmente la ejecución a `workflow_dispatch` o allowlist y evaluar seguridad, coste y calidad con pruebas reales.",
+      "title": "Piloto manual primero",
+      "body": "Limitar la activación a `workflow_dispatch` o una orden explícita hasta demostrar aislamiento, privacidad, costes y resultados reales de `gif`, `card` y `barrier`.",
       "recommended": true
     },
     {
-      "title": "Activar automáticamente",
-      "body": "Mantener el trigger para todas las PRs y aceptar explícitamente la frontera, coste y retención una vez corregidos los defectos bloqueantes.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la iniciativa",
-      "body": "Cerrar o posponer la implementación hasta disponer de una arquitectura de aislamiento y publicación más estrecha.",
+      "title": "Automático tras endurecimiento",
+      "body": "Ejecutarlo en cada actualización únicamente después de resolver todos los hallazgos y aportar prueba de concurrencia, recuperación y publicación sobre un despliegue real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pilotar manualmente tras endurecer",
-    "body": "Corregir los bloqueos, limitar temporalmente la ejecución a `workflow_dispatch` o allowlist y evaluar seguridad, coste y calidad con pruebas reales.",
+    "title": "Piloto manual primero",
+    "body": "Limitar la activación a `workflow_dispatch` o una orden explícita hasta demostrar aislamiento, privacidad, costes y resultados reales de `gif`, `card` y `barrier`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es uno de los revisores expresamente solicitados para decidir sobre la infraestructura sensible y la ejecución no confiable.",
-    "confidence": "low"
+    "reason": "Es uno de los revisores expresamente asignados a esta frontera y ya impulsó la segunda revisión del head actual.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7490.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7490#issuecomment-4963709864",
-    "reviewedAt": "2026-07-14T00:59:43.167Z",
-    "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
+    "reviewedAt": "2026-07-14T06:12:40.294Z",
+    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
   }
 }

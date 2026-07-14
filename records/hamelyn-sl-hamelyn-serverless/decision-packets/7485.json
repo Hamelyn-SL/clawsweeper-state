@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T00:14:48.875Z",
-  "updatedAt": "2026-07-13T22:48:54Z",
+  "generatedAt": "2026-07-14T06:06:32.341Z",
+  "updatedAt": "2026-07-14T05:54:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,53 +10,52 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485",
     "state": "open",
     "labels": [
-      "size/XXL",
+      "size/XL",
+      "P1",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P1",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 auth-provider",
-      "merge-risk: 🚨 automation"
+      "merge-risk: 🚨 auth-provider"
     ],
     "createdAt": "2026-07-13T14:17:35Z",
-    "updatedAt": "2026-07-13T22:48:54Z",
-    "headSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
+    "updatedAt": "2026-07-14T05:54:39Z",
+    "headSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe este release incluir ahora la retirada de `atctoken` y el modo OAuth fail-closed de Codex pese al impacto potencial sobre consumidores externos y recuperación operativa?",
-  "rationale": "Ambos cambios alteran contratos de producción y su aceptación no puede deducirse de CI ni de la corrección local del código.",
+  "question": "¿Debe promoverse este lote completo a `master` sin una verificación final de consumidores `atctoken` y del procedimiento de recuperación OAuth?",
+  "rationale": "La retirada del bypass y el modelo single-rotator son cambios deliberados con impacto operativo que no puede resolverse solo mediante revisión estática ni CI; el responsable del release debe aceptar o reducir ese riesgo.",
   "options": [
     {
-      "title": "Corregir y validar antes",
-      "body": "Mantener el PR abierto, corregir el workflow y aportar prueba operativa y de actualización antes del merge.",
+      "title": "Pausar y verificar el release",
+      "body": "Corregir los tres defectos del workflow y aportar prueba real de Slack, migración de auth, rotación/re-seed OAuth y los demás flujos críticos antes del merge.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo operativo",
-      "body": "Promover el release asumiendo que integraciones `atctoken` y agentes con token expirado pueden dejar de funcionar.",
+      "title": "Separar los cambios sensibles",
+      "body": "Retirar temporalmente de la promoción los cambios de auth/OAuth que no tengan prueba de upgrade y desplegar primero el resto del lote validado.",
       "recommended": false
     },
     {
-      "title": "Separar cambios sensibles",
-      "body": "Retirar temporalmente autenticación y OAuth del release y desplegarlos después con validación específica.",
+      "title": "Aceptar el riesgo operativo",
+      "body": "Promover el lote completo tras las correcciones del workflow, asumiendo explícitamente posibles cortes de consumidores legacy o de agentes y preparando rollback y re-seed.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y validar antes",
-    "body": "Mantener el PR abierto, corregir el workflow y aportar prueba operativa y de actualización antes del merge.",
+    "title": "Pausar y verificar el release",
+    "body": "Corregir los tres defectos del workflow y aportar prueba real de Slack, migración de auth, rotación/re-seed OAuth y los demás flujos críticos antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el integrador reciente de los cambios de autenticación/OAuth y del workflow incluido.",
+    "reason": "Es el contribuidor reciente común a la integración del workflow y a las dos superficies sensibles de autenticación y OAuth.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7485#issuecomment-4959516050",
-    "reviewedAt": "2026-07-14T00:14:48.875Z",
-    "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
+    "reviewedAt": "2026-07-14T06:06:32.341Z",
+    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
   }
 }
