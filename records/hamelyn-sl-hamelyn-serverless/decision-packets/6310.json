@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:06:49.656Z",
-  "updatedAt": "2026-07-08T10:13:29Z",
+  "generatedAt": "2026-07-14T23:25:17.049Z",
+  "updatedAt": "2026-07-14T22:11:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,46 +19,46 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: 🌊 off-meta tidepool",
-      "impact:ux-friction"
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-09T12:17:30Z",
-    "updatedAt": "2026-07-08T10:13:29Z"
+    "updatedAt": "2026-07-14T22:11:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe entregarse el flujo en PRs escalonadas —routing/configuración, estado pendiente y UI operativa— o como una única PR integral, y qué política debe aplicarse al regenerar una expedición FEDEX existente?",
-  "rationale": "El trabajo cruza configuración operativa, estado persistido, efectos externos de FEDEX y UX de almacén; el código no determina por sí solo la frontera de despliegue ni si una regeneración debe cancelar, sustituir o rechazar el envío anterior.",
+  "question": "¿Debe la identificación de prep-centers vivir como una regla configurable de destinatario en ShipMatrix y qué comportamiento debe aplicarse cuando se intenta regenerar un envío FEDEX ya creado?",
+  "rationale": "El código actual no define la semántica de matching por nombre/dirección ni si la regeneración debe cancelar, reutilizar o bloquear una expedición externa existente; ambas decisiones afectan la operativa y el modelo permanente.",
   "options": [
     {
-      "title": "PRs escalonadas",
-      "body": "Añadir primero el matching de destinatario con pruebas, después el estado pendiente excluido del batch y finalmente la generación/regeneración por consolidado con prueba operativa.",
+      "title": "ShipMatrix y regeneración protegida",
+      "body": "Añadir matching configurable y normalizado por destinatario, bloqueando la regeneración salvo confirmación y cancelación o sustitución segura del envío anterior.",
       "recommended": true
     },
     {
-      "title": "PR integral",
-      "body": "Implementar routing, estado, API y UI en una sola entrega, aceptando una superficie de revisión y despliegue mayor.",
+      "title": "Política específica de prep-centers",
+      "body": "Mantener la identificación fuera de ShipMatrix mediante una política dedicada, aceptando mayor acoplamiento al código y despliegues para nuevos destinatarios.",
       "recommended": false
     },
     {
-      "title": "Mantener flujo manual",
-      "body": "Conservar temporalmente el cambio Spring→FEDEX existente y documentar la operación manual mientras se pospone la automatización por prep-center.",
+      "title": "Conservar el cambio manual",
+      "body": "No automatizar el routing y documentar el switch Spring→FEDEX existente como procedimiento operativo para estos consolidados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "PRs escalonadas",
-    "body": "Añadir primero el matching de destinatario con pruebas, después el estado pendiente excluido del batch y finalmente la generación/regeneración por consolidado con prueba operativa.",
+    "title": "ShipMatrix y regeneración protegida",
+    "body": "Añadir matching configurable y normalizado por destinatario, bloqueando la regeneración salvo confirmación y cancelación o sustitución segura del envío anterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien concentra el historial reciente más fuerte en ShipMatrix, resolución de carrier y política de cambio manual.",
+    "reason": "Es la persona con mayor actividad reciente en el contrato y la evolución de ShipMatrix, que concentra la principal decisión de producto y arquitectura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6310.md",
-    "reviewedAt": "2026-07-14T22:06:49.656Z",
+    "reviewedAt": "2026-07-14T23:25:17.049Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

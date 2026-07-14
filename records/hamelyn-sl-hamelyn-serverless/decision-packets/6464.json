@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:06:49.310Z",
-  "updatedAt": "2026-07-14T16:00:16Z",
+  "generatedAt": "2026-07-14T23:23:59.859Z",
+  "updatedAt": "2026-07-14T22:12:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -21,40 +21,41 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
+      "clawsweeper:fix-shape-clear",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-07-14T16:00:16Z"
+    "updatedAt": "2026-07-14T22:12:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Hay evidencia operativa o contractual suficiente para documentar como estables los flujos de Buscalibre y Milanuncios, o debe mantenerse Milanuncios como automatización experimental y los datos restantes como desconocidos?",
-  "rationale": "El código acredita el comportamiento técnico actual, pero no demuestra autorización contractual, contactos vigentes, condiciones de uso ni la ubicación canónica de las credenciales.",
+  "question": "¿Qué responsables operativos o partner deben validar los contratos, contactos y referencias seguras de Buscalibre y Milanuncios antes de completar los runbooks?",
+  "rationale": "El repositorio acredita los flujos técnicos actuales, pero no puede certificar por sí solo los permisos contractuales, contactos vigentes ni la ubicación autorizada de credenciales.",
   "options": [
     {
-      "title": "Esperar confirmación operativa",
-      "body": "Obtener respuestas de operaciones o de los partners y actualizar después los cuatro runbooks con información verificable.",
+      "title": "Validar con responsables partner",
+      "body": "Recabar la confirmación de cada marketplace y documentar después las fuentes primarias, formatos, contactos y referencias seguras.",
       "recommended": true
     },
     {
-      "title": "Formalizar límites desconocidos",
-      "body": "Mantener explícitamente los datos no confirmados y clasificar Milanuncios como experimental hasta disponer de autorización contractual.",
+      "title": "Mantener los huecos explícitos",
+      "body": "Conservar la documentación técnica actual y dejar los datos contractuales como pendientes hasta disponer de una fuente autorizada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar confirmación operativa",
-    "body": "Obtener respuestas de operaciones o de los partners y actualizar después los cuatro runbooks con información verificable.",
+    "title": "Validar con responsables partner",
+    "body": "Recabar la confirmación de cada marketplace y documentar después las fuentes primarias, formatos, contactos y referencias seguras.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual, creó el runbook y centralizó estas preguntas como seguimiento operativo.",
+    "reason": "Es el autor de los runbooks, está asignado a la issue y tiene actividad reciente en ambas superficies documentales o técnicas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewedAt": "2026-07-14T22:06:49.310Z",
+    "reviewedAt": "2026-07-14T23:23:59.859Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
