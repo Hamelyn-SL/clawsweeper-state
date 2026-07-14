@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:08:11.675Z",
-  "updatedAt": "2026-07-14T16:01:46Z",
+  "generatedAt": "2026-07-14T22:19:45.794Z",
+  "updatedAt": "2026-07-14T22:08:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,37 +24,37 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-07-14T16:01:46Z"
+    "updatedAt": "2026-07-14T22:08:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `soldAt` almacenar también el marketplace del pedido cuando un stock se vende como `SOLD_AS_ALTERNATIVE`, o debe reservarse para la unidad originalmente vendida?",
-  "rationale": "El dominio considera las alternativas ventas reales, pero la documentación es contradictoria y esta elección modifica tanto los callers de runtime como el universo y la interpretación del backfill.",
+  "question": "¿Debe una unidad retirada como `SOLD_AS_ALTERNATIVE` heredar en `soldAt` el marketplace del pedido, o debe modelarse la sustitución por separado?",
+  "rationale": "La fuente confirma que estas unidades son ventas operativas, pero el modelo actual no define si la unidad sustituta comparte el mismo significado de `soldAt`; la elección cambia el fix, el backfill y los análisis posteriores.",
   "options": [
     {
-      "title": "Heredar el marketplace",
-      "body": "Guardar el marketplace del `ordersell` en `soldAt` para `SOLD_AS_ALTERNATIVE` y backfillear los casos recuperables.",
+      "title": "Modelar sustitución aparte",
+      "body": "Mantener `soldAt` para ventas directas y conservar `SOLD_AS_ALTERNATIVE` como señal separada hasta añadir una relación o campo explícito para la sustitución.",
       "recommended": true
     },
     {
-      "title": "Separar la semántica",
-      "body": "Reservar `soldAt` para `SOLD` y modelar o documentar por separado el marketplace de los stocks sustitutos.",
+      "title": "Heredar el marketplace",
+      "body": "Asignar a la unidad alternativa el marketplace del `ordersell` y aplicar esa regla tanto en runtime como en el backfill histórico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Heredar el marketplace",
-    "body": "Guardar el marketplace del `ordersell` en `soldAt` para `SOLD_AS_ALTERNATIVE` y backfillear los casos recuperables.",
+    "title": "Modelar sustitución aparte",
+    "body": "Mantener `soldAt` para ventas directas y conservar `SOLD_AS_ALTERNATIVE` como señal separada hasta añadir una relación o campo explícito para la sustitución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el contribuidor reciente con más contexto directo sobre las mutaciones de venta y ya realizó el triage técnico de esta issue.",
+    "reason": "Documentó la ambigüedad y las rutas activas, y tiene historial reciente en el tratamiento de stocks vendidos y `ordersells`.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
-    "reviewedAt": "2026-07-14T22:08:11.675Z",
+    "reviewedAt": "2026-07-14T22:19:45.794Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
