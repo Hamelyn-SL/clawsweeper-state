@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T10:11:25.045Z",
+  "updatedAt": "2026-07-14T09:56:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7532,
+    "title": "feat: add pr conflict auto-resolver cloud agent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7532",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-14T09:55:19Z",
+    "updatedAt": "2026-07-14T09:56:44Z",
+    "headSha": "e1c84e9cb7c7bea601b2d33c4bd22ec76bcf509c"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Debe la primera versión permitir pushes automáticos solo en PRs del mismo repositorio y de autores internos incluidos en una allowlist, o también en ramas de contribuidores externos?",
+  "rationale": "El código no puede decidir por sí solo qué ramas son de confianza para ejecutar contenido y recibir escrituras automáticas; la issue vinculada dejó esta política pendiente de Infraestructura.",
+  "options": [
+    {
+      "title": "Allowlist interna primero",
+      "body": "Limitar el piloto a ramas del mismo repositorio y autores internos, con un worker sin secretos y un controlador confiable separado.",
+      "recommended": true
+    },
+    {
+      "title": "Solo diagnóstico",
+      "body": "Detectar, explicar y etiquetar conflictos sin hacer push hasta definir una política de confianza más amplia.",
+      "recommended": false
+    },
+    {
+      "title": "Cobertura general endurecida",
+      "body": "Permitir contribuidores externos únicamente después de demostrar aislamiento de secretos, permisos mínimos y prueba adversarial del sandbox.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Allowlist interna primero",
+    "body": "Limitar el piloto a ramas del mismo repositorio y autores internos, con un worker sin secretos y un controlador confiable separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien concentra la propiedad histórica del runner cloud, sus credenciales y sus mecanismos de idempotencia.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7532.md",
+    "reviewedAt": "2026-07-14T10:11:25.045Z",
+    "mainSha": "5b08be57087cb9f43c6f9c5d83a33fbfe5c6ffb6"
+  }
+}
