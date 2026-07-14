@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T22:14:58.842Z",
-  "updatedAt": "2026-07-08T21:12:15Z",
+  "generatedAt": "2026-07-14T13:27:15.183Z",
+  "updatedAt": "2026-07-08T22:29:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,45 @@
       "triage:done",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-08T07:31:00Z",
-    "updatedAt": "2026-07-08T21:12:15Z"
+    "updatedAt": "2026-07-08T22:29:34Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿El equipo Marketplace/Data prefiere ejecutar un recovery puntual controlado desde `marketplace_snapshots.ebay_es_listings` o convertirlo primero en una reconciliación recurrente de eBay ES?",
-  "rationale": "La decisión afecta a mutaciones reales sobre listings comprables y a si se versiona una capacidad recurrente o una corrección operativa puntual; no conviene automatizarla sin dueño humano.",
+  "question": "¿Debe la reconciliación de listings sin `mk_ebayEs` quedar como control periódico permanente o limitarse a un backfill puntual acompañado por las defensas preventivas actuales?",
+  "rationale": "Ambas opciones pueden resolver la cohorte conocida, pero cambian el grado de automatización futura y el riesgo operativo asumido sobre listings reales de eBay.",
   "options": [
     {
-      "title": "Recovery puntual controlado",
-      "body": "Crear un script/backfill con dry-run, muestras completas, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
+      "title": "Control periódico",
+      "body": "Crear un sweep idempotente, limitado y observable que revalide cada candidato contra el maestro y la API viva antes de retirarlo.",
       "recommended": true
     },
     {
-      "title": "Reconciliación recurrente",
-      "body": "Añadir un job periódico que detecte huérfanos vendidos desde snapshots y ejecute retiradas con límites, alertas y auditoría continua.",
-      "recommended": false
-    },
-    {
-      "title": "Sembrar `mk_ebayEs` mínimos",
-      "body": "Recrear documentos locales mínimos para que el withdraw existente los procese, asumiendo una migración de datos acotada y auditada.",
+      "title": "Backfill puntual",
+      "body": "Corregir la cohorte actual bajo supervisión y confiar después en las defensas preventivas ya incorporadas al pipeline de publicación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recovery puntual controlado",
-    "body": "Crear un script/backfill con dry-run, muestras completas, filtro literal, resolución de `offerId` por SKU y retirada por lotes confirmada manualmente.",
+    "title": "Control periódico",
+    "body": "Crear un sweep idempotente, limitado y observable que revalide cada candidato contra el maestro y la API viva antes de retirarlo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Tiene el rastro de historia más directo en el flujo de withdraw y el contexto operativo de eBay ES.",
+    "reason": "Tiene el historial más directo en el snapshot, la retirada e investigación operativa de eBay ES.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7212.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212#issuecomment-4919259558",
-    "reviewedAt": "2026-07-08T22:14:58.842Z",
-    "mainSha": "7548fb4ad390552b154194922a127b2a4d6072a8"
+    "reviewedAt": "2026-07-14T13:27:15.183Z",
+    "mainSha": "be349447c63690ea12e07ad6c7120b87d2d23362"
   }
 }
