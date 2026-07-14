@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T06:16:22.455Z",
-  "updatedAt": "2026-07-14T06:05:12Z",
+  "generatedAt": "2026-07-14T23:46:22.182Z",
+  "updatedAt": "2026-07-14T06:35:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 7473,
-    "title": "refactor: drop priority attribute from ecommerce sitemaps",
+    "title": "feat: segment ecommerce sitemaps by type and vertical",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473",
     "state": "open",
     "labels": [
@@ -14,39 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-07-13T12:23:30Z",
-    "updatedAt": "2026-07-14T06:05:12Z",
-    "headSha": "c3e6db94d64437663dddc928f8236742f2b61648"
+    "updatedAt": "2026-07-14T06:35:05Z",
+    "headSha": "5796d111ba700e742ca8cc65248123eae78f2efa"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe patrocinarse este branch como migración completa con `lastmod` real de stock, o reducirse al slice de eliminación de `<priority>` anunciado por el título?",
-  "rationale": "El branch implementa casi toda la issue enlazada y cambia contratos públicos de sitemap; decidir el alcance y si se mantiene el requisito exacto de stock no es una reparación mecánica.",
+  "question": "¿Debe `lastmod` representar únicamente el último cambio de precio o también los cambios de contenido y stock exigidos por la issue canónica?",
+  "rationale": "El código propuesto y el criterio de aceptación expresan contratos distintos; las notas automatizadas reconocen la discrepancia, pero no consta una decisión humana visible que autorice el recorte.",
   "options": [
     {
-      "title": "Patrocinar la migración completa",
-      "body": "Mantener el alcance actual, exigir compatibilidad, aislamiento de hubs, fecha fiable de stock y prueba real de todos los endpoints.",
+      "title": "Mantener el requisito completo",
+      "body": "Usar una fecha fiable que avance con cambios de contenido, precio o stock y actualizar código, pruebas y reglas BL en esta entrega.",
       "recommended": true
     },
     {
-      "title": "Reducir al slice mínimo",
-      "body": "Conservar solo la retirada de `<priority>` y mover segmentación, hubs, `lastmod` y `noindex` a PR separados con aceptación propia.",
+      "title": "Aprobar precio únicamente",
+      "body": "Aceptar `lastPriceUpdate` como contrato permanente y actualizar expresamente la issue y las reglas BL antes del merge.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el seguimiento",
+      "body": "Fusionar únicamente la estructura tras crear un seguimiento canónico para completar `lastmod`, manteniendo abierta la issue actual hasta satisfacer su contrato.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la migración completa",
-    "body": "Mantener el alcance actual, exigir compatibilidad, aislamiento de hubs, fecha fiable de stock y prueba real de todos los endpoints.",
+    "title": "Mantener el requisito completo",
+    "body": "Usar una fecha fiable que avance con cambios de contenido, precio o stock y actualizar código, pruebas y reglas BL en esta entrega.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el asignado de la issue canónica y propietario reciente de las superficies SEO y de autores afectadas.",
+    "reason": "Tiene el contexto más directo de la implementación activa y de la extracción reciente de las reglas BL del área.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
-    "reviewedAt": "2026-07-14T06:16:22.455Z",
-    "mainSha": "b8486cd6b87737a1d38a35e9292f9a19a643604a"
+    "reviewedAt": "2026-07-14T23:46:22.182Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
