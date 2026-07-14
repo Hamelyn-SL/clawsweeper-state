@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T12:40:23.256Z",
+  "updatedAt": "2026-07-14T12:19:43Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7551,
+    "title": "fix: map suspicious sale status by reason for sellers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7551",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-14T11:47:52Z",
+    "updatedAt": "2026-07-14T12:19:43Z",
+    "headSha": "26a0be28871e6fdb283d184dd2cda3ab7bb90309"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba sustituir la regla basada solo en `pickedUpDate` por `LOST_BY_CARRIER` → `IN_TRANSIT` y `LOST_BY_HAMELYN` → `PICKED_UP`?",
+  "rationale": "`BL-buying-account-19` fue validada con el criterio anterior; la incidencia exige ocultar `SUSPICIOUS`, pero no confirma por sí sola los dos estados sustitutos para todos los casos.",
+  "options": [
+    {
+      "title": "Revalidar el mapeo por motivo",
+      "body": "El owner confirma los estados propuestos y se actualizan la spec y sus pruebas antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la regla anterior",
+      "body": "El PR se limita a aplicar en los serializers el fallback ya validado mediante `pickedUpDate`.",
+      "recommended": false
+    },
+    {
+      "title": "Acordar otra representación",
+      "body": "Se pausa el merge hasta definir un estado o copy que no pueda inducir a error al vendedor.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revalidar el mapeo por motivo",
+    "body": "El owner confirma los estados propuestos y se actualizan la spec y sus pruebas antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "La issue madre lo nombra owner de Seller Account y responsable de la validación F2.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7551.md",
+    "reviewedAt": "2026-07-14T12:40:23.256Z",
+    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+  }
+}
