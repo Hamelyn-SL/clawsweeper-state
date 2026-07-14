@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T08:12:55.174Z",
+  "updatedAt": "2026-07-14T07:55:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7500,
+    "title": "chore: bump the npm-security group across 1 directory with 4 updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "dependencies",
+      "javascript",
+      "autofix-failed"
+    ],
+    "createdAt": "2026-07-14T07:03:16Z",
+    "updatedAt": "2026-07-14T07:55:27Z",
+    "headSha": "b0dda04faa87af64bd04e4e70bf33426a3ffd4dc"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe repararse este PR agrupado conservando versiones distintas por workspace, o regenerarse la actualización como PRs separados para evitar la rebaja y el churn del lockfile?",
+  "rationale": "La reparación exige modificar la selección de versiones o la agrupación de Dependabot, mientras el skill de autofix está diseñado para adaptar código sin editar manifiestos ni lockfiles; hace falta elegir el candidato y la estrategia de actualización.",
+  "options": [
+    {
+      "title": "Regenerar por grupos compatibles",
+      "body": "Cerrar o sustituir los PRs solapados por actualizaciones separadas que no rebajen la raíz y permitan validar cada salto mayor de forma aislada.",
+      "recommended": true
+    },
+    {
+      "title": "Reparar este PR manualmente",
+      "body": "Mantener este candidato, corregir los manifiestos y regenerar el lockfile de manera focalizada antes de repetir toda la validación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Regenerar por grupos compatibles",
+    "body": "Cerrar o sustituir los PRs solapados por actualizaciones separadas que no rebajen la raíz y permitan validar cada salto mayor de forma aislada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el propietario histórico más directo del updater agrupado, del workflow de autofix y de la versión raíz actualmente en `dev`.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7500.md",
+    "reviewedAt": "2026-07-14T08:12:55.174Z",
+    "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
+  }
+}
