@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:53:48.235Z",
-  "updatedAt": "2026-07-08T16:33:38Z",
+  "generatedAt": "2026-07-14T23:02:34.483Z",
+  "updatedAt": "2026-07-14T22:11:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,46 +23,46 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-08T16:33:38Z"
+    "updatedAt": "2026-07-14T22:11:19Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato debe tener `/api/ebay` cuando la fase create/publish termina con cero ofertas publicadas?",
-  "rationale": "El código demuestra el fallo y la mitigación, pero no determina si debe fallar toda la respuesta HTTP, solo la fase de publicación con alerta, o conservar HTTP 200 por compatibilidad.",
+  "question": "¿Qué condición operativa debe permitir reactivar `ebay.create()`: rechazar la fase cuando un lote tenga cero publicaciones correctas, emitir una alerta estructurada manteniendo HTTP `200`, o exigir ambas señales?",
+  "rationale": "La mitigación temporal continúa activa y el código no define qué severidad, respuesta o evidencia real hacen segura la reactivación; esa elección afecta alertas, reintentos y operación del marketplace.",
   "options": [
     {
-      "title": "Rechazar la fase create",
-      "body": "Hacer que el fallo total rechace create/publish, aparezca en `executionSummary` y active una alerta, sin cambiar la política de otras fases o marketplaces.",
+      "title": "Fallar lotes sin éxitos",
+      "body": "Rechazar la fase create cuando `successfulPublications === 0`, conservar los errores individuales y reactivarla tras una prueba controlada.",
       "recommended": true
     },
     {
-      "title": "Mantener HTTP 200 reforzado",
-      "body": "Conservar la respuesta HTTP actual, pero exigir una métrica y una alerta operativa específica cuando `successfulPublications` sea cero.",
+      "title": "Alertar sin rechazar",
+      "body": "Mantener la fase resuelta y HTTP `200`, pero emitir una incidencia estructurada de severidad alta para cada lote completamente fallido.",
       "recommended": false
     },
     {
-      "title": "Cambiar el wrapper global",
-      "body": "Devolver un estado HTTP no exitoso ante cualquier rechazo parcial de cualquier cron, asumiendo el impacto transversal.",
+      "title": "Esperar la política global",
+      "body": "Mantener create desactivado hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622 establezca la semántica compartida de los crons degradados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rechazar la fase create",
-    "body": "Hacer que el fallo total rechace create/publish, aparezca en `executionSummary` y active una alerta, sin cambiar la política de otras fases o marketplaces.",
+    "title": "Fallar lotes sin éxitos",
+    "body": "Rechazar la fase create cuando `successfulPublications === 0`, conservar los errores individuales y reactivarla tras una prueba controlada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Introdujo la mitigación operativa vigente y tiene historial directo en create y reconciliación de ofertas eBay.",
+    "person": "JavierHamelyn",
+    "reason": "Combina el historial más amplio en la implementación actual de eBay con la autoría del seguimiento sobre la política transversal del cron-handler.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewedAt": "2026-07-14T21:53:48.235Z",
+    "reviewedAt": "2026-07-14T23:02:34.483Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
