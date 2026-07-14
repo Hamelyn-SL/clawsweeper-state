@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-12T08:57:58.534Z",
-  "updatedAt": "2026-07-12T07:42:54Z",
+  "generatedAt": "2026-07-14T21:39:15.901Z",
+  "updatedAt": "2026-07-12T08:58:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,51 +14,45 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-07-12T07:26:25Z",
-    "updatedAt": "2026-07-12T07:42:54Z"
+    "updatedAt": "2026-07-12T08:58:41Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe Data Platform ejecutar ahora un dry-run/backfill acotado de las 901 SKUs CDL y revisar la pérdida de CDC, o esperar a otra confirmación viva antes de tocar BigQuery?",
-  "rationale": "La causa de producto parece resuelta en Mongo vivo, pero la corrección restante implica escritura/reconciliación de cientos de filas analíticas y una posible investigación operativa de CDC que requiere confirmación humana según la política del repo.",
+  "question": "¿Autoriza Data Platform una reconciliación controlada de `mongodb.mk_casaDelLibro` desde Mongo vivo y la rematerialización posterior de `mongodata.stocks_marketplace`?",
+  "rationale": "La solución pendiente no es un cambio de producto: es una escritura masiva que puede actualizar o borrar datos analíticos y la política del repositorio exige dry-run, muestras, filtro literal y confirmación humana.",
   "options": [
     {
-      "title": "Ejecutar dry-run/backfill acotado",
-      "body": "Recomendado: contar la cohorte, imprimir muestras y filtro literal, pedir confirmación y reconciliar las tablas BQ desde Mongo vivo si el resultado coincide con el triaje.",
+      "title": "Reconciliar ahora",
+      "body": "Repetir el recuento, revisar tres muestras y, si coinciden, aprobar la sincronización de la colección y validar que la cohorte desaparece.",
       "recommended": true
     },
     {
-      "title": "Esperar nueva confirmación viva",
-      "body": "Mantiene la issue abierta sin mutar datos hasta que un nuevo heartbeat confirme que las 901 filas siguen visibles en `mongodata.stocks_marketplace`.",
-      "recommended": false
-    },
-    {
-      "title": "Convertirlo en investigación CDC",
-      "body": "Trata el caso como señal de posible pérdida recurrente de CDC y prioriza encontrar la causa antes de limpiar la cohorte histórica.",
+      "title": "Investigar CDC primero",
+      "body": "Mantener la cohorte sin tocar hasta demostrar que el consumidor actual no sigue perdiendo eventos y después reconciliar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ejecutar dry-run/backfill acotado",
-    "body": "Recomendado: contar la cohorte, imprimir muestras y filtro literal, pedir confirmación y reconciliar las tablas BQ desde Mongo vivo si el resultado coincide con el triaje.",
+    "title": "Reconciliar ahora",
+    "body": "Repetir el recuento, revisar tres muestras y, si coinciden, aprobar la sincronización de la colección y validar que la cohorte desaparece.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es la señal más reciente y directa en el historial de `bq-merge`, que es el punto de reconciliación raw implicado por el triaje.",
-    "confidence": "medium"
+    "reason": "Su historial cubre el consumidor CDC, el merge raw y la herramienta de reconciliación que requiere esta decisión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7380.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380#issuecomment-4950403658",
-    "reviewedAt": "2026-07-12T08:57:58.534Z",
-    "mainSha": "eeea2581a238fb4b6c0f599a412e376823e77efe"
+    "reviewedAt": "2026-07-14T21:39:15.901Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
