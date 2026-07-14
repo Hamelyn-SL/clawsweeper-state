@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:40:08.036Z",
-  "updatedAt": "2026-07-14T11:21:38Z",
+  "generatedAt": "2026-07-14T11:49:35.103Z",
+  "updatedAt": "2026-07-14T11:29:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -27,43 +27,42 @@
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-09T00:35:21Z",
-    "updatedAt": "2026-07-14T11:21:38Z"
+    "updatedAt": "2026-07-14T11:29:23Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué política debe aplicar Amazon MX cuando un EAN no existe en su catálogo regional: excluir el stock, enriquecer ASIN antes de publicar o mantener `SYNC_ERROR` con retry diario y rebajar la alerta?",
-  "rationale": "Las tres alternativas cambian elegibilidad, carga operativa y monitorización; el código actual ya implementa correctamente el retry diario y no existe una corrección técnica única que pueda elegirse sin intención de producto.",
+  "priority": "P2",
+  "question": "¿Qué política debe aplicar Amazon MX a los EAN que no tienen ASIN resoluble en su catálogo regional?",
+  "rationale": "El flujo técnico ya conserva y reintenta los stocks correctamente; cambiar a exclusión, enriquecimiento previo o distinto alertado modifica la política de publicación y la señal operativa.",
   "options": [
     {
-      "title": "Mantener retry y ajustar watcher",
-      "body": "Conservar `SYNC_ERROR` y el retry diario, acumular los recuentos en esta canónica y alertar solo ante desviaciones del volumen esperado.",
+      "title": "Mantener retry y ajustar alertado",
+      "body": "Conservar `SYNC_ERROR`/`STALE` con cooldown de 24 horas y hacer que el watcher acumule o silencie la señal esperada en esta canónica.",
       "recommended": true
     },
     {
       "title": "Marcar como no elegible",
-      "body": "Clasificar los stocks sin ASIN regional como no elegibles y evitar reintentos hasta que cambien sus datos o la disponibilidad del catálogo.",
+      "body": "Excluir el inventario sin ASIN regional de la publicación en MX hasta que cambien sus datos, evitando reintentos periódicos.",
       "recommended": false
     },
     {
-      "title": "Enriquecer antes de crear",
-      "body": "Añadir una fase previa de enriquecimiento y no enviar el stock al flujo de creación hasta resolver un ASIN de Amazon MX.",
+      "title": "Enriquecer antes de publicar",
+      "body": "Crear un proceso previo que obtenga o confirme el ASIN de Amazon MX antes de incluir el stock en la cola de creación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener retry y ajustar watcher",
-    "body": "Conservar `SYNC_ERROR` y el retry diario, acumular los recuentos en esta canónica y alertar solo ante desviaciones del volumen esperado.",
+    "title": "Mantener retry y ajustar alertado",
+    "body": "Conservar `SYNC_ERROR`/`STALE` con cooldown de 24 horas y hacer que el watcher acumule o silencie la señal esperada en esta canónica.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el propietario histórico más claro de Amazon MX y la persona que ha aportado la decisión operativa más reciente en la discusión.",
+    "reason": "Introdujo la integración independiente de Amazon MX y ha definido en la discusión el tratamiento regional actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7262.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7262#issuecomment-4920630428",
-    "reviewedAt": "2026-07-14T11:40:08.036Z",
+    "reviewedAt": "2026-07-14T11:49:35.103Z",
     "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
   }
 }
