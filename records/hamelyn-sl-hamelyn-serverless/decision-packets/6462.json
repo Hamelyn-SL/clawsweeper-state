@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:59:46.283Z",
+  "generatedAt": "2026-07-14T22:12:04.034Z",
   "updatedAt": "2026-07-14T16:00:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -29,38 +29,38 @@
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué política de acceso, anonimización, refresco, retención, permisos y borrado debe regir `Hamelyn_DEV_BASE` y `Hamelyn_DEV_<slug>`?",
-  "rationale": "La implementación exige leer datos de producción, transformar PII y autorizar operaciones destructivas; esos límites operativos y de producto no están definidos por el código actual.",
+  "question": "¿Qué origen de datos, proceso de anonimización, credenciales, frecuencia de refresh y política de borrado quedan autorizados para `Hamelyn_DEV_BASE` y `Hamelyn_DEV_<slug>`?",
+  "rationale": "La solución tratará datos derivados de producción y operaciones destructivas, y el repositorio todavía no define una frontera suficiente para decidir esos controles de forma automática.",
   "options": [
     {
-      "title": "Aprobar RFC y fase segura",
-      "body": "Definir la política y construir primero un manifest sin valores y guardas compartidas, sin automatizar todavía la copia ni el borrado de datos.",
+      "title": "Base curada restringida",
+      "body": "Versionar transformaciones de anonimización y refrescar una base central mediante una identidad de mínimo privilegio, clonando los sandboxes únicamente desde esa base.",
       "recommended": true
     },
     {
-      "title": "Aprobar programa completo",
-      "body": "Definir responsables, permisos, anonimización, refresh, retención y recuperación antes de dividir el programa en varios PRs.",
+      "title": "Fixtures sintéticas primero",
+      "body": "Entregar inicialmente manifests e índices con datos sintéticos, y posponer cohorts derivados de producción hasta aprobar su gobernanza.",
       "recommended": false
     },
     {
-      "title": "Mantener sandboxes por dominio",
-      "body": "Endurecer y documentar utilidades específicas sin crear todavía una plataforma general de bases DEV.",
+      "title": "Herramientas por dominio",
+      "body": "Mantener sandboxes específicos revisados manualmente y no crear todavía una plataforma general compartida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar RFC y fase segura",
-    "body": "Definir la política y construir primero un manifest sin valores y guardas compartidas, sin automatizar todavía la copia ni el borrado de datos.",
+    "title": "Base curada restringida",
+    "body": "Versionar transformaciones de anonimización y refrescar una base central mediante una identidad de mínimo privilegio, clonando los sandboxes únicamente desde esa base.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el proponente y autor de los dos precedentes técnicos más cercanos, por lo que es el mejor punto inicial para coordinar la decisión con infraestructura y datos.",
-    "confidence": "high"
+    "reason": "Introdujo las piezas actuales y definió la propuesta concreta, por lo que es el mejor punto de coordinación disponible para elevar la decisión de seguridad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewedAt": "2026-07-14T21:59:46.283Z",
+    "reviewedAt": "2026-07-14T22:12:04.034Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
