@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T15:07:37.172Z",
-  "updatedAt": "2026-07-13T13:16:38Z",
+  "generatedAt": "2026-07-14T22:39:11.842Z",
+  "updatedAt": "2026-07-14T11:43:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,49 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P3",
       "rating: 🧂 unranked krab",
       "status: 📣 needs proof",
-      "P3",
       "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-07-13T13:16:25Z",
-    "updatedAt": "2026-07-13T13:16:38Z",
-    "headSha": "2e8117490b1555fea639a80201280ce03888f759"
+    "updatedAt": "2026-07-14T11:43:27Z",
+    "headSha": "97c774e10c1724a3f92a24fcd3eb1acb244dc0dd"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Se aprueba retirar también las cuatro rutas públicas de dashboards y su acceso por token en esta misma pull request?",
-  "rationale": "La issue dejó esta decisión abierta y el parche escoge la retirada completa sin una confirmación humana visible; el código no permite determinar si todavía existen consumidores externos.",
+  "question": "¿Se aprueba retirar también `/public/dashboard/{sales,stocks,supply,pricing}` y sustituir la home por páginas recientes dentro de este mismo cambio?",
+  "rationale": "La issue canónica dejó abiertas ambas decisiones y no hay aprobación humana visible ni auditoría de consumidores que permita asumir la incompatibilidad.",
   "options": [
     {
-      "title": "Conservar las rutas públicas",
-      "body": "Limitar el borrado a los dashboards internos y mantener la superficie pública hasta acordar y comunicar su retirada.",
+      "title": "Acotar y conservar rutas",
+      "body": "Retirar las superficies internas obsoletas, mantener las rutas públicas y validar o separar el rediseño de la home.",
       "recommended": true
     },
     {
-      "title": "Aprobar la retirada completa",
-      "body": "Eliminar las rutas públicas tras confirmar que no quedan consumidores operativos ni enlaces compartidos.",
+      "title": "Aprobar retirada completa",
+      "body": "Eliminar también las rutas públicas tras auditar sus consumidores y aceptar expresamente la rotura de enlaces existentes.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la nueva home",
+      "body": "Completar solo la retirada acordada y mover las páginas recientes a otro PR con prueba real propia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar las rutas públicas",
-    "body": "Limitar el borrado a los dashboards internos y mantener la superficie pública hasta acordar y comunicar su retirada.",
+    "title": "Acotar y conservar rutas",
+    "body": "Retirar las superficies internas obsoletas, mantener las rutas públicas y validar o separar el rediseño de la home.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Tiene historial previo en el admin y está coordinando la issue y la implementación, aunque la decisión debe validarse con el equipo responsable de Admin.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor solicitado con mayor señal histórica reciente en los archivos y la superficie funcional afectados.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7482.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7482#issuecomment-4959512236",
-    "reviewedAt": "2026-07-13T15:07:37.172Z",
-    "mainSha": "eec119753c187dc293b087ca0f1f68aa4f1ad4f1"
+    "reviewedAt": "2026-07-14T22:39:11.842Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

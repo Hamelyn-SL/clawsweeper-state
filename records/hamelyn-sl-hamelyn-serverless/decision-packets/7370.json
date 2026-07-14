@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:39:24.900Z",
+  "updatedAt": "2026-07-14T12:26:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7370,
+    "title": "fix: derive amazon batch withdraw regions",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7370",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P2",
+      "status: 📣 needs proof",
+      "rating: 🦪 silver shellfish",
+      "conflicts:needs-human"
+    ],
+    "createdAt": "2026-07-10T13:57:09Z",
+    "updatedAt": "2026-07-14T12:26:30Z",
+    "headSha": "1685d10ad267724a0cade5b34dd1d81b8ad8abc4"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe resolverse el conflicto conservando toda la refactorización del PR —incluido error recovery— o reducirse al batch withdraw exigido por la issue?",
+  "rationale": "`dev` añadió Amazon FR y el PR de Amazon IT amplía de nuevo los mismos archivos; decidir el alcance final afecta a la arquitectura y al riesgo operativo del cron.",
+  "options": [
+    {
+      "title": "Conservar la refactorización completa",
+      "body": "Actualizar los mapas con FR y, cuando corresponda, IT, manteniendo batch withdraw exhaustivo y error recovery configurado explícitamente.",
+      "recommended": true
+    },
+    {
+      "title": "Acotar a batch withdraw",
+      "body": "Centralizar únicamente la capacidad requerida y dejar `amazonGetErrors` en su estructura actual para reducir superficie y conflicto.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta Amazon IT",
+      "body": "Esperar a que se estabilice https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468 y resolver ambos cambios sobre una base común.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar la refactorización completa",
+    "body": "Actualizar los mapas con FR y, cuando corresponda, IT, manteniendo batch withdraw exhaustivo y error recovery configurado explícitamente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Tiene el historial más fuerte en el registry, los factories y el controller Amazon, y es autor del alta regional que causa el conflicto actual.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7370.md",
+    "reviewedAt": "2026-07-14T22:39:24.900Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

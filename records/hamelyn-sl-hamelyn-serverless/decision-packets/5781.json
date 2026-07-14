@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-13T23:46:22.588Z",
-  "updatedAt": "2026-07-13T23:36:55Z",
+  "generatedAt": "2026-07-14T22:40:43.595Z",
+  "updatedAt": "2026-07-13T23:47:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,51 +18,50 @@
       "triage:no-change",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-05-09T12:34:10Z",
-    "updatedAt": "2026-07-13T23:36:55Z"
+    "updatedAt": "2026-07-13T23:47:25Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los pedidos identificados de forma fiable como Amazon Buy Shipping deben pasar internamente a `SHIPPED` sin ejecutar `confirmShipment`?",
-  "rationale": "Esta decisión separa los datos realmente incompletos que deben recuperarse de los envíos para los que Amazon no requiere confirmación manual; automatizar sin esa política podría falsear estados.",
+  "question": "¿Qué tratamiento permanente deben recibir los pedidos Amazon Buy Shipping sin tracking local: marcarlos como `SHIPPED` sin llamar a `confirmShipment`, recuperar obligatoriamente el tracking o mantenerlos en una cola operativa de bloqueo?",
+  "rationale": "Los casos anteriores se cerraron manualmente como `SHIPPED`, pero el flujo versionado exige tracking; elegir la regla permanente afecta al contrato con Amazon, a la trazabilidad y al significado de `marketplaceData.status`.",
   "options": [
     {
-      "title": "Regla explícita de Buy Shipping",
-      "body": "Persistir o derivar una señal fiable de Buy Shipping y avanzar únicamente esos pedidos a `SHIPPED` sin confirmación manual.",
+      "title": "Excepción Buy Shipping",
+      "body": "Detectar de forma fiable las etiquetas compradas mediante Amazon y marcarlas internamente como `SHIPPED` sin ejecutar una confirmación redundante.",
       "recommended": true
     },
     {
-      "title": "Confirmación siempre obligatoria",
-      "body": "Mantener todos los pedidos bloqueados hasta recuperar carrier y tracking suficientes para ejecutar `confirmShipment`.",
+      "title": "Recuperar tracking siempre",
+      "body": "Corregir el pipeline de etiquetas para persistir tracking antes de `PICKED_UP` y conservar un único flujo de `confirmShipment`.",
       "recommended": false
     },
     {
-      "title": "Saneamiento por incidente",
-      "body": "Continuar corrigiendo manualmente cada recurrencia sin cambiar el flujo permanente.",
+      "title": "Cola operativa explícita",
+      "body": "Separar estos pedidos del reintento periódico y dejarlos en un estado bloqueado accionable hasta su resolución manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Regla explícita de Buy Shipping",
-    "body": "Persistir o derivar una señal fiable de Buy Shipping y avanzar únicamente esos pedidos a `SHIPPED` sin confirmación manual.",
+    "title": "Excepción Buy Shipping",
+    "body": "Detectar de forma fiable las etiquetas compradas mediante Amazon y marcarlas internamente como `SHIPPED` sin ejecutar una confirmación redundante.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual, realizó los saneamientos previos y ya participó en la revisión del contrato Amazon shipment vigente.",
+    "reason": "Es el asignado actual y ya verificó operativamente los casos Buy Shipping, además de conocer la propagación de datos de shipment.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5781.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5781#issuecomment-4963939856",
-    "reviewedAt": "2026-07-13T23:46:22.588Z",
-    "mainSha": "68f24350709f825a94f1390f8dcdd5e9b9838ec6"
+    "reviewedAt": "2026-07-14T22:40:43.595Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
