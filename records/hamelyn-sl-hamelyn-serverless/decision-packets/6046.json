@@ -16,7 +16,13 @@
       "priority:p1",
       "app:marketplace",
       "triage:confirmed-live",
-      "area:marketplace-sync"
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
     ],
     "createdAt": "2026-05-25T20:33:08Z",
     "updatedAt": "2026-07-08T09:37:57Z"
@@ -49,6 +55,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046#issuecomment-4974262910",
     "reviewedAt": "2026-07-14T21:28:23.113Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
