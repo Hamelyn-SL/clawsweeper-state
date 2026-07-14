@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:23:36.165Z",
-  "updatedAt": "2026-07-08T09:14:36Z",
+  "generatedAt": "2026-07-14T11:19:20.560Z",
+  "updatedAt": "2026-07-08T09:42:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,42 +16,42 @@
       "triage:done"
     ],
     "createdAt": "2026-07-07T21:34:11Z",
-    "updatedAt": "2026-07-08T09:14:36Z"
+    "updatedAt": "2026-07-08T09:42:23Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "For CDL live offers whose stock is already `WITHDRAWN` and whose `mk_casaDelLibro` row is absent, should the marketplace team prefer live Mirakl verification before local deletion, snapshot-based rehydration, or one-time cleanup plus a narrower code guard?",
-  "rationale": "The code defect is clear, but the production-safe fix can touch hundreds of marketplace rows and needs an operational choice about Mirakl rate limits, duplicate withdrawals, and bulk correction.",
+  "question": "¿Qué política debe usar CDL para recuperar ofertas activas sin `mk_casaDelLibro`: snapshot con verificación API, rehidratación directa desde snapshot o barrido completo de la API?",
+  "rationale": "La elección define el equilibrio entre cobertura, falsas detecciones, volumen de escrituras y rate limits de Mirakl; el comportamiento canónico no puede deducirse con seguridad del código actual.",
   "options": [
     {
-      "title": "Live verification before deletion",
-      "body": "Keep local rows retryable until Mirakl proves the offer is inactive, reducing future orphaned offers at the cost of extra API calls.",
+      "title": "Snapshot más API viva",
+      "body": "Usar el snapshot para descubrir candidatos y verificar cada oferta en Mirakl antes de rehidratarla y retirarla, limitando falsos positivos y llamadas.",
       "recommended": true
     },
     {
-      "title": "Snapshot rehydration recovery",
-      "body": "Use `cdl_listings` snapshots to recreate minimal retryable rows for active withdrawn SKUs, with strict dry-run controls.",
+      "title": "Rehidratar desde snapshot",
+      "body": "Crear filas mínimas para toda la cohorte del snapshot y dejar que el cron retire, aceptando que algunas entradas puedan estar obsoletas.",
       "recommended": false
     },
     {
-      "title": "One-time cleanup first",
-      "body": "Retire the current orphaned offers operationally before changing batch semantics, reducing immediate oversell risk but leaving recurrence possible until code changes land.",
+      "title": "Barrido completo de Mirakl",
+      "body": "Construir la reconciliación desde la API como fuente principal, con mayor coste operativo y exposición a rate limits.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Live verification before deletion",
-    "body": "Keep local rows retryable until Mirakl proves the offer is inactive, reducing future orphaned offers at the cost of extra API calls.",
+    "title": "Snapshot más API viva",
+    "body": "Usar el snapshot para descubrir candidatos y verificar cada oferta en Mirakl antes de rehidratarla y retirarla, limitando falsos positivos y llamadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "He provided the CDL production evidence and has recent history in the Casa del Libro marketplace API area.",
+    "reason": "Es la persona con trabajo fusionado más reciente en la prevención de listings vendidos y con historial directo en la API de Casa del Libro.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7177.md",
-    "reviewedAt": "2026-07-08T09:23:36.165Z",
-    "mainSha": "c9a20cd1c5fd8faded07fb9eae57516cc2f49d3e"
+    "reviewedAt": "2026-07-14T11:19:20.560Z",
+    "mainSha": "f2fce4a9343f0c2b097db6d881f2effc0aea5e13"
   }
 }
