@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:50:06.334Z",
-  "updatedAt": "2026-07-07T22:33:07Z",
+  "generatedAt": "2026-07-14T22:00:50.024Z",
+  "updatedAt": "2026-07-08T10:26:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -27,43 +27,42 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-19T00:34:22Z",
-    "updatedAt": "2026-07-07T22:33:07Z"
+    "updatedAt": "2026-07-08T10:26:32Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Should Fnac `/offers_update` withdraw failures get an intra-cron retry/backoff, or should retries stay limited to auth/read/batch-status calls until Fnac idempotency is proven?",
-  "rationale": "The live recurrence is now centered on `deleteFnacOffer`, but prior triage explicitly warned that retrying side-effecting Fnac POSTs may duplicate batches or actions.",
+  "question": "¿Qué contrato de recuperación debe adoptar Fnac para HTTP 5xx en operaciones con efecto, especialmente `offers_update`: reconciliar el batch remoto antes de repetir o reactivar el recovery genérico de `SYNC_ERROR`?",
+  "rationale": "La elección determina si una respuesta perdida puede provocar un batch duplicado y cómo se recuperan unidades ya persistidas como `SYNC_ERROR`; el código y la discusión no fijan una política segura única.",
   "options": [
     {
-      "title": "Keep retries to safe endpoints first",
-      "body": "Add bounded retry/backoff for `auth`, `orders_query`, and `batch_status`, while leaving `offers_update` and `orders_update` on next-tick recovery until idempotency is proven.",
+      "title": "Reconciliar antes de repetir",
+      "body": "Registrar la solicitud y consultar el batch o estado remoto antes de reenviar una operación con efecto; usar retry directo solo para llamadas idempotentes.",
       "recommended": true
     },
     {
-      "title": "Add guarded withdraw retry",
-      "body": "Retry `deleteFnacOffer` only with contract evidence or code-level guards that prevent duplicate batch side effects.",
+      "title": "Reactivar recovery genérico",
+      "body": "Volver a procesar automáticamente los `SYNC_ERROR` con el mecanismo existente y añadir defensas específicas contra duplicados.",
       "recommended": false
     },
     {
-      "title": "Accept next-tick recovery",
-      "body": "Keep current behavior and treat these provider 500s as operational noise unless BigQuery shows sustained delayed withdrawals or customer impact.",
+      "title": "Recuperación manual asistida",
+      "body": "No repetir automáticamente POST con efecto y ofrecer diagnóstico y acción operativa explícita para cada error pendiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Keep retries to safe endpoints first",
-    "body": "Add bounded retry/backoff for `auth`, `orders_query`, and `batch_status`, while leaving `offers_update` and `orders_update` on next-tick recovery until idempotency is proven.",
+    "title": "Reconciliar antes de repetir",
+    "body": "Registrar la solicitud y consultar el batch o estado remoto antes de reenviar una operación con efecto; usar retry directo solo para llamadas idempotentes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Recent Fnac/marketplace area history and triage labels make this the best available routing candidate for the retry-boundary decision.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Tiene la mayor trayectoria histórica en el controlador Fnac y en la arquitectura de retirada afectada, por lo que es el mejor candidato para decidir el contrato junto con los contribuidores recientes.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5901.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5901#issuecomment-4909755990",
-    "reviewedAt": "2026-07-07T22:50:06.334Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T22:00:50.024Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

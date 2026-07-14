@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:43:36.812Z",
-  "updatedAt": "2026-07-08T16:34:13Z",
+  "generatedAt": "2026-07-14T22:08:11.675Z",
+  "updatedAt": "2026-07-14T16:01:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,43 +19,42 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: 🦞 diamond lobster",
       "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear",
-      "impact:data-loss"
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-07-08T16:34:13Z"
+    "updatedAt": "2026-07-14T16:01:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `soldAt` registrar también el marketplace cuando el stock se retira como `SOLD_AS_ALTERNATIVE`?",
-  "rationale": "La elección determina el contrato del campo, los call sites que deben cambiar y qué registros históricos pueden rellenarse sin reinterpretar los datos.",
+  "question": "¿Debe `soldAt` almacenar también el marketplace del pedido cuando un stock se vende como `SOLD_AS_ALTERNATIVE`, o debe reservarse para la unidad originalmente vendida?",
+  "rationale": "El dominio considera las alternativas ventas reales, pero la documentación es contradictoria y esta elección modifica tanto los callers de runtime como el universo y la interpretación del backfill.",
   "options": [
     {
-      "title": "Separar alternativas",
-      "body": "Corregir y rellenar `SOLD`, dejando `SOLD_AS_ALTERNATIVE` fuera hasta definir una representación específica.",
+      "title": "Heredar el marketplace",
+      "body": "Guardar el marketplace del `ordersell` en `soldAt` para `SOLD_AS_ALTERNATIVE` y backfillear los casos recuperables.",
       "recommended": true
     },
     {
-      "title": "Unificar ventas",
-      "body": "Heredar el marketplace del pedido para ambos motivos y documentar que `soldAt` cubre ventas directas y sustitutas.",
+      "title": "Separar la semántica",
+      "body": "Reservar `soldAt` para `SOLD` y modelar o documentar por separado el marketplace de los stocks sustitutos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar alternativas",
-    "body": "Corregir y rellenar `SOLD`, dejando `SOLD_AS_ALTERNATIVE` fuera hasta definir una representación específica.",
+    "title": "Heredar el marketplace",
+    "body": "Guardar el marketplace del `ordersell` en `soldAt` para `SOLD_AS_ALTERNATIVE` y backfillear los casos recuperables.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Introdujo `SOLD_AS_ALTERNATIVE` y presenta el rastro histórico más fuerte sobre las mutaciones y consultas de stocks afectadas.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor reciente con más contexto directo sobre las mutaciones de venta y ya realizó el triage técnico de esta issue.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
-    "reviewedAt": "2026-07-14T15:43:36.812Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T22:08:11.675Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

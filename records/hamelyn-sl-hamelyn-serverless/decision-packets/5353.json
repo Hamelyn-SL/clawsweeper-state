@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:19:53.744Z",
-  "updatedAt": "2026-07-08T10:32:48Z",
+  "generatedAt": "2026-07-14T21:55:34.652Z",
+  "updatedAt": "2026-07-08T16:33:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,48 +20,42 @@
       "issue-rating: 🐚 platinum hermit",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-08T10:32:48Z"
+    "updatedAt": "2026-07-08T16:33:46Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Para los fallos parciales de actualización de precio de eBay, ¿debe `/api/ebay` seguir devolviendo HTTP 200 con `Completed with partial failures` o debe escalar los lotes materiales sin sincronizar con una señal de fallo más fuerte?",
-  "rationale": "La issue mezcla un bug de clasificación 400 con una política compartida de agregación del cron; el código actual muestra que el HTTP 200 de fallo parcial es comportamiento común, no un detalle aislado de eBay.",
+  "question": "¿Debe esta issue considerarse resuelta cuando desaparezca la recurrencia específica `400/errorId 25002`, aunque `/api/ebay` siga respondiendo HTTP 200 a otros fallos parciales cubiertos por https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622?",
+  "rationale": "La implementación específica de eBay y el contrato compartido del cron tienen responsables y riesgos distintos; hace falta confirmar el límite de esta issue antes de promover otro arreglo.",
   "options": [
     {
-      "title": "Mantener 200 y reforzar eBay",
-      "body": "Preserva el contrato compartido del cron y enfoca el arreglo en payload, clasificación, reconciliación y logging de la variante 400 restante.",
+      "title": "Separar ambos alcances",
+      "body": "Mantener esta issue centrada en eliminar la recurrencia 400 de eBay y dejar toda decisión sobre HTTP 200 y severidad compartida en la issue transversal.",
       "recommended": true
     },
     {
-      "title": "Escalar fallos parciales materiales",
-      "body": "Convierte ciertos fallos parciales de eBay en una señal operacional más fuerte, aceptando impacto en monitorización y alertas.",
-      "recommended": false
-    },
-    {
-      "title": "Esperar payload vivo",
-      "body": "No cambiar código hasta capturar una muestra actual que demuestre qué variante 400 sigue fallando.",
+      "title": "Resolver ambos aquí",
+      "body": "Mantener esta issue abierta hasta cambiar también el contrato HTTP del handler, aceptando un alcance multi-marketplace y mayor complejidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener 200 y reforzar eBay",
-    "body": "Preserva el contrato compartido del cron y enfoca el arreglo en payload, clasificación, reconciliación y logging de la variante 400 restante.",
+    "title": "Separar ambos alcances",
+    "body": "Mantener esta issue centrada en eliminar la recurrencia 400 de eBay y dejar toda decisión sobre HTTP 200 y severidad compartida en la issue transversal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el candidato con mejor señal histórica sobre la ruta de eBay updatePrice y la semántica actual de fallo parcial.",
-    "confidence": "high"
+    "reason": "Su historial reciente conecta tanto el cliente eBay como el handler compartido, por lo que puede coordinar mejor el límite entre ambas issues.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-08T16:19:53.744Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T21:55:34.652Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

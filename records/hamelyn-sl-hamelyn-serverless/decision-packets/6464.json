@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:47:33.299Z",
-  "updatedAt": "2026-07-14T12:24:09Z",
+  "generatedAt": "2026-07-14T22:06:49.310Z",
+  "updatedAt": "2026-07-14T16:00:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,12 +24,12 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-07-14T12:24:09Z"
+    "updatedAt": "2026-07-14T16:00:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
   "question": "¿Hay evidencia operativa o contractual suficiente para documentar como estables los flujos de Buscalibre y Milanuncios, o debe mantenerse Milanuncios como automatización experimental y los datos restantes como desconocidos?",
-  "rationale": "El código permite reconstruir el comportamiento actual, pero no acredita permisos de uso, contratos privados, contactos vigentes ni la ubicación canónica de credenciales.",
+  "rationale": "El código acredita el comportamiento técnico actual, pero no demuestra autorización contractual, contactos vigentes, condiciones de uso ni la ubicación canónica de las credenciales.",
   "options": [
     {
       "title": "Esperar confirmación operativa",
@@ -38,7 +38,7 @@
     },
     {
       "title": "Formalizar límites desconocidos",
-      "body": "Documentar expresamente lo no confirmado y mantener Milanuncios como integración experimental hasta disponer de autorización contractual.",
+      "body": "Mantener explícitamente los datos no confirmados y clasificar Milanuncios como experimental hasta disponer de autorización contractual.",
       "recommended": false
     }
   ],
@@ -49,12 +49,12 @@
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el asignado actual, creó la documentación y ya incorporó una confirmación operativa posterior de Buscalibre.",
+    "reason": "Es el asignado actual, creó el runbook y centralizó estas preguntas como seguimiento operativo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewedAt": "2026-07-14T15:47:33.299Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T22:06:49.310Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

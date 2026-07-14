@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T06:27:38.215Z",
-  "updatedAt": "2026-07-14T06:20:20Z",
+  "generatedAt": "2026-07-14T22:06:44.592Z",
+  "updatedAt": "2026-07-14T06:41:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,43 +25,42 @@
       "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-14T06:20:20Z"
+    "updatedAt": "2026-07-14T06:41:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Tras la decisión fusionada el 13 de julio de 2026 de mantener una ventana real de 500, ¿debe reabrirse esa regla BL para ejecutar la fase SEO de 30.000 resultados?",
-  "rationale": "La petición contradice una decisión BL muy reciente y altera coste, latencia, caché y comportamiento de crawlers; el repositorio no puede elegir entre ambas políticas mediante una reparación automática.",
+  "question": "¿Debe conservarse la regla BL vigente de 500 resultados o se autoriza reabrir el catálogo a una primera fase de 30.000 productos para el experimento SEO?",
+  "rationale": "Las dos direcciones son incompatibles y la política de 500 se validó y fusionó después de abrir esta petición; automatizar una ampliación la revocaría sin autorización y asumiría un coste operativo no medido.",
   "options": [
     {
-      "title": "Mantener 500 y cerrar",
-      "body": "Conservar la regla BL fusionada y cerrar esta petición dejando documentada la contrapartida SEO aceptada.",
+      "title": "Conservar 500 resultados",
+      "body": "Mantener la regla BL vigente y cerrar esta petición, salvo que nuevos datos SEO justifiquen otro experimento.",
       "recommended": true
     },
     {
-      "title": "Aprobar piloto gradual",
-      "body": "Reabrir la regla BL y aumentar la ventana por escalones, con benchmark, métricas SEO y rollback antes de cada incremento.",
+      "title": "Autorizar un piloto gradual",
+      "body": "Definir un límite inicial, métricas de éxito y guardas de latencia/coste antes de implementar una profundidad superior.",
       "recommended": false
     },
     {
       "title": "Aprobar 30.000 directamente",
-      "body": "Actualizar conjuntamente búsqueda, caché, paginación y specs, asumiendo desde el despliegue inicial el incremento operativo completo.",
+      "body": "Aceptar explícitamente el mayor coste y rediseñar búsqueda, rerank y caché para que la ampliación sea servible.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener 500 y cerrar",
-    "body": "Conservar la regla BL fusionada y cerrar esta petición dejando documentada la contrapartida SEO aceptada.",
+    "title": "Conservar 500 resultados",
+    "body": "Mantener la regla BL vigente y cerrar esta petición, salvo que nuevos datos SEO justifiquen otro experimento.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el owner declarado de Public Catalog y el autor principal de la regla BL vigente y de su último cambio de comportamiento.",
+    "reason": "Es el owner documentado de Public Catalog y authored la política de paginación que habría que conservar o revocar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604#issuecomment-4910069554",
-    "reviewedAt": "2026-07-14T06:27:38.215Z",
-    "mainSha": "9c70224079f5c6db7b7f6873138c02133f74e7ac"
+    "reviewedAt": "2026-07-14T22:06:44.592Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

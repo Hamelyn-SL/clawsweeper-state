@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T16:21:09.370Z",
-  "updatedAt": "2026-07-08T10:25:28Z",
+  "generatedAt": "2026-07-14T21:53:48.235Z",
+  "updatedAt": "2026-07-08T16:33:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,50 +20,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-08T10:25:28Z"
+    "updatedAt": "2026-07-08T16:33:38Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Para create/publish de eBay, ¿un lote de `bulkPublishOffer` con cero publicaciones exitosas debe fallar o escalar la respuesta del cron `/api/ebay`, o debe seguir siendo HTTP 200 con alertas internas más fuertes?",
-  "rationale": "La parte mecánica de logging por oferta es acotada, pero la semántica de éxito del cron multifase y la reactivación de create son una decisión de operación/producto del marketplace.",
+  "question": "¿Qué contrato debe tener `/api/ebay` cuando la fase create/publish termina con cero ofertas publicadas?",
+  "rationale": "El código demuestra el fallo y la mitigación, pero no determina si debe fallar toda la respuesta HTTP, solo la fase de publicación con alerta, o conservar HTTP 200 por compatibilidad.",
   "options": [
     {
-      "title": "Escalar lotes sin éxitos",
-      "body": "Tratar un lote de publicación con cero ofertas correctas como fallo de fase o alerta equivalente antes de reactivar create de eBay.",
+      "title": "Rechazar la fase create",
+      "body": "Hacer que el fallo total rechace create/publish, aparezca en `executionSummary` y active una alerta, sin cambiar la política de otras fases o marketplaces.",
       "recommended": true
     },
     {
-      "title": "Mantener HTTP 200 con alerta fuerte",
-      "body": "Permitir que el cron siga devolviendo 200 cuando otras fases funcionen, pero añadir logs por oferta y notificación prioritaria para lotes sin éxitos.",
+      "title": "Mantener HTTP 200 reforzado",
+      "body": "Conservar la respuesta HTTP actual, pero exigir una métrica y una alerta operativa específica cuando `successfulPublications` sea cero.",
       "recommended": false
     },
     {
-      "title": "Mantener create deshabilitado",
-      "body": "Dejar create de eBay apagado hasta que operaciones confirme la causa de los rechazos de cuenta/política y aporte una prueba segura de reactivación.",
+      "title": "Cambiar el wrapper global",
+      "body": "Devolver un estado HTTP no exitoso ante cualquier rechazo parcial de cualquier cron, asumiendo el impacto transversal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar lotes sin éxitos",
-    "body": "Tratar un lote de publicación con cero ofertas correctas como fallo de fase o alerta equivalente antes de reactivar create de eBay.",
+    "title": "Rechazar la fase create",
+    "body": "Hacer que el fallo total rechace create/publish, aparezca en `executionSummary` y active una alerta, sin cambiar la política de otras fases o marketplaces.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona más conectada al estado actual del controlador de eBay y al comportamiento compartido del cron, que son los puntos donde debe decidirse la política operativa.",
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la mitigación operativa vigente y tiene historial directo en create y reconciliación de ofertas eBay.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-08T16:21:09.370Z",
-    "mainSha": "54896479ce3b6f8f138ef1bf4bc0a74bd9c5d17e"
+    "reviewedAt": "2026-07-14T21:53:48.235Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

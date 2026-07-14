@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:46:20.100Z",
-  "updatedAt": "2026-07-08T09:37:29Z",
+  "generatedAt": "2026-07-14T22:00:38.029Z",
+  "updatedAt": "2026-07-14T16:00:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,40 +18,51 @@
       "app:marketplace",
       "triage:blocked",
       "triage:confirmed-live",
-      "area:marketplace-orders"
+      "area:marketplace-orders",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-05-08T02:35:52Z",
-    "updatedAt": "2026-07-08T09:37:29Z"
+    "updatedAt": "2026-07-14T16:00:13Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `amazon-notifications-pull` hacer un retry local y limitado de `getOrder`, o mantener únicamente el reintento diferido de SQS y escalar los `InternalFailure` sostenidos a Amazon?",
-  "rationale": "Ambas estrategias evitan pérdida de mensajes, pero cambian el equilibrio entre latencia de pedidos, consumo de cuota SP-API y riesgo de agotar los 150 segundos del cron; el repositorio no define todavía esa política para `getOrder`.",
+  "question": "¿Debe `getOrder` reintentar localmente los `5xx` de Amazon dentro de la misma ejecución o mantenerse el reintento exclusivamente mediante la retención SQS?",
+  "rationale": "Ambas opciones preservan los mensajes, pero cambian la latencia de los pedidos, la presión sobre SP-API y el riesgo de agotar el runtime del cron.",
   "options": [
     {
-      "title": "Retry local condicionado al presupuesto",
-      "body": "Hacer uno o dos reintentos transitorios solo en el procesamiento de notificaciones, cancelando nuevos intentos cuando no quede margen suficiente y conservando SQS como fallback.",
+      "title": "Retry corto con presupuesto",
+      "body": "Aplicar uno o dos reintentos únicamente cuando quede margen temporal, respetando `Retry-After` y conservando SQS como fallback.",
       "recommended": true
     },
     {
-      "title": "Mantener solo el retry de SQS",
-      "body": "No multiplicar llamadas dentro de una ejecución y tratar los `500` sostenidos como incidencia operativa con Amazon, reforzando únicamente métricas y alertas.",
+      "title": "Solo retry por SQS",
+      "body": "Mantener una llamada por ejecución y mejorar únicamente la observabilidad y el escalado operativo de fallos sostenidos.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar nueva señal productiva",
+      "body": "No cambiar código hasta medir la frecuencia reciente y el alcance EU/NA de la firma.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retry local condicionado al presupuesto",
-    "body": "Hacer uno o dos reintentos transitorios solo en el procesamiento de notificaciones, cancelando nuevos intentos cuando no quede margen suficiente y conservando SQS como fallback.",
+    "title": "Retry corto con presupuesto",
+    "body": "Aplicar uno o dos reintentos únicamente cuando quede margen temporal, respetando `Retry-After` y conservando SQS como fallback.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien introdujo tanto el poller como el procesamiento `ORDER_CHANGE` y conoce mejor el presupuesto y la semántica original del flujo.",
+    "reason": "Introdujo el flujo de notificaciones y sus decisiones originales de throughput y procesamiento por mensaje.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5747.md",
-    "reviewedAt": "2026-07-14T15:46:20.100Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T22:00:38.029Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

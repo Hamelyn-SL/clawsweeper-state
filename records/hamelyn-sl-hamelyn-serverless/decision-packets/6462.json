@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:40:03.076Z",
-  "updatedAt": "2026-07-14T12:24:00Z",
+  "generatedAt": "2026-07-14T21:59:46.283Z",
+  "updatedAt": "2026-07-14T16:00:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,42 +25,42 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:39:40Z",
-    "updatedAt": "2026-07-14T12:24:00Z"
+    "updatedAt": "2026-07-14T16:00:07Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué frontera de acceso a producción y anonimización se autoriza para construir y refrescar `Hamelyn_DEV_BASE` antes de permitir el clonado de sandboxes?",
-  "rationale": "El repositorio aporta patrones técnicos parciales, pero la identidad de servicio, el conjunto de datos exportable, las transformaciones irreversibles y la responsabilidad de aprobar cada refresh son decisiones de seguridad y operación que no pueden inferirse del código.",
+  "question": "¿Qué política de acceso, anonimización, refresco, retención, permisos y borrado debe regir `Hamelyn_DEV_BASE` y `Hamelyn_DEV_<slug>`?",
+  "rationale": "La implementación exige leer datos de producción, transformar PII y autorizar operaciones destructivas; esos límites operativos y de producto no están definidos por el código actual.",
   "options": [
     {
-      "title": "Aprobar una implantación por fases",
-      "body": "Definir primero la política de acceso y anonimización, aterrizar el tooling read-only y habilitar el clonado solo desde una base curada ya aprobada.",
+      "title": "Aprobar RFC y fase segura",
+      "body": "Definir la política y construir primero un manifest sin valores y guardas compartidas, sin automatizar todavía la copia ni el borrado de datos.",
       "recommended": true
     },
     {
-      "title": "Limitarse inicialmente a solo lectura",
-      "body": "Entregar únicamente auditoría y comparación de índices, posponiendo cualquier copia de documentos hasta disponer de una política formal de datos.",
+      "title": "Aprobar programa completo",
+      "body": "Definir responsables, permisos, anonimización, refresh, retención y recuperación antes de dividir el programa en varios PRs.",
       "recommended": false
     },
     {
-      "title": "Aprobar el programa integral",
-      "body": "Construir refresh, anonimización y ciclo de vida en una misma iniciativa, asumiendo una revisión de seguridad y operación más amplia antes de desplegarla.",
+      "title": "Mantener sandboxes por dominio",
+      "body": "Endurecer y documentar utilidades específicas sin crear todavía una plataforma general de bases DEV.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una implantación por fases",
-    "body": "Definir primero la política de acceso y anonimización, aterrizar el tooling read-only y habilitar el clonado solo desde una base curada ya aprobada.",
+    "title": "Aprobar RFC y fase segura",
+    "body": "Definir la política y construir primero un manifest sin valores y guardas compartidas, sin automatizar todavía la copia ni el borrado de datos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor de los dos precedentes técnicos centrales y de la propuesta que debe concretar la frontera operativa.",
+    "reason": "Es el proponente y autor de los dos precedentes técnicos más cercanos, por lo que es el mejor punto inicial para coordinar la decisión con infraestructura y datos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewedAt": "2026-07-14T15:40:03.076Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-14T21:59:46.283Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-14T22:06:36.710Z",
+  "updatedAt": "2026-07-14T16:01:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6763,
+    "title": "Añadir hreflang/alternate en páginas de categoría (todas las tiendas) + integrar Brasil (pt-br) en el clúster",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "triage:done",
+      "reporter:victor",
+      "impact:other",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-01T10:05:41Z",
+    "updatedAt": "2026-07-14T16:01:32Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la decisión validada de mantener `SearchPage` sin `alternates.languages` aplicarse también a las landings públicas de categoría y subcategoría, o únicamente a búsquedas libres y resultados filtrados?",
+  "rationale": "El código unifica ambos casos, mientras que esta incidencia exige separarlos y la spec validada posterior afirma que la omisión es intencional incluso al mencionar categorías; cambiar ese contrato sin confirmar la intención SEO no es seguro.",
+  "options": [
+    {
+      "title": "Separar landings y búsquedas",
+      "body": "Generar `hreflang` solo para rutas públicas canónicas de categoría y subcategoría sin búsqueda activa, manteniéndolo ausente en búsquedas y filtros no canónicos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el contrato actual",
+      "body": "Conservar las categorías de `SearchPage` sin alternates y limitar el arreglo a incorporar `pt-BR` en las páginas que ya utilizan el helper común.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar landings y búsquedas",
+    "body": "Generar `hreflang` solo para rutas públicas canónicas de categoría y subcategoría sin búsqueda activa, manteniéndolo ausente en búsquedas y filtros no canónicos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Documentó la decisión validada más reciente y la divergencia de `pt-BR` dentro del bloque SEO fusionado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
+    "reviewedAt": "2026-07-14T22:06:36.710Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+  }
+}

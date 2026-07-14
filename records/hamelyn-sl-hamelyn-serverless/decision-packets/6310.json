@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:10:03.655Z",
-  "updatedAt": "2026-07-07T22:49:47Z",
+  "generatedAt": "2026-07-14T22:06:49.656Z",
+  "updatedAt": "2026-07-08T10:13:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 🌊 off-meta tidepool",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: 🌊 off-meta tidepool",
+      "impact:ux-friction"
     ],
     "createdAt": "2026-06-09T12:17:30Z",
-    "updatedAt": "2026-07-07T22:49:47Z"
+    "updatedAt": "2026-07-08T10:13:29Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Should the work be split into staged PRs for recipient routing, FEDEX consolidated batch-skip state, and packing regeneration UI, or should maintainers sponsor one larger end-to-end PR?",
-  "rationale": "The remaining work crosses data-driven routing, persisted label state, FEDEX side effects, and warehouse UI, so automation should not choose the rollout boundary or operator policy without maintainer intent.",
+  "question": "¿Debe entregarse el flujo en PRs escalonadas —routing/configuración, estado pendiente y UI operativa— o como una única PR integral, y qué política debe aplicarse al regenerar una expedición FEDEX existente?",
+  "rationale": "El trabajo cruza configuración operativa, estado persistido, efectos externos de FEDEX y UX de almacén; el código no determina por sí solo la frontera de despliegue ni si una regeneración debe cancelar, sustituir o rechazar el envío anterior.",
   "options": [
     {
-      "title": "Split into staged PRs",
-      "body": "Implement and validate the routing/config layer first, then add the batch-skip state and packing regeneration UX with focused operational proof.",
+      "title": "PRs escalonadas",
+      "body": "Añadir primero el matching de destinatario con pruebas, después el estado pendiente excluido del batch y finalmente la generación/regeneración por consolidado con prueba operativa.",
       "recommended": true
     },
     {
-      "title": "One end-to-end PR",
-      "body": "Land the full workflow together, accepting a larger review surface across core shipping logic and admin packing UI.",
+      "title": "PR integral",
+      "body": "Implementar routing, estado, API y UI en una sola entrega, aceptando una superficie de revisión y despliegue mayor.",
       "recommended": false
     },
     {
-      "title": "Defer the workflow",
-      "body": "Keep the current manual Spring-to-FEDEX switch and consolidated label dedupe while operations continue handling prep-center shipments manually.",
+      "title": "Mantener flujo manual",
+      "body": "Conservar temporalmente el cambio Spring→FEDEX existente y documentar la operación manual mientras se pospone la automatización por prep-center.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Split into staged PRs",
-    "body": "Implement and validate the routing/config layer first, then add the batch-skip state and packing regeneration UX with focused operational proof.",
+    "title": "PRs escalonadas",
+    "body": "Añadir primero el matching de destinatario con pruebas, después el estado pendiente excluido del batch y finalmente la generación/regeneración por consolidado con prueba operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "They have the strongest recent history across carrier resolution and the FEDEX multi-box packing switch that this feature extends.",
+    "reason": "Es quien concentra el historial reciente más fuerte en ShipMatrix, resolución de carrier y política de cambio manual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6310.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6310#issuecomment-4909866015",
-    "reviewedAt": "2026-07-07T23:10:03.655Z",
-    "mainSha": "22201b3382325cc80747a08a1e49a425cfc04d7a"
+    "reviewedAt": "2026-07-14T22:06:49.656Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
