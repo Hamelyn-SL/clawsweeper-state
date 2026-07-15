@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:37:35.296Z",
-  "updatedAt": "2026-07-13T14:48:40Z",
+  "generatedAt": "2026-07-15T14:49:26.240Z",
+  "updatedAt": "2026-07-15T13:27:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:no-change",
       "reporter:victor",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: 🌊 off-meta tidepool"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-13T14:48:40Z"
+    "updatedAt": "2026-07-15T13:27:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba dividir el rediseño de las cuatro minihomes en entregas acotadas, y qué contrato definitivo deben seguir el ranking, la caché, el copy y los layouts responsive?",
-  "rationale": "La implementación cruza diseño, catálogo, consultas de producto, caché, traducciones y SEO; el código permite reutilizar piezas, pero no determina por sí solo la experiencia final ni la política de datos.",
+  "question": "¿Se acepta la variante de seis horas para la caché de destacados y el diseño propuesto por la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7602 como interpretación canónica de la plantilla, una vez corregida la densidad móvil y aportada prueba real?",
+  "rationale": "La issue define la intención general, pero la duración concreta de la caché y la fidelidad visual final afectan al comportamiento editorial y necesitan aceptación humana antes de fusionar un rediseño de cuatro páginas de alto tráfico.",
   "options": [
     {
-      "title": "Aprobar implementación por fases",
-      "body": "Mantener esta issue como iniciativa y abrir tareas acotadas para hero y beneficios, selección y caché, catálogo embebido, y SEO/interlinking con criterios visuales compartidos.",
+      "title": "Aprobar con ajustes y prueba",
+      "body": "Mantener la PR como implementación canónica, corregir el carrusel móvil y exigir evidencia responsive y de filtros antes del merge.",
       "recommended": true
     },
     {
-      "title": "Ejecutar un único proyecto L",
-      "body": "Aprobar todo el rediseño como una sola entrega coordinada, aceptando un PR amplio y una validación visual y funcional más costosa.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar el rediseño",
-      "body": "Conservar únicamente las mejoras actuales y posponer nuevas secciones hasta disponer de diseño, copy y política de ranking definitivos.",
+      "title": "Recalibrar diseño o caché",
+      "body": "Pausar el merge y acordar primero otra densidad, composición visual o política de revalidación para los destacados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar implementación por fases",
-    "body": "Mantener esta issue como iniciativa y abrir tareas acotadas para hero y beneficios, selección y caché, catálogo embebido, y SEO/interlinking con criterios visuales compartidos.",
+    "title": "Aprobar con ajustes y prueba",
+    "body": "Mantener la PR como implementación canónica, corregir el carrusel móvil y exigir evidencia responsive y de filtros antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es el asignado actual y quien restauró explícitamente el seguimiento del rediseño completo después de fusionar la corrección parcial.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor asignado por familiaridad con la superficie de catálogo y cuenta con historial reciente en sus filtros, rutas y SEO.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewedAt": "2026-07-14T22:37:35.296Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-15T14:49:26.240Z",
+    "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
   }
 }
