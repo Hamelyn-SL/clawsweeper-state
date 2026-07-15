@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:48:00.409Z",
+  "generatedAt": "2026-07-15T10:52:07.743Z",
   "updatedAt": "2026-07-15T09:55:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,53 +15,45 @@
       "app:ecommerce",
       "priority:p0",
       "triage:done",
-      "reporter:irenegarcia",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:irenegarcia"
     ],
     "createdAt": "2026-07-15T09:46:05Z",
     "updatedAt": "2026-07-15T09:55:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campo personalizado de eDesk y qué disparador deben ser canónicos para enriquecer los tickets importados por marketplaces externos?",
-  "rationale": "Hamelyn no crea esos tickets y la consolidación puede producirse antes o después de su importación, por lo que el ciclo de sincronización no puede deducirse únicamente del código actual.",
+  "question": "¿Qué nombre y tipo tendrá el campo personalizado de consolidación en eDesk, y qué mecanismo debe enriquecer los tickets de marketplaces creados por conectores externos?",
+  "rationale": "El repositorio puede resolver los pedidos relacionados, pero no puede determinar por sí solo el contrato del panel de eDesk ni si el ciclo de vida operativo debe depender de configuración externa, eventos o polling.",
   "options": [
     {
-      "title": "Webhook o automatización de eDesk",
-      "body": "Enriquecer cada ticket al importarse, resolviendo el pedido mediante `seller_order_id` y actualizando el campo de forma idempotente.",
+      "title": "Reconciliación idempotente",
+      "body": "Añadir el dato inmediatamente en ecommerce y ejecutar una sincronización periódica con reintentos para localizar por `seller_order_id` y actualizar los tickets externos cuando ya existan.",
       "recommended": true
     },
     {
-      "title": "Sincronización periódica",
-      "body": "Buscar tickets pendientes en lotes y actualizar el campo aceptando un retraso operativo controlado.",
+      "title": "Webhook o automatización eDesk",
+      "body": "Configurar un evento de eDesk que invoque un endpoint de Hamelyn al crear o actualizar el ticket, reduciendo polling pero añadiendo dependencia operativa externa.",
       "recommended": false
     },
     {
-      "title": "Limitar inicialmente a Ecommerce",
-      "body": "Añadir solo el texto al mensaje creado por Hamelyn y dejar los tickets importados para una fase posterior explícita.",
+      "title": "Limitarlo a ecommerce",
+      "body": "Incorporar únicamente el texto en las incidencias creadas por Hamelyn y dejar los demás marketplaces fuera hasta definir su integración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Webhook o automatización de eDesk",
-    "body": "Enriquecer cada ticket al importarse, resolviendo el pedido mediante `seller_order_id` y actualizando el campo de forma idempotente.",
+    "title": "Reconciliación idempotente",
+    "body": "Añadir el dato inmediatamente en ecommerce y ejecutar una sincronización periódica con reintentos para localizar por `seller_order_id` y actualizar los tickets externos cuando ya existan.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien introdujo y más ha mantenido el flujo Ecommerce→eDesk afectado por esta decisión.",
-    "confidence": "high"
+    "reason": "Es la persona con mayor historial sobre el contrato y la evolución del flujo ecommerce-eDesk.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585#issuecomment-4979728447",
-    "reviewedAt": "2026-07-15T10:48:00.409Z",
+    "reviewedAt": "2026-07-15T10:52:07.743Z",
     "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }

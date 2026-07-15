@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T09:11:38.325Z",
-  "updatedAt": "2026-07-15T08:57:16Z",
+  "generatedAt": "2026-07-15T10:41:55.660Z",
+  "updatedAt": "2026-07-15T09:20:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,45 @@
       "priority:p1",
       "reporter:jesus",
       "feature",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-15T08:57:16Z"
+    "updatedAt": "2026-07-15T09:20:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba sustituir ahora la regla BL de 500 resultados por un piloto de 30.000, aceptando el coste medido y definiendo umbrales operativos de rollback?",
-  "rationale": "La petición y el PR proponen revocar una política BL fusionada recientemente, y el benchmark demuestra un aumento material de latencia y memoria cuyo presupuesto no puede decidirse desde el código.",
+  "question": "¿Aprueba ecommerce sustituir temporalmente la regla BL de 500 resultados por una ventana de 30.000 para el piloto SEO, aceptando la latencia y memoria medidas?",
+  "rationale": "La implementación está preparada y revisada, pero modifica deliberadamente una decisión funcional reciente; el valor SEO frente al coste operativo necesita intención explícita del owner de producto.",
   "options": [
     {
-      "title": "Aprobar piloto con guardrails",
-      "body": "Revisar y fusionar el PR vinculado tras definir responsables, monitorización y umbrales de rollback para latencia, memoria y errores.",
+      "title": "Aprobar piloto controlado",
+      "body": "Fusionar el PR con duración del experimento, métricas de éxito y umbrales de reversión documentados.",
       "recommended": true
     },
     {
-      "title": "Reducir el radio del piloto",
-      "body": "Solicitar una activación gradual o configurable antes de aplicar la ventana de 30.000 a todo el tráfico.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener 500 resultados",
-      "body": "Conservar la regla BL vigente y cerrar la petición si el beneficio SEO esperado no compensa el coste operativo.",
+      "title": "Mantener la ventana de 500",
+      "body": "Conservar la regla BL vigente y cerrar el PR y esta petición sin desplegar el experimento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar piloto con guardrails",
-    "body": "Revisar y fusionar el PR vinculado tras definir responsables, monitorización y umbrales de rollback para latencia, memoria y errores.",
+    "title": "Aprobar piloto controlado",
+    "body": "Fusionar el PR con duración del experimento, métricas de éxito y umbrales de reversión documentados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona vinculada por la documentación y el historial a la validación de la regla BL vigente que debe confirmarse o sustituirse.",
+    "reason": "Figura como owner funcional de Public Catalog y validó el comportamiento que el piloto propone cambiar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604#issuecomment-4910069554",
-    "reviewedAt": "2026-07-15T09:11:38.325Z",
-    "mainSha": "fbca67dd05f83cfb586542317b6e7b74c288969c"
+    "reviewedAt": "2026-07-15T10:41:55.660Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }

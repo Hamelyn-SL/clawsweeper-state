@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T08:51:47.478Z",
-  "updatedAt": "2026-07-15T08:42:41Z",
+  "generatedAt": "2026-07-15T10:41:17.435Z",
+  "updatedAt": "2026-07-15T09:20:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,6 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:queued",
       "reporter:danielmenchen-hamelyn",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
@@ -24,37 +23,42 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T08:32:59Z",
-    "updatedAt": "2026-07-15T08:42:41Z"
+    "updatedAt": "2026-07-15T09:20:13Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la primera versión procesar únicamente PRs no draft del mismo repositorio y autores explícitamente confiables, o también ramas externas?",
-  "rationale": "El resolver ejecuta contenido controlado por ramas de PR y puede escribir en sus heads; el alcance permitido define una frontera de seguridad que no puede deducirse solo del código.",
+  "question": "¿Qué PRs y autores pueden ejecutar código en el sandbox y habilitar un push automatizado a su rama?",
+  "rationale": "La respuesta define una frontera permanente de ejecución de código, credenciales y permisos de escritura que requiere intención explícita del equipo.",
   "options": [
     {
-      "title": "Restringir a PRs internos",
-      "body": "Permitir solo ramas del mismo repositorio y autores aprobados, con kill-switch y `dry_run` activos hasta completar la validación.",
+      "title": "Solo ramas internas confiables",
+      "body": "Restringir la primera versión a PRs no draft del mismo repositorio y autores permitidos, ampliando cobertura tras validar el aislamiento.",
       "recommended": true
     },
     {
-      "title": "Admitir ramas externas",
-      "body": "Ampliar la cobertura únicamente después de demostrar aislamiento frente a código hostil, permisos mínimos y controles de push equivalentes.",
+      "title": "Todos los PRs same-repo",
+      "body": "Aceptar cualquier rama interna si el sandbox y los gates técnicos se consideran una frontera suficiente.",
+      "recommended": false
+    },
+    {
+      "title": "Solo detección en dry-run",
+      "body": "Desplegar diagnóstico y comentarios sin autorizar pushes automáticos hasta una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restringir a PRs internos",
-    "body": "Permitir solo ramas del mismo repositorio y autores aprobados, con kill-switch y `dry_run` activos hasta completar la validación.",
+    "title": "Solo ramas internas confiables",
+    "body": "Restringir la primera versión a PRs no draft del mismo repositorio y autores permitidos, ampliando cobertura tras validar el aislamiento.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Tiene la señal histórica más fuerte sobre el runner cloud, los claims y el sandbox, y ya está solicitado como revisor del candidato.",
+    "reason": "Tiene el historial más directo en el runtime cloud y fue solicitado como revisor principal del PR candidato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
-    "reviewedAt": "2026-07-15T08:51:47.478Z",
-    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
+    "reviewedAt": "2026-07-15T10:41:17.435Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T08:59:10.712Z",
-  "updatedAt": "2026-07-15T08:42:31Z",
+  "generatedAt": "2026-07-15T10:43:47.267Z",
+  "updatedAt": "2026-07-15T09:48:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,46 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "P2",
-      "status: 📣 needs proof",
-      "merge-risk: 🚨 automation",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary",
-      "rating: 🥉 bronze"
+      "P2"
     ],
     "createdAt": "2026-07-14T09:55:19Z",
-    "updatedAt": "2026-07-15T08:42:31Z",
-    "headSha": "6524e4416122132006d0b30be766fd7533fa9b4f"
+    "updatedAt": "2026-07-15T09:48:11Z",
+    "headSha": "ca1f762baaef8dcb85a0c80a6f1893996bbb8b7e"
   },
   "lane": "security_boundary",
-  "priority": "P2",
-  "question": "¿Debe la primera versión procesar únicamente PRs no draft del repositorio principal y exigir validación previa al push, manteniendo la llamada directa a Claude como excepción deliberada al runtime estándar de cloud agents?",
-  "rationale": "La frontera de ramas/autores, la custodia de un token con escritura, el momento de validación y la excepción de stack son decisiones operativas y de seguridad que no pueden fijarse por revisión mecánica.",
+  "priority": "P1",
+  "question": "¿Debe el resolutor separar por diseño el token de GitHub con capacidad de push del entorno que ejecuta Codex e instala o ejecuta scripts de la PR, o se acepta que todas las ramas same-repo formen parte del mismo límite de confianza?",
+  "rationale": "Los defectos mecánicos pueden corregirse, pero el límite permanente entre credenciales de control y código procesado por el agente requiere una decisión explícita antes de permitir mutaciones reales.",
   "options": [
     {
-      "title": "Restringir y validar",
-      "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar lint/typecheck/tests acotados antes de cualquier push automatizado, documentando explícitamente la llamada directa a Claude.",
+      "title": "Separar plano de control",
+      "body": "Mantener el token de push fuera de Codex, instalaciones y scripts, y exponerlo únicamente al controlador final tras validar el resultado.",
       "recommended": true
     },
     {
-      "title": "Aceptar la frontera amplia",
-      "body": "Permitir forks y validación posterior únicamente si los responsables aprueban expresamente la custodia del token, el riesgo de modificar ramas inválidamente y el stack alternativo.",
+      "title": "Confiar en ramas internas",
+      "body": "Restringir a ramas same-repo y aceptar explícitamente que todo colaborador con acceso de escritura opere dentro del mismo límite de secretos.",
       "recommended": false
     },
     {
-      "title": "Pausar la automatización",
-      "body": "Mantener el resolver desactivado o cerrar el PR si no puede establecerse una frontera de confianza y validación previa asumible.",
+      "title": "Conservar solo detección",
+      "body": "Fusionar únicamente la detección en dry-run y posponer la resolución y el push automáticos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restringir y validar",
-    "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar lint/typecheck/tests acotados antes de cualquier push automatizado, documentando explícitamente la llamada directa a Claude.",
+    "title": "Separar plano de control",
+    "body": "Mantener el token de push fuera de Codex, instalaciones y scripts, y exponerlo únicamente al controlador final tras validar el resultado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la señal histórica más fuerte para los patrones de sandbox, claims y seguridad de `apps/agents`, y ya está conduciendo la revisión humana del diseño.",
+    "reason": "Es quien tiene mayor historial en el runtime cloud-agent, custodia Codex, claims y proof-agent, y ya está asignado a la revisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7532.md",
-    "reviewedAt": "2026-07-15T08:59:10.712Z",
-    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
+    "reviewedAt": "2026-07-15T10:43:47.267Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:39:37.013Z",
+  "generatedAt": "2026-07-15T10:40:20.293Z",
   "updatedAt": "2026-07-15T10:27:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,50 +15,44 @@
       "priority:p1",
       "feature",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: ➖ n/a",
       "P2",
       "impact:ux-friction",
-      "clawsweeper:linked-pr-open"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T06:20:38Z",
     "updatedAt": "2026-07-15T10:27:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse para la primera entrega la trazabilidad de último trasvase y la secuencia actual de efectos de la PR vinculada, o se exige antes un registro de operación recuperable e idempotente?",
-  "rationale": "La issue deja abierto el nivel de histórico y la PR concreta una semántica que puede dejar Mongo actualizado antes de confirmar Skypod; esa garantía operativa requiere una decisión humana.",
+  "question": "¿Es suficiente guardar únicamente el último trasvase y asumir recuperación operativa, o debe exigirse una operación persistida e idempotente con estados, reintentos e histórico antes de fusionar el PR abierto?",
+  "rationale": "La implementación candidata resuelve el flujo visible, pero la semántica de auditoría y recuperación determina si un fallo de Skypod puede dejar ubicaciones de stock inconsistentes y no está cerrada por la issue ni por una decisión explícita en la discusión.",
   "options": [
     {
-      "title": "Exigir operación recuperable",
-      "body": "Añadir estado persistido, reintento seguro o compensación antes del merge y validar el flujo completo con un fallo parcial controlado.",
+      "title": "Exigir orquestación recuperable",
+      "body": "Añadir estado persistido, clave de idempotencia, reintento o compensación y trazabilidad histórica antes de permitir el merge.",
       "recommended": true
     },
     {
-      "title": "Aceptar alcance inicial",
-      "body": "Aprobar la trazabilidad de último trasvase y asumir explícitamente el procedimiento operativo de recuperación manual para esta primera versión.",
-      "recommended": false
-    },
-    {
-      "title": "Dividir backend y UI",
-      "body": "Aterrizar primero el contrato robusto de Trasvase y dejar el panel visual para una segunda entrega.",
+      "title": "Aceptar el modelo mínimo",
+      "body": "Conservar solo el último trasvase y documentar un procedimiento operativo externo para detectar y reparar fallos parciales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir operación recuperable",
-    "body": "Añadir estado persistido, reintento seguro o compensación antes del merge y validar el flujo completo con un fallo parcial controlado.",
+    "title": "Exigir orquestación recuperable",
+    "body": "Añadir estado persistido, clave de idempotencia, reintento o compensación y trazabilidad histórica antes de permitir el merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada a la issue y autora de la implementación candidata, por lo que puede coordinar la decisión con Inventory/Admin.",
+    "reason": "Tiene asignada la issue y mantiene la implementación candidata donde debe concretarse la decisión antes del merge.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7492.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492#issuecomment-4966435214",
-    "reviewedAt": "2026-07-15T10:39:37.013Z",
+    "reviewedAt": "2026-07-15T10:40:20.293Z",
     "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }

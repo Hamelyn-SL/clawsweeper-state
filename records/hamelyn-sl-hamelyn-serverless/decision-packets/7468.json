@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T08:50:24.312Z",
-  "updatedAt": "2026-07-15T07:29:29Z",
+  "generatedAt": "2026-07-15T10:50:45.258Z",
+  "updatedAt": "2026-07-15T09:02:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -16,47 +16,47 @@
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 availability",
       "merge-risk: 🚨 message-delivery",
-      "conflicts:needs-human",
-      "rating: 🥉 bronze"
+      "rating: 🥈 silver",
+      "conflicts:needs-human"
     ],
     "createdAt": "2026-07-13T10:56:12Z",
-    "updatedAt": "2026-07-15T07:29:29Z",
+    "updatedAt": "2026-07-15T09:02:07Z",
     "headSha": "4fce6d5a923f7313dd6b804d921d59f6e0244f3d"
   },
-  "lane": "release_inclusion",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe aprobarse la activación de Amazon IT en `dev` cuando se resuelva el conflicto, o debe permanecer pausada hasta completar y demostrar todos los gates operativos sobre la cuenta EU compartida?",
-  "rationale": "La corrección estática no permite decidir si Atlas, Mongo, ShipMatrix, Seller Central y la capacidad compartida de SP-API están preparados para soportar un nuevo canal de producción.",
+  "question": "¿Debe resolverse este PR contra `dev` y coordinarse con https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7370 antes de autorizar el merge y la activación de Amazon IT?",
+  "rationale": "La resolución afecta al contrato operativo de BigQuery y a un flujo Amazon compartido que está siendo refactorizado en paralelo; automatización y CI no pueden decidir de forma segura la secuencia de integración y despliegue.",
   "options": [
     {
-      "title": "Aprobar tras prueba y gates",
-      "body": "Resolver el conflicto, aportar ejecución real redaccionada y confirmar índices, configuración, seed, deduplicación y límites compartidos antes del merge.",
+      "title": "Actualizar y coordinar antes del merge",
+      "body": "Resolver los conflictos conservando self-provisioning, adaptar el batch withdraw al resultado canónico y exigir prueba real antes de activar Amazon IT.",
       "recommended": true
     },
     {
-      "title": "Integrar sin activar el cron",
-      "body": "Conservar el código del marketplace, pero excluir temporalmente la programación de `/api/amazonIT` hasta que operaciones autorice el canal.",
+      "title": "Integrar el onboarding por separado",
+      "body": "Resolver únicamente los conflictos con `dev`, aceptar temporalmente el wiring manual de batch withdraw y completar el refactor después.",
       "recommended": false
     },
     {
-      "title": "Pausar el onboarding",
-      "body": "Mantener el PR abierto sin integrar hasta que la infraestructura y Seller Central estén preparados y exista una ventana de despliegue coordinada.",
+      "title": "Pausar hasta cerrar los gates",
+      "body": "Mantener el PR abierto sin merge hasta que el refactor relacionado y todos los requisitos externos estén verificados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar tras prueba y gates",
-    "body": "Resolver el conflicto, aportar ejecución real redaccionada y confirmar índices, configuración, seed, deduplicación y límites compartidos antes del merge.",
+    "title": "Actualizar y coordinar antes del merge",
+    "body": "Resolver los conflictos conservando self-provisioning, adaptar el batch withdraw al resultado canónico y exigir prueba real antes de activar Amazon IT.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el revisor asignado con experiencia directa en la integración de BigQuery afectada y puede coordinar la decisión con el propietario del onboarding.",
-    "confidence": "medium"
+    "reason": "Es el revisor solicitado y autor del comportamiento de BigQuery que la resolución debe preservar.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7468.md",
-    "reviewedAt": "2026-07-15T08:50:24.312Z",
-    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
+    "reviewedAt": "2026-07-15T10:50:45.258Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }

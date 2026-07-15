@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T10:48:41.098Z",
+  "updatedAt": "2026-07-15T10:29:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7592,
+    "title": "feat: add taxonomic breadcrumb, author and bestsellers to pdp",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7592",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-15T10:27:03Z",
+    "updatedAt": "2026-07-15T10:29:14Z",
+    "headSha": "73ad4ca6a4f096a18fc6d58db458eb66276b38c1"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El acuerdo fuera de GitHub elimina del alcance de la issue canónica las dimensiones físicas y el cambio del módulo «Más títulos…», o este PR debe dejar de cerrarla hasta completar o separar esos requisitos?",
+  "rationale": "El cuerpo del PR afirma un recorte acordado por Slack, mientras que la issue y su última aclaración pública mantienen esos requisitos; la intención de producto no puede inferirse con seguridad desde el código.",
+  "options": [
+    {
+      "title": "Alinear el cierre completo",
+      "body": "Completar o separar formalmente todos los requisitos públicos antes de mantener el cierre automático de la issue.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar el recorte",
+      "body": "Documentar el acuerdo en la issue y trasladar los requisitos restantes a una issue canónica independiente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Alinear el cierre completo",
+    "body": "Completar o separar formalmente todos los requisitos públicos antes de mantener el cierre automático de la issue.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el assignee de la iniciativa y tiene el contexto directo del acuerdo de alcance citado en el PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7592.md",
+    "reviewedAt": "2026-07-15T10:48:41.098Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+  }
+}
