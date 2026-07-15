@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:48:41.098Z",
-  "updatedAt": "2026-07-15T10:29:14Z",
+  "generatedAt": "2026-07-15T11:01:12.459Z",
+  "updatedAt": "2026-07-15T10:47:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,38 +13,43 @@
       "size/XL"
     ],
     "createdAt": "2026-07-15T10:27:03Z",
-    "updatedAt": "2026-07-15T10:29:14Z",
+    "updatedAt": "2026-07-15T10:47:54Z",
     "headSha": "73ad4ca6a4f096a18fc6d58db458eb66276b38c1"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El acuerdo fuera de GitHub elimina del alcance de la issue canónica las dimensiones físicas y el cambio del módulo «Más títulos…», o este PR debe dejar de cerrarla hasta completar o separar esos requisitos?",
-  "rationale": "El cuerpo del PR afirma un recorte acordado por Slack, mientras que la issue y su última aclaración pública mantienen esos requisitos; la intención de producto no puede inferirse con seguridad desde el código.",
+  "question": "¿Debe este PR cerrar la iniciativa completa con el recorte descrito como acordado por Slack, o debe entregarse como una primera fase dejando abierta la issue canónica para dimensiones y el contrato pendiente del primer carrusel?",
+  "rationale": "La discusión pública exige más comportamiento del que implementa el PR, mientras su cuerpo afirma una decisión posterior no documentada; automatización no puede determinar cuál de ambos contratos representa la dirección vigente.",
   "options": [
     {
-      "title": "Alinear el cierre completo",
-      "body": "Completar o separar formalmente todos los requisitos públicos antes de mantener el cierre automático de la issue.",
+      "title": "Dividir sin cerrar la issue",
+      "body": "Fusionar esta primera fase solo tras corregir selección, caché y prueba real, manteniendo la issue canónica abierta para los bloques omitidos.",
       "recommended": true
     },
     {
-      "title": "Aprobar el recorte",
-      "body": "Documentar el acuerdo en la issue y trasladar los requisitos restantes a una issue canónica independiente.",
+      "title": "Completar el contrato integral",
+      "body": "Ampliar este PR para cubrir también dimensiones, selección estable del primer módulo e invalidación completa antes de cerrarlo todo.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar formalmente el recorte",
+      "body": "Confirmar que el acuerdo de Slack sustituye los criterios públicos y actualizar la issue y el cuerpo del PR para reflejar el nuevo alcance.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Alinear el cierre completo",
-    "body": "Completar o separar formalmente todos los requisitos públicos antes de mantener el cierre automático de la issue.",
+    "title": "Dividir sin cerrar la issue",
+    "body": "Fusionar esta primera fase solo tras corregir selección, caché y prueba real, manteniendo la issue canónica abierta para los bloques omitidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el assignee de la iniciativa y tiene el contexto directo del acuerdo de alcance citado en el PR.",
+    "person": "MiguelHamelyn",
+    "reason": "Es revisor solicitado y responsable reciente de la PDP activa, por lo que dispone del mejor contexto para validar el corte de producto y su coste técnico.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7592.md",
-    "reviewedAt": "2026-07-15T10:48:41.098Z",
-    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+    "reviewedAt": "2026-07-15T11:01:12.459Z",
+    "mainSha": "4f9c2d4d24dbe754c5c6a8521ff2d2a814cbdd85"
   }
 }

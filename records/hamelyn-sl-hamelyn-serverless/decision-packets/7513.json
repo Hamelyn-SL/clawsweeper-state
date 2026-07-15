@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:41:17.435Z",
+  "generatedAt": "2026-07-15T10:59:38.989Z",
   "updatedAt": "2026-07-15T09:20:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,38 +27,38 @@
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué PRs y autores pueden ejecutar código en el sandbox y habilitar un push automatizado a su rama?",
-  "rationale": "La respuesta define una frontera permanente de ejecución de código, credenciales y permisos de escritura que requiere intención explícita del equipo.",
+  "question": "¿Debe la primera versión ejecutar y pushear únicamente sobre PRs no draft cuyas ramas pertenezcan a `Hamelyn-SL/hamelyn-serverless`, o también debe admitir forks y otros autores?",
+  "rationale": "El candidato descarga código del PR, instala dependencias y recibe credenciales para GitHub y Codex; la política de confianza determina si ese diseño es seguro y no puede deducirse solo de la implementación.",
   "options": [
     {
-      "title": "Solo ramas internas confiables",
-      "body": "Restringir la primera versión a PRs no draft del mismo repositorio y autores permitidos, ampliando cobertura tras validar el aislamiento.",
+      "title": "Limitar a ramas internas",
+      "body": "Filtrar `headRepository.nameWithOwner` al repositorio objetivo y ampliar la cobertura únicamente después de validar aislamiento y permisos con código no confiable.",
       "recommended": true
     },
     {
-      "title": "Todos los PRs same-repo",
-      "body": "Aceptar cualquier rama interna si el sandbox y los gates técnicos se consideran una frontera suficiente.",
+      "title": "Admitir forks endurecidos",
+      "body": "Permitir forks solo tras aislar los procesos del PR de todas las credenciales, bloquear scripts de instalación no confiables y demostrar un mecanismo de push con permisos mínimos.",
       "recommended": false
     },
     {
-      "title": "Solo detección en dry-run",
-      "body": "Desplegar diagnóstico y comentarios sin autorizar pushes automáticos hasta una decisión posterior.",
+      "title": "Mantenerlo informativo",
+      "body": "Detectar y comentar conflictos automáticamente, pero conservar la resolución y el push como acciones humanas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo ramas internas confiables",
-    "body": "Restringir la primera versión a PRs no draft del mismo repositorio y autores permitidos, ampliando cobertura tras validar el aislamiento.",
+    "title": "Limitar a ramas internas",
+    "body": "Filtrar `headRepository.nameWithOwner` al repositorio objetivo y ampliar la cobertura únicamente después de validar aislamiento y permisos con código no confiable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Tiene el historial más directo en el runtime cloud y fue solicitado como revisor principal del PR candidato.",
+    "reason": "Es el autor principal del patrón de sandbox cloud reutilizado y uno de los revisores solicitados para decidir su frontera operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
-    "reviewedAt": "2026-07-15T10:41:17.435Z",
-    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+    "reviewedAt": "2026-07-15T10:59:38.989Z",
+    "mainSha": "4f9c2d4d24dbe754c5c6a8521ff2d2a814cbdd85"
   }
 }
