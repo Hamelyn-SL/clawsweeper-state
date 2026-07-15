@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-15T13:00:10.595Z",
+  "generatedAt": "2026-07-15T18:57:01.902Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 156
+    "openItemsSeen": 159
   },
   "counts": {
-    "itemRecords": 154,
+    "itemRecords": 158,
     "closedRecords": 349,
-    "missingOpen": 2,
+    "missingOpen": 1,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 0,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,23 +37,6 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-12T12:22:05Z",
         "missingReason": "protected_label"
-      },
-      {
-        "number": 7601,
-        "kind": "issue",
-        "title": "Volcar oficinas de Correos en el sistema y relacionarlas con el CP del cliente (para Postlibri)",
-        "labels": [
-          "source:admin-panel",
-          "app:ecommerce",
-          "priority:p1",
-          "feature",
-          "reporter:blanca",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-15T12:58:18Z",
-        "updatedAt": "2026-07-15T12:58:30Z",
-        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -76,25 +59,7 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [
-      {
-        "number": 7601,
-        "kind": "issue",
-        "title": "Volcar oficinas de Correos en el sistema y relacionarlas con el CP del cliente (para Postlibri)",
-        "labels": [
-          "source:admin-panel",
-          "app:ecommerce",
-          "priority:p1",
-          "feature",
-          "reporter:blanca",
-          "triage:queued"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-15T12:58:18Z",
-        "updatedAt": "2026-07-15T12:58:30Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingRecentOpen": [],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
