@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T16:48:50.715Z",
-  "updatedAt": "2026-07-13T15:14:22Z",
+  "generatedAt": "2026-07-15T08:30:02.648Z",
+  "updatedAt": "2026-07-15T08:05:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,51 @@
       "app:admin",
       "priority:p3",
       "feature",
-      "triage:needs-info",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "reporter:AlexDiaz-Hamelyn",
       "P3",
+      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
+      "reporter:AlexDiaz-Hamelyn",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-13T09:44:03Z",
-    "updatedAt": "2026-07-13T15:14:22Z"
+    "updatedAt": "2026-07-15T08:05:12Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Se aprueba retirar también `/public/dashboard/{sales,stocks,supply,pricing}` y sustituir la home por páginas recientes en el mismo cambio?",
-  "rationale": "La limpieza interna está delimitada, pero la issue dejó abiertas ambas decisiones y el PR adopta una retirada completa más un rediseño sin aprobación humana visible ni auditoría de consumidores.",
+  "question": "¿Deben retirarse también `/public/dashboard/{sales,stocks,supply,pricing}` y debe incluirse la home de páginas recientes en este mismo cambio?",
+  "rationale": "La issue deja ambas decisiones abiertas y el PR amplía la limpieza interna con una retirada pública incompatible y una experiencia de aterrizaje nueva; la aprobación existente es una señal positiva, pero no documenta una auditoría de consumidores.",
   "options": [
     {
-      "title": "Conservar rutas públicas",
-      "body": "Acotar el PR a la retirada interna, mantener los paneles públicos y validar o separar el rediseño de la home.",
+      "title": "Conservar rutas y acotar",
+      "body": "Retirar los dashboards internos y el código muerto, pero mantener o reubicar los paneles públicos y separar la nueva home.",
       "recommended": true
     },
     {
-      "title": "Aprobar retirada completa",
-      "body": "Eliminar también las rutas públicas tras auditar sus consumidores y aceptar explícitamente la ruptura de enlaces existentes.",
+      "title": "Aceptar el alcance completo",
+      "body": "Eliminar también las rutas públicas y adoptar la home de páginas recientes tras auditar consumidores y aportar prueba real.",
       "recommended": false
     },
     {
-      "title": "Retirar sin páginas recientes",
-      "body": "Eliminar todas las vistas acordadas, definir una ruta de inicio explícita y posponer la experiencia persistida para otro cambio.",
+      "title": "Separar la nueva home",
+      "body": "Resolver primero la retirada acordada y mover el rediseño de inicio a otro PR con validación propia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar rutas públicas",
-    "body": "Acotar el PR a la retirada interna, mantener los paneles públicos y validar o separar el rediseño de la home.",
+    "title": "Conservar rutas y acotar",
+    "body": "Retirar los dashboards internos y el código muerto, pero mantener o reubicar los paneles públicos y separar la nueva home.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Coordina la issue y el PR, y es la persona mejor situada para obtener la validación funcional del equipo de Admin.",
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo parte central de la superficie, mantiene historial reciente en el layout y ya revisó y aprobó el head actual.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7452.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7452#issuecomment-4957054247",
-    "reviewedAt": "2026-07-14T16:48:50.715Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-15T08:30:02.648Z",
+    "mainSha": "21a3196498c9682880dc37d729419d200a2435e2"
   }
 }
