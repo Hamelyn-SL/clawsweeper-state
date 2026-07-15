@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T10:48:00.409Z",
+  "updatedAt": "2026-07-15T09:55:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7585,
+    "title": "Incluir info pedido consolidado eDesk ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p0",
+      "triage:done",
+      "reporter:irenegarcia"
+    ],
+    "createdAt": "2026-07-15T09:46:05Z",
+    "updatedAt": "2026-07-15T09:55:04Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué campo personalizado de eDesk y qué disparador deben ser canónicos para enriquecer los tickets importados por marketplaces externos?",
+  "rationale": "Hamelyn no crea esos tickets y la consolidación puede producirse antes o después de su importación, por lo que el ciclo de sincronización no puede deducirse únicamente del código actual.",
+  "options": [
+    {
+      "title": "Webhook o automatización de eDesk",
+      "body": "Enriquecer cada ticket al importarse, resolviendo el pedido mediante `seller_order_id` y actualizando el campo de forma idempotente.",
+      "recommended": true
+    },
+    {
+      "title": "Sincronización periódica",
+      "body": "Buscar tickets pendientes en lotes y actualizar el campo aceptando un retraso operativo controlado.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar inicialmente a Ecommerce",
+      "body": "Añadir solo el texto al mensaje creado por Hamelyn y dejar los tickets importados para una fase posterior explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Webhook o automatización de eDesk",
+    "body": "Enriquecer cada ticket al importarse, resolviendo el pedido mediante `seller_order_id` y actualizando el campo de forma idempotente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien introdujo y más ha mantenido el flujo Ecommerce→eDesk afectado por esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
+    "reviewedAt": "2026-07-15T10:48:00.409Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+  }
+}
