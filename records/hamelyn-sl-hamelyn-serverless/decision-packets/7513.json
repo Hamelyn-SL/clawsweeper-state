@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T10:52:43.337Z",
-  "updatedAt": "2026-07-14T10:12:14Z",
+  "generatedAt": "2026-07-15T08:51:12.789Z",
+  "updatedAt": "2026-07-15T08:42:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,48 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
+      "triage:queued",
       "reporter:danielmenchen-hamelyn",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review",
-      "issue-rating: ➖ n/a",
       "P2",
+      "clawsweeper:linked-pr-open",
       "impact:security",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T08:32:59Z",
-    "updatedAt": "2026-07-14T10:12:14Z"
+    "updatedAt": "2026-07-15T08:42:41Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué PRs y autores pueden ejecutar código dentro del sandbox y bajo qué controles puede el resolver pushear a sus ramas?",
-  "rationale": "La funcionalidad cruza una frontera de seguridad al ejecutar código procedente de ramas de PR y disponer de autenticación capaz de mutarlas, por lo que el alcance permitido requiere una decisión explícita de Infraestructura.",
+  "question": "¿Debe la primera versión procesar solo PRs no draft de ramas internas y autores confiables, o también contribuciones externas aisladas?",
+  "rationale": "La elección determina qué código no fusionado puede ejecutarse cerca de credenciales con permisos de escritura; el repositorio no puede fijar ese apetito de riesgo sin intención humana explícita.",
   "options": [
     {
       "title": "Solo ramas internas confiables",
-      "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores autorizados, con kill-switch y `dry_run` activados por defecto.",
+      "body": "Restringir repositorio y autores en la primera versión reduce la exposición y permite validar la operación y el rollback antes de ampliar cobertura.",
       "recommended": true
     },
     {
-      "title": "Admitir forks con aislamiento reforzado",
-      "body": "Incluir PRs externos solo tras separar secretos, restringir permisos y demostrar que el código no confiable no puede exfiltrar credenciales ni alterar ramas sin autorización.",
-      "recommended": false
-    },
-    {
-      "title": "Automatizar solo el diagnóstico",
-      "body": "Permitir detección, comentarios y labels automáticos, manteniendo la resolución y el push como pasos humanos.",
+      "title": "Permitir PRs externos aislados",
+      "body": "Esta opción exige demostrar que el sandbox, la red, los secretos y las credenciales de GitHub resisten código deliberadamente hostil.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Solo ramas internas confiables",
-    "body": "Limitar la primera versión a PRs no draft del mismo repositorio y autores autorizados, con kill-switch y `dry_run` activados por defecto.",
+    "body": "Restringir repositorio y autores en la primera versión reduce la exposición y permite validar la operación y el rollback antes de ampliar cobertura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Presenta la señal histórica más fuerte sobre `apps/agents`, el triage cloud y los sandboxes que sustentan esta decisión.",
+    "reason": "Es el propietario histórico más claro del runner cloud, sandbox y seguridad de `apps/agents`, y ya está realizando la revisión humana del candidato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513#issuecomment-4967152411",
-    "reviewedAt": "2026-07-14T10:52:43.337Z",
-    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
+    "reviewedAt": "2026-07-15T08:51:12.789Z",
+    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
   }
 }
