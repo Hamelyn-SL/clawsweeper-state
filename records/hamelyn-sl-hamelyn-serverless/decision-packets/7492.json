@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:40:20.293Z",
-  "updatedAt": "2026-07-15T10:27:14Z",
+  "generatedAt": "2026-07-15T12:26:17.484Z",
+  "updatedAt": "2026-07-15T10:40:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,44 +15,49 @@
       "priority:p1",
       "feature",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
+      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T06:20:38Z",
-    "updatedAt": "2026-07-15T10:27:14Z"
+    "updatedAt": "2026-07-15T10:40:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Es suficiente guardar únicamente el último trasvase y asumir recuperación operativa, o debe exigirse una operación persistida e idempotente con estados, reintentos e histórico antes de fusionar el PR abierto?",
-  "rationale": "La implementación candidata resuelve el flujo visible, pero la semántica de auditoría y recuperación determina si un fallo de Skypod puede dejar ubicaciones de stock inconsistentes y no está cerrada por la issue ni por una decisión explícita en la discusión.",
+  "question": "¿Qué contrato operativo debe garantizar el Trasvase cuando Mongo se actualiza pero la definición o el BIN IN de Skypod falla o queda en estado incierto?",
+  "rationale": "La elección determina el modelo persistente, la experiencia de recuperación y si la PR actual puede fusionarse sin exponer al almacén a estados parciales; no puede deducirse con seguridad del comportamiento legacy.",
   "options": [
     {
-      "title": "Exigir orquestación recuperable",
-      "body": "Añadir estado persistido, clave de idempotencia, reintento o compensación y trazabilidad histórica antes de permitir el merge.",
+      "title": "Persistir estado e idempotencia",
+      "body": "Exigir antes del merge un registro de trasvase con estados, clave idempotente, reintentos seguros y una ruta explícita de recuperación o conciliación.",
       "recommended": true
     },
     {
-      "title": "Aceptar el modelo mínimo",
-      "body": "Conservar solo el último trasvase y documentar un procedimiento operativo externo para detectar y reparar fallos parciales.",
+      "title": "Aceptar recuperación operativa manual",
+      "body": "Fusionar el flujo actual documentando un runbook y observabilidad suficiente para que el equipo reconcilie manualmente los fallos parciales.",
+      "recommended": false
+    },
+    {
+      "title": "Entregar primero solo inventario",
+      "body": "Limitar la primera fase al inventario y selección de stocks, y posponer la mutación de ubicaciones y el BIN IN hasta definir el contrato transaccional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir orquestación recuperable",
-    "body": "Añadir estado persistido, clave de idempotencia, reintento o compensación y trazabilidad histórica antes de permitir el merge.",
+    "title": "Persistir estado e idempotencia",
+    "body": "Exigir antes del merge un registro de trasvase con estados, clave idempotente, reintentos seguros y una ruta explícita de recuperación o conciliación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Tiene asignada la issue y mantiene la implementación candidata donde debe concretarse la decisión antes del merge.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es el propietario funcional más conectado al flujo de fusión actual y el revisor requerido con mayor experiencia histórica directa en esa superficie.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7492.md",
-    "reviewedAt": "2026-07-15T10:40:20.293Z",
-    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+    "reviewedAt": "2026-07-15T12:26:17.484Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
   }
 }

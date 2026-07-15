@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T11:01:12.459Z",
-  "updatedAt": "2026-07-15T10:47:54Z",
+  "generatedAt": "2026-07-15T12:29:50.496Z",
+  "updatedAt": "2026-07-15T12:08:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,44 +13,38 @@
       "size/XL"
     ],
     "createdAt": "2026-07-15T10:27:03Z",
-    "updatedAt": "2026-07-15T10:47:54Z",
-    "headSha": "73ad4ca6a4f096a18fc6d58db458eb66276b38c1"
+    "updatedAt": "2026-07-15T12:08:56Z",
+    "headSha": "954629984496a0edc853a904c847ee5c0a540bbe"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR cerrar la iniciativa completa con el recorte descrito como acordado por Slack, o debe entregarse como una primera fase dejando abierta la issue canónica para dimensiones y el contrato pendiente del primer carrusel?",
-  "rationale": "La discusión pública exige más comportamiento del que implementa el PR, mientras su cuerpo afirma una decisión posterior no documentada; automatización no puede determinar cuál de ambos contratos representa la dirección vigente.",
+  "question": "¿El alcance aprobado excluye definitivamente las dimensiones físicas y el cambio del H2, o esos requisitos deben seguir abiertos tras este PR?",
+  "rationale": "El cuerpo del PR cita un acuerdo de Slack que no está reflejado en la issue, cuyo alcance fue reafirmado antes de abrir la contribución.",
   "options": [
     {
-      "title": "Dividir sin cerrar la issue",
-      "body": "Fusionar esta primera fase solo tras corregir selección, caché y prueba real, manteniendo la issue canónica abierta para los bloques omitidos.",
+      "title": "Mantener trabajo pendiente",
+      "body": "Retirar el cierre automático y conservar o separar dimensiones y H2 como seguimiento hasta completar la decisión de producto.",
       "recommended": true
     },
     {
-      "title": "Completar el contrato integral",
-      "body": "Ampliar este PR para cubrir también dimensiones, selección estable del primer módulo e invalidación completa antes de cerrarlo todo.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar formalmente el recorte",
-      "body": "Confirmar que el acuerdo de Slack sustituye los criterios públicos y actualizar la issue y el cuerpo del PR para reflejar el nuevo alcance.",
+      "title": "Reducir la issue",
+      "body": "Actualizar la issue para descartar formalmente dimensiones y H2 y permitir su cierre cuando se corrija el interlinking.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir sin cerrar la issue",
-    "body": "Fusionar esta primera fase solo tras corregir selección, caché y prueba real, manteniendo la issue canónica abierta para los bloques omitidos.",
+    "title": "Mantener trabajo pendiente",
+    "body": "Retirar el cierre automático y conservar o separar dimensiones y H2 como seguimiento hasta completar la decisión de producto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es revisor solicitado y responsable reciente de la PDP activa, por lo que dispone del mejor contexto para validar el corte de producto y su coste técnico.",
+    "person": "alexcanHamelyn",
+    "reason": "Tiene historial fusionado reciente en SEO, autores y PDP, y está directamente conectado con la implementación y el contexto del alcance.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7592.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7592#issuecomment-4979810668",
-    "reviewedAt": "2026-07-15T11:01:12.459Z",
-    "mainSha": "4f9c2d4d24dbe754c5c6a8521ff2d2a814cbdd85"
+    "reviewedAt": "2026-07-15T12:29:50.496Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
   }
 }

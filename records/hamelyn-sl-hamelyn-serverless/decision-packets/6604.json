@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:41:55.660Z",
-  "updatedAt": "2026-07-15T09:20:10Z",
+  "generatedAt": "2026-07-15T12:28:11.849Z",
+  "updatedAt": "2026-07-15T11:35:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,37 +23,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-15T09:20:10Z"
+    "updatedAt": "2026-07-15T11:35:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba ecommerce sustituir temporalmente la regla BL de 500 resultados por una ventana de 30.000 para el piloto SEO, aceptando la latencia y memoria medidas?",
-  "rationale": "La implementación está preparada y revisada, pero modifica deliberadamente una decisión funcional reciente; el valor SEO frente al coste operativo necesita intención explícita del owner de producto.",
+  "question": "¿Se ratifica la ventana de 2.000 resultados como primera fase SEO para fusionar el PR vinculado, sustituyendo la regla BL vigente de 500?",
+  "rationale": "La implementación está preparada y medida, pero cambia deliberadamente una política de catálogo validada y asume un coste operativo que debe aceptar el responsable de producto/ecommerce.",
   "options": [
     {
-      "title": "Aprobar piloto controlado",
-      "body": "Fusionar el PR con duración del experimento, métricas de éxito y umbrales de reversión documentados.",
+      "title": "Ratificar 2.000",
+      "body": "Aceptar la primera fase medida, desplegarla y revisar métricas de SEO, latencia y memoria antes de cualquier nueva ampliación.",
       "recommended": true
     },
     {
-      "title": "Mantener la ventana de 500",
-      "body": "Conservar la regla BL vigente y cerrar el PR y esta petición sin desplegar el experimento.",
+      "title": "Mantener 500",
+      "body": "Conservar la regla BL vigente y cerrar o replantear el PR vinculado si el coste operativo no compensa la profundidad SEO.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar piloto controlado",
-    "body": "Fusionar el PR con duración del experimento, métricas de éxito y umbrales de reversión documentados.",
+    "title": "Ratificar 2.000",
+    "body": "Aceptar la primera fase medida, desplegarla y revisar métricas de SEO, latencia y memoria antes de cualquier nueva ampliación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Figura como owner funcional de Public Catalog y validó el comportamiento que el piloto propone cambiar.",
+    "reason": "Es la señal histórica más directa de la política BL de catálogo que el cambio pretende sustituir.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewedAt": "2026-07-15T10:41:55.660Z",
-    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+    "reviewedAt": "2026-07-15T12:28:11.849Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
   }
 }

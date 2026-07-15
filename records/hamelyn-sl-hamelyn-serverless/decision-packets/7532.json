@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:43:47.267Z",
-  "updatedAt": "2026-07-15T09:48:11Z",
+  "generatedAt": "2026-07-15T12:31:35.962Z",
+  "updatedAt": "2026-07-15T11:21:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,43 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-07-14T09:55:19Z",
-    "updatedAt": "2026-07-15T09:48:11Z",
-    "headSha": "ca1f762baaef8dcb85a0c80a6f1893996bbb8b7e"
+    "updatedAt": "2026-07-15T11:21:03Z",
+    "headSha": "32930bfdb30860d685ee9b2ed917fd83a373d550"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe el resolutor separar por diseño el token de GitHub con capacidad de push del entorno que ejecuta Codex e instala o ejecuta scripts de la PR, o se acepta que todas las ramas same-repo formen parte del mismo límite de confianza?",
-  "rationale": "Los defectos mecánicos pueden corregirse, pero el límite permanente entre credenciales de control y código procesado por el agente requiere una decisión explícita antes de permitir mutaciones reales.",
+  "question": "¿Debe el conflict resolver procesar contenido controlado por una rama de PR mientras conserva credenciales de escritura, o debe exigirse una separación estricta entre el entorno no confiable que propone el parche y el controlador que lo aplica?",
+  "rationale": "La elección define la frontera de confianza permanente de una automatización capaz de ejecutar comandos y pushear a ramas; no es seguro resolverla como un detalle mecánico de implementación.",
   "options": [
     {
-      "title": "Separar plano de control",
-      "body": "Mantener el token de push fuera de Codex, instalaciones y scripts, y exponerlo únicamente al controlador final tras validar el resultado.",
+      "title": "Separar análisis y aplicación",
+      "body": "Ejecutar la resolución sin credenciales, validar un parche acotado y aplicarlo después desde un controlador confiable con permisos mínimos.",
       "recommended": true
     },
     {
-      "title": "Confiar en ramas internas",
-      "body": "Restringir a ramas same-repo y aceptar explícitamente que todo colaborador con acceso de escritura opere dentro del mismo límite de secretos.",
+      "title": "Restringir a ramas internas",
+      "body": "Aceptar una frontera más amplia únicamente para ramas del mismo repositorio creadas por actores con acceso equivalente al token del agente.",
       "recommended": false
     },
     {
-      "title": "Conservar solo detección",
-      "body": "Fusionar únicamente la detección en dry-run y posponer la resolución y el push automáticos.",
+      "title": "Mantener solo dry-run",
+      "body": "Conservar la detección y el diagnóstico, pero aplazar toda mutación automática hasta disponer de un diseño de aislamiento aprobado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar plano de control",
-    "body": "Mantener el token de push fuera de Codex, instalaciones y scripts, y exponerlo únicamente al controlador final tras validar el resultado.",
+    "title": "Separar análisis y aplicación",
+    "body": "Ejecutar la resolución sin credenciales, validar un parche acotado y aplicarlo después desde un controlador confiable con permisos mínimos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien tiene mayor historial en el runtime cloud-agent, custodia Codex, claims y proof-agent, y ya está asignado a la revisión.",
+    "reason": "Es la persona con mayor historial en el runner cloud, la custodia de tokens Codex y los endurecimientos de `apps/agents`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7532.md",
-    "reviewedAt": "2026-07-15T10:43:47.267Z",
-    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+    "reviewedAt": "2026-07-15T12:31:35.962Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
   }
 }

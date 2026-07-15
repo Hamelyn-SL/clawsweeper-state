@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T12:28:55.257Z",
+  "updatedAt": "2026-07-15T12:06:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7599,
+    "title": "Decisión de producto: stocks Amazon sin ASIN resoluble en el catálogo de la región",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "priority:p2",
+      "app:marketplace",
+      "question",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-15T12:06:25Z",
+    "updatedAt": "2026-07-15T12:06:37Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un par EAN-región sin ASIN seguir reintentándose cada 24 horas indefinidamente, pasar a un estado no listable tras un umbral, o retirarse de la región con visibilidad operativa?",
+  "rationale": "Las tres políticas son técnicamente viables, pero cambian el equilibrio entre llamadas a Amazon, ruido operativo y posibilidad de publicar el stock si el catálogo regional incorpora el EAN más adelante.",
+  "options": [
+    {
+      "title": "Mantener retry y medir",
+      "body": "Conservar el cooldown de 24 horas, silenciar la firma esperada del watcher y medir antigüedad, coste y resoluciones tardías antes de cambiar la política.",
+      "recommended": true
+    },
+    {
+      "title": "Marcar no listable",
+      "body": "Añadir un estado terminal por EAN-región después de N intentos, con una vía explícita de reactivación o reevaluación posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Retirar y reportar",
+      "body": "Excluir el stock de esa región y mostrarlo en un dashboard o flujo operativo como inventario regionalmente no listable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener retry y medir",
+    "body": "Conservar el cooldown de 24 horas, silenciar la firma esperada del watcher y medir antigüedad, coste y resoluciones tardías antes de cambiar la política.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es quien más recientemente ha ampliado y mantenido las regiones Amazon y sus reglas comunes, por lo que dispone del contexto técnico y operativo más directo para coordinar la decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
+    "reviewedAt": "2026-07-15T12:28:55.257Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
+  }
+}

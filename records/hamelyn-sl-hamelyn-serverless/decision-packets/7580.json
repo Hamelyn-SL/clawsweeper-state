@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T09:03:40.363Z",
-  "updatedAt": "2026-07-15T08:55:34Z",
+  "generatedAt": "2026-07-15T12:28:19.413Z",
+  "updatedAt": "2026-07-15T11:22:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 availability"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-15T08:44:58Z",
-    "updatedAt": "2026-07-15T08:55:34Z",
-    "headSha": "b84a567a242788139d1a5dca59e164355c71e50c"
+    "updatedAt": "2026-07-15T11:22:33Z",
+    "headSha": "4e3a3ba67b13761a85482e41ebae941eec23c20e"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba sustituir ahora la regla BL de 500 resultados por un piloto global de 30.000, aceptando el coste medido y definiendo umbrales de rollback?",
-  "rationale": "La issue original solicita 30.000 resultados, pero después se validó y fusionó expresamente la política contraria de 500; el código no puede resolver qué decisión de producto prevalece ni qué coste operativo es aceptable.",
+  "question": "¿Se confirma 2.000 como primera fase aprobada del experimento SEO, sustituyendo tanto la regla vigente de 500 como la petición original de 30.000?",
+  "rationale": "La implementación técnica está bien encaminada, pero el tamaño de la ventana es una decisión de producto y capacidad que cambió después de la aprobación humana visible.",
   "options": [
     {
-      "title": "Aprobar piloto con guardrails",
-      "body": "Fusionar la ampliación tras documentar responsables, métricas y umbrales de rollback para latencia, memoria y errores de Atlas/Vercel.",
+      "title": "Aprobar fase de 2.000",
+      "body": "Aceptar el compromiso medido y revisar métricas SEO y operativas antes de ampliar de nuevo.",
       "recommended": true
     },
     {
-      "title": "Hacer despliegue gradual",
-      "body": "Introducir una ventana configurable o segmentada para limitar el riesgo antes de aplicar 30.000 resultados a todo el tráfico.",
+      "title": "Mantener 500",
+      "body": "Conservar el comportamiento validado en `dev` hasta documentar otra fase aprobada.",
       "recommended": false
     },
     {
-      "title": "Mantener 500 resultados",
-      "body": "Conservar la regla BL vigente y pausar o cerrar esta PR hasta que producto reabra formalmente la decisión SEO.",
+      "title": "Replantear la ventana",
+      "body": "Pausar el merge y definir otro límite o mecanismo gradual si 2.000 no satisface el objetivo SEO.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar piloto con guardrails",
-    "body": "Fusionar la ampliación tras documentar responsables, métricas y umbrales de rollback para latencia, memoria y errores de Atlas/Vercel.",
+    "title": "Aprobar fase de 2.000",
+    "body": "Aceptar el compromiso medido y revisar métricas SEO y operativas antes de ampliar de nuevo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona vinculada por historial a la validación y fusión de la regla BL vigente que esta PR modifica.",
+    "person": "PabloMoran34",
+    "reason": "Es el propietario histórico más claro de la lógica y el revisor humano asignado que aprobó la optimización anterior.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7580.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7580#issuecomment-4978827944",
-    "reviewedAt": "2026-07-15T09:03:40.363Z",
-    "mainSha": "7b87c7a57e2a55b4bba1ebda5cac5ecec09abc90"
+    "reviewedAt": "2026-07-15T12:28:19.413Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
   }
 }

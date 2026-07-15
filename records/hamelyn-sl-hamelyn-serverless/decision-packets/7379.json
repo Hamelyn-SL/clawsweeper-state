@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:00:58.954Z",
-  "updatedAt": "2026-07-11T19:49:21Z",
+  "generatedAt": "2026-07-15T12:29:03.393Z",
+  "updatedAt": "2026-07-15T12:07:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,44 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-11T18:32:34Z",
-    "updatedAt": "2026-07-11T19:49:21Z"
+    "updatedAt": "2026-07-15T12:07:16Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "¿La ruta canónica para listings Amazon sin fila mk debe rehidratar un estado mínimo antes de retirar o retirar directamente mediante SP-API y reconciliar después?",
-  "rationale": "La elección define la fuente de verdad, la trazabilidad y las garantías de concurrencia de una operación que puede afectar a cientos de ofertas externas.",
+  "question": "¿Autoriza el responsable de Marketplace ejecutar la remediación canónica por rehidratación mínima sobre una cohorte fresca, comenzando con una muestra end-to-end y continuando en lotes de 200–500 SKUs?",
+  "rationale": "La dirección técnica ya está definida por el playbook, pero una operación sobre Mongo y ofertas externas exige confirmar que el nuevo dry-run conserva únicamente listings realmente huérfanos y vendidos.",
   "options": [
     {
-      "title": "Rehidratar y retirar",
-      "body": "Crear únicamente el estado mínimo validado para que el pipeline canónico retire y audite cada listing.",
+      "title": "Aprobar ejecución escalonada",
+      "body": "Revalidar tres muestras, retirar una de extremo a extremo y continuar por lotes auditados solo si SP-API y el snapshot confirman el resultado.",
       "recommended": true
     },
     {
-      "title": "Retirar y reconciliar",
-      "body": "Enviar cantidad cero directamente mediante SP-API y reconstruir después el estado local, priorizando reducir el tiempo de exposición comercial.",
-      "recommended": false
-    },
-    {
-      "title": "Reconciliador periódico común",
-      "body": "Diseñar primero un sweep multi-región que detecte y remedie recurrentemente las cohortes de Amazon ES y Amazon COM.",
+      "title": "Pausar para nueva medición",
+      "body": "No escribir datos hasta disponer de un snapshot Amazon ES fresco y un recuento actualizado de Mongo y SP-API.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rehidratar y retirar",
-    "body": "Crear únicamente el estado mínimo validado para que el pipeline canónico retire y audite cada listing.",
+    "title": "Aprobar ejecución escalonada",
+    "body": "Revalidar tres muestras, retirar una de extremo a extremo y continuar por lotes auditados solo si SP-API y el snapshot confirman el resultado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Tiene el historial más directo tanto en el batch Amazon como en la prevención reciente de listings huérfanos.",
+    "person": "MarcosTerroso",
+    "reason": "Es la persona asignada tanto a esta incidencia como a la cohorte equivalente de Amazon COM y tiene el historial más amplio en el pipeline Amazon actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7379.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7379#issuecomment-4948332519",
-    "reviewedAt": "2026-07-14T22:00:58.954Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-15T12:29:03.393Z",
+    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
   }
 }
