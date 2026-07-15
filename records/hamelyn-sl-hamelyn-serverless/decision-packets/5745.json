@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:19:24.914Z",
-  "updatedAt": "2026-07-14T16:00:00Z",
+  "generatedAt": "2026-07-15T10:27:53.742Z",
+  "updatedAt": "2026-07-15T10:16:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,51 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-08T00:34:01Z",
-    "updatedAt": "2026-07-14T16:00:00Z"
+    "updatedAt": "2026-07-15T10:16:38Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué evidencia debe convertir los 429 recuperados de Catalog API en trabajo de ingeniería: una tasa sostenida, errores terminales o correlación por request/EAN con creates fallidos?",
-  "rationale": "El código ya recupera las muestras documentadas y Amazon puede responder 429 aun con un limitador local correcto; elegir el umbral aceptable requiere criterio operativo que no puede deducirse solo del repositorio.",
+  "question": "¿Qué identidad de cuota y qué degradación ante indisponibilidad de KV debe usar el limitador distribuido de Catalog Items?",
+  "rationale": "La causa está demostrada, pero elegir una cuota global, por credenciales/región o por marketplace y decidir entre fail-open, fail-closed o un fallback local conservador afecta disponibilidad, throughput y riesgo de throttling.",
   "options": [
     {
-      "title": "Definir umbral y monitorizar",
-      "body": "Mantener esta canónica y exigir una ventana fresca con tasa, errores terminales y correlación por request/EAN antes de cambiar el limitador.",
+      "title": "Cuota por credenciales y operación",
+      "body": "Usar una reserva atómica distribuida por conjunto de credenciales, región y operación, con fallback local conservador y señal explícita de modo degradado.",
       "recommended": true
     },
     {
-      "title": "Cerrar como retry esperado",
-      "body": "Cerrar mientras todos los 429 terminen en HTTP 200 y persistencia de ASINs, reabriendo solo ante un fallo terminal demostrado.",
+      "title": "Cuota global de catálogo",
+      "body": "Compartir un único presupuesto para todos los marketplaces, reduciendo 429 a costa de limitar más tráfico del necesario.",
       "recommended": false
     },
     {
-      "title": "Coordinar cuota global ahora",
-      "body": "Priorizar un limitador distribuido por operación y marketplace aunque todavía no se haya cuantificado pérdida efectiva.",
+      "title": "Propagar primero el fallo parcial",
+      "body": "Corregir inicialmente la observabilidad y el contrato de errores, manteniendo temporalmente el limitador local y aceptando el throttling entre instancias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir umbral y monitorizar",
-    "body": "Mantener esta canónica y exigir una ventana fresca con tasa, errores terminales y correlación por request/EAN antes de cambiar el limitador.",
+    "title": "Cuota por credenciales y operación",
+    "body": "Usar una reserva atómica distribuida por conjunto de credenciales, región y operación, con fallback local conservador y señal explícita de modo degradado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y es el autor del arreglo fusionado más directamente relacionado con la reducción de llamadas a Catalog API.",
+    "reason": "Está asignado a la incidencia y ha realizado la investigación operativa más reciente sobre solapamiento, cuota y degradación parcial.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5745.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5745#issuecomment-4971271842",
-    "reviewedAt": "2026-07-14T21:19:24.914Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-15T10:27:53.742Z",
+    "mainSha": "ccdec9d21376c459ce200ec2328f3189faeb0c7e"
   }
 }
