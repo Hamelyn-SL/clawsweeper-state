@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T16:30:58.571Z",
-  "updatedAt": "2026-07-14T14:40:33Z",
+  "generatedAt": "2026-07-15T08:53:18.471Z",
+  "updatedAt": "2026-07-15T06:53:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,51 @@
       "priority:p2",
       "app:marketplace",
       "feature",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
-      "P2",
+      "triage:done",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-13T05:31:29Z",
-    "updatedAt": "2026-07-14T14:40:33Z"
+    "updatedAt": "2026-07-15T06:53:18Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe el onboarding de Amazon Italia adoptar el self-provisioning de tablas BigQuery ya presente en `dev`, eliminando la precreación manual como gate obligatorio, y activarse solo después de verificar los demás gates operativos?",
-  "rationale": "El conflicto del PR contrapone dos procedimientos de despliegue y la activación afecta a pedidos, precios y cuotas compartidas de SP-API; no es seguro elegir la política permanente ni la ventana de activación sin intención humana.",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468 activar `/api/amazonIT` en el mismo despliegue, o aterrizar primero el código con el cron deshabilitado hasta completar y demostrar todos los gates operativos?",
+  "rationale": "La implementación añade un canal comercial vivo que comparte credenciales y límites SP-API EU; CI no puede confirmar los índices, la configuración de producción, ShipMatrix, `pricingRuleId`, la deduplicación ni la ventana segura de activación.",
   "options": [
     {
-      "title": "Adoptar self-provisioning",
-      "body": "Resolver el conflicto a favor del comportamiento actual de `dev`, actualizar el playbook y exigir prueba real de los demás gates antes de activar Amazon Italia.",
+      "title": "Activar tras completar los gates",
+      "body": "Actualizar el PR, demostrar una ejecución real redaccionada y activar el cron únicamente cuando todos los requisitos externos estén confirmados.",
       "recommended": true
     },
     {
-      "title": "Mantener precreación manual",
-      "body": "Conservar la tabla BigQuery como gate explícito y ajustar el código y la documentación de `dev` para que esa política vuelva a ser coherente.",
+      "title": "Aterrizar con el cron deshabilitado",
+      "body": "Fusionar el wiring sin programación activa y habilitar `/api/amazonIT` en un cambio posterior coordinado con operaciones.",
       "recommended": false
     },
     {
-      "title": "Separar código y activación",
-      "body": "Integrar primero la preparación no activa y habilitar cron, precios y pedidos en una segunda fase operativa controlada.",
+      "title": "Pausar el alta",
+      "body": "Mantener la implementación fuera de `dev` hasta que exista capacidad operativa para asumir el nuevo canal y su cuota compartida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar self-provisioning",
-    "body": "Resolver el conflicto a favor del comportamiento actual de `dev`, actualizar el playbook y exigir prueba real de los demás gates antes de activar Amazon Italia.",
+    "title": "Activar tras completar los gates",
+    "body": "Actualizar el PR, demostrar una ejecución real redaccionada y activar el cron únicamente cuando todos los requisitos externos estén confirmados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Aprobó el onboarding equivalente de Amazon Francia y es el mejor candidato histórico disponible para confirmar si se repite el mismo patrón operativo.",
-    "confidence": "medium"
+    "person": "PabloMoran34",
+    "reason": "Es el revisor solicitado del PR y ha llevado la preparación y verificación operativa de BigQuery y configuración Amazon relacionada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7412.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7412#issuecomment-4954837339",
-    "reviewedAt": "2026-07-14T16:30:58.571Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-15T08:53:18.471Z",
+    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
   }
 }

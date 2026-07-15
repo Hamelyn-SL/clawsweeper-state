@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:54:32.001Z",
-  "updatedAt": "2026-07-14T12:47:03Z",
+  "generatedAt": "2026-07-15T08:59:10.712Z",
+  "updatedAt": "2026-07-15T08:42:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-14T09:55:19Z",
-    "updatedAt": "2026-07-14T12:47:03Z",
+    "updatedAt": "2026-07-15T08:42:31Z",
     "headSha": "6524e4416122132006d0b30be766fd7533fa9b4f"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la primera versión aceptar únicamente PRs del mismo repositorio y exigir validación previa al push, como propuso la discusión de la issue canónica?",
-  "rationale": "El head amplía el límite de confianza a forks y sustituye la validación previa por CI posterior; ambas son decisiones de seguridad y operación que necesitan intención humana explícita.",
+  "question": "¿Debe la primera versión procesar únicamente PRs no draft del repositorio principal y exigir validación previa al push, manteniendo la llamada directa a Claude como excepción deliberada al runtime estándar de cloud agents?",
+  "rationale": "La frontera de ramas/autores, la custodia de un token con escritura, el momento de validación y la excepción de stack son decisiones operativas y de seguridad que no pueden fijarse por revisión mecánica.",
   "options": [
     {
       "title": "Restringir y validar",
-      "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar una validación acotada antes de cualquier push automatizado.",
+      "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar lint/typecheck/tests acotados antes de cualquier push automatizado, documentando explícitamente la llamada directa a Claude.",
       "recommended": true
     },
     {
-      "title": "Aceptar el alcance ampliado",
-      "body": "Permitir forks y CI posterior solo con permisos mínimos demostrados, aislamiento revisado y aprobación explícita del riesgo.",
+      "title": "Aceptar la frontera amplia",
+      "body": "Permitir forks y validación posterior únicamente si los responsables aprueban expresamente la custodia del token, el riesgo de modificar ramas inválidamente y el stack alternativo.",
       "recommended": false
     },
     {
-      "title": "Pausar el resolver",
-      "body": "Mantener el PR sin merge hasta rediseñar la custodia del token y la estrategia de validación.",
+      "title": "Pausar la automatización",
+      "body": "Mantener el resolver desactivado o cerrar el PR si no puede establecerse una frontera de confianza y validación previa asumible.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Restringir y validar",
-    "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar una validación acotada antes de cualquier push automatizado.",
+    "body": "Aceptar solo ramas del repositorio principal, rechazar entradas Git no regulares y ejecutar lint/typecheck/tests acotados antes de cualquier push automatizado, documentando explícitamente la llamada directa a Claude.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la señal histórica más fuerte para los patrones de sandbox, claims y automatización de `apps/agents`, y ya está solicitado como reviewer.",
+    "reason": "Es la señal histórica más fuerte para los patrones de sandbox, claims y seguridad de `apps/agents`, y ya está conduciendo la revisión humana del diseño.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7532.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7532#issuecomment-4968078149",
-    "reviewedAt": "2026-07-14T21:54:32.001Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-15T08:59:10.712Z",
+    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
   }
 }

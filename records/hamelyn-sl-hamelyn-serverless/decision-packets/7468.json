@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:08:00.188Z",
-  "updatedAt": "2026-07-14T12:31:35Z",
+  "generatedAt": "2026-07-15T08:50:24.312Z",
+  "updatedAt": "2026-07-15T07:29:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,48 +11,52 @@
     "state": "open",
     "labels": [
       "size/L",
-      "conflicts:needs-human",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
       "merge-risk: 🚨 message-delivery",
-      "merge-risk: 🚨 availability"
+      "conflicts:needs-human",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-13T10:56:12Z",
-    "updatedAt": "2026-07-14T12:31:35Z",
+    "updatedAt": "2026-07-15T07:29:29Z",
     "headSha": "4fce6d5a923f7313dd6b804d921d59f6e0244f3d"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se autoriza activar Amazon IT cuando la rama esté actualizada y estén verificados los requisitos externos y una ejecución real del canal?",
-  "rationale": "El merge despliega un cron activo y habilita pedidos y precios sobre servicios externos compartidos; la ventana y preparación operativas requieren intención humana.",
+  "question": "¿Debe aprobarse la activación de Amazon IT en `dev` cuando se resuelva el conflicto, o debe permanecer pausada hasta completar y demostrar todos los gates operativos sobre la cuenta EU compartida?",
+  "rationale": "La corrección estática no permite decidir si Atlas, Mongo, ShipMatrix, Seller Central y la capacidad compartida de SP-API están preparados para soportar un nuevo canal de producción.",
   "options": [
     {
-      "title": "Activar tras validación",
-      "body": "Resolver la rama, verificar infraestructura y aportar prueba real antes de mergear a `dev`.",
+      "title": "Aprobar tras prueba y gates",
+      "body": "Resolver el conflicto, aportar ejecución real redaccionada y confirmar índices, configuración, seed, deduplicación y límites compartidos antes del merge.",
       "recommended": true
     },
     {
-      "title": "Mantener en pausa",
-      "body": "Dejar el PR abierto hasta disponer de ventana operativa y confirmación de todos los requisitos externos.",
+      "title": "Integrar sin activar el cron",
+      "body": "Conservar el código del marketplace, pero excluir temporalmente la programación de `/api/amazonIT` hasta que operaciones autorice el canal.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el onboarding",
+      "body": "Mantener el PR abierto sin integrar hasta que la infraestructura y Seller Central estén preparados y exista una ventana de despliegue coordinada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activar tras validación",
-    "body": "Resolver la rama, verificar infraestructura y aportar prueba real antes de mergear a `dev`.",
+    "title": "Aprobar tras prueba y gates",
+    "body": "Resolver el conflicto, aportar ejecución real redaccionada y confirmar índices, configuración, seed, deduplicación y límites compartidos antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Tiene la continuidad técnica más directa por el registry, la separación previa de ES y el onboarding de Amazon FR.",
-    "confidence": "high"
+    "person": "PabloMoran34",
+    "reason": "Es el revisor asignado con experiencia directa en la integración de BigQuery afectada y puede coordinar la decisión con el propietario del onboarding.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7468.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7468#issuecomment-4957352943",
-    "reviewedAt": "2026-07-14T22:08:00.188Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-15T08:50:24.312Z",
+    "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
   }
 }

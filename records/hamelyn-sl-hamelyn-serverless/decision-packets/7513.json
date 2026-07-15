@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T08:51:12.789Z",
+  "generatedAt": "2026-07-15T08:51:47.478Z",
   "updatedAt": "2026-07-15T08:42:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,46 @@
       "feature",
       "triage:queued",
       "reporter:danielmenchen-hamelyn",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T08:32:59Z",
     "updatedAt": "2026-07-15T08:42:41Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe la primera versión procesar solo PRs no draft de ramas internas y autores confiables, o también contribuciones externas aisladas?",
-  "rationale": "La elección determina qué código no fusionado puede ejecutarse cerca de credenciales con permisos de escritura; el repositorio no puede fijar ese apetito de riesgo sin intención humana explícita.",
+  "question": "¿Debe la primera versión procesar únicamente PRs no draft del mismo repositorio y autores explícitamente confiables, o también ramas externas?",
+  "rationale": "El resolver ejecuta contenido controlado por ramas de PR y puede escribir en sus heads; el alcance permitido define una frontera de seguridad que no puede deducirse solo del código.",
   "options": [
     {
-      "title": "Solo ramas internas confiables",
-      "body": "Restringir repositorio y autores en la primera versión reduce la exposición y permite validar la operación y el rollback antes de ampliar cobertura.",
+      "title": "Restringir a PRs internos",
+      "body": "Permitir solo ramas del mismo repositorio y autores aprobados, con kill-switch y `dry_run` activos hasta completar la validación.",
       "recommended": true
     },
     {
-      "title": "Permitir PRs externos aislados",
-      "body": "Esta opción exige demostrar que el sandbox, la red, los secretos y las credenciales de GitHub resisten código deliberadamente hostil.",
+      "title": "Admitir ramas externas",
+      "body": "Ampliar la cobertura únicamente después de demostrar aislamiento frente a código hostil, permisos mínimos y controles de push equivalentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo ramas internas confiables",
-    "body": "Restringir repositorio y autores en la primera versión reduce la exposición y permite validar la operación y el rollback antes de ampliar cobertura.",
+    "title": "Restringir a PRs internos",
+    "body": "Permitir solo ramas del mismo repositorio y autores aprobados, con kill-switch y `dry_run` activos hasta completar la validación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el propietario histórico más claro del runner cloud, sandbox y seguridad de `apps/agents`, y ya está realizando la revisión humana del candidato.",
+    "reason": "Tiene la señal histórica más fuerte sobre el runner cloud, los claims y el sandbox, y ya está solicitado como revisor del candidato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7513.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7513#issuecomment-4967152411",
-    "reviewedAt": "2026-07-15T08:51:12.789Z",
+    "reviewedAt": "2026-07-15T08:51:47.478Z",
     "mainSha": "16024b0a581c4fffdf009b77e036b21ffc43fad0"
   }
 }
