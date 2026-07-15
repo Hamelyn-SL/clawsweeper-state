@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:00:38.029Z",
-  "updatedAt": "2026-07-14T16:00:13Z",
+  "generatedAt": "2026-07-14T23:57:37.975Z",
+  "updatedAt": "2026-07-14T22:11:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -21,48 +21,50 @@
       "area:marketplace-orders",
       "P1",
       "impact:other",
-      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "issue-rating: ⚪ platinum"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-08T02:35:52Z",
-    "updatedAt": "2026-07-14T16:00:13Z"
+    "updatedAt": "2026-07-14T22:11:44Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `getOrder` reintentar localmente los `5xx` de Amazon dentro de la misma ejecución o mantenerse el reintento exclusivamente mediante la retención SQS?",
-  "rationale": "Ambas opciones preservan los mensajes, pero cambian la latencia de los pedidos, la presión sobre SP-API y el riesgo de agotar el runtime del cron.",
+  "question": "¿Debe `getOrder` reintentar localmente los 5xx transitorios dentro de la misma ejecución o mantenerse el reintento exclusivamente mediante la retención SQS?",
+  "rationale": "Ambas opciones conservan el mensaje, pero cambian la latencia de los pedidos, la presión sobre Amazon SP-API y el riesgo de agotar el runtime de 150 segundos.",
   "options": [
     {
       "title": "Retry corto con presupuesto",
-      "body": "Aplicar uno o dos reintentos únicamente cuando quede margen temporal, respetando `Retry-After` y conservando SQS como fallback.",
+      "body": "Aplicar uno o dos reintentos solo cuando quede margen temporal, respetando `Retry-After` y conservando SQS como fallback.",
       "recommended": true
     },
     {
       "title": "Solo retry por SQS",
-      "body": "Mantener una llamada por ejecución y mejorar únicamente la observabilidad y el escalado operativo de fallos sostenidos.",
+      "body": "Mantener una llamada por ejecución y reforzar únicamente la observabilidad y el escalado operativo de fallos sostenidos.",
       "recommended": false
     },
     {
-      "title": "Esperar nueva señal productiva",
-      "body": "No cambiar código hasta medir la frecuencia reciente y el alcance EU/NA de la firma.",
+      "title": "Esperar nueva medición",
+      "body": "No cambiar código hasta medir de nuevo la frecuencia productiva y el alcance por región de Amazon.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Retry corto con presupuesto",
-    "body": "Aplicar uno o dos reintentos únicamente cuando quede margen temporal, respetando `Retry-After` y conservando SQS como fallback.",
+    "body": "Aplicar uno o dos reintentos solo cuando quede margen temporal, respetando `Retry-After` y conservando SQS como fallback.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo el flujo de notificaciones y sus decisiones originales de throughput y procesamiento por mensaje.",
+    "reason": "Definió el flujo original, su throughput y el procesamiento por mensaje, por lo que conserva el contexto histórico más directo sobre sus límites.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5747.md",
-    "reviewedAt": "2026-07-14T22:00:38.029Z",
+    "reviewedAt": "2026-07-14T23:57:37.975Z",
     "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }

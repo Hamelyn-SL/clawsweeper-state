@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:43:29.093Z",
-  "updatedAt": "2026-07-14T12:24:22Z",
+  "generatedAt": "2026-07-15T00:00:25.123Z",
+  "updatedAt": "2026-07-14T22:40:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -19,38 +19,43 @@
       "rating: 🥉 bronze"
     ],
     "createdAt": "2026-06-18T13:37:49Z",
-    "updatedAt": "2026-07-14T12:24:22Z",
+    "updatedAt": "2026-07-14T22:40:57Z",
     "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
   },
-  "lane": "security_boundary",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe la lane `release` exigir un GitHub environment protegido con aprobación humana antes de usar `EXPO_TOKEN` y enviar a producción?",
-  "rationale": "El código no puede decidir qué personas deben poder iniciar un submit de producción; esa frontera de autorización afecta a credenciales y publicaciones reales en las stores.",
+  "question": "¿Debe este workflow limitarse a construir y enviar desde una rama de release, o debe automatizar también la promoción de la versión a `dev` después de verificar las stores?",
+  "rationale": "La secuencia determina cuándo el backend obliga a actualizar y, por tanto, puede bloquear a usuarios si la versión se anuncia antes de estar disponible; esta política operativa necesita intención explícita del responsable de Supply.",
   "options": [
     {
-      "title": "Proteger producción",
-      "body": "Asignar un environment protegido a la lane `release`, con aprobación humana antes de exponer credenciales o iniciar el submit.",
+      "title": "Rama de release y PR posterior",
+      "body": "Construir y enviar desde una rama de release, verificar ambas stores y abrir después un PR con el bump sincronizado hacia `dev`.",
       "recommended": true
     },
     {
-      "title": "Usar permisos generales",
-      "body": "Aceptar que cualquier actor autorizado para ejecutar el workflow pueda iniciar beta o producción utilizando el mismo secreto.",
+      "title": "Promoción automatizada verificada",
+      "body": "Permitir la actualización automática de `dev` únicamente después de una comprobación fiable y auditable de disponibilidad en las dos stores.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener proceso manual",
+      "body": "Conservar temporalmente el release manual hasta disponer de una verificación automática segura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proteger producción",
-    "body": "Asignar un environment protegido a la lane `release`, con aprobación humana antes de exponer credenciales o iniciar el submit.",
+    "title": "Rama de release y PR posterior",
+    "body": "Construir y enviar desde una rama de release, verificar ambas stores y abrir después un PR con el bump sincronizado hacia `dev`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor solicitado y la persona con señal histórica más directa sobre EAS, el endpoint de versión y el release anterior.",
+    "reason": "Es el revisor solicitado y tiene la señal histórica más fuerte en releases, versionado y configuración de Supply.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
-    "reviewedAt": "2026-07-14T15:43:29.093Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-15T00:00:25.123Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
