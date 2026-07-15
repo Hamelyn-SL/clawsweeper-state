@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T09:03:40.363Z",
+  "updatedAt": "2026-07-15T08:55:34Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7580,
+    "title": "feat: expand ecommerce catalog search window",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7580",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-15T08:44:58Z",
+    "updatedAt": "2026-07-15T08:55:34Z",
+    "headSha": "b84a567a242788139d1a5dca59e164355c71e50c"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba sustituir ahora la regla BL de 500 resultados por un piloto global de 30.000, aceptando el coste medido y definiendo umbrales de rollback?",
+  "rationale": "La issue original solicita 30.000 resultados, pero después se validó y fusionó expresamente la política contraria de 500; el código no puede resolver qué decisión de producto prevalece ni qué coste operativo es aceptable.",
+  "options": [
+    {
+      "title": "Aprobar piloto con guardrails",
+      "body": "Fusionar la ampliación tras documentar responsables, métricas y umbrales de rollback para latencia, memoria y errores de Atlas/Vercel.",
+      "recommended": true
+    },
+    {
+      "title": "Hacer despliegue gradual",
+      "body": "Introducir una ventana configurable o segmentada para limitar el riesgo antes de aplicar 30.000 resultados a todo el tráfico.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener 500 resultados",
+      "body": "Conservar la regla BL vigente y pausar o cerrar esta PR hasta que producto reabra formalmente la decisión SEO.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar piloto con guardrails",
+    "body": "Fusionar la ampliación tras documentar responsables, métricas y umbrales de rollback para latencia, memoria y errores de Atlas/Vercel.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona vinculada por historial a la validación y fusión de la regla BL vigente que esta PR modifica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7580.md",
+    "reviewedAt": "2026-07-15T09:03:40.363Z",
+    "mainSha": "7b87c7a57e2a55b4bba1ebda5cac5ecec09abc90"
+  }
+}

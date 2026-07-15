@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T17:02:20.471Z",
-  "updatedAt": "2026-07-13T15:13:59Z",
+  "generatedAt": "2026-07-15T09:02:21.185Z",
+  "updatedAt": "2026-07-15T08:50:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,52 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
+      "triage:queued",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "P1",
-      "impact:other",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-13T08:05:07Z",
-    "updatedAt": "2026-07-13T15:13:59Z"
+    "updatedAt": "2026-07-15T08:50:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el PR candidato acotarse a la canonicalización definida en esta issue o aprobarse también el nuevo filtrado `nonPerson` y su política de URLs?",
-  "rationale": "La rama introduce comportamiento de producto adicional y diverge en la regla de desempate y en la redirección observada, por lo que no basta con una decisión técnica automática.",
+  "question": "¿Debe la implementación respetar la regla de completitud más antigüedad y los redirects de esta issue, o adoptar la simplificación del PR basada solo en antigüedad junto con su política de 308/404 y backfill?",
+  "rationale": "La elección modifica el contrato de identidad de autores, las URLs indexadas y la frontera con la fusión física de duplicados; no puede deducirse con seguridad solo del código porque la aceptación y el PR describen comportamientos distintos.",
   "options": [
     {
-      "title": "Acotar y separar",
-      "body": "Mantener en este trabajo la canonicalización, unión de catálogo, enlaces y guard compartido, y mover `nonPerson` a seguimiento independiente.",
+      "title": "Alinear con la aceptación",
+      "body": "Usar completitud más antigüedad, preservar el fallback legacy y redirigir las fichas duplicadas sin depender de una fusión física dentro de este cambio.",
       "recommended": true
     },
     {
-      "title": "Aprobar alcance ampliado",
-      "body": "Aceptar canonicalización más `nonPerson`, fijando explícitamente la regla canónica y la política 301/308/404 con prueba de upgrade y SEO.",
+      "title": "Aceptar el contrato del PR",
+      "body": "Formalizar la ficha más antigua y la política 308/404 con backfill como nuevo comportamiento, actualizando expresamente la aceptación y la documentación SEO.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el alcance adicional",
+      "body": "Aterrizar primero la resolución canónica y mover `nonPerson`, backfill y ajustes largos del workflow a cambios independientes con prueba propia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar y separar",
-    "body": "Mantener en este trabajo la canonicalización, unión de catálogo, enlaces y guard compartido, y mover `nonPerson` a seguimiento independiente.",
+    "title": "Alinear con la aceptación",
+    "body": "Usar completitud más antigüedad, preservar el fallback legacy y redirigir las fichas duplicadas sin depender de una fusión física dentro de este cambio.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es la persona del historial más cercana a la página y al repositorio de autores, donde se materializa la decisión de experiencia y SEO.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es el aprobador humano del head actual y la mejor señal disponible para confirmar si las desviaciones de aceptación son deliberadas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7432#issuecomment-4956045560",
-    "reviewedAt": "2026-07-14T17:02:20.471Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-15T09:02:21.185Z",
+    "mainSha": "7b87c7a57e2a55b4bba1ebda5cac5ecec09abc90"
   }
 }
