@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:15:44.674Z",
-  "updatedAt": "2026-07-14T22:12:28Z",
+  "generatedAt": "2026-07-15T09:11:38.325Z",
+  "updatedAt": "2026-07-15T08:57:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,50 @@
       "priority:p1",
       "reporter:jesus",
       "feature",
-      "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T10:15:32Z",
-    "updatedAt": "2026-07-14T22:12:28Z"
+    "updatedAt": "2026-07-15T08:57:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la política BL recién fusionada de una ventana máxima de 500 resultados o se aprueba un piloto explícito para ampliar el catálogo hasta 30.000 productos?",
-  "rationale": "El comportamiento vigente fue validado y fusionado en sentido contrario, y el impacto SEO y operativo de 30.000 resultados requiere intención de producto y criterios de éxito que no pueden inferirse del código.",
+  "question": "¿Se aprueba sustituir ahora la regla BL de 500 resultados por un piloto de 30.000, aceptando el coste medido y definiendo umbrales operativos de rollback?",
+  "rationale": "La petición y el PR proponen revocar una política BL fusionada recientemente, y el benchmark demuestra un aumento material de latencia y memoria cuyo presupuesto no puede decidirse desde el código.",
   "options": [
     {
-      "title": "Mantener 500 resultados",
-      "body": "Conservar la política BL actual y cerrar la iniciativa mientras no exista evidencia o patrocinio para asumir el aumento de coste y latencia.",
+      "title": "Aprobar piloto con guardrails",
+      "body": "Revisar y fusionar el PR vinculado tras definir responsables, monitorización y umbrales de rollback para latencia, memoria y errores.",
       "recommended": true
     },
     {
-      "title": "Aprobar piloto de 30.000",
-      "body": "Definir métricas SEO y operativas, despliegue gradual y rollback antes de implementar coordinadamente todos los límites.",
+      "title": "Reducir el radio del piloto",
+      "body": "Solicitar una activación gradual o configurable antes de aplicar la ventana de 30.000 a todo el tráfico.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener 500 resultados",
+      "body": "Conservar la regla BL vigente y cerrar la petición si el beneficio SEO esperado no compensa el coste operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener 500 resultados",
-    "body": "Conservar la política BL actual y cerrar la iniciativa mientras no exista evidencia o patrocinio para asumir el aumento de coste y latencia.",
+    "title": "Aprobar piloto con guardrails",
+    "body": "Revisar y fusionar el PR vinculado tras definir responsables, monitorización y umbrales de rollback para latencia, memoria y errores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Figura como owner del bloque de catálogo y autor de la política vigente de 500 resultados.",
+    "reason": "Es la persona vinculada por la documentación y el historial a la validación de la regla BL vigente que debe confirmarse o sustituirse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6604.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6604#issuecomment-4910069554",
-    "reviewedAt": "2026-07-14T23:15:44.674Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-15T09:11:38.325Z",
+    "mainSha": "fbca67dd05f83cfb586542317b6e7b74c288969c"
   }
 }
