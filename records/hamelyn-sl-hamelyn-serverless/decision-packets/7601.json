@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-15T13:14:50.255Z",
+  "updatedAt": "2026-07-15T13:05:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7601,
+    "title": "Volcar oficinas de Correos en el sistema y relacionarlas con el CP del cliente (para Postlibri)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "feature",
+      "reporter:blanca",
+      "triage:running"
+    ],
+    "createdAt": "2026-07-15T12:58:18Z",
+    "updatedAt": "2026-07-15T13:05:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Dónde debe aparecer la oficina de Correos y quién será responsable de mantener actualizado el listado oficial después de la carga inicial?",
+  "rationale": "El modelo técnico puede reutilizar la infraestructura PUDO, pero el valor de la funcionalidad depende de elegir una superficie operativa concreta y una política de actualización que la issue no define.",
+  "options": [
+    {
+      "title": "Consulta calculada en admin",
+      "body": "Cargar las oficinas como `pudoPoints` de Correos y mostrarlas de forma read-only en el detalle del pedido Postlibri, documentando además el proceso de actualización del listado.",
+      "recommended": true
+    },
+    {
+      "title": "Servicio backend sin interfaz",
+      "body": "Implementar únicamente el repositorio o endpoint de consulta y posponer la integración con Atención al Cliente hasta definir su flujo exacto.",
+      "recommended": false
+    },
+    {
+      "title": "Guardar una copia en cada pedido",
+      "body": "Persistir una instantánea de la oficina en el OrderSell para conservar el dato histórico, asumiendo migración, duplicación y posibles desactualizaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Consulta calculada en admin",
+    "body": "Cargar las oficinas como `pudoPoints` de Correos y mostrarlas de forma read-only en el detalle del pedido Postlibri, documentando además el proceso de actualización del listado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona con mayor relación histórica con el modelo y las consultas PUDO que permiten resolver el cambio sin crear una segunda fuente de verdad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7601.md",
+    "reviewedAt": "2026-07-15T13:14:50.255Z",
+    "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
+  }
+}
