@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T09:14:06.248Z",
-  "updatedAt": "2026-07-14T08:48:54Z",
+  "generatedAt": "2026-07-15T10:39:37.013Z",
+  "updatedAt": "2026-07-15T10:27:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,50 @@
       "app:admin",
       "priority:p1",
       "feature",
-      "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T06:20:38Z",
-    "updatedAt": "2026-07-14T08:48:54Z"
+    "updatedAt": "2026-07-15T10:27:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué modelo persistido y qué semántica de recuperación debe usar el trasvase cuando MongoDB o Exotec completen solo parte de la operación?",
-  "rationale": "El código actual no proporciona una transacción común y la elección entre una entidad propia, reutilizar MergeAuto o ampliar `drawers` determina el historial, la idempotencia, los reintentos y la recuperación operativa.",
+  "question": "¿Debe aceptarse para la primera entrega la trazabilidad de último trasvase y la secuencia actual de efectos de la PR vinculada, o se exige antes un registro de operación recuperable e idempotente?",
+  "rationale": "La issue deja abierto el nivel de histórico y la PR concreta una semántica que puede dejar Mongo actualizado antes de confirmar Skypod; esa garantía operativa requiere una decisión humana.",
   "options": [
     {
-      "title": "Entidad de trasvase propia",
-      "body": "Persistir origen, destino, operario, estados, eventos e idempotency key en una colección dedicada y mantener `drawers` como representación agregada de la ubicación.",
+      "title": "Exigir operación recuperable",
+      "body": "Añadir estado persistido, reintento seguro o compensación antes del merge y validar el flujo completo con un fallo parcial controlado.",
       "recommended": true
     },
     {
-      "title": "Generalizar MergeAuto",
-      "body": "Extender el modelo y el ejecutor existentes para admitir gavetas manuales e inventario previo, asumiendo un contrato común para dos operativas actualmente distintas.",
+      "title": "Aceptar alcance inicial",
+      "body": "Aprobar la trazabilidad de último trasvase y asumir explícitamente el procedimiento operativo de recuperación manual para esta primera versión.",
       "recommended": false
     },
     {
-      "title": "Histórico dentro de drawers",
-      "body": "Guardar los estados y el historial en los documentos de origen y destino, aceptando mayor acoplamiento, crecimiento documental y coordinación entre ambos registros.",
+      "title": "Dividir backend y UI",
+      "body": "Aterrizar primero el contrato robusto de Trasvase y dejar el panel visual para una segunda entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Entidad de trasvase propia",
-    "body": "Persistir origen, destino, operario, estados, eventos e idempotency key en una colección dedicada y mantener `drawers` como representación agregada de la ubicación.",
+    "title": "Exigir operación recuperable",
+    "body": "Añadir estado persistido, reintento seguro o compensación antes del merge y validar el flujo completo con un fallo parcial controlado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona actualmente asignada a la issue y puede coordinar la decisión entre producto, Inventory y Admin.",
+    "reason": "Es la persona asignada a la issue y autora de la implementación candidata, por lo que puede coordinar la decisión con Inventory/Admin.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7492.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7492#issuecomment-4966435214",
-    "reviewedAt": "2026-07-14T09:14:06.248Z",
-    "mainSha": "f2548274b311cadaf75dd3ca901f09cd71d74ea7"
+    "reviewedAt": "2026-07-15T10:39:37.013Z",
+    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
   }
 }
