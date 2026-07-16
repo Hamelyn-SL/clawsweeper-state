@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:15:59.585Z",
-  "updatedAt": "2026-07-14T08:50:46Z",
+  "generatedAt": "2026-07-16T08:09:48.807Z",
+  "updatedAt": "2026-07-16T07:59:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,54 +11,53 @@
     "state": "open",
     "labels": [
       "size/XL",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "status: ⏳ waiting on author",
       "dependencies",
       "javascript",
       "autofix-failed",
-      "rating: 🥉 bronze",
-      "status: ⏳ waiting on author",
-      "P2",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-14T07:06:21Z",
-    "updatedAt": "2026-07-14T08:50:46Z",
-    "headSha": "48484fb36230ad9bb4c6bc5f530fc1f23c92f5dc"
+    "updatedAt": "2026-07-16T07:59:09Z",
+    "headSha": "6c972e8526ffb3208ebc897c2fde11200e2a775a"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe repararse esta PR como candidata canónica para las tres dependencias o consolidarse el trabajo en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500?",
-  "rationale": "Las dos PRs se solapan, ambas están bloqueadas y ninguna dispone todavía de una validación suficientemente completa para sustituir con seguridad a la otra.",
+  "question": "¿Debe repararse esta PR más acotada como candidata canónica para las tres dependencias o debe consolidarse el trabajo en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500?",
+  "rationale": "Ambas ramas se solapan y continúan bloqueadas; elegir dónde aplicar la reparación evita mantener dos estrategias de versiones y dos lockfiles divergentes.",
   "options": [
     {
-      "title": "Reparar esta PR más acotada",
-      "body": "Mantener aquí las tres actualizaciones, eliminar la rebaja de `fast-xml-parser` y validar de forma dirigida cada superficie afectada.",
+      "title": "Reparar esta PR",
+      "body": "Mantener aquí las tres actualizaciones, eliminar la rebaja y resolver la compatibilidad CommonJS antes de ejecutar la validación dirigida.",
       "recommended": true
     },
     {
       "title": "Consolidar en la PR más amplia",
-      "body": "Trasladar las correcciones y pruebas a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500, y cerrar esta PR solo cuando aquella sea una candidata segura.",
+      "body": "Usar la otra PR solo si se asumen también los riesgos adicionales de `multer` y se corrigen allí todos los bloqueos comunes.",
       "recommended": false
     },
     {
-      "title": "Separar las dependencias",
-      "body": "Cerrar las agrupadas y abrir actualizaciones independientes para aislar el riesgo y la validación de cada salto mayor.",
+      "title": "Dividir los saltos mayores",
+      "body": "Cerrar las ramas agrupadas y actualizar cada dependencia por separado si no puede demostrarse con confianza el conjunto completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reparar esta PR más acotada",
-    "body": "Mantener aquí las tres actualizaciones, eliminar la rebaja de `fast-xml-parser` y validar de forma dirigida cada superficie afectada.",
+    "title": "Reparar esta PR",
+    "body": "Mantener aquí las tres actualizaciones, eliminar la rebaja y resolver la compatibilidad CommonJS antes de ejecutar la validación dirigida.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es quien introdujo y mantiene recientemente la automatización que generó las dos ramas solapadas.",
+    "reason": "Es el propietario histórico más cercano de la automatización de Dependabot y del flujo de autofix que generó las dos ramas solapadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7501.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7501#issuecomment-4974937602",
-    "reviewedAt": "2026-07-14T23:15:59.585Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-16T08:09:48.807Z",
+    "mainSha": "9b09d392d49b027e7f59a67481e2c08f9a0237c1"
   }
 }
