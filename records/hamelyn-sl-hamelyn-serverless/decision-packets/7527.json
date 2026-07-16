@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T05:59:12.733Z",
-  "updatedAt": "2026-07-16T05:29:12Z",
+  "generatedAt": "2026-07-16T09:16:32.328Z",
+  "updatedAt": "2026-07-16T09:01:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,53 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
-      "triage:done",
-      "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
+      "triage:queued",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:02Z",
-    "updatedAt": "2026-07-16T05:29:12Z"
+    "updatedAt": "2026-07-16T09:01:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué SLA y mecanismo de resolución debe tener `PENDING_PROVIDER_CONFIRMATION`, y pueden Azeta y Arnoia reconciliar o deduplicar de forma fiable mediante una referencia local?",
-  "rationale": "La respuesta determina si el retry puede automatizarse sin crear pedidos externos duplicados y cómo debe operar el equipo mientras una confirmación permanezca ambigua.",
+  "question": "¿Se aprueba `PENDING_PROVIDER_CONFIRMATION` con auto-cancelación a las 48 horas y retry automático únicamente cuando el proveedor confirma que no creó el pedido?",
+  "rationale": "El SLA y la política de retry deciden cuándo cancelar una venta cobrada y cuándo asumir riesgo de duplicación externa; el contrato actual de Azeta y Arnoia no resuelve esa elección.",
   "options": [
     {
-      "title": "Revisión manual inicial",
-      "body": "Persistir el estado ambiguo, alertar y resolverlo manualmente hasta demostrar una reconciliación fiable para ambos proveedores.",
+      "title": "Estado intermedio y retry seguro",
+      "body": "Adoptar el estado propuesto, automatizar solo los fallos inequívocamente seguros y dejar los ambiguos para reconciliación manual.",
       "recommended": true
     },
     {
-      "title": "Reconciliación y retry",
-      "body": "Añadir una referencia local y automatizar el retry únicamente después de verificar consulta o deduplicación fiable en cada proveedor.",
+      "title": "Sin retries hasta reconciliar",
+      "body": "Mantener todos los fallos no concluyentes en revisión manual hasta disponer de una referencia idempotente o consulta fiable por proveedor.",
       "recommended": false
     },
     {
-      "title": "Mantener cancelación conservadora",
-      "body": "Conservar `TO_CANCEL` para toda excepción, aceptando cancelaciones falsas para evitar el riesgo de pedidos externos duplicados.",
+      "title": "Conservar cancelación inmediata",
+      "body": "Mantener la salida común a `TO_CANCEL`, aceptando cancelaciones incorrectas para evitar cualquier posible pedido duplicado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisión manual inicial",
-    "body": "Persistir el estado ambiguo, alertar y resolverlo manualmente hasta demostrar una reconciliación fiable para ambos proveedores.",
+    "title": "Estado intermedio y retry seguro",
+    "body": "Adoptar el estado propuesto, automatizar solo los fallos inequívocamente seguros y dejar los ambiguos para reconciliación manual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y la persona con mayor historial en el lifecycle dropshipping afectado.",
+    "reason": "Está asignado, lleva la implementación candidata y tiene el contexto más reciente del ciclo de vida dropshipping.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527#issuecomment-4968441443",
-    "reviewedAt": "2026-07-16T05:59:12.733Z",
-    "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
+    "reviewedAt": "2026-07-16T09:16:32.328Z",
+    "mainSha": "1fd632bee6900473f85e8d6beece81929b1e2d0f"
   }
 }
