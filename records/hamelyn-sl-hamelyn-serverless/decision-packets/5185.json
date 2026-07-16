@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T07:58:33.771Z",
+  "updatedAt": "2026-07-16T07:50:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 5185,
+    "title": "marketplace-crons: updatePrice de MercadoLibre falla con 400 y el cron lo absorbe",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:running",
+      "triage:confirmed-live",
+      "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "no-stale",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-04-13T01:26:56Z",
+    "updatedAt": "2026-07-16T07:50:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Para un `400` genérico de `updatePrice` cuyo listing remoto sigue activo, ¿debe Hamelyn reintentarlo automáticamente, mantenerlo como `UNKNOWN` para revisión o aplicar una clasificación permanente basada en causas concretas adicionales?",
+  "rationale": "El estado remoto permite resolver con seguridad los listings cerrados o inexistentes, pero no determina la causa de un 400 sobre un listing activo; esa política afecta a la frescura de precios y al riesgo de reintentos indefinidos.",
+  "options": [
+    {
+      "title": "Aislar activos ambiguos",
+      "body": "Mantener como `UNKNOWN` los listings activos, guardar body, status y causas estructuradas, y crear métricas para definir reglas posteriores con datos reales.",
+      "recommended": true
+    },
+    {
+      "title": "Reintentar activos",
+      "body": "Clasificar como `TRANSIENT` los 400 de listings activos y aplicar backoff y límite de intentos, aceptando posible ruido sobre errores permanentes.",
+      "recommended": false
+    },
+    {
+      "title": "Marcar activos permanentes",
+      "body": "Clasificar esos 400 como `PERMANENT` y detener actualizaciones hasta intervención, aceptando posible desincronización prolongada de precios.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aislar activos ambiguos",
+    "body": "Mantener como `UNKNOWN` los listings activos, guardar body, status y causas estructuradas, y crear métricas para definir reglas posteriores con datos reales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado actual y el autor y merger de la infraestructura de recovery de MercadoLibre donde debe aplicarse esta política.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
+    "reviewedAt": "2026-07-16T07:58:33.771Z",
+    "mainSha": "9b09d392d49b027e7f59a67481e2c08f9a0237c1"
+  }
+}
