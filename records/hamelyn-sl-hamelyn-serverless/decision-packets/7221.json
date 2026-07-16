@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T07:08:34.999Z",
-  "updatedAt": "2026-07-14T06:39:03Z",
+  "generatedAt": "2026-07-16T07:49:55.920Z",
+  "updatedAt": "2026-07-16T07:15:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,45 @@
       "feature",
       "triage:done",
       "reporter:victor",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T09:00:53Z",
-    "updatedAt": "2026-07-14T06:39:03Z"
+    "updatedAt": "2026-07-16T07:15:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que `lastmod` refleje solo el último cambio de precio, o debe cubrir desde esta entrega los cambios de contenido, precio y stock?",
-  "rationale": "La PR modifica expresamente un criterio de aceptación y el modelo actual no acredita una marca temporal fiable para cada cambio exclusivo de stock.",
+  "question": "¿Qué campos y valores exactos constituyen la fuente de verdad para la clasificación activo/inactivo, el corte de restock de 90 días y cada transición que debe actualizar `lastmod`?",
+  "rationale": "La aclaración define la intención SEO, pero deja aproximado el umbral de restock y el código actual no dispone de todas las señales temporales; elegir esos datos durante la implementación cambiaría la cobertura de rastreo sin una decisión explícita.",
   "options": [
     {
-      "title": "Mantener el requisito completo",
-      "body": "Exigir una fecha fiable que cambie con contenido, precio o stock antes de considerar terminada la issue.",
+      "title": "Fijar contrato exacto",
+      "body": "Documentar el corte exacto de 90 días, el mapping de estados y las fuentes de eventos de contenido, precio y disponibilidad antes de actualizar la PR.",
       "recommended": true
     },
     {
-      "title": "Aceptar precio temporalmente",
-      "body": "Fusionar la nueva estructura con `lastPriceUpdate` y documentar expresamente la limitación de contenido y stock.",
-      "recommended": false
-    },
-    {
-      "title": "Separar el seguimiento",
-      "body": "Fusionar la parte estructural y crear una issue canónica específica para completar después la semántica de `lastmod`.",
+      "title": "Separar señales avanzadas",
+      "body": "Implementar primero la estructura de índices y mantener `lastmod` y la clasificación avanzada en una issue posterior claramente enlazada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el requisito completo",
-    "body": "Exigir una fecha fiable que cambie con contenido, precio o stock antes de considerar terminada la issue.",
+    "title": "Fijar contrato exacto",
+    "body": "Documentar el corte exacto de 90 días, el mapping de estados y las fuentes de eventos de contenido, precio y disponibilidad antes de actualizar la PR.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el asignado y responsable de la implementación activa, con contexto directo sobre el modelo de datos y el coste de completar el requisito.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Aporta el contexto más sólido entre la épica SEO, la introducción del pipeline y sus decisiones históricas de rastreo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7221.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221#issuecomment-4959487465",
-    "reviewedAt": "2026-07-14T07:08:34.999Z",
-    "mainSha": "b74b3873429dbd39c3eea22fba7a945ff8940bfc"
+    "reviewedAt": "2026-07-16T07:49:55.920Z",
+    "mainSha": "112e3e512a2a7e041f7c71df942e59dee435333f"
   }
 }
