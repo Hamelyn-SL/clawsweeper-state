@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T10:37:04.847Z",
+  "generatedAt": "2026-07-16T10:43:13.719Z",
   "updatedAt": "2026-07-16T10:20:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,52 +13,51 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:02Z",
     "updatedAt": "2026-07-16T10:20:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse el contrato operativo de `PENDING_PROVIDER_CONFIRMATION`, especialmente la auto-cancelación a las 48 horas cuando aún no puede descartarse que el proveedor haya creado el pedido?",
-  "rationale": "El código puede separar mecánicamente los tipos de error, pero el SLA, la responsabilidad de revisión manual y el momento de cancelar una venta cobrada son decisiones de negocio que no se deducen con seguridad del comportamiento actual.",
+  "question": "¿Qué SLA y resolución final debe aplicar `PENDING_PROVIDER_CONFIRMATION` a los pedidos cobrados cuya creación externa queda ambigua?",
+  "rationale": "La separación técnica entre rechazo y fallo ambiguo está clara, pero el recordatorio, el plazo de intervención y la eventual auto-cancelación son decisiones de negocio que afectan duplicados, soporte y experiencia de cliente.",
   "options": [
     {
-      "title": "Estado intermedio sin auto-cancelación",
-      "body": "Mantener los resultados ambiguos pendientes de reconciliación manual y cancelar solo por rechazo explícito o acción de operaciones hasta disponer de idempotencia; es la opción más segura frente a ventas válidas.",
+      "title": "Estado y revisión manual inicial",
+      "body": "Introducir el estado, permitir retry automático solo para fallos inequívocamente seguros y no auto-cancelar casos ambiguos hasta validar un SLA con datos operativos.",
       "recommended": true
     },
     {
-      "title": "Aprobar SLA de 48 horas",
-      "body": "Aceptar la auto-cancelación tras 48 horas como política operativa, con alerta y prueba real de que el equipo puede revisar los casos dentro del plazo.",
+      "title": "Auto-cancelación a 48 horas",
+      "body": "Adoptar la política actual del PR con recordatorio a 24 horas y cancelación automática a las 48 horas si nadie resuelve el pedido.",
       "recommended": false
     },
     {
-      "title": "Pausar el flujo ampliado",
-      "body": "Limitar primero el arreglo a impedir la cancelación inmediata y definir en una fase posterior el estado, la reconciliación y el SLA definitivo.",
+      "title": "Esperar idempotencia completa",
+      "body": "Posponer todos los retries y el nuevo flujo hasta confirmar deduplicación o reconciliación contractual con Azeta y Arnoia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado intermedio sin auto-cancelación",
-    "body": "Mantener los resultados ambiguos pendientes de reconciliación manual y cancelar solo por rechazo explícito o acción de operaciones hasta disponer de idempotencia; es la opción más segura frente a ventas válidas.",
+    "title": "Estado y revisión manual inicial",
+    "body": "Introducir el estado, permitir retry automático solo para fallos inequívocamente seguros y no auto-cancelar casos ambiguos hasta validar un SLA con datos operativos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual, autor del candidato de corrección y contribuidor reciente de los dos puntos centrales del flujo.",
+    "reason": "Es el responsable actual de la issue y del PR candidato, con historial directo en la cancelación y los timeouts dropshipping.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527#issuecomment-4968441443",
-    "reviewedAt": "2026-07-16T10:37:04.847Z",
+    "reviewedAt": "2026-07-16T10:43:13.719Z",
     "mainSha": "e24ecead4fc818bf7f21fc4d4351eba9d419a5af"
   }
 }
