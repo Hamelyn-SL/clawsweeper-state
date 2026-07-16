@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T05:58:09.646Z",
+  "generatedAt": "2026-07-16T05:59:12.733Z",
   "updatedAt": "2026-07-16T05:29:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,44 +17,49 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P2",
-      "impact:data-loss"
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:02Z",
     "updatedAt": "2026-07-16T05:29:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado, SLA y mecanismo de reconciliación deben aplicarse a los fallos ambiguos de Azeta y Arnoia antes de habilitar retries automáticos?",
-  "rationale": "La decisión modifica el ciclo de vida de ventas cobradas y debe evitar compras duplicadas en proveedores que todavía no tienen idempotencia demostrada.",
+  "question": "¿Qué SLA y mecanismo de resolución debe tener `PENDING_PROVIDER_CONFIRMATION`, y pueden Azeta y Arnoia reconciliar o deduplicar de forma fiable mediante una referencia local?",
+  "rationale": "La respuesta determina si el retry puede automatizarse sin crear pedidos externos duplicados y cómo debe operar el equipo mientras una confirmación permanezca ambigua.",
   "options": [
     {
-      "title": "Pendiente con revisión manual",
-      "body": "Persistir el caso ambiguo, alertar y reconciliarlo manualmente mientras no exista una garantía fiable de deduplicación.",
+      "title": "Revisión manual inicial",
+      "body": "Persistir el estado ambiguo, alertar y resolverlo manualmente hasta demostrar una reconciliación fiable para ambos proveedores.",
       "recommended": true
     },
     {
-      "title": "Retry idempotente",
-      "body": "Automatizar el retry fuera de Stripe únicamente después de probar una consulta o deduplicación fiable mediante referencia local.",
+      "title": "Reconciliación y retry",
+      "body": "Añadir una referencia local y automatizar el retry únicamente después de verificar consulta o deduplicación fiable en cada proveedor.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener cancelación conservadora",
+      "body": "Conservar `TO_CANCEL` para toda excepción, aceptando cancelaciones falsas para evitar el riesgo de pedidos externos duplicados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pendiente con revisión manual",
-    "body": "Persistir el caso ambiguo, alertar y reconciliarlo manualmente mientras no exista una garantía fiable de deduplicación.",
+    "title": "Revisión manual inicial",
+    "body": "Persistir el estado ambiguo, alertar y resolverlo manualmente hasta demostrar una reconciliación fiable para ambos proveedores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y el principal contribuidor reciente en todos los puntos del flujo afectado.",
+    "reason": "Es el asignado actual y la persona con mayor historial en el lifecycle dropshipping afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527#issuecomment-4968441443",
-    "reviewedAt": "2026-07-16T05:58:09.646Z",
+    "reviewedAt": "2026-07-16T05:59:12.733Z",
     "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
   }
 }
