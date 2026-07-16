@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T08:09:48.807Z",
-  "updatedAt": "2026-07-16T07:59:09Z",
+  "generatedAt": "2026-07-16T21:21:20.353Z",
+  "updatedAt": "2026-07-16T21:08:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,54 +11,53 @@
     "state": "open",
     "labels": [
       "size/XL",
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "status: ⏳ waiting on author",
       "dependencies",
       "javascript",
       "autofix-failed",
-      "rating: 🥈 silver",
-      "status: ⏳ waiting on author",
-      "P2",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-14T07:06:21Z",
-    "updatedAt": "2026-07-16T07:59:09Z",
+    "updatedAt": "2026-07-16T21:08:47Z",
     "headSha": "6c972e8526ffb3208ebc897c2fde11200e2a775a"
   },
   "lane": "merge_risk",
   "priority": "P2",
   "question": "¿Debe repararse esta PR más acotada como candidata canónica para las tres dependencias o debe consolidarse el trabajo en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500?",
-  "rationale": "Ambas ramas se solapan y continúan bloqueadas; elegir dónde aplicar la reparación evita mantener dos estrategias de versiones y dos lockfiles divergentes.",
+  "rationale": "Ambas ramas se solapan y permanecen bloqueadas; elegir primero dónde aplicar la reparación evita mantener dos estrategias de versiones y dos lockfiles divergentes.",
   "options": [
     {
       "title": "Reparar esta PR",
-      "body": "Mantener aquí las tres actualizaciones, eliminar la rebaja y resolver la compatibilidad CommonJS antes de ejecutar la validación dirigida.",
+      "body": "Preservar aquí el hardening XML y la compatibilidad de Gutemberg, y validar los consumidores antes del merge.",
       "recommended": true
     },
     {
-      "title": "Consolidar en la PR más amplia",
-      "body": "Usar la otra PR solo si se asumen también los riesgos adicionales de `multer` y se corrigen allí todos los bloqueos comunes.",
+      "title": "Consolidar en la PR amplia",
+      "body": "Pausar esta rama y trasladar la reparación a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500 después de revisar también su salto de `multer`.",
       "recommended": false
     },
     {
-      "title": "Dividir los saltos mayores",
-      "body": "Cerrar las ramas agrupadas y actualizar cada dependencia por separado si no puede demostrarse con confianza el conjunto completo.",
+      "title": "Separar las dependencias",
+      "body": "Cerrar las actualizaciones agrupadas y preparar bumps independientes cuando la validación conjunta resulte demasiado amplia.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Reparar esta PR",
-    "body": "Mantener aquí las tres actualizaciones, eliminar la rebaja y resolver la compatibilidad CommonJS antes de ejecutar la validación dirigida.",
+    "body": "Preservar aquí el hardening XML y la compatibilidad de Gutemberg, y validar los consumidores antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el propietario histórico más cercano de la automatización de Dependabot y del flujo de autofix que generó las dos ramas solapadas.",
+    "reason": "Es la referencia histórica más cercana de la agrupación de Dependabot y del flujo de autofix que produjo las dos ramas solapadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7501.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7501#issuecomment-4974937602",
-    "reviewedAt": "2026-07-16T08:09:48.807Z",
-    "mainSha": "9b09d392d49b027e7f59a67481e2c08f9a0237c1"
+    "reviewedAt": "2026-07-16T21:21:20.353Z",
+    "mainSha": "795f292c038fd3b7c7529ab434fd4952ede53419"
   }
 }

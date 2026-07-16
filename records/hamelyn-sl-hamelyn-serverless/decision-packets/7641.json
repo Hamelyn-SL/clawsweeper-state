@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T21:24:19.963Z",
+  "updatedAt": "2026-07-16T20:53:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7641,
+    "title": "feat: show free coupon items in edesk tickets",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7641",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-16T09:57:54Z",
+    "updatedAt": "2026-07-16T20:53:18Z",
+    "headSha": "00f0997d809307ae47e6aecb52ded241fd3ed0d3"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe persistirse la asignación exacta por línea para garantizar la atribución, o se acepta una reconstrucción potencialmente ambigua en pedidos multimoneda?",
+  "rationale": "`unitsGranted` conserva la cantidad total, pero los precios persistidos ya convertidos y redondeados no siempre permiten recuperar qué línea eligió el cálculo EUR original.",
+  "options": [
+    {
+      "title": "Persistir la asignación exacta",
+      "body": "Añadir un campo opcional escrito durante el checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la reconstrucción aproximada",
+      "body": "Mantener esta implementación documentando que, ante empates creados por la conversión monetaria, la línea mostrada puede no coincidir con la selección original.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Persistir la asignación exacta",
+    "body": "Añadir un campo opcional escrito durante el checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el propietario histórico más reciente de la regla canónica y el revisor solicitado de esta PR.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7641.md",
+    "reviewedAt": "2026-07-16T21:24:19.963Z",
+    "mainSha": "795f292c038fd3b7c7529ab434fd4952ede53419"
+  }
+}
