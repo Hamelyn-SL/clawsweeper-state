@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T09:16:32.328Z",
-  "updatedAt": "2026-07-16T09:01:01Z",
+  "generatedAt": "2026-07-16T09:29:47.779Z",
+  "updatedAt": "2026-07-16T09:20:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,6 @@
       "bug",
       "app:ecommerce",
       "priority:p2",
-      "triage:queued",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
@@ -24,42 +23,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:02Z",
-    "updatedAt": "2026-07-16T09:01:01Z"
+    "updatedAt": "2026-07-16T09:20:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba `PENDING_PROVIDER_CONFIRMATION` con auto-cancelación a las 48 horas y retry automático únicamente cuando el proveedor confirma que no creó el pedido?",
-  "rationale": "El SLA y la política de retry deciden cuándo cancelar una venta cobrada y cuándo asumir riesgo de duplicación externa; el contrato actual de Azeta y Arnoia no resuelve esa elección.",
+  "question": "¿Se aprueban `PENDING_PROVIDER_CONFIRMATION`, la auto-cancelación a 48 horas y la matriz de retry automático/manual propuesta en el PR enlazado?",
+  "rationale": "La decisión define el ciclo de vida persistido, el SLA operativo y la exposición a pedidos duplicados con proveedores cuya idempotencia no está confirmada.",
   "options": [
     {
-      "title": "Estado intermedio y retry seguro",
-      "body": "Adoptar el estado propuesto, automatizar solo los fallos inequívocamente seguros y dejar los ambiguos para reconciliación manual.",
+      "title": "Aprobar matriz conservadora",
+      "body": "Reintentar automáticamente solo cuando el proveedor confirma que no creó el pedido y reservar los resultados ambiguos para revisión manual.",
       "recommended": true
     },
     {
-      "title": "Sin retries hasta reconciliar",
-      "body": "Mantener todos los fallos no concluyentes en revisión manual hasta disponer de una referencia idempotente o consulta fiable por proveedor.",
+      "title": "Bloquear todos los retries",
+      "body": "Usar el estado intermedio, pero exigir revisión manual hasta disponer de deduplicación o reconciliación por referencia.",
       "recommended": false
     },
     {
-      "title": "Conservar cancelación inmediata",
-      "body": "Mantener la salida común a `TO_CANCEL`, aceptando cancelaciones incorrectas para evitar cualquier posible pedido duplicado.",
+      "title": "Mantener cancelación inmediata",
+      "body": "Conservar el comportamiento actual y aceptar cancelaciones ante fallos transitorios o de parseo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado intermedio y retry seguro",
-    "body": "Adoptar el estado propuesto, automatizar solo los fallos inequívocamente seguros y dejar los ambiguos para reconciliación manual.",
+    "title": "Aprobar matriz conservadora",
+    "body": "Reintentar automáticamente solo cuando el proveedor confirma que no creó el pedido y reservar los resultados ambiguos para revisión manual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado, lleva la implementación candidata y tiene el contexto más reciente del ciclo de vida dropshipping.",
+    "reason": "Está implementando el cambio específico y reúne el historial más reciente en el checkout y el cron dropshipping.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
-    "reviewedAt": "2026-07-16T09:16:32.328Z",
-    "mainSha": "1fd632bee6900473f85e8d6beece81929b1e2d0f"
+    "reviewedAt": "2026-07-16T09:29:47.779Z",
+    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
   }
 }
