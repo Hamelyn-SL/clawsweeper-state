@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T13:35:51.737Z",
-  "updatedAt": "2026-07-16T12:49:18Z",
+  "generatedAt": "2026-07-16T21:43:53.418Z",
+  "updatedAt": "2026-07-16T21:31:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-16T09:56:43Z",
-    "updatedAt": "2026-07-16T12:49:18Z",
+    "updatedAt": "2026-07-16T21:31:25Z",
     "headSha": "8670362c36a3281986569c9ebe6ca144632721cc"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe consolidarse la solución en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7641 con alcance limitado al HTML, o debe esta PR conservar además el custom field `Hamelyn · Artículo gratis`?",
-  "rationale": "Las dos PR cubren el mismo requisito con superficies diferentes y ninguna dispone aún de una fuente exacta ni de prueba real suficiente; hace falta escoger una única candidata y confirmar si el custom field forma parte del producto deseado.",
+  "question": "¿Debe esta PR ser la implementación canónica y conservar también el custom field `Hamelyn · Artículo gratis`, o debe limitarse el producto al marcador dentro del HTML?",
+  "rationale": "Las dos PR abiertas cubren el mismo requisito con superficies distintas, y corregir la atribución exacta probablemente requiere persistir información nueva en el checkout; hace falta una decisión única de alcance antes de consolidar el código.",
   "options": [
     {
-      "title": "Consolidar en la PR 7641",
-      "body": "Usar la variante más estrecha como candidata, corregir allí la fuente anterior al redondeo y aportar prueba real antes de cerrar esta PR.",
+      "title": "Consolidar en esta PR",
+      "body": "Conservar el HTML y el custom field, persistir la asignación exacta durante el checkout, retirar el bloque de atribución y aportar prueba integrada redactada.",
       "recommended": true
     },
     {
-      "title": "Consolidar en esta PR",
-      "body": "Mantener también el custom field únicamente si se confirma como requisito operativo, corrigiendo igualmente la fuente y la prueba.",
+      "title": "Limitar al HTML",
+      "body": "Trasladar la corrección exacta a una única variante de alcance reducido y cerrar la otra PR para evitar dos fuentes de comportamiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consolidar en la PR 7641",
-    "body": "Usar la variante más estrecha como candidata, corregir allí la fuente anterior al redondeo y aportar prueba real antes de cerrar esta PR.",
+    "title": "Consolidar en esta PR",
+    "body": "Conservar el HTML y el custom field, persistir la asignación exacta durante el checkout, retirar el bloque de atribución y aportar prueba integrada redactada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el propietario reciente de la regla compartida de cupones y figura como revisor solicitado de la alternativa de alcance reducido.",
+    "reason": "Es el propietario histórico más claro del cálculo de cupones y del checkout donde debe preservarse la asignación exacta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7640.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640#issuecomment-4990694609",
-    "reviewedAt": "2026-07-16T13:35:51.737Z",
-    "mainSha": "2eb5565dc87dd9b711cf8ceadd0dea24ae2d1aeb"
+    "reviewedAt": "2026-07-16T21:43:53.418Z",
+    "mainSha": "4b6965c272d5f81cb43d9d82fdea8dbb12b04b15"
   }
 }
