@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T10:58:49.996Z",
-  "updatedAt": "2026-07-14T10:46:31Z",
+  "generatedAt": "2026-07-16T05:58:09.646Z",
+  "updatedAt": "2026-07-16T05:29:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,47 @@
       "app:ecommerce",
       "priority:p2",
       "triage:done",
-      "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:02Z",
-    "updatedAt": "2026-07-14T10:46:31Z"
+    "updatedAt": "2026-07-16T05:29:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado y SLA deben representar una confirmación dropshipping ambigua, y qué garantía de idempotencia o reconciliación se exige antes de reintentar automáticamente en Azeta y Arnoia?",
-  "rationale": "El código confirma el defecto, pero decidir el nuevo estado, su vencimiento y cuándo se puede repetir una creación externa afecta al contrato operativo y puede duplicar pedidos al proveedor.",
+  "question": "¿Qué estado, SLA y mecanismo de reconciliación deben aplicarse a los fallos ambiguos de Azeta y Arnoia antes de habilitar retries automáticos?",
+  "rationale": "La decisión modifica el ciclo de vida de ventas cobradas y debe evitar compras duplicadas en proveedores que todavía no tienen idempotencia demostrada.",
   "options": [
     {
-      "title": "Estado pendiente con revisión segura",
-      "body": "Introducir `PENDING_PROVIDER_CONFIRMATION`, alertar y reconciliar manualmente hasta disponer de una garantía de deduplicación del proveedor.",
+      "title": "Pendiente con revisión manual",
+      "body": "Persistir el caso ambiguo, alertar y reconciliarlo manualmente mientras no exista una garantía fiable de deduplicación.",
       "recommended": true
     },
     {
-      "title": "Reintento automático condicionado",
-      "body": "Añadir reintentos solo para proveedores que acepten una referencia idempotente o permitan consultar el pedido por referencia local.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener cancelación inmediata",
-      "body": "Conservar `TO_CANCEL` para toda excepción, aceptando cancelaciones falsas para evitar pedidos externos duplicados.",
+      "title": "Retry idempotente",
+      "body": "Automatizar el retry fuera de Stripe únicamente después de probar una consulta o deduplicación fiable mediante referencia local.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado pendiente con revisión segura",
-    "body": "Introducir `PENDING_PROVIDER_CONFIRMATION`, alertar y reconciliar manualmente hasta disponer de una garantía de deduplicación del proveedor.",
+    "title": "Pendiente con revisión manual",
+    "body": "Persistir el caso ambiguo, alertar y reconciliarlo manualmente mientras no exista una garantía fiable de deduplicación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona con mayor continuidad histórica en la introducción y el mantenimiento del ciclo de vida dropshipping.",
+    "reason": "Es el asignado actual y el principal contribuidor reciente en todos los puntos del flujo afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7527#issuecomment-4968441443",
-    "reviewedAt": "2026-07-14T10:58:49.996Z",
-    "mainSha": "abd96c9f88d629a968b107b58b23955f6c6011e2"
+    "reviewedAt": "2026-07-16T05:58:09.646Z",
+    "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
   }
 }
