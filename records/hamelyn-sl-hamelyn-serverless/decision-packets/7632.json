@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T10:13:09.047Z",
+  "updatedAt": "2026-07-16T09:57:03Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7632,
+    "title": "feat: add family-based major dependency updates",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-16T08:41:26Z",
+    "updatedAt": "2026-07-16T09:57:03Z",
+    "headSha": "3a03c2c3d9125cb9eed7234e75c23c93d813a463"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La automatización semanal de majors debe limitarse a familias compatibles curadas, o se acepta una familia `other` que agrupe todas las dependencias no clasificadas?",
+  "rationale": "La issue expresa aislamiento por familias compatibles, mientras la PR introduce una política catch-all con 140 paquetes heterogéneos; esa excepción cambia sustancialmente el riesgo operativo y necesita una decisión explícita.",
+  "options": [
+    {
+      "title": "Solo familias curadas",
+      "body": "Excluir `other` de la matriz programada y clasificar explícitamente cada paquete antes de automatizar su major.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar `other`",
+      "body": "Mantener una PR catch-all heterogénea y asumir explícitamente su mayor coste de revisión, adaptación y reversión.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Solo familias curadas",
+    "body": "Excluir `other` de la matriz programada y clasificar explícitamente cada paquete antes de automatizar su major.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Revisó y aprobó la arquitectura inicial del workflow agrupado y el autofix, por lo que es la mejor señal histórica disponible para decidir este límite operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7632.md",
+    "reviewedAt": "2026-07-16T10:13:09.047Z",
+    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
+  }
+}
