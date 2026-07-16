@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T08:40:16.589Z",
+  "updatedAt": "2026-07-16T08:16:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7622,
+    "title": "Dependencias: actualizar majors por familias y evitar trabajo duplicado",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-07-16T08:11:46Z",
+    "updatedAt": "2026-07-16T08:16:39Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué familias major y reglas de pertenencia deben formar el contrato inicial de la automatización?",
+  "rationale": "La issue aporta ejemplos, pero no define la lista inicial completa ni quién decide excepciones, paquetes compartidos o cambios de familia; esa política condiciona una implementación mantenible.",
+  "options": [
+    {
+      "title": "Configuración explícita versionada",
+      "body": "Definir familias, paquetes, ramas y exclusiones en una única configuración revisable que consuman todos los workflows.",
+      "recommended": true
+    },
+    {
+      "title": "Inferencia automática",
+      "body": "Derivar las familias mediante nombres y peer dependencies, aceptando mayor complejidad y riesgo de agrupaciones incorrectas.",
+      "recommended": false
+    },
+    {
+      "title": "Primera familia piloto",
+      "body": "Implementar una sola familia representativa y aplazar el contrato general hasta observar su funcionamiento real.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Configuración explícita versionada",
+    "body": "Definir familias, paquetes, ramas y exclusiones en una única configuración revisable que consuman todos los workflows.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha introducido la automatización actual, redactado esta ampliación y figura como asignado de la issue.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
+    "reviewedAt": "2026-07-16T08:40:16.589Z",
+    "mainSha": "1724b7a415bfa70a60e3f00d68c49d44de428c71"
+  }
+}
