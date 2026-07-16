@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T12:31:35.962Z",
-  "updatedAt": "2026-07-15T11:21:03Z",
+  "generatedAt": "2026-07-16T10:30:49.760Z",
+  "updatedAt": "2026-07-16T08:35:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-14T09:55:19Z",
-    "updatedAt": "2026-07-15T11:21:03Z",
+    "updatedAt": "2026-07-16T08:35:05Z",
     "headSha": "32930bfdb30860d685ee9b2ed917fd83a373d550"
   },
   "lane": "security_boundary",
-  "priority": "P1",
-  "question": "¿Debe el conflict resolver procesar contenido controlado por una rama de PR mientras conserva credenciales de escritura, o debe exigirse una separación estricta entre el entorno no confiable que propone el parche y el controlador que lo aplica?",
-  "rationale": "La elección define la frontera de confianza permanente de una automatización capaz de ejecutar comandos y pushear a ramas; no es seguro resolverla como un detalle mecánico de implementación.",
+  "priority": "P2",
+  "question": "¿Debe esta primera versión separar el sandbox que interpreta contenido de la PR del controlador que conserva credenciales y aplica el parche, o se acepta deliberadamente ejecutar ambos dentro del mismo entorno?",
+  "rationale": "El código puede funcionar mecánicamente, pero decidir qué contenido de una PR puede ejecutarse junto a credenciales de escritura define una frontera de confianza y una política de seguridad que no debe fijar la automatización por inferencia.",
   "options": [
     {
       "title": "Separar análisis y aplicación",
-      "body": "Ejecutar la resolución sin credenciales, validar un parche acotado y aplicarlo después desde un controlador confiable con permisos mínimos.",
+      "body": "El sandbox sin credenciales genera un parche acotado y un controlador confiable valida SHA, modos, rutas y contenido antes de commitear y pushear.",
       "recommended": true
     },
     {
-      "title": "Restringir a ramas internas",
-      "body": "Aceptar una frontera más amplia únicamente para ramas del mismo repositorio creadas por actores con acceso equivalente al token del agente.",
+      "title": "Aceptar el sandbox con escritura",
+      "body": "Se conserva el diseño actual, restringiéndolo explícitamente a ramas internas y asumiendo el riesgo residual de prompt injection y exfiltración.",
       "recommended": false
     },
     {
-      "title": "Mantener solo dry-run",
-      "body": "Conservar la detección y el diagnóstico, pero aplazar toda mutación automática hasta disponer de un diseño de aislamiento aprobado.",
+      "title": "Pausar la resolución mutante",
+      "body": "Se limita inicialmente la funcionalidad a detección y diagnóstico hasta disponer de una frontera de aplicación segura.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar análisis y aplicación",
-    "body": "Ejecutar la resolución sin credenciales, validar un parche acotado y aplicarlo después desde un controlador confiable con permisos mínimos.",
+    "body": "El sandbox sin credenciales genera un parche acotado y un controlador confiable valida SHA, modos, rutas y contenido antes de commitear y pushear.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor historial en el runner cloud, la custodia de tokens Codex y los endurecimientos de `apps/agents`.",
+    "reason": "Es quien concentra el historial de `apps/agents`, Vercel Sandbox, Codex y custodia de tokens, además de haber señalado la divergencia arquitectónica inicial.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7532.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7532#issuecomment-4968078149",
-    "reviewedAt": "2026-07-15T12:31:35.962Z",
-    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
+    "reviewedAt": "2026-07-16T10:30:49.760Z",
+    "mainSha": "e24ecead4fc818bf7f21fc4d4351eba9d419a5af"
   }
 }
