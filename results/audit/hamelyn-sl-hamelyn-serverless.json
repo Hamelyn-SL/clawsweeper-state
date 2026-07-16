@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-16T01:05:44.515Z",
+  "generatedAt": "2026-07-16T07:24:37.887Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 159
+    "openItemsSeen": 158
   },
   "counts": {
-    "itemRecords": 158,
-    "closedRecords": 349,
-    "missingOpen": 1,
+    "itemRecords": 155,
+    "closedRecords": 361,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,33 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-12T12:22:05Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7609,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-16T05:57:59Z",
+        "updatedAt": "2026-07-16T06:59:27Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7618,
+        "kind": "issue",
+        "title": "Seed automático del baseline BQ al dar de alta una colección en bq-merge",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-16T07:21:44Z",
+        "updatedAt": "2026-07-16T07:21:54Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +86,35 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7609,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-16T05:57:59Z",
+        "updatedAt": "2026-07-16T06:59:27Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7618,
+        "kind": "issue",
+        "title": "Seed automático del baseline BQ al dar de alta una colección en bq-merge",
+        "labels": [
+          "priority:p2",
+          "app:infrastructure",
+          "feature",
+          "triage:queued"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-16T07:21:44Z",
+        "updatedAt": "2026-07-16T07:21:54Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
