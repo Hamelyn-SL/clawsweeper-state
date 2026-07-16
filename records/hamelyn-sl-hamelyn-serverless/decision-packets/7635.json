@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T09:58:18.426Z",
-  "updatedAt": "2026-07-16T09:20:42Z",
+  "generatedAt": "2026-07-16T11:46:08.535Z",
+  "updatedAt": "2026-07-16T10:07:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-16T08:43:28Z",
-    "updatedAt": "2026-07-16T09:20:42Z",
-    "headSha": "0d4da6c4debc773c736b2ca3e0170840d9adf9d5"
+    "updatedAt": "2026-07-16T10:07:29Z",
+    "headSha": "259f94ca97344c16e578871b38e0c6b458b8d8a1"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueban `PENDING_PROVIDER_CONFIRMATION`, los retries automáticos solo para `RETRYABLE`, el recordatorio a 24 horas y la autocancelación a 48 horas como política permanente del ciclo de vida dropshipping?",
-  "rationale": "La incidencia pidió explícitamente confirmar la deduplicación o reconciliación de proveedores y aprobar el nuevo estado y SLA; la PR implementa esas decisiones sin una señal humana visible que cierre esa elección operativa.",
+  "question": "¿Debe un pedido con confirmación ambigua autocancelarse a las 48 horas aunque el proveedor pueda haberlo creado, o debe permanecer pendiente hasta una reconciliación manual?",
+  "rationale": "La incidencia y el código confirman que Azeta/Arnoia no ofrecen actualmente una clave idempotente fiable; elegir el SLA y quién reconcilia pedidos externos es una política operativa irreversible que no puede resolverse solo mediante revisión técnica.",
   "options": [
     {
-      "title": "Aprobar estado y SLA con guardas",
-      "body": "Mantener el diseño propuesto tras corregir la exclusión mutua, definir la reconciliación y aportar prueba real de los cuatro resultados.",
+      "title": "Pendiente hasta reconciliación",
+      "body": "Mantener el pedido pendiente y alertado hasta una comprobación manual evita cancelar localmente pedidos que puedan existir en el proveedor.",
       "recommended": true
     },
     {
-      "title": "Limitar a revisión manual",
-      "body": "Introducir el estado y las alertas, pero retirar retry automático y autocancelación hasta confirmar el contrato de cada proveedor.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar hasta confirmar proveedores",
-      "body": "No aterrizar el nuevo ciclo hasta documentar la idempotencia o reconciliación de Azeta, Arnoia y Logista.",
+      "title": "Autocancelación con protocolo",
+      "body": "Mantener las 48 horas exige aprobar y documentar cómo localizar, conciliar o anular cualquier pedido ya creado por el proveedor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar estado y SLA con guardas",
-    "body": "Mantener el diseño propuesto tras corregir la exclusión mutua, definir la reconciliación y aportar prueba real de los cuatro resultados.",
+    "title": "Pendiente hasta reconciliación",
+    "body": "Mantener el pedido pendiente y alertado hasta una comprobación manual evita cancelar localmente pedidos que puedan existir en el proveedor.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el contribuidor con mayor historial reciente en el cron dropshipping y los timeouts del mismo ciclo operativo.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Reportó la incidencia con evidencia de producción, definió la restricción de idempotencia y aparece en el historial que introdujo el comportamiento afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7635.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7635#issuecomment-4990592518",
-    "reviewedAt": "2026-07-16T09:58:18.426Z",
-    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
+    "reviewedAt": "2026-07-16T11:46:08.535Z",
+    "mainSha": "bcdd76a0d7cb1694167062c659edf8d4ec9412fa"
   }
 }
