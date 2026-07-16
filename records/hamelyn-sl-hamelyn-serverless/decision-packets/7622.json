@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T12:25:23.027Z",
+  "generatedAt": "2026-07-16T12:26:23.458Z",
   "updatedAt": "2026-07-16T12:07:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,51 +15,46 @@
       "feature",
       "triage:done",
       "reporter:danielmenchen-hamelyn",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T08:11:46Z",
     "updatedAt": "2026-07-16T12:07:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que las actualizaciones major automáticas se limiten a familias curadas y que `other` quede fuera del schedule periódico?",
-  "rationale": "La taxonomía y el grado de automatización aceptable para breaking changes constituyen una política operativa permanente que no puede resolverse únicamente mediante inspección técnica.",
+  "question": "¿Qué familias major deben ejecutarse semanalmente y debe `other` quedar excluida del schedule automático?",
+  "rationale": "La frontera de las familias determina el tamaño, compatibilidad y reversibilidad de las PRs; el código no puede decidir por sí solo qué agrupaciones heterogéneas acepta mantener el equipo.",
   "options": [
     {
-      "title": "Familias curadas sin `other`",
-      "body": "Programar solo familias homogéneas aprobadas y gestionar el resto manualmente o mediante nuevas familias explícitas.",
+      "title": "Solo familias curadas",
+      "body": "Programar únicamente familias homogéneas aprobadas y dejar `other` disponible solo mediante ejecución manual.",
       "recommended": true
     },
     {
-      "title": "Programar también `other`",
-      "body": "Aceptar una PR periódica heterogénea con majors de dominios distintos y mayor coste de revisión y reversión.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener majors manuales",
-      "body": "Conservar el updater minor/patch actual y tramitar todos los saltos major de forma manual.",
+      "title": "Incluir `other`",
+      "body": "Programar también la familia residual, aceptando PRs con majors no relacionadas y mayor coste de revisión y reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Familias curadas sin `other`",
-    "body": "Programar solo familias homogéneas aprobadas y gestionar el resto manualmente o mediante nuevas familias explícitas.",
+    "title": "Solo familias curadas",
+    "body": "Programar únicamente familias homogéneas aprobadas y dejar `other` disponible solo mediante ejecución manual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es el propietario histórico y actual de la automatización y quien mejor puede concretar la taxonomía, aunque la aceptación final corresponde a quien tenga autoridad de producto y merge sobre `dev`.",
+    "person": "JavierHamelyn",
+    "reason": "Aprobó la automatización agrupada vigente y es la mejor ruta histórica disponible para decidir sus límites operativos junto al responsable actual.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
-    "reviewedAt": "2026-07-16T12:25:23.027Z",
+    "reviewedAt": "2026-07-16T12:26:23.458Z",
     "mainSha": "55416ee8b319e79052441cf60e5c2e193e546f6f"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T12:26:19.297Z",
+  "updatedAt": "2026-07-16T12:17:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7650,
+    "title": "fix: send amazon price thresholds for optimo and atascado groups",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7650",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-16T12:15:19Z",
+    "updatedAt": "2026-07-16T12:17:00Z",
+    "headSha": "695c0ebed121f0bdf1e1571998e618561b4e489a"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba que todos los stocks `optimo` y `atascado` reciban umbrales basados en `PMin`/`PMax` sin regla automática, tanto en creación como en cualquier actualización de precio?",
+  "rationale": "Las issues relacionadas identificaron esta política como la corrección probable, pero también dejaron pendiente confirmar el rango permitido y cuándo debe adjuntarse `pricingRuleId`; el PR todavía no tiene esa señal humana.",
+  "options": [
+    {
+      "title": "Aprobar umbrales sin repricing",
+      "body": "Aplicar `PMin`/`PMax` a ambos grupos y retirar explícitamente cualquier regla automática previa en todas las rutas.",
+      "recommended": true
+    },
+    {
+      "title": "Limitarlo al recovery `18155`",
+      "body": "Enviar estos umbrales solo durante la recuperación del error hasta definir una política permanente para las actualizaciones ordinarias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar umbrales sin repricing",
+    "body": "Aplicar `PMin`/`PMax` a ambos grupos y retirar explícitamente cualquier regla automática previa en todas las rutas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es la persona con mayor trazabilidad reciente sobre los payloads, suelos de precio y configuración de grupos Amazon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7650.md",
+    "reviewedAt": "2026-07-16T12:26:19.297Z",
+    "mainSha": "55416ee8b319e79052441cf60e5c2e193e546f6f"
+  }
+}
