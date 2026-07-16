@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T06:45:56.033Z",
+  "updatedAt": "2026-07-16T06:35:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7614,
+    "title": "[SECURITY-ALERT] xlsx: ReDoS al procesar archivos XLSX",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:running",
+      "security-alert"
+    ],
+    "createdAt": "2026-07-16T06:09:56Z",
+    "updatedAt": "2026-07-16T06:35:20Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba sustituir el paquete npm abandonado por un tarball oficial de `cdn.sheetjs.com` fijado e íntegro, o se prefiere migrar a otra librería XLSX mantenida?",
+  "rationale": "La corrección inmediata exige confiar en una fuente de paquetes distinta de npm; esa elección de cadena de suministro y su política de actualización debe ser explícita antes de modificar dependencias runtime.",
+  "options": [
+    {
+      "title": "Fijar tarball oficial",
+      "body": "Usar una versión concreta de SheetJS `>= 0.20.2` desde su CDN oficial, conservar la integridad en el lockfile y validar todos los flujos XLSX afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Sustituir la librería",
+      "body": "Migrar lectura y escritura a una alternativa mantenida, asumiendo mayor alcance y más pruebas de compatibilidad antes de cerrar las alertas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fijar tarball oficial",
+    "body": "Usar una versión concreta de SheetJS `>= 0.20.2` desde su CDN oficial, conservar la integridad en el lockfile y validar todos los flujos XLSX afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona vinculada por historial a la declaración directa actual de `xlsx` y a la configuración de dependencias afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7614.md",
+    "reviewedAt": "2026-07-16T06:45:56.033Z",
+    "mainSha": "117d5f49948d0df0d0beebcc64932fbdeb66e6f5"
+  }
+}
