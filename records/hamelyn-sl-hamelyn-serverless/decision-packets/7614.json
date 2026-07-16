@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T06:45:56.033Z",
-  "updatedAt": "2026-07-16T06:35:20Z",
+  "generatedAt": "2026-07-16T06:48:22.881Z",
+  "updatedAt": "2026-07-16T06:39:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,37 @@
       "security-alert"
     ],
     "createdAt": "2026-07-16T06:09:56Z",
-    "updatedAt": "2026-07-16T06:35:20Z"
+    "updatedAt": "2026-07-16T06:39:41Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba sustituir el paquete npm abandonado por un tarball oficial de `cdn.sheetjs.com` fijado e íntegro, o se prefiere migrar a otra librería XLSX mantenida?",
-  "rationale": "La corrección inmediata exige confiar en una fuente de paquetes distinta de npm; esa elección de cadena de suministro y su política de actualización debe ser explícita antes de modificar dependencias runtime.",
+  "question": "¿Aprueba el equipo usar `https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz` como fuente directa de la dependencia runtime en Admin y Core?",
+  "rationale": "La actualización elimina las vulnerabilidades conocidas, pero introduce un origen de código fuera del registro npm que requiere aceptación explícita de procedencia, integridad y mantenimiento futuro.",
   "options": [
     {
-      "title": "Fijar tarball oficial",
-      "body": "Usar una versión concreta de SheetJS `>= 0.20.2` desde su CDN oficial, conservar la integridad en el lockfile y validar todos los flujos XLSX afectados.",
+      "title": "Fijar el tarball oficial 0.20.3",
+      "body": "Actualizar ambos manifests a la URL inmutable, regenerar el lockfile y validar todas las superficies XLSX relevantes.",
       "recommended": true
     },
     {
-      "title": "Sustituir la librería",
-      "body": "Migrar lectura y escritura a una alternativa mantenida, asumiendo mayor alcance y más pruebas de compatibilidad antes de cerrar las alertas.",
+      "title": "Sustituir SheetJS",
+      "body": "Migrar a otro parser si el equipo no acepta la distribución por CDN, asumiendo un cambio más amplio y mayor riesgo de compatibilidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fijar tarball oficial",
-    "body": "Usar una versión concreta de SheetJS `>= 0.20.2` desde su CDN oficial, conservar la integridad en el lockfile y validar todos los flujos XLSX afectados.",
+    "title": "Fijar el tarball oficial 0.20.3",
+    "body": "Actualizar ambos manifests a la URL inmutable, regenerar el lockfile y validar todas las superficies XLSX relevantes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es la persona vinculada por historial a la declaración directa actual de `xlsx` y a la configuración de dependencias afectada.",
+    "reason": "Es el candidato más próximo al helper compartido actual y cuenta con historial adicional sobre la integración XLSX.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7614.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614#issuecomment-4988995600",
-    "reviewedAt": "2026-07-16T06:45:56.033Z",
+    "reviewedAt": "2026-07-16T06:48:22.881Z",
     "mainSha": "117d5f49948d0df0d0beebcc64932fbdeb66e6f5"
   }
 }

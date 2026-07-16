@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T06:48:11.695Z",
+  "updatedAt": "2026-07-16T06:09:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7613,
+    "title": "[SECURITY-ALERT] xlsx: prototype pollution al leer archivos XLSX",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:infrastructure",
+      "triage:queued",
+      "security-alert"
+    ],
+    "createdAt": "2026-07-16T06:09:31Z",
+    "updatedAt": "2026-07-16T06:09:44Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba consumir el tarball inmutable de SheetJS `0.20.3` desde `cdn.sheetjs.com` como dependencia de producción, o debe sustituirse `xlsx` por una librería mantenida en un registro aprobado?",
+  "rationale": "La actualización recomendada corrige las vulnerabilidades, pero incorpora código ejecutable desde una fuente externa al registro npm y afecta a múltiples flujos operativos; esa aceptación de cadena de suministro no debe decidirse automáticamente.",
+  "options": [
+    {
+      "title": "Fijar SheetJS 0.20.3",
+      "body": "Usar el tarball exacto en Admin y Core, comprobar su integridad en el lockfile y validar todas las superficies XLSX afectadas.",
+      "recommended": true
+    },
+    {
+      "title": "Migrar de librería",
+      "body": "Sustituir `xlsx` por una alternativa mantenida, asumiendo un cambio de alcance mayor y pruebas de compatibilidad más amplias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fijar SheetJS 0.20.3",
+    "body": "Usar el tarball exacto en Admin y Core, comprobar su integridad en el lockfile y validar todas las superficies XLSX afectadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato con más señales recientes de trabajo sobre dependencias compartidas y manifiestos de Admin/Core.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7613.md",
+    "reviewedAt": "2026-07-16T06:48:11.695Z",
+    "mainSha": "117d5f49948d0df0d0beebcc64932fbdeb66e6f5"
+  }
+}
