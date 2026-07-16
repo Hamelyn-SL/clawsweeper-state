@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T11:34:04.235Z",
+  "updatedAt": "2026-07-16T11:24:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7643,
+    "title": "Test A/D en ficha de producto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7643",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "reporter:jesus",
+      "feature",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-16T10:37:08Z",
+    "updatedAt": "2026-07-16T11:24:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La variante D debe medirse frente a la ficha B que sirve actualmente `dev`, o debe recuperarse una ficha A histórica como control, y cuál será el contrato de tráfico y éxito del experimento?",
+  "rationale": "El código ya no conserva una variante A activa y el último experimento se desactivó por coste; elegir el control y la operativa determina el alcance, la arquitectura del flag y la validez de las métricas.",
+  "options": [
+    {
+      "title": "Comparar B frente a D",
+      "body": "Usar la ficha B actual como control reduce el alcance y permite reutilizar la infraestructura, el estado compartido y la analítica existentes.",
+      "recommended": true
+    },
+    {
+      "title": "Recuperar A frente a D",
+      "body": "Restaurar una ficha A histórica conserva la intención literal del título, pero exige reconstruir y validar una experiencia que ya no forma parte del flujo actual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Comparar B frente a D",
+    "body": "Usar la ficha B actual como control reduce el alcance y permite reutilizar la infraestructura, el estado compartido y la analítica existentes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es quien introdujo, operó y retiró los experimentos anteriores de la ficha, por lo que dispone del mejor contexto técnico para concretar el contrato junto con producto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7643.md",
+    "reviewedAt": "2026-07-16T11:34:04.235Z",
+    "mainSha": "f27834bb30d5ce9b582066efa099a75a9485ecd0"
+  }
+}
