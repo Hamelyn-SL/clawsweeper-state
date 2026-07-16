@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T14:55:18.143Z",
-  "updatedAt": "2026-07-15T14:46:44Z",
+  "generatedAt": "2026-07-16T09:35:25.697Z",
+  "updatedAt": "2026-07-16T09:20:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "priority:p1",
       "feature",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-07T10:03:47Z",
-    "updatedAt": "2026-07-15T14:46:44Z"
+    "updatedAt": "2026-07-16T09:20:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El diseño y la composición implementados en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7602 representan fielmente la plantilla aprobada para las cuatro minihomes?",
-  "rationale": "La arquitectura compartida puede evaluarse desde el código, pero la aceptación del layout, orden de secciones, responsive y copy requiere criterio visual de producto que no queda resuelto por lint, typecheck o la descripción textual.",
+  "question": "¿Debe aceptarse como comportamiento final que las minihomes usen únicamente el buscador global, o debe mantenerse el buscador dentro del hero solicitado en la issue?",
+  "rationale": "El candidato elimina expresamente el buscador del hero por considerarlo redundante, pero ese elemento forma parte de la aceptación original y la decisión cambia una superficie visible de las cuatro landings.",
   "options": [
     {
-      "title": "Validar y aterrizar el PR",
-      "body": "Solicitar prueba visual completa de las cuatro rutas, resolver las observaciones del PR y fusionarlo si coincide con la plantilla aprobada.",
+      "title": "Confirmar el buscador global",
+      "body": "Aceptar la eliminación del buscador del hero si producto considera que el buscador global mantiene la misma capacidad y reduce duplicación visual.",
       "recommended": true
     },
     {
-      "title": "Desglosar el alcance",
-      "body": "Reducir o sustituir el PR por entregas separadas de hero, catálogo, módulos comerciales y SEO si el alcance XL impide una validación fiable.",
+      "title": "Restaurar el buscador del hero",
+      "body": "Ajustar el candidato para incluir el buscador en la posición responsive descrita originalmente antes de validar y fusionar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y aterrizar el PR",
-    "body": "Solicitar prueba visual completa de las cuatro rutas, resolver las observaciones del PR y fusionarlo si coincide con la plantilla aprobada.",
+    "title": "Confirmar el buscador global",
+    "body": "Aceptar la eliminación del buscador del hero si producto considera que el buscador global mantiene la misma capacidad y reduce duplicación visual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el asignado actual y responsable del candidato de implementación, por lo que está mejor situado para coordinar la validación con producto y los propietarios históricos del área.",
-    "confidence": "medium"
+    "reason": "Es el responsable asignado y mantiene el candidato donde debe materializarse la decisión de producto.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7117.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7117#issuecomment-4913179969",
-    "reviewedAt": "2026-07-15T14:55:18.143Z",
-    "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
+    "reviewedAt": "2026-07-16T09:35:25.697Z",
+    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
   }
 }
