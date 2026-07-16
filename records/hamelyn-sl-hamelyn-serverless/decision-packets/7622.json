@@ -14,7 +14,13 @@
       "app:infrastructure",
       "feature",
       "triage:queued",
-      "reporter:danielmenchen-hamelyn"
+      "reporter:danielmenchen-hamelyn",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-16T08:11:46Z",
     "updatedAt": "2026-07-16T08:16:39Z"
@@ -52,6 +58,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
     "reviewedAt": "2026-07-16T08:40:16.589Z",
     "mainSha": "1724b7a415bfa70a60e3f00d68c49d44de428c71"
   }
