@@ -1,60 +1,54 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:46:22.182Z",
-  "updatedAt": "2026-07-14T06:35:05Z",
+  "generatedAt": "2026-07-16T10:00:17.329Z",
+  "updatedAt": "2026-07-16T09:47:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 7473,
-    "title": "feat: segment ecommerce sitemaps by type and vertical",
+    "title": "feat: redesign ecommerce sitemaps (vertical x state, gz, recientes)",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473",
     "state": "open",
     "labels": [
-      "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
+      "size/XXL",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-13T12:23:30Z",
-    "updatedAt": "2026-07-14T06:35:05Z",
-    "headSha": "5796d111ba700e742ca8cc65248123eae78f2efa"
+    "updatedAt": "2026-07-16T09:47:18Z",
+    "headSha": "b5ece9fa691dc91793785090131c28f682051913"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `lastmod` representar únicamente el último cambio de precio o también los cambios de contenido y stock exigidos por la issue canónica?",
-  "rationale": "El código propuesto y el criterio de aceptación expresan contratos distintos; las notas automatizadas reconocen la discrepancia, pero no consta una decisión humana visible que autorice el recorte.",
+  "question": "¿Debe esta PR fusionarse sin `lastmod` veraz y sin clasificación por proyección de restock de aproximadamente 90 días, dejando ambos requisitos para seguimientos posteriores?",
+  "rationale": "La especificación actualizada los mantiene como parte del contrato y el triage indicó que no debía fusionarse hasta adaptar esos puntos, pero la rama los omite porque todavía no existen señales de datos fiables.",
   "options": [
     {
-      "title": "Mantener el requisito completo",
-      "body": "Usar una fecha fiable que avance con cambios de contenido, precio o stock y actualizar código, pruebas y reglas BL en esta entrega.",
+      "title": "Completar el contrato ahora",
+      "body": "Mantener el merge bloqueado hasta implementar las señales requeridas, la clasificación de restock y su prueba real integral.",
       "recommended": true
     },
     {
-      "title": "Aprobar precio únicamente",
-      "body": "Aceptar `lastPriceUpdate` como contrato permanente y actualizar expresamente la issue y las reglas BL antes del merge.",
-      "recommended": false
-    },
-    {
-      "title": "Separar el seguimiento",
-      "body": "Fusionar únicamente la estructura tras crear un seguimiento canónico para completar `lastmod`, manteniendo abierta la issue actual hasta satisfacer su contrato.",
+      "title": "Aprobar alcance parcial",
+      "body": "Autorizar explícitamente la omisión temporal y crear seguimientos canónicos con owner, prioridad y criterios verificables antes de fusionar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el requisito completo",
-    "body": "Usar una fecha fiable que avance con cambios de contenido, precio o stock y actualizar código, pruebas y reglas BL en esta entrega.",
+    "title": "Completar el contrato ahora",
+    "body": "Mantener el merge bloqueado hasta implementar las señales requeridas, la clasificación de restock y su prueba real integral.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Tiene el contexto más directo de la implementación activa y de la extracción reciente de las reglas BL del área.",
+    "person": "victor",
+    "reason": "Es la persona identificada por la issue como autora de la especificación v2 y de su aclaración más reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
-    "reviewedAt": "2026-07-14T23:46:22.182Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-16T10:00:17.329Z",
+    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
   }
 }

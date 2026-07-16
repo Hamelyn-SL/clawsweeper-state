@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-16T09:58:18.426Z",
+  "updatedAt": "2026-07-16T09:20:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7635,
+    "title": "fix: avoid cancelling dropshipping orders on ambiguous confirmation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7635",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-16T08:43:28Z",
+    "updatedAt": "2026-07-16T09:20:42Z",
+    "headSha": "0d4da6c4debc773c736b2ca3e0170840d9adf9d5"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueban `PENDING_PROVIDER_CONFIRMATION`, los retries automáticos solo para `RETRYABLE`, el recordatorio a 24 horas y la autocancelación a 48 horas como política permanente del ciclo de vida dropshipping?",
+  "rationale": "La incidencia pidió explícitamente confirmar la deduplicación o reconciliación de proveedores y aprobar el nuevo estado y SLA; la PR implementa esas decisiones sin una señal humana visible que cierre esa elección operativa.",
+  "options": [
+    {
+      "title": "Aprobar estado y SLA con guardas",
+      "body": "Mantener el diseño propuesto tras corregir la exclusión mutua, definir la reconciliación y aportar prueba real de los cuatro resultados.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar a revisión manual",
+      "body": "Introducir el estado y las alertas, pero retirar retry automático y autocancelación hasta confirmar el contrato de cada proveedor.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta confirmar proveedores",
+      "body": "No aterrizar el nuevo ciclo hasta documentar la idempotencia o reconciliación de Azeta, Arnoia y Logista.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar estado y SLA con guardas",
+    "body": "Mantener el diseño propuesto tras corregir la exclusión mutua, definir la reconciliación y aportar prueba real de los cuatro resultados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el contribuidor con mayor historial reciente en el cron dropshipping y los timeouts del mismo ciclo operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7635.md",
+    "reviewedAt": "2026-07-16T09:58:18.426Z",
+    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
+  }
+}
