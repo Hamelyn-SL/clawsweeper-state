@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T08:40:16.589Z",
-  "updatedAt": "2026-07-16T08:16:39Z",
+  "generatedAt": "2026-07-16T12:25:23.027Z",
+  "updatedAt": "2026-07-16T12:07:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,53 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:queued",
+      "triage:done",
       "reporter:danielmenchen-hamelyn",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T08:11:46Z",
-    "updatedAt": "2026-07-16T08:16:39Z"
+    "updatedAt": "2026-07-16T12:07:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué familias major y reglas de pertenencia deben formar el contrato inicial de la automatización?",
-  "rationale": "La issue aporta ejemplos, pero no define la lista inicial completa ni quién decide excepciones, paquetes compartidos o cambios de familia; esa política condiciona una implementación mantenible.",
+  "question": "¿Se aprueba que las actualizaciones major automáticas se limiten a familias curadas y que `other` quede fuera del schedule periódico?",
+  "rationale": "La taxonomía y el grado de automatización aceptable para breaking changes constituyen una política operativa permanente que no puede resolverse únicamente mediante inspección técnica.",
   "options": [
     {
-      "title": "Configuración explícita versionada",
-      "body": "Definir familias, paquetes, ramas y exclusiones en una única configuración revisable que consuman todos los workflows.",
+      "title": "Familias curadas sin `other`",
+      "body": "Programar solo familias homogéneas aprobadas y gestionar el resto manualmente o mediante nuevas familias explícitas.",
       "recommended": true
     },
     {
-      "title": "Inferencia automática",
-      "body": "Derivar las familias mediante nombres y peer dependencies, aceptando mayor complejidad y riesgo de agrupaciones incorrectas.",
+      "title": "Programar también `other`",
+      "body": "Aceptar una PR periódica heterogénea con majors de dominios distintos y mayor coste de revisión y reversión.",
       "recommended": false
     },
     {
-      "title": "Primera familia piloto",
-      "body": "Implementar una sola familia representativa y aplazar el contrato general hasta observar su funcionamiento real.",
+      "title": "Mantener majors manuales",
+      "body": "Conservar el updater minor/patch actual y tramitar todos los saltos major de forma manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Configuración explícita versionada",
-    "body": "Definir familias, paquetes, ramas y exclusiones en una única configuración revisable que consuman todos los workflows.",
+    "title": "Familias curadas sin `other`",
+    "body": "Programar solo familias homogéneas aprobadas y gestionar el resto manualmente o mediante nuevas familias explícitas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha introducido la automatización actual, redactado esta ampliación y figura como asignado de la issue.",
-    "confidence": "high"
+    "reason": "Es el propietario histórico y actual de la automatización y quien mejor puede concretar la taxonomía, aunque la aceptación final corresponde a quien tenga autoridad de producto y merge sobre `dev`.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
-    "reviewedAt": "2026-07-16T08:40:16.589Z",
-    "mainSha": "1724b7a415bfa70a60e3f00d68c49d44de428c71"
+    "reviewedAt": "2026-07-16T12:25:23.027Z",
+    "mainSha": "55416ee8b319e79052441cf60e5c2e193e546f6f"
   }
 }
