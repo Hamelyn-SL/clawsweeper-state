@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-17T12:57:32.460Z",
+  "generatedAt": "2026-07-17T18:56:29.920Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 135
+    "openItemsSeen": 133
   },
   "counts": {
-    "itemRecords": 122,
-    "closedRecords": 446,
-    "missingOpen": 13,
+    "itemRecords": 121,
+    "closedRecords": 447,
+    "missingOpen": 12,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 12,
+    "missingRecentOpen": 11,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -138,7 +138,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T09:19:02Z",
-        "updatedAt": "2026-07-17T12:57:20Z",
+        "updatedAt": "2026-07-17T13:01:21Z",
         "missingReason": "recently_created"
       },
       {
@@ -170,30 +170,6 @@
         "missingReason": "recently_created"
       },
       {
-        "number": 7708,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T11:53:31Z",
-        "updatedAt": "2026-07-17T12:55:11Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7709,
-        "kind": "pull_request",
-        "title": "fix: route todocoleccion price errors to withdraw",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T11:55:14Z",
-        "updatedAt": "2026-07-17T12:11:28Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7710,
         "kind": "pull_request",
         "title": "feat: sample flash offers from bigquery instead of mongo",
@@ -203,6 +179,18 @@
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T12:31:12Z",
         "updatedAt": "2026-07-17T12:45:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7711,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-17T13:31:50Z",
+        "updatedAt": "2026-07-17T13:36:17Z",
         "missingReason": "recently_created"
       }
     ],
@@ -327,7 +315,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T09:19:02Z",
-        "updatedAt": "2026-07-17T12:57:20Z",
+        "updatedAt": "2026-07-17T13:01:21Z",
         "missingReason": "recently_created"
       },
       {
@@ -359,30 +347,6 @@
         "missingReason": "recently_created"
       },
       {
-        "number": 7708,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T11:53:31Z",
-        "updatedAt": "2026-07-17T12:55:11Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7709,
-        "kind": "pull_request",
-        "title": "fix: route todocoleccion price errors to withdraw",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T11:55:14Z",
-        "updatedAt": "2026-07-17T12:11:28Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7710,
         "kind": "pull_request",
         "title": "feat: sample flash offers from bigquery instead of mongo",
@@ -392,6 +356,18 @@
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T12:31:12Z",
         "updatedAt": "2026-07-17T12:45:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7711,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-17T13:31:50Z",
+        "updatedAt": "2026-07-17T13:36:17Z",
         "missingReason": "recently_created"
       }
     ],
