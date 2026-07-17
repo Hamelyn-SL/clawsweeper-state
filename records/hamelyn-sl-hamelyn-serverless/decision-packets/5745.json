@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:27:53.742Z",
-  "updatedAt": "2026-07-15T10:16:38Z",
+  "generatedAt": "2026-07-17T00:08:15.118Z",
+  "updatedAt": "2026-07-16T23:50:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,46 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-08T00:34:01Z",
-    "updatedAt": "2026-07-15T10:16:38Z"
+    "updatedAt": "2026-07-16T23:50:12Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "¿Qué identidad de cuota y qué degradación ante indisponibilidad de KV debe usar el limitador distribuido de Catalog Items?",
-  "rationale": "La causa está demostrada, pero elegir una cuota global, por credenciales/región o por marketplace y decidir entre fail-open, fail-closed o un fallback local conservador afecta disponibilidad, throughput y riesgo de throttling.",
+  "question": "¿La observación de tres 429 recuperables después del merge basta para iniciar ya un limitador distribuido, o se mantiene la ventana de siete días hasta observar otro agotamiento terminal?",
+  "rationale": "El problema original tuvo un fallo terminal demostrado, pero después de eliminar los bypass solo constan nuevos 429 sin evidencia de retries agotados; la decisión determina si se asume ahora el coste arquitectónico de coordinación distribuida.",
   "options": [
     {
-      "title": "Cuota por credenciales y operación",
-      "body": "Usar una reserva atómica distribuida por conjunto de credenciales, región y operación, con fallback local conservador y señal explícita de modo degradado.",
+      "title": "Completar la observación",
+      "body": "Mantener abierta la canónica y exigir un nuevo error terminal o una correlación directa con ASINs perdidos antes de ampliar la arquitectura.",
       "recommended": true
     },
     {
-      "title": "Cuota global de catálogo",
-      "body": "Compartir un único presupuesto para todos los marketplaces, reduciendo 429 a costa de limitar más tráfico del necesario.",
-      "recommended": false
-    },
-    {
-      "title": "Propagar primero el fallo parcial",
-      "body": "Corregir inicialmente la observabilidad y el contrato de errores, manteniendo temporalmente el limitador local y aceptando el throttling entre instancias.",
+      "title": "Iniciar el diseño distribuido",
+      "body": "Diseñar ya la reserva global de cuota, la degradación del almacén compartido y el contrato de fallo parcial, aunque la mitigación reciente aún no tenga una ventana completa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cuota por credenciales y operación",
-    "body": "Usar una reserva atómica distribuida por conjunto de credenciales, región y operación, con fallback local conservador y señal explícita de modo degradado.",
+    "title": "Completar la observación",
+    "body": "Mantener abierta la canónica y exigir un nuevo error terminal o una correlación directa con ASINs perdidos antes de ampliar la arquitectura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia y ha realizado la investigación operativa más reciente sobre solapamiento, cuota y degradación parcial.",
+    "reason": "Está asignado a la incidencia y ha dirigido tanto la investigación de producción como las mitigaciones fusionadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5745.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5745#issuecomment-4971271842",
-    "reviewedAt": "2026-07-15T10:27:53.742Z",
-    "mainSha": "ccdec9d21376c459ce200ec2328f3189faeb0c7e"
+    "reviewedAt": "2026-07-17T00:08:15.118Z",
+    "mainSha": "ea2d71503f34565b17edab2c2ef509470fb5a4ae"
   }
 }
