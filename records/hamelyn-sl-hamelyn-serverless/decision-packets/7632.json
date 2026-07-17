@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T10:13:09.047Z",
-  "updatedAt": "2026-07-16T09:57:03Z",
+  "generatedAt": "2026-07-17T06:52:27.308Z",
+  "updatedAt": "2026-07-17T06:30:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-16T08:41:26Z",
-    "updatedAt": "2026-07-16T09:57:03Z",
-    "headSha": "3a03c2c3d9125cb9eed7234e75c23c93d813a463"
+    "updatedAt": "2026-07-17T06:30:58Z",
+    "headSha": "825973af2f9c5489107f65f0927d1f4f18e02bde"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La automatización semanal de majors debe limitarse a familias compatibles curadas, o se acepta una familia `other` que agrupe todas las dependencias no clasificadas?",
-  "rationale": "La issue expresa aislamiento por familias compatibles, mientras la PR introduce una política catch-all con 140 paquetes heterogéneos; esa excepción cambia sustancialmente el riesgo operativo y necesita una decisión explícita.",
+  "question": "¿La automatización semanal de majors debe limitarse a familias compatibles curadas, o se acepta que `other` agrupe automáticamente todos los paquetes no clasificados?",
+  "rationale": "La issue promete aislamiento por familias compatibles, pero el diseño actual programa un catch-all heterogéneo que cambia de forma permanente el volumen de PRs, la carga de adaptación y la reversibilidad de las actualizaciones.",
   "options": [
     {
-      "title": "Solo familias curadas",
-      "body": "Excluir `other` de la matriz programada y clasificar explícitamente cada paquete antes de automatizar su major.",
+      "title": "Programar solo familias curadas",
+      "body": "Excluir `other` del cron y permitirla, como máximo, mediante un `workflow_dispatch` manual y explícito.",
       "recommended": true
     },
     {
-      "title": "Aceptar `other`",
-      "body": "Mantener una PR catch-all heterogénea y asumir explícitamente su mayor coste de revisión, adaptación y reversión.",
+      "title": "Programar todas las familias",
+      "body": "Aceptar expresamente una PR semanal heterogénea con mayor coste de revisión, adaptación y reversión.",
+      "recommended": false
+    },
+    {
+      "title": "Comenzar solo en manual",
+      "body": "Integrar el framework sin cron y activar gradualmente cada familia después de varias ejecuciones reales satisfactorias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo familias curadas",
-    "body": "Excluir `other` de la matriz programada y clasificar explícitamente cada paquete antes de automatizar su major.",
+    "title": "Programar solo familias curadas",
+    "body": "Excluir `other` del cron y permitirla, como máximo, mediante un `workflow_dispatch` manual y explícito.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Revisó y aprobó la arquitectura inicial del workflow agrupado y el autofix, por lo que es la mejor señal histórica disponible para decidir este límite operativo.",
-    "confidence": "medium"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Introdujo el framework de dependencias vigente, está asignado a la issue canónica y dispone del contexto técnico más directo para elevar esta decisión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632#issuecomment-4990693709",
-    "reviewedAt": "2026-07-16T10:13:09.047Z",
-    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
+    "reviewedAt": "2026-07-17T06:52:27.308Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:46:06.976Z",
+  "generatedAt": "2026-07-17T06:56:31.132Z",
   "updatedAt": "2026-07-17T06:35:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,51 +14,45 @@
       "app:infrastructure",
       "feature",
       "reporter:danielmenchen-hamelyn",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T08:11:46Z",
     "updatedAt": "2026-07-17T06:35:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué familias major deben entrar en el schedule semanal y cuáles deben quedar exclusivamente bajo `workflow_dispatch`, especialmente la familia heterogénea `other`?",
-  "rationale": "La selección cambia de forma permanente el volumen de PR, la carga de adaptación y el riesgo de mezclar incompatibilidades; CI no puede decidir esa política por el equipo.",
+  "question": "¿Debe la familia heterogénea `other` quedar fuera del schedule de actualizaciones major hasta dividirse en familias compatibles?",
+  "rationale": "La issue busca aislar breaking changes compatibles y reversibles, pero `other` agrupa dependencias sin una frontera técnica común; automatizarla cambia materialmente el riesgo operativo y la carga de revisión.",
   "options": [
     {
-      "title": "Programar solo familias curadas",
-      "body": "Automatizar grupos homogéneos y mantener `other` y familias de alto riesgo bajo disparo manual.",
+      "title": "Excluir y subdividir `other`",
+      "body": "Mantener esa familia en ejecución manual y crear grupos más estrechos antes de incorporarlos al schedule.",
       "recommended": true
     },
     {
-      "title": "Programar todas las familias",
-      "body": "Generar semanalmente todas las familias y asumir mayor ruido, conflictos y adaptación de breaking changes.",
-      "recommended": false
-    },
-    {
-      "title": "Comenzar solo en manual",
-      "body": "Integrar el framework sin cron y activar familias gradualmente después de varias ejecuciones reales satisfactorias.",
+      "title": "Programar `other`",
+      "body": "Aceptar una PR periódica heterogénea con mayor coste de adaptación, revisión y reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Programar solo familias curadas",
-    "body": "Automatizar grupos homogéneos y mantener `other` y familias de alto riesgo bajo disparo manual.",
+    "title": "Excluir y subdividir `other`",
+    "body": "Mantener esa familia en ejecución manual y crear grupos más estrechos antes de incorporarlos al schedule.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es la persona asignada, introdujo la automatización vigente y mantiene la propuesta major, por lo que dispone del contexto técnico más directo para elevar la decisión.",
+    "reason": "Es el propietario reciente de los workflows y quien ha definido e implementado la configuración propuesta de familias.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
-    "reviewedAt": "2026-07-17T06:46:06.976Z",
+    "reviewedAt": "2026-07-17T06:56:31.132Z",
     "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
   }
 }

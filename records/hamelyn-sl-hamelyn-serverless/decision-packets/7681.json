@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T06:58:58.207Z",
+  "updatedAt": "2026-07-17T06:29:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7681,
+    "title": "chore: update ui major dependencies",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7681",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-17T06:20:47Z",
+    "updatedAt": "2026-07-17T06:29:58Z",
+    "headSha": "0b63e8a0cf31c9ba6242b21f0fa11d672bee63c6"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Puede ecommerce dejar de soportar los navegadores anteriores al baseline de Swiper 14, especialmente Safari e iOS anteriores a 16.4?",
+  "rationale": "El código no permite inferir el baseline de producto; aceptar Swiper 14 cambia la compatibilidad para clientes aunque no requiera migrar las APIs usadas.",
+  "options": [
+    {
+      "title": "Mantener Swiper 12",
+      "body": "Revertir el salto de Swiper, conservar las actualizaciones patch de Tailwind y dejar la reducción del soporte de navegadores para una decisión separada.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar Swiper 14",
+      "body": "Aprobar formalmente el nuevo baseline y exigir prueba real en navegadores compatibles y en el límite de actualización antes del merge.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener Swiper 12",
+    "body": "Revertir el salto de Swiper, conservar las actualizaciones patch de Tailwind y dejar la reducción del soporte de navegadores para una decisión separada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor solicitado con mayor historial reciente sobre dependencias compartidas, ecommerce y coherencia del lockfile.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7681.md",
+    "reviewedAt": "2026-07-17T06:58:58.207Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+  }
+}

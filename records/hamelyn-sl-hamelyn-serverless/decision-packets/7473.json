@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T10:00:17.329Z",
-  "updatedAt": "2026-07-16T09:47:18Z",
+  "generatedAt": "2026-07-17T06:48:57.595Z",
+  "updatedAt": "2026-07-17T06:30:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "conflicts:needs-human",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-13T12:23:30Z",
-    "updatedAt": "2026-07-16T09:47:18Z",
+    "updatedAt": "2026-07-17T06:30:09Z",
     "headSha": "b5ece9fa691dc91793785090131c28f682051913"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta PR fusionarse sin `lastmod` veraz y sin clasificación por proyección de restock de aproximadamente 90 días, dejando ambos requisitos para seguimientos posteriores?",
-  "rationale": "La especificación actualizada los mantiene como parte del contrato y el triage indicó que no debía fusionarse hasta adaptar esos puntos, pero la rama los omite porque todavía no existen señales de datos fiables.",
+  "question": "¿Se acepta omitir `lastmod`, restock y contraste del árbol de categorías en esta entrega, y qué ventana de compatibilidad debe mantenerse para las URLs legacy?",
+  "rationale": "La especificación de Victor incluye señales de datos todavía inexistentes y la PR cambia un contrato público consumido por crawlers; no corresponde a la automatización decidir qué requisitos dejan de ser bloqueantes ni cuándo retirar las rutas anteriores.",
   "options": [
     {
-      "title": "Completar el contrato ahora",
-      "body": "Mantener el merge bloqueado hasta implementar las señales requeridas, la clasificación de restock y su prueba real integral.",
+      "title": "Transición con seguimientos",
+      "body": "Mantener compatibilidad, publicar v2 primero y crear seguimientos canónicos aprobados para los requisitos de datos restantes.",
       "recommended": true
     },
     {
-      "title": "Aprobar alcance parcial",
-      "body": "Autorizar explícitamente la omisión temporal y crear seguimientos canónicos con owner, prioridad y criterios verificables antes de fusionar.",
+      "title": "Entrega completa",
+      "body": "Mantener la PR abierta hasta implementar todas las señales y validar los seis segmentos después del despliegue.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar alcance reducido",
+      "body": "Autorizar explícitamente el corte directo y las omisiones temporales, asumiendo el riesgo SEO y operativo documentado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar el contrato ahora",
-    "body": "Mantener el merge bloqueado hasta implementar las señales requeridas, la clasificación de restock y su prueba real integral.",
+    "title": "Transición con seguimientos",
+    "body": "Mantener compatibilidad, publicar v2 primero y crear seguimientos canónicos aprobados para los requisitos de datos restantes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "victor",
-    "reason": "Es la persona identificada por la issue como autora de la especificación v2 y de su aclaración más reciente.",
+    "person": "HamelynDev",
+    "reason": "Es el canal visible de la especificación de Victor y puede confirmar el alcance aceptado y la secuencia de migración esperada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
-    "reviewedAt": "2026-07-16T10:00:17.329Z",
-    "mainSha": "ff4f28cc338780e8524835196ca6ffcd1429b8d0"
+    "reviewedAt": "2026-07-17T06:48:57.595Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
   }
 }

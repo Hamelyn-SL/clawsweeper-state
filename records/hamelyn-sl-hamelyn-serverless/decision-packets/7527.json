@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:53:16.964Z",
+  "generatedAt": "2026-07-17T06:45:48.734Z",
   "updatedAt": "2026-07-17T06:20:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,38 +26,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que `PENDING_PROVIDER_CONFIRMATION` autocancele a las 48 horas y que solo los fallos clasificados como seguros se reintenten automáticamente, dejando los resultados ambiguos para revisión manual?",
-  "rationale": "El código no puede determinar por sí solo el SLA comercial ni si una respuesta ilegible creó realmente el pedido externo; esa elección afecta a cobros, pedidos duplicados, correos al cliente y trabajo operativo.",
+  "question": "¿Debe una confirmación todavía ambigua autocancelarse a las 48 horas o permanecer pendiente hasta reconciliación o revisión manual?",
+  "rationale": "La respuesta define el ciclo de vida persistido y la experiencia de cancelación; automatizar cualquiera de las dos direcciones sin conocer si existe un pedido externo puede causar una venta duplicada o cancelar una venta válida.",
   "options": [
     {
-      "title": "Estado conservador sin reintento ambiguo",
-      "body": "Aprobar el estado intermedio y los reintentos de fallos inequívocamente seguros, pero mantener los ambiguos en revisión manual sin autocancelarlos hasta disponer de reconciliación o un SLA validado.",
+      "title": "Mantener pendiente hasta reconciliar",
+      "body": "Eliminar la autocancelación de resultados ambiguos y exigir revisión manual o consulta fiable al proveedor antes de cancelar o reintentar.",
       "recommended": true
     },
     {
-      "title": "Aceptar autocancelación a 48 horas",
-      "body": "Adoptar la política actual del PR, documentando que operaciones asume el riesgo de divergencia con el proveedor y exigiendo prueba real del flujo completo antes del merge.",
+      "title": "Aprobar autocancelación a 48h",
+      "body": "Aceptar el SLA actual con un runbook, responsable operativo y prueba de cómo detectar y resolver pedidos que sí existan en el proveedor.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta confirmar idempotencia",
-      "body": "No introducir reintentos ni autocancelación hasta que Azeta y Arnoia confirmen deduplicación por referencia cliente o exista una consulta de reconciliación fiable.",
+      "title": "Reducir el alcance inicial",
+      "body": "Integrar solo la clasificación y el estado pendiente, dejando recordatorios, cancelación y retry para una segunda fase con contrato de proveedor confirmado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado conservador sin reintento ambiguo",
-    "body": "Aprobar el estado intermedio y los reintentos de fallos inequívocamente seguros, pero mantener los ambiguos en revisión manual sin autocancelarlos hasta disponer de reconciliación o un SLA validado.",
+    "title": "Mantener pendiente hasta reconciliar",
+    "body": "Eliminar la autocancelación de resultados ambiguos y exigir revisión manual o consulta fiable al proveedor antes de cancelar o reintentar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es el revisor solicitado del PR para un cambio que necesita aprobación operativa más allá de la implementación técnica.",
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado actual y responsable del flujo candidato donde debe materializarse la decisión, coordinado con los revisores de ecommerce.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7527.md",
-    "reviewedAt": "2026-07-17T06:53:16.964Z",
+    "reviewedAt": "2026-07-17T06:45:48.734Z",
     "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
   }
 }

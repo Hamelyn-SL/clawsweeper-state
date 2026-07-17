@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T21:47:14.812Z",
-  "updatedAt": "2026-07-16T21:32:58Z",
+  "generatedAt": "2026-07-17T06:51:28.372Z",
+  "updatedAt": "2026-07-17T06:19:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,53 +11,52 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 other",
+      "proof: 📸 screenshot",
       "merge-risk: 🚨 message-delivery",
-      "merge-risk: 🚨 other"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-16T08:43:28Z",
-    "updatedAt": "2026-07-16T21:32:58Z",
+    "updatedAt": "2026-07-17T06:19:13Z",
     "headSha": "d4eb569b88b6fc5a6766ead375c4c3ba220a3570"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un pedido con confirmación todavía ambigua autocancelarse a las 48 horas y bloquear mientras tanto la cancelación del cliente, aun cuando el pedido puede existir en el proveedor?",
-  "rationale": "El código no puede resolver esta política con seguridad: no hay clave idempotente ni reconciliación automática, y cualquiera de las dos decisiones puede generar pedidos duplicados, envíos tras cancelación o una espera indefinida.",
+  "question": "¿Debe un pedido cuya creación en el proveedor sigue siendo ambigua autocancelarse a las 48 horas y dejar de ser cancelable por el cliente mientras espera reconciliación?",
+  "rationale": "El sistema no puede saber si el proveedor creó el pedido; elegir el SLA y quién puede cancelar afecta dinero, experiencia del cliente y conciliación operativa, por lo que requiere una política explícita.",
   "options": [
     {
-      "title": "Conservar pendiente hasta reconciliar",
-      "body": "Eliminar la autocancelación, mantener alertas escaladas y permitir una transición de cancelación atómica que obligue a revisar o anular el pedido del proveedor.",
+      "title": "Reconciliar sin autocancelar",
+      "body": "Mantener el pedido pendiente, escalar alertas y exigir comprobación del proveedor antes de cancelar o reintentar.",
       "recommended": true
     },
     {
-      "title": "Aprobar el SLA de 48 horas",
-      "body": "Mantener la autocancelación solo con aprobación operativa explícita, un procedimiento de reconciliación y prueba real de los efectos financieros y de cliente.",
+      "title": "Aceptar el SLA de 48 horas",
+      "body": "Autocancelar tras 48 horas con un runbook probado para localizar y anular o conciliar pedidos existentes en proveedor.",
       "recommended": false
     },
     {
-      "title": "Reducir el alcance del PR",
-      "body": "Integrar únicamente clasificación, estado pendiente y alerta inicial, dejando retry, cancelación y SLA para un seguimiento con contrato de proveedor confirmado.",
+      "title": "Definir reglas por proveedor",
+      "body": "Aplicar SLA, reintento y cancelación según las garantías reales de consulta, borrado e idempotencia de cada proveedor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar pendiente hasta reconciliar",
-    "body": "Eliminar la autocancelación, mantener alertas escaladas y permitir una transición de cancelación atómica que obligue a revisar o anular el pedido del proveedor.",
+    "title": "Reconciliar sin autocancelar",
+    "body": "Mantener el pedido pendiente, escalar alertas y exigir comprobación del proveedor antes de cancelar o reintentar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es uno de los revisores asignados por experiencia en la superficie afectada y el mejor punto de enrutado disponible para coordinar la decisión con Ecommerce/Integraciones.",
+    "reason": "Es el revisor con señal humana más reciente sobre el head y fue seleccionado por experiencia directa en el área.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7635.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7635#issuecomment-4990592518",
-    "reviewedAt": "2026-07-16T21:47:14.812Z",
-    "mainSha": "4b6965c272d5f81cb43d9d82fdea8dbb12b04b15"
+    "reviewedAt": "2026-07-17T06:51:28.372Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
   }
 }

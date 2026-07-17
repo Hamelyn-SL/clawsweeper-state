@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T12:33:08.174Z",
-  "updatedAt": "2026-07-16T12:27:40Z",
+  "generatedAt": "2026-07-17T06:45:16.448Z",
+  "updatedAt": "2026-07-17T05:50:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,46 @@
       "bug",
       "priority:p2",
       "app:marketplace",
-      "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-09T07:11:39Z",
-    "updatedAt": "2026-07-16T12:27:40Z"
+    "updatedAt": "2026-07-17T05:50:10Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Se aprueba usar los límites derivados de `PMin` y `PMax` para `OPTIMO` y `ATASCADO` sin activar `pricingRuleId`, limpiando además cualquier regla automática anterior?",
-  "rationale": "El código puede separar técnicamente umbrales y repricing, pero la amplitud de los límites permitidos y su aplicación conjunta a varios marketplaces constituyen una decisión de política comercial que no puede inferirse solo del error técnico.",
+  "priority": "P1",
+  "question": "¿Se aprueba que `optimo` y `atascado` reciban umbrales Amazon derivados de `PMin`/`PMax` mientras se elimina cualquier `pricingRuleId` automático previo?",
+  "rationale": "La solución corrige el retry ineficaz, pero también fija una política comercial para grupos que actualmente no envían rango y afecta a creación, PATCH individual y feed batch.",
   "options": [
     {
-      "title": "Aprobar umbrales sin repricing",
-      "body": "Usar rangos basados en `PMin` y `PMax` que contengan el precio, limpiar explícitamente cualquier plan automático anterior y exigir prueba viva en COM antes de fusionar.",
+      "title": "Umbrales sin repricing",
+      "body": "Enviar límites que contengan el precio actual, retirar cualquier regla automática previa y exigir prueba real antes del merge.",
       "recommended": true
     },
     {
-      "title": "Definir rangos específicos por grupo",
-      "body": "Pausar la PR hasta acordar límites distintos para `OPTIMO` y `ATASCADO` o por marketplace, y después adaptar el cálculo y la validación.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el comportamiento actual",
-      "body": "No enviar umbrales para estos grupos y aceptar que el recovery puede seguir reintentando ofertas suprimidas con `18155`.",
+      "title": "Mantener la política actual",
+      "body": "No añadir umbrales a estos grupos y buscar otra recuperación para `18155` que no cambie su configuración comercial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar umbrales sin repricing",
-    "body": "Usar rangos basados en `PMin` y `PMax` que contengan el precio, limpiar explícitamente cualquier plan automático anterior y exigir prueba viva en COM antes de fusionar.",
+    "title": "Umbrales sin repricing",
+    "body": "Enviar límites que contengan el precio actual, retirar cualquier regla automática previa y exigir prueba real antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Tiene asignada la issue, mantiene historial directo en el recovery Amazon y es responsable de la implementación candidata actual.",
+    "person": "PabloMoran34",
+    "reason": "Su historial reciente cubre `PMin`, suelos y reglas automáticas, y figura como revisor solicitado de la PR.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7263.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7263#issuecomment-4923055294",
-    "reviewedAt": "2026-07-16T12:33:08.174Z",
-    "mainSha": "55416ee8b319e79052441cf60e5c2e193e546f6f"
+    "reviewedAt": "2026-07-17T06:45:16.448Z",
+    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
   }
 }
