@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T21:24:19.963Z",
-  "updatedAt": "2026-07-16T20:53:18Z",
+  "generatedAt": "2026-07-17T00:19:28.157Z",
+  "updatedAt": "2026-07-16T23:15:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,15 +11,15 @@
     "state": "open",
     "labels": [
       "size/M",
-      "proof: sufficient",
-      "proof: 📸 screenshot",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P2",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-16T09:57:54Z",
-    "updatedAt": "2026-07-16T20:53:18Z",
+    "updatedAt": "2026-07-16T23:15:41Z",
     "headSha": "00f0997d809307ae47e6aecb52ded241fd3ed0d3"
   },
   "lane": "product_direction",
@@ -29,29 +29,33 @@
   "options": [
     {
       "title": "Persistir la asignación exacta",
-      "body": "Añadir un campo opcional escrito durante el checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
+      "body": "Añadir un campo opcional escrito durante checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
       "recommended": true
     },
     {
       "title": "Aceptar la reconstrucción aproximada",
-      "body": "Mantener esta implementación documentando que, ante empates creados por la conversión monetaria, la línea mostrada puede no coincidir con la selección original.",
+      "body": "Mantener esta implementación documentando que, ante empates creados por conversión monetaria, la línea mostrada puede no coincidir con la selección original.",
+      "recommended": false
+    },
+    {
+      "title": "Consolidar primero las propuestas",
+      "body": "Mantener ambas PR en pausa hasta escoger una única superficie y contrato de datos para la funcionalidad.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Persistir la asignación exacta",
-    "body": "Añadir un campo opcional escrito durante el checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
+    "body": "Añadir un campo opcional escrito durante checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el propietario histórico más reciente de la regla canónica y el revisor solicitado de esta PR.",
+    "reason": "Es el revisor solicitado y el historial reciente lo vincula directamente con la regla canónica de asignación de cupones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7641.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7641#issuecomment-4990695620",
-    "reviewedAt": "2026-07-16T21:24:19.963Z",
-    "mainSha": "795f292c038fd3b7c7529ab434fd4952ede53419"
+    "reviewedAt": "2026-07-17T00:19:28.157Z",
+    "mainSha": "ea2d71503f34565b17edab2c2ef509470fb5a4ae"
   }
 }
