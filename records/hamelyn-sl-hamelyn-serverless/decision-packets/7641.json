@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T00:19:28.157Z",
-  "updatedAt": "2026-07-16T23:15:41Z",
+  "generatedAt": "2026-07-17T01:51:46.687Z",
+  "updatedAt": "2026-07-17T01:43:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/M",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P2",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-16T09:57:54Z",
-    "updatedAt": "2026-07-16T23:15:41Z",
+    "updatedAt": "2026-07-17T01:43:30Z",
     "headSha": "00f0997d809307ae47e6aecb52ded241fd3ed0d3"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe persistirse la asignación exacta por línea para garantizar la atribución, o se acepta una reconstrucción potencialmente ambigua en pedidos multimoneda?",
-  "rationale": "`unitsGranted` conserva la cantidad total, pero los precios persistidos ya convertidos y redondeados no siempre permiten recuperar qué línea eligió el cálculo EUR original.",
+  "question": "¿Debe garantizarse la identidad exacta de la línea gratuita persistiendo la asignación del checkout, o se acepta una reconstrucción aproximada para soporte?",
+  "rationale": "`unitsGranted` solo conserva la cantidad total y los precios de las líneas se persisten después de conversión y redondeo, por lo que no siempre permiten recuperar la selección EUR original.",
   "options": [
     {
       "title": "Persistir la asignación exacta",
-      "body": "Añadir un campo opcional escrito durante checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
+      "body": "Añadir un campo opcional escrito al aplicar el cupón y usarlo en eDesk, sin inferir los pedidos históricos.",
       "recommended": true
     },
     {
-      "title": "Aceptar la reconstrucción aproximada",
-      "body": "Mantener esta implementación documentando que, ante empates creados por conversión monetaria, la línea mostrada puede no coincidir con la selección original.",
+      "title": "Aceptar reconstrucción aproximada",
+      "body": "Mantener esta implementación documentando que algunos pedidos multimoneda pueden mostrar una línea distinta de la seleccionada originalmente.",
       "recommended": false
     },
     {
-      "title": "Consolidar primero las propuestas",
-      "body": "Mantener ambas PR en pausa hasta escoger una única superficie y contrato de datos para la funcionalidad.",
+      "title": "Elegir la otra candidata",
+      "body": "Comparar esta PR con https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640 y conservar una sola implementación y superficie de eDesk.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Persistir la asignación exacta",
-    "body": "Añadir un campo opcional escrito durante checkout y consumirlo desde eDesk, manteniendo los pedidos históricos sin atribución.",
+    "body": "Añadir un campo opcional escrito al aplicar el cupón y usarlo en eDesk, sin inferir los pedidos históricos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor solicitado y el historial reciente lo vincula directamente con la regla canónica de asignación de cupones.",
+    "reason": "Tiene la señal histórica más directa sobre la regla canónica de cupones y figura como revisor solicitado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7641.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7641#issuecomment-4990695620",
-    "reviewedAt": "2026-07-17T00:19:28.157Z",
-    "mainSha": "ea2d71503f34565b17edab2c2ef509470fb5a4ae"
+    "reviewedAt": "2026-07-17T01:51:46.687Z",
+    "mainSha": "86cdf7fcafe5d04dac6981fb6383791e7bd4b0bf"
   }
 }
