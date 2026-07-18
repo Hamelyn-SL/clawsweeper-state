@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:23:12.367Z",
+  "generatedAt": "2026-07-18T04:13:52.491Z",
   "updatedAt": "2026-07-17T13:09:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,35 +16,35 @@
     "updatedAt": "2026-07-17T13:09:30Z",
     "headSha": "7d65ebe03de0e225dbd40bda8cdaa6f63c2693eb"
   },
-  "lane": "merge_risk",
-  "priority": "P2",
-  "question": "¿Debe esta PR conservar Stripe 22 y Sentry React Native 8 hasta aportar pruebas completas de runtime y upgrade, o deben separarse para que el resto de la familia pueda avanzar?",
-  "rationale": "Los checks estáticos no resuelven el cambio de comportamiento de pagos ni la compatibilidad entre el JavaScript actualizado y los binarios nativos ya instalados.",
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe este PR incluir `@sentry/react-native` 8 coordinándolo con una nueva build EAS y una runtime version segura, o debe retirarse para una actualización específica de Supply?",
+  "rationale": "El repositorio admite OTA con runtime fijo y el PR no ejecuta la build nativa; la coordinación de publicación de binarios es una elección de release que no puede inferirse solo del código.",
   "options": [
     {
-      "title": "Exigir pruebas en esta PR",
-      "body": "Mantener ambos bumps y requerir checkout con webhook en staging, nueva build nativa de Supply y compatibilidad OTA explícita antes del merge.",
+      "title": "Separar Sentry v8",
+      "body": "Retirar el bump nativo de este PR y actualizarlo después en un cambio de Supply con build EAS, runtime version y prueba de arranque coordinadas.",
       "recommended": true
     },
     {
-      "title": "Separar los majors sensibles",
-      "body": "Retirar temporalmente Stripe y Sentry React Native y tratarlos en PRs dedicadas con validación de runtime específica.",
+      "title": "Coordinar la release ahora",
+      "body": "Mantener Sentry v8 únicamente si se crea y valida una nueva build iOS/Android y se impide servir el bundle a binarios con v7.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir pruebas en esta PR",
-    "body": "Mantener ambos bumps y requerir checkout con webhook en staging, nueva build nativa de Supply y compatibilidad OTA explícita antes del merge.",
+    "title": "Separar Sentry v8",
+    "body": "Retirar el bump nativo de este PR y actualizarlo después en un cambio de Supply con build EAS, runtime version y prueba de arranque coordinadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Ya ha delimitado en la revisión los dos riesgos de runtime y las condiciones técnicas necesarias para aceptarlos.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente demuestra responsabilidad directa sobre builds EAS, versiones y timing de publicación de Supply.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7678.md",
-    "reviewedAt": "2026-07-18T04:23:12.367Z",
+    "reviewedAt": "2026-07-18T04:13:52.491Z",
     "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:21:06.346Z",
+  "generatedAt": "2026-07-18T04:05:18.919Z",
   "updatedAt": "2026-07-17T07:27:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,33 +26,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el schedule major incluir solo familias curadas y dejar `other` y las migraciones incompatibles para ejecución manual dedicada?",
-  "rationale": "La automatización crea una política recurrente y transversal; el código no puede determinar qué nivel de riesgo y mantenimiento acepta el equipo para familias heterogéneas.",
+  "question": "¿Debe la familia heterogénea `other` formar parte del schedule automático de majors o quedar limitada a lanzamientos manuales?",
+  "rationale": "La elección fija el riesgo operativo aceptable y no puede resolverse únicamente mediante lint, typecheck o builds aislados.",
   "options": [
     {
-      "title": "Schedule curado",
-      "body": "Automatizar únicamente familias compatibles y mantener `other`, Expo y toolchains incompatibles fuera del schedule hasta disponer de migraciones dedicadas.",
+      "title": "Excluir `other` del schedule",
+      "body": "Programar únicamente familias homogéneas y permitir `other` solo mediante `workflow_dispatch` con revisión específica.",
       "recommended": true
     },
     {
-      "title": "Schedule amplio",
-      "body": "Programar todas las familias y asumir más PR bloqueadas, autofixes complejos y revisión operativa frecuente.",
+      "title": "Incluir `other` en el schedule",
+      "body": "Ejecutar también el catch-all automáticamente, asumiendo revisiones más amplias y migraciones potencialmente incompatibles en una sola PR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Schedule curado",
-    "body": "Automatizar únicamente familias compatibles y mantener `other`, Expo y toolchains incompatibles fuera del schedule hasta disponer de migraciones dedicadas.",
+    "title": "Excluir `other` del schedule",
+    "body": "Programar únicamente familias homogéneas y permitir `other` solo mediante `workflow_dispatch` con revisión específica.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el principal autor histórico de esta automatización y el responsable asignado de la issue y de la PR coordinadora.",
+    "reason": "Es el propietario histórico del flujo actual y responsable de la implementación vinculada, por lo que es el mejor punto de coordinación para concretar esta política con el equipo de infraestructura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
-    "reviewedAt": "2026-07-18T04:21:06.346Z",
+    "reviewedAt": "2026-07-18T04:05:18.919Z",
     "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:08:14.117Z",
-  "updatedAt": "2026-07-14T12:19:36Z",
+  "generatedAt": "2026-07-18T04:04:43.299Z",
+  "updatedAt": "2026-07-17T12:15:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "app:infrastructure",
       "reporter:JavierHamelyn",
       "feature",
-      "triage:done",
+      "triage:no-change",
       "P1",
-      "impact:crash-loop",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "impact:crash-loop",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-14T12:19:36Z"
+    "updatedAt": "2026-07-17T12:15:10Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué carga debe ser el primer corte patrocinado y qué contrato de frescura, fallback y escrituras correctivas debe tener cada consumidor?",
-  "rationale": "El orden y la frontera elegidos determinan el modelo de materialización, la propiedad entre Data Platform y workflows, y el riesgo de actuar sobre datos con retraso.",
+  "question": "Después de flash offers, ¿se prioriza Google Merchant o el export/reporting, y qué contrato de frescura, rollback y frontera de mutación se aprueba para cada consumidor?",
+  "rationale": "La dirección hacia BigQuery está respaldada, pero los consumidores restantes tienen requisitos distintos y algunos pueden ejecutar correcciones que no son seguras sobre snapshots atrasados.",
   "options": [
     {
-      "title": "Flash offers primero",
-      "body": "Crear un pool horario de candidatos en BigQuery, cambiar únicamente la rotación y medir el descenso de CPU antes de ampliar el programa.",
+      "title": "Merchant como segundo corte",
+      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663, resolver la frescura de productos y validar la paridad completa de los feeds antes del cambio.",
       "recommended": true
     },
     {
-      "title": "Google Merchant primero",
-      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663 y resolver antes la frescura y cobertura de `mongodata.products`.",
+      "title": "Export como segundo corte",
+      "body": "Migrar primero el export de distribuidor por ser read-only y tener una frontera operativa más acotada.",
       "recommended": false
     },
     {
-      "title": "Programa transversal",
-      "body": "Diseñar feeds, reportes, exports y dashboards como una migración coordinada, asumiendo mayor plazo y riesgo de integración inicial.",
+      "title": "Reportes como segundo corte",
+      "body": "Diseñar una ruta híbrida donde BigQuery calcule diferencias y cada acción correctiva se revalide contra el estado live.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Flash offers primero",
-    "body": "Crear un pool horario de candidatos en BigQuery, cambiar únicamente la rotación y medir el descenso de CPU antes de ampliar el programa.",
+    "title": "Merchant como segundo corte",
+    "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663, resolver la frescura de productos y validar la paridad completa de los feeds antes del cambio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó el diagnóstico operativo, definió el alcance completo y ha mantenido una de las rutas de reportes afectadas.",
+    "reason": "Definió el objetivo operativo global y tiene historial directo en el export y los reportes, por lo que es el mejor candidato disponible para arbitrar el orden y los contratos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-14T15:08:14.117Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-18T04:04:43.299Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }

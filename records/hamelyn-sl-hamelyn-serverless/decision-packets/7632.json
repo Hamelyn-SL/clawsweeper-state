@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:52:27.308Z",
-  "updatedAt": "2026-07-17T06:30:58Z",
+  "generatedAt": "2026-07-18T04:05:28.989Z",
+  "updatedAt": "2026-07-17T08:39:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P2"
     ],
     "createdAt": "2026-07-16T08:41:26Z",
-    "updatedAt": "2026-07-17T06:30:58Z",
-    "headSha": "825973af2f9c5489107f65f0927d1f4f18e02bde"
+    "updatedAt": "2026-07-17T08:39:38Z",
+    "headSha": "6b514627ecce42245f02d0b9b6c65a9f49265ea5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La automatización semanal de majors debe limitarse a familias compatibles curadas, o se acepta que `other` agrupe automáticamente todos los paquetes no clasificados?",
-  "rationale": "La issue promete aislamiento por familias compatibles, pero el diseño actual programa un catch-all heterogéneo que cambia de forma permanente el volumen de PRs, la carga de adaptación y la reversibilidad de las actualizaciones.",
+  "question": "¿La ejecución semanal debe limitarse a familias explícitas o debe existir también una familia catch-all `other` para cualquier major no clasificada?",
+  "rationale": "La elección determina el radio de cambio y revisión permanente de la automatización; el código no puede decidir de forma segura si agrupar dependencias sin relación es una política operativa aceptable.",
   "options": [
     {
-      "title": "Programar solo familias curadas",
-      "body": "Excluir `other` del cron y permitirla, como máximo, mediante un `workflow_dispatch` manual y explícito.",
+      "title": "Solo familias explícitas",
+      "body": "Excluir `other` del schedule y añadir nuevas familias compatibles de forma deliberada cuando aparezcan dependencias sin clasificar.",
       "recommended": true
     },
     {
-      "title": "Programar todas las familias",
-      "body": "Aceptar expresamente una PR semanal heterogénea con mayor coste de revisión, adaptación y reversión.",
+      "title": "Catch-all solo manual",
+      "body": "Mantener `other`, pero permitirla únicamente mediante `workflow_dispatch` explícito y con revisión operativa previa.",
       "recommended": false
     },
     {
-      "title": "Comenzar solo en manual",
-      "body": "Integrar el framework sin cron y activar gradualmente cada familia después de varias ejecuciones reales satisfactorias.",
+      "title": "Catch-all semanal",
+      "body": "Aceptar conscientemente una PR periódica amplia con majors no relacionadas y asumir su mayor coste de prueba y reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Programar solo familias curadas",
-    "body": "Excluir `other` del cron y permitirla, como máximo, mediante un `workflow_dispatch` manual y explícito.",
+    "title": "Solo familias explícitas",
+    "body": "Excluir `other` del schedule y añadir nuevas familias compatibles de forma deliberada cuando aparezcan dependencias sin clasificar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Introdujo el framework de dependencias vigente, está asignado a la issue canónica y dispone del contexto técnico más directo para elevar esta decisión.",
+    "reason": "Es el propietario histórico más claro de los workflows actuales y ha llevado las PRs fusionadas que definen este contrato de automatización.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632#issuecomment-4990693709",
-    "reviewedAt": "2026-07-17T06:52:27.308Z",
-    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+    "reviewedAt": "2026-07-18T04:05:28.989Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }

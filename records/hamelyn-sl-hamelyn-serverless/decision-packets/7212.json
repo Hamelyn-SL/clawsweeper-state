@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T13:27:15.183Z",
-  "updatedAt": "2026-07-08T22:29:34Z",
+  "generatedAt": "2026-07-18T04:03:15.539Z",
+  "updatedAt": "2026-07-17T11:53:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,48 @@
       "bug",
       "priority:p1",
       "app:marketplace",
-      "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
+      "triage:no-change",
       "P1",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T07:31:00Z",
-    "updatedAt": "2026-07-08T22:29:34Z"
+    "updatedAt": "2026-07-17T11:53:37Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "¿Debe la reconciliación de listings sin `mk_ebayEs` quedar como control periódico permanente o limitarse a un backfill puntual acompañado por las defensas preventivas actuales?",
-  "rationale": "Ambas opciones pueden resolver la cohorte conocida, pero cambian el grado de automatización futura y el riesgo operativo asumido sobre listings reales de eBay.",
+  "question": "¿Debe cerrarse la issue únicamente después de verificar en un snapshot posterior que quedan cero huérfanos vendidos y que la cola no conserva estados `ACTIVE` o `SYNC_ERROR` de esta cohorte?",
+  "rationale": "La última evidencia muestra un drenaje casi terminado, pero el criterio de cierre publicado depende de datos operativos posteriores que no están disponibles en el repositorio ni en la discusión actual.",
   "options": [
     {
-      "title": "Control periódico",
-      "body": "Crear un sweep idempotente, limitado y observable que revalide cada candidato contra el maestro y la API viva antes de retirarlo.",
+      "title": "Esperar la comprobación posterior",
+      "body": "Mantener abierta la issue hasta publicar los conteos de cero pendientes y cero huérfanos vendidos en un snapshot fresco.",
       "recommended": true
     },
     {
-      "title": "Backfill puntual",
-      "body": "Corregir la cohorte actual bajo supervisión y confiar después en las defensas preventivas ya incorporadas al pipeline de publicación.",
+      "title": "Aceptar el drenaje observado",
+      "body": "Cerrar con el descenso ya observado, asumiendo el riesgo de que queden casos residuales o reaparezcan huérfanos sin reconciliación automática.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Control periódico",
-    "body": "Crear un sweep idempotente, limitado y observable que revalide cada candidato contra el maestro y la API viva antes de retirarlo.",
+    "title": "Esperar la comprobación posterior",
+    "body": "Mantener abierta la issue hasta publicar los conteos de cero pendientes y cero huérfanos vendidos en un snapshot fresco.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Tiene el historial más directo en el snapshot, la retirada e investigación operativa de eBay ES.",
+    "person": "MarcosTerroso",
+    "reason": "Es quien ejecutó la recuperación y dispone del contexto operativo más directo para validar la cohorte y el siguiente snapshot.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7212.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212#issuecomment-4919259558",
-    "reviewedAt": "2026-07-14T13:27:15.183Z",
-    "mainSha": "be349447c63690ea12e07ad6c7120b87d2d23362"
+    "reviewedAt": "2026-07-18T04:03:15.539Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }

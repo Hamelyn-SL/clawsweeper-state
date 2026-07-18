@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:22:06.325Z",
+  "generatedAt": "2026-07-18T04:15:43.463Z",
   "updatedAt": "2026-07-17T07:49:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,40 +18,40 @@
     "createdAt": "2026-07-17T07:37:46Z",
     "updatedAt": "2026-07-17T07:49:36Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "¿Qué transición canónica debe aplicarse a cada documento histórico según el estado actual de su batch u oferta en Fnac?",
-  "rationale": "El error almacenado no permite determinar por sí solo si la oferta está activa, ausente, rechazada o todavía pendiente; esa política debe acordarse antes de una escritura masiva.",
+  "question": "¿La muestra remota de Fnac y los recuentos del dry-run son suficientes para autorizar la reconciliación de los 9.645 documentos históricos?",
+  "rationale": "El código explica por qué los timestamps cambian, pero no permite determinar el estado canónico de cada oferta sin consultar Fnac; además, la política del repositorio exige aprobación explícita para una corrección masiva.",
   "options": [
     {
-      "title": "Reconciliar por estado remoto",
-      "body": "Consultar Fnac por `batchId` u oferta y aplicar una transición explícita a `ACTIVE`, `INACTIVE` o revisión según el resultado real.",
+      "title": "Aprobar tras muestreo estratificado",
+      "body": "Contrastar varios `batchId` y muestras de stocks activos y retirados, revisar las transiciones propuestas y autorizar después una escritura idempotente por resultado remoto.",
       "recommended": true
     },
     {
-      "title": "Limpiar solo el error",
-      "body": "Eliminar los metadatos históricos sin cambiar el estado funcional, reduciendo el riesgo inmediato pero pudiendo conservar incoherencias.",
+      "title": "Ampliar la evidencia remota",
+      "body": "Mantener la issue abierta sin escribir hasta que una muestra mayor permita definir reglas seguras para todos los grupos encontrados.",
       "recommended": false
     },
     {
-      "title": "Conservar y excluir",
-      "body": "Mantener la cohorte sin cambios y excluirla de alertas, aceptando deuda operativa y menor calidad de observabilidad.",
+      "title": "Conservar y excluir de alertas",
+      "body": "No reconciliar los documentos y excluir explícitamente esta firma histórica de los indicadores, aceptando que Mongo mantenga estados incoherentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar por estado remoto",
-    "body": "Consultar Fnac por `batchId` u oferta y aplicar una transición explícita a `ACTIVE`, `INACTIVE` o revisión según el resultado real.",
+    "title": "Aprobar tras muestreo estratificado",
+    "body": "Contrastar varios `batchId` y muestras de stocks activos y retirados, revisar las transiciones propuestas y autorizar después una escritura idempotente por resultado remoto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien mejor conecta la causa original, la corrección vigente y la evidencia reciente de la integración Fnac.",
+    "reason": "Es quien mejor conecta la corrección vigente de `applyMutation()` con los cambios recientes del ciclo de vida de stocks marketplace y la validación operativa del incidente original.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewedAt": "2026-07-18T04:22:06.325Z",
+    "reviewedAt": "2026-07-18T04:15:43.463Z",
     "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }
