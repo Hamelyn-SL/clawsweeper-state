@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T05:49:49.075Z",
+  "generatedAt": "2026-07-18T05:57:40.831Z",
   "updatedAt": "2026-07-18T04:27:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,50 +16,43 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-04T13:53:13Z",
     "updatedAt": "2026-07-18T04:27:01Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se autoriza la corrección masiva de los 670 documentos sembrados con IDs numéricos y qué evidencia operativa se exigirá antes de considerar resuelta la incidencia?",
-  "rationale": "La acción pendiente es una mutación de producción superior a diez documentos y la política del repositorio exige dry-run, filtro literal, muestras y confirmación humana; además, el cierre depende de definir una prueba suficiente de drenaje y snapshot posterior.",
+  "question": "¿Se autoriza la corrección masiva de producción de los 670 `marketplaceId`, con dry-run previo, reencolado de los 543 errores y verificación posterior del snapshot?",
+  "rationale": "La acción inmediata modifica datos de producción en masa y la política del repositorio exige un dry-run y confirmación humana; una revisión de código no puede autorizar ni demostrar por sí sola el resultado operativo.",
   "options": [
     {
-      "title": "Corregir cohorte y verificar snapshot",
-      "body": "Ejecutar un dry-run de las 670 filas, corregir y reencolar solo la cohorte validada, y exigir drenaje terminal más un snapshot semanal limpio antes del cierre.",
+      "title": "Autorizar corrección controlada",
+      "body": "Revisar el dry-run, normalizar los IDs, reencolar la cohorte y mantener la issue abierta hasta confirmar el drenaje y el siguiente snapshot.",
       "recommended": true
     },
     {
-      "title": "Corregir cohorte y mantener observación",
-      "body": "Aplicar la corrección acotada, pero mantener la issue abierta durante más de un ciclo semanal para medir posibles subcohortes residuales.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la mutación",
-      "body": "No tocar producción hasta diseñar una reconciliación general snapshot/API que cubra de una vez todos los huérfanos y estados de error.",
+      "title": "Mantener solo monitorización",
+      "body": "No modificar aún la cohorte y conservar la issue abierta, asumiendo que los listings potencialmente comprables seguirán pendientes de remediación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir cohorte y verificar snapshot",
-    "body": "Ejecutar un dry-run de las 670 filas, corregir y reencolar solo la cohorte validada, y exigir drenaje terminal más un snapshot semanal limpio antes del cierre.",
+    "title": "Autorizar corrección controlada",
+    "body": "Revisar el dry-run, normalizar los IDs, reencolar la cohorte y mantener la issue abierta hasta confirmar el drenaje y el siguiente snapshot.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual, ejecutó la siembra y tiene el contexto de la cohorte y del selector de retirada.",
+    "reason": "La issue ya está asignada a esta persona y ejecutó la siembra que requiere corrección y verificación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6859.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859#issuecomment-4911140355",
-    "reviewedAt": "2026-07-18T05:49:49.075Z",
+    "reviewedAt": "2026-07-18T05:57:40.831Z",
     "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }
