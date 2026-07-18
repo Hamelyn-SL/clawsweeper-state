@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-18T01:04:39.143Z",
+  "generatedAt": "2026-07-18T07:13:07.394Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 133
+    "openItemsSeen": 135
   },
   "counts": {
-    "itemRecords": 121,
+    "itemRecords": 131,
     "closedRecords": 447,
-    "missingOpen": 12,
+    "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 11,
+    "missingRecentOpen": 3,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,149 +39,6 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7686,
-        "kind": "pull_request",
-        "title": "fix: harden marketplace price validation recovery",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T06:53:44Z",
-        "updatedAt": "2026-07-17T10:16:23Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7689,
-        "kind": "issue",
-        "title": "No transicionan estados",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:supply",
-          "priority:p1",
-          "reporter:arineligrigore",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:08:40Z",
-        "updatedAt": "2026-07-17T07:38:34Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7692,
-        "kind": "pull_request",
-        "title": "fix: recover MRW pending state transitions",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:37:35Z",
-        "updatedAt": "2026-07-17T08:01:32Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7693,
-        "kind": "issue",
-        "title": "Fnac retry loop keeps updatePipeline failures alive after fix closure",
-        "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:37:46Z",
-        "updatedAt": "2026-07-17T07:49:36Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7694,
-        "kind": "issue",
-        "title": "Etiqueta Celeritas ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:supply",
-          "priority:p3",
-          "reporter:arineligrigore",
-          "triage:blocked"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:43:44Z",
-        "updatedAt": "2026-07-17T08:03:49Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7695,
-        "kind": "issue",
-        "title": "TodoColeccion empty UPLOADING_ERROR keeps recurring after reconciliation fix",
-        "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:47:14Z",
-        "updatedAt": "2026-07-17T07:57:03Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7699,
-        "kind": "issue",
-        "title": "[TEST agente P0] Picking V3: fallo simulado en modo skypod-only para probar autoasignación",
-        "labels": [
-          "bug",
-          "app:admin",
-          "priority:p0",
-          "triage:no-change"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T09:19:02Z",
-        "updatedAt": "2026-07-17T13:01:21Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7702,
-        "kind": "issue",
-        "title": "feat: migrate rotate-flash-offers sampling to bigquery source",
-        "labels": [
-          "priority:p1",
-          "app:infrastructure",
-          "feature",
-          "P1",
-          "reporter:AlexDiaz-Hamelyn"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T09:42:19Z",
-        "updatedAt": "2026-07-17T12:50:11Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7706,
-        "kind": "pull_request",
-        "title": "feat: add product page d ab test variant",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T10:56:42Z",
-        "updatedAt": "2026-07-17T12:02:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7710,
-        "kind": "pull_request",
-        "title": "feat: sample flash offers from bigquery instead of mongo",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T12:31:12Z",
-        "updatedAt": "2026-07-17T12:45:38Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7711,
         "kind": "pull_request",
         "title": "Deploy to Prod",
@@ -191,6 +48,33 @@
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T13:31:50Z",
         "updatedAt": "2026-07-17T13:36:17Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7712,
+        "kind": "issue",
+        "title": "Amazon ES price updates send conflicting purchasable_offer patches",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-18T06:32:38Z",
+        "updatedAt": "2026-07-18T06:54:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7713,
+        "kind": "pull_request",
+        "title": "fix: avoid conflicting amazon price patches",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-18T06:43:38Z",
+        "updatedAt": "2026-07-18T06:57:50Z",
         "missingReason": "recently_created"
       }
     ],
@@ -216,149 +100,6 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 7686,
-        "kind": "pull_request",
-        "title": "fix: harden marketplace price validation recovery",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T06:53:44Z",
-        "updatedAt": "2026-07-17T10:16:23Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7689,
-        "kind": "issue",
-        "title": "No transicionan estados",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:supply",
-          "priority:p1",
-          "reporter:arineligrigore",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:08:40Z",
-        "updatedAt": "2026-07-17T07:38:34Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7692,
-        "kind": "pull_request",
-        "title": "fix: recover MRW pending state transitions",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:37:35Z",
-        "updatedAt": "2026-07-17T08:01:32Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7693,
-        "kind": "issue",
-        "title": "Fnac retry loop keeps updatePipeline failures alive after fix closure",
-        "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:37:46Z",
-        "updatedAt": "2026-07-17T07:49:36Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7694,
-        "kind": "issue",
-        "title": "Etiqueta Celeritas ",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:supply",
-          "priority:p3",
-          "reporter:arineligrigore",
-          "triage:blocked"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:43:44Z",
-        "updatedAt": "2026-07-17T08:03:49Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7695,
-        "kind": "issue",
-        "title": "TodoColeccion empty UPLOADING_ERROR keeps recurring after reconciliation fix",
-        "labels": [
-          "bug",
-          "priority:p2",
-          "app:marketplace",
-          "triage:done"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T07:47:14Z",
-        "updatedAt": "2026-07-17T07:57:03Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7699,
-        "kind": "issue",
-        "title": "[TEST agente P0] Picking V3: fallo simulado en modo skypod-only para probar autoasignación",
-        "labels": [
-          "bug",
-          "app:admin",
-          "priority:p0",
-          "triage:no-change"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T09:19:02Z",
-        "updatedAt": "2026-07-17T13:01:21Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7702,
-        "kind": "issue",
-        "title": "feat: migrate rotate-flash-offers sampling to bigquery source",
-        "labels": [
-          "priority:p1",
-          "app:infrastructure",
-          "feature",
-          "P1",
-          "reporter:AlexDiaz-Hamelyn"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T09:42:19Z",
-        "updatedAt": "2026-07-17T12:50:11Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7706,
-        "kind": "pull_request",
-        "title": "feat: add product page d ab test variant",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T10:56:42Z",
-        "updatedAt": "2026-07-17T12:02:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7710,
-        "kind": "pull_request",
-        "title": "feat: sample flash offers from bigquery instead of mongo",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-17T12:31:12Z",
-        "updatedAt": "2026-07-17T12:45:38Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7711,
         "kind": "pull_request",
         "title": "Deploy to Prod",
@@ -368,6 +109,33 @@
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T13:31:50Z",
         "updatedAt": "2026-07-17T13:36:17Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7712,
+        "kind": "issue",
+        "title": "Amazon ES price updates send conflicting purchasable_offer patches",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:pr-opened"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-18T06:32:38Z",
+        "updatedAt": "2026-07-18T06:54:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7713,
+        "kind": "pull_request",
+        "title": "fix: avoid conflicting amazon price patches",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-18T06:43:38Z",
+        "updatedAt": "2026-07-18T06:57:50Z",
         "missingReason": "recently_created"
       }
     ],
