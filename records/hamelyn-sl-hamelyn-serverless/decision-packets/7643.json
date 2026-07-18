@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T12:51:54.055Z",
-  "updatedAt": "2026-07-16T12:06:40Z",
+  "generatedAt": "2026-07-18T04:04:31.370Z",
+  "updatedAt": "2026-07-17T11:42:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,49 @@
       "priority:p1",
       "reporter:jesus",
       "feature",
-      "triage:needs-info",
-      "P2",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T10:37:08Z",
-    "updatedAt": "2026-07-16T12:06:40Z"
+    "updatedAt": "2026-07-17T11:42:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La variante D debe compararse con la ficha B actual y qué mecanismo de asignación, reparto de tráfico, duración y métrica primaria se aprobarán para el experimento?",
-  "rationale": "El diseño ya define la presentación, pero estas decisiones determinan la validez estadística, el coste operativo y el alcance técnico de la activación.",
+  "question": "¿Se aprueba ejecutar el experimento con B como control, reparto 50/50, conversión a compra como métrica primaria y una ventana temporal cerrada definida por Ecommerce?",
+  "rationale": "La implementación puede integrarse apagada por defecto, pero el reparto, la métrica de éxito y la duración determinan la configuración, el coste y la validez del experimento y no están aprobados en la discusión.",
   "options": [
     {
-      "title": "B frente a D optimizado",
-      "body": "Usar B como control y reducir las evaluaciones remotas conserva la línea base ganadora y limita coste y alcance.",
+      "title": "Aprobar B/D 50/50",
+      "body": "Usar B como control y D como tratamiento, medir conversión a compra y fijar una fecha de cierre antes de activar el flag.",
       "recommended": true
     },
     {
-      "title": "A histórica frente a D",
-      "body": "Recuperar A ampliaría el trabajo y mezclaría diferencias históricas con el efecto específico del nuevo diseño.",
+      "title": "Definir otro contrato",
+      "body": "Mantener D apagada mientras Ecommerce documenta otro reparto, métrica primaria o duración.",
       "recommended": false
     },
     {
-      "title": "Publicar D sin experimento",
-      "body": "Activar D directamente evita el coste del flag, pero renuncia a medir causalmente su impacto frente a la ficha vigente.",
+      "title": "Pausar el experimento",
+      "body": "No activar la variante D hasta disponer de una hipótesis y un plan de medición acordados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "B frente a D optimizado",
-    "body": "Usar B como control y reducir las evaluaciones remotas conserva la línea base ganadora y limita coste y alcance.",
+    "title": "Aprobar B/D 50/50",
+    "body": "Usar B como control y D como tratamiento, medir conversión a compra y fijar una fecha de cierre antes de activar el flag.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Dispone del historial más completo de diseño, activación, medición y retirada de los experimentos anteriores de la ficha.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada y responsable de la implementación candidata, por lo que es el mejor punto de coordinación con Ecommerce para cerrar el contrato de lanzamiento.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7643.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7643#issuecomment-4991361071",
-    "reviewedAt": "2026-07-16T12:51:54.055Z",
-    "mainSha": "55416ee8b319e79052441cf60e5c2e193e546f6f"
+    "reviewedAt": "2026-07-18T04:04:31.370Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }
