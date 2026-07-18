@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:05:28.989Z",
-  "updatedAt": "2026-07-17T08:39:38Z",
+  "generatedAt": "2026-07-18T05:52:14.641Z",
+  "updatedAt": "2026-07-18T04:27:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,53 +11,47 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🥉 bronze",
-      "status: ⏳ waiting on author",
       "P2",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-16T08:41:26Z",
-    "updatedAt": "2026-07-17T08:39:38Z",
+    "updatedAt": "2026-07-18T04:27:15Z",
     "headSha": "6b514627ecce42245f02d0b9b6c65a9f49265ea5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La ejecución semanal debe limitarse a familias explícitas o debe existir también una familia catch-all `other` para cualquier major no clasificada?",
-  "rationale": "La elección determina el radio de cambio y revisión permanente de la automatización; el código no puede decidir de forma segura si agrupar dependencias sin relación es una política operativa aceptable.",
+  "question": "¿Debe la familia catch-all `other` quedar excluida del schedule semanal y permitirse únicamente mediante `workflow_dispatch` explícito?",
+  "rationale": "La elección determina si la automatización puede reunir cada semana migraciones major no relacionadas; ninguna prueba aislada puede decidir el nivel de riesgo operativo que el equipo acepta.",
   "options": [
     {
-      "title": "Solo familias explícitas",
-      "body": "Excluir `other` del schedule y añadir nuevas familias compatibles de forma deliberada cuando aparezcan dependencias sin clasificar.",
+      "title": "Solo ejecución manual de `other`",
+      "body": "El schedule procesaría únicamente familias curadas y `other` requeriría un dispatch explícito con revisión específica.",
       "recommended": true
     },
     {
-      "title": "Catch-all solo manual",
-      "body": "Mantener `other`, pero permitirla únicamente mediante `workflow_dispatch` explícito y con revisión operativa previa.",
-      "recommended": false
-    },
-    {
-      "title": "Catch-all semanal",
-      "body": "Aceptar conscientemente una PR periódica amplia con majors no relacionadas y asumir su mayor coste de prueba y reversión.",
+      "title": "Programar también `other`",
+      "body": "El schedule generaría automáticamente una PR catch-all amplia, aceptando un coste mayor de revisión, prueba y reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo familias explícitas",
-    "body": "Excluir `other` del schedule y añadir nuevas familias compatibles de forma deliberada cuando aparezcan dependencias sin clasificar.",
+    "title": "Solo ejecución manual de `other`",
+    "body": "El schedule procesaría únicamente familias curadas y `other` requeriría un dispatch explícito con revisión específica.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el propietario histórico más claro de los workflows actuales y ha llevado las PRs fusionadas que definen este contrato de automatización.",
+    "reason": "Es el propietario histórico del flujo de dependencias y la persona que mantiene la implementación vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632#issuecomment-4990693709",
-    "reviewedAt": "2026-07-18T04:05:28.989Z",
+    "reviewedAt": "2026-07-18T05:52:14.641Z",
     "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }
