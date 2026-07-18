@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T09:19:06.671Z",
+  "generatedAt": "2026-07-18T09:25:44.470Z",
   "updatedAt": "2026-07-18T07:49:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,11 +13,7 @@
       "bug",
       "priority:p2",
       "app:marketplace",
-      "triage:done",
-      "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "triage:done"
     ],
     "createdAt": "2026-07-18T07:37:33Z",
     "updatedAt": "2026-07-18T07:49:00Z"
@@ -25,38 +21,37 @@
   "lane": "manual_review",
   "priority": "P2",
   "question": "¿Debe recuperarse la cohorte histórica Fnac mediante una operación puntual auditada o mediante una versión acotada de la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7686?",
-  "rationale": "El código preventivo ya funciona y no hay señal CDC de regresión nueva; la decisión pendiente afecta datos productivos y la alternativa en código está conflictiva y abarca varios marketplaces, por lo que no es seguro elegir automáticamente la vía de recuperación.",
+  "rationale": "La elección afecta datos productivos y la alternativa en código está conflictiva y mezcla varias superficies; no es seguro seleccionar automáticamente la vía ni su alcance.",
   "options": [
     {
       "title": "Recuperación operativa acotada",
-      "body": "Ejecutar dry-run, revisar al menos tres muestras y aplicar la mutación canónica únicamente a los candidatos Fnac que sigan siendo publicables.",
+      "body": "Ejecutar un dry-run con count, filtro literal y tres muestras, y aplicar la mutación canónica únicamente a los candidatos Fnac seguros.",
       "recommended": true
     },
     {
       "title": "Reducir y actualizar la PR",
-      "body": "Extraer de la PR candidata solo la reconciliación Fnac, resolver el conflicto y exigir prueba de upgrade y comportamiento productivo antes de fusionar.",
+      "body": "Extraer de la PR candidata solo la reconciliación Fnac, resolver sus conflictos y exigir prueba real antes de fusionar.",
       "recommended": false
     },
     {
       "title": "Aterrizar la PR amplia",
-      "body": "Actualizar la PR completa y asumir una revisión coordinada de todas las superficies de precios, feeds y persistencia que modifica.",
+      "body": "Actualizar la PR completa y asumir una revisión coordinada de todas las rutas de precios, persistencia y feeds que modifica.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Recuperación operativa acotada",
-    "body": "Ejecutar dry-run, revisar al menos tres muestras y aplicar la mutación canónica únicamente a los candidatos Fnac que sigan siendo publicables.",
+    "body": "Ejecutar un dry-run con count, filtro literal y tres muestras, y aplicar la mutación canónica únicamente a los candidatos Fnac seguros.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el revisor que ya aprobó la PR candidata y el historial reciente lo sitúa en las mutaciones y recuperaciones de marketplaces más próximas a esta decisión.",
+    "reason": "Ya aprobó la implementación candidata y su historial reciente cubre las recuperaciones y mutaciones marketplace más próximas a esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7714.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7714#issuecomment-5010473513",
-    "reviewedAt": "2026-07-18T09:19:06.671Z",
+    "reviewedAt": "2026-07-18T09:25:44.470Z",
     "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }
