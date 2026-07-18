@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:48:57.595Z",
-  "updatedAt": "2026-07-17T06:30:09Z",
+  "generatedAt": "2026-07-18T03:54:40.389Z",
+  "updatedAt": "2026-07-17T13:28:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "conflicts:needs-human",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "conflicts:needs-human",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-13T12:23:30Z",
-    "updatedAt": "2026-07-17T06:30:09Z",
-    "headSha": "b5ece9fa691dc91793785090131c28f682051913"
+    "updatedAt": "2026-07-17T13:28:05Z",
+    "headSha": "347d94b44cc88adeddfe476fd5e91fdaeb0abf96"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta omitir `lastmod`, restock y contraste del árbol de categorías en esta entrega, y qué ventana de compatibilidad debe mantenerse para las URLs legacy?",
-  "rationale": "La especificación de Victor incluye señales de datos todavía inexistentes y la PR cambia un contrato público consumido por crawlers; no corresponde a la automatización decidir qué requisitos dejan de ser bloqueantes ni cuándo retirar las rutas anteriores.",
+  "question": "¿Debe esta PR cerrar la issue canónica sin implementar todavía `lastmod`, la clasificación de agotados por restock y la validación del árbol real de categorías?",
+  "rationale": "La especificación de producto del 16 de julio de 2026 incluye esos requisitos, pero el head los difiere por falta de señales de datos; la automatización no puede decidir si representan alcance bloqueante o una entrega posterior aceptada.",
   "options": [
     {
-      "title": "Transición con seguimientos",
-      "body": "Mantener compatibilidad, publicar v2 primero y crear seguimientos canónicos aprobados para los requisitos de datos restantes.",
+      "title": "Separar los requisitos pendientes",
+      "body": "Recomendado: mantener esta PR centrada en la arquitectura v2, retirar el cierre automático de la issue canónica y dejar `lastmod`, restock y árbol real en seguimientos enlazados con responsables claros.",
       "recommended": true
     },
     {
-      "title": "Entrega completa",
-      "body": "Mantener la PR abierta hasta implementar todas las señales y validar los seis segmentos después del despliegue.",
+      "title": "Exigir el contrato completo",
+      "body": "Bloquear el merge hasta implementar las señales de `lastmod`, la proyección de restock y la validación completa de categorías.",
       "recommended": false
     },
     {
-      "title": "Aceptar alcance reducido",
-      "body": "Autorizar explícitamente el corte directo y las omisiones temporales, asumiendo el riesgo SEO y operativo documentado.",
+      "title": "Aceptar la entrega parcial",
+      "body": "Fusionar con aprobación explícita del owner de producto, aceptando que la issue se cierre con requisitos aún no entregados y documentando la deuda resultante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transición con seguimientos",
-    "body": "Mantener compatibilidad, publicar v2 primero y crear seguimientos canónicos aprobados para los requisitos de datos restantes.",
+    "title": "Separar los requisitos pendientes",
+    "body": "Recomendado: mantener esta PR centrada en la arquitectura v2, retirar el cierre automático de la issue canónica y dejar `lastmod`, restock y árbol real en seguimientos enlazados con responsables claros.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Es el canal visible de la especificación de Victor y puede confirmar el alcance aceptado y la secuencia de migración esperada.",
+    "reason": "Es el enlace disponible que publicó y actualizó el contrato detallado de Victor en la issue canónica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
-    "reviewedAt": "2026-07-17T06:48:57.595Z",
-    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+    "reviewedAt": "2026-07-18T03:54:40.389Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
   }
 }
