@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-18T07:13:07.394Z",
+  "generatedAt": "2026-07-18T12:56:20.624Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 135
+    "openItemsSeen": 138
   },
   "counts": {
-    "itemRecords": 131,
+    "itemRecords": 136,
     "closedRecords": 447,
-    "missingOpen": 4,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 3,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -49,33 +49,6 @@
         "createdAt": "2026-07-17T13:31:50Z",
         "updatedAt": "2026-07-17T13:36:17Z",
         "missingReason": "recently_created"
-      },
-      {
-        "number": 7712,
-        "kind": "issue",
-        "title": "Amazon ES price updates send conflicting purchasable_offer patches",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-18T06:32:38Z",
-        "updatedAt": "2026-07-18T06:54:09Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7713,
-        "kind": "pull_request",
-        "title": "fix: avoid conflicting amazon price patches",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-18T06:43:38Z",
-        "updatedAt": "2026-07-18T06:57:50Z",
-        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -109,33 +82,6 @@
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-17T13:31:50Z",
         "updatedAt": "2026-07-17T13:36:17Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7712,
-        "kind": "issue",
-        "title": "Amazon ES price updates send conflicting purchasable_offer patches",
-        "labels": [
-          "bug",
-          "priority:p1",
-          "app:marketplace",
-          "triage:pr-opened"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-18T06:32:38Z",
-        "updatedAt": "2026-07-18T06:54:09Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7713,
-        "kind": "pull_request",
-        "title": "fix: avoid conflicting amazon price patches",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-18T06:43:38Z",
-        "updatedAt": "2026-07-18T06:57:50Z",
         "missingReason": "recently_created"
       }
     ],
