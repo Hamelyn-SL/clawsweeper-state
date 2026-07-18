@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-18T09:19:06.671Z",
+  "updatedAt": "2026-07-18T07:49:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7714,
+    "title": "Fnac Price undefined batch contamination regresses after issue closure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7714",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-18T07:37:33Z",
+    "updatedAt": "2026-07-18T07:49:00Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Debe recuperarse la cohorte histórica Fnac mediante una operación puntual auditada o mediante una versión acotada de la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7686?",
+  "rationale": "El código preventivo ya funciona y no hay señal CDC de regresión nueva; la decisión pendiente afecta datos productivos y la alternativa en código está conflictiva y abarca varios marketplaces, por lo que no es seguro elegir automáticamente la vía de recuperación.",
+  "options": [
+    {
+      "title": "Recuperación operativa acotada",
+      "body": "Ejecutar dry-run, revisar al menos tres muestras y aplicar la mutación canónica únicamente a los candidatos Fnac que sigan siendo publicables.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir y actualizar la PR",
+      "body": "Extraer de la PR candidata solo la reconciliación Fnac, resolver el conflicto y exigir prueba de upgrade y comportamiento productivo antes de fusionar.",
+      "recommended": false
+    },
+    {
+      "title": "Aterrizar la PR amplia",
+      "body": "Actualizar la PR completa y asumir una revisión coordinada de todas las superficies de precios, feeds y persistencia que modifica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Recuperación operativa acotada",
+    "body": "Ejecutar dry-run, revisar al menos tres muestras y aplicar la mutación canónica únicamente a los candidatos Fnac que sigan siendo publicables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor que ya aprobó la PR candidata y el historial reciente lo sitúa en las mutaciones y recuperaciones de marketplaces más próximas a esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7714.md",
+    "reviewedAt": "2026-07-18T09:19:06.671Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+  }
+}
