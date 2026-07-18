@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-18T04:22:06.325Z",
+  "updatedAt": "2026-07-17T07:49:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7693,
+    "title": "Fnac retry loop keeps updatePipeline failures alive after fix closure",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-17T07:37:46Z",
+    "updatedAt": "2026-07-17T07:49:36Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué transición canónica debe aplicarse a cada documento histórico según el estado actual de su batch u oferta en Fnac?",
+  "rationale": "El error almacenado no permite determinar por sí solo si la oferta está activa, ausente, rechazada o todavía pendiente; esa política debe acordarse antes de una escritura masiva.",
+  "options": [
+    {
+      "title": "Reconciliar por estado remoto",
+      "body": "Consultar Fnac por `batchId` u oferta y aplicar una transición explícita a `ACTIVE`, `INACTIVE` o revisión según el resultado real.",
+      "recommended": true
+    },
+    {
+      "title": "Limpiar solo el error",
+      "body": "Eliminar los metadatos históricos sin cambiar el estado funcional, reduciendo el riesgo inmediato pero pudiendo conservar incoherencias.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar y excluir",
+      "body": "Mantener la cohorte sin cambios y excluirla de alertas, aceptando deuda operativa y menor calidad de observabilidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar por estado remoto",
+    "body": "Consultar Fnac por `batchId` u oferta y aplicar una transición explícita a `ACTIVE`, `INACTIVE` o revisión según el resultado real.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es quien mejor conecta la causa original, la corrección vigente y la evidencia reciente de la integración Fnac.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
+    "reviewedAt": "2026-07-18T04:22:06.325Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+  }
+}

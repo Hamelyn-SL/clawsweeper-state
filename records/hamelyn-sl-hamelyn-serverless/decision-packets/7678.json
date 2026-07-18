@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-18T04:23:12.367Z",
+  "updatedAt": "2026-07-17T13:09:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7678,
+    "title": "chore: update service-sdks major dependencies",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7678",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-17T06:20:03Z",
+    "updatedAt": "2026-07-17T13:09:30Z",
+    "headSha": "7d65ebe03de0e225dbd40bda8cdaa6f63c2693eb"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe esta PR conservar Stripe 22 y Sentry React Native 8 hasta aportar pruebas completas de runtime y upgrade, o deben separarse para que el resto de la familia pueda avanzar?",
+  "rationale": "Los checks estáticos no resuelven el cambio de comportamiento de pagos ni la compatibilidad entre el JavaScript actualizado y los binarios nativos ya instalados.",
+  "options": [
+    {
+      "title": "Exigir pruebas en esta PR",
+      "body": "Mantener ambos bumps y requerir checkout con webhook en staging, nueva build nativa de Supply y compatibilidad OTA explícita antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Separar los majors sensibles",
+      "body": "Retirar temporalmente Stripe y Sentry React Native y tratarlos en PRs dedicadas con validación de runtime específica.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir pruebas en esta PR",
+    "body": "Mantener ambos bumps y requerir checkout con webhook en staging, nueva build nativa de Supply y compatibilidad OTA explícita antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ya ha delimitado en la revisión los dos riesgos de runtime y las condiciones técnicas necesarias para aceptarlos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7678.md",
+    "reviewedAt": "2026-07-18T04:23:12.367Z",
+    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+  }
+}
