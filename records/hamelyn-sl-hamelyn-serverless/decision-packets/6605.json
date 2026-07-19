@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:36:20.685Z",
-  "updatedAt": "2026-07-14T21:42:39Z",
+  "generatedAt": "2026-07-19T17:45:57.585Z",
+  "updatedAt": "2026-07-19T13:44:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,46 +16,50 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T10:23:55Z",
-    "updatedAt": "2026-07-14T21:42:39Z"
+    "updatedAt": "2026-07-19T13:44:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué conjunto interno de pedidos y qué momento de corte deben ser la fuente canónica del correo diario, incluidos cancelaciones posteriores, etiquetas mock y reintentos?",
-  "rationale": "El código ofrece las piezas técnicas, pero la issue y la discusión no establecen las reglas operativas que determinan qué etiquetas es seguro enviar y cuándo.",
+  "question": "¿Qué datos internos definen exactamente el lote diario Meli, qué cancelaciones se excluyen y qué garantía de reintento o no duplicación debe tener el correo?",
+  "rationale": "El código aporta generación de etiquetas y SMTP, pero la solicitud depende de reglas operativas que no están representadas por el estado actual de los pedidos.",
   "options": [
     {
       "title": "Definir lote interno auditable",
-      "body": "Usar pedidos internos con etiqueta real, estado de cancelación reconciliado, corte horario e idempotencia por día antes de crear la tarea programada.",
+      "body": "Usar pedidos Meli y etiquetas persistidas con criterios, corte horario e idempotencia aprobados antes de implementar el cron.",
       "recommended": true
     },
     {
       "title": "Mantener el proceso manual",
-      "body": "No automatizar hasta que Mercado Libre ofrezca una fuente estable que cubra el criterio operativo requerido.",
+      "body": "No automatizar mientras la fuente de verdad siga siendo la selección visual del portal externo.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar el origen operativo",
+      "body": "Acordar una exportación o API de Mercado Libre que aporte explícitamente el conjunto diario y las cancelaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Definir lote interno auditable",
-    "body": "Usar pedidos internos con etiqueta real, estado de cancelación reconciliado, corte horario e idempotencia por día antes de crear la tarea programada.",
+    "body": "Usar pedidos Meli y etiquetas persistidas con criterios, corte horario e idempotencia aprobados antes de implementar el cron.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su comentario en la discusión delimita la restricción de producto y su historial reciente está conectado al flujo de Mercado Libre.",
+    "reason": "Su discusión previa y trabajo reciente en el flujo Meli le conectan con la decisión sobre la fuente interna y el comportamiento operativo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6605.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6605#issuecomment-4910070807",
-    "reviewedAt": "2026-07-19T13:36:20.685Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:45:57.585Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
