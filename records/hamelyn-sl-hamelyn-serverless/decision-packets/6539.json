@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:29:16.036Z",
-  "updatedAt": "2026-07-17T07:06:29Z",
+  "generatedAt": "2026-07-19T17:27:54.305Z",
+  "updatedAt": "2026-07-19T13:30:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,50 @@
       "app:supply",
       "priority:p2",
       "feature",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
-      "P2",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-07-17T07:06:29Z"
+    "updatedAt": "2026-07-19T13:30:44Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el workflow confirmar el bump de versión antes de lanzar EAS o solo tras comprobar que la publicación en stores se ha completado correctamente?",
-  "rationale": "La automatización propuesta mezcla el bump visible de versión con una operación externa de build/submit; la issue de release relacionada advierte que adelantar el bump puede anunciar una versión que todavía no existe en las stores.",
+  "question": "¿Debe el workflow poder crear commits de bump y enviar releases desde GitHub, o debe limitarse a builds/submits controlados por una política distinta?",
+  "rationale": "La decisión define quién puede iniciar publicación en stores y si la automatización puede escribir en ramas, un límite operativo que el código no puede decidir por sí solo.",
   "options": [
     {
-      "title": "Confirmar el bump tras la publicación",
-      "body": "Hacer que el carril de release deje el bump integrado únicamente cuando los binarios enviados estén efectivamente disponibles en las stores.",
+      "title": "Aprobar una política de release acotada",
+      "body": "Definir permisos, rama autorizada y beta como primer destino; después corregir y probar el PR existente.",
       "recommended": true
     },
     {
-      "title": "Mantener el bump previo en rama de release",
-      "body": "Permitir el commit antes del submit, aceptando que la rama no debe entrar en `dev` hasta confirmar la publicación.",
+      "title": "Separar bump y despliegue",
+      "body": "Mantener el workflow de EAS sin push y dejar el versionado en un proceso de release independiente.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el proceso manual",
+      "body": "Conservar EAS manual hasta que exista una política de operación y custodia de credenciales aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el bump tras la publicación",
-    "body": "Hacer que el carril de release deje el bump integrado únicamente cuando los binarios enviados estén efectivamente disponibles en las stores.",
+    "title": "Aprobar una política de release acotada",
+    "body": "Definir permisos, rama autorizada y beta como primer destino; después corregir y probar el PR existente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La coordinación de la release relacionada y la revisión solicitada lo sitúan como el mejor punto de decisión disponible.",
-    "confidence": "medium"
+    "reason": "Su historial reciente de bumps de versión y su solicitud de revisión en el PR lo sitúan cerca de la decisión operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
-    "reviewedAt": "2026-07-19T13:29:16.036Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:27:54.305Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }

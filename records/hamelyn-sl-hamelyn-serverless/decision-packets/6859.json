@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T05:57:40.831Z",
-  "updatedAt": "2026-07-18T04:27:01Z",
+  "generatedAt": "2026-07-19T17:33:59.767Z",
+  "updatedAt": "2026-07-19T13:24:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-04T13:53:13Z",
-    "updatedAt": "2026-07-18T04:27:01Z"
+    "updatedAt": "2026-07-19T13:24:36Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se autoriza la corrección masiva de producción de los 670 `marketplaceId`, con dry-run previo, reencolado de los 543 errores y verificación posterior del snapshot?",
-  "rationale": "La acción inmediata modifica datos de producción en masa y la política del repositorio exige un dry-run y confirmación humana; una revisión de código no puede autorizar ni demostrar por sí sola el resultado operativo.",
+  "question": "¿Se autoriza la mutación controlada de las 670 filas sembradas para normalizar `marketplaceId` con `MLM` y reencolar las retiradas fallidas?",
+  "rationale": "La corrección inmediata toca datos de producción y requiere revisar la cohorte, el dry-run y los resultados remotos antes de mutar estados de retirada.",
   "options": [
     {
-      "title": "Autorizar corrección controlada",
-      "body": "Revisar el dry-run, normalizar los IDs, reencolar la cohorte y mantener la issue abierta hasta confirmar el drenaje y el siguiente snapshot.",
+      "title": "Autorizar dry-run y reencolado",
+      "body": "Validar la cohorte, anteponer `MLM` solo a IDs numéricos confirmados y reencolar los errores antes de medir el drenaje.",
       "recommended": true
     },
     {
-      "title": "Mantener solo monitorización",
-      "body": "No modificar aún la cohorte y conservar la issue abierta, asumiendo que los listings potencialmente comprables seguirán pendientes de remediación.",
+      "title": "Mantener la cola detenida",
+      "body": "No mutar datos hasta disponer de una muestra adicional que confirme la correspondencia entre cada ID y su listing remoto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar corrección controlada",
-    "body": "Revisar el dry-run, normalizar los IDs, reencolar la cohorte y mantener la issue abierta hasta confirmar el drenaje y el siguiente snapshot.",
+    "title": "Autorizar dry-run y reencolado",
+    "body": "Validar la cohorte, anteponer `MLM` solo a IDs numéricos confirmados y reencolar los errores antes de medir el drenaje.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La issue ya está asignada a esta persona y ejecutó la siembra que requiere corrección y verificación.",
+    "reason": "Está asignado a esta incidencia y documentó la cohorte concreta, el fallo de formato y la operación pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6859.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6859#issuecomment-4911140355",
-    "reviewedAt": "2026-07-18T05:57:40.831Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T17:33:59.767Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }
