@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:55:07.680Z",
-  "updatedAt": "2026-07-14T21:35:08Z",
+  "generatedAt": "2026-07-19T16:30:56.667Z",
+  "updatedAt": "2026-07-19T16:26:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "app:infrastructure",
       "feature",
       "triage:done",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
-    "updatedAt": "2026-07-14T21:35:08Z"
+    "updatedAt": "2026-07-19T16:26:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención debe regir los productos `aiGenerated` sin actividad ni disponibilidad antes de autorizar una poda irreversible del catálogo?",
-  "rationale": "El código confirma que faltan la poda y la reconciliación, pero no determina qué referencias históricas, proveedores o ventana de recuperación deben conservarse.",
+  "question": "¿Qué contrato de retención debe gobernar los productos generados sin actividad ni disponibilidad, y qué referencias históricas deben impedir su eliminación?",
+  "rationale": "El código permite tanto conservar metadatos como borrar documentos, pero no puede decidir por sí solo el valor comercial, legal e histórico de cada referencia.",
   "options": [
     {
-      "title": "Aprobar un plan por fases",
-      "body": "Definir exclusiones y recuperación, ejecutar primero la poda reversible y permitir una purga solo después de un dry-run referencial completo.",
+      "title": "Poda por fases con contrato aprobado",
+      "body": "Definir exclusiones y ventana de recuperación, cortar los nuevos `upsert` sin señal y validar primero un `$unset` reversible antes de cualquier purga.",
       "recommended": true
     },
     {
-      "title": "Conservar el catálogo completo",
-      "body": "Mantener los documentos y limitarse a optimizar exportes y consultas mientras se recopilan más señales comerciales.",
+      "title": "Conservar catálogo completo",
+      "body": "Mantener los documentos y limitar el trabajo a reducir campos del export y optimizar lecturas, aceptando el coste de almacenamiento.",
       "recommended": false
     },
     {
-      "title": "Purgar con un umbral mínimo",
-      "body": "Autorizar una purga limitada de candidatos sin referencias verificadas, aceptando una conservación más agresiva.",
+      "title": "Purga directa con exclusiones mínimas",
+      "body": "Eliminar candidatos tras los anti-joins actuales, asumiendo el riesgo de omitir referencias o necesidades históricas no inventariadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un plan por fases",
-    "body": "Definir exclusiones y recuperación, ejecutar primero la poda reversible y permitir una purga solo después de un dry-run referencial completo.",
+    "title": "Poda por fases con contrato aprobado",
+    "body": "Definir exclusiones y ventana de recuperación, cortar los nuevos `upsert` sin señal y validar primero un `$unset` reversible antes de cualquier purga.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La radiografía de la issue y las rutas actuales de Argos y materialización convergen en este flujo de catálogo.",
+    "person": "PabloMoran34",
+    "reason": "El productor Argos y la materialización que condicionan una poda segura aparecen en su historial de área.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-19T12:55:07.680Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:30:56.667Z",
+    "mainSha": "df9d41a6bd442a1dd046b2592aad65025f23b7d5"
   }
 }
