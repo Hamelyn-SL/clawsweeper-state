@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T12:30:55.555Z",
+  "updatedAt": "2026-07-19T12:27:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7721,
+    "title": "eBay ES reconciliation marks live on-hold listings as DB_ONLY",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "triage:running"
+    ],
+    "createdAt": "2026-07-19T12:20:01Z",
+    "updatedAt": "2026-07-19T12:27:26Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una oferta `PUBLISHED`/`ACTIVE` con `listingOnHold=true` conservarse como activa, recibir un estado de observabilidad reintentable distinto, o seguir siendo `DB_ONLY` tras una verificación explícita?",
+  "rationale": "El código permite consultar la oferta, pero la incidencia propone alternativas con consecuencias distintas para los reintentos, los dashboards y las acciones operativas de retirada o republicación.",
+  "options": [
+    {
+      "title": "Estado reintentable específico",
+      "body": "Conservar el listing vivo fuera de `DB_ONLY` y registrar una clasificación diferenciada para que el siguiente ciclo lo vuelva a comprobar.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar activo sin error",
+      "body": "Tratar las ofertas vivas en espera como activas mientras la API confirme `PUBLISHED`/`ACTIVE`, reduciendo el ruido de reconciliación.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener DB_ONLY confirmado",
+      "body": "Seguir usando `DB_ONLY`, pero sólo después de verificar que la Inventory API no devuelve una oferta viva para el SKU.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Estado reintentable específico",
+    "body": "Conservar el listing vivo fuera de `DB_ONLY` y registrar una clasificación diferenciada para que el siguiente ciclo lo vuelva a comprobar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial del script y el reporte operativo sitúan a JavierHamelyn como la persona con más contexto inmediato sobre esta reconciliación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7721.md",
+    "reviewedAt": "2026-07-19T12:30:55.555Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}
