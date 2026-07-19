@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:32:58.198Z",
-  "updatedAt": "2026-07-14T21:42:59Z",
+  "generatedAt": "2026-07-19T17:04:41.618Z",
+  "updatedAt": "2026-07-19T13:44:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,45 +19,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-05-25T20:33:08Z",
-    "updatedAt": "2026-07-14T21:42:59Z"
+    "updatedAt": "2026-07-19T13:44:33Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe reactivarse ahora `ebay.create()` tras validar el aislamiento por SKU, o debe mantenerse pausado hasta investigar también los fallos de publicación de eBay?",
-  "rationale": "La decisión activa una operación que publica listings reales; el código ya contiene una mitigación parcial, pero no puede demostrar de forma estática que la reanudación sea operativamente segura.",
+  "question": "¿Debe seguir pausada la creación de listings de eBay hasta resolver la observabilidad de publicaciones fallidas, o se autoriza una reactivación controlada con prueba real?",
+  "rationale": "El código resuelve el precio ausente, pero decidir cuándo reactivar una integración que publica listings y qué señal operativa exigir requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Reactivar con prueba controlada",
-      "body": "Reactivar la fase de creación y verificar una ejecución limitada donde los SKUs sin precio queden aislados y los válidos lleguen a crear ofertas.",
+      "title": "Mantener la pausa",
+      "body": "Conservar `ebay.create()` desactivado hasta resolver o acotar el fallo de publicación tratado en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184.",
       "recommended": true
     },
     {
-      "title": "Mantener la pausa y documentarla",
-      "body": "Conservar `ebay.create()` desactivado hasta disponer de una decisión operativa que cubra también los fallos de publicación relacionados.",
+      "title": "Reactivar de forma controlada",
+      "body": "Reactivar create tras definir alertas o fallo visible para lotes sin publicaciones y adjuntar evidencia real redacted del primer lote.",
+      "recommended": false
+    },
+    {
+      "title": "Reactivar sin cambios operativos",
+      "body": "Aceptar el contrato actual de HTTP 200 con fallos parciales y reactivar únicamente la llamada de creación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reactivar con prueba controlada",
-    "body": "Reactivar la fase de creación y verificar una ejecución limitada donde los SKUs sin precio queden aislados y los válidos lleguen a crear ofertas.",
+    "title": "Mantener la pausa",
+    "body": "Conservar `ebay.create()` desactivado hasta resolver o acotar el fallo de publicación tratado en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra tanto la corrección por SKU como el estado actual del controlador de eBay.",
+    "reason": "La persona autora de la corrección fusionada es la mejor referencia histórica para evaluar la reactivación y su validación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046#issuecomment-4974262910",
-    "reviewedAt": "2026-07-19T13:32:58.198Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:04:41.618Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }

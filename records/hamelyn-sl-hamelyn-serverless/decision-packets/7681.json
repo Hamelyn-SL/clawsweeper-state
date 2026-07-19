@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:21:42.609Z",
-  "updatedAt": "2026-07-18T04:28:26Z",
+  "generatedAt": "2026-07-19T17:02:52.195Z",
+  "updatedAt": "2026-07-19T13:24:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-17T06:20:47Z",
-    "updatedAt": "2026-07-18T04:28:26Z",
+    "updatedAt": "2026-07-19T13:24:44Z",
     "headSha": "34fc9db6192070e9d5532da848fc072e8df32caa"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Qué matriz de navegadores debe preservar ecommerce antes de aceptar Swiper 14 en los carruseles de producción?",
-  "rationale": "El repositorio no declara ese contrato y el PR actualiza una dependencia de carruseles usada en seis superficies visibles sin cambios de adaptación; la compatibilidad esperada no puede inferirse de builds estáticos.",
+  "question": "¿Qué navegadores y dispositivos deben considerarse soportados antes de aceptar el salto de `swiper` 12 a 14?",
+  "rationale": "El repositorio no declara una matriz de soporte en la superficie revisada y el cambio puede afectar carruseles visibles para clientes.",
   "options": [
     {
-      "title": "Exigir compatibilidad con la matriz actual",
-      "body": "Definir y validar la matriz de navegadores vigente antes de fusionar Swiper 14; conservar la versión 12 si el major no la cumple.",
+      "title": "Exigir prueba de compatibilidad",
+      "body": "Validar el carrusel en el navegador mínimo acordado y actualizar la prueba con el head final antes de fusionar.",
       "recommended": true
     },
     {
-      "title": "Adoptar el rango de Swiper 14",
-      "body": "Aceptar explícitamente el rango de navegadores soportado por Swiper 14 y actualizar la documentación y la prueba de QA para reflejarlo.",
+      "title": "Aceptar el riesgo acotado",
+      "body": "Fusionar tras aceptar explícitamente que la actualización puede retirar compatibilidad no cubierta por los checks actuales.",
       "recommended": false
     },
     {
-      "title": "Separar la actualización de carruseles",
-      "body": "Fusionar únicamente las actualizaciones que no cambian el contrato de navegador y tratar Swiper 14 como una migración dedicada.",
+      "title": "Posponer Swiper",
+      "body": "Separar o retirar el salto de Swiper hasta disponer de una política de navegadores y una prueba reproducible.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir compatibilidad con la matriz actual",
-    "body": "Definir y validar la matriz de navegadores vigente antes de fusionar Swiper 14; conservar la versión 12 si el major no la cumple.",
+    "title": "Exigir prueba de compatibilidad",
+    "body": "Validar el carrusel en el navegador mínimo acordado y actualizar la prueba con el head final antes de fusionar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente en la resolución de dependencias y los manifiestos afectados le sitúa como la mejor persona para encauzar la decisión de compatibilidad.",
+    "reason": "Su historial reciente de fijaciones y actualizaciones de dependencias de ecommerce aporta la señal más directa para decidir la compatibilidad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7681#issuecomment-5000011833",
-    "reviewedAt": "2026-07-19T13:21:42.609Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:02:52.195Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }

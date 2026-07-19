@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:52:02.550Z",
-  "updatedAt": "2026-07-17T06:32:56Z",
+  "generatedAt": "2026-07-19T17:02:37.783Z",
+  "updatedAt": "2026-07-19T13:16:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,47 +10,46 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7684",
     "state": "open",
     "labels": [
-      "size/XXL"
+      "size/XXL",
+      "P2",
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-17T06:21:40Z",
-    "updatedAt": "2026-07-17T06:32:56Z",
-    "headSha": "fbbcb2e789ee7dd5d26b7474f0cf2c60a295b240"
+    "updatedAt": "2026-07-19T13:16:44Z",
+    "headSha": "88d828449a80a92270005c2e3b4ea4950cccc85c"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe esta familia residual continuar como una única PR de 77 bumps o dividirse antes de invertir en las adaptaciones y pruebas necesarias?",
-  "rationale": "La issue coordinadora exige familias compatibles y reversibles, mientras `other` mezcla pagos, HTTP, PDF, crons, routing, i18n y transferencias; el código no puede decidir qué nivel de acoplamiento y carga de validación acepta mantener el equipo.",
+  "question": "¿Se acepta esta familia de dependencias major tras actualizar la rama y revisar los flujos de alto impacto, o se divide para reducir el radio de compatibilidad?",
+  "rationale": "La evidencia descarta varios fallos concretos, pero decidir el riesgo aceptable de una actualización simultánea de múltiples integraciones requiere criterio de producto y operación.",
   "options": [
     {
-      "title": "Dividir por superficies compatibles",
-      "body": "Separar esta PR en grupos como PDF/crons, HTTP/uploads, pagos, frontend/i18n y utilidades permite adaptar, probar y revertir cada bloque de forma independiente.",
+      "title": "Revisar e integrar como familia",
+      "body": "Actualizar contra `dev`, confirmar CI y hacer smoke de los flujos de pagos, subida, correo y crons antes del merge.",
       "recommended": true
     },
     {
-      "title": "Mantener una única PR",
-      "body": "Conservar los 77 bumps juntos exige corregir todos los consumidores y aportar una matriz amplia de smoke tests antes del merge.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la familia `other`",
-      "body": "Cerrar esta salida residual y actualizar estas dependencias únicamente cuando exista una familia curada o una necesidad concreta de seguridad o producto.",
+      "title": "Dividir la actualización",
+      "body": "Separar las dependencias de mayor impacto operativo si la revisión conjunta no puede demostrar compatibilidad suficiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir por superficies compatibles",
-    "body": "Separar esta PR en grupos como PDF/crons, HTTP/uploads, pagos, frontend/i18n y utilidades permite adaptar, probar y revertir cada bloque de forma independiente.",
+    "title": "Revisar e integrar como familia",
+    "body": "Actualizar contra `dev`, confirmar CI y hacer smoke de los flujos de pagos, subida, correo y crons antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el reviewer solicitado con la señal histórica más fuerte sobre los manifiestos centrales y el mejor candidato disponible para decidir el límite operativo de esta familia.",
-    "confidence": "high"
+    "reason": "Fue solicitado como revisor para este alcance transversal y aparece como el candidato principal en la discusión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7684.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7684#issuecomment-5000015865",
-    "reviewedAt": "2026-07-17T06:52:02.550Z",
-    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+    "reviewedAt": "2026-07-19T17:02:37.783Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }
