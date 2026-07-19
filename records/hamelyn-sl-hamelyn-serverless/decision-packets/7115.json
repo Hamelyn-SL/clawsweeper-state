@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:19:15.983Z",
-  "updatedAt": "2026-07-14T08:34:33Z",
+  "generatedAt": "2026-07-19T17:07:54.052Z",
+  "updatedAt": "2026-07-19T13:26:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "priority:p3",
       "triage:done",
       "business-logic",
-      "P3",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "P3",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T10:01:02Z",
-    "updatedAt": "2026-07-14T08:34:33Z"
+    "updatedAt": "2026-07-19T13:26:38Z"
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "¿Se autoriza ya una PR separada para retirar la API de búsqueda muerta tras la fusión de la extracción BL?",
-  "rationale": "La limpieza es técnicamente pequeña, pero la issue mantiene las señales `clawsweeper:no-new-fix-pr` y `clawsweeper:needs-maintainer-review`; hace falta confirmar que ya no existe coordinación pendiente en el mismo archivo de búsqueda.",
+  "question": "¿Autoriza el equipo de ecommerce/BL una PR separada para retirar la API legado tras los cambios recientes del catálogo?",
+  "rationale": "La forma técnica está clara, pero el mismo archivo recibió cambios funcionales posteriores y la eliminación debe coordinarse con quienes mantienen esa ruta.",
   "options": [
     {
       "title": "Autorizar limpieza acotada",
-      "body": "Permitir una PR limitada a retirar `searchProducts`, `searchProductsWithText` y el re-export, preservando `buildSearchStage` y actualizando la spec BL.",
+      "body": "Retirar únicamente `searchProducts`, `searchProductsWithText` y el reexport, preservando `buildSearchStage` y verificando los callers activos.",
       "recommended": true
     },
     {
-      "title": "Mantener la coordinación bloqueada",
-      "body": "Conservar la issue en revisión manual hasta que el equipo responsable confirme que no hay otro cambio de búsqueda que deba agruparse con esta retirada.",
+      "title": "Mantener la divergencia documentada",
+      "body": "Conservar temporalmente la API sin callers si se prevé recuperar esa entrada o si hay compatibilidad externa no rastreada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Autorizar limpieza acotada",
-    "body": "Permitir una PR limitada a retirar `searchProducts`, `searchProductsWithText` y el re-export, preservando `buildSearchStage` y actualizando la spec BL.",
+    "body": "Retirar únicamente `searchProducts`, `searchProductsWithText` y el reexport, preservando `buildSearchStage` y verificando los callers activos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es la persona conectada de forma más directa con la extracción BL que registró esta divergencia y con la documentación que debe actualizarse.",
+    "reason": "Validó la divergencia durante la extracción BL y documentó expresamente la frontera de esta limpieza.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7115.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7115#issuecomment-4913176651",
-    "reviewedAt": "2026-07-19T13:19:15.983Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:07:54.052Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }
