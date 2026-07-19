@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:34:33.481Z",
+  "generatedAt": "2026-07-19T16:35:38.060Z",
   "updatedAt": "2026-07-19T16:26:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,34 +26,34 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política de retención debe regir para productos IA sin actividad y qué referencias históricas deben impedir su eliminación?",
-  "rationale": "El código permite identificar rutas y dependencias, pero no puede decidir el valor comercial, legal u operativo de conservar cada producto sin señal actual.",
+  "question": "¿Qué contrato de retención aprueba el equipo para productos generados por IA sin actividad y qué referencias históricas deben conservarse?",
+  "rationale": "El filtro de purga, el periodo de recuperación y las referencias admisibles son decisiones de negocio y conservación de datos, no una corrección mecánica.",
   "options": [
     {
-      "title": "Poda gradual con retención",
-      "body": "Aprobar criterios conservadores, detener nuevas altas sin señal y aplicar primero un `$unset` reversible antes de evaluar borrados.",
+      "title": "Plan por fases con retención",
+      "body": "Aprobar primero el corte de altas y la poda reversible, y condicionar la purga por lotes a un dry-run referencial y recuperación verificable.",
       "recommended": true
     },
     {
-      "title": "Purga completa por lotes",
-      "body": "Aprobar la eliminación de candidatos solo después de anti-joins completos, recuperación verificable y reconciliación de la tabla tipada.",
+      "title": "Solo poda reversible",
+      "body": "Eliminar campos pesados de candidatos inactivos y aplazar cualquier borrado de documentos hasta acordar la retención histórica.",
       "recommended": false
     },
     {
-      "title": "Conservar el catálogo",
-      "body": "Mantener los documentos y limitarse a optimizar exportaciones y almacenamiento, asumiendo el coste persistente.",
+      "title": "Conservar el catálogo completo",
+      "body": "Mantener los documentos y limitarse a optimizar exports y consultas, aceptando el coste de almacenamiento y operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Poda gradual con retención",
-    "body": "Aprobar criterios conservadores, detener nuevas altas sin señal y aplicar primero un `$unset` reversible antes de evaluar borrados.",
+    "title": "Plan por fases con retención",
+    "body": "Aprobar primero el corte de altas y la poda reversible, y condicionar la purga por lotes a un dry-run referencial y recuperación verificable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Su cambio histórico conecta directamente la generación por Argos y la materialización que condicionan una poda segura.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con la radiografía cuantitativa y el trabajo operativo relacionado más cercano a esta decisión.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
