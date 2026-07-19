@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:26:13.995Z",
-  "updatedAt": "2026-07-18T04:27:29Z",
+  "generatedAt": "2026-07-19T16:22:55.293Z",
+  "updatedAt": "2026-07-19T12:29:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,44 @@
       "priority:p1",
       "reporter:jesus",
       "feature",
-      "P2",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T10:37:08Z",
-    "updatedAt": "2026-07-18T04:27:29Z"
+    "updatedAt": "2026-07-19T12:29:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba lanzar el experimento B frente a D con el contrato de medición y la operación del flag descritos en la PR vinculada?",
-  "rationale": "El código puede dejar la variante apagada por defecto, pero elegir tráfico, métrica, duración y coste operativo del proveedor de flags es una decisión de producto y de operación que no se puede deducir de la implementación.",
+  "question": "¿Se aprueba el experimento B frente a D con un reparto, métrica primaria, duración y plan de activación definidos antes de integrar la variante?",
+  "rationale": "La implementación cambia una PDP de alto tráfico y habilita evaluación facturable de flags; el código no puede decidir por sí solo los objetivos ni la operación del experimento.",
   "options": [
     {
-      "title": "Aprobar experimento B/D",
-      "body": "Confirmar reparto, métrica primaria, duración y responsable operativo, y revisar la PR abierta con esos criterios.",
+      "title": "Aprobar B/D acotado",
+      "body": "Definir 50/50 u otro reparto, conversión a compra como métrica, duración y apagado antes de revisar la PR para integración.",
       "recommended": true
     },
     {
-      "title": "Mantener solo B",
-      "body": "Conservar la ficha actual y pausar o cerrar la propuesta hasta que Ecommerce priorice un experimento con objetivos definidos.",
+      "title": "Reformular el experimento",
+      "body": "Pedir ajustes de diseño, métrica o alcance comercial antes de continuar con la variante D.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar experimento B/D",
-    "body": "Confirmar reparto, métrica primaria, duración y responsable operativo, y revisar la PR abierta con esos criterios.",
+    "title": "Aprobar B/D acotado",
+    "body": "Definir 50/50 u otro reparto, conversión a compra como métrica, duración y apagado antes de revisar la PR para integración.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y ha preparado la implementación candidata, por lo que puede convertir la decisión de producto en un plan de integración verificable.",
+    "reason": "Es el asignado actual y autor de la implementación candidata, por lo que puede concretar el contrato con Ecommerce.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7643.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7643#issuecomment-4991361071",
-    "reviewedAt": "2026-07-19T12:26:13.995Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:22:55.293Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

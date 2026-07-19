@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:27:08.023Z",
-  "updatedAt": "2026-07-18T04:29:26Z",
+  "generatedAt": "2026-07-19T16:25:11.821Z",
+  "updatedAt": "2026-07-19T12:29:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "P2",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-07-18T04:29:26Z"
+    "updatedAt": "2026-07-19T12:29:25Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Autoriza el equipo Marketplace/Data un dry-run con muestras remotas de Fnac y, si los resultados son consistentes, una reconciliación productiva por lotes de esta cohorte histórica?",
-  "rationale": "La corrección de código ya está en producción, pero decidir el estado final de miles de ofertas exige acceso a Fnac, validación de datos vivos y aprobación humana para una escritura masiva.",
+  "question": "¿Debe el equipo Marketplace/Data reconciliar la cohorte Fnac histórica tras validar cada resultado remoto, y qué transición canónica debe aplicarse a cada caso?",
+  "rationale": "La elección modifica miles de registros persistentes y depende de datos de Fnac y Mongo de producción que el código no puede inferir con seguridad.",
   "options": [
     {
-      "title": "Validar y reconciliar la cohorte",
-      "body": "Realizar un dry-run con recuentos y varias muestras de `batchId`, y ejecutar una mutación por lotes solo después de confirmar el estado remoto.",
+      "title": "Reconciliar por resultado remoto",
+      "body": "Validar una muestra de `batchId`, aprobar el dry-run y aplicar una transición idempotente solo a los listings cuyo estado Fnac esté confirmado.",
       "recommended": true
     },
     {
-      "title": "Mantener el residuo y vigilarlo",
-      "body": "No modificar la cohorte hasta disponer de evidencia remota adicional, manteniendo la monitorización para detectar cualquier nueva firma viva.",
+      "title": "Conservar la cohorte como historial",
+      "body": "Mantener los estados actuales si el equipo considera que el error histórico debe preservarse y no afecta a la operación vigente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y reconciliar la cohorte",
-    "body": "Realizar un dry-run con recuentos y varias muestras de `batchId`, y ejecutar una mutación por lotes solo después de confirmar el estado remoto.",
+    "title": "Reconciliar por resultado remoto",
+    "body": "Validar una muestra de `batchId`, aprobar el dry-run y aplicar una transición idempotente solo a los listings cuyo estado Fnac esté confirmado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está directamente vinculado a la corrección de la ruta de marketplace y al análisis de la cohorte residual.",
+    "reason": "Conoce la corrección vigente y el flujo de mutaciones donde debe definirse la transición segura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-07-19T12:27:08.023Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:25:11.821Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }
