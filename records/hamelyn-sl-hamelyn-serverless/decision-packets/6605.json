@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:35:56.198Z",
-  "updatedAt": "2026-07-14T16:00:36Z",
+  "generatedAt": "2026-07-19T13:36:20.685Z",
+  "updatedAt": "2026-07-14T21:42:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,45 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T10:23:55Z",
-    "updatedAt": "2026-07-14T16:00:36Z"
+    "updatedAt": "2026-07-14T21:42:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué documento debe recibir Segmail y cuál es la fuente canónica para decidir las ventas incluidas en cada correo diario?",
-  "rationale": "El repositorio maneja tanto etiquetas individuales de Mercado Libre como etiquetas FedEx agrupadas, y el estado local no reconcilia actualmente las cancelaciones posteriores; implementar sin esta decisión puede producir un envío operativo incorrecto.",
+  "question": "¿Qué conjunto interno de pedidos y qué momento de corte deben ser la fuente canónica del correo diario, incluidos cancelaciones posteriores, etiquetas mock y reintentos?",
+  "rationale": "El código ofrece las piezas técnicas, pero la issue y la discusión no establecen las reglas operativas que determinan qué etiquetas es seguro enviar y cuándo.",
   "options": [
     {
-      "title": "Pedidos reconciliados y etiquetas Meli",
-      "body": "Consultar o reconciliar el estado remoto, seleccionar únicamente pedidos despachables y adjuntar sus etiquetas de Mercado Libre almacenadas.",
+      "title": "Definir lote interno auditable",
+      "body": "Usar pedidos internos con etiqueta real, estado de cancelación reconciliado, corte horario e idempotencia por día antes de crear la tarea programada.",
       "recommended": true
     },
     {
-      "title": "Etiquetas FedEx del picking",
-      "body": "Vincular el correo al picking activo y enviar las etiquetas FedEx agrupadas que se generan mediante el flujo manual de cajas.",
-      "recommended": false
-    },
-    {
       "title": "Mantener el proceso manual",
-      "body": "No desarrollar el cron hasta que el equipo pueda definir de forma inequívoca el documento, el corte horario y la regla de cancelaciones.",
+      "body": "No automatizar hasta que Mercado Libre ofrezca una fuente estable que cubra el criterio operativo requerido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pedidos reconciliados y etiquetas Meli",
-    "body": "Consultar o reconciliar el estado remoto, seleccionar únicamente pedidos despachables y adjuntar sus etiquetas de Mercado Libre almacenadas.",
+    "title": "Definir lote interno auditable",
+    "body": "Usar pedidos internos con etiqueta real, estado de cancelación reconciliado, corte horario e idempotencia por día antes de crear la tarea programada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien aportó la decisión operativa inicial en la issue y cuenta con trabajo reciente sobre el flujo de etiquetas y transportista de Mercado Libre.",
+    "reason": "Su comentario en la discusión delimita la restricción de producto y su historial reciente está conectado al flujo de Mercado Libre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6605.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6605#issuecomment-4910070807",
-    "reviewedAt": "2026-07-14T21:35:56.198Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:36:20.685Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:30:35.914Z",
-  "updatedAt": "2026-07-10T06:39:32Z",
+  "generatedAt": "2026-07-19T13:35:20.429Z",
+  "updatedAt": "2026-07-14T21:43:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T17:19:08Z",
-    "updatedAt": "2026-07-10T06:39:32Z"
+    "updatedAt": "2026-07-14T21:43:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el contrato final de `ReviewStep` volver a sellar `phase` y `reviewerEmail` por evento, o se acepta derivar esas dimensiones desde el flujo y la traza final del producto?",
-  "rationale": "El contrato actual ha eliminado `phase` y solo registra el reviewer al finalizar el producto; ninguna implementación automática puede elegir con seguridad si esa pérdida de detalle es intencionada o incompatible con la analítica solicitada.",
+  "question": "¿Debe la atribución de productividad de Revisión V3 sellarse por cada `ReviewStep` o una vez por `reviewV3Session`, y se recupera `phase` como dato persistido para las métricas?",
+  "rationale": "La decisión fija el grano, la semántica de re-revisiones y la precisión de las métricas; el código actual de `dev` no contiene el contrato V3 ni una implementación que permita inferirlo sin ambigüedad.",
   "options": [
     {
       "title": "Sellar fase y operario por step",
-      "body": "Añadir dimensiones estables a cada evento permite agregados deterministas, sesiones reanudadas y recomputación histórica sin depender del orden de pantallas.",
+      "body": "Persistir `phase` y el identificador del operario en cada interacción permite agregados exactos incluso si cambia quien revisa durante una sesión.",
       "recommended": true
     },
     {
-      "title": "Derivar desde flujo y producto",
-      "body": "Mantener steps mínimos reduce almacenamiento, pero obliga a reconstruir fase y operario mediante supuestos frágiles sobre secuencia y último reviewer.",
+      "title": "Sellar el operario en la sesión",
+      "body": "Mantiene menos datos repetidos, pero debe documentar que una sesión pertenece a un único operario y cómo se comporta ante un relevo.",
       "recommended": false
     },
     {
-      "title": "Reducir el alcance analítico",
-      "body": "Limitar la feature a tiempo total por producto u operario evita cambiar el contrato, pero renuncia al análisis solicitado de dónde se va el tiempo.",
+      "title": "Limitar el primer agregado",
+      "body": "Derivar solo métricas de sesión y producto con los campos actuales reduce alcance, pero no satisface el desglose fiable por fase solicitado.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Sellar fase y operario por step",
-    "body": "Añadir dimensiones estables a cada evento permite agregados deterministas, sesiones reanudadas y recomputación histórica sin depender del orden de pantallas.",
+    "body": "Persistir `phase` y el identificador del operario en cada interacción permite agregados exactos incluso si cambia quien revisa durante una sesión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona más vinculada al contrato backend de sesión y al cambio que retiró `phase`, por lo que dispone del mejor contexto para validar si debe recuperarse.",
+    "reason": "Su cambio histórico cubre la ruta de `opProductivity` que la solución debe mantener compatible.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6623.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623#issuecomment-4932689420",
-    "reviewedAt": "2026-07-14T21:30:35.914Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:35:20.429Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:35:45.175Z",
-  "updatedAt": "2026-07-08T16:35:17Z",
+  "generatedAt": "2026-07-19T13:41:46.983Z",
+  "updatedAt": "2026-07-14T21:43:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,51 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-07-08T16:35:17Z"
+    "updatedAt": "2026-07-14T21:43:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué matriz de señales, valores urgentes y fallbacks debe regir cada marketplace activo, incluido el tratamiento del override de Amazon para España?",
-  "rationale": "El código determina dónde aplicar el cambio, pero los contratos y SLAs externos son necesarios para decidir qué valores representan urgencia y cuándo sigue siendo aceptable inferirla por importe.",
+  "question": "¿Qué códigos o métodos de envío de cada marketplace deben mapearse a `URGENT`, y en cuáles debe seguir permitido el fallback por importe?",
+  "rationale": "El código ya muestra señales sin interpretar, pero su semántica contractual depende de cada marketplace; inferirla sin confirmación puede modificar SLA legítimos.",
   "options": [
     {
-      "title": "Matriz completa por canal",
-      "body": "Validar la señal, los valores urgentes y el fallback de todos los marketplaces antes de realizar un único cambio coordinado.",
+      "title": "Aprobar una matriz por marketplace",
+      "body": "Validar una tabla versionada de códigos y métodos urgentes, con fallback por importe únicamente donde no exista señal fiable.",
       "recommended": true
     },
     {
-      "title": "Corrección por fases",
-      "body": "Aplicar primero eBay, Fnac y Casa del Libro, que ya conservan señales, y mantener seguimientos explícitos para los canales cuyo parser no las expone.",
+      "title": "Conservar el comportamiento actual",
+      "body": "Mantener temporalmente los umbrales por país hasta disponer de contratos o muestras suficientes para cada marketplace.",
       "recommended": false
     },
     {
-      "title": "Mantener los umbrales",
-      "body": "Conservar temporalmente la conducta actual hasta disponer de evidencia contractual suficiente para clasificar cada canal.",
+      "title": "Acotar una primera fase",
+      "body": "Aplicar solo los mapeos confirmados de eBay, Fnac y CDL y dejar explícitos los fallbacks de los demás importadores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Matriz completa por canal",
-    "body": "Validar la señal, los valores urgentes y el fallback de todos los marketplaces antes de realizar un único cambio coordinado.",
+    "title": "Aprobar una matriz por marketplace",
+    "body": "Validar una tabla versionada de códigos y métodos urgentes, con fallback por importe únicamente donde no exista señal fiable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el owner declarado de la regla BL y la persona mejor situada para validar la matriz y el nuevo enunciado de negocio.",
+    "reason": "Figura como owner del bloque BL que validó la divergencia y puede fijar el contrato de negocio antes de la implementación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
-    "reviewedAt": "2026-07-14T21:35:45.175Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:41:46.983Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

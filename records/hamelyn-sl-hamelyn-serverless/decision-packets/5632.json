@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:32:09.585Z",
-  "updatedAt": "2026-07-14T15:59:44Z",
+  "generatedAt": "2026-07-19T13:33:48.381Z",
+  "updatedAt": "2026-07-14T21:41:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,45 +17,44 @@
       "app:marketplace",
       "triage:no-change",
       "P1",
-      "impact:crash-loop",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "impact:crash-loop",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-07-14T15:59:44Z"
+    "updatedAt": "2026-07-14T21:41:42Z"
   },
   "lane": "proof_sufficiency",
   "priority": "P1",
   "question": "¿Hay trazas de fase suficientes para atribuir los timeouts recientes de Amazon COM a una operación concreta antes de autorizar una reparación?",
-  "rationale": "La fuente demuestra que el handler puede esperar hasta el límite, pero no identifica qué fase debe cancelarse; elegir un presupuesto global sin esa evidencia puede ocultar trabajo tardío o efectos parciales.",
+  "rationale": "La fuente confirma que el handler puede esperar sin límite propio, pero no permite elegir con seguridad qué operación debe cancelarse ni si un presupuesto global sería aceptable.",
   "options": [
     {
-      "title": "Exigir correlación de fase",
-      "body": "Recoger la última fase iniciada de varios `request_id` afectados y reparar esa operación con cancelación verificable.",
+      "title": "Correlacionar la fase retenida",
+      "body": "Recoger la última fase iniciada en varios `request_id` terminales y reparar la dependencia concreta con una cancelación verificable.",
       "recommended": true
     },
     {
-      "title": "Aceptar un presupuesto global",
-      "body": "Limitar el handler común aun asumiendo que las promesas subyacentes podrían continuar después de responder.",
+      "title": "Aceptar un deadline global",
+      "body": "Limitar el handler común aunque algunas promesas subyacentes puedan continuar después de devolver una respuesta controlada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir correlación de fase",
-    "body": "Recoger la última fase iniciada de varios `request_id` afectados y reparar esa operación con cancelación verificable.",
+    "title": "Correlacionar la fase retenida",
+    "body": "Recoger la última fase iniciada en varios `request_id` terminales y reparar la dependencia concreta con una cancelación verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona que mejor conecta la ruta Amazon, el handler compartido y la instrumentación de fases necesaria para resolver esta decisión.",
+    "reason": "Su historial conecta la normalización de rutas, el handler compartido y la decisión previa de llevar la recuperación a la capa común.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-07-14T21:32:09.585Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:33:48.381Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

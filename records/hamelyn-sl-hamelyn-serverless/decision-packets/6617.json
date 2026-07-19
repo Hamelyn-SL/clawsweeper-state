@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:32:10.841Z",
-  "updatedAt": "2026-07-10T06:47:12Z",
+  "generatedAt": "2026-07-19T13:37:57.080Z",
+  "updatedAt": "2026-07-14T21:43:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T17:18:57Z",
-    "updatedAt": "2026-07-10T06:47:12Z"
+    "updatedAt": "2026-07-14T21:43:07Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se prepara ya la integración de `EPIC/revision-v3` en `dev`, y la analítica de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623 se considera requisito de ese merge o seguimiento posterior?",
-  "rationale": "La implementación funcional está concentrada y sin PRs abiertos en la rama épica, pero la rama está divergida y el único pendiente original requiere una frontera de producto antes de declarar V3 lista para `dev`.",
+  "question": "¿Se integra ya `EPIC/revision-v3` en `dev` dejando la analítica de productividad como seguimiento independiente, o debe completarse primero ese alcance?",
+  "rationale": "El código principal está concentrado fuera de `dev`, mientras la agregación de productividad sigue siendo una decisión de producto y no un requisito técnico resuelto.",
   "options": [
     {
-      "title": "Abrir integración y diferir analítica",
-      "body": "Crear el PR de integración ahora, exigir validación completa del kiosk y conservar la analítica como seguimiento posterior explícito.",
+      "title": "Integrar el flujo y diferir la analítica",
+      "body": "Abrir un PR de integración de la rama épica hacia `dev` y mantener la agregación de tiempos como trabajo posterior en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623.",
       "recommended": true
     },
     {
-      "title": "Completar analítica antes del merge",
-      "body": "Mantener la épica en estabilización hasta acordar e implementar también el modelo de agregación de tiempos.",
+      "title": "Completar la analítica antes de integrar",
+      "body": "Definir el modelo de datos y las salidas de productividad, implementarlas en la rama épica y revisar la integración como una única entrega.",
       "recommended": false
     },
     {
       "title": "Pausar la integración",
-      "body": "Conservar la rama épica sin PR a `dev` hasta una nueva decisión de rollout, documentando el motivo y el criterio para retomarla.",
+      "body": "Mantener la rama épica como entorno de trabajo hasta que almacén y producto confirmen el alcance mínimo de lanzamiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Abrir integración y diferir analítica",
-    "body": "Crear el PR de integración ahora, exigir validación completa del kiosk y conservar la analítica como seguimiento posterior explícito.",
+    "title": "Integrar el flujo y diferir la analítica",
+    "body": "Abrir un PR de integración de la rama épica hacia `dev` y mantener la agregación de tiempos como trabajo posterior en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Está asignado a la épica y tiene el historial más transversal entre flujo, configuración, historial, formación y correcciones del kiosk.",
+    "reason": "Está asignado a la épica y su historial reúne el flujo táctil, el acceso, QA y la formación que condicionan la integración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6617.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6617#issuecomment-4913157237",
-    "reviewedAt": "2026-07-14T21:32:10.841Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:37:57.080Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

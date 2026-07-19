@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-10T13:39:09.688Z",
-  "updatedAt": "2026-07-10T13:25:19Z",
+  "generatedAt": "2026-07-19T13:40:50.345Z",
+  "updatedAt": "2026-07-14T21:43:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "app:ecommerce",
       "priority:p3",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:fix-shape-clear",
+      "clawsweeper:source-repro",
       "P3",
-      "impact:other",
-      "issue-rating: 🦞 diamond lobster",
-      "clawsweeper:source-repro"
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T08:48:03Z",
-    "updatedAt": "2026-07-10T13:25:19Z"
+    "updatedAt": "2026-07-14T21:43:54Z"
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "¿Debe ejecutarse ahora el saneamiento controlado de Mongo para ES/Baleares y coordinar la limpieza de código/spec en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365, o esperar a un follow-up posterior a esa PR?",
-  "rationale": "La causa está confirmada, pero el paso decisivo es una escritura controlada en Mongo y la limpieza de código vive en una PR BL abierta; ClawSweeper no debería abrir un PR paralelo ni simular una mutación de datos.",
+  "question": "¿Quién valida y ejecuta la actualización controlada de `countries.differentShippingCosts[].match` antes de retirar los fallbacks en código?",
+  "rationale": "La corrección requiere modificar datos persistidos fuera del repositorio y comprobar el estado real de producción; no es seguro inferir ni automatizar esa operación desde esta revisión.",
   "options": [
     {
-      "title": "Sanear datos ahora y ajustar la PR abierta",
-      "body": "Ejecutar dry-run/update del valor `^07d{3}$` a `^07\\d{3}$` y luego actualizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 para quitar fallback y test temporal.",
+      "title": "Sanear datos y retirar compatibilidad",
+      "body": "Designar un responsable para ejecutar una actualización idempotente, registrar el valor anterior y posterior, y preparar el cambio de código coordinado.",
       "recommended": true
     },
     {
-      "title": "Dejarlo para follow-up",
-      "body": "Mergear o revisar la PR BL como extracción sin cambio de comportamiento y abrir después la limpieza de datos/código cuando haya ventana operativa.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener normalización permanente",
-      "body": "Aceptar el fallback como defensa de consumidores, pero dejaría una deuda de datos explícita y dos fuentes de verdad para los patrones regionales.",
+      "title": "Mantener compatibilidad temporalmente",
+      "body": "Conservar los fallbacks mientras se agenda la corrección de datos, dejando la divergencia documentada para evitar que nuevos consumidores la repliquen.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sanear datos ahora y ajustar la PR abierta",
-    "body": "Ejecutar dry-run/update del valor `^07d{3}$` a `^07\\d{3}$` y luego actualizar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7365 para quitar fallback y test temporal.",
+    "title": "Sanear datos y retirar compatibilidad",
+    "body": "Designar un responsable para ejecutar una actualización idempotente, registrar el valor anterior y posterior, y preparar el cambio de código coordinado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es quien está coordinando la relocalización BL y quien señaló la spec/test exactos que deben cambiar tras sanear datos.",
+    "reason": "Es el owner indicado del bloque BL y aportó el enlace entre esta divergencia, la spec canónica y la extracción relacionada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6919.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6919#issuecomment-4911150620",
-    "reviewedAt": "2026-07-10T13:39:09.688Z",
-    "mainSha": "7911cda12e2f076eb3e51bbe2090b55283737e42"
+    "reviewedAt": "2026-07-19T13:40:50.345Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

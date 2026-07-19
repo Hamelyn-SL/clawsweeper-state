@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:28:23.113Z",
-  "updatedAt": "2026-07-08T09:37:57Z",
+  "generatedAt": "2026-07-19T13:32:58.198Z",
+  "updatedAt": "2026-07-14T21:42:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,44 +19,43 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-25T20:33:08Z",
-    "updatedAt": "2026-07-08T09:37:57Z"
+    "updatedAt": "2026-07-14T21:42:59Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe reactivarse ahora `ebay.create()` con el arreglo por SKU ya desplegado, o mantenerse pausado hasta disponer de una validación controlada contra eBay?",
-  "rationale": "El cambio de código está presente, pero activar el cron puede crear listings reales y la evidencia disponible no demuestra una ejecución posterior segura con la fase habilitada.",
+  "question": "¿Debe reactivarse ahora `ebay.create()` tras validar el aislamiento por SKU, o debe mantenerse pausado hasta investigar también los fallos de publicación de eBay?",
+  "rationale": "La decisión activa una operación que publica listings reales; el código ya contiene una mitigación parcial, pero no puede demostrar de forma estática que la reanudación sea operativamente segura.",
   "options": [
     {
-      "title": "Validar y reactivar",
-      "body": "Ejecutar un lote controlado con un SKU válido y otro sin precio, comprobar el resultado individual y reactivar la fase si no hay aborto global.",
+      "title": "Reactivar con prueba controlada",
+      "body": "Reactivar la fase de creación y verificar una ejecución limitada donde los SKUs sin precio queden aislados y los válidos lleguen a crear ofertas.",
       "recommended": true
     },
     {
-      "title": "Mantener la pausa",
-      "body": "Conservar la creación desactivada y documentar el mecanismo operativo alternativo y el criterio concreto para reabrir el flujo.",
+      "title": "Mantener la pausa y documentarla",
+      "body": "Conservar `ebay.create()` desactivado hasta disponer de una decisión operativa que cubra también los fallos de publicación relacionados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y reactivar",
-    "body": "Ejecutar un lote controlado con un SKU válido y otro sin precio, comprobar el resultado individual y reactivar la fase si no hay aborto global.",
+    "title": "Reactivar con prueba controlada",
+    "body": "Reactivar la fase de creación y verificar una ejecución limitada donde los SKUs sin precio queden aislados y los válidos lleguen a crear ofertas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el assignee actual y el autor del arreglo específico que debe validarse antes de reactivar el cron.",
+    "reason": "Su historial concentra tanto la corrección por SKU como el estado actual del controlador de eBay.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046#issuecomment-4974262910",
-    "reviewedAt": "2026-07-14T21:28:23.113Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:32:58.198Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

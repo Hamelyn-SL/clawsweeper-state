@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T04:03:37.643Z",
-  "updatedAt": "2026-07-08T03:45:15Z",
+  "generatedAt": "2026-07-19T13:40:21.152Z",
+  "updatedAt": "2026-07-08T10:29:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,47 @@
       "priority:p2",
       "app:infrastructure",
       "triage:done",
-      "business-logic"
+      "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: 🦞 diamond lobster",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "impact:data-loss"
     ],
     "createdAt": "2026-07-07T08:13:13Z",
-    "updatedAt": "2026-07-08T03:45:15Z"
+    "updatedAt": "2026-07-08T10:29:31Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "Should the range-guard fix wait for the BL-buying-account extraction PR to land, or should a fix PR add the missing BL-14 artifact now?",
-  "rationale": "The runtime bug is clear, but the issue explicitly requires updating BL-14 spec/test files that are still owned by an open, conflicting BL extraction PR rather than current dev.",
+  "question": "¿Autoriza el equipo de `buying/account` una PR acotada que añada las dos guardas de rango y la prueba write-path asociada?",
+  "rationale": "La regla funcional ya fue validada en F2, pero las etiquetas `clawsweeper:no-new-fix-pr` y `clawsweeper:needs-maintainer-review` indican que la cola automática no debe iniciar la reparación sin una confirmación humana de alcance.",
   "options": [
     {
-      "title": "Wait for BL PR, then fix",
-      "body": "Repair and land the BL extraction PR first, then apply this small behavior fix against the completed BL artifact set.",
+      "title": "Autorizar la reparación acotada",
+      "body": "Añadir las guardas equivalentes a las de borrado, cubrir ambos arrays con una prueba de repositorio o integración y actualizar la spec BL.",
       "recommended": true
     },
     {
-      "title": "Fix now with BL-14 artifacts",
-      "body": "Open a targeted fix PR that adds the missing BL-14 spec/test plus the repository guards, accepting possible conflicts with the open BL extraction PR.",
-      "recommended": false
-    },
-    {
-      "title": "Fold into BL PR",
-      "body": "Change the open BL extraction PR to include the behavior fix, trading speed for a departure from the BL pipeline's no-behavior-change rule.",
+      "title": "Mantener la incidencia fuera de la cola automática",
+      "body": "Conservarla abierta hasta que el owner indique una prueba o un tratamiento de errores HTTP distinto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Wait for BL PR, then fix",
-    "body": "Repair and land the BL extraction PR first, then apply this small behavior fix against the completed BL artifact set.",
+    "title": "Autorizar la reparación acotada",
+    "body": "Añadir las guardas equivalentes a las de borrado, cubrir ambos arrays con una prueba de repositorio o integración y actualizar la spec BL.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "MiguelHamelyn is the named Seller Account BL owner and already reviewed the related extraction PR, so this sequencing choice is closest to that ownership boundary.",
+    "reason": "Figura como owner de la validación F2 que fijó la regla de negocio de esta divergencia.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7097.md",
-    "reviewedAt": "2026-07-08T04:03:37.643Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-19T13:40:21.152Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

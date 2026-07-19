@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T13:35:51.223Z",
+  "updatedAt": "2026-07-14T21:42:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6571,
+    "title": "Añadir productividad de la Estación Skypod como nuevo operationType",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "priority:p2",
+      "feature",
+      "triage:done",
+      "impact:other",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-06-22T09:10:10Z",
+    "updatedAt": "2026-07-14T21:42:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué acciones de Estación Skypod deben incrementar `itemsProcessed`: únicamente las confirmaciones satisfactorias/urgentes, o también las incidencias gestionadas como `NO ENCONTRADO`, `ROTO`, `INCOMPLETO` y `DIFERENTE`?",
+  "rationale": "La infraestructura permite ambos comportamientos, pero la elección cambia el significado operativo de productos/min y no se deduce con seguridad del contrato actual.",
+  "options": [
+    {
+      "title": "Contar solo preparación confirmada",
+      "body": "Mantener el contador para `OK` y acciones que confirman preparación, dejando las incidencias con cantidad cero para medir productos realmente preparados.",
+      "recommended": true
+    },
+    {
+      "title": "Contar toda gestión de artículo",
+      "body": "Incrementar también las incidencias resueltas para medir actividad de operario aunque el producto no llegue a prepararse.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Contar solo preparación confirmada",
+    "body": "Mantener el contador para `OK` y acciones que confirman preparación, dejando las incidencias con cantidad cero para medir productos realmente preparados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Ha trabajado recientemente tanto en la UI de Estación como en el patrón de productividad `AUTO_PACKING`.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
+    "reviewedAt": "2026-07-19T13:35:51.223Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}

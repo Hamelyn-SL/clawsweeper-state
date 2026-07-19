@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:29:44.714Z",
-  "updatedAt": "2026-07-14T15:59:29Z",
+  "generatedAt": "2026-07-19T13:32:21.088Z",
+  "updatedAt": "2026-07-14T21:41:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,50 +20,44 @@
       "area:cron-reliability",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
-    "updatedAt": "2026-07-14T15:59:29Z"
+    "updatedAt": "2026-07-14T21:41:38Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la primera fase conservar HTTP 200 por defecto y añadir solo señal estructurada, o debe elevar ya 207/5xx para severidades o rutas seleccionadas?",
-  "rationale": "La fuente confirma el problema de observabilidad, pero no permite deducir qué fallos parciales son tolerables según cada flujo de negocio; una decisión global puede cambiar reintentos, alertas y compatibilidad de 39 rutas.",
+  "question": "¿La primera fase debe conservar HTTP 200 para todos los parciales y emitir una señal estructurada común, o debe activar ya HTTP 207/5xx en un conjunto explícito de rutas y severidades?",
+  "rationale": "El código confirma el comportamiento, pero no puede decidir qué rechazos son tolerables por negocio ni qué consumidores externos dependen hoy de HTTP 200.",
   "options": [
     {
       "title": "Señal compatible primero",
-      "body": "Añadir `status`, recuentos, razones sanitizadas y `severity` en ambos handlers, manteniendo HTTP 200 por defecto hasta clasificar las rutas.",
+      "body": "Mantener HTTP 200 temporalmente y añadir `status`, conteos, razones, severidad y una métrica consultable para clasificar rutas con datos reales.",
       "recommended": true
     },
     {
-      "title": "Elevación selectiva inicial",
-      "body": "Añadir la señal estructurada y declarar desde la primera entrega una lista acotada de rutas o severidades que respondan 207/5xx.",
-      "recommended": false
-    },
-    {
-      "title": "Fallo global estricto",
-      "body": "Hacer que cualquier rechazo parcial cambie inmediatamente el estado HTTP de todos los consumidores del handler compartido.",
+      "title": "Endurecer rutas críticas ahora",
+      "body": "Definir una lista inicial de rutas o fases donde un rechazo parcial devuelve 207/5xx, asumiendo y documentando su impacto de compatibilidad.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Señal compatible primero",
-    "body": "Añadir `status`, recuentos, razones sanitizadas y `severity` en ambos handlers, manteniendo HTTP 200 por defecto hasta clasificar las rutas.",
+    "body": "Mantener HTTP 200 temporalmente y añadir `status`, conteos, razones, severidad y una métrica consultable para clasificar rutas con datos reales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con trabajo más reciente tanto en el contrato común de rutas como en la observabilidad por fase, además de haber desarrollado el análisis de política de esta issue.",
-    "confidence": "high"
+    "reason": "Introdujo y conserva en historial la implementación compartida que debe materializar la política elegida.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
-    "reviewedAt": "2026-07-14T21:29:44.714Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:32:21.088Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

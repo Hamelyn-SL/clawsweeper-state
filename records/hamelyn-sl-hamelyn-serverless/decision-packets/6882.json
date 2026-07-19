@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:34:12.825Z",
-  "updatedAt": "2026-07-12T12:09:06Z",
+  "generatedAt": "2026-07-19T13:38:16.903Z",
+  "updatedAt": "2026-07-14T21:43:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -26,38 +26,37 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-12T12:09:06Z"
+    "updatedAt": "2026-07-14T21:43:27Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Para los 429 sostenidos de eDesk, ¿debe persistirse la incidencia en una cola durable antes de confirmar el envío al cliente, o se acepta el fallo tras agotar reintentos acotados?",
-  "rationale": "El retry ya fusionado reduce fallos transitorios, pero no garantiza la conservación de la incidencia ante un rate limit prolongado; elegir durabilidad, respuesta al cliente y operativa de recuperación requiere una decisión explícita.",
+  "question": "¿Debe la solución de eDesk confirmar al cliente con 202 tras persistir la incidencia y delegar la entrega a un cron, o debe conservarse el error síncrono cuando eDesk sigue limitado?",
+  "rationale": "Ambas rutas cambian el contrato observable y exigen definir estados persistidos, política de reintentos, alertas y cómo se expone un fallo terminal; el código no puede escoger esa garantía de producto por sí solo.",
   "options": [
     {
-      "title": "Persistir antes de confirmar",
-      "body": "Guardar la incidencia de forma durable y procesarla asíncronamente evita pérdidas durante rate limits prolongados y permite recuperación observable.",
+      "title": "Persistir y responder 202",
+      "body": "Guardar primero la incidencia, responder 202 y procesarla en una cola con estados `PENDING`/`SENT`/`FAILED` y alerta por acumulación.",
       "recommended": true
     },
     {
-      "title": "Mantener reintentos acotados",
-      "body": "Conservar el flujo síncrono limita la complejidad, pero acepta que algunas incidencias se pierdan cuando eDesk permanece limitado.",
+      "title": "Mantener error síncrono",
+      "body": "Conservar la respuesta de error tras los reintentos y mejorar el diagnóstico, aceptando que el cliente deba volver a enviar la incidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir antes de confirmar",
-    "body": "Guardar la incidencia de forma durable y procesarla asíncronamente evita pérdidas durante rate limits prolongados y permite recuperación observable.",
+    "title": "Persistir y responder 202",
+    "body": "Guardar primero la incidencia, responder 202 y procesarla en una cola con estados `PENDING`/`SENT`/`FAILED` y alerta por acumulación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Implementó el retry actual de eDesk y es el propietario histórico más cercano al comportamiento que debe evolucionar.",
+    "reason": "Está asignado a la canónica abierta de eDesk y authored el retry actual ante rate limit.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-14T21:34:12.825Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:38:16.903Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

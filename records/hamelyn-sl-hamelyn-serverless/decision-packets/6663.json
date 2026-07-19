@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:32:35.886Z",
-  "updatedAt": "2026-07-14T16:01:07Z",
+  "generatedAt": "2026-07-19T13:37:12.895Z",
+  "updatedAt": "2026-07-14T21:42:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "reporter:PabloMoran34",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-25T07:29:25Z",
-    "updatedAt": "2026-07-14T16:01:07Z"
+    "updatedAt": "2026-07-14T21:42:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué frontera operativa debe adoptarse: conservar los GitHub Actions y sustituir solo la lectura por BigQuery, o trasladar también generación y programación a `apps/data-platform`?",
-  "rationale": "La elección afecta a credenciales, despliegue, propiedad operativa, cadencia de materialización y tamaño de los PRs; el código no determina por sí solo esa dirección.",
+  "question": "¿Se aprueba ejecutar esta migración en dos fases, conservando los workflows de GitHub Actions como runtime y dejando el feed de libros nuevos para después de materializar `newData.logista`?",
+  "rationale": "La implementación depende de decidir el límite operativo entre `apps/local` y `apps/data-platform`, y de aceptar una secuencia que no degrade el feed de libros nuevos mientras se preserva la paridad.",
   "options": [
     {
-      "title": "Migración por fases en Actions",
-      "body": "Mantener workflows, SFTP y formateadores actuales, sustituir primero la lectura de feeds usados y mover la ejecución solo si después aporta valor.",
+      "title": "Migración en dos fases",
+      "body": "Mover primero los feeds de usado a `mongodata` dentro de los cron jobs actuales y completar después `newData.logista` para libros nuevos.",
       "recommended": true
     },
     {
-      "title": "Traslado completo a Data Platform",
-      "body": "Mover consultas, generación y scheduling a `apps/data-platform`, asumiendo una migración transversal y una validación operativa más amplia.",
+      "title": "Diseñar un runtime en data-platform primero",
+      "body": "Trasladar la ejecución a `apps/data-platform` antes de migrar las consultas, asumiendo más alcance y coordinación operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración por fases en Actions",
-    "body": "Mantener workflows, SFTP y formateadores actuales, sustituir primero la lectura de feeds usados y mover la ejecución solo si después aporta valor.",
+    "title": "Migración en dos fases",
+    "body": "Mover primero los feeds de usado a `mongodata` dentro de los cron jobs actuales y completar después `newData.logista` para libros nuevos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es el asignado actual y el contribuidor con mayor actividad reciente en Data Platform, por lo que está mejor situado para coordinar la frontera técnica con los propietarios de Merchant.",
+    "person": "JavierHamelyn",
+    "reason": "Su análisis de la issue ya documenta la disponibilidad de los campos de BigQuery y el prerequisito de materialización para libros nuevos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663#issuecomment-4971283237",
-    "reviewedAt": "2026-07-14T21:32:35.886Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:37:12.895Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

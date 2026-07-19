@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:21:18.301Z",
-  "updatedAt": "2026-07-08T10:26:33Z",
+  "generatedAt": "2026-07-19T13:33:14.474Z",
+  "updatedAt": "2026-07-14T21:42:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,51 +18,50 @@
       "triage:no-change",
       "surface:pdp",
       "epic:v3.5-features",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
-    "updatedAt": "2026-07-08T10:26:33Z"
+    "updatedAt": "2026-07-14T21:42:53Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato persistido, locales y estrategia de generación/coste debe adoptar la ficha multilingüe antes de iniciar la implementación?",
-  "rationale": "La elección condiciona el esquema MongoDB, la migración desde `multilingualDescriptions`, el procesamiento de un catálogo grande, los fallbacks regionales y la precedencia de la edición manual.",
+  "question": "¿Qué contrato persistido, locales cubiertos, proveedor con presupuesto y reglas editoriales deben quedar aprobados antes de generar y mostrar traducciones de ficha por dominio?",
+  "rationale": "La issue introduce una capacidad de datos y una política comercial duradera; el código actual no contiene un contrato ni una decisión que permita elegir automáticamente estructura, coste, fallback, invalidación o comportamiento regional.",
   "options": [
     {
-      "title": "Contrato y benchmark primero",
-      "body": "Definir esquema, locales, invalidación, overrides y proveedor con una muestra representativa antes de abrir los PRs de producción.",
+      "title": "Aprobar contrato y ejecución escalonada",
+      "body": "Definir primero esquema, locales, proveedor, presupuesto, invalidación y fallback, y después implementar el pipeline y el consumo de PDP en fases.",
       "recommended": true
     },
     {
-      "title": "Piloto de un mercado",
-      "body": "Implementar un piloto limitado a un único mercado no español para medir calidad, coste y carga operativa antes de generalizar.",
+      "title": "Reducir el primer alcance",
+      "body": "Limitar la primera entrega a un conjunto pequeño de locales y a la descripción, manteniendo el título y el override manual para una fase posterior.",
       "recommended": false
     },
     {
-      "title": "Posponer traducciones de catálogo",
-      "body": "Mantener únicamente la localización actual de copy y SEO hasta disponer de capacidad operativa para gestionar datos traducidos a escala.",
+      "title": "Mantener el comportamiento actual",
+      "body": "No introducir contenido de producto por locale hasta que exista una prioridad comercial y operativa que justifique el coste de generación y mantenimiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato y benchmark primero",
-    "body": "Definir esquema, locales, invalidación, overrides y proveedor con una muestra representativa antes de abrir los PRs de producción.",
+    "title": "Aprobar contrato y ejecución escalonada",
+    "body": "Definir primero esquema, locales, proveedor, presupuesto, invalidación y fallback, y después implementar el pipeline y el consumo de PDP en fases.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el autor del requisito y participa también en el límite público de datos de producto, por lo que concentra mejor la decisión de alcance y coste.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "La ruta de PDP actualmente servida pasó por su trabajo reciente, por lo que puede coordinar la viabilidad técnica del contrato con los responsables de producto y datos.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
-    "reviewedAt": "2026-07-14T21:21:18.301Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:33:14.474Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

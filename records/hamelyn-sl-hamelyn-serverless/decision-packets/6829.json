@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:26:17.374Z",
-  "updatedAt": "2026-07-08T16:34:30Z",
+  "generatedAt": "2026-07-19T13:37:26.939Z",
+  "updatedAt": "2026-07-14T21:43:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "feature",
       "reporter:miguel",
       "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-03T10:44:24Z",
-    "updatedAt": "2026-07-08T16:34:30Z"
+    "updatedAt": "2026-07-14T21:43:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply web adoptar Expo Router server output y SSR como arquitectura objetivo, o debe sanearse primero el modelo estático sin comprometer aún el despliegue servidor?",
-  "rationale": "El repositorio confirma la deuda técnica, pero no puede resolver automáticamente la aceptación de APIs inestables, el coste operativo de funciones por request ni el riesgo compartido entre web y nativo.",
+  "question": "¿Debe Supply adoptar `output: \"server\"` como arquitectura objetivo para los dominios web, aceptando el cambio de despliegue y el mantenimiento de SSR por request, o se prefiere mantener el export estático y limitar el trabajo a corregir la fuente de slugs y el sitemap?",
+  "rationale": "El código confirma que la arquitectura solicitada no existe, pero la elección cambia el modelo de despliegue, el coste operativo y los contratos de web y nativo; esa prioridad no se puede decidir de forma segura desde una reparación automática.",
   "options": [
     {
-      "title": "Migración progresiva con PoC",
-      "body": "Aprobar la dirección, separar fuente única y validación de slugs, y exigir una PoC reversible en staging antes de cambiar los proyectos regionales de producción.",
+      "title": "Aprobar PoC de servidor por fases",
+      "body": "Validar primero en staging rewrites, hidratación, Auth0, metadatos y rollback antes de comprometer la migración completa.",
       "recommended": true
     },
     {
-      "title": "Sanear el export estático",
-      "body": "Resolver ahora fuentes duplicadas, colisiones y generación de rutas manteniendo temporalmente el modelo de un build estático por idioma.",
+      "title": "Mantener export estático",
+      "body": "Limitar el trabajo a una fuente de slugs validada y al sitemap por despliegue sin adoptar SSR ni output de servidor.",
       "recommended": false
     },
     {
-      "title": "Posponer server output",
-      "body": "Mantener la épica aparcada hasta que las APIs de Expo Router y el coste operativo ofrezcan un perfil de producción más claro.",
+      "title": "Posponer la migración",
+      "body": "Mantener el modelo actual hasta que haya capacidad de plataforma para asumir el cambio de Vercel y la observabilidad de SSR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración progresiva con PoC",
-    "body": "Aprobar la dirección, separar fuente única y validación de slugs, y exigir una PoC reversible en staging antes de cambiar los proyectos regionales de producción.",
+    "title": "Aprobar PoC de servidor por fases",
+    "body": "Validar primero en staging rewrites, hidratación, Auth0, metadatos y rollback antes de comprometer la migración completa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y concentra el mantenimiento reciente de la cadena de rutas, sitemap y build web que condiciona la decisión.",
-    "confidence": "high"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es el contribuidor reciente con historial directo sobre el pipeline actual de rutas, sitemap y build de Supply.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6829.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829#issuecomment-4910270381",
-    "reviewedAt": "2026-07-14T21:26:17.374Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:37:26.939Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
