@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:35:51.223Z",
-  "updatedAt": "2026-07-14T21:42:38Z",
+  "generatedAt": "2026-07-19T17:24:19.107Z",
+  "updatedAt": "2026-07-19T13:44:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,51 @@
       "priority:p2",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-07-14T21:42:38Z"
+    "updatedAt": "2026-07-19T13:44:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué acciones de Estación Skypod deben incrementar `itemsProcessed`: únicamente las confirmaciones satisfactorias/urgentes, o también las incidencias gestionadas como `NO ENCONTRADO`, `ROTO`, `INCOMPLETO` y `DIFERENTE`?",
-  "rationale": "La infraestructura permite ambos comportamientos, pero la elección cambia el significado operativo de productos/min y no se deduce con seguridad del contrato actual.",
+  "question": "¿Qué acciones excepcionales de la Estación Skypod deben incrementar `itemsProcessed` en la sesión `SKYPOD`?",
+  "rationale": "El código actual cuenta cualquier transición de `PENDING` a un estado final en `PICKING`, pero la métrica deseada de estación no especifica si esa regla se conserva o si solo cuentan confirmaciones correctas.",
   "options": [
     {
-      "title": "Contar solo preparación confirmada",
-      "body": "Mantener el contador para `OK` y acciones que confirman preparación, dejando las incidencias con cantidad cero para medir productos realmente preparados.",
+      "title": "Contar toda transición final",
+      "body": "Mantener la semántica de Picking: cualquier salida desde `PENDING` cuenta como un producto procesado.",
       "recommended": true
     },
     {
-      "title": "Contar toda gestión de artículo",
-      "body": "Incrementar también las incidencias resueltas para medir actividad de operario aunque el producto no llegue a prepararse.",
+      "title": "Contar solo confirmaciones correctas",
+      "body": "Incrementar la métrica únicamente tras `sendAckToAll` y excluir incidencias operativas.",
+      "recommended": false
+    },
+    {
+      "title": "Separar incidencias en metadata",
+      "body": "Contar todos los productos y conservar por motivo un desglose de incidencias para análisis posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contar solo preparación confirmada",
-    "body": "Mantener el contador para `OK` y acciones que confirman preparación, dejando las incidencias con cantidad cero para medir productos realmente preparados.",
+    "title": "Contar toda transición final",
+    "body": "Mantener la semántica de Picking: cualquier salida desde `PENDING` cuenta como un producto procesado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha trabajado recientemente tanto en la UI de Estación como en el patrón de productividad `AUTO_PACKING`.",
+    "reason": "Su historial abarca tanto el flujo de Estación como la implementación de productividad que define la semántica comparable.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-07-19T13:35:51.223Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:24:19.107Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:33:14.474Z",
-  "updatedAt": "2026-07-14T21:42:53Z",
+  "generatedAt": "2026-07-19T17:24:31.367Z",
+  "updatedAt": "2026-07-19T13:43:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,51 +18,50 @@
       "triage:no-change",
       "surface:pdp",
       "epic:v3.5-features",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
-    "updatedAt": "2026-07-14T21:42:53Z"
+    "updatedAt": "2026-07-19T13:43:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato persistido, locales cubiertos, proveedor con presupuesto y reglas editoriales deben quedar aprobados antes de generar y mostrar traducciones de ficha por dominio?",
-  "rationale": "La issue introduce una capacidad de datos y una política comercial duradera; el código actual no contiene un contrato ni una decisión que permita elegir automáticamente estructura, coste, fallback, invalidación o comportamiento regional.",
+  "question": "¿Qué proveedor, contrato de persistencia e invalidación deben aprobarse para las traducciones de ficha antes de exponerlas en la PDP?",
+  "rationale": "La issue exige benchmark y decisiones de coste, calidad, cache y override manual que no pueden deducirse de forma segura del código existente.",
   "options": [
     {
-      "title": "Aprobar contrato y ejecución escalonada",
-      "body": "Definir primero esquema, locales, proveedor, presupuesto, invalidación y fallback, y después implementar el pipeline y el consumo de PDP en fases.",
+      "title": "Aprobar un contrato y benchmark primero",
+      "body": "Definir idiomas, forma de almacenamiento, proveedor, coste objetivo, regeneración y fallback antes de dividir la implementación.",
       "recommended": true
     },
     {
-      "title": "Reducir el primer alcance",
-      "body": "Limitar la primera entrega a un conjunto pequeño de locales y a la descripción, manteniendo el título y el override manual para una fase posterior.",
+      "title": "Reducir el alcance inicial",
+      "body": "Limitar la primera entrega a un locale y a descripciones persistidas, dejando títulos y edición administrativa para fases posteriores.",
       "recommended": false
     },
     {
-      "title": "Mantener el comportamiento actual",
-      "body": "No introducir contenido de producto por locale hasta que exista una prioridad comercial y operativa que justifique el coste de generación y mantenimiento.",
+      "title": "Mantener el contenido original",
+      "body": "Cerrar la iniciativa de datos y conservar únicamente la localización de copy y SEO ya entregada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato y ejecución escalonada",
-    "body": "Definir primero esquema, locales, proveedor, presupuesto, invalidación y fallback, y después implementar el pipeline y el consumo de PDP en fases.",
+    "title": "Aprobar un contrato y benchmark primero",
+    "body": "Definir idiomas, forma de almacenamiento, proveedor, coste objetivo, regeneración y fallback antes de dividir la implementación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "La ruta de PDP actualmente servida pasó por su trabajo reciente, por lo que puede coordinar la viabilidad técnica del contrato con los responsables de producto y datos.",
+    "person": "JavierHamelyn",
+    "reason": "Ha mantenido recientemente la superficie de PDP y concretó las reglas funcionales pendientes en la discusión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
-    "reviewedAt": "2026-07-19T13:33:14.474Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:24:31.367Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }

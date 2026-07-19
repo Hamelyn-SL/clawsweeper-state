@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:54:12.383Z",
-  "updatedAt": "2026-07-18T04:29:54Z",
+  "generatedAt": "2026-07-19T17:23:45.992Z",
+  "updatedAt": "2026-07-19T12:56:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "P2",
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 compatibility",
       "proof: sufficient",
       "proof: 📸 screenshot",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
-      "P2",
-      "merge-risk: 🚨 compatibility"
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-17T10:56:42Z",
-    "updatedAt": "2026-07-18T04:29:54Z",
+    "updatedAt": "2026-07-19T12:56:06Z",
     "headSha": "bc6db0b3394e568c49cc743241afe93ca4d4e0d0"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe ecommerce reintroducir `FLAGS` y el flag `product-page-d` para ejecutar este experimento, aceptando una evaluación de Vercel por cada visita de ficha mientras la variable esté configurada?",
-  "rationale": "La base actual fijó deliberadamente la variante B sin flags, mientras que este PR recupera esa dependencia y su coste; decidir si compensa para el experimento requiere intención de producto y operación.",
+  "question": "¿Debe integrarse ya la variante D con el override público y el coste potencial de evaluación de Vercel Flags, o mantenerse en borrador hasta cerrar el contrato del experimento?",
+  "rationale": "El código preserva B por defecto, pero la decisión de activar, medir y asumir el coste operativo no puede resolverse solo mediante revisión técnica.",
   "options": [
     {
-      "title": "Aprobar un experimento acotado",
-      "body": "Aceptar el coste durante una ventana de prueba definida, activar el split 50/50 y retirar `FLAGS` al terminar.",
+      "title": "Cerrar primero el contrato del experimento",
+      "body": "Mantener el PR en borrador hasta acordar reparto, métrica primaria, duración, responsable y procedimiento de activación.",
       "recommended": true
     },
     {
-      "title": "Mantener B sin flags",
-      "body": "No reintroducir `FLAGS` en producción y conservar la propuesta hasta contar con una decisión presupuestaria o de medición distinta.",
-      "recommended": false
-    },
-    {
-      "title": "Diseñar otra activación",
-      "body": "Pedir una solución que permita probar D sin una evaluación pagada por cada visita fuera de la ventana de experimento.",
+      "title": "Integrar la preparación inactiva",
+      "body": "Aceptar que D quede accesible por override y que `FLAGS` se configure únicamente cuando Ecommerce active el test.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un experimento acotado",
-    "body": "Aceptar el coste durante una ventana de prueba definida, activar el split 50/50 y retirar `FLAGS` al terminar.",
+    "title": "Cerrar primero el contrato del experimento",
+    "body": "Mantener el PR en borrador hasta acordar reparto, métrica primaria, duración, responsable y procedimiento de activación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su cambio reciente estableció explícitamente la política de servir B sin flags.",
+    "reason": "Su cambio reciente estableció la política actual de servir B sin evaluaciones de flags.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7706.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7706#issuecomment-5009904470",
-    "reviewedAt": "2026-07-19T12:54:12.383Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:23:45.992Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }
