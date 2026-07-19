@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:39:42.401Z",
-  "updatedAt": "2026-07-16T06:50:26Z",
+  "generatedAt": "2026-07-19T16:00:15.564Z",
+  "updatedAt": "2026-07-19T12:41:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,47 @@
       "app:infrastructure",
       "triage:done",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
+      "impact:security",
       "clawsweeper:needs-security-review",
       "issue-rating: 💎 diamond",
-      "security-alert",
-      "P2",
-      "impact:security",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "security-alert"
     ],
     "createdAt": "2026-07-16T06:09:56Z",
-    "updatedAt": "2026-07-16T06:50:26Z"
+    "updatedAt": "2026-07-19T12:41:45Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Aprueba el equipo de seguridad/plataforma fijar el tarball inmutable de SheetJS como nueva fuente de suministro para `xlsx` y ejecutar una remediación coordinada de las alertas https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613 y esta issue?",
-  "rationale": "La corrección es técnicamente acotada, pero aceptar un artefacto de una fuente distinta del registro npm y desplegarlo en múltiples runtimes exige una decisión explícita de procedencia e integridad.",
+  "question": "¿Aprueba el equipo de seguridad sustituir las dependencias directas de `xlsx` por un tarball versionado de SheetJS fuera de npm?",
+  "rationale": "La corrección técnica es acotada, pero cambiar el origen de una dependencia de ejecución requiere aceptar explícitamente su procedencia e integridad.",
   "options": [
     {
-      "title": "Aprobar tarball verificado y actualización conjunta",
-      "body": "Fijar una URL exacta de SheetJS con comprobación de integridad y validar los consumidores de Admin y Core antes de desplegar.",
+      "title": "Aprobar migración versionada",
+      "body": "Fijar un tarball concreto de SheetJS, revisar su integridad y validar las rutas de lectura y escritura afectadas.",
       "recommended": true
     },
     {
-      "title": "Mantener la dependencia y añadir mitigaciones temporales",
-      "body": "Conservar temporalmente `0.18.5` con límites de tamaño y controles de entrada, aceptando que no elimina la vulnerabilidad del parser.",
-      "recommended": false
-    },
-    {
-      "title": "Sustituir la librería",
-      "body": "Evaluar una migración a otra librería XLSX si la política de suministro no permite depender del CDN de SheetJS.",
+      "title": "Mantener npm temporalmente",
+      "body": "Conservar `0.18.5` mientras se define una fuente de suministro aprobada, aceptando la exposición documentada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar tarball verificado y actualización conjunta",
-    "body": "Fijar una URL exacta de SheetJS con comprobación de integridad y validar los consumidores de Admin y Core antes de desplegar.",
+    "title": "Aprobar migración versionada",
+    "body": "Fijar un tarball concreto de SheetJS, revisar su integridad y validar las rutas de lectura y escritura afectadas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El historial disponible lo sitúa como autor del helper de parsing compartido que concentra la remediación.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "El historial atribuye el helper y las rutas actualmente expuestas a su trabajo de flujo XLSX.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7614.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614#issuecomment-4988995600",
-    "reviewedAt": "2026-07-19T12:39:42.401Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:00:15.564Z",
+    "mainSha": "597e9d3a43298d8c41ed5c2f58ff656d2627d7ee"
   }
 }
