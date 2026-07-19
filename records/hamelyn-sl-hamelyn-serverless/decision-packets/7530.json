@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:18:02.418Z",
-  "updatedAt": "2026-07-14T12:41:24Z",
+  "generatedAt": "2026-07-19T15:20:36.881Z",
+  "updatedAt": "2026-07-19T13:28:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,45 +14,49 @@
       "app:infrastructure",
       "question",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-14T09:49:10Z",
-    "updatedAt": "2026-07-14T12:41:24Z"
+    "updatedAt": "2026-07-19T13:28:01Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se prioriza primero una pequeña mejora de observabilidad compartida en cart y drop-off, o se abren ya bugs separados solo para los dos fallos conocidos de profile/payment?",
-  "rationale": "La investigación ya descartó clientes retirados, pero no existe una causa observable para dos de las rutas y el paraguas relacionado no las resuelve; elegir el desglose evita convertir una issue de diagnóstico en un cambio especulativo.",
+  "question": "¿Se prioriza primero la observabilidad común de estas rutas o se crean incidencias separadas para cart, drop-off y profile/payment?",
+  "rationale": "La investigación reúne fallos de clientes vivos con causas distintas; un único cambio de estado HTTP no tiene una semántica segura sin decidir el desglose y la prioridad.",
   "options": [
     {
-      "title": "Instrumentar antes de clasificar",
-      "body": "Añadir `requestId` y logging estructurado a cart y drop-off, y crear bugs estrechos solo con nuevas causas recurrentes confirmadas.",
+      "title": "Desglosar por causa",
+      "body": "Crear seguimientos acotados tras añadir correlación en cart y drop-off, conservando esta issue como contexto de la investigación.",
       "recommended": true
     },
     {
-      "title": "Separar profile/payment ahora",
-      "body": "Abrir dos bugs para el índice de collect method y el timeout de privilegios, dejando cart y drop-off en observación hasta tener excepción correlacionada.",
+      "title": "Priorizar sólo observabilidad",
+      "body": "Limitar el siguiente trabajo a `requestId`, logging y clasificación de errores antes de decidir cambios de comportamiento HTTP.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el fallback actual",
+      "body": "Mantener 501 temporalmente y revisar la telemetría más adelante, asumiendo que los clientes seguirán recibiendo un error genérico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Instrumentar antes de clasificar",
-    "body": "Añadir `requestId` y logging estructurado a cart y drop-off, y crear bugs estrechos solo con nuevas causas recurrentes confirmadas.",
+    "title": "Desglosar por causa",
+    "body": "Crear seguimientos acotados tras añadir correlación en cart y drop-off, conservando esta issue como contexto de la investigación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial conecta las tres rutas públicas y la actualización operativa del paraguas de errores.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Es quien aportó la evidencia operativa que define el desglose seguro.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7530.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530#issuecomment-4968442778",
-    "reviewedAt": "2026-07-19T13:18:02.418Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T15:20:36.881Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
   }
 }
