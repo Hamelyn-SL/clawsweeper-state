@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:05:18.919Z",
-  "updatedAt": "2026-07-17T07:27:38Z",
+  "generatedAt": "2026-07-19T12:33:26.548Z",
+  "updatedAt": "2026-07-18T04:26:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,50 @@
       "app:infrastructure",
       "feature",
       "reporter:danielmenchen-hamelyn",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T08:11:46Z",
-    "updatedAt": "2026-07-17T07:27:38Z"
+    "updatedAt": "2026-07-18T04:26:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la familia heterogénea `other` formar parte del schedule automático de majors o quedar limitada a lanzamientos manuales?",
-  "rationale": "La elección fija el riesgo operativo aceptable y no puede resolverse únicamente mediante lint, typecheck o builds aislados.",
+  "question": "¿Qué familias major curadas deben quedar activas inicialmente en el schedule y cuáles deben permanecer excluidas hasta tener una migración específica?",
+  "rationale": "La separación técnica está definida, pero elegir qué majors se ejecutan automáticamente y qué pins/exclusiones se preservan establece una política operativa con impacto transversal en el monorepo.",
   "options": [
     {
-      "title": "Excluir `other` del schedule",
-      "body": "Programar únicamente familias homogéneas y permitir `other` solo mediante `workflow_dispatch` con revisión específica.",
+      "title": "Activar solo familias curadas",
+      "body": "Aprobar inicialmente las familias con migración y prueba real, dejando `other` y las incompatibilidades conocidas fuera del schedule.",
       "recommended": true
     },
     {
-      "title": "Incluir `other` en el schedule",
-      "body": "Ejecutar también el catch-all automáticamente, asumiendo revisiones más amplias y migraciones potencialmente incompatibles en una sola PR.",
+      "title": "Activar todas las familias",
+      "body": "Programar también la familia heterogénea y asumir revisiones manuales adicionales para cada actualización no compatible.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener solo minor/patch",
+      "body": "Posponer las majors automáticas hasta acordar una matriz completa de familias, exclusiones y responsabilidad de revisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir `other` del schedule",
-    "body": "Programar únicamente familias homogéneas y permitir `other` solo mediante `workflow_dispatch` con revisión específica.",
+    "title": "Activar solo familias curadas",
+    "body": "Aprobar inicialmente las familias con migración y prueba real, dejando `other` y las incompatibilidades conocidas fuera del schedule.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el propietario histórico del flujo actual y responsable de la implementación vinculada, por lo que es el mejor punto de coordinación para concretar esta política con el equipo de infraestructura.",
+    "reason": "Es la persona con mayor continuidad demostrable en la automatización actual y en la PR que materializa esta propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
-    "reviewedAt": "2026-07-18T04:05:18.919Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T12:33:26.548Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
