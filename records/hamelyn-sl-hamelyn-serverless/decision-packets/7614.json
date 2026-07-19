@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T06:48:22.881Z",
-  "updatedAt": "2026-07-16T06:39:41Z",
+  "generatedAt": "2026-07-19T12:39:42.401Z",
+  "updatedAt": "2026-07-16T06:50:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,51 @@
       "priority:p2",
       "app:infrastructure",
       "triage:done",
-      "security-alert",
-      "P2",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond",
+      "security-alert"
     ],
     "createdAt": "2026-07-16T06:09:56Z",
-    "updatedAt": "2026-07-16T06:39:41Z"
+    "updatedAt": "2026-07-16T06:50:26Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Aprueba el equipo usar `https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz` como fuente directa de la dependencia runtime en Admin y Core?",
-  "rationale": "La actualización elimina las vulnerabilidades conocidas, pero introduce un origen de código fuera del registro npm que requiere aceptación explícita de procedencia, integridad y mantenimiento futuro.",
+  "question": "¿Aprueba el equipo de seguridad/plataforma fijar el tarball inmutable de SheetJS como nueva fuente de suministro para `xlsx` y ejecutar una remediación coordinada de las alertas https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613 y esta issue?",
+  "rationale": "La corrección es técnicamente acotada, pero aceptar un artefacto de una fuente distinta del registro npm y desplegarlo en múltiples runtimes exige una decisión explícita de procedencia e integridad.",
   "options": [
     {
-      "title": "Fijar el tarball oficial 0.20.3",
-      "body": "Actualizar ambos manifests a la URL inmutable, regenerar el lockfile y validar todas las superficies XLSX relevantes.",
+      "title": "Aprobar tarball verificado y actualización conjunta",
+      "body": "Fijar una URL exacta de SheetJS con comprobación de integridad y validar los consumidores de Admin y Core antes de desplegar.",
       "recommended": true
     },
     {
-      "title": "Sustituir SheetJS",
-      "body": "Migrar a otro parser si el equipo no acepta la distribución por CDN, asumiendo un cambio más amplio y mayor riesgo de compatibilidad.",
+      "title": "Mantener la dependencia y añadir mitigaciones temporales",
+      "body": "Conservar temporalmente `0.18.5` con límites de tamaño y controles de entrada, aceptando que no elimina la vulnerabilidad del parser.",
+      "recommended": false
+    },
+    {
+      "title": "Sustituir la librería",
+      "body": "Evaluar una migración a otra librería XLSX si la política de suministro no permite depender del CDN de SheetJS.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fijar el tarball oficial 0.20.3",
-    "body": "Actualizar ambos manifests a la URL inmutable, regenerar el lockfile y validar todas las superficies XLSX relevantes.",
+    "title": "Aprobar tarball verificado y actualización conjunta",
+    "body": "Fijar una URL exacta de SheetJS con comprobación de integridad y validar los consumidores de Admin y Core antes de desplegar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el candidato más próximo al helper compartido actual y cuenta con historial adicional sobre la integración XLSX.",
+    "person": "JavierHamelyn",
+    "reason": "El historial disponible lo sitúa como autor del helper de parsing compartido que concentra la remediación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7614.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614#issuecomment-4988995600",
-    "reviewedAt": "2026-07-16T06:48:22.881Z",
-    "mainSha": "117d5f49948d0df0d0beebcc64932fbdeb66e6f5"
+    "reviewedAt": "2026-07-19T12:39:42.401Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

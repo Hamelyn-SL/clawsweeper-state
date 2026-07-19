@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T05:58:46.083Z",
-  "updatedAt": "2026-07-18T04:27:15Z",
+  "generatedAt": "2026-07-19T12:40:58.795Z",
+  "updatedAt": "2026-07-18T06:01:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,48 +11,52 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🥈 silver",
-      "status: ⏳ waiting on author",
       "P2",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-16T08:41:26Z",
-    "updatedAt": "2026-07-18T04:27:15Z",
+    "updatedAt": "2026-07-18T06:01:08Z",
     "headSha": "6b514627ecce42245f02d0b9b6c65a9f49265ea5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La familia catch-all `other` debe quedar fuera del cron semanal y estar disponible únicamente mediante `workflow_dispatch` explícito?",
-  "rationale": "Esta elección fija el radio operativo permanente y determina si dependencias sin relación pueden agruparse automáticamente; los tests y builds no pueden decidir qué riesgo de mantenimiento acepta el equipo.",
+  "question": "¿Debe la familia `other` excluirse permanentemente de la programación semanal y quedar solo para ejecuciones manuales tras una revisión explícita de su contenido?",
+  "rationale": "La corrección mecánica puede impedir que `other` se programe, pero decidir si esa bolsa heterogénea debe existir y cómo se opera determina el contrato permanente de la automatización.",
   "options": [
     {
-      "title": "Solo ejecución manual",
-      "body": "Excluir `other` de la expansión automática de `all` y permitirla únicamente cuando una persona la seleccione expresamente.",
+      "title": "Excluir `other` del schedule",
+      "body": "Mantener solo familias explícitas en la matriz semanal y permitir `other` únicamente mediante una ejecución manual revisada.",
       "recommended": true
     },
     {
-      "title": "Mantenerla en el cron",
-      "body": "Ejecutar semanalmente el catch-all, aceptando PRs más heterogéneas y un coste superior de revisión, pruebas y reversión.",
+      "title": "Sustituir `other` por familias curadas",
+      "body": "Clasificar sus paquetes en familias adicionales antes de automatizar sus actualizaciones major.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el lote heterogéneo",
+      "body": "Conservar `other` programada asumiendo una PR de mayor radio y una validación manual más amplia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Solo ejecución manual",
-    "body": "Excluir `other` de la expansión automática de `all` y permitirla únicamente cuando una persona la seleccione expresamente.",
+    "title": "Excluir `other` del schedule",
+    "body": "Mantener solo familias explícitas en la matriz semanal y permitir `other` únicamente mediante una ejecución manual revisada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el propietario histórico más claro de los workflows actuales y la persona asignada a la issue canónica y a esta implementación.",
+    "reason": "Ha mantenido el flujo de actualizaciones existente y es el autor de la propuesta que introduce la política de familias.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7632#issuecomment-4990693709",
-    "reviewedAt": "2026-07-18T05:58:46.083Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T12:40:58.795Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

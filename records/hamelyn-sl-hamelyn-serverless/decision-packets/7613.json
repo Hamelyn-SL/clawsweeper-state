@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T07:56:42.465Z",
-  "updatedAt": "2026-07-16T06:53:04Z",
+  "generatedAt": "2026-07-19T12:40:38.597Z",
+  "updatedAt": "2026-07-16T08:01:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,47 @@
       "priority:p2",
       "app:infrastructure",
       "triage:done",
-      "security-alert",
-      "P2",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond",
+      "security-alert"
     ],
     "createdAt": "2026-07-16T06:09:31Z",
-    "updatedAt": "2026-07-16T06:53:04Z"
+    "updatedAt": "2026-07-16T08:01:47Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba consumir el tarball inmutable de SheetJS `0.20.3` desde `cdn.sheetjs.com` como dependencia de producción, o debe sustituirse `xlsx` por una librería mantenida en un registro aprobado?",
-  "rationale": "La actualización corrige las vulnerabilidades, pero cambia la fuente de código ejecutable de producción y afecta a varias superficies operativas; esa aceptación de cadena de suministro requiere intención humana explícita.",
+  "question": "¿Se aprueba consumir el tarball oficial de SheetJS fuera de npm para actualizar `xlsx` y corregir conjuntamente esta alerta y https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614?",
+  "rationale": "La actualización cambia la procedencia de código runtime y la aceptación de esa cadena de suministro no puede inferirse automáticamente aunque la vulnerabilidad esté confirmada.",
   "options": [
     {
-      "title": "Fijar SheetJS 0.20.3",
-      "body": "Usar el tarball exacto en Admin y Core, verificar su integridad y validar conjuntamente todos los flujos XLSX afectados.",
+      "title": "Aprobar el tarball oficial",
+      "body": "Fijar una versión corregida desde el origen oficial de SheetJS con procedencia e integridad revisadas y validar los flujos XLSX afectados.",
       "recommended": true
     },
     {
-      "title": "Migrar de librería",
-      "body": "Sustituir `xlsx` por una alternativa mantenida, asumiendo una migración y una validación funcional de mayor alcance.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar temporalmente el riesgo",
-      "body": "Mantener `0.18.5` con mitigaciones adicionales y seguimiento explícito, sin considerar resuelta la alerta.",
+      "title": "Elegir una alternativa",
+      "body": "Definir un mirror aprobado, una estrategia de vendorización o una biblioteca alternativa antes de cambiar las dependencias runtime.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fijar SheetJS 0.20.3",
-    "body": "Usar el tarball exacto en Admin y Core, verificar su integridad y validar conjuntamente todos los flujos XLSX afectados.",
+    "title": "Aprobar el tarball oficial",
+    "body": "Fijar una versión corregida desde el origen oficial de SheetJS con procedencia e integridad revisadas y validar los flujos XLSX afectados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la mejor señal disponible de trabajo reciente sobre los consumidores XLSX y ya fue identificado en la revisión previa para coordinar la decisión sobre dependencias compartidas.",
+    "reason": "Es la señal histórica más directa sobre el parser compartido que queda expuesto en los endpoints afectados.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7613.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613#issuecomment-4989020624",
-    "reviewedAt": "2026-07-16T07:56:42.465Z",
-    "mainSha": "9b09d392d49b027e7f59a67481e2c08f9a0237c1"
+    "reviewedAt": "2026-07-19T12:40:38.597Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

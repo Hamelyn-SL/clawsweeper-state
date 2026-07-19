@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T12:39:25.223Z",
+  "updatedAt": "2026-07-16T14:35:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7654,
+    "title": "fix: reprogramar recogida moves canceled zero-product orders to payment_pending",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7654",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:supply",
+      "priority:p1",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "no-stale",
+      "reporter:alexcanHamelyn"
+    ],
+    "createdAt": "2026-07-16T13:51:13Z",
+    "updatedAt": "2026-07-16T14:35:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿La exclusión debe basarse estrictamente en `cancelledByReschedule` y `products` vacíos, preservando la recepción de pedidos cancelados que sí contienen productos?",
+  "rationale": "La recepción de pedidos cancelados fue introducida deliberadamente; el código permite distinguir el caso legacy, pero decidir el límite exacto evita convertir una reparación acotada en una regresión operativa.",
+  "options": [
+    {
+      "title": "Acotar al caso legacy vacío",
+      "body": "Bloquear recepción y transiciones automáticas solo para pedidos con `cancelledByReschedule` y sin productos, manteniendo la recepción física de cancelados con productos.",
+      "recommended": true
+    },
+    {
+      "title": "Bloquear todos los cancelados",
+      "body": "Impedir cualquier transición desde `CANCELLED`, a costa de cambiar el comportamiento existente de recepción de pedidos cancelados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar al caso legacy vacío",
+    "body": "Bloquear recepción y transiciones automáticas solo para pedidos con `cancelledByReschedule` y sin productos, manteniendo la recepción física de cancelados con productos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el asignado actual y la historia disponible lo vincula tanto al panel de recepción como al comportamiento de reactivación que debe preservarse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7654.md",
+    "reviewedAt": "2026-07-19T12:39:25.223Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}
