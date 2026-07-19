@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T15:43:26.416Z",
+  "generatedAt": "2026-07-19T15:47:28.960Z",
   "updatedAt": "2026-07-19T15:38:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,41 +14,40 @@
       "priority:p2",
       "app:marketplace",
       "reporter:JavierHamelyn",
-      "triage:running"
+      "triage:queued"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
     "updatedAt": "2026-07-19T15:38:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se prioriza primero la escalación con soporte de TodoColección y se pospone cualquier muestreo hasta confirmar contrato, permisos y semántica de `404`?",
-  "rationale": "La respuesta del proveedor determina si el trabajo posterior es una corrección de integración o una nueva capacidad de reconciliación con límites y criterios de seguridad operativa.",
+  "question": "¿Debe el equipo bloquear cualquier muestreo automatizado hasta que TodoColección confirme el contrato autenticado de lectura?",
+  "rationale": "La lectura actual falla de forma conocida y la semántica del identificador es ambigua; elegir un fallback sin ese contrato puede generar señales falsas de inventario.",
   "options": [
     {
-      "title": "Escalar y bloquear el muestreo",
-      "body": "Abrir y seguir el caso con TodoColección, conservando los watchers actuales hasta tener una respuesta verificable sobre permisos y parámetros.",
+      "title": "Escalar al proveedor primero",
+      "body": "Solicitar confirmación de permisos, parámetros e identificadores y no convertir 404 o listados vacíos en decisiones de inventario.",
       "recommended": true
     },
     {
-      "title": "Prototipo no mutante",
-      "body": "Autorizar solo un muestreo diagnóstico que registre resultados sin modificar estados de listings mientras se espera al proveedor.",
+      "title": "Muestreo inconclusivo temporal",
+      "body": "Añadir una comprobación limitada que registre respuestas, pero trate errores de lectura como inconclusos hasta recibir el contrato del proveedor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar y bloquear el muestreo",
-    "body": "Abrir y seguir el caso con TodoColección, conservando los watchers actuales hasta tener una respuesta verificable sobre permisos y parámetros.",
+    "title": "Escalar al proveedor primero",
+    "body": "Solicitar confirmación de permisos, parámetros e identificadores y no convertir 404 o listados vacíos en decisiones de inventario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Es la persona más vinculada por historial al flujo de reconciliación que consume esta lectura.",
-    "confidence": "high"
+    "reason": "Es la señal histórica más directa para la reconciliación que quedaría condicionada por esta lectura.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-19T15:43:26.416Z",
+    "reviewedAt": "2026-07-19T15:47:28.960Z",
     "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
   }
 }
