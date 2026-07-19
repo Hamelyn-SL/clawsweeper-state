@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:50:13.411Z",
-  "updatedAt": "2026-07-15T00:12:02Z",
+  "generatedAt": "2026-07-19T16:18:01.208Z",
+  "updatedAt": "2026-07-19T14:02:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,44 +19,45 @@
       "triage:confirmed-live",
       "area:marketplace-sync",
       "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-06-02T15:35:06Z",
-    "updatedAt": "2026-07-15T00:12:02Z"
+    "updatedAt": "2026-07-19T14:02:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse todavía el refuerzo de observabilidad de los fallos batch de Feltrinelli aunque la firma concreta no reaparezca desde el 15 de junio de 2026?",
-  "rationale": "El defecto de diagnóstico sigue presente en el código, pero la telemetría disponible indica que el incidente concreto fue histórico y ya tiene una causa recuperada desde MongoDB; la prioridad de instrumentarlo es una elección operativa del equipo.",
+  "question": "¿Queremos priorizar una mejora permanente de observabilidad batch para Feltrinelli aunque el patrón concreto no reaparezca desde el 15 de junio de 2026?",
+  "rationale": "La implementación parece pequeña, pero la recurrencia actual no justifica por sí sola cambiar el contrato de logs ni decidir qué detalle es seguro publicar.",
   "options": [
     {
-      "title": "Añadir telemetría batch acotada",
-      "body": "Registrar marketplace, fase, SKU y error serializado en los dos `catch` batch, manteniendo el comportamiento de `SYNC_ERROR` sin cambios.",
+      "title": "Añadir contexto estructurado saneado",
+      "body": "Conservar el comportamiento de estado y publicar SKU, tipo de error y mensaje resumido en los `catch` batch.",
       "recommended": true
     },
     {
       "title": "Cerrar como incidente histórico",
-      "body": "Aceptar la correlación ya obtenida y no invertir en nuevos logs mientras no reaparezca una firma que requiera diagnóstico inmediato.",
+      "body": "Mantener la correlación existente y reabrir una incidencia específica si vuelve a observarse el patrón.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir telemetría batch acotada",
-    "body": "Registrar marketplace, fase, SKU y error serializado en los dos `catch` batch, manteniendo el comportamiento de `SYNC_ERROR` sin cambios.",
+    "title": "Añadir contexto estructurado saneado",
+    "body": "Conservar el comportamiento de estado y publicar SKU, tipo de error y mensaje resumido en los `catch` batch.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta la construcción de Feltrinelli, la persistencia de errores y la instrumentación de retirada más próxima a este hueco.",
+    "reason": "Su trabajo reciente conecta directamente la persistencia de errores con la observabilidad de retiradas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6209.md",
-    "reviewedAt": "2026-07-19T13:50:13.411Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:18:01.208Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:50:30.304Z",
-  "updatedAt": "2026-07-14T23:06:36Z",
+  "generatedAt": "2026-07-19T16:13:12.273Z",
+  "updatedAt": "2026-07-19T14:01:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -27,42 +27,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-14T23:06:36Z"
+    "updatedAt": "2026-07-19T14:01:32Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el cron de eBay reactivar `ebay.create()` tras clasificar los rechazos conocidos, y qué contrato operativo debe exponer cuando un lote de publicación falla por completo o parcialmente?",
-  "rationale": "El código puede registrar más detalle, pero elegir entre HTTP 200 con señal estructurada, degradación de estado o fallo de la ruta cambia el contrato compartido de crons y la recuperación operativa de eBay.",
+  "question": "¿Debe un lote eBay con cero publicaciones correctas fallar operativamente el cron o mantener HTTP 200 con una alerta/telemetría obligatoria antes de reactivar `create`?",
+  "rationale": "El código actual permite ambos comportamientos y la elección afecta al contrato de monitorización y a la tolerancia de otras fases parcialmente recuperables.",
   "options": [
     {
-      "title": "Definir política compartida y reactivar con prueba",
-      "body": "Acordar la severidad en el handler compartido, instrumentar el detalle por oferta y reactivar create únicamente tras validar una ejecución real representativa.",
+      "title": "Señal específica sin cambiar HTTP",
+      "body": "Mantener HTTP 200, pero emitir una alerta estructurada y visible cuando `bulkPublishOffer` complete un lote con cero éxitos antes de reactivar create.",
       "recommended": true
     },
     {
-      "title": "Mantener create pausado",
-      "body": "Conservar la mitigación hasta disponer de una taxonomía de rechazos y una señal operativa aprobada para el cron.",
+      "title": "Fallar el cron en publicación total",
+      "body": "Propagar como error operativo un lote de publicación totalmente fallido, aceptando que el endpoint deje de responder 200 en ese caso.",
       "recommended": false
     },
     {
-      "title": "Aplicar una política solo para eBay",
-      "body": "Introducir una señal o degradación limitada a la fase create de eBay sin modificar todavía el contrato global de los demás crons.",
+      "title": "Mantener la pausa",
+      "body": "Conservar create deshabilitado hasta aislar todas las causas remotas y acordar el comportamiento de monitorización.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir política compartida y reactivar con prueba",
-    "body": "Acordar la severidad en el handler compartido, instrumentar el detalle por oferta y reactivar create únicamente tras validar una ejecución real representativa.",
+    "title": "Señal específica sin cambiar HTTP",
+    "body": "Mantener HTTP 200, pero emitir una alerta estructurada y visible cuando `bulkPublishOffer` complete un lote con cero éxitos antes de reactivar create.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Introdujo la mitigación temporal vigente y su historial está directamente conectado con la reactivación del flujo de create.",
+    "person": "JavierHamelyn",
+    "reason": "Su cambio actual introdujo la pausa temporal y documenta la condición para reactivar el flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewedAt": "2026-07-19T13:50:30.304Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:13:12.273Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

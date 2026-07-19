@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:15:11.684Z",
-  "updatedAt": "2026-07-14T12:24:30Z",
+  "generatedAt": "2026-07-19T16:14:06.855Z",
+  "updatedAt": "2026-07-19T13:27:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-07-14T12:24:30Z"
+    "updatedAt": "2026-07-19T13:27:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué dos activos oficiales aprobados deben firmar actualmente las facturas comerciales en español e inglés?",
-  "rationale": "El repositorio confirma dónde se aplican las imágenes, pero no puede determinar ni fabricar una firma corporativa o aduanera válida.",
+  "question": "¿Qué persona, cargo y activos PNG oficiales deben firmar los pies ES y ENG de las facturas comerciales?",
+  "rationale": "El repositorio demuestra el punto técnico de cambio, pero no puede determinar ni inventar una representación corporativa o aduanera autorizada.",
   "options": [
     {
-      "title": "Aportar los PNG aprobados",
-      "body": "Facilitar los dos pies oficiales ES y ENG para realizar un reemplazo acotado y verificable.",
+      "title": "Aportar los dos PNG aprobados",
+      "body": "Facilitar los activos ES y ENG finales, junto con la confirmación del firmante y cargo autorizados.",
       "recommended": true
     },
     {
-      "title": "Designar responsable de aprobación",
-      "body": "Indicar quién valida el nombre, cargo y diseño de ambos pies antes de preparar los activos definitivos.",
+      "title": "Aprobar datos para regenerarlos",
+      "body": "Confirmar nombre, cargo, sello y requisitos de diseño para que se regeneren los dos pies de forma controlada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar los PNG aprobados",
-    "body": "Facilitar los dos pies oficiales ES y ENG para realizar un reemplazo acotado y verificable.",
+    "title": "Aportar los dos PNG aprobados",
+    "body": "Facilitar los activos ES y ENG finales, junto con la confirmación del firmante y cargo autorizados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el contribuidor con mayor trazabilidad reciente en las especificaciones y divergencias de `shipping/invoices`.",
+    "reason": "Figura como owner del bloque de facturas y autor de la especificación que identificó la divergencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930#issuecomment-4911156878",
-    "reviewedAt": "2026-07-19T13:15:11.684Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:14:06.855Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

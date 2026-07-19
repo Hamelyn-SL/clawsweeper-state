@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:15:44.515Z",
-  "updatedAt": "2026-07-08T16:39:26Z",
+  "generatedAt": "2026-07-19T16:20:39.141Z",
+  "updatedAt": "2026-07-19T13:27:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,46 @@
       "feature",
       "triage:done",
       "business-logic",
-      "P3",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "P3",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T12:14:01Z",
-    "updatedAt": "2026-07-08T16:39:26Z"
+    "updatedAt": "2026-07-19T13:27:09Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el banner visible consumir una promoción pública activa resuelta por locale desde backend/configuración, o mantenerse editorial en una fuente CMS única separada de los cupones transaccionales?",
-  "rationale": "El código actual no define qué promociones son publicables ni cómo representar de forma segura tipos distintos como `bxgy` y porcentajes; esa semántica condiciona la API, la administración y el copy.",
+  "question": "¿La fuente de verdad de la campaña visible debe ampliarse en los cupones existentes o vivir como una configuración promocional separada por locale?",
+  "rationale": "Los cupones actuales expresan cálculo y vigencia, pero no la selección comercial ni el texto localizado que debe aparecer en la cabecera.",
   "options": [
     {
-      "title": "Promoción pública estructurada",
-      "body": "Definir una promoción activa por locale con copy y condiciones publicables, y hacer que `PromoStrip` la consuma desde una fuente central.",
+      "title": "Configurar promociones separadas",
+      "body": "Crear una configuración de campaña por locale que referencie el cupón aplicable y contenga copy, prioridad y ventana de publicación.",
       "recommended": true
     },
     {
-      "title": "CMS editorial separado",
-      "body": "Mantener el banner como contenido editorial, pero mover mensaje y código a una única entrada gestionable con validación de vigencia y locale.",
-      "recommended": false
-    },
-    {
-      "title": "No sincronizar automáticamente",
-      "body": "Conservar las traducciones estáticas y documentar una actualización manual coordinada cuando cambie cada cupón.",
+      "title": "Extender el modelo de cupón",
+      "body": "Añadir metadatos de visibilidad, locale y copy a los cupones, asumiendo que un cupón puede ser directamente una campaña pública.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Promoción pública estructurada",
-    "body": "Definir una promoción activa por locale con copy y condiciones publicables, y hacer que `PromoStrip` la consuma desde una fuente central.",
+    "title": "Configurar promociones separadas",
+    "body": "Crear una configuración de campaña por locale que referencie el cupón aplicable y contenga copy, prioridad y ventana de publicación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Figura como owner funcional del subdominio que define los cupones y promociones afectados.",
+    "reason": "Es el owner documentado del bloque Coupons & Promotions y puede fijar la frontera funcional con Ecommerce.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7140.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7140#issuecomment-4913348731",
-    "reviewedAt": "2026-07-19T13:15:44.515Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:20:39.141Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

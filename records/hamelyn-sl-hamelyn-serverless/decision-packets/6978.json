@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:16:06.723Z",
-  "updatedAt": "2026-07-08T10:27:39Z",
+  "generatedAt": "2026-07-19T16:18:04.946Z",
+  "updatedAt": "2026-07-19T13:27:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,46 @@
       "feature",
       "triage:done",
       "business-logic",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T10:16:53Z",
-    "updatedAt": "2026-07-08T10:27:39Z"
+    "updatedAt": "2026-07-19T13:27:03Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La migración debe preservar exactamente las cuatro filas con `priority <= 0` y escapar los `X` literales, o debe corregir/eliminar de forma deliberada la fila desactivada `AMAZON PROMO NAVIDAD` durante la conversión?",
-  "rationale": "La decisión cambia el comportamiento futuro de datos persistidos y no puede deducirse solo del compilador actual: la issue solicita corregir o retirar la fila defectuosa, mientras que la equivalencia histórica exige tratar de forma especial los `X` literales.",
+  "question": "¿La migración debe preservar también el comportamiento histórico de las filas inactivas y de literales con `X`, o retirar/corregir esas filas antes de adoptar regex estándar?",
+  "rationale": "La compatibilidad activa es verificable, pero escoger entre conservar la semántica defectuosa o corregir datos inactivos cambia el comportamiento futuro y no puede deducirse de forma segura.",
   "options": [
     {
-      "title": "Migración compatible con corrección explícita",
-      "body": "Convertir las filas activas de forma equivalente, escapar los `X` literales y corregir o retirar documentadamente la fila desactivada defectuosa con pruebas de la divergencia esperada.",
+      "title": "Migrar reglas activas y retirar la fila defectuosa",
+      "body": "Preservar equivalencia de las filas con `priority > 0`, documentar `X` explícitamente y retirar o corregir la negación inactiva antes del corte.",
       "recommended": true
     },
     {
-      "title": "Preservación literal completa",
-      "body": "Convertir también las filas inactivas sin alterar su semántica actual, dejando la corrección de `AMAZON PROMO NAVIDAD` para una decisión posterior.",
-      "recommended": false
-    },
-    {
-      "title": "Retirar filas inactivas obsoletas",
-      "body": "Eliminar las cuatro filas con prioridad no positiva durante la migración tras confirmar que no son necesarias para reactivaciones futuras.",
+      "title": "Preservar toda la semántica histórica",
+      "body": "Convertir también las filas inactivas a regex equivalentes, manteniendo la negación defectuosa hasta una decisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración compatible con corrección explícita",
-    "body": "Convertir las filas activas de forma equivalente, escapar los `X` literales y corregir o retirar documentadamente la fila desactivada defectuosa con pruebas de la divergencia esperada.",
+    "title": "Migrar reglas activas y retirar la fila defectuosa",
+    "body": "Preservar equivalencia de las filas con `priority > 0`, documentar `X` explícitamente y retirar o corregir la negación inactiva antes del corte.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial y la issue madre lo sitúan como owner del bloque BL shipping/carrier y autor de la implementación actual.",
+    "reason": "El contexto del bloque BL le identifica como owner y el historial le vincula a la implementación actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978#issuecomment-4911160747",
-    "reviewedAt": "2026-07-19T13:16:06.723Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:18:04.946Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

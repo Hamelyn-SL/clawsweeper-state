@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:51:17.221Z",
-  "updatedAt": "2026-07-14T23:47:16Z",
+  "generatedAt": "2026-07-19T16:14:55.589Z",
+  "updatedAt": "2026-07-19T14:01:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,42 +24,37 @@
       "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-14T23:47:16Z"
+    "updatedAt": "2026-07-19T14:01:37Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el handler compartido mantener HTTP 200 para fallos parciales tras añadir señal estructurada, o elevar a una respuesta no 2xx los fallos materiales según ruta y severidad?",
-  "rationale": "El contrato afecta a varios crons y a la compatibilidad de alertas y consumidores; el código actual no determina por sí solo la política operativa deseada.",
+  "question": "¿Debe esta incidencia limitarse a la clasificación y reconciliación de los `400` específicos de eBay, dejando el contrato HTTP compartido para https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622?",
+  "rationale": "La evidencia confirma una corrección de una variante concreta, pero elevar rechazos parciales a nivel HTTP afecta a múltiples rutas y requiere decidir qué fallos son tolerables.",
   "options": [
     {
-      "title": "Definir primero una política común",
-      "body": "Acordar en la incidencia transversal un estado estructurado y una severidad por ruta, manteniendo temporalmente la compatibilidad HTTP actual.",
+      "title": "Separar el contrato transversal",
+      "body": "Mantener aquí el diagnóstico y la clasificación de `400` de eBay, y tratar el estado HTTP y la severidad compartida en la canónica transversal.",
       "recommended": true
     },
     {
-      "title": "Mantener HTTP 200 con observabilidad reforzada",
-      "body": "Conservar el contrato actual y exigir campos estructurados y métricas para que los fallos parciales sean alertables.",
-      "recommended": false
-    },
-    {
-      "title": "Elevar fallos materiales de eBay",
-      "body": "Devolver error HTTP para lotes eBay que superen un umbral definido, asumiendo el ajuste de alertas y consumidores.",
+      "title": "Elevar eBay de forma específica",
+      "body": "Definir para `/api/ebay` una señal o estado más estricto antes de resolver la política del resto de crons.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir primero una política común",
-    "body": "Acordar en la incidencia transversal un estado estructurado y una severidad por ruta, manteniendo temporalmente la compatibilidad HTTP actual.",
+    "title": "Separar el contrato transversal",
+    "body": "Mantener aquí el diagnóstico y la clasificación de `400` de eBay, y tratar el estado HTTP y la severidad compartida en la canónica transversal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El contrato compartido y la incidencia transversal relacionada se apoyan en trabajo reciente suyo sobre el handler.",
-    "confidence": "medium"
+    "reason": "Conectó la corrección fusionada con la decisión de severidad del handler compartido.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewedAt": "2026-07-19T13:51:17.221Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:14:55.589Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

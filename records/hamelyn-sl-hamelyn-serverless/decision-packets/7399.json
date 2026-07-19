@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:53:04.341Z",
-  "updatedAt": "2026-07-14T21:30:35Z",
+  "generatedAt": "2026-07-19T16:17:43.270Z",
+  "updatedAt": "2026-07-19T12:55:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "app:infrastructure",
       "triage:blocked",
       "P1",
-      "impact:security",
-      "issue-rating: 🥈 silver",
-      "clawsweeper:not-repro-on-main",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:not-repro-on-main",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-12T13:55:30Z",
-    "updatedAt": "2026-07-14T21:30:35Z"
+    "updatedAt": "2026-07-19T12:55:42Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué responsable con acceso administrativo confirma la revocación de la identidad de Drive, la retirada o desactivación del acceso de Atlas y la política definitiva para los seis deploy hooks duplicados?",
-  "rationale": "La evidencia de código confirma el consumo por secrets, pero la rotación, la revocación y el inventario de integraciones externas no se pueden verificar ni ejecutar desde este repositorio.",
+  "question": "¿Qué equipo con acceso a Google Cloud, Atlas y GitHub completará la rotación, revocación y comprobación externa antes de retirar las variables de hooks duplicadas?",
+  "rationale": "El código confirma el uso de secrets, pero la evidencia decisiva y las operaciones de revocación están fuera del repositorio y requieren privilegios administrativos.",
   "options": [
     {
-      "title": "Rotar y retirar duplicados",
-      "body": "Revocar la clave de Drive, actualizar los secrets, validar un workflow real y eliminar las variables de deploy tras confirmar que no existe consumidor externo.",
+      "title": "Completar la remediación externa",
+      "body": "Rotar la clave de Drive, actualizar los secrets, revocar el acceso histórico de Atlas y eliminar variables de hooks tras inventariar consumidores externos.",
       "recommended": true
     },
     {
-      "title": "Conservar hooks temporalmente",
-      "body": "Mantener las variables de deploy durante un plazo documentado si una integración externa las necesita, con propietario y fecha de retirada explícitos.",
+      "title": "Conservar temporalmente los hooks duplicados",
+      "body": "Mantener las seis variables mientras se identifica una integración externa, documentando un responsable y una fecha de revisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rotar y retirar duplicados",
-    "body": "Revocar la clave de Drive, actualizar los secrets, validar un workflow real y eliminar las variables de deploy tras confirmar que no existe consumidor externo.",
+    "title": "Completar la remediación externa",
+    "body": "Rotar la clave de Drive, actualizar los secrets, revocar el acceso histórico de Atlas y eliminar variables de hooks tras inventariar consumidores externos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aporta el contexto operativo de la incidencia y ha mantenido recientemente las rutas de workflows afectadas.",
-    "confidence": "high"
+    "reason": "Su historial reciente conecta el flujo de despliegue actual y los workflows relacionados con las credenciales afectadas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7399.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399#issuecomment-4951659866",
-    "reviewedAt": "2026-07-19T12:53:04.341Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:17:43.270Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

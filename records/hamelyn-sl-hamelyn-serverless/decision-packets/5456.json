@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:15:24.739Z",
-  "updatedAt": "2026-07-14T13:13:58Z",
+  "generatedAt": "2026-07-19T16:14:56.043Z",
+  "updatedAt": "2026-07-19T13:26:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,50 +19,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-14T13:13:58Z"
+    "updatedAt": "2026-07-19T13:26:46Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe TodoColeccion mantener un único breaker para toda la familia `products`, o separar `create` y `updatePrice` con una política de backoff basada en el límite real del proveedor?",
-  "rationale": "El código actual protege al proveedor, pero la elección entre cuota compartida, breakers por operación y el tiempo de recuperación afecta a throughput, sincronización de precios y riesgo de cascadas; los datos disponibles no fijan ese contrato.",
+  "question": "¿Debe `products` conservar un corte compartido ante 429 o diferenciar explícitamente creación y actualización de precio según la cuota real del proveedor?",
+  "rationale": "El código confirma el corte actual, pero la cuota y el contrato operativo de TodoColeccion no determinan si aislar más el breaker es seguro.",
   "options": [
     {
-      "title": "Medir y separar por operación",
-      "body": "Capturar respuestas y cabeceras reales del proveedor, luego usar breakers y backoff independientes para `create` y `updatePrice` si el límite no es compartido.",
+      "title": "Definir la política desde trazas reales",
+      "body": "Capturar respuestas 429 y establecer límites, espera y reintentos antes de ajustar los scopes; conservar la protección actual mientras tanto.",
       "recommended": true
     },
     {
-      "title": "Mantener cuota compartida",
-      "body": "Conservar `products` como un único presupuesto de protección y documentar que cualquier 429 pausa tanto altas como precios.",
+      "title": "Separar create y updatePrice",
+      "body": "Usar scopes distintos solo si TodoColeccion confirma que ambas rutas no comparten cuota ni penalización.",
       "recommended": false
     },
     {
-      "title": "Aplazar el cambio de comportamiento",
-      "body": "Mantener el aislamiento actual entre familias y limitarse por ahora a mejorar métricas y visibilidad del rate limit.",
+      "title": "Mantener fail-fast en products",
+      "body": "Aceptar que un 429 corte create y precio para priorizar la protección del proveedor sobre el rendimiento del lote.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir y separar por operación",
-    "body": "Capturar respuestas y cabeceras reales del proveedor, luego usar breakers y backoff independientes para `create` y `updatePrice` si el límite no es compartido.",
+    "title": "Definir la política desde trazas reales",
+    "body": "Capturar respuestas 429 y establecer límites, espera y reintentos antes de ajustar los scopes; conservar la protección actual mientras tanto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Integró el arreglo de alcance actual y su historial conecta tanto la API afectada como el comportamiento operativo de marketplaces.",
+    "reason": "Fusionó el aislamiento previo y mantiene actividad reciente en la API afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-19T13:15:24.739Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:14:56.043Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

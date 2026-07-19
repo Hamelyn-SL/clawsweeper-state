@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:24:40.576Z",
-  "updatedAt": "2026-07-18T03:56:12Z",
+  "generatedAt": "2026-07-19T16:19:27.081Z",
+  "updatedAt": "2026-07-19T13:27:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,48 +11,52 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "conflicts:needs-human",
-      "proof: 🎥 video",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: 🎥 video",
+      "conflicts:needs-human",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-13T12:23:30Z",
-    "updatedAt": "2026-07-18T03:56:12Z",
+    "updatedAt": "2026-07-19T13:27:24Z",
     "headSha": "347d94b44cc88adeddfe476fd5e91fdaeb0abf96"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe el despliegue bloquear la exposición de las rutas v2 hasta que el cron haya publicado y verificado `current.json` v2 para cada host?",
-  "rationale": "La rama documenta una ejecución manual posterior al despliegue, pero decidir entre aceptar esa ventana o automatizar la publicación modifica el contrato operativo de los sitemaps.",
+  "question": "¿Se acepta el corte v2 condicionado a una operación manual inmediata del cron, sin `lastmod` veraz, o debe automatizarse la transición antes de fusionar?",
+  "rationale": "La rama documenta una ventana de índices vacíos y difiere un requisito del alcance original; elegir entre operación manual, compatibilidad temporal o despliegue en dos fases requiere intención de producto y lanzamiento.",
   "options": [
     {
-      "title": "Publicación v2 antes del corte",
-      "body": "Incorporar una operación verificable que publique y valide los manifiestos v2 antes de que `robots.txt` anuncie los índices nuevos.",
+      "title": "Automatizar la transición v2",
+      "body": "Publicar y comprobar el manifest v2 antes de activar `robots.txt` y las rutas nuevas, con una prueba real por host.",
       "recommended": true
     },
     {
-      "title": "Runbook manual aceptado",
-      "body": "Aceptar explícitamente la ventana y exigir una ejecución manual supervisada del cron inmediatamente después de cada despliegue.",
+      "title": "Aceptar un corte operado",
+      "body": "Fusionar con un runbook aprobado, ejecución manual inmediata del cron y monitorización explícita de los seis índices.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el alcance pendiente",
+      "body": "Mantener esta rama abierta hasta acordar qué trabajo restante de `lastmod` y transición pertenece al cambio actual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicación v2 antes del corte",
-    "body": "Incorporar una operación verificable que publique y valide los manifiestos v2 antes de que `robots.txt` anuncie los índices nuevos.",
+    "title": "Automatizar la transición v2",
+    "body": "Publicar y comprobar el manifest v2 antes de activar `robots.txt` y las rutas nuevas, con una prueba real por host.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Es la persona con mayor continuidad demostrable en la implementación de sitemaps y en esta propuesta.",
-    "confidence": "high"
+    "person": "alexcanHamelyn",
+    "reason": "Su historial integrado en la lógica SEO y el generador lo sitúa como el mejor punto de partida técnico para concretar la transición.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7473.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7473#issuecomment-4959505792",
-    "reviewedAt": "2026-07-19T13:24:40.576Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:19:27.081Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

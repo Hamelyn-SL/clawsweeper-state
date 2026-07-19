@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:15:11.567Z",
-  "updatedAt": "2026-07-14T17:14:22Z",
+  "generatedAt": "2026-07-19T16:18:07.816Z",
+  "updatedAt": "2026-07-19T13:26:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,46 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-07-14T17:14:22Z"
+    "updatedAt": "2026-07-19T13:26:05Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué propietario operativo y qué gestor seguro deben quedar como fuente autorizada para las credenciales de Celeritas, y debe migrarse la configuración legacy antes de documentarla?",
-  "rationale": "El repositorio prueba que el tracking REST existe, pero no puede determinar de forma segura el contrato externo vigente ni decidir la ubicación autorizada de credenciales activas.",
+  "question": "¿Qué repositorio o gestor de secretos aprobado debe citar la documentación para Celeritas, y debe mantenerse el alcance actual de solo tracking o reactivarse creación de etiquetas?",
+  "rationale": "El código y las fichas delimitan el estado técnico, pero no pueden establecer el contrato externo ni decidir la custodia autorizada de credenciales.",
   "options": [
     {
-      "title": "Confirmar y migrar la custodia segura",
-      "body": "Operaciones confirma el contrato y el contacto, Seguridad define la referencia autorizada y se elimina la dependencia de credenciales legacy antes de completar los runbooks.",
+      "title": "Confirmar contrato y custodiar secretos",
+      "body": "Operaciones valida el manual vigente, el contacto técnico y una referencia aprobada de secretos antes de completar la documentación.",
       "recommended": true
     },
     {
-      "title": "Documentar solo el alcance actual",
-      "body": "Se deja constancia de que Celeritas es tracking-only en `CarrierManager` y se mantiene la migración de credenciales como tarea de seguridad separada.",
+      "title": "Mantener solo tracking documentado",
+      "body": "Se conserva el alcance técnico actual y se deja explícitamente fuera cualquier creación de etiquetas hasta recibir autorización contractual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y migrar la custodia segura",
-    "body": "Operaciones confirma el contrato y el contacto, Seguridad define la referencia autorizada y se elimina la dependencia de credenciales legacy antes de completar los runbooks.",
+    "title": "Confirmar contrato y custodiar secretos",
+    "body": "Operaciones valida el manual vigente, el contacto técnico y una referencia aprobada de secretos antes de completar la documentación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta la documentación pendiente con la implementación REST y permite coordinar la confirmación con Operaciones y Seguridad.",
-    "confidence": "high"
+    "reason": "Es la mejor ruta técnica disponible por sus cambios recientes en la ficha y la migración de tracking; debe coordinar la confirmación con Operaciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463#issuecomment-4909963944",
-    "reviewedAt": "2026-07-19T13:15:11.567Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:18:07.816Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

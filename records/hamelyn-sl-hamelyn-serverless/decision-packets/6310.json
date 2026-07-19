@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:50:24.684Z",
-  "updatedAt": "2026-07-14T23:30:08Z",
+  "generatedAt": "2026-07-19T16:18:51.450Z",
+  "updatedAt": "2026-07-19T14:02:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,42 +23,42 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-09T12:17:30Z",
-    "updatedAt": "2026-07-14T23:30:08Z"
+    "updatedAt": "2026-07-19T14:02:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato permanente debe usar ShipMatrix para identificar prep-centers y qué estado debe mantener un consolidado FEDEX hasta que el operario indique el número de cajas?",
-  "rationale": "La implementación existente resuelve el multibulto manual, pero decidir entre un matcher de nombre, dirección normalizada o ambos, así como la política de regeneración y reintentos, cambia el comportamiento operativo y los datos persistidos.",
+  "question": "¿Debe el routing por destinatario crear un nuevo estado de consolidado pendiente de cajas, o mantenerse como cambio manual desde Spring cuando packing detecte el grupo?",
+  "rationale": "La elección define el contrato persistido, cuándo el batch debe omitir etiquetas y la política de regeneración de expediciones ya creadas.",
   "options": [
     {
-      "title": "Diseñar un flujo específico de consolidado FEDEX",
-      "body": "Añadir matching normalizado por destinatario, un estado pendiente de cajas y generación única por `consolidationId` en packing.",
+      "title": "Routing directo con estado pendiente",
+      "body": "Añadir el criterio por destinatario y aplazar la etiqueta FEDEX hasta que packing indique las cajas, conservando una única expedición por consolidado.",
       "recommended": true
     },
     {
-      "title": "Mantener el cambio manual actual",
-      "body": "Conservar Spring→FEDEX en packing y documentar que los prep-centers siguen requiriendo intervención previa.",
+      "title": "Conservar el switch manual",
+      "body": "Mantener Spring como routing inicial y usar el switch actual a FEDEX sólo tras un fallo o intervención del operario.",
       "recommended": false
     },
     {
-      "title": "Limitarlo a una regla temporal de dirección",
-      "body": "Crear una regla de ShipMatrix para el destino actual sin generalizar el modelo hasta validar más prep-centers.",
+      "title": "Limitarlo a una lista operativa",
+      "body": "Resolver los prep-centers mediante procedimiento de almacén sin ampliar ShipMatrix ni el ciclo automático de etiquetas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Diseñar un flujo específico de consolidado FEDEX",
-    "body": "Añadir matching normalizado por destinatario, un estado pendiente de cajas y generación única por `consolidationId` en packing.",
+    "title": "Routing directo con estado pendiente",
+    "body": "Añadir el criterio por destinatario y aplazar la etiqueta FEDEX hasta que packing indique las cajas, conservando una única expedición por consolidado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre tanto la evolución de ShipMatrix como la resolución y creación de etiquetas FEDEX.",
+    "reason": "Su trabajo reciente define la resolución y persistencia de carrier que condicionan ambas alternativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6310.md",
-    "reviewedAt": "2026-07-19T13:50:24.684Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:18:51.450Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

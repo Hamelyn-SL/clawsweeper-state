@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:19:32.566Z",
-  "updatedAt": "2026-07-17T07:06:36Z",
+  "generatedAt": "2026-07-19T16:17:17.555Z",
+  "updatedAt": "2026-07-19T13:24:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -19,38 +19,43 @@
       "rating: 🥉 bronze"
     ],
     "createdAt": "2026-06-18T13:37:49Z",
-    "updatedAt": "2026-07-17T07:06:36Z",
+    "updatedAt": "2026-07-19T13:24:35Z",
     "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
   },
-  "lane": "release_inclusion",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe el workflow poder hacer bumps y pushes automáticos desde ramas de release autorizadas, o deben separarse el bump de versión y la publicación a stores?",
-  "rationale": "La elección determina quién puede modificar ramas y desencadenar publicaciones externas con credenciales de EAS; no es una decisión que pueda resolver una corrección mecánica.",
+  "question": "¿Qué frontera permanente debe tener el workflow para crear versiones y enviar binarios a stores: una rama de release dedicada con push condicionado, o bumps preparados mediante PR separado?",
+  "rationale": "La decisión determina quién puede activar credenciales de publicación, qué refs pueden recibir commits automáticos y si un fallo de EAS puede consumir una versión.",
   "options": [
     {
-      "title": "Separar bump y publicación",
-      "body": "Conservar EAS Build + Submit sin `contents: write` y realizar el bump de marketing mediante un PR o flujo de release independiente.",
+      "title": "Rama de release con push posterior",
+      "body": "Restringir el dispatch a una rama de release aprobada y empujar el bump únicamente cuando la build y el submit beta hayan terminado correctamente.",
       "recommended": true
     },
     {
-      "title": "Autorizar ramas de release",
-      "body": "Permitir el bump automático solo desde una lista explícita de ramas de release, bloqueando `dev` y `master` y documentando la aprobación requerida.",
+      "title": "Separar el bump en un PR",
+      "body": "Mantener el workflow con permisos de lectura y exigir que cada cambio de versión llegue previamente mediante un PR revisado.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el flujo manual actual",
+      "body": "Pausar este workflow hasta que exista una política de release y de acceso a stores acordada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar bump y publicación",
-    "body": "Conservar EAS Build + Submit sin `contents: write` y realizar el bump de marketing mediante un PR o flujo de release independiente.",
+    "title": "Rama de release con push posterior",
+    "body": "Restringir el dispatch a una rama de release aprobada y empujar el bump únicamente cuando la build y el submit beta hayan terminado correctamente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor solicitado para el cambio y fue seleccionado por conocimiento previo de Supply, EAS y workflows.",
+    "reason": "Es el revisor asignado y el contribuidor con señales recientes más directas en versiones y builds de Supply.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
-    "reviewedAt": "2026-07-19T13:19:32.566Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:17:17.555Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

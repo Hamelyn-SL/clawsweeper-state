@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:50:23.838Z",
-  "updatedAt": "2026-07-16T08:01:09Z",
+  "generatedAt": "2026-07-19T16:15:10.924Z",
+  "updatedAt": "2026-07-19T14:02:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -21,48 +21,49 @@
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "no-stale",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T01:26:56Z",
-    "updatedAt": "2026-07-16T08:01:09Z"
+    "updatedAt": "2026-07-19T14:02:26Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse a un `400` de `updatePrice` cuando la consulta remota confirma que el listing de MercadoLibre continúa activo pero el body no permite clasificarlo de forma segura?",
-  "rationale": "El código actual evita inactivar listings activos, pero decidir entre reintento, estado terminal y revisión manual cambia el comportamiento operativo y el tratamiento del backlog persistido.",
+  "question": "¿Qué política debe aplicarse a los `400` de `updatePrice` cuando el listing remoto sigue activo y la respuesta no identifica de forma segura una causa terminal o transitoria?",
+  "rationale": "El código puede obtener y persistir más contexto, pero decidir entre reintentar, marcar permanente o escalar a revisión cambia el comportamiento de sincronización y el tratamiento del backlog existente.",
   "options": [
     {
-      "title": "Clasificar con evidencia remota y body estructurado",
-      "body": "Persistir el detalle de la API, consultar el listing cuando proceda y reintentar solo los casos con una señal transitoria explícita; es la opción recomendada.",
+      "title": "Clasificación estructurada con cola segura",
+      "body": "Reconsultar el listing, usar el body de MercadoLibre para clasificar causas conocidas y mantener los casos ambiguos fuera del retry automático hasta revisarlos.",
       "recommended": true
     },
     {
-      "title": "Mantener UNKNOWN con alerta operativa",
-      "body": "No reintentar automáticamente los casos ambiguos y exponerlos para revisión manual, a costa de conservar backlog.",
+      "title": "Reintentar los 400 genéricos",
+      "body": "Tratar temporalmente los `400` activos como transitorios, aceptando más llamadas y posibles reintentos de fallos permanentes.",
       "recommended": false
     },
     {
-      "title": "Reintentar todos los 400 activos",
-      "body": "Recuperar de forma agresiva los casos activos, aceptando el riesgo de repetir errores permanentes y aumentar llamadas a MercadoLibre.",
+      "title": "Marcar todos como permanentes",
+      "body": "Detener el crecimiento del retry, pero aceptar que listings activos con una causa recuperable queden sin actualización automática.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar con evidencia remota y body estructurado",
-    "body": "Persistir el detalle de la API, consultar el listing cuando proceda y reintentar solo los casos con una señal transitoria explícita; es la opción recomendada.",
+    "title": "Clasificación estructurada con cola segura",
+    "body": "Reconsultar el listing, usar el body de MercadoLibre para clasificar causas conocidas y mantener los casos ambiguos fuera del retry automático hasta revisarlos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada en el contexto de la issue y su historial reciente está directamente relacionado con la selección y recuperación de listings de MercadoLibre.",
+    "reason": "Es el asignado actual y ha mantenido recientemente el flujo de recuperación de MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
-    "reviewedAt": "2026-07-19T13:50:23.838Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:15:10.924Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

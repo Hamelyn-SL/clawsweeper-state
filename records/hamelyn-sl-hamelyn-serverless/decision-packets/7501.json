@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T21:21:20.353Z",
-  "updatedAt": "2026-07-16T21:08:47Z",
+  "generatedAt": "2026-07-19T16:21:00.429Z",
+  "updatedAt": "2026-07-19T13:27:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,49 +12,47 @@
     "labels": [
       "size/XL",
       "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "status: ⏳ waiting on author",
       "dependencies",
       "javascript",
-      "autofix-failed"
+      "autofix-failed",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-14T07:06:21Z",
-    "updatedAt": "2026-07-16T21:08:47Z",
-    "headSha": "6c972e8526ffb3208ebc897c2fde11200e2a775a"
+    "updatedAt": "2026-07-19T13:27:54Z",
+    "headSha": "79e549f6bd646b57f6c00ae7703bb3b8bf247261"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe repararse esta PR más acotada como candidata canónica para las tres dependencias o debe consolidarse el trabajo en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500?",
-  "rationale": "Ambas ramas se solapan y permanecen bloqueadas; elegir primero dónde aplicar la reparación evita mantener dos estrategias de versiones y dos lockfiles divergentes.",
+  "question": "¿Qué candidatura debe convertirse en la actualización de seguridad consolidada contra `dev` actual?",
+  "rationale": "Hay dos PR solapados y ambos cambian dependencias major; escoger rama y compatibilidad objetivo requiere criterio de propiedad del monorepo.",
   "options": [
     {
-      "title": "Reparar esta PR",
-      "body": "Preservar aquí el hardening XML y la compatibilidad de Gutemberg, y validar los consumidores antes del merge.",
+      "title": "Consolidar una candidatura",
+      "body": "Actualizar una sola rama desde `dev`, corregir las dos incompatibilidades y cerrar la candidatura redundante después de validar consumidores.",
       "recommended": true
     },
     {
-      "title": "Consolidar en la PR amplia",
-      "body": "Pausar esta rama y trasladar la reparación a https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7500 después de revisar también su salto de `multer`.",
-      "recommended": false
-    },
-    {
-      "title": "Separar las dependencias",
-      "body": "Cerrar las actualizaciones agrupadas y preparar bumps independientes cuando la validación conjunta resulte demasiado amplia.",
+      "title": "Separar los upgrades major",
+      "body": "Dividir XML, UUID y correo si las validaciones dirigidas no permiten demostrar compatibilidad conjunta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reparar esta PR",
-    "body": "Preservar aquí el hardening XML y la compatibilidad de Gutemberg, y validar los consumidores antes del merge.",
+    "title": "Consolidar una candidatura",
+    "body": "Actualizar una sola rama desde `dev`, corregir las dos incompatibilidades y cerrar la candidatura redundante después de validar consumidores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es la referencia histórica más cercana de la agrupación de Dependabot y del flujo de autofix que produjo las dos ramas solapadas.",
+    "reason": "Su historial reciente cubre el lote transversal de manifests y lockfile que habría que consolidar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7501.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7501#issuecomment-4974937602",
-    "reviewedAt": "2026-07-16T21:21:20.353Z",
-    "mainSha": "795f292c038fd3b7c7529ab434fd4952ede53419"
+    "reviewedAt": "2026-07-19T16:21:00.429Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

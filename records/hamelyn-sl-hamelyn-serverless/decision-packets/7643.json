@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:22:55.293Z",
+  "generatedAt": "2026-07-19T16:20:32.288Z",
   "updatedAt": "2026-07-19T12:29:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,33 +26,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el experimento B frente a D con un reparto, métrica primaria, duración y plan de activación definidos antes de integrar la variante?",
-  "rationale": "La implementación cambia una PDP de alto tráfico y habilita evaluación facturable de flags; el código no puede decidir por sí solo los objetivos ni la operación del experimento.",
+  "question": "¿Se aprueba el experimento B frente a D con reparto de tráfico, métrica primaria, duración y criterio de apagado definidos?",
+  "rationale": "La petición añade una nueva experiencia comercial y sus parámetros operativos no se deducen de forma segura del código ni del diseño adjunto.",
   "options": [
     {
       "title": "Aprobar B/D acotado",
-      "body": "Definir 50/50 u otro reparto, conversión a compra como métrica, duración y apagado antes de revisar la PR para integración.",
+      "body": "Definir el reparto, la conversión objetivo, la ventana temporal y el criterio de apagado para revisar e integrar la PR vinculada.",
       "recommended": true
     },
     {
-      "title": "Reformular el experimento",
-      "body": "Pedir ajustes de diseño, métrica o alcance comercial antes de continuar con la variante D.",
+      "title": "Pausar la variante D",
+      "body": "Mantener la ficha B hasta disponer de una hipótesis y un plan de medición aprobados por Ecommerce.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar B/D acotado",
-    "body": "Definir 50/50 u otro reparto, conversión a compra como métrica, duración y apagado antes de revisar la PR para integración.",
+    "body": "Definir el reparto, la conversión objetivo, la ventana temporal y el criterio de apagado para revisar e integrar la PR vinculada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual y autor de la implementación candidata, por lo que puede concretar el contrato con Ecommerce.",
-    "confidence": "high"
+    "person": "Alex Cantón",
+    "reason": "Es el contribuidor reciente más conectado con la PDP actual y sus módulos reutilizados.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7643.md",
-    "reviewedAt": "2026-07-19T16:22:55.293Z",
+    "reviewedAt": "2026-07-19T16:20:32.288Z",
     "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }
