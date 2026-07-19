@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:18:23.612Z",
-  "updatedAt": "2026-07-10T06:39:43Z",
+  "generatedAt": "2026-07-19T16:54:23.971Z",
+  "updatedAt": "2026-07-19T13:27:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,38 +19,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-09T11:44:40Z",
-    "updatedAt": "2026-07-10T06:39:43Z"
+    "updatedAt": "2026-07-19T13:27:17Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Cuándo y mediante qué PR se integrará `EPIC/revision-v3` en `dev` para que esta mejora llegue a la rama de entrega?",
-  "rationale": "La implementación ya está aprobada dentro de una rama épica, pero decidir la ventana y el alcance de su integración requiere coordinar el lanzamiento completo de Revisión V3.",
+  "question": "¿Debe integrarse `EPIC/revision-v3` en `dev` con el rediseño actual de defectos e imágenes, o debe recuperarse explícitamente el modelo de cuatro estados antes de esa integración?",
+  "rationale": "La rama de entrega aún no ofrece Revisión V3 y el rediseño posterior cambió el modelo visual aprobado inicialmente; esa elección de alcance no se resuelve con una corrección mecánica.",
   "options": [
     {
-      "title": "Integrar la épica revisada en `dev`",
-      "body": "Abrir y validar un PR de integración de `EPIC/revision-v3` hacia `dev`, incluyendo esta funcionalidad ya fusionada.",
+      "title": "Integrar la épica y validar el flujo actual",
+      "body": "Llevar el flujo de defectos con imágenes a `dev` tras una validación operativa de que sus referencias visuales cubren la necesidad original.",
       "recommended": true
     },
     {
-      "title": "Mantener la épica aislada por ahora",
-      "body": "Conservar esta mejora en la rama épica hasta que el despliegue de Revisión V3 tenga una fecha y una validación de rollout definidas.",
+      "title": "Recuperar las cuatro tarjetas de estado",
+      "body": "Mantener el modelo original y añadir una tarea explícita para restaurar sus imágenes de referencia antes de integrar la épica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar la épica revisada en `dev`",
-    "body": "Abrir y validar un PR de integración de `EPIC/revision-v3` hacia `dev`, incluyendo esta funcionalidad ya fusionada.",
+    "title": "Integrar la épica y validar el flujo actual",
+    "body": "Llevar el flujo de defectos con imágenes a `dev` tras una validación operativa de que sus referencias visuales cubren la necesidad original.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Ha aprobado esta implementación y figura entre las personas asignadas a la épica que contiene el trabajo pendiente de integración.",
+    "reason": "Fusionó la propuesta inicial y participó en el flujo base de Revisión V3, por lo que está bien situado para decidir la integración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7297.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7297#issuecomment-4924752273",
-    "reviewedAt": "2026-07-19T13:18:23.612Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:54:23.971Z",
+    "mainSha": "256a836dbce471852139783b559ae907f49653bd"
   }
 }
