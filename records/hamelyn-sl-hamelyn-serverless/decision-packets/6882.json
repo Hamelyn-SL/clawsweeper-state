@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:38:16.903Z",
-  "updatedAt": "2026-07-14T21:43:27Z",
+  "generatedAt": "2026-07-19T17:17:20.425Z",
+  "updatedAt": "2026-07-19T13:44:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,48 +16,52 @@
       "reporter:JavierHamelyn",
       "triage:done",
       "P1",
-      "impact:data-loss",
-      "impact:message-loss",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-14T21:43:27Z"
+    "updatedAt": "2026-07-19T13:44:48Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la solución de eDesk confirmar al cliente con 202 tras persistir la incidencia y delegar la entrega a un cron, o debe conservarse el error síncrono cuando eDesk sigue limitado?",
-  "rationale": "Ambas rutas cambian el contrato observable y exigen definir estados persistidos, política de reintentos, alertas y cómo se expone un fallo terminal; el código no puede escoger esa garantía de producto por sí solo.",
+  "question": "¿Qué política de retención, reintento y escalado debe aplicar la cola persistente de incidencias eDesk antes de garantizar la entrega ante un 429 sostenido?",
+  "rationale": "La implementación necesita decidir cuánto conservar el contenido del cliente y cuándo convertir un fallo recuperable en intervención operativa; el código no puede inferir esa política de privacidad y soporte.",
   "options": [
     {
-      "title": "Persistir y responder 202",
-      "body": "Guardar primero la incidencia, responder 202 y procesarla en una cola con estados `PENDING`/`SENT`/`FAILED` y alerta por acumulación.",
+      "title": "Outbox acotado con rescate",
+      "body": "Persistir hasta entrega, borrar el contenido al enviar, conservar metadatos 90 días y pasar a `FAILED` tras 24 horas o 12 intentos.",
       "recommended": true
     },
     {
-      "title": "Mantener error síncrono",
-      "body": "Conservar la respuesta de error tras los reintentos y mejorar el diagnóstico, aceptando que el cliente deba volver a enviar la incidencia.",
+      "title": "Retención operativa larga",
+      "body": "Conservar payload y adjuntos durante más tiempo para recuperación manual, aceptando mayor exposición y coste de datos.",
+      "recommended": false
+    },
+    {
+      "title": "Sin garantía diferida",
+      "body": "Mantener el retry síncrono actual y documentar que un 429 prolongado puede impedir crear la incidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir y responder 202",
-    "body": "Guardar primero la incidencia, responder 202 y procesarla en una cola con estados `PENDING`/`SENT`/`FAILED` y alerta por acumulación.",
+    "title": "Outbox acotado con rescate",
+    "body": "Persistir hasta entrega, borrar el contenido al enviar, conservar metadatos 90 días y pasar a `FAILED` tras 24 horas o 12 intentos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la canónica abierta de eDesk y authored el retry actual ante rate limit.",
+    "reason": "Está asignado a la canónica de eDesk y su historial reciente cubre el adaptador y el retry actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-19T13:38:16.903Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:17:20.425Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:33:48.381Z",
-  "updatedAt": "2026-07-14T21:41:42Z",
+  "generatedAt": "2026-07-19T17:16:31.329Z",
+  "updatedAt": "2026-07-19T13:44:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,45 +17,49 @@
       "app:marketplace",
       "triage:no-change",
       "P1",
-      "impact:crash-loop",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "impact:crash-loop",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-07-14T21:41:42Z"
+    "updatedAt": "2026-07-19T13:44:19Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Hay trazas de fase suficientes para atribuir los timeouts recientes de Amazon COM a una operación concreta antes de autorizar una reparación?",
-  "rationale": "La fuente confirma que el handler puede esperar sin límite propio, pero no permite elegir con seguridad qué operación debe cancelarse ni si un presupuesto global sería aceptable.",
+  "question": "¿Qué política debe aplicarse cuando una fase Amazon COM supera un presupuesto operativo: abortar todo el run, aislar la fase y continuar, o reintentarla de forma diferida?",
+  "rationale": "El código permite medir la fase retenida, pero decidir cómo preservar la coherencia de operaciones parcialmente completadas requiere criterio operativo.",
   "options": [
     {
-      "title": "Correlacionar la fase retenida",
-      "body": "Recoger la última fase iniciada en varios `request_id` terminales y reparar la dependencia concreta con una cancelación verificable.",
+      "title": "Instrumentar antes de limitar",
+      "body": "Capturar una nueva ocurrencia con la fase exacta y diseñar el límite y reintento sobre esa operación.",
       "recommended": true
     },
     {
-      "title": "Aceptar un deadline global",
-      "body": "Limitar el handler común aunque algunas promesas subyacentes puedan continuar después de devolver una respuesta controlada.",
+      "title": "Abortar el run al exceder presupuesto",
+      "body": "Aplicar un deadline global o por fase y devolver un fallo controlado para reintento posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Aislar fases no críticas",
+      "body": "Permitir que las demás fases concluyan y registrar la fase vencida para recuperación dirigida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Correlacionar la fase retenida",
-    "body": "Recoger la última fase iniciada en varios `request_id` terminales y reparar la dependencia concreta con una cancelación verificable.",
+    "title": "Instrumentar antes de limitar",
+    "body": "Capturar una nueva ocurrencia con la fase exacta y diseñar el límite y reintento sobre esa operación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta la normalización de rutas, el handler compartido y la decisión previa de llevar la recuperación a la capa común.",
+    "reason": "Su trabajo previo fijó la frontera entre guards de ruta y la capa común de conexión y cron.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-07-19T13:33:48.381Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:16:31.329Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }
