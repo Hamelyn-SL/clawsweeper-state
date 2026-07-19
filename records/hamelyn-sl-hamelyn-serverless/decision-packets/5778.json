@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:51:13.970Z",
+  "generatedAt": "2026-07-19T17:59:04.729Z",
   "updatedAt": "2026-07-19T17:47:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,50 +19,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
     "updatedAt": "2026-07-19T17:47:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los bloqueos de cuenta/política de eBay deben persistirse como `PERMANENT` con reencolación manual, o mantenerse fuera de reintento hasta que exista una recuperación operativa definida?",
-  "rationale": "La semántica de una restricción de cuenta puede ser temporal, mientras que una infracción de contenido puede requerir intervención de catálogo; el código actual no diferencia ambas rutas.",
+  "question": "¿Qué política de recuperación debe aplicarse a los bloqueos de cuenta de eBay frente a los rechazos permanentes de contenido?",
+  "rationale": "El código puede reconocer mensajes concretos, pero decidir si una cuenta limitada se reencola manualmente o conserva recuperación automática es una elección operativa.",
   "options": [
     {
-      "title": "Clasificación por código remoto",
-      "body": "Registrar y clasificar solo los códigos confirmados de política como `PERMANENT`, definiendo una reencolación manual para recuperaciones de cuenta.",
+      "title": "Separar causa terminal y bloqueo recuperable",
+      "body": "Marcar solo las políticas de contenido confirmadas como `PERMANENT` y exigir reencolado explícito para bloqueos de cuenta resueltos.",
       "recommended": true
     },
     {
-      "title": "Mantener la contención",
-      "body": "Conservar `create` desactivado hasta disponer de una muestra operativa suficiente y de un procedimiento de recuperación.",
+      "title": "Tratar toda restricción como permanente",
+      "body": "Elimina reintentos, pero asume que toda recuperación se gestionará manualmente fuera del cron.",
       "recommended": false
     },
     {
-      "title": "Tratar todo como permanente",
-      "body": "Marcar todas las variantes observadas como `PERMANENT`, aceptando que una recuperación posterior requerirá intervención manual.",
+      "title": "Conservar reintentos para bloqueos de cuenta",
+      "body": "Permite recuperación automática, pero mantiene carga mientras la cuenta continúe limitada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificación por código remoto",
-    "body": "Registrar y clasificar solo los códigos confirmados de política como `PERMANENT`, definiendo una reencolación manual para recuperaciones de cuenta.",
+    "title": "Separar causa terminal y bloqueo recuperable",
+    "body": "Marcar solo las políticas de contenido confirmadas como `PERMANENT` y exigir reencolado explícito para bloqueos de cuenta resueltos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "La corrección fusionada y el conocimiento de las firmas observadas sitúan a esta persona como el mejor punto de partida técnico.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su cambio controla actualmente la reactivación del flujo create y la decisión afecta directamente a esa contención.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
-    "reviewedAt": "2026-07-19T17:51:13.970Z",
+    "reviewedAt": "2026-07-19T17:59:04.729Z",
     "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:55:23.061Z",
+  "generatedAt": "2026-07-19T17:58:24.984Z",
   "updatedAt": "2026-07-14T16:01:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,41 +17,45 @@
       "triage:done",
       "reporter:victor",
       "impact:other",
-      "P2"
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-01T10:05:41Z",
     "updatedAt": "2026-07-14T16:01:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Ecommerce habilitar rutas brasileñas reales para categorías y subcategorías antes de añadir `pt-BR`, o excluir temporalmente esas páginas del clúster?",
-  "rationale": "La evidencia pública muestra que las rutas brasileñas equivalentes no existen; elegir entre crear esa superficie o mantener la exclusión es una decisión SEO y de catálogo que el código no puede inferir.",
+  "question": "¿Deben los aliases públicos de categoría/subcategoría, aunque se rendericen por `SearchPage`, considerarse landings SEO con hreflang en lugar de búsquedas genéricas?",
+  "rationale": "La regla SEO validada excluye hreflang de todas las búsquedas, mientras que este reporte propone una excepción para rutas de categoría indexables.",
   "options": [
     {
-      "title": "Habilitar rutas brasileñas reales",
-      "body": "Crear o mapear las rutas de categoría y subcategoría de Brasil, y después emitir alternates recíprocos para todos los locales.",
+      "title": "Separar categorías de búsquedas",
+      "body": "Conservar la regla para búsquedas libres y emitir alternates únicamente cuando la ruta pública corresponda a un alias de categoría o subcategoría.",
       "recommended": true
     },
     {
-      "title": "Excluir categorías de Brasil temporalmente",
-      "body": "Añadir alternates solo entre URLs existentes y documentar que `pt-BR` no se publica hasta que sus categorías sean resolubles.",
+      "title": "Mantener la regla actual",
+      "body": "Corregir solo `pt-BR` en las superficies que ya usan hreflang y documentar que los aliases de catálogo no forman clústeres.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Habilitar rutas brasileñas reales",
-    "body": "Crear o mapear las rutas de categoría y subcategoría de Brasil, y después emitir alternates recíprocos para todos los locales.",
+    "title": "Separar categorías de búsquedas",
+    "body": "Conservar la regla para búsquedas libres y emitir alternates únicamente cuando la ruta pública corresponda a un alias de categoría o subcategoría.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente conecta directamente el proxy, `SearchPage` y la integración SEO de subcategorías.",
+    "person": "alexcanHamelyn",
+    "reason": "La regla SEO validada y los cambios de categoría recientes sitúan en esta persona el contexto más directo para decidir la excepción.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763#issuecomment-4910174262",
-    "reviewedAt": "2026-07-19T17:55:23.061Z",
+    "reviewedAt": "2026-07-19T17:58:24.984Z",
     "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
