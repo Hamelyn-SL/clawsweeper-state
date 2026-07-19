@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:33:26.548Z",
-  "updatedAt": "2026-07-18T04:26:38Z",
+  "generatedAt": "2026-07-19T16:17:18.951Z",
+  "updatedAt": "2026-07-19T12:35:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "app:infrastructure",
       "feature",
       "reporter:danielmenchen-hamelyn",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
-      "P2",
       "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-16T08:11:46Z",
-    "updatedAt": "2026-07-18T04:26:38Z"
+    "updatedAt": "2026-07-19T12:35:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué familias major curadas deben quedar activas inicialmente en el schedule y cuáles deben permanecer excluidas hasta tener una migración específica?",
-  "rationale": "La separación técnica está definida, pero elegir qué majors se ejecutan automáticamente y qué pins/exclusiones se preservan establece una política operativa con impacto transversal en el monorepo.",
+  "question": "¿Qué familias major y qué exclusiones deben quedar habilitadas inicialmente en la automatización coordinada?",
+  "rationale": "La lista define qué breaking changes puede introducir el bot y no se deduce de forma segura de los manifests ni de la PR abierta.",
   "options": [
     {
-      "title": "Activar solo familias curadas",
-      "body": "Aprobar inicialmente las familias con migración y prueba real, dejando `other` y las incompatibilidades conocidas fuera del schedule.",
+      "title": "Aprobar una primera matriz conservadora",
+      "body": "Habilitar solo familias con migración y prueba demostradas, dejando MUI, Tailwind, ESLint, TypeScript, Jest y Expo/React Native fuera hasta su plan dedicado.",
       "recommended": true
     },
     {
-      "title": "Activar todas las familias",
-      "body": "Programar también la familia heterogénea y asumir revisiones manuales adicionales para cada actualización no compatible.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener solo minor/patch",
-      "body": "Posponer las majors automáticas hasta acordar una matriz completa de familias, exclusiones y responsabilidad de revisión.",
+      "title": "Mantener solo minor y patch",
+      "body": "Posponer la automatización de majors y conservar el flujo semanal actual hasta acordar cobertura y criterios de reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activar solo familias curadas",
-    "body": "Aprobar inicialmente las familias con migración y prueba real, dejando `other` y las incompatibilidades conocidas fuera del schedule.",
+    "title": "Aprobar una primera matriz conservadora",
+    "body": "Habilitar solo familias con migración y prueba demostradas, dejando MUI, Tailwind, ESLint, TypeScript, Jest y Expo/React Native fuera hasta su plan dedicado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es la persona con mayor continuidad demostrable en la automatización actual y en la PR que materializa esta propuesta.",
+    "reason": "Ha concentrado el trabajo previo de automatización y figura como responsable de la iniciativa enlazada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7622#issuecomment-4989867837",
-    "reviewedAt": "2026-07-19T12:33:26.548Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:17:18.951Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }
