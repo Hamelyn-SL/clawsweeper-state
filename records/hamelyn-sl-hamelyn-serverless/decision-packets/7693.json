@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:15:43.463Z",
-  "updatedAt": "2026-07-17T07:49:36Z",
+  "generatedAt": "2026-07-19T12:27:08.023Z",
+  "updatedAt": "2026-07-18T04:29:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-07-17T07:49:36Z"
+    "updatedAt": "2026-07-18T04:29:26Z"
   },
-  "lane": "proof_sufficiency",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿La muestra remota de Fnac y los recuentos del dry-run son suficientes para autorizar la reconciliación de los 9.645 documentos históricos?",
-  "rationale": "El código explica por qué los timestamps cambian, pero no permite determinar el estado canónico de cada oferta sin consultar Fnac; además, la política del repositorio exige aprobación explícita para una corrección masiva.",
+  "question": "¿Autoriza el equipo Marketplace/Data un dry-run con muestras remotas de Fnac y, si los resultados son consistentes, una reconciliación productiva por lotes de esta cohorte histórica?",
+  "rationale": "La corrección de código ya está en producción, pero decidir el estado final de miles de ofertas exige acceso a Fnac, validación de datos vivos y aprobación humana para una escritura masiva.",
   "options": [
     {
-      "title": "Aprobar tras muestreo estratificado",
-      "body": "Contrastar varios `batchId` y muestras de stocks activos y retirados, revisar las transiciones propuestas y autorizar después una escritura idempotente por resultado remoto.",
+      "title": "Validar y reconciliar la cohorte",
+      "body": "Realizar un dry-run con recuentos y varias muestras de `batchId`, y ejecutar una mutación por lotes solo después de confirmar el estado remoto.",
       "recommended": true
     },
     {
-      "title": "Ampliar la evidencia remota",
-      "body": "Mantener la issue abierta sin escribir hasta que una muestra mayor permita definir reglas seguras para todos los grupos encontrados.",
-      "recommended": false
-    },
-    {
-      "title": "Conservar y excluir de alertas",
-      "body": "No reconciliar los documentos y excluir explícitamente esta firma histórica de los indicadores, aceptando que Mongo mantenga estados incoherentes.",
+      "title": "Mantener el residuo y vigilarlo",
+      "body": "No modificar la cohorte hasta disponer de evidencia remota adicional, manteniendo la monitorización para detectar cualquier nueva firma viva.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar tras muestreo estratificado",
-    "body": "Contrastar varios `batchId` y muestras de stocks activos y retirados, revisar las transiciones propuestas y autorizar después una escritura idempotente por resultado remoto.",
+    "title": "Validar y reconciliar la cohorte",
+    "body": "Realizar un dry-run con recuentos y varias muestras de `batchId`, y ejecutar una mutación por lotes solo después de confirmar el estado remoto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien mejor conecta la corrección vigente de `applyMutation()` con los cambios recientes del ciclo de vida de stocks marketplace y la validación operativa del incidente original.",
+    "reason": "Está directamente vinculado a la corrección de la ruta de marketplace y al análisis de la cohorte residual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-07-18T04:15:43.463Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T12:27:08.023Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
