@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:56:35.708Z",
-  "updatedAt": "2026-07-14T21:55:25Z",
+  "generatedAt": "2026-07-19T16:57:33.937Z",
+  "updatedAt": "2026-07-19T13:52:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,41 +20,45 @@
       "clawsweeper:needs-product-decision",
       "P2",
       "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
-    "updatedAt": "2026-07-14T21:55:25Z"
+    "updatedAt": "2026-07-19T13:52:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `Product not found` de Fnac ser permanente mientras Hamelyn no implemente Catalog API, o se quiere mantenerlo recuperable y financiar una recuperación real de catálogo antes de reintentar la oferta?",
-  "rationale": "La corrección mínima cambia una regla, pero elegirla determina si productos potencialmente recuperables dejan de procesarse o si se amplía el contrato de la integración.",
+  "question": "¿Debe `Product not found` de Fnac pasar a `PERMANENT` mientras no exista Catalog API, o debe activarse/construirse una recuperación que vuelva a intentar la creación de producto?",
+  "rationale": "El código permite ambas direcciones: ya hay recuperación registrada pero desactivada, mientras la integración no crea fichas de catálogo Fnac.",
   "options": [
     {
-      "title": "Tratarlo como permanente",
-      "body": "Cambiar la regla a `PERMANENT` y preparar por separado un backfill controlado de los documentos existentes.",
+      "title": "Marcar como permanente",
+      "body": "Clasificar `Product not found` como `PERMANENT` y tratar la cohorte existente mediante una operación separada, acotada y aprobada.",
       "recommended": true
     },
     {
-      "title": "Implementar recuperación de catálogo",
-      "body": "Mantener la clase `STALE` e introducir una integración explícita que compruebe o cree la ficha antes de reintentar la oferta.",
+      "title": "Activar recuperación existente",
+      "body": "Habilitar la recuperación Fnac y demostrar que el reintento de creación resuelve productos reales sin aumentar el bucle.",
+      "recommended": false
+    },
+    {
+      "title": "Integrar Catalog API",
+      "body": "Diseñar una integración de catálogo previa a la oferta cuando el negocio requiera publicar referencias aún ausentes en Fnac.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Tratarlo como permanente",
-    "body": "Cambiar la regla a `PERMANENT` y preparar por separado un backfill controlado de los documentos existentes.",
+    "title": "Marcar como permanente",
+    "body": "Clasificar `Product not found` como `PERMANENT` y tratar la cohorte existente mediante una operación separada, acotada y aprobada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo la taxonomía que define `STALE` y el barrido que vuelve a promover estos registros.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente en la clasificación de políticas de reintento lo conecta con la decisión y la reparación mínima.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
-    "reviewedAt": "2026-07-19T13:56:35.708Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:57:33.937Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }
