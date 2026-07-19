@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:29:50.316Z",
-  "updatedAt": "2026-07-18T04:26:33Z",
+  "generatedAt": "2026-07-19T17:42:26.928Z",
+  "updatedAt": "2026-07-19T13:30:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "priority:p1",
       "feature",
       "reporter:victor",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
-      "P2",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T09:00:53Z",
-    "updatedAt": "2026-07-18T04:26:33Z"
+    "updatedAt": "2026-07-19T13:30:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta como primera entrega el rediseño de la PR vinculada sin `lastmod` y sin segmentación de agotados por proyección de restock, dejando las señales de datos como seguimiento separado?",
-  "rationale": "La especificación pide `lastmod` veraz y una clasificación por restock, pero la PR documenta que el modelo actual no conserva esas señales; escoger entre entrega parcial y ampliación de datos es una decisión funcional y SEO, no una corrección mecánica.",
+  "question": "¿Se acepta esta primera entrega sin `lastmod` veraz ni clasificación de agotados por proyección de restock, o deben incorporarse esas señales antes de publicar los nuevos sitemaps?",
+  "rationale": "El contrato de Victor exige esas reglas, pero la PR documenta que el modelo actual no conserva las señales necesarias; no es una decisión que pueda resolver automáticamente una revisión.",
   "options": [
     {
-      "title": "Aceptar la entrega base y separar señales",
-      "body": "Fusionar el rediseño estructural sin `lastmod` y crear seguimiento explícito para timestamps veraces y proyección de restock.",
+      "title": "Publicar por fases",
+      "body": "Aceptar la nueva estructura de sitemaps sin `lastmod` y con la clasificación disponible, dejando las señales de datos como seguimiento explícito.",
       "recommended": true
     },
     {
-      "title": "Exigir el modelo de señales antes de fusionar",
-      "body": "Mantener la PR abierta hasta implementar las señales de contenido, precio, stock y restock requeridas por el contrato completo.",
+      "title": "Completar el contrato antes",
+      "body": "Pausar el merge hasta añadir trazabilidad de cambios y una fuente fiable de proyección de restock para cumplir toda la especificación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la entrega base y separar señales",
-    "body": "Fusionar el rediseño estructural sin `lastmod` y crear seguimiento explícito para timestamps veraces y proyección de restock.",
+    "title": "Publicar por fases",
+    "body": "Aceptar la nueva estructura de sitemaps sin `lastmod` y con la clasificación disponible, dejando las señales de datos como seguimiento explícito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "victor",
-    "reason": "El contrato detallado de indexación y frescura procede de sus aclaraciones en la discusión.",
+    "reason": "Definió los requisitos operativos y las excepciones SEO que delimitan la aceptación del resultado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7221.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221#issuecomment-4959487465",
-    "reviewedAt": "2026-07-19T13:29:50.316Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:42:26.928Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

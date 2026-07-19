@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:29:38.559Z",
-  "updatedAt": "2026-07-18T04:26:35Z",
+  "generatedAt": "2026-07-19T17:46:04.621Z",
+  "updatedAt": "2026-07-19T13:30:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "reporter:JavierHamelyn",
       "feature",
       "triage:no-change",
+      "P1",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
+      "clawsweeper:source-repro",
       "impact:crash-loop",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-18T04:26:35Z"
+    "updatedAt": "2026-07-19T13:30:57Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué orden de ejecución, tolerancia de frescura y política de fallback se aprueba para los cortes pendientes de Merchant, reportes marketplace y exportación de distribuidores tras el corte de flash offers?",
-  "rationale": "El código confirma varias rutas pendientes, pero decidir qué lecturas toleran la réplica de BigQuery y qué fallback operativo debe permanecer requiere criterio de plataforma y producto, no una reparación mecánica.",
+  "question": "¿Se aprueba la migración por cortes a BigQuery con la tolerancia de frescura actual, o algún flujo debe conservar una materialización de Mongo más reciente?",
+  "rationale": "El código confirma varias rutas pendientes, pero la aceptabilidad de datos con hasta una hora —y un día para productos— depende del contrato operativo de cada feed.",
   "options": [
     {
-      "title": "Aprobar una migración por cortes",
-      "body": "Incorporar primero flash offers y priorizar después Merchant, dejando reportes y exportación como trabajos separados con paridad y frescura medidas.",
+      "title": "Aprobar cortes escalonados",
+      "body": "Integrar flash offers tras resolver el conflicto y abrir cortes separados para Merchant y exportación con comprobaciones de paridad y frescura.",
       "recommended": true
     },
     {
-      "title": "Priorizar Merchant después de flash offers",
-      "body": "Tratar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663 como el siguiente corte para reducir lecturas amplias de productos y stocks.",
+      "title": "Exigir materialización adicional",
+      "body": "Mantener BigQuery como destino, pero crear tablas materializadas más frescas antes de migrar los flujos sensibles.",
       "recommended": false
     },
     {
-      "title": "Revisar primero el contrato de datos",
-      "body": "Definir materializaciones, retención de fallback y presupuestos de BigQuery antes de iniciar más cambios de código.",
+      "title": "Mantener las rutas Mongo",
+      "body": "Posponer la migración y asumir la carga actual del primario hasta contar con un contrato de datos distinto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una migración por cortes",
-    "body": "Incorporar primero flash offers y priorizar después Merchant, dejando reportes y exportación como trabajos separados con paridad y frescura medidas.",
+    "title": "Aprobar cortes escalonados",
+    "body": "Integrar flash offers tras resolver el conflicto y abrir cortes separados para Merchant y exportación con comprobaciones de paridad y frescura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Aporta el diagnóstico de capacidad y la definición de los límites de frescura y operación que condicionan toda la iniciativa.",
-    "confidence": "high"
+    "person": "PabloMoran34",
+    "reason": "Es la mejor señal disponible en la historia actual de las rutas Mongo afectadas y del trabajo de plataforma relacionado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-19T13:29:38.559Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:46:04.621Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
