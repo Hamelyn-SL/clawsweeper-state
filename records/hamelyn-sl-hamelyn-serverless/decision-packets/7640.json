@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T21:43:53.418Z",
-  "updatedAt": "2026-07-16T21:31:25Z",
+  "generatedAt": "2026-07-19T14:00:20.130Z",
+  "updatedAt": "2026-07-19T13:44:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: 📸 screenshot",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-16T09:56:43Z",
-    "updatedAt": "2026-07-16T21:31:25Z",
+    "updatedAt": "2026-07-19T13:44:42Z",
     "headSha": "8670362c36a3281986569c9ebe6ca144632721cc"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta PR ser la implementación canónica y conservar también el custom field `Hamelyn · Artículo gratis`, o debe limitarse el producto al marcador dentro del HTML?",
-  "rationale": "Las dos PR abiertas cubren el mismo requisito con superficies distintas, y corregir la atribución exacta probablemente requiere persistir información nueva en el checkout; hace falta una decisión única de alcance antes de consolidar el código.",
+  "question": "¿Debe el checkout persistir la asignación canónica de líneas gratuitas para que eDesk sea exacto, o se acepta explícitamente una reconstrucción aproximada desde precios convertidos y redondeados?",
+  "rationale": "La fuente persistida no conserva de forma fiable el orden exacto usado por el cálculo del cupón; decidir entre ampliar el modelo o aceptar esa pérdida de precisión requiere intención del equipo.",
   "options": [
     {
-      "title": "Consolidar en esta PR",
-      "body": "Conservar el HTML y el custom field, persistir la asignación exacta durante el checkout, retirar el bloque de atribución y aportar prueba integrada redactada.",
+      "title": "Persistir la asignación canónica",
+      "body": "Guardar las líneas y unidades gratuitas calculadas al confirmar el checkout y reutilizarlas en el ticket eDesk.",
       "recommended": true
     },
     {
-      "title": "Limitar al HTML",
-      "body": "Trasladar la corrección exacta a una única variante de alcance reducido y cerrar la otra PR para evitar dos fuentes de comportamiento.",
+      "title": "Aceptar reconstrucción aproximada",
+      "body": "Mantener la reconstrucción actual y documentar que empates creados por conversión pueden señalar otra línea equivalente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consolidar en esta PR",
-    "body": "Conservar el HTML y el custom field, persistir la asignación exacta durante el checkout, retirar el bloque de atribución y aportar prueba integrada redactada.",
+    "title": "Persistir la asignación canónica",
+    "body": "Guardar las líneas y unidades gratuitas calculadas al confirmar el checkout y reutilizarlas en el ticket eDesk.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el propietario histórico más claro del cálculo de cupones y del checkout donde debe preservarse la asignación exacta.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Su historial reciente conecta directamente el flujo de checkout visible en eDesk y los campos de los tickets.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7640.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640#issuecomment-4990694609",
-    "reviewedAt": "2026-07-16T21:43:53.418Z",
-    "mainSha": "4b6965c272d5f81cb43d9d82fdea8dbb12b04b15"
+    "reviewedAt": "2026-07-19T14:00:20.130Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
