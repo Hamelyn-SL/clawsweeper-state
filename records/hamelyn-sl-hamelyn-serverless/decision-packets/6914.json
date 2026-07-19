@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:40:23.730Z",
-  "updatedAt": "2026-07-14T21:43:46Z",
+  "generatedAt": "2026-07-19T17:11:25.269Z",
+  "updatedAt": "2026-07-19T13:44:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,46 +16,45 @@
       "feature",
       "triage:pr-opened",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-06T08:33:34Z",
-    "updatedAt": "2026-07-14T21:43:46Z"
+    "updatedAt": "2026-07-19T13:44:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn introducir una biografía larga editorial propia y persistente para las fichas de autor, o mantener como único texto público la descripción atribuida procedente del enriquecimiento actual?",
-  "rationale": "La separación técnica es acotada, pero elegir el origen, la responsabilidad editorial y el canal de administración del copy no se deduce de la implementación existente.",
+  "question": "¿Debe Hamelyn gestionar biografías editoriales propias por autor, separadas del resumen atribuido, y qué equipo aprueba su origen, traducciones y actualización?",
+  "rationale": "La separación técnica es acotada, pero la fuente y gobernanza del nuevo contenido determinan si debe poblarse manualmente, desde un CMS o mediante otro pipeline.",
   "options": [
     {
-      "title": "Biografía editorial separada",
-      "body": "Crear un campo localizado administrable para copy propio, dejando `description` como resumen breve y preservando la atribución cuando esa descripción proceda de Wikipedia.",
+      "title": "Campo editorial separado",
+      "body": "Añadir `biography` localizado con una ruta de edición y revisión de copy, preservando `description` y sus créditos como contenido de procedencia externa.",
       "recommended": true
     },
     {
-      "title": "Mantener una única descripción",
-      "body": "No añadir una segunda superficie de texto y seguir mostrando únicamente la descripción actual con los créditos de fuente aplicables.",
+      "title": "Mantener solo contenido atribuido",
+      "body": "Conservar el modelo actual y no publicar biografías largas hasta disponer de una política editorial y una fuente aprobada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Biografía editorial separada",
-    "body": "Crear un campo localizado administrable para copy propio, dejando `description` como resumen breve y preservando la atribución cuando esa descripción proceda de Wikipedia.",
+    "title": "Campo editorial separado",
+    "body": "Añadir `biography` localizado con una ruta de edición y revisión de copy, preservando `description` y sus créditos como contenido de procedencia externa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su historial reciente conecta la presentación de la página de autor, el contenido de `description` y los créditos de procedencia.",
-    "confidence": "high"
+    "reason": "Su cambio reciente define la frontera actual entre el texto mostrado y su atribución en el storefront.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6914.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6914#issuecomment-4911149508",
-    "reviewedAt": "2026-07-19T13:40:23.730Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:11:25.269Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }

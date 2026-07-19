@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:40:50.345Z",
-  "updatedAt": "2026-07-14T21:43:54Z",
+  "generatedAt": "2026-07-19T17:10:12.366Z",
+  "updatedAt": "2026-07-19T13:44:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "app:ecommerce",
       "priority:p3",
       "triage:done",
-      "P3",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "P3",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T08:48:03Z",
-    "updatedAt": "2026-07-14T21:43:54Z"
+    "updatedAt": "2026-07-19T13:44:52Z"
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "¿Quién valida y ejecuta la actualización controlada de `countries.differentShippingCosts[].match` antes de retirar los fallbacks en código?",
-  "rationale": "La corrección requiere modificar datos persistidos fuera del repositorio y comprobar el estado real de producción; no es seguro inferir ni automatizar esa operación desde esta revisión.",
+  "question": "¿Quién autoriza y ejecuta la corrección controlada de Mongo antes de eliminar la compatibilidad de cliente y servidor?",
+  "rationale": "La parte bloqueante es una escritura de datos persistidos y su validación operativa; un cambio de código aislado no puede demostrar que la fuente ya es correcta.",
   "options": [
     {
-      "title": "Sanear datos y retirar compatibilidad",
-      "body": "Designar un responsable para ejecutar una actualización idempotente, registrar el valor anterior y posterior, y preparar el cambio de código coordinado.",
+      "title": "Sanear y verificar los datos",
+      "body": "Actualizar el patrón de Baleares, comprobarlo mediante una lectura controlada y después retirar ambos normalizadores en un PR acotado.",
       "recommended": true
     },
     {
-      "title": "Mantener compatibilidad temporalmente",
-      "body": "Conservar los fallbacks mientras se agenda la corrección de datos, dejando la divergencia documentada para evitar que nuevos consumidores la repliquen.",
+      "title": "Conservar la compatibilidad",
+      "body": "Mantener los dos normalizadores hasta que exista una ventana segura para validar el saneamiento de `countries`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sanear datos y retirar compatibilidad",
-    "body": "Designar un responsable para ejecutar una actualización idempotente, registrar el valor anterior y posterior, y preparar el cambio de código coordinado.",
+    "title": "Sanear y verificar los datos",
+    "body": "Actualizar el patrón de Baleares, comprobarlo mediante una lectura controlada y después retirar ambos normalizadores en un PR acotado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el owner indicado del bloque BL y aportó el enlace entre esta divergencia, la spec canónica y la extracción relacionada.",
+    "reason": "El historial y la discusión le sitúan como owner de la regla BL y de la divergencia registrada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6919.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6919#issuecomment-4911150620",
-    "reviewedAt": "2026-07-19T13:40:50.345Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:10:12.366Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }
