@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:21:09.029Z",
-  "updatedAt": "2026-07-18T05:42:09Z",
+  "generatedAt": "2026-07-19T17:22:19.987Z",
+  "updatedAt": "2026-07-19T13:24:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "priority:p1",
       "app:marketplace",
       "triage:no-change",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T07:31:00Z",
-    "updatedAt": "2026-07-18T05:42:09Z"
+    "updatedAt": "2026-07-19T13:24:39Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe eBay ES incorporar una reconciliación recurrente y controlada para listings vivos sin `mk_ebayEs`, o basta cerrar esta cohorte tras la verificación final de cero remanentes?",
-  "rationale": "El código actual cubre una vía preventiva, mientras que convertir la recuperación de datos en un proceso recurrente implica decidir el alcance operativo, las guardas y la tolerancia a retiradas sobre listings reales.",
+  "question": "¿Debe la detección de vendidos eBay ES sin `mk_ebayEs` quedar como reconciliación recurrente o mantenerse como remediación operativa excepcional?",
+  "rationale": "El código actual permite drenar documentos sembrados, pero decidir un proceso recurrente implica llamadas de retirada reales y criterios permanentes sobre datos externos.",
   "options": [
     {
-      "title": "Añadir reconciliación recurrente controlada",
-      "body": "Implementar una detección idempotente desde snapshot/API con dry-run, muestra y retirada únicamente de stocks retirados internamente.",
+      "title": "Reconciliación periódica acotada",
+      "body": "Implementar un job con dry-run, criterios de venta confirmada, límite de lote y métricas de cero huérfanos tras cada ejecución.",
       "recommended": true
     },
     {
-      "title": "Cerrar solo la cohorte actual",
-      "body": "Confirmar cero pendientes y tratar futuras detecciones como operaciones manuales, aceptando que el código no descubrirá por sí mismo nuevas filas ausentes.",
+      "title": "Runbook operativo bajo demanda",
+      "body": "Mantener la siembra controlada como procedimiento manual cuando el watcher detecte una cohorte confirmada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir reconciliación recurrente controlada",
-    "body": "Implementar una detección idempotente desde snapshot/API con dry-run, muestra y retirada únicamente de stocks retirados internamente.",
+    "title": "Reconciliación periódica acotada",
+    "body": "Implementar un job con dry-run, criterios de venta confirmada, límite de lote y métricas de cero huérfanos tras cada ejecución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien comunicó y siguió el drenaje real de la cohorte, y puede aportar el criterio operativo para una reconciliación segura.",
+    "reason": "Es la persona con evidencia directa de la operación de drenaje y de sus controles actuales.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7212.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7212#issuecomment-4919259558",
-    "reviewedAt": "2026-07-19T13:21:09.029Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:22:19.987Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }
