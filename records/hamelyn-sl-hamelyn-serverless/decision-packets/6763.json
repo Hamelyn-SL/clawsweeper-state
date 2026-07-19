@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:06:36.710Z",
+  "generatedAt": "2026-07-19T17:55:23.061Z",
   "updatedAt": "2026-07-14T16:01:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -29,33 +29,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la decisión validada de mantener `SearchPage` sin `alternates.languages` aplicarse también a las landings públicas de categoría y subcategoría, o únicamente a búsquedas libres y resultados filtrados?",
-  "rationale": "El código unifica ambos casos, mientras que esta incidencia exige separarlos y la spec validada posterior afirma que la omisión es intencional incluso al mencionar categorías; cambiar ese contrato sin confirmar la intención SEO no es seguro.",
+  "question": "¿Debe Ecommerce habilitar rutas brasileñas reales para categorías y subcategorías antes de añadir `pt-BR`, o excluir temporalmente esas páginas del clúster?",
+  "rationale": "La evidencia pública muestra que las rutas brasileñas equivalentes no existen; elegir entre crear esa superficie o mantener la exclusión es una decisión SEO y de catálogo que el código no puede inferir.",
   "options": [
     {
-      "title": "Separar landings y búsquedas",
-      "body": "Generar `hreflang` solo para rutas públicas canónicas de categoría y subcategoría sin búsqueda activa, manteniéndolo ausente en búsquedas y filtros no canónicos.",
+      "title": "Habilitar rutas brasileñas reales",
+      "body": "Crear o mapear las rutas de categoría y subcategoría de Brasil, y después emitir alternates recíprocos para todos los locales.",
       "recommended": true
     },
     {
-      "title": "Mantener el contrato actual",
-      "body": "Conservar las categorías de `SearchPage` sin alternates y limitar el arreglo a incorporar `pt-BR` en las páginas que ya utilizan el helper común.",
+      "title": "Excluir categorías de Brasil temporalmente",
+      "body": "Añadir alternates solo entre URLs existentes y documentar que `pt-BR` no se publica hasta que sus categorías sean resolubles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar landings y búsquedas",
-    "body": "Generar `hreflang` solo para rutas públicas canónicas de categoría y subcategoría sin búsqueda activa, manteniéndolo ausente en búsquedas y filtros no canónicos.",
+    "title": "Habilitar rutas brasileñas reales",
+    "body": "Crear o mapear las rutas de categoría y subcategoría de Brasil, y después emitir alternates recíprocos para todos los locales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Documentó la decisión validada más reciente y la divergencia de `pt-BR` dentro del bloque SEO fusionado.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente conecta directamente el proxy, `SearchPage` y la integración SEO de subcategorías.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
-    "reviewedAt": "2026-07-14T22:06:36.710Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T17:55:23.061Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

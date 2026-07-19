@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:52:15.692Z",
+  "generatedAt": "2026-07-19T17:58:09.125Z",
   "updatedAt": "2026-07-19T17:47:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,45 +14,45 @@
       "priority:p1",
       "feature",
       "reporter:miguel",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
+      "clawsweeper:needs-maintainer-review",
       "P2",
-      "impact:other"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
     "updatedAt": "2026-07-19T17:47:20Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se confirma que los binarios `2.6.04` ya están disponibles en App Store y Play Store antes de autorizar el merge del bump?",
-  "rationale": "La disponibilidad en tiendas y las credenciales EAS no se pueden verificar desde el checkout; adelantar el merge cambia el anuncio de actualización para usuarios existentes.",
+  "question": "¿Se confirma que los binarios `2.6.04` están live en App Store y Play Store para integrar un bump de release aislado en `dev`?",
+  "rationale": "La disponibilidad en stores y las credenciales EAS no se pueden verificar ni ejecutar de forma segura desde el repositorio.",
   "options": [
     {
-      "title": "Mantener la secuencia acordada",
-      "body": "Resolver o sustituir la PR por un bump acotado y fusionarlo solo tras confirmar ambas publicaciones.",
+      "title": "Publicar y cerrar la release",
+      "body": "Confirmar ambos escaparates, integrar un PR limitado al bump y registrar versión y builds publicados.",
       "recommended": true
     },
     {
-      "title": "Cambiar el mecanismo de anuncio",
-      "body": "Aprobar explícitamente un desacoplamiento del endpoint de versión antes de permitir el merge previo a las stores.",
+      "title": "Aplazar la release",
+      "body": "Mantener `2.6.03` en `dev` hasta completar el alcance o disponer de builds verificables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la secuencia acordada",
-    "body": "Resolver o sustituir la PR por un bump acotado y fusionarlo solo tras confirmar ambas publicaciones.",
+    "title": "Publicar y cerrar la release",
+    "body": "Confirmar ambos escaparates, integrar un PR limitado al bump y registrar versión y builds publicados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Definió en la discusión la secuencia de publicación y mantiene la coordinación de la release.",
+    "reason": "Es el asignado actual y participó en el precedente de versionado que define la secuencia segura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-19T17:52:15.692Z",
+    "reviewedAt": "2026-07-19T17:58:09.125Z",
     "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

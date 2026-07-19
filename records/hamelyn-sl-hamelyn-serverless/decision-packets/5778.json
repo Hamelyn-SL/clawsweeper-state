@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:40:16.967Z",
-  "updatedAt": "2026-07-08T10:26:34Z",
+  "generatedAt": "2026-07-19T17:51:13.970Z",
+  "updatedAt": "2026-07-19T17:47:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,50 +19,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-08T10:26:34Z"
+    "updatedAt": "2026-07-19T17:47:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un bloqueo de cuenta o vendedor de eBay marcar cada SKU como `PERMANENT`, o debe tratarse como una pausa global recuperable del canal antes de reactivar `create`?",
-  "rationale": "El mismo flujo recibe rechazos terminales de contenido y restricciones de cuenta potencialmente reversibles; elegir una única política por SKU puede causar reintentos masivos o inmovilizar inventario recuperable.",
+  "question": "¿Los bloqueos de cuenta/política de eBay deben persistirse como `PERMANENT` con reencolación manual, o mantenerse fuera de reintento hasta que exista una recuperación operativa definida?",
+  "rationale": "La semántica de una restricción de cuenta puede ser temporal, mientras que una infracción de contenido puede requerir intervención de catálogo; el código actual no diferencia ambas rutas.",
   "options": [
     {
-      "title": "Separar contenido y cuenta",
-      "body": "Clasificar el contenido prohibido como `PERMANENT` por SKU y convertir las restricciones de cuenta en una pausa global recuperable con reencolado controlado.",
+      "title": "Clasificación por código remoto",
+      "body": "Registrar y clasificar solo los códigos confirmados de política como `PERMANENT`, definiendo una reencolación manual para recuperaciones de cuenta.",
       "recommended": true
     },
     {
-      "title": "Todo permanente por SKU",
-      "body": "Clasificar todas las variantes conocidas como `PERMANENT`, aceptando una reactivación manual masiva si eBay levanta la restricción de cuenta.",
+      "title": "Mantener la contención",
+      "body": "Conservar `create` desactivado hasta disponer de una muestra operativa suficiente y de un procedimiento de recuperación.",
       "recommended": false
     },
     {
-      "title": "Mantener create deshabilitado",
-      "body": "Conservar la mitigación actual hasta que operaciones confirme la causa y aporte una ejecución canaria con la cuenta plenamente habilitada.",
+      "title": "Tratar todo como permanente",
+      "body": "Marcar todas las variantes observadas como `PERMANENT`, aceptando que una recuperación posterior requerirá intervención manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar contenido y cuenta",
-    "body": "Clasificar el contenido prohibido como `PERMANENT` por SKU y convertir las restricciones de cuenta en una pausa global recuperable con reencolado controlado.",
+    "title": "Clasificación por código remoto",
+    "body": "Registrar y clasificar solo los códigos confirmados de política como `PERMANENT`, definiendo una reencolación manual para recuperaciones de cuenta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el contribuidor con mayor actividad reciente en el adaptador, diagnóstico y recuperación de eBay, y puede coordinar la frontera entre clasificación técnica y recuperación operativa.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "La corrección fusionada y el conocimiento de las firmas observadas sitúan a esta persona como el mejor punto de partida técnico.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
-    "reviewedAt": "2026-07-14T21:40:16.967Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T17:51:13.970Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
