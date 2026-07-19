@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:25:26.846Z",
-  "updatedAt": "2026-07-17T12:02:35Z",
+  "generatedAt": "2026-07-19T12:54:12.383Z",
+  "updatedAt": "2026-07-18T04:29:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: sufficient",
-      "proof: 📸 screenshot",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-17T10:56:42Z",
-    "updatedAt": "2026-07-17T12:02:35Z",
+    "updatedAt": "2026-07-18T04:29:54Z",
     "headSha": "bc6db0b3394e568c49cc743241afe93ca4d4e0d0"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba integrar D apagada por defecto y ejecutar después un experimento B/D 50/50 con conversión a compra como métrica primaria y una fecha de cierre definida?",
-  "rationale": "El código puede aterrizar sin exponer tráfico, pero el reparto, el coste de evaluación, la métrica y la duración determinan la validez del experimento y no están aprobados en la discusión.",
+  "question": "¿Debe ecommerce reintroducir `FLAGS` y el flag `product-page-d` para ejecutar este experimento, aceptando una evaluación de Vercel por cada visita de ficha mientras la variable esté configurada?",
+  "rationale": "La base actual fijó deliberadamente la variante B sin flags, mientras que este PR recupera esa dependencia y su coste; decidir si compensa para el experimento requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Integrar apagada y calendarizar",
-      "body": "Corregir los gates de revisión, mantener desactivada la evaluación y activar D solo cuando Ecommerce apruebe reparto, métrica y duración.",
+      "title": "Aprobar un experimento acotado",
+      "body": "Aceptar el coste durante una ventana de prueba definida, activar el split 50/50 y retirar `FLAGS` al terminar.",
       "recommended": true
     },
     {
-      "title": "Esperar antes de integrar",
-      "body": "Mantener este PR abierto hasta que el contrato completo del experimento quede aprobado antes de incorporar el código.",
+      "title": "Mantener B sin flags",
+      "body": "No reintroducir `FLAGS` en producción y conservar la propuesta hasta contar con una decisión presupuestaria o de medición distinta.",
       "recommended": false
     },
     {
-      "title": "Pausar el experimento",
-      "body": "Cerrar o archivar la propuesta si no existe intención próxima de ejecutar y medir el test.",
+      "title": "Diseñar otra activación",
+      "body": "Pedir una solución que permita probar D sin una evaluación pagada por cada visita fuera de la ventana de experimento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar apagada y calendarizar",
-    "body": "Corregir los gates de revisión, mantener desactivada la evaluación y activar D solo cuando Ecommerce apruebe reparto, métrica y duración.",
+    "title": "Aprobar un experimento acotado",
+    "body": "Aceptar el coste durante una ventana de prueba definida, activar el split 50/50 y retirar `FLAGS` al terminar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es quien introdujo y cerró operativamente el experimento anterior de la PDP, incluido el control del coste de las evaluaciones.",
+    "reason": "Su cambio reciente estableció explícitamente la política de servir B sin flags.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7706.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7706#issuecomment-5009904470",
-    "reviewedAt": "2026-07-18T04:25:26.846Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T12:54:12.383Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

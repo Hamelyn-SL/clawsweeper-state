@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T10:52:07.743Z",
-  "updatedAt": "2026-07-15T09:55:04Z",
+  "generatedAt": "2026-07-19T12:54:37.485Z",
+  "updatedAt": "2026-07-15T10:51:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,47 @@
       "app:ecommerce",
       "priority:p0",
       "triage:done",
-      "reporter:irenegarcia"
+      "reporter:irenegarcia",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:fix-shape-clear",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-15T09:46:05Z",
-    "updatedAt": "2026-07-15T09:55:04Z"
+    "updatedAt": "2026-07-15T10:51:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué nombre y tipo tendrá el campo personalizado de consolidación en eDesk, y qué mecanismo debe enriquecer los tickets de marketplaces creados por conectores externos?",
-  "rationale": "El repositorio puede resolver los pedidos relacionados, pero no puede determinar por sí solo el contrato del panel de eDesk ni si el ciclo de vida operativo debe depender de configuración externa, eventos o polling.",
+  "question": "¿Qué nombre de campo personalizado y qué mecanismo de sincronización —webhook/automatización de eDesk o job periódico— deben ser el contrato para enriquecer los tickets importados de marketplaces?",
+  "rationale": "El repositorio ya conoce las consolidaciones y crea sus propios tickets, pero no controla el ciclo de creación de tickets por conectores externos; esa decisión determina la consistencia y la responsabilidad operativa.",
   "options": [
     {
-      "title": "Reconciliación idempotente",
-      "body": "Añadir el dato inmediatamente en ecommerce y ejecutar una sincronización periódica con reintentos para localizar por `seller_order_id` y actualizar los tickets externos cuando ya existan.",
+      "title": "Acordar un evento de sincronización",
+      "body": "Actualizar de forma idempotente al recibir una consolidación o al detectar el ticket externo mediante `seller_order_id`, con el campo de eDesk confirmado por Soporte.",
       "recommended": true
     },
     {
-      "title": "Webhook o automatización eDesk",
-      "body": "Configurar un evento de eDesk que invoque un endpoint de Hamelyn al crear o actualizar el ticket, reduciendo polling pero añadiendo dependencia operativa externa.",
-      "recommended": false
-    },
-    {
-      "title": "Limitarlo a ecommerce",
-      "body": "Incorporar únicamente el texto en las incidencias creadas por Hamelyn y dejar los demás marketplaces fuera hasta definir su integración.",
+      "title": "Usar sincronización periódica",
+      "body": "Crear un job que detecte pedidos consolidados y complete los tickets externos ya existentes, aceptando una latencia operativa definida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliación idempotente",
-    "body": "Añadir el dato inmediatamente en ecommerce y ejecutar una sincronización periódica con reintentos para localizar por `seller_order_id` y actualizar los tickets externos cuando ya existan.",
+    "title": "Acordar un evento de sincronización",
+    "body": "Actualizar de forma idempotente al recibir una consolidación o al detectar el ticket externo mediante `seller_order_id`, con el campo de eDesk confirmado por Soporte.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor historial sobre el contrato y la evolución del flujo ecommerce-eDesk.",
+    "person": "Daniel",
+    "reason": "El pipeline compartido de incidencias que estructuró es el punto natural para exponer una operación común de enriquecimiento.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
-    "reviewedAt": "2026-07-15T10:52:07.743Z",
-    "mainSha": "d6056b9e41980dfde228a296c634eb8d02004dc5"
+    "reviewedAt": "2026-07-19T12:54:37.485Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
