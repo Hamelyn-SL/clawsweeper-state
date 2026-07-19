@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:36:05.356Z",
-  "updatedAt": "2026-07-19T12:34:43Z",
+  "generatedAt": "2026-07-19T13:40:16.631Z",
+  "updatedAt": "2026-07-19T13:37:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T12:20:01Z",
-    "updatedAt": "2026-07-19T12:34:43Z"
+    "updatedAt": "2026-07-19T13:37:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La ausencia en el snapshot de eBay ES debe quedar siempre como señal analítica, o puede convertirse en `SYNC_ERROR/DB_ONLY` solo tras una verificación viva de Inventory API?",
-  "rationale": "La respuesta define el significado operativo de `DB_ONLY`, el tratamiento de listings en espera y qué hacer ante rate limits o fallos de consulta; no es seguro deducir esa política únicamente del código actual.",
+  "question": "¿Debe `DB_ONLY` significar únicamente ausencia o estado no publicable confirmado por eBay, y qué estado operativo debe conservarse cuando la oferta sigue viva o la consulta falla?",
+  "rationale": "El código puede hacer la comprobación técnica, pero la semántica de los errores persistidos y la respuesta ante fallos transitorios condicionan decisiones operativas de retirada y republicación.",
   "options": [
     {
-      "title": "Separar snapshot y estado productivo",
-      "body": "Conservar `DB_ONLY` únicamente en BigQuery y eliminar el marcado de Mongo basado solo en el informe, siguiendo el precedente de MercadoLibre.",
+      "title": "Confirmar antes de marcar",
+      "body": "Consultar Inventory API con límites de concurrencia y mantener el listing activo o reintentable si está `PUBLISHED`/`ACTIVE` o si la consulta falla.",
       "recommended": true
     },
     {
-      "title": "Verificar antes de degradar",
-      "body": "Consultar Inventory API con concurrencia acotada y marcar error solo cuando eBay confirme una oferta ausente o no publicable, definiendo además la conducta ante errores de API.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la inferencia actual",
-      "body": "Seguir tratando la ausencia del snapshot como error definitivo, aceptando que listings vivos omitidos por el informe se clasifiquen como `DB_ONLY`.",
+      "title": "Mantener la ausencia del snapshot como definitiva",
+      "body": "Conservar el marcado actual y aceptar que los listings vivos omitidos del informe sigan entrando en `DB_ONLY`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar snapshot y estado productivo",
-    "body": "Conservar `DB_ONLY` únicamente en BigQuery y eliminar el marcado de Mongo basado solo en el informe, siguiendo el precedente de MercadoLibre.",
+    "title": "Confirmar antes de marcar",
+    "body": "Consultar Inventory API con límites de concurrencia y mantener el listing activo o reintentable si está `PUBLISHED`/`ACTIVE` o si la consulta falla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial atribuye al área de eBay ES la implementación actual y puede aportar el contexto operativo del informe y de los estados esperados.",
+    "reason": "Introdujo el runner eBay ES actual y puede validar la semántica histórica del informe junto al equipo de Marketplaces.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721#issuecomment-5015714604",
-    "reviewedAt": "2026-07-19T13:36:05.356Z",
+    "reviewedAt": "2026-07-19T13:40:16.631Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
