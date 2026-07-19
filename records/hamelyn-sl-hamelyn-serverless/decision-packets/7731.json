@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T15:43:26.416Z",
+  "updatedAt": "2026-07-19T15:38:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7731,
+    "title": "TodoColección tcolapi read layer broken: GET /products always empty and product detail 404s",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731",
+    "state": "open",
+    "labels": [
+      "bug",
+      "priority:p2",
+      "app:marketplace",
+      "reporter:JavierHamelyn",
+      "triage:queued"
+    ],
+    "createdAt": "2026-07-19T15:38:21Z",
+    "updatedAt": "2026-07-19T15:38:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se prioriza primero la escalación con soporte de TodoColección y se pospone cualquier muestreo hasta confirmar contrato, permisos y semántica de `404`?",
+  "rationale": "La respuesta del proveedor determina si el trabajo posterior es una corrección de integración o una nueva capacidad de reconciliación con límites y criterios de seguridad operativa.",
+  "options": [
+    {
+      "title": "Escalar y bloquear el muestreo",
+      "body": "Abrir y seguir el caso con TodoColección, conservando los watchers actuales hasta tener una respuesta verificable sobre permisos y parámetros.",
+      "recommended": true
+    },
+    {
+      "title": "Prototipo no mutante",
+      "body": "Autorizar solo un muestreo diagnóstico que registre resultados sin modificar estados de listings mientras se espera al proveedor.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Escalar y bloquear el muestreo",
+    "body": "Abrir y seguir el caso con TodoColección, conservando los watchers actuales hasta tener una respuesta verificable sobre permisos y parámetros.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la persona más vinculada por historial al flujo de reconciliación que consume esta lectura.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
+    "reviewedAt": "2026-07-19T15:43:26.416Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
+  }
+}
