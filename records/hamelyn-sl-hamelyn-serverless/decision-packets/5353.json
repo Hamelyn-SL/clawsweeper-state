@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:40:52.680Z",
-  "updatedAt": "2026-07-14T22:40:46Z",
+  "generatedAt": "2026-07-19T13:51:17.221Z",
+  "updatedAt": "2026-07-14T23:47:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "bug",
       "priority:p1",
       "app:marketplace",
+      "P1",
+      "impact:other",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: ⚪ platinum",
-      "P1",
-      "impact:other"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-14T22:40:46Z"
+    "updatedAt": "2026-07-14T23:47:16Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato operativo debe usar `/api/ebay` cuando `updatePrice` termina con fallos parciales permanentes: HTTP 200 con severidad estructurada, 207 o 5xx?",
-  "rationale": "La elección afecta a la compatibilidad de la ruta, la monitorización y los retries de operaciones que pueden haber tenido éxito parcial; el código y la documentación actuales no fijan esa política.",
+  "question": "¿Debe el handler compartido mantener HTTP 200 para fallos parciales tras añadir señal estructurada, o elevar a una respuesta no 2xx los fallos materiales según ruta y severidad?",
+  "rationale": "El contrato afecta a varios crons y a la compatibilidad de alertas y consumidores; el código actual no determina por sí solo la política operativa deseada.",
   "options": [
     {
-      "title": "200 estructurado y alertable",
-      "body": "Mantener la compatibilidad HTTP y exponer `status: partial_failure`, severidad, conteos y motivos consumibles por monitorización.",
+      "title": "Definir primero una política común",
+      "body": "Acordar en la incidencia transversal un estado estructurado y una severidad por ruta, manteniendo temporalmente la compatibilidad HTTP actual.",
       "recommended": true
     },
     {
-      "title": "207 para degradación parcial",
-      "body": "Usar un estado intermedio acordado para distinguir ejecuciones parciales sin forzar el retry completo de operaciones correctas.",
+      "title": "Mantener HTTP 200 con observabilidad reforzada",
+      "body": "Conservar el contrato actual y exigir campos estructurados y métricas para que los fallos parciales sean alertables.",
       "recommended": false
     },
     {
-      "title": "5xx y retry global",
-      "body": "Fallar la ruta ante cualquier rechazo material, aceptando el riesgo de repetir operaciones que ya se completaron correctamente.",
+      "title": "Elevar fallos materiales de eBay",
+      "body": "Devolver error HTTP para lotes eBay que superen un umbral definido, asumiendo el ajuste de alertas y consumidores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "200 estructurado y alertable",
-    "body": "Mantener la compatibilidad HTTP y exponer `status: partial_failure`, severidad, conteos y motivos consumibles por monitorización.",
+    "title": "Definir primero una política común",
+    "body": "Acordar en la incidencia transversal un estado estructurado y una severidad por ruta, manteniendo temporalmente la compatibilidad HTTP actual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo el contrato de fallo parcial y el resumen del handler sobre los que debe decidirse la semántica definitiva.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "El contrato compartido y la incidencia transversal relacionada se apoyan en trabajo reciente suyo sobre el handler.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-14T23:40:52.680Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:51:17.221Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

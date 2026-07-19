@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T14:00:20.130Z",
+  "generatedAt": "2026-07-19T13:54:45.346Z",
   "updatedAt": "2026-07-19T13:44:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,34 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el checkout persistir la asignación canónica de líneas gratuitas para que eDesk sea exacto, o se acepta explícitamente una reconstrucción aproximada desde precios convertidos y redondeados?",
-  "rationale": "La fuente persistida no conserva de forma fiable el orden exacto usado por el cálculo del cupón; decidir entre ampliar el modelo o aceptar esa pérdida de precisión requiere intención del equipo.",
+  "question": "¿Debe el checkout persistir la asignación de unidades gratuitas por línea para que eDesk reproduzca la decisión original de forma fiable?",
+  "rationale": "La corrección exige decidir el contrato persistido y la compatibilidad de pedidos históricos; la PR actual evita esa decisión pero no puede garantizar la exactitud multimoneda.",
   "options": [
     {
       "title": "Persistir la asignación canónica",
-      "body": "Guardar las líneas y unidades gratuitas calculadas al confirmar el checkout y reutilizarlas en el ticket eDesk.",
+      "body": "Guardar durante la validación de `FREE_UNITS` un identificador por línea y sus unidades gratuitas, y usarlo únicamente para tickets nuevos.",
       "recommended": true
     },
     {
-      "title": "Aceptar reconstrucción aproximada",
-      "body": "Mantener la reconstrucción actual y documentar que empates creados por conversión pueden señalar otra línea equivalente.",
+      "title": "No mostrar atribución por línea",
+      "body": "Mantener el ticket sin artículo gratuito hasta que exista un contrato de datos que conserve la selección original.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Persistir la asignación canónica",
-    "body": "Guardar las líneas y unidades gratuitas calculadas al confirmar el checkout y reutilizarlas en el ticket eDesk.",
+    "body": "Guardar durante la validación de `FREE_UNITS` un identificador por línea y sus unidades gratuitas, y usarlo únicamente para tickets nuevos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su historial reciente conecta directamente el flujo de checkout visible en eDesk y los campos de los tickets.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "El punto de persistencia se encuentra en el flujo de checkout y validación de cupones que modificó recientemente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7640.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7640#issuecomment-4990694609",
-    "reviewedAt": "2026-07-19T14:00:20.130Z",
+    "reviewedAt": "2026-07-19T13:54:45.346Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

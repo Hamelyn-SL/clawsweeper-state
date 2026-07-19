@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:23:59.859Z",
-  "updatedAt": "2026-07-14T22:12:08Z",
+  "generatedAt": "2026-07-19T13:53:06.772Z",
+  "updatedAt": "2026-07-14T23:30:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,46 +16,45 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-07-14T22:12:08Z"
+    "updatedAt": "2026-07-14T23:30:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué responsables operativos o partner deben validar los contratos, contactos y referencias seguras de Buscalibre y Milanuncios antes de completar los runbooks?",
-  "rationale": "El repositorio acredita los flujos técnicos actuales, pero no puede certificar por sí solo los permisos contractuales, contactos vigentes ni la ubicación autorizada de credenciales.",
+  "question": "¿Debe Hamelyn mantener Milanuncios como automatización experimental de interfaz privada mientras se solicita contrato partner, o suspender/documentar una restricción operativa hasta obtener autorización expresa?",
+  "rationale": "El código permite describir el comportamiento técnico, pero no puede establecer si los endpoints privados están autorizados ni qué política operativa debe regir sin intención de quien gestione la relación con el partner.",
   "options": [
     {
-      "title": "Validar con responsables partner",
-      "body": "Recabar la confirmación de cada marketplace y documentar después las fuentes primarias, formatos, contactos y referencias seguras.",
+      "title": "Mantenerla como experimental",
+      "body": "Documentar explícitamente el carácter no contractual, sus límites y el contacto responsable mientras se solicita una vía partner oficial.",
       "recommended": true
     },
     {
-      "title": "Mantener los huecos explícitos",
-      "body": "Conservar la documentación técnica actual y dejar los datos contractuales como pendientes hasta disponer de una fuente autorizada.",
+      "title": "Restringir la automatización",
+      "body": "Pausar o limitar el flujo hasta disponer de una confirmación expresa de Milanuncios sobre su uso permitido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar con responsables partner",
-    "body": "Recabar la confirmación de cada marketplace y documentar después las fuentes primarias, formatos, contactos y referencias seguras.",
+    "title": "Mantenerla como experimental",
+    "body": "Documentar explícitamente el carácter no contractual, sus límites y el contacto responsable mientras se solicita una vía partner oficial.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor de los runbooks, está asignado a la issue y tiene actividad reciente en ambas superficies documentales o técnicas.",
+    "reason": "Figura como autor del runbook y de los cambios recientes del área, además de estar asociado al seguimiento documental de esta integración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6464#issuecomment-4909965108",
-    "reviewedAt": "2026-07-14T23:23:59.859Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:53:06.772Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

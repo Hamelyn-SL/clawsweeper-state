@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:49:55.352Z",
+  "generatedAt": "2026-07-19T13:56:35.708Z",
   "updatedAt": "2026-07-14T21:55:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,52 +14,47 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P2",
-      "impact:other"
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
     "updatedAt": "2026-07-14T21:55:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `Product not found` de Fnac quedar como `PERMANENT` mientras Hamelyn no tenga integración de Catalog API, o debe mantenerse recuperable y desarrollar primero esa capacidad?",
-  "rationale": "La modificación de la regla es pequeña, pero decide si se corta el churn actual o se conserva una ruta para productos potencialmente recuperables mediante una capacidad que hoy no está implementada.",
+  "question": "¿Debe `Product not found` de Fnac ser permanente mientras Hamelyn no implemente Catalog API, o se quiere mantenerlo recuperable y financiar una recuperación real de catálogo antes de reintentar la oferta?",
+  "rationale": "La corrección mínima cambia una regla, pero elegirla determina si productos potencialmente recuperables dejan de procesarse o si se amplía el contrato de la integración.",
   "options": [
     {
-      "title": "Clasificar como permanente",
-      "body": "Cambiar la regla Fnac a `RetryPolicy.PERMANENT`, cubrirla con una prueba focalizada y ejecutar cualquier backfill como operación separada con validación previa.",
+      "title": "Tratarlo como permanente",
+      "body": "Cambiar la regla a `PERMANENT` y preparar por separado un backfill controlado de los documentos existentes.",
       "recommended": true
     },
     {
-      "title": "Construir recuperación de catálogo",
-      "body": "Mantener la firma recuperable solo tras implementar creación o validación de catálogo y probar que esa ruta resuelve el rechazo antes de reenviar la oferta.",
-      "recommended": false
-    },
-    {
-      "title": "Conservar la rotación actual",
-      "body": "Aceptar temporalmente los reintentos mientras se valida el contrato comercial y técnico de Fnac.",
+      "title": "Implementar recuperación de catálogo",
+      "body": "Mantener la clase `STALE` e introducir una integración explícita que compruebe o cree la ficha antes de reintentar la oferta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar como permanente",
-    "body": "Cambiar la regla Fnac a `RetryPolicy.PERMANENT`, cubrirla con una prueba focalizada y ejecutar cualquier backfill como operación separada con validación previa.",
+    "title": "Tratarlo como permanente",
+    "body": "Cambiar la regla a `PERMANENT` y preparar por separado un backfill controlado de los documentos existentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el candidato con mayor conexión comprobable tanto a la política de retry como al contexto operativo reciente de esta firma.",
+    "reason": "Introdujo la taxonomía que define `STALE` y el barrido que vuelve a promover estos registros.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
-    "reviewedAt": "2026-07-19T13:49:55.352Z",
+    "reviewedAt": "2026-07-19T13:56:35.708Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

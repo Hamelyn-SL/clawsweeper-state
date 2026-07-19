@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:39:15.901Z",
-  "updatedAt": "2026-07-12T08:58:41Z",
+  "generatedAt": "2026-07-19T13:57:51.351Z",
+  "updatedAt": "2026-07-14T21:40:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,51 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
       "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-12T07:26:25Z",
-    "updatedAt": "2026-07-12T08:58:41Z"
+    "updatedAt": "2026-07-14T21:40:11Z"
   },
-  "lane": "manual_review",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Autoriza Data Platform una reconciliación controlada de `mongodb.mk_casaDelLibro` desde Mongo vivo y la rematerialización posterior de `mongodata.stocks_marketplace`?",
-  "rationale": "La solución pendiente no es un cambio de producto: es una escritura masiva que puede actualizar o borrar datos analíticos y la política del repositorio exige dry-run, muestras, filtro literal y confirmación humana.",
+  "question": "¿Aprueba Data Platform una reconciliación controlada de las filas históricas de Casa del Libro y qué alcance de backfill debe aplicarse tras el dry-run?",
+  "rationale": "La reparación requiere leer fuentes productivas y potencialmente sobrescribir cientos de registros analíticos; el código no permite decidir de forma segura qué cohortes ni qué fuente debe prevalecer.",
   "options": [
     {
-      "title": "Reconciliar ahora",
-      "body": "Repetir el recuento, revisar tres muestras y, si coinciden, aprobar la sincronización de la colección y validar que la cohorte desaparece.",
+      "title": "Aprobar dry-run y reconciliación acotada",
+      "body": "Validar primero recuentos y muestras contra Mongo y Mirakl, y después reparar únicamente los IDs confirmados.",
       "recommended": true
     },
     {
-      "title": "Investigar CDC primero",
-      "body": "Mantener la cohorte sin tocar hasta demostrar que el consumidor actual no sigue perdiendo eventos y después reconciliar.",
+      "title": "Investigar primero la pérdida CDC",
+      "body": "Posponer la escritura hasta localizar el punto que dejó la tabla raw con versiones de mayo.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el histórico como no operativo",
+      "body": "Mantener la discrepancia si se confirma que ningún dashboard ni watcher consume esta cohorte para decisiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar ahora",
-    "body": "Repetir el recuento, revisar tres muestras y, si coinciden, aprobar la sincronización de la colección y validar que la cohorte desaparece.",
+    "title": "Aprobar dry-run y reconciliación acotada",
+    "body": "Validar primero recuentos y muestras contra Mongo y Mirakl, y después reparar únicamente los IDs confirmados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial cubre el consumidor CDC, el merge raw y la herramienta de reconciliación que requiere esta decisión.",
+    "reason": "Su historial reciente cubre el merge y el seed de las tablas raw que alimentan esta discrepancia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7380.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380#issuecomment-4950403658",
-    "reviewedAt": "2026-07-14T21:39:15.901Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:57:51.351Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

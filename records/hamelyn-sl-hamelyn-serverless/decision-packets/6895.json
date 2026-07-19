@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:39:34.086Z",
-  "updatedAt": "2026-07-08T16:35:04Z",
+  "generatedAt": "2026-07-19T13:58:25.873Z",
+  "updatedAt": "2026-07-14T21:43:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "triage:done",
       "business-logic",
       "hackathon",
-      "P3",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-07-08T16:35:04Z"
+    "updatedAt": "2026-07-14T21:43:34Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿En qué dominio BL canónico deben vivir los restos de B2B e incidencias antes de actualizar esta épica?",
-  "rationale": "La mayoría del alcance ya se trasladó a `buying`, pero el repositorio no define una frontera inequívoca para esos dos bloques; crear directamente `docs/business-logic/supply/` podría duplicar fuentes de verdad.",
+  "question": "¿Debe esta épica conservar un dominio BL propio `supply` para incidencias y B2B, o debe rebasarse formalmente a los subdominios `buying` y `warehouse` ya usados por los bloques completados?",
+  "rationale": "El código y las specs actuales ya repartieron partes del flujo entre `buying/orders` y `buying/inbound`, pero la issue madre aún exige una carpeta y una nomenclatura `supply`; elegir esa frontera no es una reparación mecánica.",
   "options": [
     {
-      "title": "Absorber en Buying",
-      "body": "Crear bloques `buying/b2b` y `buying/incidents`, o equivalentes, y utilizar esta épica como índice hasta completarlos.",
+      "title": "Rebasar y completar por subdominios",
+      "body": "Actualizar el checklist con los bloques ya cubiertos por `buying` y abrir bloques hijos solo para incidencias y B2B en su dominio BL acordado.",
       "recommended": true
     },
     {
-      "title": "Conservar Supply residual",
-      "body": "Mantener `supply` únicamente para B2B e incidencias, documentando expresamente sus fronteras con `buying` y `shipping`.",
+      "title": "Mantener Supply como dominio BL",
+      "body": "Crear `docs/business-logic/supply/` y migrar o referenciar explícitamente las reglas ya extraídas para conservar una única taxonomía de Supply.",
       "recommended": false
     },
     {
-      "title": "Separar responsabilidades",
-      "body": "Ubicar B2B e incidencias en dominios distintos si sus responsables y ciclos de cambio no coinciden.",
+      "title": "Cerrar la épica y dividirla",
+      "body": "Sustituir esta issue madre por issues acotadas de incidencias y B2B con owner, reviewer y fronteras explícitas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Absorber en Buying",
-    "body": "Crear bloques `buying/b2b` y `buying/incidents`, o equivalentes, y utilizar esta épica como índice hasta completarlos.",
+    "title": "Rebasar y completar por subdominios",
+    "body": "Actualizar el checklist con los bloques ya cubiertos por `buying` y abrir bloques hijos solo para incidencias y B2B en su dominio BL acordado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor de la épica y del pipeline BL, y la señal histórica más directa para validar la taxonomía del alcance restante.",
-    "confidence": "high"
+    "reason": "Definió la taxonomía y el checklist inicial, incluido el bloque de incidencias en curso.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-07-14T21:39:34.086Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:58:25.873Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

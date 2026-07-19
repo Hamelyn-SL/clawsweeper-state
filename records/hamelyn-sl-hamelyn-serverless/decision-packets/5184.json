@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:02:34.483Z",
-  "updatedAt": "2026-07-14T22:11:19Z",
+  "generatedAt": "2026-07-19T13:50:30.304Z",
+  "updatedAt": "2026-07-14T23:06:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,50 +20,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-14T22:11:19Z"
+    "updatedAt": "2026-07-14T23:06:36Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué condición operativa debe permitir reactivar `ebay.create()`: rechazar la fase cuando un lote tenga cero publicaciones correctas, emitir una alerta estructurada manteniendo HTTP `200`, o exigir ambas señales?",
-  "rationale": "La mitigación temporal continúa activa y el código no define qué severidad, respuesta o evidencia real hacen segura la reactivación; esa elección afecta alertas, reintentos y operación del marketplace.",
+  "question": "¿Debe el cron de eBay reactivar `ebay.create()` tras clasificar los rechazos conocidos, y qué contrato operativo debe exponer cuando un lote de publicación falla por completo o parcialmente?",
+  "rationale": "El código puede registrar más detalle, pero elegir entre HTTP 200 con señal estructurada, degradación de estado o fallo de la ruta cambia el contrato compartido de crons y la recuperación operativa de eBay.",
   "options": [
     {
-      "title": "Fallar lotes sin éxitos",
-      "body": "Rechazar la fase create cuando `successfulPublications === 0`, conservar los errores individuales y reactivarla tras una prueba controlada.",
+      "title": "Definir política compartida y reactivar con prueba",
+      "body": "Acordar la severidad en el handler compartido, instrumentar el detalle por oferta y reactivar create únicamente tras validar una ejecución real representativa.",
       "recommended": true
     },
     {
-      "title": "Alertar sin rechazar",
-      "body": "Mantener la fase resuelta y HTTP `200`, pero emitir una incidencia estructurada de severidad alta para cada lote completamente fallido.",
+      "title": "Mantener create pausado",
+      "body": "Conservar la mitigación hasta disponer de una taxonomía de rechazos y una señal operativa aprobada para el cron.",
       "recommended": false
     },
     {
-      "title": "Esperar la política global",
-      "body": "Mantener create desactivado hasta que https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622 establezca la semántica compartida de los crons degradados.",
+      "title": "Aplicar una política solo para eBay",
+      "body": "Introducir una señal o degradación limitada a la fase create de eBay sin modificar todavía el contrato global de los demás crons.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fallar lotes sin éxitos",
-    "body": "Rechazar la fase create cuando `successfulPublications === 0`, conservar los errores individuales y reactivarla tras una prueba controlada.",
+    "title": "Definir política compartida y reactivar con prueba",
+    "body": "Acordar la severidad en el handler compartido, instrumentar el detalle por oferta y reactivar create únicamente tras validar una ejecución real representativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Combina el historial más amplio en la implementación actual de eBay con la autoría del seguimiento sobre la política transversal del cron-handler.",
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la mitigación temporal vigente y su historial está directamente conectado con la reactivación del flujo de create.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-14T23:02:34.483Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:50:30.304Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

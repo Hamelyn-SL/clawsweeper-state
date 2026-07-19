@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:12:04.034Z",
-  "updatedAt": "2026-07-14T16:00:07Z",
+  "generatedAt": "2026-07-19T13:49:07.744Z",
+  "updatedAt": "2026-07-14T22:13:02Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,49 +18,48 @@
       "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:security"
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:39:40Z",
-    "updatedAt": "2026-07-14T16:00:07Z"
+    "updatedAt": "2026-07-14T22:13:02Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué origen de datos, proceso de anonimización, credenciales, frecuencia de refresh y política de borrado quedan autorizados para `Hamelyn_DEV_BASE` y `Hamelyn_DEV_<slug>`?",
-  "rationale": "La solución tratará datos derivados de producción y operaciones destructivas, y el repositorio todavía no define una frontera suficiente para decidir esos controles de forma automática.",
+  "question": "¿Qué modelo de acceso, anonimización, retención y aprobación debe gobernar la extracción desde producción y las operaciones destructivas de `Hamelyn_DEV_BASE` y sus sandboxes?",
+  "rationale": "El código actual aporta precedentes técnicos parciales, pero no puede decidir qué datos reales pueden derivarse, quién puede ejecutar refreshes ni qué excepción operativa es aceptable.",
   "options": [
     {
-      "title": "Base curada restringida",
-      "body": "Versionar transformaciones de anonimización y refrescar una base central mediante una identidad de mínimo privilegio, clonando los sandboxes únicamente desde esa base.",
+      "title": "Aprobar una plataforma centralizada con mínimos datos derivados",
+      "body": "Definir cohorts permitidos, transformaciones de PII, roles de ejecución, TTL y guardas fail-closed antes de crear los comandos generales.",
       "recommended": true
     },
     {
-      "title": "Fixtures sintéticas primero",
-      "body": "Entregar inicialmente manifests e índices con datos sintéticos, y posponer cohorts derivados de producción hasta aprobar su gobernanza.",
+      "title": "Limitar la primera fase a fixtures sintéticas",
+      "body": "Entregar sandboxes e índices con datasets sintéticos y posponer la derivación anonimizada desde producción hasta aprobar la política de datos.",
       "recommended": false
     },
     {
-      "title": "Herramientas por dominio",
-      "body": "Mantener sandboxes específicos revisados manualmente y no crear todavía una plataforma general compartida.",
+      "title": "Mantener herramientas por dominio",
+      "body": "Conservar sandboxes locales específicas sin introducir una base común ni operaciones compartidas sobre datos derivados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Base curada restringida",
-    "body": "Versionar transformaciones de anonimización y refrescar una base central mediante una identidad de mínimo privilegio, clonando los sandboxes únicamente desde esa base.",
+    "title": "Aprobar una plataforma centralizada con mínimos datos derivados",
+    "body": "Definir cohorts permitidos, transformaciones de PII, roles de ejecución, TTL y guardas fail-closed antes de crear los comandos generales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo las piezas actuales y definió la propuesta concreta, por lo que es el mejor punto de coordinación disponible para elevar la decisión de seguridad.",
-    "confidence": "medium"
+    "reason": "Es el autor del auditor y de la sandbox más próximos al diseño propuesto, y puede encauzar la decisión técnica junto con quienes definan la política de datos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6462#issuecomment-4909962993",
-    "reviewedAt": "2026-07-14T22:12:04.034Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:49:07.744Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:25:17.049Z",
-  "updatedAt": "2026-07-14T22:11:54Z",
+  "generatedAt": "2026-07-19T13:50:24.684Z",
+  "updatedAt": "2026-07-14T23:30:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "feature",
       "reporter:rubenmorueco",
       "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-09T12:17:30Z",
-    "updatedAt": "2026-07-14T22:11:54Z"
+    "updatedAt": "2026-07-14T23:30:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la identificación de prep-centers vivir como una regla configurable de destinatario en ShipMatrix y qué comportamiento debe aplicarse cuando se intenta regenerar un envío FEDEX ya creado?",
-  "rationale": "El código actual no define la semántica de matching por nombre/dirección ni si la regeneración debe cancelar, reutilizar o bloquear una expedición externa existente; ambas decisiones afectan la operativa y el modelo permanente.",
+  "question": "¿Qué contrato permanente debe usar ShipMatrix para identificar prep-centers y qué estado debe mantener un consolidado FEDEX hasta que el operario indique el número de cajas?",
+  "rationale": "La implementación existente resuelve el multibulto manual, pero decidir entre un matcher de nombre, dirección normalizada o ambos, así como la política de regeneración y reintentos, cambia el comportamiento operativo y los datos persistidos.",
   "options": [
     {
-      "title": "ShipMatrix y regeneración protegida",
-      "body": "Añadir matching configurable y normalizado por destinatario, bloqueando la regeneración salvo confirmación y cancelación o sustitución segura del envío anterior.",
+      "title": "Diseñar un flujo específico de consolidado FEDEX",
+      "body": "Añadir matching normalizado por destinatario, un estado pendiente de cajas y generación única por `consolidationId` en packing.",
       "recommended": true
     },
     {
-      "title": "Política específica de prep-centers",
-      "body": "Mantener la identificación fuera de ShipMatrix mediante una política dedicada, aceptando mayor acoplamiento al código y despliegues para nuevos destinatarios.",
+      "title": "Mantener el cambio manual actual",
+      "body": "Conservar Spring→FEDEX en packing y documentar que los prep-centers siguen requiriendo intervención previa.",
       "recommended": false
     },
     {
-      "title": "Conservar el cambio manual",
-      "body": "No automatizar el routing y documentar el switch Spring→FEDEX existente como procedimiento operativo para estos consolidados.",
+      "title": "Limitarlo a una regla temporal de dirección",
+      "body": "Crear una regla de ShipMatrix para el destino actual sin generalizar el modelo hasta validar más prep-centers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "ShipMatrix y regeneración protegida",
-    "body": "Añadir matching configurable y normalizado por destinatario, bloqueando la regeneración salvo confirmación y cancelación o sustitución segura del envío anterior.",
+    "title": "Diseñar un flujo específico de consolidado FEDEX",
+    "body": "Añadir matching normalizado por destinatario, un estado pendiente de cajas y generación única por `consolidationId` en packing.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor actividad reciente en el contrato y la evolución de ShipMatrix, que concentra la principal decisión de producto y arquitectura.",
+    "reason": "Su historial reciente cubre tanto la evolución de ShipMatrix como la resolución y creación de etiquetas FEDEX.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6310.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6310#issuecomment-4909866015",
-    "reviewedAt": "2026-07-14T23:25:17.049Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:50:24.684Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

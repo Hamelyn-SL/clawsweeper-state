@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T07:58:33.771Z",
-  "updatedAt": "2026-07-16T07:50:18Z",
+  "generatedAt": "2026-07-19T13:50:23.838Z",
+  "updatedAt": "2026-07-16T08:01:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -27,43 +27,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T01:26:56Z",
-    "updatedAt": "2026-07-16T07:50:18Z"
+    "updatedAt": "2026-07-16T08:01:09Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Para un `400` genérico de `updatePrice` cuyo listing remoto sigue activo, ¿debe Hamelyn reintentarlo automáticamente, mantenerlo como `UNKNOWN` para revisión o aplicar una clasificación permanente basada en causas concretas adicionales?",
-  "rationale": "El estado remoto permite resolver con seguridad los listings cerrados o inexistentes, pero no determina la causa de un 400 sobre un listing activo; esa política afecta a la frescura de precios y al riesgo de reintentos indefinidos.",
+  "question": "¿Qué política debe aplicarse a un `400` de `updatePrice` cuando la consulta remota confirma que el listing de MercadoLibre continúa activo pero el body no permite clasificarlo de forma segura?",
+  "rationale": "El código actual evita inactivar listings activos, pero decidir entre reintento, estado terminal y revisión manual cambia el comportamiento operativo y el tratamiento del backlog persistido.",
   "options": [
     {
-      "title": "Aislar activos ambiguos",
-      "body": "Mantener como `UNKNOWN` los listings activos, guardar body, status y causas estructuradas, y crear métricas para definir reglas posteriores con datos reales.",
+      "title": "Clasificar con evidencia remota y body estructurado",
+      "body": "Persistir el detalle de la API, consultar el listing cuando proceda y reintentar solo los casos con una señal transitoria explícita; es la opción recomendada.",
       "recommended": true
     },
     {
-      "title": "Reintentar activos",
-      "body": "Clasificar como `TRANSIENT` los 400 de listings activos y aplicar backoff y límite de intentos, aceptando posible ruido sobre errores permanentes.",
+      "title": "Mantener UNKNOWN con alerta operativa",
+      "body": "No reintentar automáticamente los casos ambiguos y exponerlos para revisión manual, a costa de conservar backlog.",
       "recommended": false
     },
     {
-      "title": "Marcar activos permanentes",
-      "body": "Clasificar esos 400 como `PERMANENT` y detener actualizaciones hasta intervención, aceptando posible desincronización prolongada de precios.",
+      "title": "Reintentar todos los 400 activos",
+      "body": "Recuperar de forma agresiva los casos activos, aceptando el riesgo de repetir errores permanentes y aumentar llamadas a MercadoLibre.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar activos ambiguos",
-    "body": "Mantener como `UNKNOWN` los listings activos, guardar body, status y causas estructuradas, y crear métricas para definir reglas posteriores con datos reales.",
+    "title": "Clasificar con evidencia remota y body estructurado",
+    "body": "Persistir el detalle de la API, consultar el listing cuando proceda y reintentar solo los casos con una señal transitoria explícita; es la opción recomendada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y el autor y merger de la infraestructura de recovery de MercadoLibre donde debe aplicarse esta política.",
+    "reason": "Es la persona asignada en el contexto de la issue y su historial reciente está directamente relacionado con la selección y recuperación de listings de MercadoLibre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
-    "reviewedAt": "2026-07-16T07:58:33.771Z",
-    "mainSha": "9b09d392d49b027e7f59a67481e2c08f9a0237c1"
+    "reviewedAt": "2026-07-19T13:50:23.838Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
