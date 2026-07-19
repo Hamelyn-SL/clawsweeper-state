@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:46:04.621Z",
-  "updatedAt": "2026-07-19T13:30:57Z",
+  "generatedAt": "2026-07-19T19:09:56.708Z",
+  "updatedAt": "2026-07-19T17:47:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,50 +17,49 @@
       "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-19T13:30:57Z"
+    "updatedAt": "2026-07-19T17:47:16Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba la migración por cortes a BigQuery con la tolerancia de frescura actual, o algún flujo debe conservar una materialización de Mongo más reciente?",
-  "rationale": "El código confirma varias rutas pendientes, pero la aceptabilidad de datos con hasta una hora —y un día para productos— depende del contrato operativo de cada feed.",
+  "question": "¿Aprueba Data/Platform usar BigQuery como fuente estándar para estas lecturas batch tolerantes a una hora y priorizar flash offers y Merchant por cortes reversibles?",
+  "rationale": "La corrección requiere decidir qué frescura, coste y fallback son aceptables por carga; el código no puede resolver esas políticas de operación por sí solo.",
   "options": [
     {
-      "title": "Aprobar cortes escalonados",
-      "body": "Integrar flash offers tras resolver el conflicto y abrir cortes separados para Merchant y exportación con comprobaciones de paridad y frescura.",
+      "title": "Aprobar migración por cortes",
+      "body": "Mantener la iniciativa paraguas y aterrizar primero los cortes con criterios de frescura, paridad, rollback y medición operacional definidos.",
       "recommended": true
     },
     {
-      "title": "Exigir materialización adicional",
-      "body": "Mantener BigQuery como destino, pero crear tablas materializadas más frescas antes de migrar los flujos sensibles.",
+      "title": "Limitar inicialmente el alcance",
+      "body": "Migrar solo flash offers y Merchant hasta validar coste, calidad de datos y descenso de CPU antes de abordar reportes y exportaciones.",
       "recommended": false
     },
     {
-      "title": "Mantener las rutas Mongo",
-      "body": "Posponer la migración y asumir la carga actual del primario hasta contar con un contrato de datos distinto.",
+      "title": "Posponer el cambio de fuente",
+      "body": "Conservar Mongo temporalmente y priorizar índices o materializaciones si BigQuery no satisface la frescura requerida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar cortes escalonados",
-    "body": "Integrar flash offers tras resolver el conflicto y abrir cortes separados para Merchant y exportación con comprobaciones de paridad y frescura.",
+    "title": "Aprobar migración por cortes",
+    "body": "Mantener la iniciativa paraguas y aterrizar primero los cortes con criterios de frescura, paridad, rollback y medición operacional definidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es la mejor señal disponible en la historia actual de las rutas Mongo afectadas y del trabajo de plataforma relacionado.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está conectado con el primer corte concreto y con la PR candidata que necesita encajar en la dirección aprobada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-19T17:46:04.621Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-19T19:09:56.708Z",
+    "mainSha": "04bbf4a60ab8d8ed05aeddd043d578d655844c7a"
   }
 }
