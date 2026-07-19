@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:59:15.177Z",
-  "updatedAt": "2026-07-19T12:55:54Z",
+  "generatedAt": "2026-07-19T15:40:13.618Z",
+  "updatedAt": "2026-07-19T12:59:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,51 @@
       "priority:p0",
       "triage:done",
       "reporter:irenegarcia",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-15T09:46:05Z",
-    "updatedAt": "2026-07-19T12:55:54Z"
+    "updatedAt": "2026-07-19T12:59:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campo personalizado debe mantener eDesk y qué disparador idempotente debe enriquecer los tickets importados cuando la consolidación puede ocurrir antes o después de su creación?",
-  "rationale": "El repositorio puede resolver los miembros de una consolidación, pero no controla la creación de los tickets de marketplaces ni define el ciclo de vida del campo externo; elegirlo determina el contrato operativo y evita implementar solo la mitad del alcance.",
+  "question": "¿Se confirma un único campo de eDesk y un disparador soportado para enriquecer tickets de marketplaces externos además del mensaje de Ecommerce?",
+  "rationale": "El repositorio puede crear mensajes propios, pero no posee hoy el ciclo de vida de los tickets importados ni el contrato funcional del campo personalizado.",
   "options": [
     {
-      "title": "Acordar campo y sincronización periódica",
-      "body": "Definir un campo único de eDesk y ejecutar una sincronización idempotente que localice los tickets por pedido y actualice todos los marketplaces, además del mensaje de Ecommerce.",
+      "title": "Confirmar alcance completo",
+      "body": "Acordar campo y disparador para cubrir mensaje Ecommerce y actualización idempotente de tickets externos.",
       "recommended": true
     },
     {
-      "title": "Limitarlo temporalmente a Ecommerce",
-      "body": "Añadir solo los pedidos unificados al mensaje de incidencias de Ecommerce y abrir un seguimiento separado para el enriquecimiento de tickets importados.",
+      "title": "Entregar solo Ecommerce",
+      "body": "Mostrar los pedidos consolidados únicamente en los nuevos tickets creados desde Ecommerce y abrir un seguimiento para marketplaces.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar enriquecimiento externo",
+      "body": "Mantener el comportamiento actual hasta que Soporte confirme propiedad y mecanismo de actualización en eDesk.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar campo y sincronización periódica",
-    "body": "Definir un campo único de eDesk y ejecutar una sincronización idempotente que localice los tickets por pedido y actualice todos los marketplaces, además del mensaje de Ecommerce.",
+    "title": "Confirmar alcance completo",
+    "body": "Acordar campo y disparador para cubrir mensaje Ecommerce y actualización idempotente de tickets externos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su historial reciente concentra los cambios de la ruta de incidencias de Ecommerce y de los mensajes enviados a eDesk.",
+    "reason": "Su trabajo reciente cubre la ruta de Ecommerce donde se materializaría la primera parte del alcance.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585#issuecomment-4979728447",
-    "reviewedAt": "2026-07-19T12:59:15.177Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T15:40:13.618Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
   }
 }

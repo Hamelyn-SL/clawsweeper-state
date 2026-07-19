@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:00:44.023Z",
-  "updatedAt": "2026-07-14T16:52:45Z",
+  "generatedAt": "2026-07-19T15:37:53.410Z",
+  "updatedAt": "2026-07-19T13:02:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "app:infrastructure",
       "triage:done",
       "P1",
-      "impact:data-loss",
-      "impact:message-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
-    "updatedAt": "2026-07-14T16:52:45Z"
+    "updatedAt": "2026-07-19T13:02:23Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política de retención del payload personal y qué límite operativo deben gobernar los registros `PENDING`, `TICKET_CREATED`, `SENT` y `FAILED` del outbox de incidencias?",
-  "rationale": "El código puede implementar una cola, pero decidir cuánto tiempo conservar email, texto libre y adjuntos, cuándo escalar un fallo y qué recuperación manual permitir afecta privacidad y operación de soporte.",
+  "question": "¿Se aprueba el contrato operativo del outbox: retención del payload, transición a `FAILED` y respuesta 202 con referencia diferida?",
+  "rationale": "La corrección atraviesa Core, Ecommerce, Public y Crons, y decide conservación de datos personales y experiencia posterior al fallo; la fuente no puede fijar esas políticas.",
   "options": [
     {
-      "title": "Retención por estado y rescate acotado",
-      "body": "Eliminar el payload personal al completar, conservar metadatos 90 días y mantener los fallidos 30 días con alerta y reencolado manual.",
+      "title": "Aprobar el contrato propuesto",
+      "body": "Usar outbox Mongo con reintentos hasta 12 intentos o 24 horas, purga de contenido tras `SENT` y rescate de `FAILED` durante 30 días.",
       "recommended": true
     },
     {
-      "title": "TTL único conservador",
-      "body": "Aplicar un TTL común a todos los registros para simplificar operación, aceptando menor margen de recuperación.",
+      "title": "Ajustar retención y reintentos",
+      "body": "Mantener el outbox, pero definir con plataforma y soporte otros plazos de purga, alerta y recuperación manual antes de implementarlo.",
       "recommended": false
     },
     {
-      "title": "Revisión de privacidad previa",
-      "body": "Pausar la implementación hasta acordar con privacidad y soporte la política de datos y de rescate.",
+      "title": "Mantener el flujo síncrono",
+      "body": "Aceptar que los fallos prolongados de eDesk sigan devolviendo 502 y se recuperen solo desde logs, con pérdida de garantía de entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retención por estado y rescate acotado",
-    "body": "Eliminar el payload personal al completar, conservar metadatos 90 días y mantener los fallidos 30 días con alerta y reencolado manual.",
+    "title": "Aprobar el contrato propuesto",
+    "body": "Usar outbox Mongo con reintentos hasta 12 intentos o 24 horas, purga de contenido tras `SENT` y rescate de `FAILED` durante 30 días.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia y documentó la alternativa de diseño y los puntos de decisión pendientes.",
+    "reason": "Está asignado a la incidencia, definió el diseño de fallback y también introdujo la mitigación actual de rate limiting.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-19T13:00:44.023Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T15:37:53.410Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
   }
 }

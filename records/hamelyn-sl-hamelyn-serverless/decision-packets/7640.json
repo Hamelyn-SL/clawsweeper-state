@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:54:45.346Z",
-  "updatedAt": "2026-07-19T13:44:42Z",
+  "generatedAt": "2026-07-19T15:39:02.641Z",
+  "updatedAt": "2026-07-19T14:01:07Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-16T09:56:43Z",
-    "updatedAt": "2026-07-19T13:44:42Z",
+    "updatedAt": "2026-07-19T14:01:07Z",
     "headSha": "8670362c36a3281986569c9ebe6ca144632721cc"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe el checkout persistir la asignación de unidades gratuitas por línea para que eDesk reproduzca la decisión original de forma fiable?",
-  "rationale": "La corrección exige decidir el contrato persistido y la compatibilidad de pedidos históricos; la PR actual evita esa decisión pero no puede garantizar la exactitud multimoneda.",
+  "question": "¿Se aprueba ampliar el checkout para persistir la atribución exacta por línea de `FREE_UNITS` y dejar sin etiqueta los pedidos históricos que carezcan de ella?",
+  "rationale": "La corrección requiere incorporar datos persistidos y definir explícitamente la compatibilidad de pedidos existentes antes de cambiar el contrato de checkout.",
   "options": [
     {
       "title": "Persistir la asignación canónica",
-      "body": "Guardar durante la validación de `FREE_UNITS` un identificador por línea y sus unidades gratuitas, y usarlo únicamente para tickets nuevos.",
+      "body": "Guardar el reparto por línea durante el cálculo original, usarlo en eDesk y cubrir la colisión de precios convertidos.",
       "recommended": true
     },
     {
-      "title": "No mostrar atribución por línea",
-      "body": "Mantener el ticket sin artículo gratuito hasta que exista un contrato de datos que conserve la selección original.",
+      "title": "Posponer la información exacta",
+      "body": "No fusionar esta aproximación si no se desea ampliar el modelo persistido del checkout en este ciclo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Persistir la asignación canónica",
-    "body": "Guardar durante la validación de `FREE_UNITS` un identificador por línea y sus unidades gratuitas, y usarlo únicamente para tickets nuevos.",
+    "body": "Guardar el reparto por línea durante el cálculo original, usarlo en eDesk y cubrir la colisión de precios convertidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El punto de persistencia se encuentra en el flujo de checkout y validación de cupones que modificó recientemente.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la regla canónica cuyo resultado debe persistirse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7640.md",
-    "reviewedAt": "2026-07-19T13:54:45.346Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T15:39:02.641Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
   }
 }

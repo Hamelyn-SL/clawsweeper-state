@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:00:15.395Z",
-  "updatedAt": "2026-07-14T17:04:46Z",
+  "generatedAt": "2026-07-19T15:37:12.621Z",
+  "updatedAt": "2026-07-19T13:02:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,49 @@
       "app:infrastructure",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-13T06:38:18Z",
-    "updatedAt": "2026-07-14T17:04:46Z"
+    "updatedAt": "2026-07-19T13:02:18Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política de conservación de fichas y slugs debe aplicarse al fusionar en producción los grupos duplicados de `authorId`?",
-  "rationale": "La selección de una ficha canónica y el destino de sus URLs son una decisión SEO irreversible para datos existentes; el código actual solo evita nuevas colisiones durante la lectura y el enriquecimiento.",
+  "question": "¿Qué política permanente debe aplicar la consolidación física de fichas duplicadas respecto a slugs históricos, contenido y enlaces de producto?",
+  "rationale": "La elección decide qué documento conservar y cómo evitar regresiones SEO o de catálogo; no puede inferirse con seguridad solo desde el schema.",
   "options": [
     {
-      "title": "Aprobar migración con canónica y redirecciones",
-      "body": "Conservar una ficha canónica por grupo, registrar aliases/redirecciones verificables para los slugs retirados y crear el índice único después del dry-run.",
+      "title": "Conservar canónica y redirigir slugs",
+      "body": "Fusionar cada grupo en la ficha canónica, conservar las referencias necesarias y mantener redirects de los slugs retirados.",
       "recommended": true
     },
     {
-      "title": "Mantener la mitigación en lectura",
-      "body": "Dejar los duplicados físicos temporalmente y limitar el trabajo a hacer fallar el cron ante errores, posponiendo la consolidación e índice hasta acordar la política SEO.",
+      "title": "Conservar canónica sin redirects",
+      "body": "Fusionar los grupos y aceptar respuestas 404 para slugs retirados, siguiendo la decisión SEO usada en el cambio de lectura.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la consolidación física",
+      "body": "Mantener la mitigación de lectura actual y aplazar el índice único hasta acordar una política de migración completa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración con canónica y redirecciones",
-    "body": "Conservar una ficha canónica por grupo, registrar aliases/redirecciones verificables para los slugs retirados y crear el índice único después del dry-run.",
+    "title": "Conservar canónica y redirigir slugs",
+    "body": "Fusionar cada grupo en la ficha canónica, conservar las referencias necesarias y mantener redirects de los slugs retirados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el autor de la implementación base, de la mitigación ya integrada y la persona actualmente asignada a esta issue.",
+    "reason": "Figura como autor de las rutas afectadas y de la mitigación canónica ya fusionada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
-    "reviewedAt": "2026-07-19T13:00:15.395Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T15:37:12.621Z",
+    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
   }
 }
