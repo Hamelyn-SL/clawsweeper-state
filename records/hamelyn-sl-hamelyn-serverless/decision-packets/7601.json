@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T13:14:50.255Z",
-  "updatedAt": "2026-07-15T13:05:18Z",
+  "generatedAt": "2026-07-19T12:46:11.894Z",
+  "updatedAt": "2026-07-15T13:16:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,50 @@
       "feature",
       "reporter:blanca",
       "triage:needs-info",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-15T12:58:18Z",
-    "updatedAt": "2026-07-15T13:05:18Z"
+    "updatedAt": "2026-07-15T13:16:57Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Dónde debe aparecer la oficina de Correos y quién será responsable de mantener actualizado el listado oficial después de la carga inicial?",
-  "rationale": "El modelo técnico puede reutilizar la infraestructura PUDO, pero el valor de la funcionalidad depende de elegir una superficie operativa concreta y una política de actualización que la issue no define.",
+  "question": "¿Correos confirma que `LOCALIZACION CP` identifica la oficina que debe atender un envío Postlibri no entregado para cualquier dirección de ese mismo código postal, y qué debe mostrar Admin cuando no exista una coincidencia válida?",
+  "rationale": "El repositorio ya contiene un patrón de almacenamiento y consulta por CP, pero no puede decidir la semántica logística del fichero ni el comportamiento seguro para la cobertura parcial.",
   "options": [
     {
-      "title": "Consulta calculada en admin",
-      "body": "Cargar las oficinas como `pudoPoints` de Correos y mostrarlas de forma read-only en el detalle del pedido Postlibri, documentando además el proceso de actualización del listado.",
+      "title": "Validar y acotar el catálogo",
+      "body": "Confirmar por escrito la regla con Correos, cargar solo CP validados y mostrar en Admin una oficina derivada con un estado explícito para CP sin cobertura.",
       "recommended": true
     },
     {
-      "title": "Servicio backend sin interfaz",
-      "body": "Implementar únicamente el repositorio o endpoint de consulta y posponer la integración con Atención al Cliente hasta definir su flujo exacto.",
+      "title": "Tratarlo como dato orientativo",
+      "body": "Mostrar la oficina únicamente como referencia interna, con aviso de que Atención al Cliente debe confirmar el punto antes de comunicárselo al cliente.",
       "recommended": false
     },
     {
-      "title": "Guardar una copia en cada pedido",
-      "body": "Persistir una instantánea de la oficina en el OrderSell para conservar el dato histórico, asumiendo migración, duplicación y posibles desactualizaciones.",
+      "title": "Mantener el flujo actual",
+      "body": "No incorporar el fichero hasta disponer de una fuente de Correos que relacione de forma verificable domicilio o envío con oficina de entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consulta calculada en admin",
-    "body": "Cargar las oficinas como `pudoPoints` de Correos y mostrarlas de forma read-only en el detalle del pedido Postlibri, documentando además el proceso de actualización del listado.",
+    "title": "Validar y acotar el catálogo",
+    "body": "Confirmar por escrito la regla con Correos, cargar solo CP validados y mostrar en Admin una oficina derivada con un estado explícito para CP sin cobertura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la persona con mayor relación histórica con el modelo y las consultas PUDO que permiten resolver el cambio sin crear una segunda fuente de verdad.",
+    "person": "blanca",
+    "reason": "Es la persona conectada al fichero y a la confirmación operativa que desbloquea el contrato funcional.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7601.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601#issuecomment-4980998565",
-    "reviewedAt": "2026-07-15T13:14:50.255Z",
-    "mainSha": "a86e8f2617028189484c802aae0662f92dfc760d"
+    "reviewedAt": "2026-07-19T12:46:11.894Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-15T12:28:55.257Z",
-  "updatedAt": "2026-07-15T12:06:37Z",
+  "generatedAt": "2026-07-19T12:46:54.601Z",
+  "updatedAt": "2026-07-15T12:37:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "app:marketplace",
       "question",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-07-15T12:06:37Z"
+    "updatedAt": "2026-07-15T12:37:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un par EAN-región sin ASIN seguir reintentándose cada 24 horas indefinidamente, pasar a un estado no listable tras un umbral, o retirarse de la región con visibilidad operativa?",
-  "rationale": "Las tres políticas son técnicamente viables, pero cambian el equilibrio entre llamadas a Amazon, ruido operativo y posibilidad de publicar el stock si el catálogo regional incorpora el EAN más adelante.",
+  "question": "¿Debe Marketplace adoptar la política propuesta de 7 días de reintento diario, seguido de estado «no listable por región» y revalidación mensual, o conservar el reintento indefinido?",
+  "rationale": "El código actual funciona según el contrato vigente, pero elegir el coste de llamadas, la oportunidad de alta tardía y la visibilidad del inventario requiere una decisión de producto antes de cambiar el modelo persistido y la recuperación.",
   "options": [
     {
-      "title": "Mantener retry y medir",
-      "body": "Conservar el cooldown de 24 horas, silenciar la firma esperada del watcher y medir antigüedad, coste y resoluciones tardías antes de cambiar la política.",
+      "title": "Adoptar política escalonada",
+      "body": "Reintentar cada 24 horas durante 7 días, persistir el par como no listable y revalidarlo cada 30 días con una superficie visible para operación.",
       "recommended": true
     },
     {
-      "title": "Marcar no listable",
-      "body": "Añadir un estado terminal por EAN-región después de N intentos, con una vía explícita de reactivación o reevaluación posterior.",
+      "title": "Conservar reintento indefinido",
+      "body": "Mantener el comportamiento actual para maximizar altas tardías, asumiendo el coste continuo de consultas y ruido de `SYNC_ERROR`.",
       "recommended": false
     },
     {
-      "title": "Retirar y reportar",
-      "body": "Excluir el stock de esa región y mostrarlo en un dashboard o flujo operativo como inventario regionalmente no listable.",
+      "title": "Suspender por región y reportar",
+      "body": "Retirar o suprimir la publicación regional tras un umbral acordado y exponer el inventario afectado en un dashboard o Supply.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener retry y medir",
-    "body": "Conservar el cooldown de 24 horas, silenciar la firma esperada del watcher y medir antigüedad, coste y resoluciones tardías antes de cambiar la política.",
+    "title": "Adoptar política escalonada",
+    "body": "Reintentar cada 24 horas durante 7 días, persistir el par como no listable y revalidarlo cada 30 días con una superficie visible para operación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es quien más recientemente ha ampliado y mantenido las regiones Amazon y sus reglas comunes, por lo que dispone del contexto técnico y operativo más directo para coordinar la decisión.",
+    "reason": "La evidencia de la cohorte regional y los cambios recientes de recuperación y watcher le conectan directamente con los límites operativos que debe concretar Producto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-07-15T12:28:55.257Z",
-    "mainSha": "c9c48539811bc0171e4605b5bbaf72e258ffc431"
+    "reviewedAt": "2026-07-19T12:46:54.601Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
