@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:51:42.985Z",
-  "updatedAt": "2026-07-17T00:09:33Z",
+  "generatedAt": "2026-07-19T16:36:56.833Z",
+  "updatedAt": "2026-07-19T14:02:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,40 +18,43 @@
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "P2"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-08T00:34:01Z",
-    "updatedAt": "2026-07-17T00:09:33Z"
+    "updatedAt": "2026-07-19T14:02:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la siguiente fase introducir coordinación distribuida de la cuota de Amazon Catalog API y convertir los chunks agotados en un fallo parcial visible del cron, o medir primero el comportamiento tras la cobertura de bypasses ya fusionada?",
-  "rationale": "El código demuestra que el límite no cruza procesos y que el resultado agotado no se propaga, pero el ámbito de cuota, el modo degradado sin KV y el contrato de resultado del cron requieren intención operativa explícita.",
+  "question": "¿Se acepta observar primero el limitador local ya desplegado o se aprueba ya una segunda fase con cuota distribuida y contrato explícito de fallo parcial?",
+  "rationale": "El ámbito de cuota, la degradación sin KV y el efecto operativo de no considerar correcto un batch parcial requieren una decisión explícita.",
   "options": [
     {
-      "title": "Diseñar y aplicar la segunda fase",
-      "body": "Definir cuota atómica por operación y cuenta, degradación segura sin KV y un resultado parcial explícito antes de implementar el cambio.",
+      "title": "Observar antes de ampliar",
+      "body": "Medir siete días después de `e957c750` y abrir la segunda fase solo si reaparecen 429 terminales o altas afectadas.",
       "recommended": true
     },
     {
-      "title": "Medir antes de ampliar",
-      "body": "Mantener el limitador local ya cubierto y recoger métricas de 429, chunks agotados y solapamiento durante una ventana acordada antes de introducir infraestructura distribuida.",
+      "title": "Implementar coordinación distribuida ahora",
+      "body": "Añadir reserva atómica de cuota y una señal de fallo parcial antes de cualquier create posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Diseñar y aplicar la segunda fase",
-    "body": "Definir cuota atómica por operación y cuenta, degradación segura sin KV y un resultado parcial explícito antes de implementar el cambio.",
+    "title": "Observar antes de ampliar",
+    "body": "Medir siete días después de `e957c750` y abrir la segunda fase solo si reaparecen 429 terminales o altas afectadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha investigado la causa, implementado las dos fases ya fusionadas y documentado las decisiones pendientes de cuota y propagación.",
+    "reason": "Ha investigado la causa, propuso las fases y fusionó los cambios que delimitan el siguiente paso.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5745.md",
-    "reviewedAt": "2026-07-19T13:51:42.985Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:36:56.833Z",
+    "mainSha": "df9d41a6bd442a1dd046b2592aad65025f23b7d5"
   }
 }
