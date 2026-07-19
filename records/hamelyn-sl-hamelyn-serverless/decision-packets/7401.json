@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:30:56.667Z",
+  "generatedAt": "2026-07-19T16:34:33.481Z",
   "updatedAt": "2026-07-19T16:26:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,52 +14,51 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
     "updatedAt": "2026-07-19T16:26:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención debe gobernar los productos generados sin actividad ni disponibilidad, y qué referencias históricas deben impedir su eliminación?",
-  "rationale": "El código permite tanto conservar metadatos como borrar documentos, pero no puede decidir por sí solo el valor comercial, legal e histórico de cada referencia.",
+  "question": "¿Qué política de retención debe regir para productos IA sin actividad y qué referencias históricas deben impedir su eliminación?",
+  "rationale": "El código permite identificar rutas y dependencias, pero no puede decidir el valor comercial, legal u operativo de conservar cada producto sin señal actual.",
   "options": [
     {
-      "title": "Poda por fases con contrato aprobado",
-      "body": "Definir exclusiones y ventana de recuperación, cortar los nuevos `upsert` sin señal y validar primero un `$unset` reversible antes de cualquier purga.",
+      "title": "Poda gradual con retención",
+      "body": "Aprobar criterios conservadores, detener nuevas altas sin señal y aplicar primero un `$unset` reversible antes de evaluar borrados.",
       "recommended": true
     },
     {
-      "title": "Conservar catálogo completo",
-      "body": "Mantener los documentos y limitar el trabajo a reducir campos del export y optimizar lecturas, aceptando el coste de almacenamiento.",
+      "title": "Purga completa por lotes",
+      "body": "Aprobar la eliminación de candidatos solo después de anti-joins completos, recuperación verificable y reconciliación de la tabla tipada.",
       "recommended": false
     },
     {
-      "title": "Purga directa con exclusiones mínimas",
-      "body": "Eliminar candidatos tras los anti-joins actuales, asumiendo el riesgo de omitir referencias o necesidades históricas no inventariadas.",
+      "title": "Conservar el catálogo",
+      "body": "Mantener los documentos y limitarse a optimizar exportaciones y almacenamiento, asumiendo el coste persistente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Poda por fases con contrato aprobado",
-    "body": "Definir exclusiones y ventana de recuperación, cortar los nuevos `upsert` sin señal y validar primero un `$unset` reversible antes de cualquier purga.",
+    "title": "Poda gradual con retención",
+    "body": "Aprobar criterios conservadores, detener nuevas altas sin señal y aplicar primero un `$unset` reversible antes de evaluar borrados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "El productor Argos y la materialización que condicionan una poda segura aparecen en su historial de área.",
-    "confidence": "medium"
+    "reason": "Su cambio histórico conecta directamente la generación por Argos y la materialización que condicionan una poda segura.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-19T16:30:56.667Z",
+    "reviewedAt": "2026-07-19T16:34:33.481Z",
     "mainSha": "df9d41a6bd442a1dd046b2592aad65025f23b7d5"
   }
 }
