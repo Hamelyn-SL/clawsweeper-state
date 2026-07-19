@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:54:37.485Z",
-  "updatedAt": "2026-07-15T10:51:49Z",
+  "generatedAt": "2026-07-19T12:59:15.177Z",
+  "updatedAt": "2026-07-19T12:55:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,43 +20,40 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "impact:ux-friction"
     ],
     "createdAt": "2026-07-15T09:46:05Z",
-    "updatedAt": "2026-07-15T10:51:49Z"
+    "updatedAt": "2026-07-19T12:55:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué nombre de campo personalizado y qué mecanismo de sincronización —webhook/automatización de eDesk o job periódico— deben ser el contrato para enriquecer los tickets importados de marketplaces?",
-  "rationale": "El repositorio ya conoce las consolidaciones y crea sus propios tickets, pero no controla el ciclo de creación de tickets por conectores externos; esa decisión determina la consistencia y la responsabilidad operativa.",
+  "question": "¿Qué campo personalizado debe mantener eDesk y qué disparador idempotente debe enriquecer los tickets importados cuando la consolidación puede ocurrir antes o después de su creación?",
+  "rationale": "El repositorio puede resolver los miembros de una consolidación, pero no controla la creación de los tickets de marketplaces ni define el ciclo de vida del campo externo; elegirlo determina el contrato operativo y evita implementar solo la mitad del alcance.",
   "options": [
     {
-      "title": "Acordar un evento de sincronización",
-      "body": "Actualizar de forma idempotente al recibir una consolidación o al detectar el ticket externo mediante `seller_order_id`, con el campo de eDesk confirmado por Soporte.",
+      "title": "Acordar campo y sincronización periódica",
+      "body": "Definir un campo único de eDesk y ejecutar una sincronización idempotente que localice los tickets por pedido y actualice todos los marketplaces, además del mensaje de Ecommerce.",
       "recommended": true
     },
     {
-      "title": "Usar sincronización periódica",
-      "body": "Crear un job que detecte pedidos consolidados y complete los tickets externos ya existentes, aceptando una latencia operativa definida.",
+      "title": "Limitarlo temporalmente a Ecommerce",
+      "body": "Añadir solo los pedidos unificados al mensaje de incidencias de Ecommerce y abrir un seguimiento separado para el enriquecimiento de tickets importados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar un evento de sincronización",
-    "body": "Actualizar de forma idempotente al recibir una consolidación o al detectar el ticket externo mediante `seller_order_id`, con el campo de eDesk confirmado por Soporte.",
+    "title": "Acordar campo y sincronización periódica",
+    "body": "Definir un campo único de eDesk y ejecutar una sincronización idempotente que localice los tickets por pedido y actualice todos los marketplaces, además del mensaje de Ecommerce.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "El pipeline compartido de incidencias que estructuró es el punto natural para exponer una operación común de enriquecimiento.",
+    "person": "HamelynDev",
+    "reason": "Su historial reciente concentra los cambios de la ruta de incidencias de Ecommerce y de los mensajes enviados a eDesk.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585#issuecomment-4979728447",
-    "reviewedAt": "2026-07-19T12:54:37.485Z",
+    "reviewedAt": "2026-07-19T12:59:15.177Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
