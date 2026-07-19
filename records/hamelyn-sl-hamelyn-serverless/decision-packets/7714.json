@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T09:25:44.470Z",
-  "updatedAt": "2026-07-18T07:49:00Z",
+  "generatedAt": "2026-07-19T12:14:06.242Z",
+  "updatedAt": "2026-07-18T09:26:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-18T07:37:33Z",
-    "updatedAt": "2026-07-18T07:49:00Z"
+    "updatedAt": "2026-07-18T09:26:24Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe recuperarse la cohorte histórica Fnac mediante una operación puntual auditada o mediante una versión acotada de la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7686?",
-  "rationale": "La elección afecta datos productivos y la alternativa en código está conflictiva y mezcla varias superficies; no es seguro seleccionar automáticamente la vía ni su alcance.",
+  "question": "¿Se autoriza un dry-run de recuperación de los 1.459 candidatos Fnac históricos y, si sus muestras son correctas, la mutación canónica seguida de su reintroducción controlada?",
+  "rationale": "La evidencia actual descarta una regresión de código, pero la recuperación modifica datos productivos y exige decidir el subconjunto, las salvaguardas y la autorización de ejecución.",
   "options": [
     {
-      "title": "Recuperación operativa acotada",
-      "body": "Ejecutar un dry-run con count, filtro literal y tres muestras, y aplicar la mutación canónica únicamente a los candidatos Fnac seguros.",
+      "title": "Autorizar dry-run y recuperación acotada",
+      "body": "Validar el filtro con tres muestras y aplicar la mutación canónica solo si el dry-run confirma que los listings se pueden recuperar sin reactivar retirados.",
       "recommended": true
     },
     {
-      "title": "Reducir y actualizar la PR",
-      "body": "Extraer de la PR candidata solo la reconciliación Fnac, resolver sus conflictos y exigir prueba real antes de fusionar.",
+      "title": "Conservar la cohorte y mejorar solo la detección",
+      "body": "Cambiar el watcher para contar escrituras CDC de la firma de error y aplazar la reconciliación de datos hasta disponer de otra ventana operativa.",
       "recommended": false
     },
     {
-      "title": "Aterrizar la PR amplia",
-      "body": "Actualizar la PR completa y asumir una revisión coordinada de todas las rutas de precios, persistencia y feeds que modifica.",
+      "title": "Revisar primero la PR amplia relacionada",
+      "body": "Evaluar https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7686 como trabajo separado, sin asumir que sustituye el plan de recuperación histórica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperación operativa acotada",
-    "body": "Ejecutar un dry-run con count, filtro literal y tres muestras, y aplicar la mutación canónica únicamente a los candidatos Fnac seguros.",
+    "title": "Autorizar dry-run y recuperación acotada",
+    "body": "Validar el filtro con tres muestras y aplicar la mutación canónica solo si el dry-run confirma que los listings se pueden recuperar sin reactivar retirados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Ya aprobó la implementación candidata y su historial reciente cubre las recuperaciones y mutaciones marketplace más próximas a esta decisión.",
+    "person": "HamelynDev",
+    "reason": "Es la persona más conectada tanto con el aislamiento ya desplegado en `dev` como con el diagnóstico CDC y el procedimiento de recuperación propuesto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7714.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7714#issuecomment-5010473513",
-    "reviewedAt": "2026-07-18T09:25:44.470Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T12:14:06.242Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
