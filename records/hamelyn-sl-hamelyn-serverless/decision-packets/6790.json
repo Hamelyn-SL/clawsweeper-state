@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:58:27.074Z",
-  "updatedAt": "2026-07-19T13:44:34Z",
+  "generatedAt": "2026-07-19T16:50:23.104Z",
+  "updatedAt": "2026-07-19T14:00:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,46 @@
       "app:infrastructure",
       "reporter:PabloMoran34",
       "triage:done",
-      "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-07-19T13:44:34Z"
+    "updatedAt": "2026-07-19T14:00:58Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `soldAt` heredar el marketplace del pedido cuando una unidad se retira como `SOLD_AS_ALTERNATIVE`?",
-  "rationale": "El código confirma que las alternativas se retiran mediante la ruta genérica, pero no existe un contrato explícito que determine si el campo debe significar el canal de la venta final o excluir las sustituciones.",
+  "question": "¿Debe `soldAt` heredarse del marketplace del pedido también cuando la retirada es `SOLD_AS_ALTERNATIVE`, o debe representarse esa sustitución con otro dato?",
+  "rationale": "La respuesta determina el significado histórico del campo y el alcance seguro tanto de la corrección operativa como del backfill.",
   "options": [
     {
-      "title": "Heredar el marketplace final",
-      "body": "Guardar en `soldAt` el marketplace del pedido también para alternativas, de modo que el campo mantenga el canal de venta de la unidad finalmente expedida.",
+      "title": "Heredar el marketplace del pedido",
+      "body": "Usar el marketplace del pedido asociado para `SOLD` y `SOLD_AS_ALTERNATIVE`, documentando que indica el canal de la venta que consumió la unidad.",
       "recommended": true
     },
     {
-      "title": "Conservar una distinción explícita",
-      "body": "No rellenar `soldAt` para alternativas hasta acordar un campo o criterio separado que preserve la relación de sustitución.",
+      "title": "Separar las sustituciones",
+      "body": "Mantener `soldAt` reservado a la venta original y diseñar otro campo o relación para identificar unidades usadas como alternativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Heredar el marketplace final",
-    "body": "Guardar en `soldAt` el marketplace del pedido también para alternativas, de modo que el campo mantenga el canal de venta de la unidad finalmente expedida.",
+    "title": "Heredar el marketplace del pedido",
+    "body": "Usar el marketplace del pedido asociado para `SOLD` y `SOLD_AS_ALTERNATIVE`, documentando que indica el canal de la venta que consumió la unidad.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "La decisión afecta directamente a los endpoints de admin y picking que activan las retiradas genéricas.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Introdujo la superficie de `soldAt` y mantiene historial reciente en las mutaciones de stock relacionadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
-    "reviewedAt": "2026-07-19T13:58:27.074Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:50:23.104Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }
