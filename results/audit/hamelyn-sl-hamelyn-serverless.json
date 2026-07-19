@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-19T12:56:38.047Z",
+  "generatedAt": "2026-07-19T18:58:19.471Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 134
+    "openItemsSeen": 132
   },
   "counts": {
-    "itemRecords": 133,
-    "closedRecords": 454,
-    "missingOpen": 1,
+    "itemRecords": 128,
+    "closedRecords": 473,
+    "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 3,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,42 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-12T12:22:05Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7735,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T15:58:01Z",
+        "updatedAt": "2026-07-19T18:57:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7743,
+        "kind": "pull_request",
+        "title": "perf: unify flash rotation and merchant workflows, fix broken crons",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T18:21:17Z",
+        "updatedAt": "2026-07-19T18:58:06Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7746,
+        "kind": "pull_request",
+        "title": "fix: isolate cdl price validation errors in batch create",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T18:32:33Z",
+        "updatedAt": "2026-07-19T18:36:42Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +95,44 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7735,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T15:58:01Z",
+        "updatedAt": "2026-07-19T18:57:42Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7743,
+        "kind": "pull_request",
+        "title": "perf: unify flash rotation and merchant workflows, fix broken crons",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T18:21:17Z",
+        "updatedAt": "2026-07-19T18:58:06Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7746,
+        "kind": "pull_request",
+        "title": "fix: isolate cdl price validation errors in batch create",
+        "labels": [
+          "size/S"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T18:32:33Z",
+        "updatedAt": "2026-07-19T18:36:42Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
