@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T22:19:45.794Z",
-  "updatedAt": "2026-07-14T22:08:50Z",
+  "generatedAt": "2026-07-19T13:43:38.225Z",
+  "updatedAt": "2026-07-14T22:20:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,45 +18,44 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
       "impact:data-loss",
-      "clawsweeper:fix-shape-clear"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-07-14T22:08:50Z"
+    "updatedAt": "2026-07-14T22:20:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una unidad retirada como `SOLD_AS_ALTERNATIVE` heredar en `soldAt` el marketplace del pedido, o debe modelarse la sustitución por separado?",
-  "rationale": "La fuente confirma que estas unidades son ventas operativas, pero el modelo actual no define si la unidad sustituta comparte el mismo significado de `soldAt`; la elección cambia el fix, el backfill y los análisis posteriores.",
+  "question": "¿Debe `soldAt` en una retirada `SOLD_AS_ALTERNATIVE` heredar el marketplace del pedido original o mantenerse vacío para reservar el campo a ventas directas del stock?",
+  "rationale": "Las rutas actuales de alternativas usan la retirada genérica, pero el informe y el código no establecen una semántica inequívoca para convertir una sustitución de stock en valor de `soldAt`.",
   "options": [
     {
-      "title": "Modelar sustitución aparte",
-      "body": "Mantener `soldAt` para ventas directas y conservar `SOLD_AS_ALTERNATIVE` como señal separada hasta añadir una relación o campo explícito para la sustitución.",
+      "title": "Mantener vacío en alternativas",
+      "body": "Reservar `soldAt` para ventas directas y usar `withdrawalReason = SOLD_AS_ALTERNATIVE` como señal analítica de sustitución.",
       "recommended": true
     },
     {
-      "title": "Heredar el marketplace",
-      "body": "Asignar a la unidad alternativa el marketplace del `ordersell` y aplicar esa regla tanto en runtime como en el backfill histórico.",
+      "title": "Heredar el marketplace del pedido",
+      "body": "Rellenar `soldAt` desde el pedido asociado y documentar que representa el canal de la venta que consumió la unidad alternativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Modelar sustitución aparte",
-    "body": "Mantener `soldAt` para ventas directas y conservar `SOLD_AS_ALTERNATIVE` como señal separada hasta añadir una relación o campo explícito para la sustitución.",
+    "title": "Mantener vacío en alternativas",
+    "body": "Reservar `soldAt` para ventas directas y usar `withdrawalReason = SOLD_AS_ALTERNATIVE` como señal analítica de sustitución.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Documentó la ambigüedad y las rutas activas, y tiene historial reciente en el tratamiento de stocks vendidos y `ordersells`.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Su historial fusionado conecta tanto la información de marketplace como la recuperación y visualización de `soldAt` en stocks.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6790#issuecomment-4910268218",
-    "reviewedAt": "2026-07-14T22:19:45.794Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:43:38.225Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
