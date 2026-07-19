@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:57:51.351Z",
+  "generatedAt": "2026-07-19T17:51:36.084Z",
   "updatedAt": "2026-07-14T21:40:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -25,40 +25,35 @@
     "createdAt": "2026-07-12T07:26:25Z",
     "updatedAt": "2026-07-14T21:40:11Z"
   },
-  "lane": "release_inclusion",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Aprueba Data Platform una reconciliación controlada de las filas históricas de Casa del Libro y qué alcance de backfill debe aplicarse tras el dry-run?",
-  "rationale": "La reparación requiere leer fuentes productivas y potencialmente sobrescribir cientos de registros analíticos; el código no permite decidir de forma segura qué cohortes ni qué fuente debe prevalecer.",
+  "question": "¿Aprueba Data Platform una reconciliación acotada de la cohorte de Casa del Libro después de validar el dry-run y las protecciones de timestamp?",
+  "rationale": "La corrección exige escribir o reconstruir datos analíticos históricos; el código actual no demuestra que una operación masiva sea segura sin validar su alcance.",
   "options": [
     {
-      "title": "Aprobar dry-run y reconciliación acotada",
-      "body": "Validar primero recuentos y muestras contra Mongo y Mirakl, y después reparar únicamente los IDs confirmados.",
+      "title": "Aprobar reconciliación acotada",
+      "body": "Validar la lista de SKUs, ejecutar el dry-run y aplicar una reparación idempotente preservando filas más recientes.",
       "recommended": true
     },
     {
-      "title": "Investigar primero la pérdida CDC",
-      "body": "Posponer la escritura hasta localizar el punto que dejó la tabla raw con versiones de mayo.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el histórico como no operativo",
-      "body": "Mantener la discrepancia si se confirma que ningún dashboard ni watcher consume esta cohorte para decisiones.",
+      "title": "Investigar primero el hueco CDC",
+      "body": "Posponer la escritura hasta identificar por qué los cambios posteriores no llegaron al raw de BigQuery.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar dry-run y reconciliación acotada",
-    "body": "Validar primero recuentos y muestras contra Mongo y Mirakl, y después reparar únicamente los IDs confirmados.",
+    "title": "Aprobar reconciliación acotada",
+    "body": "Validar la lista de SKUs, ejecutar el dry-run y aplicar una reparación idempotente preservando filas más recientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial reciente cubre el merge y el seed de las tablas raw que alimentan esta discrepancia.",
+    "reason": "El historial reciente le vincula directamente al tooling de baseline y sincronización Mongo-BigQuery.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7380.md",
-    "reviewedAt": "2026-07-19T13:57:51.351Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:51:36.084Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

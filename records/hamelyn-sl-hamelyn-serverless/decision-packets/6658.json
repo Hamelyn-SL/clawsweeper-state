@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:35:55.358Z",
-  "updatedAt": "2026-07-14T23:16:42Z",
+  "generatedAt": "2026-07-19T17:52:20.967Z",
+  "updatedAt": "2026-07-19T17:47:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,52 +16,51 @@
       "priority:p1",
       "triage:done",
       "app:crons",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-24T22:50:08Z",
-    "updatedAt": "2026-07-14T23:16:42Z"
+    "updatedAt": "2026-07-19T17:47:15Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué destino terminal debe tener un `ORDER_CHANGE` de Amazon cuyo SKU ya no existe y no tiene `OrderSell` previo?",
-  "rationale": "El código confirma el bucle, pero elegir entre borrar con auditoría, aparcar para revisión o crear un `TO_CANCEL` determina si se conserva o se materializa un pedido huérfano.",
+  "question": "¿Debe un `ORDER_CHANGE` `Unshipped` sin stock local persistirse como `TO_CANCEL`, enviarse a una cola de revisión o descartarse con auditoría terminal?",
+  "rationale": "El código ofrece una ruta `TO_CANCEL`, pero elegir entre conservar un pedido cancelable, aparcarlo o eliminarlo determina la trazabilidad operativa y no puede inferirse solo del error.",
   "options": [
     {
-      "title": "Consumir con auditoría y alerta deduplicada",
-      "body": "Marcar la notificación como procesada, registrar el SKU y pedido ausentes y emitir una señal operativa única para evitar el bucle sin crear datos incompletos.",
+      "title": "Persistir como `TO_CANCEL`",
+      "body": "Conservar el pedido y su auditoría usando la ruta de persistencia existente cuando los datos Amazon permitan construir atributos mínimos.",
       "recommended": true
     },
     {
-      "title": "Enviar a una cola o estado de revisión",
-      "body": "Conservar el caso fuera del reintento normal para que operaciones pueda decidir su recuperación sin bloquear el cron.",
+      "title": "Aparcar para revisión",
+      "body": "Enviar el caso a una ruta terminal auditable de revisión manual sin repetirlo en cada ejecución del cron.",
       "recommended": false
     },
     {
-      "title": "Persistir como `TO_CANCEL`",
-      "body": "Extender el contrato de persistencia para admitir este caso únicamente si negocio necesita conservar el pedido aun sin stock resoluble.",
+      "title": "Descartar con auditoría",
+      "body": "Marcar la notificación como procesada y registrar una alerta única, aceptando que no se cree ningún pedido local.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consumir con auditoría y alerta deduplicada",
-    "body": "Marcar la notificación como procesada, registrar el SKU y pedido ausentes y emitir una señal operativa única para evitar el bucle sin crear datos incompletos.",
+    "title": "Persistir como `TO_CANCEL`",
+    "body": "Conservar el pedido y su auditoría usando la ruta de persistencia existente cuando los datos Amazon permitan construir atributos mínimos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado en la incidencia y su historial concentra la introducción y el mantenimiento reciente del procesador afectado.",
-    "confidence": "high"
+    "reason": "Es la persona con contribución reciente en el procesador actual y coordinación histórica visible en esta incidencia.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658#issuecomment-4971281004",
-    "reviewedAt": "2026-07-19T13:35:55.358Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:52:20.967Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

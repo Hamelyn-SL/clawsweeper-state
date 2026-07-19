@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:58:25.873Z",
+  "generatedAt": "2026-07-19T17:52:12.450Z",
   "updatedAt": "2026-07-14T21:43:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,38 +27,33 @@
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe esta épica conservar un dominio BL propio `supply` para incidencias y B2B, o debe rebasarse formalmente a los subdominios `buying` y `warehouse` ya usados por los bloques completados?",
-  "rationale": "El código y las specs actuales ya repartieron partes del flujo entre `buying/orders` y `buying/inbound`, pero la issue madre aún exige una carpeta y una nomenclatura `supply`; elegir esa frontera no es una reparación mecánica.",
+  "question": "¿Deben incidencias y pedidos B2B permanecer como bloques propios de Supply o reasignarse oficialmente a `buying` y warehouse?",
+  "rationale": "La cobertura B2C se documentó bajo `buying`, mientras que la taxonomía Supply conserva ambos bloques sin specs BL-ID ni una delimitación F2 visible.",
   "options": [
     {
-      "title": "Rebasar y completar por subdominios",
-      "body": "Actualizar el checklist con los bloques ya cubiertos por `buying` y abrir bloques hijos solo para incidencias y B2B en su dominio BL acordado.",
+      "title": "Conservar bloques en Supply",
+      "body": "Designar owners para incidencias y B2B, validar F2 y abrir un PR vertical separado por cada bloque.",
       "recommended": true
     },
     {
-      "title": "Mantener Supply como dominio BL",
-      "body": "Crear `docs/business-logic/supply/` y migrar o referenciar explícitamente las reglas ya extraídas para conservar una única taxonomía de Supply.",
-      "recommended": false
-    },
-    {
-      "title": "Cerrar la épica y dividirla",
-      "body": "Sustituir esta issue madre por issues acotadas de incidencias y B2B con owner, reviewer y fronteras explícitas.",
+      "title": "Reasignar las fronteras",
+      "body": "Mover ambos bloques a los subdominios existentes y actualizar la taxonomía y el checklist antes de cerrar esta épica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rebasar y completar por subdominios",
-    "body": "Actualizar el checklist con los bloques ya cubiertos por `buying` y abrir bloques hijos solo para incidencias y B2B en su dominio BL acordado.",
+    "title": "Conservar bloques en Supply",
+    "body": "Designar owners para incidencias y B2B, validar F2 y abrir un PR vertical separado por cada bloque.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Definió la taxonomía y el checklist inicial, incluido el bloque de incidencias en curso.",
-    "confidence": "medium"
+    "reason": "Creó la épica, introdujo el proceso BL y aparece como responsable del bloque de incidencias.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewedAt": "2026-07-19T13:58:25.873Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:52:12.450Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
