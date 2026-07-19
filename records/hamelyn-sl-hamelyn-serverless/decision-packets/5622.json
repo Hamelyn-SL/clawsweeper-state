@@ -20,11 +20,11 @@
       "area:cron-reliability",
       "P1",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
     "updatedAt": "2026-07-14T21:41:38Z"
@@ -57,6 +57,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
     "reviewedAt": "2026-07-19T13:32:21.088Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
