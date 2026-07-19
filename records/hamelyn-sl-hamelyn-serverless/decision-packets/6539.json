@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T23:19:57.243Z",
-  "updatedAt": "2026-06-28T18:55:49Z",
+  "generatedAt": "2026-07-19T13:29:16.036Z",
+  "updatedAt": "2026-07-17T07:06:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,44 @@
       "app:supply",
       "priority:p2",
       "feature",
-      "triage:done"
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-06-28T18:55:49Z"
+    "updatedAt": "2026-07-17T07:06:29Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "Should https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544 become the canonical Supply EAS Build + Submit deploy path, including branch-pushed version bumps and production draft submits?",
-  "rationale": "This is release automation with store-submit authority and GitHub/EAS secret handling, so a maintainer should approve the operational policy before the tracker can close.",
+  "question": "¿Debe el workflow confirmar el bump de versión antes de lanzar EAS o solo tras comprobar que la publicación en stores se ha completado correctamente?",
+  "rationale": "La automatización propuesta mezcla el bump visible de versión con una operación externa de build/submit; la issue de release relacionada advierte que adelantar el bump puede anunciar una versión que todavía no existe en las stores.",
   "options": [
     {
-      "title": "Finish and review the linked PR",
-      "body": "Continue with the existing draft branch, require EAS beta proof and permissions review, then close this issue through the PR merge.",
+      "title": "Confirmar el bump tras la publicación",
+      "body": "Hacer que el carril de release deje el bump integrado únicamente cuando los binarios enviados estén efectivamente disponibles en las stores.",
       "recommended": true
     },
     {
-      "title": "Narrow the workflow first",
-      "body": "Limit the initial merge to beta/internal deploys or no automatic version commit if maintainers want a safer rollout.",
-      "recommended": false
-    },
-    {
-      "title": "Pause the deploy automation",
-      "body": "Keep the issue open but close or replace the draft PR if store-submit automation is not wanted yet.",
+      "title": "Mantener el bump previo en rama de release",
+      "body": "Permitir el commit antes del submit, aceptando que la rama no debe entrar en `dev` hasta confirmar la publicación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Finish and review the linked PR",
-    "body": "Continue with the existing draft branch, require EAS beta proof and permissions review, then close this issue through the PR merge.",
+    "title": "Confirmar el bump tras la publicación",
+    "body": "Hacer que el carril de release deje el bump integrado únicamente cuando los binarios enviados estén efectivamente disponibles en las stores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "The PR review routing comment names MiguelHamelyn as the strongest reviewer for the touched Supply/EAS/workflow area.",
+    "reason": "La coordinación de la release relacionada y la revisión solicitada lo sitúan como el mejor punto de decisión disponible.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewedAt": "2026-07-07T23:19:57.243Z",
-    "mainSha": "3d9006c0eb974f6d8a1e8dc1303ab09c763e5106"
+    "reviewedAt": "2026-07-19T13:29:16.036Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

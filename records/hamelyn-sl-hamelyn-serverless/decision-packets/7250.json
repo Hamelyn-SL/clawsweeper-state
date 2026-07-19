@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:04:43.299Z",
-  "updatedAt": "2026-07-17T12:15:10Z",
+  "generatedAt": "2026-07-19T13:29:38.559Z",
+  "updatedAt": "2026-07-18T04:26:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "feature",
       "triage:no-change",
       "P1",
-      "impact:crash-loop",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "impact:crash-loop",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-17T12:15:10Z"
+    "updatedAt": "2026-07-18T04:26:35Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Después de flash offers, ¿se prioriza Google Merchant o el export/reporting, y qué contrato de frescura, rollback y frontera de mutación se aprueba para cada consumidor?",
-  "rationale": "La dirección hacia BigQuery está respaldada, pero los consumidores restantes tienen requisitos distintos y algunos pueden ejecutar correcciones que no son seguras sobre snapshots atrasados.",
+  "question": "¿Qué orden de ejecución, tolerancia de frescura y política de fallback se aprueba para los cortes pendientes de Merchant, reportes marketplace y exportación de distribuidores tras el corte de flash offers?",
+  "rationale": "El código confirma varias rutas pendientes, pero decidir qué lecturas toleran la réplica de BigQuery y qué fallback operativo debe permanecer requiere criterio de plataforma y producto, no una reparación mecánica.",
   "options": [
     {
-      "title": "Merchant como segundo corte",
-      "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663, resolver la frescura de productos y validar la paridad completa de los feeds antes del cambio.",
+      "title": "Aprobar una migración por cortes",
+      "body": "Incorporar primero flash offers y priorizar después Merchant, dejando reportes y exportación como trabajos separados con paridad y frescura medidas.",
       "recommended": true
     },
     {
-      "title": "Export como segundo corte",
-      "body": "Migrar primero el export de distribuidor por ser read-only y tener una frontera operativa más acotada.",
+      "title": "Priorizar Merchant después de flash offers",
+      "body": "Tratar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663 como el siguiente corte para reducir lecturas amplias de productos y stocks.",
       "recommended": false
     },
     {
-      "title": "Reportes como segundo corte",
-      "body": "Diseñar una ruta híbrida donde BigQuery calcule diferencias y cada acción correctiva se revalide contra el estado live.",
+      "title": "Revisar primero el contrato de datos",
+      "body": "Definir materializaciones, retención de fallback y presupuestos de BigQuery antes de iniciar más cambios de código.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Merchant como segundo corte",
-    "body": "Priorizar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663, resolver la frescura de productos y validar la paridad completa de los feeds antes del cambio.",
+    "title": "Aprobar una migración por cortes",
+    "body": "Incorporar primero flash offers y priorizar después Merchant, dejando reportes y exportación como trabajos separados con paridad y frescura medidas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Definió el objetivo operativo global y tiene historial directo en el export y los reportes, por lo que es el mejor candidato disponible para arbitrar el orden y los contratos.",
+    "reason": "Aporta el diagnóstico de capacidad y la definición de los límites de frescura y operación que condicionan toda la iniciativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-18T04:04:43.299Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T13:29:38.559Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

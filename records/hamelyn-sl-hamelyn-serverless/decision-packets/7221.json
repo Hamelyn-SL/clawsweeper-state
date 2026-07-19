@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T07:49:55.920Z",
-  "updatedAt": "2026-07-16T07:15:51Z",
+  "generatedAt": "2026-07-19T13:29:50.316Z",
+  "updatedAt": "2026-07-18T04:26:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,45 @@
       "app:ecommerce",
       "priority:p1",
       "feature",
-      "triage:done",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T09:00:53Z",
-    "updatedAt": "2026-07-16T07:15:51Z"
+    "updatedAt": "2026-07-18T04:26:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campos y valores exactos constituyen la fuente de verdad para la clasificación activo/inactivo, el corte de restock de 90 días y cada transición que debe actualizar `lastmod`?",
-  "rationale": "La aclaración define la intención SEO, pero deja aproximado el umbral de restock y el código actual no dispone de todas las señales temporales; elegir esos datos durante la implementación cambiaría la cobertura de rastreo sin una decisión explícita.",
+  "question": "¿Se acepta como primera entrega el rediseño de la PR vinculada sin `lastmod` y sin segmentación de agotados por proyección de restock, dejando las señales de datos como seguimiento separado?",
+  "rationale": "La especificación pide `lastmod` veraz y una clasificación por restock, pero la PR documenta que el modelo actual no conserva esas señales; escoger entre entrega parcial y ampliación de datos es una decisión funcional y SEO, no una corrección mecánica.",
   "options": [
     {
-      "title": "Fijar contrato exacto",
-      "body": "Documentar el corte exacto de 90 días, el mapping de estados y las fuentes de eventos de contenido, precio y disponibilidad antes de actualizar la PR.",
+      "title": "Aceptar la entrega base y separar señales",
+      "body": "Fusionar el rediseño estructural sin `lastmod` y crear seguimiento explícito para timestamps veraces y proyección de restock.",
       "recommended": true
     },
     {
-      "title": "Separar señales avanzadas",
-      "body": "Implementar primero la estructura de índices y mantener `lastmod` y la clasificación avanzada en una issue posterior claramente enlazada.",
+      "title": "Exigir el modelo de señales antes de fusionar",
+      "body": "Mantener la PR abierta hasta implementar las señales de contenido, precio, stock y restock requeridas por el contrato completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fijar contrato exacto",
-    "body": "Documentar el corte exacto de 90 días, el mapping de estados y las fuentes de eventos de contenido, precio y disponibilidad antes de actualizar la PR.",
+    "title": "Aceptar la entrega base y separar señales",
+    "body": "Fusionar el rediseño estructural sin `lastmod` y crear seguimiento explícito para timestamps veraces y proyección de restock.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Aporta el contexto más sólido entre la épica SEO, la introducción del pipeline y sus decisiones históricas de rastreo.",
-    "confidence": "medium"
+    "person": "victor",
+    "reason": "El contrato detallado de indexación y frescura procede de sus aclaraciones en la discusión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7221.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7221#issuecomment-4959487465",
-    "reviewedAt": "2026-07-16T07:49:55.920Z",
-    "mainSha": "112e3e512a2a7e041f7c71df942e59dee435333f"
+    "reviewedAt": "2026-07-19T13:29:50.316Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
