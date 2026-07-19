@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:37:26.939Z",
-  "updatedAt": "2026-07-14T21:43:14Z",
+  "generatedAt": "2026-07-19T17:38:53.801Z",
+  "updatedAt": "2026-07-19T13:44:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,45 @@
       "feature",
       "reporter:miguel",
       "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-03T10:44:24Z",
-    "updatedAt": "2026-07-14T21:43:14Z"
+    "updatedAt": "2026-07-19T13:44:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply adoptar `output: \"server\"` como arquitectura objetivo para los dominios web, aceptando el cambio de despliegue y el mantenimiento de SSR por request, o se prefiere mantener el export estático y limitar el trabajo a corregir la fuente de slugs y el sitemap?",
-  "rationale": "El código confirma que la arquitectura solicitada no existe, pero la elección cambia el modelo de despliegue, el coste operativo y los contratos de web y nativo; esa prioridad no se puede decidir de forma segura desde una reparación automática.",
+  "question": "¿Debe Supply adoptar `output: \"server\"` como arquitectura objetivo para la web, o conservar el export estático y limitarse a consolidar slugs y SEO?",
+  "rationale": "La elección modifica el modelo de despliegue, el coste operativo y el comportamiento web/nativo; no es una reparación mecánica que pueda fijarse sin dirección explícita.",
   "options": [
     {
-      "title": "Aprobar PoC de servidor por fases",
-      "body": "Validar primero en staging rewrites, hidratación, Auth0, metadatos y rollback antes de comprometer la migración completa.",
+      "title": "Aprobar un PoC de servidor por fases",
+      "body": "Validar en staging rewrites, hidratación, Auth0, metadatos, TTFB y rollback antes de comprometer la migración completa.",
       "recommended": true
     },
     {
       "title": "Mantener export estático",
-      "body": "Limitar el trabajo a una fuente de slugs validada y al sitemap por despliegue sin adoptar SSR ni output de servidor.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la migración",
-      "body": "Mantener el modelo actual hasta que haya capacidad de plataforma para asumir el cambio de Vercel y la observabilidad de SSR.",
+      "body": "Limitar el alcance a una fuente tipada de slugs, validación de colisiones y mejoras incrementales de sitemap/SEO sin cambiar el runtime.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar PoC de servidor por fases",
-    "body": "Validar primero en staging rewrites, hidratación, Auth0, metadatos y rollback antes de comprometer la migración completa.",
+    "title": "Aprobar un PoC de servidor por fases",
+    "body": "Validar en staging rewrites, hidratación, Auth0, metadatos, TTFB y rollback antes de comprometer la migración completa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es el contribuidor reciente con historial directo sobre el pipeline actual de rutas, sitemap y build de Supply.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre el pipeline actual de rutas, build y sitemap de Supply.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6829.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829#issuecomment-4910270381",
-    "reviewedAt": "2026-07-19T13:37:26.939Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:38:53.801Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

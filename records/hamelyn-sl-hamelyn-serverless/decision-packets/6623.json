@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:35:20.429Z",
-  "updatedAt": "2026-07-14T21:43:09Z",
+  "generatedAt": "2026-07-19T17:38:17.192Z",
+  "updatedAt": "2026-07-19T13:44:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T17:19:08Z",
-    "updatedAt": "2026-07-14T21:43:09Z"
+    "updatedAt": "2026-07-19T13:44:18Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la atribución de productividad de Revisión V3 sellarse por cada `ReviewStep` o una vez por `reviewV3Session`, y se recupera `phase` como dato persistido para las métricas?",
-  "rationale": "La decisión fija el grano, la semántica de re-revisiones y la precisión de las métricas; el código actual de `dev` no contiene el contrato V3 ni una implementación que permita inferirlo sin ambigüedad.",
+  "question": "¿Debe la atribución por operario sellarse en cada paso, en la sesión completa, o derivarse del revisor de la order?",
+  "rationale": "La elección determina la fidelidad de las métricas, la semántica ante relevos de operario y el esquema que deberá consumir BigQuery.",
   "options": [
     {
-      "title": "Sellar fase y operario por step",
-      "body": "Persistir `phase` y el identificador del operario en cada interacción permite agregados exactos incluso si cambia quien revisa durante una sesión.",
+      "title": "Sellar operario por paso",
+      "body": "Persistir la identidad en cada evento permite atribución correcta incluso si una misma revisión pasa entre operarios.",
       "recommended": true
     },
     {
-      "title": "Sellar el operario en la sesión",
-      "body": "Mantiene menos datos repetidos, pero debe documentar que una sesión pertenece a un único operario y cómo se comporta ante un relevo.",
+      "title": "Sellar operario por sesión",
+      "body": "Reduce volumen de datos, pero presupone que toda la sesión corresponde a una sola persona.",
       "recommended": false
     },
     {
-      "title": "Limitar el primer agregado",
-      "body": "Derivar solo métricas de sesión y producto con los campos actuales reduce alcance, pero no satisface el desglose fiable por fase solicitado.",
+      "title": "Derivar desde la order",
+      "body": "Evita ampliar el contrato, pero conserva una ambigüedad cuando el revisor cambie durante el lote.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sellar fase y operario por step",
-    "body": "Persistir `phase` y el identificador del operario en cada interacción permite agregados exactos incluso si cambia quien revisa durante una sesión.",
+    "title": "Sellar operario por paso",
+    "body": "Persistir la identidad en cada evento permite atribución correcta incluso si una misma revisión pasa entre operarios.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su cambio histórico cubre la ruta de `opProductivity` que la solución debe mantener compatible.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial está ligado al contrato de productividad que debe mantenerse compatible con la nueva analítica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6623.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623#issuecomment-4932689420",
-    "reviewedAt": "2026-07-19T13:35:20.429Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T17:38:17.192Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
