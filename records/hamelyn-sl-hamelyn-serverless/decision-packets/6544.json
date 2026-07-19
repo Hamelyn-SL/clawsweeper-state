@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:46:57.119Z",
-  "updatedAt": "2026-07-17T06:30:09Z",
+  "generatedAt": "2026-07-19T13:23:57.650Z",
+  "updatedAt": "2026-07-17T07:06:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-06-18T13:37:49Z",
-    "updatedAt": "2026-07-17T06:30:09Z",
+    "updatedAt": "2026-07-17T07:06:36Z",
     "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe `lane: release` exigir un GitHub Environment protegido con aprobación humana y separar el job con `contents: write` del job que recibe `EXPO_TOKEN`?",
-  "rationale": "La issue solicita un selector beta/release, pero no define quién puede autorizar un envío a producción ni si el mismo job debe combinar escritura en Git, ejecución de terceros y credenciales de stores; esa frontera operativa necesita intención explícita del responsable de Supply.",
+  "question": "¿Debe `Supply Deploy` poder hacer releases y empujar bumps desde GitHub Actions, y qué rama o entorno protegido autoriza esa operación?",
+  "rationale": "El PR combina publicación en stores, `EXPO_TOKEN` y `contents: write`; decidir si el flujo puede operar sobre ramas compartidas o requiere un entorno de release protegido es una frontera operativa que no debe inferirse del código.",
   "options": [
     {
-      "title": "Proteger release y separar permisos",
-      "body": "Usar beta sin aprobación adicional, exigir un Environment protegido para release y aislar el bump con `contents: write` del job de EAS con `contents: read`.",
+      "title": "Restringir y aprobar releases",
+      "body": "Permitir el workflow solo desde una rama o entorno de release protegido, con aprobación explícita para `release`, y bloquear pushes a `dev` y `master`.",
       "recommended": true
     },
     {
-      "title": "Confiar en permisos del repositorio",
-      "body": "Mantener un único workflow y considerar que el acceso para ejecutar Actions es autorización suficiente para enviar a producción y escribir en la rama.",
+      "title": "Mantener ejecución amplia",
+      "body": "Aceptar que cualquier usuario con permisos de escritura pueda lanzar el workflow y que el bump se empuje a la rama elegida, asumiendo el riesgo operativo.",
       "recommended": false
     },
     {
-      "title": "Publicar solo beta por ahora",
-      "body": "Eliminar temporalmente `lane: release` hasta que el equipo defina y pruebe la autorización de producción.",
+      "title": "Separar build y publicación",
+      "body": "Conservar una build beta sin escritura de GitHub y diseñar en otra propuesta la automatización de submits y bumps protegidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proteger release y separar permisos",
-    "body": "Usar beta sin aprobación adicional, exigir un Environment protegido para release y aislar el bump con `contents: write` del job de EAS con `contents: read`.",
+    "title": "Restringir y aprobar releases",
+    "body": "Permitir el workflow solo desde una rama o entorno de release protegido, con aprobación explícita para `release`, y bloquear pushes a `dev` y `master`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Tiene la señal histórica más fuerte sobre EAS, proyectos nativos, versionado y releases de Supply, y ya figura como reviewer solicitado.",
+    "reason": "Es el revisor asignado por experiencia explícita en Supply, EAS y workflows, y ha integrado el versionado de release actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544#issuecomment-4917015129",
-    "reviewedAt": "2026-07-17T06:46:57.119Z",
-    "mainSha": "6488cd8832a287efe2570d6a12f65e121f77401e"
+    "reviewedAt": "2026-07-19T13:23:57.650Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

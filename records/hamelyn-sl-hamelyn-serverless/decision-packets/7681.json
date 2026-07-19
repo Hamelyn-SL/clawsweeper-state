@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-18T04:06:37.586Z",
-  "updatedAt": "2026-07-17T11:42:22Z",
+  "generatedAt": "2026-07-19T13:21:42.609Z",
+  "updatedAt": "2026-07-18T04:28:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-17T06:20:47Z",
-    "updatedAt": "2026-07-17T11:42:22Z",
+    "updatedAt": "2026-07-18T04:28:26Z",
     "headSha": "34fc9db6192070e9d5532da848fc072e8df32caa"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Puede ecommerce abandonar los navegadores anteriores al baseline oficial de Swiper 14?",
-  "rationale": "El repositorio no documenta una matriz que permita asumir esa pérdida de soporte; es una decisión de producto con impacto directo en clientes, no una reparación mecánica.",
+  "question": "¿Qué matriz de navegadores debe preservar ecommerce antes de aceptar Swiper 14 en los carruseles de producción?",
+  "rationale": "El repositorio no declara ese contrato y el PR actualiza una dependencia de carruseles usada en seis superficies visibles sin cambios de adaptación; la compatibilidad esperada no puede inferirse de builds estáticos.",
   "options": [
     {
-      "title": "Mantener Swiper 12",
-      "body": "Conservar el baseline actual y aterrizar por separado los otros bumps que queden probados.",
+      "title": "Exigir compatibilidad con la matriz actual",
+      "body": "Definir y validar la matriz de navegadores vigente antes de fusionar Swiper 14; conservar la versión 12 si el major no la cumple.",
       "recommended": true
     },
     {
-      "title": "Adoptar Swiper 14",
-      "body": "Aprobar el nuevo baseline y exigir QA visual en Chrome/Edge 110+, Safari/iOS 16.4+ y Firefox 110+.",
+      "title": "Adoptar el rango de Swiper 14",
+      "body": "Aceptar explícitamente el rango de navegadores soportado por Swiper 14 y actualizar la documentación y la prueba de QA para reflejarlo.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la actualización de carruseles",
+      "body": "Fusionar únicamente las actualizaciones que no cambian el contrato de navegador y tratar Swiper 14 como una migración dedicada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener Swiper 12",
-    "body": "Conservar el baseline actual y aterrizar por separado los otros bumps que queden probados.",
+    "title": "Exigir compatibilidad con la matriz actual",
+    "body": "Definir y validar la matriz de navegadores vigente antes de fusionar Swiper 14; conservar la versión 12 si el major no la cumple.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal contribuidor histórico de los archivos afectados y el revisor solicitado con más contexto de ecommerce y dependencias compartidas.",
+    "reason": "Su historial reciente en la resolución de dependencias y los manifiestos afectados le sitúa como la mejor persona para encauzar la decisión de compatibilidad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7681.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7681#issuecomment-5000011833",
-    "reviewedAt": "2026-07-18T04:06:37.586Z",
-    "mainSha": "1df3b49fa5157603aff09354b5f67815d17dd20c"
+    "reviewedAt": "2026-07-19T13:21:42.609Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
