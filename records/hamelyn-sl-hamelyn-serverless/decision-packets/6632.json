@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T13:23:31.745Z",
+  "updatedAt": "2026-07-14T13:14:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6632,
+    "title": "marketplace-crons: Discogs falla al marcar pedidos como enviados",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6632",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-06-23T20:34:10Z",
+    "updatedAt": "2026-07-14T13:14:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué rechazos de `setAsShippedDiscogs()` deben considerarse terminales y cuáles deben conservar una política de reintento?",
+  "rationale": "El código puede conservar y clasificar la respuesta remota, pero la lista de causas terminales requiere una decisión operativa respaldada por respuestas reales de Discogs.",
+  "options": [
+    {
+      "title": "Clasificar tras recuperar evidencia",
+      "body": "Registrar de forma redaccionada el error remoto por pedido y definir después una lista limitada de causas terminales.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar por intentos",
+      "body": "Mantener los reintentos, pero detenerlos tras un número pequeño de fallos consecutivos sin declarar causas terminales por ahora.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Clasificar tras recuperar evidencia",
+    "body": "Registrar de forma redaccionada el error remoto por pedido y definir después una lista limitada de causas terminales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta tanto con la integración de Discogs como con el comportamiento operativo del cron.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6632.md",
+    "reviewedAt": "2026-07-19T13:23:31.745Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}

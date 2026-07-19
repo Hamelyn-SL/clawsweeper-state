@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:50:27.214Z",
+  "generatedAt": "2026-07-19T13:18:23.612Z",
   "updatedAt": "2026-07-10T06:39:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,33 +26,33 @@
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Cuándo y mediante qué integración debe entrar `EPIC/revision-v3` en `dev` conservando esta mejora?",
-  "rationale": "El cambio concreto está terminado, pero el epic está muy divergido respecto a `dev`; el calendario y el método de integración requieren coordinación humana del programa Revisión V3.",
+  "question": "¿Cuándo y mediante qué PR se integrará `EPIC/revision-v3` en `dev` para que esta mejora llegue a la rama de entrega?",
+  "rationale": "La implementación ya está aprobada dentro de una rama épica, pero decidir la ventana y el alcance de su integración requiere coordinar el lanzamiento completo de Revisión V3.",
   "options": [
     {
-      "title": "Integrar el epic completo",
-      "body": "Mantener esta issue abierta y cerrarla cuando Revisión V3 llegue a `dev` con las imágenes preservadas y verificadas.",
+      "title": "Integrar la épica revisada en `dev`",
+      "body": "Abrir y validar un PR de integración de `EPIC/revision-v3` hacia `dev`, incluyendo esta funcionalidad ya fusionada.",
       "recommended": true
     },
     {
-      "title": "Integrar un corte utilizable",
-      "body": "Trasladar el cambio a `dev` únicamente junto con una versión funcional del panel Revisión V3, evitando código aislado que todavía no pueda ejecutarse.",
+      "title": "Mantener la épica aislada por ahora",
+      "body": "Conservar esta mejora en la rama épica hasta que el despliegue de Revisión V3 tenga una fecha y una validación de rollout definidas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar el epic completo",
-    "body": "Mantener esta issue abierta y cerrarla cuando Revisión V3 llegue a `dev` con las imágenes preservadas y verificadas.",
+    "title": "Integrar la épica revisada en `dev`",
+    "body": "Abrir y validar un PR de integración de `EPIC/revision-v3` hacia `dev`, incluyendo esta funcionalidad ya fusionada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Concentra el contexto funcional de esta issue, del epic y del PR que ya contiene la solución.",
+    "person": "alexcanHamelyn",
+    "reason": "Ha aprobado esta implementación y figura entre las personas asignadas a la épica que contiene el trabajo pendiente de integración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7297.md",
-    "reviewedAt": "2026-07-14T11:50:27.214Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-19T13:18:23.612Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

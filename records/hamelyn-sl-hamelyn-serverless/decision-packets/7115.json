@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T08:33:45.832Z",
-  "updatedAt": "2026-07-08T10:10:26Z",
+  "generatedAt": "2026-07-19T13:19:15.983Z",
+  "updatedAt": "2026-07-14T08:34:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "priority:p3",
       "triage:done",
       "business-logic",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:source-repro",
       "P3",
-      "impact:other",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T10:01:02Z",
-    "updatedAt": "2026-07-08T10:10:26Z"
+    "updatedAt": "2026-07-14T08:34:33Z"
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "Ahora que la PR BL relacionada está fusionada, ¿debe retirarse el bloqueo `clawsweeper:no-new-fix-pr` para promover esta limpieza acotada?",
-  "rationale": "La causa original del bloqueo era el solapamiento con una PR humana abierta; esa PR ya se fusionó, pero las labels siguen solicitando revisión humana y no corresponde ignorarlas automáticamente.",
+  "question": "¿Se autoriza ya una PR separada para retirar la API de búsqueda muerta tras la fusión de la extracción BL?",
+  "rationale": "La limpieza es técnicamente pequeña, pero la issue mantiene las señales `clawsweeper:no-new-fix-pr` y `clawsweeper:needs-maintainer-review`; hace falta confirmar que ya no existe coordinación pendiente en el mismo archivo de búsqueda.",
   "options": [
     {
-      "title": "Habilitar el cleanup",
-      "body": "Retirar el bloqueo y promover una PR pequeña que elimine solo el motor muerto, preserve `prescriptorSearch` y actualice ambas specs BL.",
+      "title": "Autorizar limpieza acotada",
+      "body": "Permitir una PR limitada a retirar `searchProducts`, `searchProductsWithText` y el re-export, preservando `buildSearchStage` y actualizando la spec BL.",
       "recommended": true
     },
     {
-      "title": "Mantener el bloqueo",
-      "body": "Conservar las labels actuales y dejar la issue abierta hasta que el equipo BL/ecommerce decida incorporarla en otro bloque manual.",
+      "title": "Mantener la coordinación bloqueada",
+      "body": "Conservar la issue en revisión manual hasta que el equipo responsable confirme que no hay otro cambio de búsqueda que deba agruparse con esta retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Habilitar el cleanup",
-    "body": "Retirar el bloqueo y promover una PR pequeña que elimine solo el motor muerto, preserve `prescriptorSearch` y actualice ambas specs BL.",
+    "title": "Autorizar limpieza acotada",
+    "body": "Permitir una PR limitada a retirar `searchProducts`, `searchProductsWithText` y el re-export, preservando `buildSearchStage` y actualizando la spec BL.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el owner indicado del subdominio Search y quien documentó la divergencia durante la extracción BL.",
+    "reason": "Es la persona conectada de forma más directa con la extracción BL que registró esta divergencia y con la documentación que debe actualizarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7115.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7115#issuecomment-4913176651",
-    "reviewedAt": "2026-07-14T08:33:45.832Z",
-    "mainSha": "f065729bd15cb1cb1f7d99ed173a8d98ff5c0d75"
+    "reviewedAt": "2026-07-19T13:19:15.983Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

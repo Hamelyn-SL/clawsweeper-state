@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:23:57.650Z",
+  "generatedAt": "2026-07-19T13:19:32.566Z",
   "updatedAt": "2026-07-17T07:06:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,52 +11,46 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-06-18T13:37:49Z",
     "updatedAt": "2026-07-17T07:06:36Z",
     "headSha": "a524ce984491f7a816a1bab600f40b5bb17f55e9"
   },
-  "lane": "security_boundary",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe `Supply Deploy` poder hacer releases y empujar bumps desde GitHub Actions, y qué rama o entorno protegido autoriza esa operación?",
-  "rationale": "El PR combina publicación en stores, `EXPO_TOKEN` y `contents: write`; decidir si el flujo puede operar sobre ramas compartidas o requiere un entorno de release protegido es una frontera operativa que no debe inferirse del código.",
+  "question": "¿Debe el workflow poder hacer bumps y pushes automáticos desde ramas de release autorizadas, o deben separarse el bump de versión y la publicación a stores?",
+  "rationale": "La elección determina quién puede modificar ramas y desencadenar publicaciones externas con credenciales de EAS; no es una decisión que pueda resolver una corrección mecánica.",
   "options": [
     {
-      "title": "Restringir y aprobar releases",
-      "body": "Permitir el workflow solo desde una rama o entorno de release protegido, con aprobación explícita para `release`, y bloquear pushes a `dev` y `master`.",
+      "title": "Separar bump y publicación",
+      "body": "Conservar EAS Build + Submit sin `contents: write` y realizar el bump de marketing mediante un PR o flujo de release independiente.",
       "recommended": true
     },
     {
-      "title": "Mantener ejecución amplia",
-      "body": "Aceptar que cualquier usuario con permisos de escritura pueda lanzar el workflow y que el bump se empuje a la rama elegida, asumiendo el riesgo operativo.",
-      "recommended": false
-    },
-    {
-      "title": "Separar build y publicación",
-      "body": "Conservar una build beta sin escritura de GitHub y diseñar en otra propuesta la automatización de submits y bumps protegidos.",
+      "title": "Autorizar ramas de release",
+      "body": "Permitir el bump automático solo desde una lista explícita de ramas de release, bloqueando `dev` y `master` y documentando la aprobación requerida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restringir y aprobar releases",
-    "body": "Permitir el workflow solo desde una rama o entorno de release protegido, con aprobación explícita para `release`, y bloquear pushes a `dev` y `master`.",
+    "title": "Separar bump y publicación",
+    "body": "Conservar EAS Build + Submit sin `contents: write` y realizar el bump de marketing mediante un PR o flujo de release independiente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor asignado por experiencia explícita en Supply, EAS y workflows, y ha integrado el versionado de release actual.",
+    "reason": "Es el revisor solicitado para el cambio y fue seleccionado por conocimiento previo de Supply, EAS y workflows.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6544.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/6544#issuecomment-4917015129",
-    "reviewedAt": "2026-07-19T13:23:57.650Z",
+    "reviewedAt": "2026-07-19T13:19:32.566Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

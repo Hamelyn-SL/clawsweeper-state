@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T21:20:57.322Z",
-  "updatedAt": "2026-07-08T09:37:54Z",
+  "generatedAt": "2026-07-19T13:18:27.961Z",
+  "updatedAt": "2026-07-14T21:43:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "feature",
       "reporter:javier",
       "epic:seo",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-05-28T05:49:21Z",
-    "updatedAt": "2026-07-08T09:37:54Z"
+    "updatedAt": "2026-07-14T21:43:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Deben evaluarse y convertirse en seguimiento las 19 tareas del plan aún no creadas, o se consideran descartadas o diferidas fuera de este epic?",
-  "rationale": "El epic declara que estas tareas se evaluarían después, pero no existe una decisión posterior ni documentación versionada que cierre ese alcance.",
+  "question": "¿Debe este epic seguir siendo el inventario de referencia de la auditoría SEO o deben trasladarse explícitamente sus puntos restantes a incidencias canónicas antes de cerrarlo?",
+  "rationale": "El código confirma que el rediseño de sitemaps sigue pendiente, pero el epic mezcla tareas cerradas, puntos aplazados y decisiones de producto; solo quien gobierna la prioridad SEO puede decidir el nivel correcto de consolidación.",
   "options": [
     {
-      "title": "Completar el inventario",
-      "body": "Recuperar los 40 puntos, enlazar o crear seguimiento para los que sigan vigentes y documentar el descarte o aplazamiento del resto antes de cerrar el epic.",
+      "title": "Conservar y consolidar el epic",
+      "body": "Mantenerlo abierto temporalmente y añadir un estado explícito para cada punto restante, enlazando la incidencia canónica que lo posee.",
       "recommended": true
     },
     {
-      "title": "Cerrar la selección actual",
-      "body": "Declarar expresamente fuera de alcance las tareas no creadas y preservar las decisiones restantes en una referencia versionada antes de cerrar.",
+      "title": "Cerrar tras migrar el inventario",
+      "body": "Crear o actualizar incidencias canónicas para cada punto todavía vigente y cerrar el epic como índice histórico de la selección inicial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar el inventario",
-    "body": "Recuperar los 40 puntos, enlazar o crear seguimiento para los que sigan vigentes y documentar el descarte o aplazamiento del resto antes de cerrar el epic.",
+    "title": "Conservar y consolidar el epic",
+    "body": "Mantenerlo abierto temporalmente y añadir un estado explícito para cada punto restante, enlazando la incidencia canónica que lo posee.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el assignee actual del epic y ha coordinado el cierre y la implementación de varias de sus superficies principales.",
+    "reason": "Figura como responsable asignado y debe decidir la priorización y el alcance pendiente del programa SEO.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6109.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6109#issuecomment-4974264337",
-    "reviewedAt": "2026-07-14T21:20:57.322Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:18:27.961Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

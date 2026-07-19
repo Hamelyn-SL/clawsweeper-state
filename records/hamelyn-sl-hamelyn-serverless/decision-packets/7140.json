@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T11:41:46.407Z",
+  "generatedAt": "2026-07-19T13:15:44.515Z",
   "updatedAt": "2026-07-08T16:39:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -29,33 +29,38 @@
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe la fuente canónica del strip ser una configuración de campaña editorial que referencia un cupón o una selección automática basada en nuevos campos del modelo de cupón?",
-  "rationale": "El modelo actual no distingue qué cupón activo se promociona ni por qué locale, y la decisión determina el ownership del copy, la traducción, la caducidad y el fallback.",
+  "question": "¿Debe el banner visible consumir una promoción pública activa resuelta por locale desde backend/configuración, o mantenerse editorial en una fuente CMS única separada de los cupones transaccionales?",
+  "rationale": "El código actual no define qué promociones son publicables ni cómo representar de forma segura tipos distintos como `bxgy` y porcentajes; esa semántica condiciona la API, la administración y el copy.",
   "options": [
     {
-      "title": "Configuración de campaña validada",
-      "body": "Guardar por locale la campaña y el cupón referenciado, validando en backend que existe, está activo y coincide con las condiciones mostradas.",
+      "title": "Promoción pública estructurada",
+      "body": "Definir una promoción activa por locale con copy y condiciones publicables, y hacer que `PromoStrip` la consuma desde una fuente central.",
       "recommended": true
     },
     {
-      "title": "Ampliar el modelo de cupón",
-      "body": "Añadir campos de promoción, locale y prioridad al cupón y seleccionar automáticamente la campaña vigente.",
+      "title": "CMS editorial separado",
+      "body": "Mantener el banner como contenido editorial, pero mover mensaje y código a una única entrada gestionable con validación de vigencia y locale.",
+      "recommended": false
+    },
+    {
+      "title": "No sincronizar automáticamente",
+      "body": "Conservar las traducciones estáticas y documentar una actualización manual coordinada cuando cambie cada cupón.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Configuración de campaña validada",
-    "body": "Guardar por locale la campaña y el cupón referenciado, validando en backend que existe, está activo y coincide con las condiciones mostradas.",
+    "title": "Promoción pública estructurada",
+    "body": "Definir una promoción activa por locale con copy y condiciones publicables, y hacer que `PromoStrip` la consuma desde una fuente central.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el owner funcional explícito de Coupons & Promotions y también ha mantenido históricamente el copy de campañas.",
+    "reason": "Figura como owner funcional del subdominio que define los cupones y promociones afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7140.md",
-    "reviewedAt": "2026-07-14T11:41:46.407Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-19T13:15:44.515Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

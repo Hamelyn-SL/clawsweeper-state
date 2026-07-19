@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:31:28.338Z",
-  "updatedAt": "2026-07-14T12:22:57Z",
+  "generatedAt": "2026-07-19T13:15:24.739Z",
+  "updatedAt": "2026-07-14T13:13:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,50 +19,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-14T12:22:57Z"
+    "updatedAt": "2026-07-14T13:13:58Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe TodoColeccion aislar el rate limit por operación dentro de `products` y reanudar el trabajo pendiente con backoff, o se considera intencional abortar todo el lote de `create` y compartir el breaker con precio?",
-  "rationale": "El repositorio demuestra el efecto actual, pero no contiene el contrato de cuota del proveedor ni una decisión estable sobre el equilibrio entre throughput, protección ante 429 y frescura de precios.",
+  "question": "¿Debe TodoColeccion mantener un único breaker para toda la familia `products`, o separar `create` y `updatePrice` con una política de backoff basada en el límite real del proveedor?",
+  "rationale": "El código actual protege al proveedor, pero la elección entre cuota compartida, breakers por operación y el tiempo de recuperación afecta a throughput, sincronización de precios y riesgo de cascadas; los datos disponibles no fijan ese contrato.",
   "options": [
     {
-      "title": "Aislar operaciones y aplicar backoff",
-      "body": "Crear scopes distintos para `create` y precio, usar `Retry-After` o backoff acotado y conservar los stocks pendientes para una ejecución posterior.",
+      "title": "Medir y separar por operación",
+      "body": "Capturar respuestas y cabeceras reales del proveedor, luego usar breakers y backoff independientes para `create` y `updatePrice` si el límite no es compartido.",
       "recommended": true
     },
     {
-      "title": "Mantener el corte actual",
-      "body": "Conservar el scope `products` compartido y el aborto al primer rate limit, documentándolo como protección deliberada y reforzando alertas y métricas de trabajo pendiente.",
+      "title": "Mantener cuota compartida",
+      "body": "Conservar `products` como un único presupuesto de protección y documentar que cualquier 429 pausa tanto altas como precios.",
       "recommended": false
     },
     {
-      "title": "Reducir carga por configuración",
-      "body": "Mantener el diseño actual pero reducir límites o frecuencia de `create` hasta quedar por debajo de la cuota observada del proveedor.",
+      "title": "Aplazar el cambio de comportamiento",
+      "body": "Mantener el aislamiento actual entre familias y limitarse por ahora a mejorar métricas y visibilidad del rate limit.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar operaciones y aplicar backoff",
-    "body": "Crear scopes distintos para `create` y precio, usar `Retry-After` o backoff acotado y conservar los stocks pendientes para una ejecución posterior.",
+    "title": "Medir y separar por operación",
+    "body": "Capturar respuestas y cabeceras reales del proveedor, luego usar breakers y backoff independientes para `create` y `updatePrice` si el límite no es compartido.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es quien acumula la mayor parte del historial reciente sobre clasificación de rate limits y errores de TodoColeccion en el código vigente.",
+    "person": "JavierHamelyn",
+    "reason": "Integró el arreglo de alcance actual y su historial conecta tanto la API afectada como el comportamiento operativo de marketplaces.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-14T12:31:28.338Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-19T13:15:24.739Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

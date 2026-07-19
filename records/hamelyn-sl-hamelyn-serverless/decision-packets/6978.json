@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T15:50:50.430Z",
+  "generatedAt": "2026-07-19T13:16:06.723Z",
   "updatedAt": "2026-07-08T10:27:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -29,38 +29,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo debe preservar la migración el comportamiento de las cuatro filas inactivas y de los usos actuales de `X`, incluida la corrección excepcional de `AMAZON PROMO NAVIDAD`?",
-  "rationale": "El código demuestra la forma técnica, pero no puede decidir si las filas deshabilitadas conservan valor histórico ni qué diferencias deben considerarse correcciones intencionadas frente a incompatibilidades de datos.",
+  "question": "¿La migración debe preservar exactamente las cuatro filas con `priority <= 0` y escapar los `X` literales, o debe corregir/eliminar de forma deliberada la fila desactivada `AMAZON PROMO NAVIDAD` durante la conversión?",
+  "rationale": "La decisión cambia el comportamiento futuro de datos persistidos y no puede deducirse solo del compilador actual: la issue solicita corregir o retirar la fila defectuosa, mientras que la equivalencia histórica exige tratar de forma especial los `X` literales.",
   "options": [
     {
-      "title": "Preservar las 25 filas",
-      "body": "Convertir todas las filas a regex equivalentes, mantener la semántica actual de `X` y tratar la fila malformada como una excepción explícita corregida o retirada.",
+      "title": "Migración compatible con corrección explícita",
+      "body": "Convertir las filas activas de forma equivalente, escapar los `X` literales y corregir o retirar documentadamente la fila desactivada defectuosa con pruebas de la divergencia esperada.",
       "recommended": true
     },
     {
-      "title": "Migrar solo las activas",
-      "body": "Convertir las 21 filas con `priority > 0` y retirar o dejar bloqueadas las cuatro inactivas hasta revisarlas individualmente.",
+      "title": "Preservación literal completa",
+      "body": "Convertir también las filas inactivas sin alterar su semántica actual, dejando la corrección de `AMAZON PROMO NAVIDAD` para una decisión posterior.",
       "recommended": false
     },
     {
-      "title": "Definir una nueva semántica",
-      "body": "Normalizar literales como `MX` y reconstruir las filas inactivas, aceptando divergencias documentadas y validadas por Operaciones.",
+      "title": "Retirar filas inactivas obsoletas",
+      "body": "Eliminar las cuatro filas con prioridad no positiva durante la migración tras confirmar que no son necesarias para reactivaciones futuras.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar las 25 filas",
-    "body": "Convertir todas las filas a regex equivalentes, mantener la semántica actual de `X` y tratar la fila malformada como una excepción explícita corregida o retirada.",
+    "title": "Migración compatible con corrección explícita",
+    "body": "Convertir las filas activas de forma equivalente, escapar los `X` literales y corregir o retirar documentadamente la fila desactivada defectuosa con pruebas de la divergencia esperada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el owner funcional declarado del bloque y concentra la introducción y el mantenimiento reciente de ShipMatrix.",
+    "reason": "El historial y la issue madre lo sitúan como owner del bloque BL shipping/carrier y autor de la implementación actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
-    "reviewedAt": "2026-07-14T15:50:50.430Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-19T13:16:06.723Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

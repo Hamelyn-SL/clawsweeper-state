@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T17:13:26.450Z",
-  "updatedAt": "2026-07-14T16:00:21Z",
+  "generatedAt": "2026-07-19T13:15:11.567Z",
+  "updatedAt": "2026-07-14T17:14:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,52 +16,46 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-07-14T16:00:21Z"
+    "updatedAt": "2026-07-14T17:14:22Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué manual vigente, contacto técnico y ubicación segura de credenciales deben declararse canónicos para Celeritas, y se confirma que marketplace usa solo tracking mientras Supply mantiene creación RMA?",
-  "rationale": "El código prueba los flujos técnicos, pero no permite decidir la vigencia contractual, el responsable operativo ni la custodia autorizada de secretos.",
+  "question": "¿Qué propietario operativo y qué gestor seguro deben quedar como fuente autorizada para las credenciales de Celeritas, y debe migrarse la configuración legacy antes de documentarla?",
+  "rationale": "El repositorio prueba que el tracking REST existe, pero no puede determinar de forma segura el contrato externo vigente ni decidir la ubicación autorizada de credenciales activas.",
   "options": [
     {
-      "title": "Confirmar contrato, alcance y custodia",
-      "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply y autoriza la referencia segura antes de actualizar los tres documentos.",
+      "title": "Confirmar y migrar la custodia segura",
+      "body": "Operaciones confirma el contrato y el contacto, Seguridad define la referencia autorizada y se elimina la dependencia de credenciales legacy antes de completar los runbooks.",
       "recommended": true
     },
     {
-      "title": "Documentar solo lo verificable",
-      "body": "Se aclaran ahora los flujos visibles en código y se mantienen manual, contacto y referencia segura como pendientes explícitos.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la regularización de secretos",
-      "body": "Se completa la ficha contractual cuando llegue la información y la migración o rotación de constantes se gestiona como seguimiento de seguridad independiente.",
+      "title": "Documentar solo el alcance actual",
+      "body": "Se deja constancia de que Celeritas es tracking-only en `CarrierManager` y se mantiene la migración de credenciales como tarea de seguridad separada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contrato, alcance y custodia",
-    "body": "Operaciones valida el manual y contacto, confirma la separación entre marketplace y Supply y autoriza la referencia segura antes de actualizar los tres documentos.",
+    "title": "Confirmar y migrar la custodia segura",
+    "body": "Operaciones confirma el contrato y el contacto, Seguridad define la referencia autorizada y se elimina la dependencia de credenciales legacy antes de completar los runbooks.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado y concentra el historial reciente de los runbooks y de la integración REST de Celeritas.",
+    "reason": "Su historial reciente conecta la documentación pendiente con la implementación REST y permite coordinar la confirmación con Operaciones y Seguridad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463#issuecomment-4909963944",
-    "reviewedAt": "2026-07-14T17:13:26.450Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-19T13:15:11.567Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

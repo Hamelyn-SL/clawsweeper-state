@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-19T13:25:02.702Z",
+  "updatedAt": "2026-07-17T07:07:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7535,
+    "title": "chore: bump Supply to 2.6.04 and improve mobile sales layout",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7535",
+    "state": "open",
+    "labels": [
+      "size/XL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-07-14T09:58:53Z",
+    "updatedAt": "2026-07-17T07:07:14Z",
+    "headSha": "6ba2101625a0d1f47f3416233f63247bab815b86"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe la release `2.6.04` mantenerse como un cambio mínimo de versión y publicación, dejando el nuevo layout de Mis ventas para una rama independiente?",
+  "rationale": "La rama declara que no debe mergearse hasta que la versión esté disponible en stores, pero a la vez mezcla cambios de UI y una regeneración nativa amplia; esa separación y el momento de integración son decisiones operativas de release.",
+  "options": [
+    {
+      "title": "Separar release y layout",
+      "body": "Conservar una rama de release mínima, abrir o mantener aparte el ajuste visual con prueba real y retirar la regeneración nativa no justificada.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el alcance conjunto",
+      "body": "Mantener ambos cambios en la release solo si el responsable de Supply valida expresamente el binario nativo resultante, la compatibilidad y la publicación en stores.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar release y layout",
+    "body": "Conservar una rama de release mínima, abrir o mantener aparte el ajuste visual con prueba real y retirar la regeneración nativa no justificada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es el contribuidor reciente de la pantalla de ventas y del flujo de refresco que esta rama toca.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7535.md",
+    "reviewedAt": "2026-07-19T13:25:02.702Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+  }
+}

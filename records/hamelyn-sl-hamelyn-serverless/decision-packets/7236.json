@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T12:53:59.564Z",
-  "updatedAt": "2026-07-09T08:18:14Z",
+  "generatedAt": "2026-07-19T13:17:35.749Z",
+  "updatedAt": "2026-07-14T13:14:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "reporter:banosdavidhamelyn",
       "feature",
       "epic:revision-v3",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-08T10:11:57Z",
-    "updatedAt": "2026-07-09T08:18:14Z"
+    "updatedAt": "2026-07-14T13:14:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El cierre con productos pendientes debe mostrar siempre el diálogo de progreso —también por debajo del 10% y en QA—, dejando el umbral solo para exigir motivos, o debe adoptarse el cierre directo implementado actualmente en el epic?",
-  "rationale": "La aceptación de esta issue y el comportamiento fusionado describen experiencias incompatibles, y el historial visible no contiene una decisión humana que redefina ese alcance.",
+  "question": "¿Debe el cierre V3 mostrar siempre el ratio de progreso para lote normal y QA, manteniendo los motivos obligatorios solo para B2C con ratio de rechazo ≥ 10 %, tal como especifica esta issue?",
+  "rationale": "La PR fusionada en la rama del epic implementó una variante más estrecha y añadió una ruta de persistencia propia; elegir si se completa ese contrato o se cambia la aceptación requiere confirmar la experiencia y la arquitectura deseadas.",
   "options": [
     {
-      "title": "Mantener la aceptación original",
-      "body": "Mostrar siempre el diálogo de progreso con pendientes, incluir QA y exigir motivos únicamente para lotes B2C cuando el ratio alcance el 10%.",
+      "title": "Completar el contrato de la issue",
+      "body": "Mostrar el ratio en todos los cierres con pendientes, incluidos QA, y reservar el bloqueo de motivos para el caso B2C definido por core.",
       "recommended": true
     },
     {
-      "title": "Adoptar el cierre directo",
-      "body": "Omitir el diálogo por debajo del umbral y en QA, actualizando esta issue y la documentación para reflejar esa decisión.",
+      "title": "Adoptar el alcance reducido de la PR",
+      "body": "Mantener el modal solo para B2C no-QA por encima del umbral y actualizar la issue para no prometer ratio universal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la aceptación original",
-    "body": "Mostrar siempre el diálogo de progreso con pendientes, incluir QA y exigir motivos únicamente para lotes B2C cuando el ratio alcance el 10%.",
+    "title": "Completar el contrato de la issue",
+    "body": "Mostrar el ratio en todos los cierres con pendientes, incluidos QA, y reservar el bloqueo de motivos para el caso B2C definido por core.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor del epic que define el producto de Revisión V3 y puede decidir el comportamiento transversal del cierre.",
+    "reason": "El epic abierto de Revisión V3 define el alcance funcional y la rama de integración de esta pantalla.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7236.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7236#issuecomment-4916399745",
-    "reviewedAt": "2026-07-14T12:53:59.564Z",
-    "mainSha": "c0e80c75b583e1109ef670df534480c921a86adb"
+    "reviewedAt": "2026-07-19T13:17:35.749Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
