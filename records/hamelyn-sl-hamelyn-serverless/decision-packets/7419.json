@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T17:00:39.220Z",
-  "updatedAt": "2026-07-13T10:20:36Z",
+  "generatedAt": "2026-07-19T13:00:15.395Z",
+  "updatedAt": "2026-07-14T17:04:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "bug",
       "priority:p1",
       "app:infrastructure",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "P1",
-      "impact:other",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-13T06:38:18Z",
-    "updatedAt": "2026-07-13T10:20:36Z"
+    "updatedAt": "2026-07-14T17:04:46Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué regla canónica y política de URLs debe aplicarse al fusionar los documentos que comparten `authorId`?",
-  "rationale": "La elección determina qué ficha sobrevive, si los slugs retirados redirigen o devuelven 404 y cómo preservar enlaces durante una corrección masiva de producción.",
+  "question": "¿Qué política de conservación de fichas y slugs debe aplicarse al fusionar en producción los grupos duplicados de `authorId`?",
+  "rationale": "La selección de una ficha canónica y el destino de sus URLs son una decisión SEO irreversible para datos existentes; el código actual solo evita nuevas colisiones durante la lectura y el enriquecimiento.",
   "options": [
     {
-      "title": "Conservar URLs mediante redirects",
-      "body": "Elegir una ficha canónica determinista, fusionar los datos y mantener los slugs retirados como redirects hacia ella.",
+      "title": "Aprobar migración con canónica y redirecciones",
+      "body": "Conservar una ficha canónica por grupo, registrar aliases/redirecciones verificables para los slugs retirados y crear el índice único después del dry-run.",
       "recommended": true
     },
     {
-      "title": "Retirar los slugs duplicados",
-      "body": "Elegir una ficha canónica y aceptar que las URLs de las fichas eliminadas pasen a devolver 404.",
+      "title": "Mantener la mitigación en lectura",
+      "body": "Dejar los duplicados físicos temporalmente y limitar el trabajo a hacer fallar el cron ante errores, posponiendo la consolidación e índice hasta acordar la política SEO.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar URLs mediante redirects",
-    "body": "Elegir una ficha canónica determinista, fusionar los datos y mantener los slugs retirados como redirects hacia ella.",
+    "title": "Aprobar migración con canónica y redirecciones",
+    "body": "Conservar una ficha canónica por grupo, registrar aliases/redirecciones verificables para los slugs retirados y crear el índice único después del dry-run.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Está asignado a esta issue y es el autor del pipeline, del diagnóstico y de la propuesta relacionada de canonicalización.",
+    "reason": "Es el autor de la implementación base, de la mitigación ya integrada y la persona actualmente asignada a esta issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
-    "reviewedAt": "2026-07-14T17:00:39.220Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-19T13:00:15.395Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

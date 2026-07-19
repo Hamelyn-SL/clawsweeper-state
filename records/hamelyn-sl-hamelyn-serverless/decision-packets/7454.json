@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T16:59:50.719Z",
-  "updatedAt": "2026-07-13T10:20:49Z",
+  "generatedAt": "2026-07-19T13:01:28.938Z",
+  "updatedAt": "2026-07-14T17:04:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "app:supply",
       "priority:p1",
       "reporter:arineligrigore",
+      "P1",
+      "impact:other",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
       "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-13T09:48:16Z",
-    "updatedAt": "2026-07-13T10:20:49Z"
+    "updatedAt": "2026-07-14T17:04:56Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Tras confirmar si el pago del 16 de junio de 2026 se ejecutó, ¿qué estado debe prevalecer para un lote físicamente recibido que también conserva una cancelación por expiración?",
-  "rationale": "El código define transiciones posibles, pero no puede decidir si este registro debe terminar en `PAID` o `CANCELLED` sin conocer el resultado financiero y la regla operativa aplicable a cancelaciones tardías.",
+  "question": "Tras verificar si se abonaron los 20,45 €, ¿qué estado debe prevalecer cuando un lote físicamente recibido conserva una cancelación por expiración?",
+  "rationale": "La máquina de estados valida transiciones, pero no contiene la regla operativa que resuelve una cancelación tardía frente a un pago posiblemente ya ejecutado.",
   "options": [
     {
       "title": "Resolver según el pago real",
-      "body": "Auditar el pago y las transiciones; dejar `PAID` si se abonó al cliente o `CANCELLED` si no se abonó, limpiando todos los metadatos incompatibles.",
+      "body": "Dejar `PAID` si el abono se ejecutó o `CANCELLED` si no se ejecutó, limpiando después las fechas y motivos incompatibles.",
       "recommended": true
     },
     {
       "title": "Priorizar la recepción física",
-      "body": "Mantener `PICKED_UP` y eliminar los metadatos de pago y cancelación únicamente si ambos se confirman como registros erróneos.",
+      "body": "Mantener `PICKED_UP` únicamente si negocio confirma que las señales de pago y cancelación son registros erróneos.",
       "recommended": false
     },
     {
       "title": "Priorizar la expiración",
-      "body": "Pasar el lote a `CANCELLED` aunque conste entregado, siempre que negocio confirme que la expiración tardía invalida el flujo posterior.",
+      "body": "Pasar a `CANCELLED` aunque exista entrega física si negocio confirma que la expiración invalida el flujo posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Resolver según el pago real",
-    "body": "Auditar el pago y las transiciones; dejar `PAID` si se abonó al cliente o `CANCELLED` si no se abonó, limpiando todos los metadatos incompatibles.",
+    "body": "Dejar `PAID` si el abono se ejecutó o `CANCELLED` si no se ejecutó, limpiando después las fechas y motivos incompatibles.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es la persona con el historial más reciente y directo sobre las reglas y validaciones del ciclo de vida de lotes Supply.",
+    "reason": "El historial lo sitúa como la persona con contexto más directo sobre las reglas y validaciones recientes del ciclo de vida de lotes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7454.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454#issuecomment-4956923389",
-    "reviewedAt": "2026-07-14T16:59:50.719Z",
-    "mainSha": "56aad1176fabdfe50bb963f6dbd95d1bf5fcda8b"
+    "reviewedAt": "2026-07-19T13:01:28.938Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
