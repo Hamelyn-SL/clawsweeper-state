@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:08:15.300Z",
+  "generatedAt": "2026-07-19T17:07:54.052Z",
   "updatedAt": "2026-07-19T13:26:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,34 +27,34 @@
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "¿Se autoriza una PR de limpieza acotada que retire el export legado tras confirmar que no hay consumidores privados externos al monorepo?",
-  "rationale": "La evidencia interna es concluyente, pero las etiquetas actuales piden revisión humana y el barrel puede tener consumidores no rastreables desde este checkout.",
+  "question": "¿Autoriza el equipo de ecommerce/BL una PR separada para retirar la API legado tras los cambios recientes del catálogo?",
+  "rationale": "La forma técnica está clara, pero el mismo archivo recibió cambios funcionales posteriores y la eliminación debe coordinarse con quienes mantienen esa ruta.",
   "options": [
     {
-      "title": "Autorizar la limpieza acotada",
-      "body": "Eliminar el motor y su re-export, conservar `buildSearchStage` para prescriptor y ajustar la spec BL.",
+      "title": "Autorizar limpieza acotada",
+      "body": "Retirar únicamente `searchProducts`, `searchProductsWithText` y el reexport, preservando `buildSearchStage` y verificando los callers activos.",
       "recommended": true
     },
     {
-      "title": "Mantener temporalmente el export",
-      "body": "Conservar la superficie hasta confirmar explícitamente que ningún consumidor privado la importa.",
+      "title": "Mantener la divergencia documentada",
+      "body": "Conservar temporalmente la API sin callers si se prevé recuperar esa entrada o si hay compatibilidad externa no rastreada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la limpieza acotada",
-    "body": "Eliminar el motor y su re-export, conservar `buildSearchStage` para prescriptor y ajustar la spec BL.",
+    "title": "Autorizar limpieza acotada",
+    "body": "Retirar únicamente `searchProducts`, `searchProductsWithText` y el reexport, preservando `buildSearchStage` y verificando los callers activos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Validó la regla F2 y llevó la extracción BL que dejó la divergencia documentada.",
+    "reason": "Validó la divergencia durante la extracción BL y documentó expresamente la frontera de esta limpieza.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7115.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7115#issuecomment-4913176651",
-    "reviewedAt": "2026-07-19T17:08:15.300Z",
-    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+    "reviewedAt": "2026-07-19T17:07:54.052Z",
+    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
   }
 }

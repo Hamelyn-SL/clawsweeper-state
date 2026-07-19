@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:01:13.733Z",
-  "updatedAt": "2026-07-19T13:26:58Z",
+  "generatedAt": "2026-07-19T13:23:00.737Z",
+  "updatedAt": "2026-07-14T13:14:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,43 +25,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-07-19T13:26:58Z"
+    "updatedAt": "2026-07-14T13:14:15Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el equipo ejecutar primero el piloto funcional de MX sobre el generador actual o exigir que ese piloto nazca ya sobre la migración a BigQuery?",
-  "rationale": "La issue exige una validación operativa con el reportante, mientras los trabajos abiertos cambian la fuente de datos y el repositorio recomienda BigQuery para lecturas batch pesadas.",
+  "question": "¿Debe el nuevo contrato de metadata y mapeo aterrizar primero sobre el generador actual para validar MX, o incorporarse directamente al reemplazo basado en BigQuery de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663?",
+  "rationale": "La elección condiciona la fuente de datos, la paridad que hay que medir y el orden seguro de la primera carga en Merchant Center; el código no puede resolver por sí solo esa decisión operativa y de arquitectura.",
   "options": [
     {
-      "title": "Piloto MX antes de migrar",
-      "body": "Corregir el contrato de salida y validar MX contra Merchant Center antes de trasladar la misma lógica a BigQuery.",
+      "title": "Acordar contrato y piloto MX sobre BigQuery",
+      "body": "Definir con Jesús el orden y los límites, completar la disponibilidad de campos en BigQuery y validar el nuevo feed de MX antes de extenderlo al resto de países.",
       "recommended": true
     },
     {
-      "title": "Unificar con BigQuery",
-      "body": "Esperar y ejecutar el piloto únicamente cuando la iniciativa de BigQuery alcance paridad de campos, precios y recuentos.",
-      "recommended": false
-    },
-    {
-      "title": "Separar solo el contrato",
-      "body": "Documentar columnas y orden de carga ahora, dejando tanto la implementación como el piloto para una planificación posterior.",
+      "title": "Corregir primero el generador Mongo vigente",
+      "body": "Aplicar el nuevo mapper y la cobertura de países al flujo actual para obtener una validación operativa temprana, aceptando una migración posterior de la misma lógica a BigQuery.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto MX antes de migrar",
-    "body": "Corregir el contrato de salida y validar MX contra Merchant Center antes de trasladar la misma lógica a BigQuery.",
+    "title": "Acordar contrato y piloto MX sobre BigQuery",
+    "body": "Definir con Jesús el orden y los límites, completar la disponibilidad de campos en BigQuery y validar el nuevo feed de MX antes de extenderlo al resto de países.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a esta issue y su historial reciente cubre los flujos de Merchant y la separación de MX.",
+    "reason": "Es la persona asignada y la contribución reciente en los flujos de Merchant le conecta con la decisión de secuenciación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-07-19T17:01:13.733Z",
-    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+    "reviewedAt": "2026-07-19T13:23:00.737Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
