@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:40:21.152Z",
-  "updatedAt": "2026-07-08T10:29:31Z",
+  "generatedAt": "2026-07-19T14:46:06.327Z",
+  "updatedAt": "2026-07-19T13:45:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -19,42 +19,41 @@
       "clawsweeper:needs-maintainer-review",
       "P2",
       "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear",
-      "impact:data-loss"
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T08:13:13Z",
-    "updatedAt": "2026-07-08T10:29:31Z"
+    "updatedAt": "2026-07-19T13:45:06Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Autoriza el equipo de `buying/account` una PR acotada que añada las dos guardas de rango y la prueba write-path asociada?",
-  "rationale": "La regla funcional ya fue validada en F2, pero las etiquetas `clawsweeper:no-new-fix-pr` y `clawsweeper:needs-maintainer-review` indican que la cola automática no debe iniciar la reparación sin una confirmación humana de alcance.",
+  "question": "¿Autoriza el equipo del bloque BL una pull request de corrección acotada para aplicar la regla F2 ya validada y retirar la exclusión `clawsweeper:no-new-fix-pr`?",
+  "rationale": "La semántica está definida por la validación F2, pero las etiquetas actuales piden revisión humana antes de que ClawSweeper cree una nueva pull request de arreglo.",
   "options": [
     {
-      "title": "Autorizar la reparación acotada",
-      "body": "Añadir las guardas equivalentes a las de borrado, cubrir ambos arrays con una prueba de repositorio o integración y actualizar la spec BL.",
+      "title": "Autorizar corrección acotada",
+      "body": "Aplicar las dos guardas de rango, añadir verificación de write-path y actualizar la spec BL en una única pull request.",
       "recommended": true
     },
     {
-      "title": "Mantener la incidencia fuera de la cola automática",
-      "body": "Conservarla abierta hasta que el owner indique una prueba o un tratamiento de errores HTTP distinto.",
+      "title": "Mantener la exclusión temporalmente",
+      "body": "Conservar la incidencia abierta sin nueva pull request hasta que el equipo priorice este cambio dentro de su planificación BL.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la reparación acotada",
-    "body": "Añadir las guardas equivalentes a las de borrado, cubrir ambos arrays con una prueba de repositorio o integración y actualizar la spec BL.",
+    "title": "Autorizar corrección acotada",
+    "body": "Aplicar las dos guardas de rango, añadir verificación de write-path y actualizar la spec BL en una única pull request.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Figura como owner de la validación F2 que fijó la regla de negocio de esta divergencia.",
+    "reason": "Está identificado como owner funcional del bloque donde se validó la regla F2.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7097.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7097#issuecomment-4911289367",
-    "reviewedAt": "2026-07-19T13:40:21.152Z",
+    "reviewedAt": "2026-07-19T14:46:06.327Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
