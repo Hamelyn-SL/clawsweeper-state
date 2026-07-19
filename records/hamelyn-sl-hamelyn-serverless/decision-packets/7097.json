@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T14:46:06.327Z",
-  "updatedAt": "2026-07-19T13:45:06Z",
+  "generatedAt": "2026-07-19T16:43:32.772Z",
+  "updatedAt": "2026-07-19T14:46:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "app:infrastructure",
       "triage:done",
       "business-logic",
-      "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T08:13:13Z",
-    "updatedAt": "2026-07-19T13:45:06Z"
+    "updatedAt": "2026-07-19T14:46:56Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Autoriza el equipo del bloque BL una pull request de corrección acotada para aplicar la regla F2 ya validada y retirar la exclusión `clawsweeper:no-new-fix-pr`?",
-  "rationale": "La semántica está definida por la validación F2, pero las etiquetas actuales piden revisión humana antes de que ClawSweeper cree una nueva pull request de arreglo.",
+  "question": "¿Se autoriza programar el arreglo acotado pese a las etiquetas `clawsweeper:no-new-fix-pr` y `clawsweeper:needs-maintainer-review`?",
+  "rationale": "La regla F2 ya define el comportamiento, pero las etiquetas vigentes piden una decisión humana antes de crear una nueva PR de corrección.",
   "options": [
     {
-      "title": "Autorizar corrección acotada",
-      "body": "Aplicar las dos guardas de rango, añadir verificación de write-path y actualizar la spec BL en una única pull request.",
+      "title": "Autorizar el arreglo acotado",
+      "body": "Añadir las dos guardas, una prueba de integración/write-path y la actualización BL sin ampliar el alcance.",
       "recommended": true
     },
     {
-      "title": "Mantener la exclusión temporalmente",
-      "body": "Conservar la incidencia abierta sin nueva pull request hasta que el equipo priorice este cambio dentro de su planificación BL.",
+      "title": "Mantener la pausa",
+      "body": "Conservar la incidencia para priorización posterior si el equipo no quiere abrir aún una PR específica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar corrección acotada",
-    "body": "Aplicar las dos guardas de rango, añadir verificación de write-path y actualizar la spec BL en una única pull request.",
+    "title": "Autorizar el arreglo acotado",
+    "body": "Añadir las dos guardas, una prueba de integración/write-path y la actualización BL sin ampliar el alcance.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está identificado como owner funcional del bloque donde se validó la regla F2.",
-    "confidence": "medium"
+    "reason": "Figura como owner del bloque que validó el contrato de negocio aplicable.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7097.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7097#issuecomment-4911289367",
-    "reviewedAt": "2026-07-19T14:46:06.327Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:43:32.772Z",
+    "mainSha": "256a836dbce471852139783b559ae907f49653bd"
   }
 }

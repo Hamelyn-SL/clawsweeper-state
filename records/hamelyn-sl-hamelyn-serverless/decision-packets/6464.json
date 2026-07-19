@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T13:53:06.772Z",
-  "updatedAt": "2026-07-14T23:30:11Z",
+  "generatedAt": "2026-07-19T16:43:16.423Z",
+  "updatedAt": "2026-07-19T14:02:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,37 +24,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
-    "updatedAt": "2026-07-14T23:30:11Z"
+    "updatedAt": "2026-07-19T14:02:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn mantener Milanuncios como automatización experimental de interfaz privada mientras se solicita contrato partner, o suspender/documentar una restricción operativa hasta obtener autorización expresa?",
-  "rationale": "El código permite describir el comportamiento técnico, pero no puede establecer si los endpoints privados están autorizados ni qué política operativa debe regir sin intención de quien gestione la relación con el partner.",
+  "question": "¿Debe Milanuncios seguir documentándose como automatización experimental mientras se solicita contrato partner, y quién validará formalmente los datos operativos de ambos partners?",
+  "rationale": "El repositorio prueba los flujos técnicos, pero no puede establecer por sí solo la autorización contractual, los contactos operativos ni la referencia vigente de secretos.",
   "options": [
     {
-      "title": "Mantenerla como experimental",
-      "body": "Documentar explícitamente el carácter no contractual, sus límites y el contacto responsable mientras se solicita una vía partner oficial.",
+      "title": "Confirmar con responsables y partners",
+      "body": "Recabar una respuesta verificable sobre contrato, formatos, límites y referencias seguras antes de completar los runbooks.",
       "recommended": true
     },
     {
-      "title": "Restringir la automatización",
-      "body": "Pausar o limitar el flujo hasta disponer de una confirmación expresa de Milanuncios sobre su uso permitido.",
+      "title": "Mantener el estado experimental",
+      "body": "Conservar los huecos y clasificar Milanuncios como integración privada no confirmada hasta recibir contrato o autorización.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantenerla como experimental",
-    "body": "Documentar explícitamente el carácter no contractual, sus límites y el contacto responsable mientras se solicita una vía partner oficial.",
+    "title": "Confirmar con responsables y partners",
+    "body": "Recabar una respuesta verificable sobre contrato, formatos, límites y referencias seguras antes de completar los runbooks.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura como autor del runbook y de los cambios recientes del área, además de estar asociado al seguimiento documental de esta integración.",
+    "reason": "Su historial reúne la creación de los runbooks y mantenimiento reciente de la integración de Milanuncios.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewedAt": "2026-07-19T13:53:06.772Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-19T16:43:16.423Z",
+    "mainSha": "256a836dbce471852139783b559ae907f49653bd"
   }
 }
