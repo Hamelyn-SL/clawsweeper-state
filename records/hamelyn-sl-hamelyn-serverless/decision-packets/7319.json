@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:45:17.047Z",
-  "updatedAt": "2026-07-19T13:37:20Z",
+  "generatedAt": "2026-07-14T08:03:29.116Z",
+  "updatedAt": "2026-07-14T07:55:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,47 @@
       "priority:p1",
       "feature",
       "reporter:miguel",
+      "triage:done",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
+      "clawsweeper:needs-maintainer-review",
       "P2",
       "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: ➖ n/a",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-19T13:37:20Z"
+    "updatedAt": "2026-07-14T07:55:09Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Quién confirma que los binarios `2.6.04` están disponibles en App Store y Play Store antes de autorizar el merge del bump?",
-  "rationale": "La disponibilidad en stores y el uso de credenciales EAS no se pueden demostrar únicamente desde el checkout; adelantar el merge afecta al endpoint de actualización.",
+  "question": "¿Se autoriza el merge final de `2.6.04` únicamente cuando ambas stores estén confirmadas y los valores nativos se hayan generado mediante el flujo Expo aprobado?",
+  "rationale": "La disponibilidad en stores es un estado externo y la discusión propone una sincronización nativa que debe conciliarse con la política vigente de carpetas generadas antes de preparar el bump definitivo.",
   "options": [
     {
-      "title": "Mantener la secuencia acordada",
-      "body": "Resolver la PR, publicar ambos binarios y fusionar el bump únicamente cuando las stores los expongan.",
+      "title": "Esperar y regenerar",
+      "body": "Mantener el bump fuera de `dev` hasta confirmar ambas stores y derivar los valores nativos mediante Expo, evitando tanto el bloqueo de actualización como las ediciones manuales.",
       "recommended": true
     },
     {
-      "title": "Cambiar el mecanismo de versión",
-      "body": "Aceptar explícitamente una alternativa que desacople el endpoint de actualización de `app.json` antes de publicar.",
+      "title": "Mantener el precedente manual",
+      "body": "Repetir la sincronización directa de las cinco fuentes del release anterior, pero únicamente después de documentar que el equipo acepta esta excepción a la política nativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la secuencia acordada",
-    "body": "Resolver la PR, publicar ambos binarios y fusionar el bump únicamente cuando las stores los expongan.",
+    "title": "Esperar y regenerar",
+    "body": "Mantener el bump fuera de `dev` hasta confirmar ambas stores y derivar los valores nativos mediante Expo, evitando tanto el bloqueo de actualización como las ediciones manuales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Documentó la secuencia operativa de esta release y coordinó el precedente inmediato.",
+    "reason": "Es la persona asignada que fijó la secuencia operativa y llevó el precedente de publicación anterior hasta su merge.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-19T17:45:17.047Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-14T08:03:29.116Z",
+    "mainSha": "bffac807be8da30042a26927ef65cea6e449169a"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:46:10.764Z",
-  "updatedAt": "2026-07-19T13:43:42Z",
+  "generatedAt": "2026-07-14T21:40:16.967Z",
+  "updatedAt": "2026-07-08T10:26:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -26,38 +26,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-19T13:43:42Z"
+    "updatedAt": "2026-07-08T10:26:34Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los bloqueos de cuenta o `Issue_172_Block` deben quedar como `PERMANENT` o poder reintentarse tras una intervención operativa en eBay?",
-  "rationale": "El código permite añadir reglas mecánicas, pero la semántica de recuperación define si los stocks se reencolan automáticamente o requieren una acción manual controlada.",
+  "question": "¿Debe un bloqueo de cuenta o vendedor de eBay marcar cada SKU como `PERMANENT`, o debe tratarse como una pausa global recuperable del canal antes de reactivar `create`?",
+  "rationale": "El mismo flujo recibe rechazos terminales de contenido y restricciones de cuenta potencialmente reversibles; elegir una única política por SKU puede causar reintentos masivos o inmovilizar inventario recuperable.",
   "options": [
     {
       "title": "Separar contenido y cuenta",
-      "body": "Conservar como permanentes las infracciones de catálogo y tratar los bloqueos de cuenta como recuperables mediante una reencolación explícita tras resolver eBay.",
+      "body": "Clasificar el contenido prohibido como `PERMANENT` por SKU y convertir las restricciones de cuenta en una pausa global recuperable con reencolado controlado.",
       "recommended": true
     },
     {
-      "title": "Todo permanente",
-      "body": "Marcar ambas familias como permanentes y exigir una corrección manual de catálogo o cuenta antes de cualquier nueva publicación.",
+      "title": "Todo permanente por SKU",
+      "body": "Clasificar todas las variantes conocidas como `PERMANENT`, aceptando una reactivación manual masiva si eBay levanta la restricción de cuenta.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener create deshabilitado",
+      "body": "Conservar la mitigación actual hasta que operaciones confirme la causa y aporte una ejecución canaria con la cuenta plenamente habilitada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar contenido y cuenta",
-    "body": "Conservar como permanentes las infracciones de catálogo y tratar los bloqueos de cuenta como recuperables mediante una reencolación explícita tras resolver eBay.",
+    "body": "Clasificar el contenido prohibido como `PERMANENT` por SKU y convertir las restricciones de cuenta en una pausa global recuperable con reencolado controlado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Introdujo la regla exacta y figura como responsable actual de esta incidencia.",
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor con mayor actividad reciente en el adaptador, diagnóstico y recuperación de eBay, y puede coordinar la frontera entre clasificación técnica y recuperación operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
-    "reviewedAt": "2026-07-19T17:46:10.764Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-14T21:40:16.967Z",
+    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
   }
 }
