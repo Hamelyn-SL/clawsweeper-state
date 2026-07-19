@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-14T23:15:38.080Z",
-  "updatedAt": "2026-07-14T22:12:39Z",
+  "generatedAt": "2026-07-19T13:35:55.358Z",
+  "updatedAt": "2026-07-14T23:16:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,51 @@
       "priority:p1",
       "triage:done",
       "app:crons",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-24T22:50:08Z",
-    "updatedAt": "2026-07-14T22:12:39Z"
+    "updatedAt": "2026-07-14T23:16:42Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `MarcosTerroso` continuar como responsable de esta corrección o se debe liberar la asignación para promover una nueva PR automatizada?",
-  "rationale": "La incidencia es válida y la reparación parece acotada, pero ya tiene una persona asignada y las labels actuales indican que no debe abrirse otra PR de arreglo sin coordinación humana.",
+  "question": "¿Qué destino terminal debe tener un `ORDER_CHANGE` de Amazon cuyo SKU ya no existe y no tiene `OrderSell` previo?",
+  "rationale": "El código confirma el bucle, pero elegir entre borrar con auditoría, aparcar para revisión o crear un `TO_CANCEL` determina si se conserva o se materializa un pedido huérfano.",
   "options": [
     {
-      "title": "Mantener la asignación actual",
-      "body": "`MarcosTerroso` implementa o coordina la corrección estrecha del flujo `ORDER_CHANGE`.",
+      "title": "Consumir con auditoría y alerta deduplicada",
+      "body": "Marcar la notificación como procesada, registrar el SKU y pedido ausentes y emitir una señal operativa única para evitar el bucle sin crear datos incompletos.",
       "recommended": true
     },
     {
-      "title": "Liberar y promover reparación",
-      "body": "Se retira la asignación y se habilita una PR automatizada con el alcance y la validación descritos.",
+      "title": "Enviar a una cola o estado de revisión",
+      "body": "Conservar el caso fuera del reintento normal para que operaciones pueda decidir su recuperación sin bloquear el cron.",
+      "recommended": false
+    },
+    {
+      "title": "Persistir como `TO_CANCEL`",
+      "body": "Extender el contrato de persistencia para admitir este caso únicamente si negocio necesita conservar el pedido aun sin stock resoluble.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la asignación actual",
-    "body": "`MarcosTerroso` implementa o coordina la corrección estrecha del flujo `ORDER_CHANGE`.",
+    "title": "Consumir con auditoría y alerta deduplicada",
+    "body": "Marcar la notificación como procesada, registrar el SKU y pedido ausentes y emitir una señal operativa única para evitar el bucle sin crear datos incompletos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y el principal autor histórico del procesamiento Amazon `ORDER_CHANGE` por SQS.",
+    "reason": "Está asignado en la incidencia y su historial concentra la introducción y el mantenimiento reciente del procesador afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658#issuecomment-4971281004",
-    "reviewedAt": "2026-07-14T23:15:38.080Z",
-    "mainSha": "445a0e2401bf172867eb5978aa3b03fca1bf8bff"
+    "reviewedAt": "2026-07-19T13:35:55.358Z",
+    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }

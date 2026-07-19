@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T12:30:55.555Z",
-  "updatedAt": "2026-07-19T12:27:26Z",
+  "generatedAt": "2026-07-19T13:36:05.356Z",
+  "updatedAt": "2026-07-19T12:34:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,52 @@
       "bug",
       "priority:p2",
       "app:marketplace",
-      "triage:running",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T12:20:01Z",
-    "updatedAt": "2026-07-19T12:27:26Z"
+    "updatedAt": "2026-07-19T12:34:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una oferta `PUBLISHED`/`ACTIVE` con `listingOnHold=true` conservarse como activa, recibir un estado de observabilidad reintentable distinto, o seguir siendo `DB_ONLY` tras una verificación explícita?",
-  "rationale": "El código permite consultar la oferta, pero la incidencia propone alternativas con consecuencias distintas para los reintentos, los dashboards y las acciones operativas de retirada o republicación.",
+  "question": "¿La ausencia en el snapshot de eBay ES debe quedar siempre como señal analítica, o puede convertirse en `SYNC_ERROR/DB_ONLY` solo tras una verificación viva de Inventory API?",
+  "rationale": "La respuesta define el significado operativo de `DB_ONLY`, el tratamiento de listings en espera y qué hacer ante rate limits o fallos de consulta; no es seguro deducir esa política únicamente del código actual.",
   "options": [
     {
-      "title": "Estado reintentable específico",
-      "body": "Conservar el listing vivo fuera de `DB_ONLY` y registrar una clasificación diferenciada para que el siguiente ciclo lo vuelva a comprobar.",
+      "title": "Separar snapshot y estado productivo",
+      "body": "Conservar `DB_ONLY` únicamente en BigQuery y eliminar el marcado de Mongo basado solo en el informe, siguiendo el precedente de MercadoLibre.",
       "recommended": true
     },
     {
-      "title": "Conservar activo sin error",
-      "body": "Tratar las ofertas vivas en espera como activas mientras la API confirme `PUBLISHED`/`ACTIVE`, reduciendo el ruido de reconciliación.",
+      "title": "Verificar antes de degradar",
+      "body": "Consultar Inventory API con concurrencia acotada y marcar error solo cuando eBay confirme una oferta ausente o no publicable, definiendo además la conducta ante errores de API.",
       "recommended": false
     },
     {
-      "title": "Mantener DB_ONLY confirmado",
-      "body": "Seguir usando `DB_ONLY`, pero sólo después de verificar que la Inventory API no devuelve una oferta viva para el SKU.",
+      "title": "Mantener la inferencia actual",
+      "body": "Seguir tratando la ausencia del snapshot como error definitivo, aceptando que listings vivos omitidos por el informe se clasifiquen como `DB_ONLY`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estado reintentable específico",
-    "body": "Conservar el listing vivo fuera de `DB_ONLY` y registrar una clasificación diferenciada para que el siguiente ciclo lo vuelva a comprobar.",
+    "title": "Separar snapshot y estado productivo",
+    "body": "Conservar `DB_ONLY` únicamente en BigQuery y eliminar el marcado de Mongo basado solo en el informe, siguiendo el precedente de MercadoLibre.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial del script y el reporte operativo sitúan a JavierHamelyn como la persona con más contexto inmediato sobre esta reconciliación.",
+    "reason": "El historial atribuye al área de eBay ES la implementación actual y puede aportar el contexto operativo del informe y de los estados esperados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721#issuecomment-5015714604",
-    "reviewedAt": "2026-07-19T12:30:55.555Z",
+    "reviewedAt": "2026-07-19T13:36:05.356Z",
     "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
   }
 }
