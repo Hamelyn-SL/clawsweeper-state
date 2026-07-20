@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Apply finished",
-  "detail": "Apply/comment-sync run finished with 0 fresh closes out of requested limit 0. See apply-report.json for per-item results.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29743835053",
-  "planned_count": null,
-  "planned_capacity": null,
-  "planned_shards": null,
-  "active_codex": null,
-  "due_backlog": null,
-  "oldest_unreviewed_at": null,
-  "capacity_reason": null,
+  "state": "Review comments checked",
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 32. Item numbers: 5353,5745,6338,6419,6437,6882,7297,7419,7454,7526,7530,7535,7585,7623,7636,7660,7663,7681,7682,7702,7710,7715,7755,7758,7759,7760,7761,7762,7766,7767,7769,7771,7774.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29742801258",
+  "planned_count": 33,
+  "planned_capacity": 33,
+  "planned_shards": 11,
+  "active_codex": 0,
+  "due_backlog": 35,
+  "oldest_unreviewed_at": "2026-07-20T07:07:47Z",
+  "capacity_reason": "saturated: due backlog filled planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,20 +21,18 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-07-20T12:56:32.961Z",
-    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "generated_at": "2026-07-20T12:35:15.516Z",
+    "target_repo": "hamelyn-sl/hamelyn-serverless",
     "mode": "comment_sync",
     "status": "ok",
-    "summary": "32/1000 processed; 0 closed, 31 comments synced, 1 skipped; no cursor recorded.",
-    "processed": 32,
+    "summary": "1/1000 processed; 0 closed, 1 comments synced, 0 skipped; no cursor recorded.",
+    "processed": 1,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 31,
-    "skipped": 1,
-    "skip_reasons": {
-      "skipped_changed_since_review": 1
-    },
+    "comment_synced": 1,
+    "skipped": 0,
+    "skip_reasons": {},
     "lanes": {
       "closure": {
         "processed": 0,
@@ -44,30 +42,15 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 32,
+        "processed": 1,
         "closed": 0,
-        "comment_synced": 31,
-        "skipped": 1,
-        "skip_reasons": {
-          "skipped_changed_since_review": 1
-        }
+        "comment_synced": 1,
+        "skipped": 0,
+        "skip_reasons": {}
       }
     },
-    "next_actions": [
-      {
-        "reason": "skipped_changed_since_review",
-        "count": 1,
-        "bucket": "review_refresh",
-        "owner": "clawsweeper",
-        "retryable": true,
-        "label": "Refresh review",
-        "summary": "The item changed after the review that proposed closing it.",
-        "next_step": "Queue a fresh ClawSweeper review before any close retry."
-      }
-    ],
-    "next_action_buckets": {
-      "review_refresh": 1
-    },
+    "next_actions": [],
+    "next_action_buckets": {},
     "cycle": {
       "basis": "not_close_cursor",
       "apply_ready_count": null,
@@ -82,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-07-20T12:56:33.327Z"
+  "updated_at": "2026-07-20T12:56:05.138Z"
 }
