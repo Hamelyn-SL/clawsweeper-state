@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T14:45:10.420Z",
-  "updatedAt": "2026-07-20T12:53:05Z",
+  "generatedAt": "2026-07-20T14:57:01.335Z",
+  "updatedAt": "2026-07-20T14:52:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,45 +18,44 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-06-10T09:34:30Z",
-    "updatedAt": "2026-07-20T12:53:05Z"
+    "updatedAt": "2026-07-20T14:52:49Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `shipping.default.error` tratarse como transitorio de MercadoLibre tras validar una muestra reciente del payload?",
-  "rationale": "La recuperación existente distingue deliberadamente errores permanentes de transitorios; el nombre de la nueva variante no demuestra por sí solo que sea segura de reintentar.",
+  "question": "¿Debe `shipping.default.error` tratarse como un error transitorio de MercadoLibre o mantenerse fuera de los reintentos automáticos?",
+  "rationale": "La firma disponible no incluye estado ni causa suficiente para distinguir un fallo temporal del proveedor de una configuración inválida del anuncio.",
   "options": [
     {
-      "title": "Validar y ampliar la regla",
-      "body": "Recoger una muestra reciente y añadir un patrón limitado si contiene señal inequívoca de error temporal del proveedor.",
+      "title": "Validar y acotar la regla",
+      "body": "Revisar ejemplos completos recientes y añadir una regla solo para la variante que demuestre un fallo externo recuperable.",
       "recommended": true
     },
     {
-      "title": "Mantenerla como desconocida",
-      "body": "No reintentar automáticamente hasta disponer de evidencia de que la variante no representa una validación o configuración permanente.",
+      "title": "Mantenerla fuera de recovery",
+      "body": "Conservar la política actual y tratar esos casos como incidencias de configuración hasta disponer de evidencia adicional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y ampliar la regla",
-    "body": "Recoger una muestra reciente y añadir un patrón limitado si contiene señal inequívoca de error temporal del proveedor.",
+    "title": "Validar y acotar la regla",
+    "body": "Revisar ejemplos completos recientes y añadir una regla solo para la variante que demuestre un fallo externo recuperable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial reúne la implementación y el mantenimiento reciente del recovery de MercadoLibre.",
+    "reason": "Introdujo la recuperación de create y figura asignado en el historial de esta incidencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6338.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338#issuecomment-4909866101",
-    "reviewedAt": "2026-07-20T14:45:10.420Z",
+    "reviewedAt": "2026-07-20T14:57:01.335Z",
     "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:57:44.719Z",
+  "updatedAt": "2026-07-20T13:23:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7682,
+    "title": "chore: migrate supply to expo sdk 57",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7682",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-07-17T06:21:06Z",
+    "updatedAt": "2026-07-20T13:23:24Z",
+    "headSha": "c07425411e3d04afb257f9ca2981ecea380cfd4b"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Qué versión y plan de canal OTA deben acompañar al nuevo runtime nativo de Expo SDK 57?",
+  "rationale": "Elegir el identificador de runtime y el momento de publicación afecta a dispositivos ya instalados y no se deduce de forma segura del diff.",
+  "options": [
+    {
+      "title": "Separar la OTA por runtime",
+      "body": "Incrementar `runtimeVersion`, publicar binarios nuevos y mantener las actualizaciones OTA antiguas fuera del canal del nuevo runtime.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el runtime compartido",
+      "body": "Mantener `1.0.0` asumiendo explícitamente el riesgo de que dispositivos previos reciban un bundle incompatible.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la OTA por runtime",
+    "body": "Incrementar `runtimeVersion`, publicar binarios nuevos y mantener las actualizaciones OTA antiguas fuera del canal del nuevo runtime.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la build y la versión de Supply, las superficies que determinan el despliegue nativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7682.md",
+    "reviewedAt": "2026-07-20T14:57:44.719Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}
