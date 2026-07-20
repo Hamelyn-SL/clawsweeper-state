@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:44:59.466Z",
-  "updatedAt": "2026-07-20T10:57:39Z",
+  "generatedAt": "2026-07-20T19:20:29.619Z",
+  "updatedAt": "2026-07-20T19:13:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "priority:p2",
       "app:infrastructure",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
+      "triage:queued",
       "P1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
       "impact:data-loss",
       "impact:message-loss",
-      "clawsweeper:linked-pr-open"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
-    "updatedAt": "2026-07-20T10:57:39Z"
+    "updatedAt": "2026-07-20T19:13:32Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba como contrato que una incidencia responda 202 y complete la entrega de forma diferida cuando eDesk no esté disponible?",
-  "rationale": "La solución propuesta introduce un estado visible de entrega diferida y conserva payload de cliente para rescate operativo.",
+  "question": "¿La política definitiva debe conservar los payloads agotados en un dead-letter durable para rescate manual, o se acepta descartarlos tras un número limitado de entregas?",
+  "rationale": "Los comentarios descartan la recuperación automática, pero la PR abierta usa una cola que finalmente descarta contenido; esa elección define si el requisito de no perder tickets queda realmente satisfecho.",
   "options": [
     {
-      "title": "Aprobar el fallback diferido",
-      "body": "Mantener la creación síncrona cuando eDesk esté disponible y devolver 202 únicamente tras encolar de forma duradera.",
+      "title": "Dead-letter durable con rescate manual",
+      "body": "Persistir el payload agotado y mantener un runbook de reprocesado manual tras corregir la causa raíz.",
       "recommended": true
     },
     {
-      "title": "Definir otro contrato",
-      "body": "Solicitar una alternativa antes de fusionar si una respuesta diferida no es aceptable para los clientes afectados.",
+      "title": "Aceptar descarte limitado",
+      "body": "Mantener el límite de entregas y documentar que los fallos sostenidos pueden requerir recuperar el contenido desde logs.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el fallback diferido",
-    "body": "Mantener la creación síncrona cuando eDesk esté disponible y devolver 202 únicamente tras encolar de forma duradera.",
+    "title": "Dead-letter durable con rescate manual",
+    "body": "Persistir el payload agotado y mantener un runbook de reprocesado manual tras corregir la causa raíz.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha concretado el diseño operativo y lleva la implementación candidata.",
+    "reason": "Está asignado al trabajo, documentó las alternativas de diseño y mantiene la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-20T12:44:59.466Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-20T19:20:29.619Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
   }
 }
