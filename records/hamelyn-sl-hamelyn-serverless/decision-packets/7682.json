@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T16:26:15.589Z",
+  "generatedAt": "2026-07-20T16:28:11.512Z",
   "updatedAt": "2026-07-20T15:06:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,12 @@
     "state": "open",
     "labels": [
       "size/M",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-17T06:21:06Z",
     "updatedAt": "2026-07-20T15:06:33Z",
@@ -24,39 +24,38 @@
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe Supply incrementar `runtimeVersion` y exigir nuevas builds de iOS y Android antes de permitir actualizaciones OTA con Expo SDK 57?",
-  "rationale": "El PR modifica dependencias y proyectos nativos, pero la decisión de compatibilidad entre binarios instalados y OTA afecta al despliegue de producción.",
+  "question": "¿Debe el despliegue de SDK 57 publicar un `runtimeVersion` nuevo y bloquear la OTA del runtime anterior hasta que existan binarios nativos actualizados?",
+  "rationale": "La elección determina si dispositivos ya instalados pueden recibir código incompatible con el nuevo runtime nativo y requiere coordinación de release, no solo un cambio mecánico.",
   "options": [
     {
-      "title": "Cortar el runtime y publicar builds nuevas",
-      "body": "Incrementar `runtimeVersion`, crear builds SDK 57 y habilitar las OTA solo para esos binarios.",
+      "title": "Separar el runtime OTA",
+      "body": "Incrementar `runtimeVersion`, publicar builds nativas nuevas y conservar las actualizaciones previas para los binarios existentes.",
       "recommended": true
     },
     {
-      "title": "Mantener el runtime actual con prueba explícita",
-      "body": "Conservar `1.0.0` solo si se documenta y demuestra compatibilidad OTA entre el binario anterior y el bundle SDK 57.",
+      "title": "Aceptar el runtime compartido",
+      "body": "Mantener `1.0.0` y asumir explícitamente la entrega cruzada de OTA entre binarios antiguos y SDK 57.",
       "recommended": false
     },
     {
-      "title": "Separar la migración de la estrategia OTA",
-      "body": "Pausar este PR y definir primero una política de rollout OTA para cambios nativos de Expo.",
+      "title": "Pausar el rollout",
+      "body": "No publicar builds ni OTA hasta acordar el plan de compatibilidad y obtener pruebas en dispositivos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cortar el runtime y publicar builds nuevas",
-    "body": "Incrementar `runtimeVersion`, crear builds SDK 57 y habilitar las OTA solo para esos binarios.",
+    "title": "Separar el runtime OTA",
+    "body": "Incrementar `runtimeVersion`, publicar builds nativas nuevas y conservar las actualizaciones previas para los binarios existentes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial de versión de Supply y la solicitud de revisión le sitúan cerca de la decisión de despliegue móvil.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Su cambio reciente introdujo la configuración nativa de Expo Updates que define el contrato de runtime.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7682.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7682#issuecomment-5000013759",
-    "reviewedAt": "2026-07-20T16:26:15.589Z",
+    "reviewedAt": "2026-07-20T16:28:11.512Z",
     "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
   }
 }
