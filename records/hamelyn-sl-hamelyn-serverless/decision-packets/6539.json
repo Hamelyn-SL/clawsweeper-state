@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:27:54.305Z",
-  "updatedAt": "2026-07-19T13:30:44Z",
+  "generatedAt": "2026-07-20T12:57:45.409Z",
+  "updatedAt": "2026-07-20T07:42:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,51 @@
       "app:supply",
       "priority:p2",
       "feature",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-07-19T13:30:44Z"
+    "updatedAt": "2026-07-20T07:42:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el workflow poder crear commits de bump y enviar releases desde GitHub, o debe limitarse a builds/submits controlados por una política distinta?",
-  "rationale": "La decisión define quién puede iniciar publicación en stores y si la automatización puede escribir en ramas, un límite operativo que el código no puede decidir por sí solo.",
+  "question": "¿Debe el workflow de publicación poder crear commits en la rama ejecutora y permitir el carril `release` desde GitHub Actions, o debe limitarse a builds beta con promoción manual?",
+  "rationale": "La elección determina permisos `contents: write`, protección de ramas y quién puede desencadenar envíos a App Store y Google Play; no es una corrección mecánica.",
   "options": [
     {
-      "title": "Aprobar una política de release acotada",
-      "body": "Definir permisos, rama autorizada y beta como primer destino; después corregir y probar el PR existente.",
+      "title": "Beta automatizada y release manual",
+      "body": "Permitir builds y submit beta desde el workflow, dejando la promoción de producción bajo una operación manual controlada.",
       "recommended": true
     },
     {
-      "title": "Separar bump y despliegue",
-      "body": "Mantener el workflow de EAS sin push y dejar el versionado en un proceso de release independiente.",
+      "title": "Release automatizada controlada",
+      "body": "Mantener ambos carriles, pero documentar permisos, ramas autorizadas y responsables de ejecución antes del merge.",
       "recommended": false
     },
     {
-      "title": "Mantener el proceso manual",
-      "body": "Conservar EAS manual hasta que exista una política de operación y custodia de credenciales aprobada.",
+      "title": "Solo builds EAS",
+      "body": "Eliminar el submit y los pushes de versión del workflow para conservar la publicación enteramente fuera de GitHub Actions.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una política de release acotada",
-    "body": "Definir permisos, rama autorizada y beta como primer destino; después corregir y probar el PR existente.",
+    "title": "Beta automatizada y release manual",
+    "body": "Permitir builds y submit beta desde el workflow, dejando la promoción de producción bajo una operación manual controlada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente de bumps de versión y su solicitud de revisión en el PR lo sitúan cerca de la decisión operativa.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la configuración EAS actual y puede orientar el contrato operativo que debe completar el flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
-    "reviewedAt": "2026-07-19T17:27:54.305Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-20T12:57:45.409Z",
+    "mainSha": "82f7f3e4ec8c55ef4440ebbe333ddb31d3997250"
   }
 }

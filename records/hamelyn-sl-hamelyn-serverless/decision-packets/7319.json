@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:58:09.125Z",
-  "updatedAt": "2026-07-19T17:47:20Z",
+  "generatedAt": "2026-07-20T12:57:26.521Z",
+  "updatedAt": "2026-07-20T08:57:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,52 @@
       "priority:p1",
       "feature",
       "reporter:miguel",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
-      "P2",
+      "triage:done",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-19T17:47:20Z"
+    "updatedAt": "2026-07-20T08:57:43Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se confirma que los binarios `2.6.04` están live en App Store y Play Store para integrar un bump de release aislado en `dev`?",
-  "rationale": "La disponibilidad en stores y las credenciales EAS no se pueden verificar ni ejecutar de forma segura desde el repositorio.",
+  "question": "¿Se confirma que los binarios `2.6.04` están live en App Store y Play Store, y que la publicación debe integrarse mediante un bump aislado en lugar de la PR mixta actual?",
+  "rationale": "La publicación en stores y el momento seguro de anunciar la versión dependen de credenciales, revisión externa y decisión operativa que el código local no puede resolver.",
   "options": [
     {
-      "title": "Publicar y cerrar la release",
-      "body": "Confirmar ambos escaparates, integrar un PR limitado al bump y registrar versión y builds publicados.",
+      "title": "Publicar con bump aislado",
+      "body": "Confirmar ambos escaparates, preparar un PR limitado a las cinco fuentes de versión y fusionarlo en `dev` tras registrar los builds.",
       "recommended": true
     },
     {
+      "title": "Revisar la PR vinculada",
+      "body": "Separar o validar explícitamente sus cambios de interfaz antes de usarla como vehículo de la release, manteniendo el bump condicionado a las stores.",
+      "recommended": false
+    },
+    {
       "title": "Aplazar la release",
-      "body": "Mantener `2.6.03` en `dev` hasta completar el alcance o disponer de builds verificables.",
+      "body": "Mantener `2.6.03` en `dev` hasta que el alcance y la disponibilidad de los binarios estén confirmados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Publicar y cerrar la release",
-    "body": "Confirmar ambos escaparates, integrar un PR limitado al bump y registrar versión y builds publicados.",
+    "title": "Publicar con bump aislado",
+    "body": "Confirmar ambos escaparates, preparar un PR limitado a las cinco fuentes de versión y fusionarlo en `dev` tras registrar los builds.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y participó en el precedente de versionado que define la secuencia segura.",
+    "reason": "Es el asignado actual y el historial lo conecta con el precedente de release y la rama candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-19T17:58:09.125Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-20T12:57:26.521Z",
+    "mainSha": "82f7f3e4ec8c55ef4440ebbe333ddb31d3997250"
   }
 }

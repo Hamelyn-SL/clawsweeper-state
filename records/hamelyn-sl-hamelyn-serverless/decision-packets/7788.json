@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T12:58:24.706Z",
+  "updatedAt": "2026-07-20T12:45:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7788,
+    "title": "feat: assign issue to HamelynDev when triage agent opens a PR",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7788",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-20T11:00:47Z",
+    "updatedAt": "2026-07-20T12:45:31Z",
+    "headSha": "68b69f63d08b819fbb0585b26cc012465a6ad11f"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `pr-opened` autoasignar `HamelynDev` y, en ese caso, debe esa asignación automática anunciarse también en Slack?",
+  "rationale": "La propuesta añade una excepción permanente a la política de coordinación autónoma y activa una comunicación adicional no descrita en los criterios de aceptación.",
+  "options": [
+    {
+      "title": "Aprobar una asignación silenciosa",
+      "body": "Mantener la asignación condicionada y excluir de Slack solo los eventos `issues.assigned` causados por `HamelynDev` tras `triage:pr-opened`.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar solo la label",
+      "body": "No añadir la excepción y seguir usando `triage:pr-opened` como señal de que el trabajo ya está en curso.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar también el aviso de Slack",
+      "body": "Integrar el comportamiento actual y asumir que cada autoasignación debe quedar anunciada en el canal de issues.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar una asignación silenciosa",
+    "body": "Mantener la asignación condicionada y excluir de Slack solo los eventos `issues.assigned` causados por `HamelynDev` tras `triage:pr-opened`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente abarca tanto el flujo de triage como el workflow de eventos y su notificador asociado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7788.md",
+    "reviewedAt": "2026-07-20T12:58:24.706Z",
+    "mainSha": "82f7f3e4ec8c55ef4440ebbe333ddb31d3997250"
+  }
+}
