@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review comments checked",
-  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 32. Item numbers: 5353,5745,6338,6419,6437,6882,7297,7419,7454,7526,7530,7535,7585,7623,7636,7660,7663,7681,7682,7702,7710,7715,7755,7758,7759,7760,7761,7762,7766,7767,7769,7771,7774.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29742801258",
-  "planned_count": 33,
-  "planned_capacity": 33,
-  "planned_shards": 11,
-  "active_codex": 0,
-  "due_backlog": 35,
-  "oldest_unreviewed_at": "2026-07-20T07:07:47Z",
-  "capacity_reason": "saturated: due backlog filled planned capacity",
+  "state": "Planning review",
+  "detail": "Planner is scanning GitHub for the next review candidates. Candidate counts and shard details will be posted after planning completes.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29744217404",
+  "planned_count": null,
+  "planned_capacity": null,
+  "planned_shards": null,
+  "active_codex": null,
+  "due_backlog": null,
+  "oldest_unreviewed_at": null,
+  "capacity_reason": null,
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-07-20T12:56:05.138Z"
+  "updated_at": "2026-07-20T12:58:06.358Z"
 }
