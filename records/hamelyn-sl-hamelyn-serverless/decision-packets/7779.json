@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T13:03:42.189Z",
+  "updatedAt": "2026-07-20T10:59:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7779,
+    "title": "fix: ack mercado pago legacy ipn notifications without processing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7779",
+    "state": "open",
+    "labels": [
+      "size/XS"
+    ],
+    "createdAt": "2026-07-20T10:21:07Z",
+    "updatedAt": "2026-07-20T10:59:50Z",
+    "headSha": "019d9ca7b69ca30f374bd19c5583f1c56172b08e"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe el endpoint reconocer IPN legacy que incluyen `x-signature` no verificable, o debe conservar `401` para toda firma inválida?",
+  "rationale": "El reporte enlazado pedía ACK para IPN sin firma, mientras que la rama amplía deliberadamente la excepción a solicitudes firmadas; esa frontera de autenticación necesita una decisión explícita.",
+  "options": [
+    {
+      "title": "Conservar el límite actual",
+      "body": "Responder `200` sólo cuando no exista `x-signature`, manteniendo `401` para cualquier firma inválida.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar firmas legacy",
+      "body": "Mantener el ACK con firma sólo tras adjuntar ejemplos redacted y evidencia operativa de Mercado Pago que prueben ese formato legacy.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el límite actual",
+    "body": "Responder `200` sólo cuando no exista `x-signature`, manteniendo `401` para cualquier firma inválida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula directamente con la implementación actual de verificación y controlador.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7779.md",
+    "reviewedAt": "2026-07-20T13:03:42.189Z",
+    "mainSha": "198920796653e0c8a4ccdb8749482f13f3c626b7"
+  }
+}

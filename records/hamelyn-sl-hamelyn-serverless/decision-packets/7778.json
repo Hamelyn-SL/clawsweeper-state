@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T13:04:17.139Z",
+  "updatedAt": "2026-07-20T11:01:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7778,
+    "title": "fix: skip serper requests for empty queries",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7778",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-07-20T10:21:03Z",
+    "updatedAt": "2026-07-20T11:01:57Z",
+    "headSha": "7ad0850bbeb7ad0f45e6e56408dd3da7617e81ae"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe aterrizarse este guard como corrección parcial sin cerrar la incidencia canónica, o debe ampliarse primero para resolver la exposición de credenciales y el tratamiento de `400`?",
+  "rationale": "La decisión afecta al cierre de un problema que incluye rotación operativa de credenciales y cambios de política de errores, no solo la validación de consultas vacías.",
+  "options": [
+    {
+      "title": "Separar el guard defensivo",
+      "body": "Retirar el cierre de la incidencia canónica, describir el cambio como defensa parcial y mantener el trabajo de créditos, logs y clasificación en su seguimiento.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar el arreglo de Serper",
+      "body": "Añadir saneo de errores y clasificación explícita del `400`, coordinando aparte la rotación y recarga de la credencial.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar este PR",
+      "body": "Cerrar o pausar la rama y abordar todo el flujo desde la incidencia canónica con un alcance de seguridad acordado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar el guard defensivo",
+    "body": "Retirar el cierre de la incidencia canónica, describir el cambio como defensa parcial y mantener el trabajo de créditos, logs y clasificación en su seguimiento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial está asociado al adaptador y al cron cuyo contrato de errores debe decidirse.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7778.md",
+    "reviewedAt": "2026-07-20T13:04:17.139Z",
+    "mainSha": "198920796653e0c8a4ccdb8749482f13f3c626b7"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:57:45.409Z",
+  "generatedAt": "2026-07-20T13:02:10.343Z",
   "updatedAt": "2026-07-20T07:42:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,52 +14,45 @@
       "priority:p2",
       "feature",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
     "updatedAt": "2026-07-20T07:42:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el workflow de publicación poder crear commits en la rama ejecutora y permitir el carril `release` desde GitHub Actions, o debe limitarse a builds beta con promoción manual?",
-  "rationale": "La elección determina permisos `contents: write`, protección de ramas y quién puede desencadenar envíos a App Store y Google Play; no es una corrección mecánica.",
+  "question": "¿Debe `Supply Deploy` permitir envíos de release desde GitHub Actions o limitarse inicialmente a beta?",
+  "rationale": "El workflow puede publicar binarios y modificar versiones; el nivel de autonomía de producción requiere una decisión explícita de release.",
   "options": [
     {
-      "title": "Beta automatizada y release manual",
-      "body": "Permitir builds y submit beta desde el workflow, dejando la promoción de producción bajo una operación manual controlada.",
+      "title": "Empezar por beta",
+      "body": "Automatizar TestFlight y Play internal, y aplazar el envío de producción hasta validar el flujo operativo.",
       "recommended": true
     },
     {
-      "title": "Release automatizada controlada",
-      "body": "Mantener ambos carriles, pero documentar permisos, ramas autorizadas y responsables de ejecución antes del merge.",
-      "recommended": false
-    },
-    {
-      "title": "Solo builds EAS",
-      "body": "Eliminar el submit y los pushes de versión del workflow para conservar la publicación enteramente fuera de GitHub Actions.",
+      "title": "Incluir release draft",
+      "body": "Permitir producción como borrador con controles de ramas, permisos y evidencia operativa reforzados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Beta automatizada y release manual",
-    "body": "Permitir builds y submit beta desde el workflow, dejando la promoción de producción bajo una operación manual controlada.",
+    "title": "Empezar por beta",
+    "body": "Automatizar TestFlight y Play internal, y aplazar el envío de producción hasta validar el flujo operativo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo la configuración EAS actual y puede orientar el contrato operativo que debe completar el flujo.",
-    "confidence": "medium"
+    "reason": "Su historial conecta con la configuración EAS que define los perfiles y límites operativos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
-    "reviewedAt": "2026-07-20T12:57:45.409Z",
-    "mainSha": "82f7f3e4ec8c55ef4440ebbe333ddb31d3997250"
+    "reviewedAt": "2026-07-20T13:02:10.343Z",
+    "mainSha": "198920796653e0c8a4ccdb8749482f13f3c626b7"
   }
 }

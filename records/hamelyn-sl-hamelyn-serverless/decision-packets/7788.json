@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:58:24.706Z",
+  "generatedAt": "2026-07-20T13:02:48.638Z",
   "updatedAt": "2026-07-20T12:45:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,11 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7788",
     "state": "open",
     "labels": [
-      "size/M",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P3",
-      "merge-risk: 🚨 automation"
+      "size/M"
     ],
     "createdAt": "2026-07-20T11:00:47Z",
     "updatedAt": "2026-07-20T12:45:31Z",
@@ -22,39 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe `pr-opened` autoasignar `HamelynDev` y, en ese caso, debe esa asignación automática anunciarse también en Slack?",
-  "rationale": "La propuesta añade una excepción permanente a la política de coordinación autónoma y activa una comunicación adicional no descrita en los criterios de aceptación.",
+  "question": "¿Debe la autoasignación de `HamelynDev` desde `pr-opened` publicar también el aviso `🎯 Wishlist asignada` en Slack?",
+  "rationale": "La propuesta cambia una comunicación operativa existente y los criterios de aceptación no especifican ese efecto secundario.",
   "options": [
     {
-      "title": "Aprobar una asignación silenciosa",
-      "body": "Mantener la asignación condicionada y excluir de Slack solo los eventos `issues.assigned` causados por `HamelynDev` tras `triage:pr-opened`.",
+      "title": "Suprimir el aviso automático",
+      "body": "Añadir una guarda estrecha para que esta autoasignación no genere la notificación de Slack.",
       "recommended": true
     },
     {
-      "title": "Conservar solo la label",
-      "body": "No añadir la excepción y seguir usando `triage:pr-opened` como señal de que el trabajo ya está en curso.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar también el aviso de Slack",
-      "body": "Integrar el comportamiento actual y asumir que cada autoasignación debe quedar anunciada en el canal de issues.",
+      "title": "Aceptar la señal en Slack",
+      "body": "Mantener el aviso si el equipo quiere que Slack refleje explícitamente todas las autoasignaciones de triage.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar una asignación silenciosa",
-    "body": "Mantener la asignación condicionada y excluir de Slack solo los eventos `issues.assigned` causados por `HamelynDev` tras `triage:pr-opened`.",
+    "title": "Suprimir el aviso automático",
+    "body": "Añadir una guarda estrecha para que esta autoasignación no genere la notificación de Slack.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente abarca tanto el flujo de triage como el workflow de eventos y su notificador asociado.",
+    "reason": "Su trabajo reciente enlaza el script de triage, el workflow de eventos y la notificación secundaria.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7788.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7788#issuecomment-5022516262",
-    "reviewedAt": "2026-07-20T12:58:24.706Z",
-    "mainSha": "82f7f3e4ec8c55ef4440ebbe333ddb31d3997250"
+    "reviewedAt": "2026-07-20T13:02:48.638Z",
+    "mainSha": "198920796653e0c8a4ccdb8749482f13f3c626b7"
   }
 }
