@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T14:45:22.796Z",
+  "updatedAt": "2026-07-20T13:09:47Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7775,
+    "title": "fix: redact sensitive Azeta dropshipping errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "P1",
+      "status: 📣 needs proof",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-07-20T10:12:15Z",
+    "updatedAt": "2026-07-20T13:09:47Z",
+    "headSha": "231ae043d245f7f933cd643af6891bda2b66aa81"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Quién coordina la rotación de la credencial Azeta y el tratamiento de los eventos históricos identificados mientras se revisa esta mitigación?",
+  "rationale": "La rama reduce la exposición futura, pero no puede decidir ni ejecutar la remediación de secretos y logs ya persistidos.",
+  "options": [
+    {
+      "title": "Coordinar remediación inmediata",
+      "body": "Asignar la rotación de la credencial y la revisión de retención o borrado de logs como seguimiento operativo paralelo al merge.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el seguimiento diferido",
+      "body": "Integrar la mitigación y documentar una fecha y responsable para la remediación histórica posterior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar remediación inmediata",
+    "body": "Asignar la rotación de la credencial y la revisión de retención o borrado de logs como seguimiento operativo paralelo al merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor solicitado y ha mantenido recientemente el flujo de confirmación de dropshipping afectado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7775.md",
+    "reviewedAt": "2026-07-20T14:45:22.796Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+  }
+}

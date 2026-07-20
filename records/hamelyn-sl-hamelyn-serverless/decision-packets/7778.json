@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T13:04:17.139Z",
-  "updatedAt": "2026-07-20T11:01:57Z",
+  "generatedAt": "2026-07-20T14:48:48.107Z",
+  "updatedAt": "2026-07-20T13:09:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/S",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 security-boundary"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-20T10:21:03Z",
-    "updatedAt": "2026-07-20T11:01:57Z",
+    "updatedAt": "2026-07-20T13:09:53Z",
     "headSha": "7ad0850bbeb7ad0f45e6e56408dd3da7617e81ae"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe aterrizarse este guard como corrección parcial sin cerrar la incidencia canónica, o debe ampliarse primero para resolver la exposición de credenciales y el tratamiento de `400`?",
-  "rationale": "La decisión afecta al cierre de un problema que incluye rotación operativa de credenciales y cambios de política de errores, no solo la validación de consultas vacías.",
+  "question": "¿Debe este PR ampliarse para resolver el incidente completo antes de cerrar https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7766, o fusionarse solo como defensa separada?",
+  "rationale": "La decisión determina si un arreglo parcial puede cerrar una incidencia que también requiere una acción operativa sobre credenciales y cambios de manejo de errores.",
   "options": [
     {
-      "title": "Separar el guard defensivo",
-      "body": "Retirar el cierre de la incidencia canónica, describir el cambio como defensa parcial y mantener el trabajo de créditos, logs y clasificación en su seguimiento.",
+      "title": "Completar el tratamiento de Serper",
+      "body": "Añadir saneo de errores y clasificación de créditos, coordinar la rotación o recarga de la clave y mantener el cierre de la incidencia.",
       "recommended": true
     },
     {
-      "title": "Ampliar el arreglo de Serper",
-      "body": "Añadir saneo de errores y clasificación explícita del `400`, coordinando aparte la rotación y recarga de la credencial.",
+      "title": "Acotar el PR defensivo",
+      "body": "Mantener solo el guard de consultas vacías, retirar el cierre automático de la incidencia y dejar su remediación operativa abierta.",
       "recommended": false
     },
     {
-      "title": "Pausar este PR",
-      "body": "Cerrar o pausar la rama y abordar todo el flujo desde la incidencia canónica con un alcance de seguridad acordado.",
+      "title": "Pausar el PR",
+      "body": "Cerrar esta propuesta y abordar el guard junto al arreglo integral en una rama coordinada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el guard defensivo",
-    "body": "Retirar el cierre de la incidencia canónica, describir el cambio como defensa parcial y mantener el trabajo de créditos, logs y clasificación en su seguimiento.",
+    "title": "Completar el tratamiento de Serper",
+    "body": "Añadir saneo de errores y clasificación de créditos, coordinar la rotación o recarga de la clave y mantener el cierre de la incidencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial está asociado al adaptador y al cron cuyo contrato de errores debe decidirse.",
+    "reason": "El historial muestra que introdujo el adaptador y el cron cuyo contrato de errores debe decidirse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7778.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7778#issuecomment-5022595493",
-    "reviewedAt": "2026-07-20T13:04:17.139Z",
-    "mainSha": "198920796653e0c8a4ccdb8749482f13f3c626b7"
+    "reviewedAt": "2026-07-20T14:48:48.107Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
   }
 }

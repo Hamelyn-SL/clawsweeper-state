@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:41:00.443Z",
-  "updatedAt": "2026-07-20T09:21:45Z",
+  "generatedAt": "2026-07-20T14:45:06.657Z",
+  "updatedAt": "2026-07-20T12:52:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,53 +16,52 @@
       "priority:p1",
       "app:marketplace",
       "triage:no-change",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-20T09:21:45Z"
+    "updatedAt": "2026-07-20T12:52:59Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato deben exponer los crons cuando `updatePrice` deja SKUs sin sincronizar: HTTP 200 con estado estructurado, un código degradado o un error por severidad/ruta?",
-  "rationale": "La implementación específica ya distingue errores permanentes y transitorios, pero el cambio de respuesta afecta rutas y alertas compartidas; no es una decisión segura para automatizar desde una sola integración.",
+  "question": "¿Debe un lote de `EBAY_ES` con SKUs rechazados permanentemente conservar HTTP 200 con señal estructurada o degradar la respuesta del cron?",
+  "rationale": "El código actual distingue fallos permanentes, pero el contrato HTTP compartido sigue reportando éxito agregado y afecta a múltiples rutas.",
   "options": [
     {
-      "title": "Mantener 200 con señal estructurada",
-      "body": "Conservar compatibilidad HTTP y añadir un estado consultable de fallo parcial, conteos y severidad para alertas y BigQuery.",
+      "title": "Definir política compartida por severidad",
+      "body": "Mantener continuidad de lote cuando corresponda, pero publicar estado estructurado y un código HTTP decidido por la severidad de cada ruta.",
       "recommended": true
     },
     {
-      "title": "Degradar según severidad",
-      "body": "Devolver una respuesta no exitosa solo cuando el umbral de SKUs fallidos o la fase de negocio lo requiera.",
+      "title": "Degradar siempre eBay",
+      "body": "Hacer que cualquier fallo parcial de `EBAY_ES` deje de responder 200, aceptando el cambio de contrato operativo.",
       "recommended": false
     },
     {
-      "title": "Fallar toda ejecución parcial",
-      "body": "Tratar cualquier rechazo parcial como error HTTP, simplificando alertas a costa de cambiar el contrato actual.",
+      "title": "Mantener el contrato actual",
+      "body": "Conservar HTTP 200 y limitarse a mejorar logs, asumiendo que alertas y dashboards deberán interpretar la respuesta estructurada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener 200 con señal estructurada",
-    "body": "Conservar compatibilidad HTTP y añadir un estado consultable de fallo parcial, conteos y severidad para alertas y BigQuery.",
+    "title": "Definir política compartida por severidad",
+    "body": "Mantener continuidad de lote cuando corresponda, pero publicar estado estructurado y un código HTTP decidido por la severidad de cada ruta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Tiene la trazabilidad más directa sobre la corrección de eBay y el comportamiento reciente del flujo.",
+    "reason": "Su historial conecta tanto la corrección eBay fusionada como el handler común que fija la respuesta HTTP.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-20T12:41:00.443Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-20T14:45:06.657Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
   }
 }

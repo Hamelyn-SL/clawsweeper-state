@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:42:06.699Z",
-  "updatedAt": "2026-07-20T10:19:51Z",
+  "generatedAt": "2026-07-20T14:45:20.615Z",
+  "updatedAt": "2026-07-20T12:53:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,46 @@
       "reporter:marta",
       "feature",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-16T10:30:04Z",
-    "updatedAt": "2026-07-20T10:19:51Z"
+    "updatedAt": "2026-07-20T12:53:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el cron existente asumir el polling continuo de `OrderSell` para SEUR, FEDEX y CORREOS, o debe aislarse en un sincronizador específico de marketplace?",
-  "rationale": "La base técnica es reutilizable, pero la carga de APIs, cadencia y observabilidad determinan la arquitectura operativa adecuada.",
+  "question": "¿Debe ampliarse el cron existente de admin para sincronizar `OrderSell`, o conviene operar un job independiente con sus propios límites y cadencia?",
+  "rationale": "Ambas opciones reutilizan piezas existentes, pero cambian la carga operativa, las cuotas de carrier y el aislamiento ante fallos; el código no fija esa política.",
   "options": [
     {
-      "title": "Extender el cron existente",
-      "body": "Añadir un bucket limitado de `OrderSell` al cron actual, con persistencia deduplicada y métricas separadas por entidad y carrier.",
+      "title": "Ampliar el cron existente",
+      "body": "Añadir selección y persistencia de `OrderSell` al cron actual, con límites separados por carrier y entidad.",
       "recommended": true
     },
     {
-      "title": "Crear un sincronizador de marketplace",
-      "body": "Implementar un job independiente para aislar límites, cadencia y alertas de las ventas de marketplace.",
+      "title": "Crear un job independiente",
+      "body": "Mantener el cron de `Order` intacto y operar la sincronización de marketplace con cadencia y observabilidad propias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Extender el cron existente",
-    "body": "Añadir un bucket limitado de `OrderSell` al cron actual, con persistencia deduplicada y métricas separadas por entidad y carrier.",
+    "title": "Ampliar el cron existente",
+    "body": "Añadir selección y persistencia de `OrderSell` al cron actual, con límites separados por carrier y entidad.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Diseñó e integró la arquitectura de tracking de carriers que este cambio extendería.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente y su diagnóstico conectan directamente con el cron y las decisiones de sincronización.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6437.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6437#issuecomment-4969101903",
-    "reviewedAt": "2026-07-20T12:42:06.699Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-20T14:45:20.615Z",
+    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
   }
 }
