@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-19T18:58:19.471Z",
+  "generatedAt": "2026-07-20T07:40:50.586Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 132
+    "openItemsSeen": 130
   },
   "counts": {
-    "itemRecords": 128,
-    "closedRecords": 473,
-    "missingOpen": 4,
+    "itemRecords": 124,
+    "closedRecords": 477,
+    "missingOpen": 6,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 3,
+    "missingRecentOpen": 5,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,39 +39,72 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7735,
+        "number": 7748,
+        "kind": "issue",
+        "title": "Cron de Amazon Returns Pendings en no-op silencioso desde su creación: el gate de hora exacta nunca se cumple",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T23:49:57Z",
+        "updatedAt": "2026-07-20T00:20:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7754,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/XXL"
+          "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-19T15:58:01Z",
-        "updatedAt": "2026-07-19T18:57:42Z",
+        "createdAt": "2026-07-20T07:01:15Z",
+        "updatedAt": "2026-07-20T07:11:13Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7743,
-        "kind": "pull_request",
-        "title": "perf: unify flash rotation and merchant workflows, fix broken crons",
+        "number": 7755,
+        "kind": "issue",
+        "title": "Amazon COM still emits conflicting purchasable_offer patches after #7712 closure",
         "labels": [
-          "size/XL"
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:done"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-19T18:21:17Z",
-        "updatedAt": "2026-07-19T18:58:06Z",
+        "createdAt": "2026-07-20T07:07:47Z",
+        "updatedAt": "2026-07-20T07:17:43Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7746,
-        "kind": "pull_request",
-        "title": "fix: isolate cdl price validation errors in batch create",
+        "number": 7756,
+        "kind": "issue",
+        "title": "✂️ Formulario guiado de cupones: acortar textos de ayuda demasiado verbose",
         "labels": [
-          "size/S"
+          "app:admin",
+          "priority:p2",
+          "feature",
+          "reporter:miguel",
+          "triage:pr-opened"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-19T18:32:33Z",
-        "updatedAt": "2026-07-19T18:36:42Z",
+        "createdAt": "2026-07-20T07:13:09Z",
+        "updatedAt": "2026-07-20T07:33:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7757,
+        "kind": "pull_request",
+        "title": "feat: streamline coupon form help text",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-20T07:28:25Z",
+        "updatedAt": "2026-07-20T07:38:01Z",
         "missingReason": "recently_created"
       }
     ],
@@ -97,39 +130,72 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 7735,
+        "number": 7748,
+        "kind": "issue",
+        "title": "Cron de Amazon Returns Pendings en no-op silencioso desde su creación: el gate de hora exacta nunca se cumple",
+        "labels": [
+          "bug",
+          "priority:p1",
+          "app:marketplace"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-19T23:49:57Z",
+        "updatedAt": "2026-07-20T00:20:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7754,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/XXL"
+          "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-19T15:58:01Z",
-        "updatedAt": "2026-07-19T18:57:42Z",
+        "createdAt": "2026-07-20T07:01:15Z",
+        "updatedAt": "2026-07-20T07:11:13Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7743,
-        "kind": "pull_request",
-        "title": "perf: unify flash rotation and merchant workflows, fix broken crons",
+        "number": 7755,
+        "kind": "issue",
+        "title": "Amazon COM still emits conflicting purchasable_offer patches after #7712 closure",
         "labels": [
-          "size/XL"
+          "bug",
+          "priority:p1",
+          "app:marketplace",
+          "triage:done"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-19T18:21:17Z",
-        "updatedAt": "2026-07-19T18:58:06Z",
+        "createdAt": "2026-07-20T07:07:47Z",
+        "updatedAt": "2026-07-20T07:17:43Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7746,
-        "kind": "pull_request",
-        "title": "fix: isolate cdl price validation errors in batch create",
+        "number": 7756,
+        "kind": "issue",
+        "title": "✂️ Formulario guiado de cupones: acortar textos de ayuda demasiado verbose",
         "labels": [
-          "size/S"
+          "app:admin",
+          "priority:p2",
+          "feature",
+          "reporter:miguel",
+          "triage:pr-opened"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-19T18:32:33Z",
-        "updatedAt": "2026-07-19T18:36:42Z",
+        "createdAt": "2026-07-20T07:13:09Z",
+        "updatedAt": "2026-07-20T07:33:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7757,
+        "kind": "pull_request",
+        "title": "feat: streamline coupon form help text",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-20T07:28:25Z",
+        "updatedAt": "2026-07-20T07:38:01Z",
         "missingReason": "recently_created"
       }
     ],
