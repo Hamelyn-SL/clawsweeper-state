@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T12:47:30.157Z",
+  "updatedAt": "2026-07-20T08:31:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7760,
+    "title": "Banner promocional editable desde Admin (i18n, rich text B/I, gradientes y preview móvil/desktop)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760",
+    "state": "open",
+    "labels": [
+      "ui/ux",
+      "app:ecommerce",
+      "app:admin",
+      "priority:p2",
+      "feature",
+      "reporter:miguel",
+      "triage:done"
+    ],
+    "createdAt": "2026-07-20T08:06:44Z",
+    "updatedAt": "2026-07-20T08:31:44Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿El banner debe ser una configuración editorial independiente o debe quedar vinculado semánticamente a la promoción/cupón activo?",
+  "rationale": "Ambas opciones son viables técnicamente, pero determinan quién es la fuente de verdad y si el producto puede mostrar una oferta desactualizada.",
+  "options": [
+    {
+      "title": "Vincularlo a la promoción activa",
+      "body": "Guardar copy y estilo en Admin junto con una referencia validada a la campaña activa para evitar desincronización comercial.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener copy editorial independiente",
+      "body": "Permitir que Marketing gestione el banner sin relación técnica con cupones, aceptando un proceso explícito de coordinación.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar i18n hasta definir la política",
+      "body": "Posponer el editor y mantener el flujo actual mientras se concreta el contrato comercial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Vincularlo a la promoción activa",
+    "body": "Guardar copy y estilo en Admin junto con una referencia validada a la campaña activa para evitar desincronización comercial.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta la cabecera, el parser compartido y la capa de configuración que delimitarían la implementación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7760.md",
+    "reviewedAt": "2026-07-20T12:47:30.157Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+  }
+}

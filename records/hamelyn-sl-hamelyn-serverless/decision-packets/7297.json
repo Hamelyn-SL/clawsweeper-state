@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:54:23.971Z",
-  "updatedAt": "2026-07-19T13:27:17Z",
+  "generatedAt": "2026-07-20T12:40:41.884Z",
+  "updatedAt": "2026-07-20T08:42:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,47 @@
       "app:admin",
       "priority:p1",
       "feature",
+      "triage:pr-opened",
       "epic:revision-v3",
-      "issue-rating: ➖ n/a",
-      "P2",
-      "impact:ux-friction",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-09T11:44:40Z",
-    "updatedAt": "2026-07-19T13:27:17Z"
+    "updatedAt": "2026-07-20T08:42:45Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse `EPIC/revision-v3` en `dev` con el rediseño actual de defectos e imágenes, o debe recuperarse explícitamente el modelo de cuatro estados antes de esa integración?",
-  "rationale": "La rama de entrega aún no ofrece Revisión V3 y el rediseño posterior cambió el modelo visual aprobado inicialmente; esa elección de alcance no se resuelve con una corrección mecánica.",
+  "question": "¿Se integra la rama `EPIC/revision-v3` en `dev` como entrega coordinada, o se extrae y adapta este cambio visual a la arquitectura actual de `dev`?",
+  "rationale": "El PR ya existe en una rama épica divergente, mientras que `dev` no contiene el módulo V3; elegir entre integración amplia o extracción selectiva cambia el límite técnico y de producto.",
   "options": [
     {
-      "title": "Integrar la épica y validar el flujo actual",
-      "body": "Llevar el flujo de defectos con imágenes a `dev` tras una validación operativa de que sus referencias visuales cubren la necesidad original.",
+      "title": "Planificar la integración de la épica",
+      "body": "Integrar Revisión V3 como entrega coordinada y comprobar en `dev` las imágenes, el flujo táctil y sus dependencias.",
       "recommended": true
     },
     {
-      "title": "Recuperar las cuatro tarjetas de estado",
-      "body": "Mantener el modelo original y añadir una tarea explícita para restaurar sus imágenes de referencia antes de integrar la épica.",
+      "title": "Extraer un cambio mínimo",
+      "body": "Adaptar solo esta mejora a una superficie V3 que exista y esté aprobada para `dev`, si no se va a integrar la épica completa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar la épica y validar el flujo actual",
-    "body": "Llevar el flujo de defectos con imágenes a `dev` tras una validación operativa de que sus referencias visuales cubren la necesidad original.",
+    "title": "Planificar la integración de la épica",
+    "body": "Integrar Revisión V3 como entrega coordinada y comprobar en `dev` las imágenes, el flujo táctil y sus dependencias.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Fusionó la propuesta inicial y participó en el flujo base de Revisión V3, por lo que está bien situado para decidir la integración.",
+    "reason": "Está asignado a la épica y su historial cubre el flujo de interfaz donde deben aparecer las referencias.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7297.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7297#issuecomment-4924752273",
-    "reviewedAt": "2026-07-19T16:54:23.971Z",
-    "mainSha": "256a836dbce471852139783b559ae907f49653bd"
+    "reviewedAt": "2026-07-20T12:40:41.884Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
   }
 }

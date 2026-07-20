@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:14:55.589Z",
-  "updatedAt": "2026-07-19T14:01:37Z",
+  "generatedAt": "2026-07-20T12:41:00.443Z",
+  "updatedAt": "2026-07-20T09:21:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,52 @@
       "bug",
       "priority:p1",
       "app:marketplace",
+      "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-19T14:01:37Z"
+    "updatedAt": "2026-07-20T09:21:45Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta incidencia limitarse a la clasificación y reconciliación de los `400` específicos de eBay, dejando el contrato HTTP compartido para https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622?",
-  "rationale": "La evidencia confirma una corrección de una variante concreta, pero elevar rechazos parciales a nivel HTTP afecta a múltiples rutas y requiere decidir qué fallos son tolerables.",
+  "question": "¿Qué contrato deben exponer los crons cuando `updatePrice` deja SKUs sin sincronizar: HTTP 200 con estado estructurado, un código degradado o un error por severidad/ruta?",
+  "rationale": "La implementación específica ya distingue errores permanentes y transitorios, pero el cambio de respuesta afecta rutas y alertas compartidas; no es una decisión segura para automatizar desde una sola integración.",
   "options": [
     {
-      "title": "Separar el contrato transversal",
-      "body": "Mantener aquí el diagnóstico y la clasificación de `400` de eBay, y tratar el estado HTTP y la severidad compartida en la canónica transversal.",
+      "title": "Mantener 200 con señal estructurada",
+      "body": "Conservar compatibilidad HTTP y añadir un estado consultable de fallo parcial, conteos y severidad para alertas y BigQuery.",
       "recommended": true
     },
     {
-      "title": "Elevar eBay de forma específica",
-      "body": "Definir para `/api/ebay` una señal o estado más estricto antes de resolver la política del resto de crons.",
+      "title": "Degradar según severidad",
+      "body": "Devolver una respuesta no exitosa solo cuando el umbral de SKUs fallidos o la fase de negocio lo requiera.",
+      "recommended": false
+    },
+    {
+      "title": "Fallar toda ejecución parcial",
+      "body": "Tratar cualquier rechazo parcial como error HTTP, simplificando alertas a costa de cambiar el contrato actual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el contrato transversal",
-    "body": "Mantener aquí el diagnóstico y la clasificación de `400` de eBay, y tratar el estado HTTP y la severidad compartida en la canónica transversal.",
+    "title": "Mantener 200 con señal estructurada",
+    "body": "Conservar compatibilidad HTTP y añadir un estado consultable de fallo parcial, conteos y severidad para alertas y BigQuery.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Conectó la corrección fusionada con la decisión de severidad del handler compartido.",
+    "reason": "Tiene la trazabilidad más directa sobre la corrección de eBay y el comportamiento reciente del flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-19T16:14:55.589Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-20T12:41:00.443Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
   }
 }

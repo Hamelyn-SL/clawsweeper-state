@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T15:37:53.410Z",
-  "updatedAt": "2026-07-19T13:02:23Z",
+  "generatedAt": "2026-07-20T12:44:59.466Z",
+  "updatedAt": "2026-07-20T10:57:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,48 @@
       "bug",
       "priority:p2",
       "app:infrastructure",
-      "triage:done",
+      "triage:no-change",
       "P1",
-      "impact:data-loss",
-      "impact:message-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
-    "updatedAt": "2026-07-19T13:02:23Z"
+    "updatedAt": "2026-07-20T10:57:39Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba el contrato operativo del outbox: retención del payload, transición a `FAILED` y respuesta 202 con referencia diferida?",
-  "rationale": "La corrección atraviesa Core, Ecommerce, Public y Crons, y decide conservación de datos personales y experiencia posterior al fallo; la fuente no puede fijar esas políticas.",
+  "question": "¿Se aprueba como contrato que una incidencia responda 202 y complete la entrega de forma diferida cuando eDesk no esté disponible?",
+  "rationale": "La solución propuesta introduce un estado visible de entrega diferida y conserva payload de cliente para rescate operativo.",
   "options": [
     {
-      "title": "Aprobar el contrato propuesto",
-      "body": "Usar outbox Mongo con reintentos hasta 12 intentos o 24 horas, purga de contenido tras `SENT` y rescate de `FAILED` durante 30 días.",
+      "title": "Aprobar el fallback diferido",
+      "body": "Mantener la creación síncrona cuando eDesk esté disponible y devolver 202 únicamente tras encolar de forma duradera.",
       "recommended": true
     },
     {
-      "title": "Ajustar retención y reintentos",
-      "body": "Mantener el outbox, pero definir con plataforma y soporte otros plazos de purga, alerta y recuperación manual antes de implementarlo.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el flujo síncrono",
-      "body": "Aceptar que los fallos prolongados de eDesk sigan devolviendo 502 y se recuperen solo desde logs, con pérdida de garantía de entrega.",
+      "title": "Definir otro contrato",
+      "body": "Solicitar una alternativa antes de fusionar si una respuesta diferida no es aceptable para los clientes afectados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el contrato propuesto",
-    "body": "Usar outbox Mongo con reintentos hasta 12 intentos o 24 horas, purga de contenido tras `SENT` y rescate de `FAILED` durante 30 días.",
+    "title": "Aprobar el fallback diferido",
+    "body": "Mantener la creación síncrona cuando eDesk esté disponible y devolver 202 únicamente tras encolar de forma duradera.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia, definió el diseño de fallback y también introdujo la mitigación actual de rate limiting.",
+    "reason": "Ha concretado el diseño operativo y lleva la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-19T15:37:53.410Z",
-    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
+    "reviewedAt": "2026-07-20T12:44:59.466Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
   }
 }

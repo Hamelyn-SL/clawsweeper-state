@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:45:02.316Z",
+  "generatedAt": "2026-07-20T12:46:59.054Z",
   "updatedAt": "2026-07-20T12:17:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,52 +16,51 @@
       "priority:p0",
       "triage:done",
       "reporter:irenegarcia",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-15T09:46:05Z",
     "updatedAt": "2026-07-20T12:17:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campo personalizado de eDesk se usará y qué proceso será responsable de enriquecer los tickets importados de marketplaces tras una consolidación?",
-  "rationale": "El código puede obtener los miembros del grupo, pero no puede inferir el contrato del panel eDesk ni si el enriquecimiento debe ser webhook, sincronización periódica o automatización externa.",
+  "question": "¿Qué campo personalizado de eDesk y qué disparador deben mantener la relación de pedidos consolidados en tickets importados de marketplaces?",
+  "rationale": "El repositorio puede crear información para Ecommerce, pero no define el nombre ni el ciclo de vida de tickets externos necesarios para cumplir toda la solicitud.",
   "options": [
     {
-      "title": "Contrato único con sincronización",
-      "body": "Definir un campo estable y un proceso idempotente que actualice los tickets externos por `seller_order_id`; además, incluir el texto visible en los tickets creados por Ecommerce.",
+      "title": "Acordar contrato único y sincronización",
+      "body": "Definir el campo visible y un flujo idempotente de webhook, automatización o sincronización para Ecommerce y marketplaces.",
       "recommended": true
     },
     {
-      "title": "Solo Ecommerce",
-      "body": "Limitar el alcance a los tickets creados por la aplicación Ecommerce y registrar explícitamente que los marketplaces importados quedan fuera de esta entrega.",
+      "title": "Limitar el alcance a Ecommerce",
+      "body": "Añadir solo el aviso al mensaje de incidencias Ecommerce y registrar los marketplaces como trabajo posterior.",
       "recommended": false
     },
     {
-      "title": "Resolverlo fuera del repositorio",
-      "body": "Configurar una automatización de eDesk si Soporte puede garantizar el mismo resultado sin ampliar la integración compartida.",
+      "title": "Mantener la información fuera de eDesk",
+      "body": "Conservar la consolidación únicamente en Hamelyn y no introducir sincronización de tickets externos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato único con sincronización",
-    "body": "Definir un campo estable y un proceso idempotente que actualice los tickets externos por `seller_order_id`; además, incluir el texto visible en los tickets creados por Ecommerce.",
+    "title": "Acordar contrato único y sincronización",
+    "body": "Definir el campo visible y un flujo idempotente de webhook, automatización o sincronización para Ecommerce y marketplaces.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es la persona asignada actualmente y puede reunir la decisión entre Ecommerce, Soporte y la integración eDesk.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Es el contribuidor reciente más cercano al flujo de incidencias Ecommerce donde se debe aterrizar el contrato.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7585.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7585#issuecomment-4979728447",
-    "reviewedAt": "2026-07-20T12:45:02.316Z",
+    "reviewedAt": "2026-07-20T12:46:59.054Z",
     "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
   }
 }

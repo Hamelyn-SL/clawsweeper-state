@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:17:20.425Z",
-  "updatedAt": "2026-07-19T13:44:48Z",
+  "generatedAt": "2026-07-20T12:42:16.164Z",
+  "updatedAt": "2026-07-20T10:38:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,54 +15,48 @@
       "app:infrastructure",
       "reporter:JavierHamelyn",
       "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
       "impact:data-loss",
       "impact:message-loss",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-19T13:44:48Z"
+    "updatedAt": "2026-07-20T10:38:16Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política de retención, reintento y escalado debe aplicar la cola persistente de incidencias eDesk antes de garantizar la entrega ante un 429 sostenido?",
-  "rationale": "La implementación necesita decidir cuánto conservar el contenido del cliente y cuándo convertir un fallo recuperable en intervención operativa; el código no puede inferir esa política de privacidad y soporte.",
+  "question": "¿Se aprueba para eDesk el contrato de respuesta diferida `202` respaldado por outbox y cron de rescate propuesto en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7783?",
+  "rationale": "Ese cambio modifica el comportamiento visible de incidencias ante fallos externos y la política de recuperación; no es una decisión que pueda cerrar automáticamente este índice.",
   "options": [
     {
-      "title": "Outbox acotado con rescate",
-      "body": "Persistir hasta entrega, borrar el contenido al enviar, conservar metadatos 90 días y pasar a `FAILED` tras 24 horas o 12 intentos.",
+      "title": "Aprobar entrega diferida con outbox",
+      "body": "Aceptar el `202` temporal y revisar la PR con la semántica de idempotencia, rescate y tratamiento de fallos terminales.",
       "recommended": true
     },
     {
-      "title": "Retención operativa larga",
-      "body": "Conservar payload y adjuntos durante más tiempo para recuperación manual, aceptando mayor exposición y coste de datos.",
-      "recommended": false
-    },
-    {
-      "title": "Sin garantía diferida",
-      "body": "Mantener el retry síncrono actual y documentar que un 429 prolongado puede impedir crear la incidencia.",
+      "title": "Mantener respuesta síncrona",
+      "body": "Rechazar el nuevo contrato y pedir un arreglo limitado que preserve el comportamiento HTTP actual mientras se define la persistencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Outbox acotado con rescate",
-    "body": "Persistir hasta entrega, borrar el contenido al enviar, conservar metadatos 90 días y pasar a `FAILED` tras 24 horas o 12 intentos.",
+    "title": "Aprobar entrega diferida con outbox",
+    "body": "Aceptar el `202` temporal y revisar la PR con la semántica de idempotencia, rescate y tratamiento de fallos terminales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la canónica de eDesk y su historial reciente cubre el adaptador y el retry actual.",
+    "reason": "Es la persona más conectada con el desglose reciente y los vehículos de resolución aún abiertos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-19T17:17:20.425Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-20T12:42:16.164Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
   }
 }

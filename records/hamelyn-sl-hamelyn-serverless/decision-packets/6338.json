@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T12:42:24.329Z",
+  "updatedAt": "2026-07-20T08:42:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6338,
+    "title": "marketplace-crons: MercadoLibre create falla por shippingConfiguration internal_error",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338",
+    "state": "open",
+    "labels": [
+      "marketplace-crons",
+      "codex",
+      "bug",
+      "priority:p1",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-06-10T09:34:30Z",
+    "updatedAt": "2026-07-20T08:42:46Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `shipping.default.error` tratarse como reintento transitorio de MercadoLibre o como un rechazo permanente de configuración?",
+  "rationale": "El código no conserva suficiente semántica en esa variante para distinguir con seguridad una caída del proveedor de un payload inválido.",
+  "options": [
+    {
+      "title": "Clasificar tras validar la firma",
+      "body": "Reunir un payload completo y añadir una regla específica con una prueba de regresión si el proveedor confirma un fallo temporal.",
+      "recommended": true
+    },
+    {
+      "title": "Mantenerla como desconocida",
+      "body": "Conservar el comportamiento actual hasta disponer de evidencia de que el reintento no ocultará un problema de configuración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Clasificar tras validar la firma",
+    "body": "Reunir un payload completo y añadir una regla específica con una prueba de regresión si el proveedor confirma un fallo temporal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con la procedencia más directa sobre la política y el recovery de create de MercadoLibre.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6338.md",
+    "reviewedAt": "2026-07-20T12:42:24.329Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+  }
+}

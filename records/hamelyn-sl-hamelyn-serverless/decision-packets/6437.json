@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-20T12:42:06.699Z",
+  "updatedAt": "2026-07-20T10:19:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 6437,
+    "title": "Tracking de entrega para SEUR, FEDEX y CORREOS en ordersells.trackingEvents",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6437",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "reporter:marta",
+      "feature",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-06-16T10:30:04Z",
+    "updatedAt": "2026-07-20T10:19:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el cron existente asumir el polling continuo de `OrderSell` para SEUR, FEDEX y CORREOS, o debe aislarse en un sincronizador específico de marketplace?",
+  "rationale": "La base técnica es reutilizable, pero la carga de APIs, cadencia y observabilidad determinan la arquitectura operativa adecuada.",
+  "options": [
+    {
+      "title": "Extender el cron existente",
+      "body": "Añadir un bucket limitado de `OrderSell` al cron actual, con persistencia deduplicada y métricas separadas por entidad y carrier.",
+      "recommended": true
+    },
+    {
+      "title": "Crear un sincronizador de marketplace",
+      "body": "Implementar un job independiente para aislar límites, cadencia y alertas de las ventas de marketplace.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Extender el cron existente",
+    "body": "Añadir un bucket limitado de `OrderSell` al cron actual, con persistencia deduplicada y métricas separadas por entidad y carrier.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Diseñó e integró la arquitectura de tracking de carriers que este cambio extendería.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6437.md",
+    "reviewedAt": "2026-07-20T12:42:06.699Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:25:13.198Z",
-  "updatedAt": "2026-07-19T13:27:55Z",
+  "generatedAt": "2026-07-20T12:46:46.003Z",
+  "updatedAt": "2026-07-20T08:54:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-14T09:58:53Z",
-    "updatedAt": "2026-07-19T13:27:55Z",
-    "headSha": "6ba2101625a0d1f47f3416233f63247bab815b86"
+    "updatedAt": "2026-07-20T08:54:32Z",
+    "headSha": "c41d2a19f1defd91a5df2153b90fd6926b495d1d"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe incluirse el nuevo layout de Mis ventas en la release `2.6.04`, o debe aterrizar en una PR funcional independiente antes del bump final?",
-  "rationale": "La secuencia de publicación de Supply restringe el bump a una operación coordinada con las stores; decidir el alcance funcional de esa release requiere intención de producto y release.",
+  "question": "¿Debe la release continuar como un bump aislado tras publicar builds válidos, o se aprueba incluir también el ajuste de Mis ventas en esta misma candidata?",
+  "rationale": "La issue canónica prescribe publicación antes del merge y el alcance actual mezcla UI, regenerado nativo y versión; esa composición requiere decisión explícita de release.",
   "options": [
     {
-      "title": "Separar el layout y el bump",
-      "body": "Mover los tres cambios de presentación a una PR funcional probada y conservar la candidata de release limitada a las cinco fuentes de versión.",
+      "title": "Reconducir a bump aislado",
+      "body": "Publicar builds válidos y abrir o actualizar una rama limitada a las fuentes de versión, dejando el layout para una pull request separada.",
       "recommended": true
     },
     {
-      "title": "Aceptar el alcance combinado",
-      "body": "Mantener el layout en esta release, pero resolver conflictos, justificar el regenerado nativo y aportar prueba real de UI y builds antes del merge.",
+      "title": "Mantener el layout en la candidata",
+      "body": "Conservar la mejora visual solo después de corregir iOS, retirar la atribución prohibida y aportar evidencia real de ambos comportamientos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el layout y el bump",
-    "body": "Mover los tres cambios de presentación a una PR funcional probada y conservar la candidata de release limitada a las cinco fuentes de versión.",
+    "title": "Reconducir a bump aislado",
+    "body": "Publicar builds válidos y abrir o actualizar una rama limitada a las fuentes de versión, dejando el layout para una pull request separada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Introdujo la acción afectada y participó en la adopción de la secuencia de release enlazada.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado a esta candidata y participó en el historial reciente de Mis ventas y de la release vinculada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7535.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7535#issuecomment-4974770967",
-    "reviewedAt": "2026-07-19T16:25:13.198Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-20T12:46:46.003Z",
+    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
   }
 }
