@@ -1,10 +1,10 @@
 {
   "status": "executed",
-  "generated_at": "2026-07-20T06:53:08.044Z",
+  "generated_at": "2026-07-20T06:58:20.336Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-20T03:53:04.595Z",
+  "since": "2026-07-20T03:58:18.744Z",
   "execute": true,
   "force_reprocess": false,
   "max_comments": 1,
@@ -12,7 +12,7 @@
     7665
   ],
   "comment_ids": [
-    5019534892
+    5019572708
   ],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
@@ -33,18 +33,18 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7665:5019534892:2026-07-20T06:52:19Z:re_review",
-      "comment_id": "5019534892",
-      "comment_version_key": "5019534892:2026-07-20T06:52:19Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7665#issuecomment-5019534892",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7665:5019572708:2026-07-20T06:57:38Z:re_review",
+      "comment_id": "5019572708",
+      "comment_version_key": "5019572708:2026-07-20T06:57:38Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7665#issuecomment-5019572708",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
       "issue_number": 7665,
       "author": "JavierHamelyn",
       "author_id": 142499539,
       "author_association": "CONTRIBUTOR",
-      "comment_created_at": "2026-07-20T06:52:19Z",
-      "comment_updated_at": "2026-07-20T06:52:19Z",
+      "comment_created_at": "2026-07-20T06:57:38Z",
+      "comment_updated_at": "2026-07-20T06:57:38Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "re-review",
@@ -77,15 +77,15 @@
   "ledger_claimed": false,
   "ledger_changed": true,
   "timings": {
-    "total_ms": 3674,
+    "total_ms": 1796,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2439
+        "ms": 567
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1005
+        "ms": 1021
       },
       {
         "name": "classify_comment_commands",
@@ -105,11 +105,11 @@
       },
       {
         "name": "execute_commands",
-        "ms": 225
+        "ms": 204
       },
       {
         "name": "append_ledger",
-        "ms": 1
+        "ms": 0
       }
     ]
   }
