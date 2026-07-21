@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T07:52:18.731Z",
-  "updatedAt": "2026-07-21T07:28:39Z",
+  "generatedAt": "2026-07-21T09:26:14.317Z",
+  "updatedAt": "2026-07-21T07:58:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/M",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-21T07:21:51Z",
-    "updatedAt": "2026-07-21T07:28:39Z",
+    "updatedAt": "2026-07-21T07:58:14Z",
     "headSha": "f847d2d4bc78c35fca1ad9a35d368c17d448f06c"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta PR incluir una recuperación controlada de los SKU ya marcados falsamente como `DB_ONLY`, o aterrizar solo la prevención manteniendo abierta la incidencia de datos?",
-  "rationale": "La decisión implica mutar datos operativos ya afectados y elegir el alcance seguro de la recuperación; el patch actual no aporta una regla ni prueba para esa operación.",
+  "question": "¿Debe esta PR detener los nuevos falsos `DB_ONLY` mientras se abre una recuperación separada, o debe incluirse una restauración aprobada antes de fusionarla?",
+  "rationale": "El código no determina qué estados históricos pueden restaurarse ni qué salvaguardas operativas exige una corrección masiva.",
   "options": [
     {
-      "title": "Añadir recuperación controlada",
-      "body": "Incluir una remediación basada en el snapshot afectado, con conteos verificables y una prueba de que restaura únicamente los falsos `DB_ONLY`.",
+      "title": "Separar prevención y recuperación",
+      "body": "Completar la guía operativa, fusionar la prevención y mantener la incidencia abierta con una recuperación aprobada y verificada.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar esta PR",
+      "body": "Incluir una recuperación con dry-run, criterios de selección y validación de los registros restaurados.",
       "recommended": false
     },
     {
-      "title": "Separar la remediación",
-      "body": "Mantener esta prevención, retirar el cierre automático y conservar la incidencia abierta para una recuperación operativa revisada aparte.",
-      "recommended": true
+      "title": "Pausar el cambio",
+      "body": "Mantener la PR bloqueada hasta acordar la política de recuperación de los SKU ya mutados.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la remediación",
-    "body": "Mantener esta prevención, retirar el cierre automático y conservar la incidencia abierta para una recuperación operativa revisada aparte.",
+    "title": "Separar prevención y recuperación",
+    "body": "Completar la guía operativa, fusionar la prevención y mantener la incidencia abierta con una recuperación aprobada y verificada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial en los flujos de informes Amazon y su asignación de revisión lo sitúan cerca de la decisión de recuperación.",
+    "reason": "Su historial cubre la reconciliación de informes Amazon y ya figura como revisor asignado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7806.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7806#issuecomment-5031471728",
-    "reviewedAt": "2026-07-21T07:52:18.731Z",
+    "reviewedAt": "2026-07-21T09:26:14.317Z",
     "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
   }
 }

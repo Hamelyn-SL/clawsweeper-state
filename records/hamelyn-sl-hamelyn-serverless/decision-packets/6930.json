@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:14:06.855Z",
-  "updatedAt": "2026-07-19T13:27:01Z",
+  "generatedAt": "2026-07-21T09:24:43.203Z",
+  "updatedAt": "2026-07-21T08:58:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-07-19T13:27:01Z"
+    "updatedAt": "2026-07-21T08:58:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué persona, cargo y activos PNG oficiales deben firmar los pies ES y ENG de las facturas comerciales?",
-  "rationale": "El repositorio demuestra el punto técnico de cambio, pero no puede determinar ni inventar una representación corporativa o aduanera autorizada.",
+  "question": "¿Qué firma y qué dos activos corporativos aprobados deben figurar en los pies ES y ENG de las facturas comerciales?",
+  "rationale": "Las constantes contienen imágenes opacas y el repositorio no permite determinar ni inventar la identidad comercial o legal vigente.",
   "options": [
     {
-      "title": "Aportar los dos PNG aprobados",
-      "body": "Facilitar los activos ES y ENG finales, junto con la confirmación del firmante y cargo autorizados.",
+      "title": "Aportar los PNG aprobados",
+      "body": "Entregar ambos footers finales para sustituir los base64 sin alterar el formato de factura.",
       "recommended": true
     },
     {
-      "title": "Aprobar datos para regenerarlos",
-      "body": "Confirmar nombre, cargo, sello y requisitos de diseño para que se regeneren los dos pies de forma controlada.",
+      "title": "Definir datos de regeneración",
+      "body": "Confirmar persona, cargo, firma y texto corporativo para regenerar los dos assets antes de preparar el cambio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar los dos PNG aprobados",
-    "body": "Facilitar los activos ES y ENG finales, junto con la confirmación del firmante y cargo autorizados.",
+    "title": "Aportar los PNG aprobados",
+    "body": "Entregar ambos footers finales para sustituir los base64 sin alterar el formato de factura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Figura como owner del bloque de facturas y autor de la especificación que identificó la divergencia.",
+    "reason": "Es el owner identificado para el subdominio y el contribuidor reciente más próximo a la divergencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930#issuecomment-4911156878",
-    "reviewedAt": "2026-07-19T16:14:06.855Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T09:24:43.203Z",
+    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
   }
 }
