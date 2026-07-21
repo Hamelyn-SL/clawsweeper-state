@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:13:12.273Z",
-  "updatedAt": "2026-07-19T14:01:32Z",
+  "generatedAt": "2026-07-21T11:37:42.374Z",
+  "updatedAt": "2026-07-21T09:30:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -20,50 +19,44 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-19T14:01:32Z"
+    "updatedAt": "2026-07-21T09:30:22Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un lote eBay con cero publicaciones correctas fallar operativamente el cron o mantener HTTP 200 con una alerta/telemetría obligatoria antes de reactivar `create`?",
-  "rationale": "El código actual permite ambos comportamientos y la elección afecta al contrato de monitorización y a la tolerancia de otras fases parcialmente recuperables.",
+  "question": "¿Cuando un lote de `bulkPublishOffer` termina con cero publicaciones correctas, el cron debe fallar o conservar HTTP 200 con una alerta operativa inequívoca?",
+  "rationale": "La instrumentación por oferta es mecánica, pero elegir el contrato de fallo afecta a la continuidad del cron, los reintentos y la monitorización externa.",
   "options": [
     {
-      "title": "Señal específica sin cambiar HTTP",
-      "body": "Mantener HTTP 200, pero emitir una alerta estructurada y visible cuando `bulkPublishOffer` complete un lote con cero éxitos antes de reactivar create.",
+      "title": "Conservar el cron y alertar",
+      "body": "Mantener el resto del ciclo, emitir una señal agregada de fallo total y no reactivar create hasta observarla correctamente.",
       "recommended": true
     },
     {
-      "title": "Fallar el cron en publicación total",
-      "body": "Propagar como error operativo un lote de publicación totalmente fallido, aceptando que el endpoint deje de responder 200 en ese caso.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la pausa",
-      "body": "Conservar create deshabilitado hasta aislar todas las causas remotas y acordar el comportamiento de monitorización.",
+      "title": "Fallar el cron",
+      "body": "Responder con fallo ante cero publicaciones para delegar visibilidad y reintento al orquestador.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Señal específica sin cambiar HTTP",
-    "body": "Mantener HTTP 200, pero emitir una alerta estructurada y visible cuando `bulkPublishOffer` complete un lote con cero éxitos antes de reactivar create.",
+    "title": "Conservar el cron y alertar",
+    "body": "Mantener el resto del ciclo, emitir una señal agregada de fallo total y no reactivar create hasta observarla correctamente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su cambio actual introdujo la pausa temporal y documenta la condición para reactivar el flujo.",
+    "reason": "Su corrección previa cubre el flujo de creación y publicación que debe validarse antes de reactivarlo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-19T16:13:12.273Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T11:37:42.374Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
