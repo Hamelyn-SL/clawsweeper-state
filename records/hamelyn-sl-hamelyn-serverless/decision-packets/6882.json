@@ -14,14 +14,14 @@
       "app:infrastructure",
       "reporter:javier",
       "triage:done",
-      "P1",
-      "impact:data-loss",
-      "impact:message-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "impact:data-loss",
+      "impact:message-loss",
+      "P1",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
     "updatedAt": "2026-07-21T12:18:35Z"
