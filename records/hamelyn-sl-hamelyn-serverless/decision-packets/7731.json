@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T10:51:58.835Z",
-  "updatedAt": "2026-07-21T09:42:32Z",
+  "generatedAt": "2026-07-21T12:51:01.663Z",
+  "updatedAt": "2026-07-21T12:18:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,51 +11,49 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:marketplace",
       "reporter:javier",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
-    "updatedAt": "2026-07-21T09:42:32Z"
+    "updatedAt": "2026-07-21T12:18:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo mantener bloqueado cualquier muestreo automatizado hasta que TodoColección confirme el contrato autenticado de `GET /products` y el significado de `stock=null`?",
-  "rationale": "El repositorio puede conservar la degradación segura, pero no puede decidir si respuestas ambiguas representan listings ausentes sin una garantía del proveedor.",
+  "question": "¿Debe Marketplace bloquear cualquier cron de muestreo hasta recibir confirmación del proveedor, o aceptar una señal limitada basada solo en existencia y estado por SKU?",
+  "rationale": "El código local ya usa los headers y el identificador correctos; elegir qué observación remota basta para automatizar reconciliación determina el riesgo operativo aceptable.",
   "options": [
     {
-      "title": "Escalar al proveedor primero",
-      "body": "Abrir o actualizar el ticket técnico, conservar la reconciliación conservadora y repetir la prueba por SKU cuando respondan.",
+      "title": "Escalar y mantener el bloqueo",
+      "body": "Abrir o continuar el caso con soporte y conservar el criterio actual sin snapshot externo hasta que el proveedor confirme el contrato de lectura.",
       "recommended": true
     },
     {
-      "title": "Autorizar un experimento aislado",
-      "body": "Permitir solo una prueba manual y redondeada con un conjunto pequeño de SKUs, sin usar su resultado para retirar ni reactivar listings.",
+      "title": "Aceptar muestreo limitado",
+      "body": "Autorizar una futura verificación por SKU que solo mida existencia y estado, documentando que `stock=null` no permite concluir disponibilidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar al proveedor primero",
-    "body": "Abrir o actualizar el ticket técnico, conservar la reconciliación conservadora y repetir la prueba por SKU cuando respondan.",
+    "title": "Escalar y mantener el bloqueo",
+    "body": "Abrir o continuar el caso con soporte y conservar el criterio actual sin snapshot externo hasta que el proveedor confirme el contrato de lectura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo integrado define la reconciliación que depende de estas lecturas y es el mejor punto de entrada técnico.",
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente cubre la integración afectada y el diagnóstico operativo que delimita las dos opciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-21T10:51:58.835Z",
-    "mainSha": "81a98a89b76e6e926ca00071a05628190e6ef557"
+    "reviewedAt": "2026-07-21T12:51:01.663Z",
+    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
   }
 }

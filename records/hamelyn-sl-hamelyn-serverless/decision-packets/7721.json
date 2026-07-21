@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T15:15:13.247Z",
-  "updatedAt": "2026-07-19T13:40:53Z",
+  "generatedAt": "2026-07-21T12:49:30.125Z",
+  "updatedAt": "2026-07-21T12:18:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,50 +11,48 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T12:20:01Z",
-    "updatedAt": "2026-07-19T13:40:53Z"
+    "updatedAt": "2026-07-21T12:18:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado persistido debe aplicarse a un SKU ausente del informe cuando Inventory API confirma una oferta `PUBLISHED`/`ACTIVE` o no responde?",
-  "rationale": "La respuesta decide la semántica duradera de `DB_ONLY`, la recuperación operativa y el comportamiento ante rate limits; el código no puede escogerla con seguridad.",
+  "question": "¿Qué semántica debe tener eBay ES para un SKU ausente del snapshot pero `PUBLISHED/ACTIVE`, y cómo debe recuperarse el backlog ya marcado como `DB_ONLY`?",
+  "rationale": "La evidencia confirma el falso positivo, pero la política ante `listingOnHold`, fallos de Inventory API, rate limits y la reparación masiva de estados persistidos requiere intención operativa.",
   "options": [
     {
-      "title": "No mutar ante oferta viva o error",
-      "body": "Conservar el registro activo y dejar la discrepancia en el snapshot; aplicar `DB_ONLY` solo cuando eBay confirme una ausencia o estado no publicable.",
+      "title": "Validar y preservar",
+      "body": "Conservar `ACTIVE` ante `PUBLISHED/ACTIVE` o error transitorio, registrar un estado reintentable y ejecutar una recuperación auditada del backlog.",
       "recommended": true
     },
     {
-      "title": "Introducir una discrepancia reintentable",
-      "body": "Persistir un estado diferenciado y reintentar la comprobación, con migración clara para no mezclarlo con una ausencia definitiva.",
+      "title": "Confirmación estricta",
+      "body": "Mantener `DB_ONLY` solo después de una confirmación negativa de eBay y de un número acordado de reintentos fallidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "No mutar ante oferta viva o error",
-    "body": "Conservar el registro activo y dejar la discrepancia en el snapshot; aplicar `DB_ONLY` solo cuando eBay confirme una ausencia o estado no publicable.",
+    "title": "Validar y preservar",
+    "body": "Conservar `ACTIVE` ante `PUBLISHED/ACTIVE` o error transitorio, registrar un estado reintentable y ejecutar una recuperación auditada del backlog.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo la ruta que actualmente define la semántica del informe eBay ES.",
+    "reason": "Es el contribuidor más reciente del runner eBay ES y puede concretar el contrato operativo con el equipo de Marketplace.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721#issuecomment-5015714604",
-    "reviewedAt": "2026-07-19T15:15:13.247Z",
-    "mainSha": "f8ebb71cbfa10d6bc623678bff97e7badefd67d6"
+    "reviewedAt": "2026-07-21T12:49:30.125Z",
+    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
   }
 }
