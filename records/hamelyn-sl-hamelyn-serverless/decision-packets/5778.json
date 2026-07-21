@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:43:00.292Z",
-  "updatedAt": "2026-07-21T09:30:17Z",
+  "generatedAt": "2026-07-19T17:59:04.729Z",
+  "updatedAt": "2026-07-19T17:47:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,6 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778",
     "state": "open",
     "labels": [
+      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -18,44 +19,50 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-21T09:30:17Z"
+    "updatedAt": "2026-07-19T17:47:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los bloqueos de cuenta o política de eBay deben clasificarse siempre como `PERMANENT`, o conservar una vía explícita de reactivación tras resolverse en eBay?",
-  "rationale": "La regla actual resuelve el texto de publicación conocido, pero no define el ciclo de recuperación para limitaciones del vendedor ni para las nuevas firmas de create.",
+  "question": "¿Qué política de recuperación debe aplicarse a los bloqueos de cuenta de eBay frente a los rechazos permanentes de contenido?",
+  "rationale": "El código puede reconocer mensajes concretos, pero decidir si una cuenta limitada se reencola manualmente o conserva recuperación automática es una elección operativa.",
   "options": [
     {
-      "title": "Clasificar y reactivar manualmente",
-      "body": "Añadir reglas permanentes para firmas confirmadas y documentar una reapertura manual tras resolver la restricción en eBay.",
+      "title": "Separar causa terminal y bloqueo recuperable",
+      "body": "Marcar solo las políticas de contenido confirmadas como `PERMANENT` y exigir reencolado explícito para bloqueos de cuenta resueltos.",
       "recommended": true
     },
     {
-      "title": "Esperar una muestra estable",
-      "body": "Conservar la clasificación actual hasta capturar el payload remoto y acordar una operación de recuperación.",
+      "title": "Tratar toda restricción como permanente",
+      "body": "Elimina reintentos, pero asume que toda recuperación se gestionará manualmente fuera del cron.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar reintentos para bloqueos de cuenta",
+      "body": "Permite recuperación automática, pero mantiene carga mientras la cuenta continúe limitada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar y reactivar manualmente",
-    "body": "Añadir reglas permanentes para firmas confirmadas y documentar una reapertura manual tras resolver la restricción en eBay.",
+    "title": "Separar causa terminal y bloqueo recuperable",
+    "body": "Marcar solo las políticas de contenido confirmadas como `PERMANENT` y exigir reencolado explícito para bloqueos de cuenta resueltos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre el clasificador de retry y la recuperación del flujo de creación eBay.",
+    "reason": "Su cambio controla actualmente la reactivación del flujo create y la decisión afecta directamente a esa contención.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewedAt": "2026-07-21T11:43:00.292Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
+    "reviewedAt": "2026-07-19T17:59:04.729Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:47:24.324Z",
+  "generatedAt": "2026-07-21T11:36:53.923Z",
   "updatedAt": "2026-07-21T09:34:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,46 +15,47 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
+      "P2",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
     "updatedAt": "2026-07-21T09:34:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué dos assets oficiales, ES e ENG, debe usar la plataforma como pie firmado de las facturas comerciales?",
-  "rationale": "El código determina dónde se inserta el footer, pero no puede decidir ni generar una firma corporativa o aduanera válida.",
+  "question": "¿Qué par de footers ES e ING aprobado debe usar la factura comercial, y debe conservarse una firma visible?",
+  "rationale": "El código identifica con claridad el punto de sustitución, pero no puede determinar ni fabricar la identidad corporativa o aduanera autorizada.",
   "options": [
     {
-      "title": "Aportar los PNG aprobados",
-      "body": "Entregar los dos footers oficiales para una sustitución literal y verificable de los base64 actuales.",
+      "title": "Aportar los dos PNG aprobados",
+      "body": "Facilitar los assets ES e ING definitivos para realizar una sustitución literal y verificable de los base64.",
       "recommended": true
     },
     {
-      "title": "Aprobar una nueva plantilla",
-      "body": "Definir firmante, cargo y diseño para regenerar ambos assets antes de cambiar el generador.",
+      "title": "Aprobar un pie sin firma",
+      "body": "Confirmar explícitamente que debe eliminarse la firma y proporcionar el diseño final de ambas versiones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar los PNG aprobados",
-    "body": "Entregar los dos footers oficiales para una sustitución literal y verificable de los base64 actuales.",
+    "title": "Aportar los dos PNG aprobados",
+    "body": "Facilitar los assets ES e ING definitivos para realizar una sustitución literal y verificable de los base64.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el contribuidor reciente con mayor relación demostrable con la especificación y el código de facturas.",
-    "confidence": "high"
+    "reason": "Su historial reciente conecta la validación de la regla BL-08 con el flujo de facturas afectado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewedAt": "2026-07-21T11:47:24.324Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930#issuecomment-4911156878",
+    "reviewedAt": "2026-07-21T11:36:53.923Z",
     "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }

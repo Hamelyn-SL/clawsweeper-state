@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:41:15.295Z",
-  "updatedAt": "2026-07-21T09:30:14Z",
+  "generatedAt": "2026-07-19T16:18:01.208Z",
+  "updatedAt": "2026-07-19T14:02:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,6 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209",
     "state": "open",
     "labels": [
+      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -17,46 +18,47 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "P2",
       "impact:other",
+      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "P2",
-      "issue-rating: ⚪ platinum"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-02T15:35:06Z",
-    "updatedAt": "2026-07-21T09:30:14Z"
+    "updatedAt": "2026-07-19T14:02:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse ahora la observabilidad del fallo batch global de Feltrinelli aunque la firma concreta no se vea desde el 15 de junio de 2026?",
-  "rationale": "La corrección es pequeña, pero decidir qué campos del error externo se publican y cuánto contexto se conserva requiere criterio operativo y de privacidad.",
+  "question": "¿Queremos priorizar una mejora permanente de observabilidad batch para Feltrinelli aunque el patrón concreto no reaparezca desde el 15 de junio de 2026?",
+  "rationale": "La implementación parece pequeña, pero la recurrencia actual no justifica por sí sola cambiar el contrato de logs ni decidir qué detalle es seguro publicar.",
   "options": [
     {
-      "title": "Acotar y registrar el fallo global",
-      "body": "Añadir un log seguro y limitado con marketplace, SKUs y error serializado, acompañado de una prueba de la ruta batch.",
+      "title": "Añadir contexto estructurado saneado",
+      "body": "Conservar el comportamiento de estado y publicar SKU, tipo de error y mensaje resumido en los `catch` batch.",
       "recommended": true
     },
     {
-      "title": "Mantener solo el detalle persistido",
-      "body": "No ampliar logs mientras la consulta de datos permita investigar los casos y la firma siga inactiva.",
+      "title": "Cerrar como incidente histórico",
+      "body": "Mantener la correlación existente y reabrir una incidencia específica si vuelve a observarse el patrón.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar y registrar el fallo global",
-    "body": "Añadir un log seguro y limitado con marketplace, SKUs y error serializado, acompañado de una prueba de la ruta batch.",
+    "title": "Añadir contexto estructurado saneado",
+    "body": "Conservar el comportamiento de estado y publicar SKU, tipo de error y mensaje resumido en los `catch` batch.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha mantenido recientemente la serialización y el formato de logs de retirada.",
+    "reason": "Su trabajo reciente conecta directamente la persistencia de errores con la observabilidad de retiradas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6209.md",
-    "reviewedAt": "2026-07-21T11:41:15.295Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209#issuecomment-4909862960",
+    "reviewedAt": "2026-07-19T16:18:01.208Z",
+    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
   }
 }

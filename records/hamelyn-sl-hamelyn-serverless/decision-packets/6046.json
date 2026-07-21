@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:45:45.965Z",
-  "updatedAt": "2026-07-21T09:30:14Z",
+  "generatedAt": "2026-07-19T17:04:41.618Z",
+  "updatedAt": "2026-07-19T13:44:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,52 +10,59 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046",
     "state": "open",
     "labels": [
+      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "P1",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-05-25T20:33:08Z",
-    "updatedAt": "2026-07-21T09:30:14Z"
+    "updatedAt": "2026-07-19T13:44:33Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato operativo debe aplicarse cuando `bulkPublishOffer` termina con cero publicaciones correctas antes de reactivar `ebay.create()`?",
-  "rationale": "La corrección mecánica del precio ya está aplicada, pero el comportamiento ante fallos totales de publicación afecta a reintentos, monitorización y continuidad del cron.",
+  "question": "¿Debe seguir pausada la creación de listings de eBay hasta resolver la observabilidad de publicaciones fallidas, o se autoriza una reactivación controlada con prueba real?",
+  "rationale": "El código resuelve el precio ausente, pero decidir cuándo reactivar una integración que publica listings y qué señal operativa exigir requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Definir alerta y reactivar controladamente",
-      "body": "Mantener HTTP 200 para el resto del ciclo, emitir una señal inequívoca ante cero éxitos y reactivar tras una ejecución observada.",
+      "title": "Mantener la pausa",
+      "body": "Conservar `ebay.create()` desactivado hasta resolver o acotar el fallo de publicación tratado en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184.",
       "recommended": true
     },
     {
-      "title": "Fallar el cron ante cero publicaciones",
-      "body": "Devolver fallo cuando ninguna oferta se publique y delegar la visibilidad y el reintento al orquestador.",
+      "title": "Reactivar de forma controlada",
+      "body": "Reactivar create tras definir alertas o fallo visible para lotes sin publicaciones y adjuntar evidencia real redacted del primer lote.",
+      "recommended": false
+    },
+    {
+      "title": "Reactivar sin cambios operativos",
+      "body": "Aceptar el contrato actual de HTTP 200 con fallos parciales y reactivar únicamente la llamada de creación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir alerta y reactivar controladamente",
-    "body": "Mantener HTTP 200 para el resto del ciclo, emitir una señal inequívoca ante cero éxitos y reactivar tras una ejecución observada.",
+    "title": "Mantener la pausa",
+    "body": "Conservar `ebay.create()` desactivado hasta resolver o acotar el fallo de publicación tratado en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su corrección fusionada cubre la creación por lotes y el manejo de errores que deben probarse antes de reactivar el flujo.",
+    "reason": "La persona autora de la corrección fusionada es la mejor referencia histórica para evaluar la reactivación y su validación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
-    "reviewedAt": "2026-07-21T11:45:45.965Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046#issuecomment-4974262910",
+    "reviewedAt": "2026-07-19T17:04:41.618Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }

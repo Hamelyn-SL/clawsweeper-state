@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:41:50.102Z",
+  "generatedAt": "2026-07-21T11:37:42.374Z",
   "updatedAt": "2026-07-21T09:30:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -17,51 +17,47 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "P1",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
     "updatedAt": "2026-07-21T09:30:22Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `/api/ebay` seguir respondiendo HTTP 200 ante un lote create totalmente rechazado, o debe emitir una señal operativa de fallo antes de reactivar `ebay.create()`?",
-  "rationale": "El código puede conservar diagnósticos por SKU, pero la semántica de salud del cron y la recuperación de listings requieren una decisión operativa explícita.",
+  "question": "¿Cuando un lote de `bulkPublishOffer` termina con cero publicaciones correctas, el cron debe fallar o conservar HTTP 200 con una alerta operativa inequívoca?",
+  "rationale": "La instrumentación por oferta es mecánica, pero elegir el contrato de fallo afecta a la continuidad del cron, los reintentos y la monitorización externa.",
   "options": [
     {
-      "title": "Exigir señal de fallo antes de reactivar",
-      "body": "Mantener create pausado hasta registrar el detalle por oferta y acordar una alerta o estado de ejecución para lotes totalmente rechazados.",
+      "title": "Conservar el cron y alertar",
+      "body": "Mantener el resto del ciclo, emitir una señal agregada de fallo total y no reactivar create hasta observarla correctamente.",
       "recommended": true
     },
     {
-      "title": "Reactivar con HTTP 200 parcial",
-      "body": "Conservar el contrato actual y asumir que `stocksOnError` y los logs son suficientes para la operación diaria.",
-      "recommended": false
-    },
-    {
-      "title": "Distinguir fallo total y parcial",
-      "body": "Mantener HTTP 200 para rechazos aislados, pero degradar o alertar cuando una fase create no publica ninguna oferta.",
+      "title": "Fallar el cron",
+      "body": "Responder con fallo ante cero publicaciones para delegar visibilidad y reintento al orquestador.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir señal de fallo antes de reactivar",
-    "body": "Mantener create pausado hasta registrar el detalle por oferta y acordar una alerta o estado de ejecución para lotes totalmente rechazados.",
+    "title": "Conservar el cron y alertar",
+    "body": "Mantener el resto del ciclo, emitir una señal agregada de fallo total y no reactivar create hasta observarla correctamente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su corrección fusionada controla la propagación actual de errores por SKU y es la base técnica de una reactivación segura.",
+    "reason": "Su corrección previa cubre el flujo de creación y publicación que debe validarse antes de reactivarlo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewedAt": "2026-07-21T11:41:50.102Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
+    "reviewedAt": "2026-07-21T11:37:42.374Z",
     "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:44:54.882Z",
-  "updatedAt": "2026-07-21T09:30:13Z",
+  "generatedAt": "2026-07-19T17:39:30.795Z",
+  "updatedAt": "2026-07-19T13:43:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,6 +10,8 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622",
     "state": "open",
     "labels": [
+      "crons",
+      "core",
       "bug",
       "priority:p1",
       "app:infrastructure",
@@ -18,44 +20,50 @@
       "area:cron-reliability",
       "P1",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
-    "updatedAt": "2026-07-21T09:30:13Z"
+    "updatedAt": "2026-07-19T13:43:26Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿La primera fase debe mantener HTTP 200 con telemetría estructurada común, o qué rutas y tipos de rechazo deben empezar a devolver 207/5xx?",
-  "rationale": "El handler compartido cubre varias aplicaciones y algunos lotes pueden continuar válidamente tras errores permanentes por elemento; el código no puede decidir esa política de negocio.",
+  "question": "¿Debe la primera fase mantener HTTP 200 con una señal estructurada compatible, o qué rutas y fases deben pasar ya a 207/5xx?",
+  "rationale": "El mismo handler sirve rutas cuyos lotes pueden tolerar errores permanentes, mientras otras degradaciones requieren alerta; el código no puede decidir esa política de negocio por sí solo.",
   "options": [
     {
-      "title": "Primera fase compatible",
-      "body": "Añadir `status`, contadores y severidad estructurada manteniendo HTTP 200, y definir después reglas específicas por ruta.",
+      "title": "Señal compatible primero",
+      "body": "Mantener HTTP 200 inicialmente y normalizar `status`, recuentos y severidad para decidir después las rutas que deben fallar.",
       "recommended": true
     },
     {
-      "title": "Elevar rutas críticas",
-      "body": "Acordar desde ahora una lista limitada de rutas o rechazos que deban devolver 207/5xx y probar la compatibilidad de sus consumidores.",
+      "title": "Endurecer rutas críticas",
+      "body": "Definir ahora una lista reducida de rutas o fases cuyo rechazo parcial devuelva 207/5xx y probar su comportamiento de reintento.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar el contrato actual",
+      "body": "Mantener HTTP 200 y logs actuales, aceptando que la detección operativa seguirá dependiendo de consultas y alertas específicas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Primera fase compatible",
-    "body": "Añadir `status`, contadores y severidad estructurada manteniendo HTTP 200, y definir después reglas específicas por ruta.",
+    "title": "Señal compatible primero",
+    "body": "Mantener HTTP 200 inicialmente y normalizar `status`, recuentos y severidad para decidir después las rutas que deben fallar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial disponible cubre el contrato actual del handler común afectado.",
+    "person": "PabloMoran34",
+    "reason": "Es la mejor señal disponible de propiedad técnica del módulo compartido que materializa la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
-    "reviewedAt": "2026-07-21T11:44:54.882Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
+    "reviewedAt": "2026-07-19T17:39:30.795Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
