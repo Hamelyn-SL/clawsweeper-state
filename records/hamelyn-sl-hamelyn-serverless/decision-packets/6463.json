@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:18:07.816Z",
-  "updatedAt": "2026-07-19T13:26:05Z",
+  "generatedAt": "2026-07-21T13:30:30.891Z",
+  "updatedAt": "2026-07-21T12:18:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,52 +11,50 @@
     "state": "open",
     "labels": [
       "source:admin-panel",
-      "priority:p2",
       "app:infrastructure",
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
-    "updatedAt": "2026-07-19T13:26:05Z"
+    "updatedAt": "2026-07-21T12:18:53Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué repositorio o gestor de secretos aprobado debe citar la documentación para Celeritas, y debe mantenerse el alcance actual de solo tracking o reactivarse creación de etiquetas?",
-  "rationale": "El código y las fichas delimitan el estado técnico, pero no pueden establecer el contrato externo ni decidir la custodia autorizada de credenciales.",
+  "question": "¿Qué contrato y contacto técnico de Celeritas son vigentes, y qué gestor de secretos aprobado debe referenciar la documentación antes de decidir si existe creación de etiquetas?",
+  "rationale": "El código demuestra tracking REST y material legacy, pero no puede establecer la validez contractual externa ni autorizar la ubicación de credenciales.",
   "options": [
     {
-      "title": "Confirmar contrato y custodiar secretos",
-      "body": "Operaciones valida el manual vigente, el contacto técnico y una referencia aprobada de secretos antes de completar la documentación.",
+      "title": "Confirmar contrato y custodia",
+      "body": "Operaciones valida manual, contacto, alcance y referencia de secretos antes de completar las fichas.",
       "recommended": true
     },
     {
-      "title": "Mantener solo tracking documentado",
-      "body": "Se conserva el alcance técnico actual y se deja explícitamente fuera cualquier creación de etiquetas hasta recibir autorización contractual.",
+      "title": "Mantener solo tracking",
+      "body": "Se documenta explícitamente el alcance técnico actual y se excluye creación de etiquetas hasta recibir confirmación contractual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contrato y custodiar secretos",
-    "body": "Operaciones valida el manual vigente, el contacto técnico y una referencia aprobada de secretos antes de completar la documentación.",
+    "title": "Confirmar contrato y custodia",
+    "body": "Operaciones valida manual, contacto, alcance y referencia de secretos antes de completar las fichas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la mejor ruta técnica disponible por sus cambios recientes en la ficha y la migración de tracking; debe coordinar la confirmación con Operaciones.",
-    "confidence": "medium"
+    "reason": "Su historial reciente conecta la documentación y el cambio técnico de tracking; puede coordinar la validación con Operaciones.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463#issuecomment-4909963944",
-    "reviewedAt": "2026-07-19T16:18:07.816Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T13:30:30.891Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

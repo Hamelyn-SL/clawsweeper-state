@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:43:32.772Z",
-  "updatedAt": "2026-07-19T14:46:56Z",
+  "generatedAt": "2026-07-21T13:33:16.424Z",
+  "updatedAt": "2026-07-21T12:18:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,50 +11,48 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:infrastructure",
       "triage:done",
       "business-logic",
-      "P2",
-      "impact:data-loss",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:data-loss",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-07T08:13:13Z",
-    "updatedAt": "2026-07-19T14:46:56Z"
+    "updatedAt": "2026-07-21T12:18:38Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza programar el arreglo acotado pese a las etiquetas `clawsweeper:no-new-fix-pr` y `clawsweeper:needs-maintainer-review`?",
-  "rationale": "La regla F2 ya define el comportamiento, pero las etiquetas vigentes piden una decisión humana antes de crear una nueva PR de corrección.",
+  "question": "¿Autoriza el owner de `BL-buying-account-14` una PR estrecha que implemente la guarda validada y su prueba write-path?",
+  "rationale": "La regla está validada, pero las etiquetas actuales reservan la apertura de una nueva PR a revisión humana.",
   "options": [
     {
-      "title": "Autorizar el arreglo acotado",
-      "body": "Añadir las dos guardas, una prueba de integración/write-path y la actualización BL sin ampliar el alcance.",
+      "title": "Autorizar corrección acotada",
+      "body": "Añadir las dos guardas de rango, actualizar la spec y aportar cobertura del write-path.",
       "recommended": true
     },
     {
-      "title": "Mantener la pausa",
-      "body": "Conservar la incidencia para priorización posterior si el equipo no quiere abrir aún una PR específica.",
+      "title": "Mantener la divergencia temporalmente",
+      "body": "Documentar la excepción de comportamiento si existe una compatibilidad que deba preservarse antes de cambiar la API.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar el arreglo acotado",
-    "body": "Añadir las dos guardas, una prueba de integración/write-path y la actualización BL sin ampliar el alcance.",
+    "title": "Autorizar corrección acotada",
+    "body": "Añadir las dos guardas de rango, actualizar la spec y aportar cobertura del write-path.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Figura como owner del bloque que validó el contrato de negocio aplicable.",
+    "reason": "Figura como owner de la validación F2 que define el comportamiento esperado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7097.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7097#issuecomment-4911289367",
-    "reviewedAt": "2026-07-19T16:43:32.772Z",
-    "mainSha": "256a836dbce471852139783b559ae907f49653bd"
+    "reviewedAt": "2026-07-21T13:33:16.424Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

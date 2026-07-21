@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:35:38.060Z",
-  "updatedAt": "2026-07-19T16:26:48Z",
+  "generatedAt": "2026-07-21T13:32:45.227Z",
+  "updatedAt": "2026-07-21T12:18:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,55 +10,53 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401",
     "state": "open",
     "labels": [
-      "priority:p2",
       "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
-    "updatedAt": "2026-07-19T16:26:48Z"
+    "updatedAt": "2026-07-21T12:18:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención aprueba el equipo para productos generados por IA sin actividad y qué referencias históricas deben conservarse?",
-  "rationale": "El filtro de purga, el periodo de recuperación y las referencias admisibles son decisiones de negocio y conservación de datos, no una corrección mecánica.",
+  "question": "¿Qué contrato de retención debe aprobarse para productos sin actividad antes de ejecutar cambios persistentes en producción?",
+  "rationale": "Los umbrales de conservación, las referencias históricas y la recuperabilidad determinan qué datos pueden eliminarse; el código no puede inferir esa política de negocio con seguridad.",
   "options": [
     {
-      "title": "Plan por fases con retención",
-      "body": "Aprobar primero el corte de altas y la poda reversible, y condicionar la purga por lotes a un dry-run referencial y recuperación verificable.",
+      "title": "Retención por fases",
+      "body": "Aprobar corte de nuevas altas sin señal, poda reversible medida y una purga posterior tras anti-joins y recuperación probada.",
       "recommended": true
     },
     {
       "title": "Solo poda reversible",
-      "body": "Eliminar campos pesados de candidatos inactivos y aplazar cualquier borrado de documentos hasta acordar la retención histórica.",
+      "body": "Eliminar campos pesados de candidatos seguros y aplazar la eliminación de documentos hasta definir la conservación histórica.",
       "recommended": false
     },
     {
       "title": "Conservar el catálogo completo",
-      "body": "Mantener los documentos y limitarse a optimizar exports y consultas, aceptando el coste de almacenamiento y operación.",
+      "body": "Mantener los documentos y centrar el trabajo en exports y consultas, aceptando el coste de almacenamiento y operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Plan por fases con retención",
-    "body": "Aprobar primero el corte de altas y la poda reversible, y condicionar la purga por lotes a un dry-run referencial y recuperación verificable.",
+    "title": "Retención por fases",
+    "body": "Aprobar corte de nuevas altas sin señal, poda reversible medida y una purga posterior tras anti-joins y recuperación probada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona con la radiografía cuantitativa y el trabajo operativo relacionado más cercano a esta decisión.",
-    "confidence": "low"
+    "person": "PabloMoran34",
+    "reason": "Su historial reciente cubre las rutas de creación y materialización que condicionan una retención segura.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-19T16:35:38.060Z",
-    "mainSha": "df9d41a6bd442a1dd046b2592aad65025f23b7d5"
+    "reviewedAt": "2026-07-21T13:32:45.227Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

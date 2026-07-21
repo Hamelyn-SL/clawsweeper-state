@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T05:55:13.718Z",
-  "updatedAt": "2026-07-20T21:09:20Z",
+  "generatedAt": "2026-07-21T13:35:00.033Z",
+  "updatedAt": "2026-07-21T12:14:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,48 +11,52 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 session-state",
+      "proof: 📸 screenshot",
       "merge-risk: 🚨 message-delivery",
-      "merge-risk: 🚨 session-state"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-20T18:38:29Z",
-    "updatedAt": "2026-07-20T21:09:20Z",
+    "updatedAt": "2026-07-21T12:14:51Z",
     "headSha": "2be30584b0244a10d44e323cad0026ecfbf8700b"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el consumidor mantener una recuperación automática de solo persistencia cuando eDesk ya creó el ticket pero Mongo no guarda su identificador?",
-  "rationale": "El PR evita duplicar tickets deliberadamente, pero su alternativa actual deja un pedido bloqueado para ajuste manual; escoger el contrato operativo requiere intención mantenedora.",
+  "question": "¿Qué arquitectura aprobamos para una cola única de incidencias cuando Ecommerce, Public y Admin son proyectos Vercel separados?",
+  "rationale": "La corrección exige elegir entre centralizar las rutas productoras, usar una capacidad de cola compartida o aceptar límites independientes; el código no puede decidir ese contrato operativo.",
   "options": [
     {
-      "title": "Reintentar solo la persistencia",
-      "body": "Añadir un mensaje de continuación que transporte el ticket ya creado y reintente únicamente Mongo, sin repetir la creación ni el mensaje eDesk.",
+      "title": "Centralizar en un solo proyecto",
+      "body": "Enrutar la publicación de incidencias y el consumidor por un mismo proyecto Vercel para mantener una cola y límite globales.",
       "recommended": true
     },
     {
-      "title": "Aceptar recuperación manual",
-      "body": "Mantener el log y el sentinel bloqueado, con un procedimiento operativo explícito y una decisión consciente de soporte.",
+      "title": "Separar consumidores por proyecto",
+      "body": "Configurar consumidores en Ecommerce y Public, aceptando y rediseñando el control de tasa global de eDesk.",
+      "recommended": false
+    },
+    {
+      "title": "Usar una durabilidad externa",
+      "body": "Volver a una outbox o cola compartida fuera del aislamiento por proyecto de Vercel.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reintentar solo la persistencia",
-    "body": "Añadir un mensaje de continuación que transporte el ticket ya creado y reintente únicamente Mongo, sin repetir la creación ni el mensaje eDesk.",
+    "title": "Centralizar en un solo proyecto",
+    "body": "Enrutar la publicación de incidencias y el consumidor por un mismo proyecto Vercel para mantener una cola y límite globales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Su historial cubre el pipeline compartido, la idempotencia y el manejo de persistencia de incidencias.",
+    "person": "PabloMoran34",
+    "reason": "Es la persona con mayor trazabilidad en la infraestructura de colas compartida.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7795.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7795#issuecomment-5025985772",
-    "reviewedAt": "2026-07-21T05:55:13.718Z",
-    "mainSha": "0c2f6b169118753b42cccca6ed0f42092f5c3267"
+    "reviewedAt": "2026-07-21T13:35:00.033Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }
