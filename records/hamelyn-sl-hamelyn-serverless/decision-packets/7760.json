@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:47:30.157Z",
-  "updatedAt": "2026-07-20T08:31:44Z",
+  "generatedAt": "2026-07-21T11:12:53.091Z",
+  "updatedAt": "2026-07-21T09:30:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,58 +10,56 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760",
     "state": "open",
     "labels": [
-      "ui/ux",
       "app:ecommerce",
       "app:admin",
       "priority:p2",
       "feature",
       "reporter:miguel",
       "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-20T08:06:44Z",
-    "updatedAt": "2026-07-20T08:31:44Z"
+    "updatedAt": "2026-07-21T09:30:16Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El banner debe ser una configuración editorial independiente o debe quedar vinculado semánticamente a la promoción/cupón activo?",
-  "rationale": "Ambas opciones son viables técnicamente, pero determinan quién es la fuente de verdad y si el producto puede mostrar una oferta desactualizada.",
+  "question": "¿La campaña visible debe ser una configuración promocional separada que referencie el cupón, o deben ampliarse los cupones con copy, locale y reglas de visibilidad?",
+  "rationale": "Los cupones actuales modelan cálculo y vigencia, pero no priorización comercial, selección por locale ni copy público; elegir el contrato condiciona persistencia, APIs y rollout.",
   "options": [
     {
-      "title": "Vincularlo a la promoción activa",
-      "body": "Guardar copy y estilo en Admin junto con una referencia validada a la campaña activa para evitar desincronización comercial.",
+      "title": "Configuración de campaña separada",
+      "body": "Crear una campaña localizada que referencie el cupón aplicable y concentre copy, variante y ventana de publicación.",
       "recommended": true
     },
     {
-      "title": "Mantener copy editorial independiente",
-      "body": "Permitir que Marketing gestione el banner sin relación técnica con cupones, aceptando un proceso explícito de coordinación.",
+      "title": "Ampliar el cupón",
+      "body": "Añadir al modelo de cupón metadatos de visibilidad, locale y copy, aceptando que el cupón sea también campaña pública.",
       "recommended": false
     },
     {
-      "title": "Conservar i18n hasta definir la política",
-      "body": "Posponer el editor y mantener el flujo actual mientras se concreta el contrato comercial.",
+      "title": "Mantener copy estático",
+      "body": "Conservar i18n para el banner y descartar edición operativa hasta acordar una fuente comercial única.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vincularlo a la promoción activa",
-    "body": "Guardar copy y estilo en Admin junto con una referencia validada a la campaña activa para evitar desincronización comercial.",
+    "title": "Configuración de campaña separada",
+    "body": "Crear una campaña localizada que referencie el cupón aplicable y concentre copy, variante y ventana de publicación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial conecta la cabecera, el parser compartido y la capa de configuración que delimitarían la implementación.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "La revisión del bloque Coupons & Promotions le sitúa como el mejor candidato para fijar la frontera funcional con Ecommerce.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7760.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760#issuecomment-5022462522",
-    "reviewedAt": "2026-07-20T12:47:30.157Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-21T11:12:53.091Z",
+    "mainSha": "819dab48d3b1051351836003b89ed2bfe2e22ab4"
   }
 }
