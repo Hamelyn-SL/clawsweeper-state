@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T12:22:15.145Z",
-  "updatedAt": "2026-07-21T12:18:27Z",
+  "generatedAt": "2026-07-21T13:31:59.660Z",
+  "updatedAt": "2026-07-21T13:12:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,54 +12,48 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
+      "triage:done",
       "reporter:alejandrodiaz",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-17T09:42:19Z",
-    "updatedAt": "2026-07-21T12:18:27Z"
+    "updatedAt": "2026-07-21T13:12:52Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe este primer corte limitarse al cambio de fuente BigQuery manteniendo el cron actual, o incluir ya el despacho por eventos Pub/Sub y Cloud Function?",
-  "rationale": "La issue pide cambiar la fuente y conservar rollback, mientras la PR abierta también sustituye la cadencia por una integración de producción entre varios sistemas.",
+  "question": "¿Se acepta sustituir el cron fijo por el disparo tras la materialización de BigQuery, o debe mantenerse una salvaguarda programada temporal?",
+  "rationale": "La PR no solo cambia la fuente de datos: modifica el mecanismo operativo que garantiza la renovación de ofertas.",
   "options": [
     {
-      "title": "Acotar la primera entrega",
-      "body": "Mantener el cron existente, sustituir solo el sampler por BigQuery y validar la reducción de CPU antes de cambiar la orquestación.",
+      "title": "Mantener salvaguarda temporal",
+      "body": "Conservar un cron supervisado mientras se valida en producción el evento, el segundo intento del bucket y el rollback.",
       "recommended": true
     },
     {
-      "title": "Aprobar la orquestación por eventos",
-      "body": "Aceptar Pub/Sub y Cloud Function como parte del corte, exigiendo prueba real del recorrido completo y recuperación ante fallos.",
-      "recommended": false
-    },
-    {
-      "title": "Separar las dos decisiones",
-      "body": "Llevar el sampler BigQuery y el disparo por eventos en PRs distintos para aislar el riesgo operativo.",
+      "title": "Adoptar el disparo exclusivo",
+      "body": "Retirar el cron al integrar la PR y asumir el nuevo recorrido como única activación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar la primera entrega",
-    "body": "Mantener el cron existente, sustituir solo el sampler por BigQuery y validar la reducción de CPU antes de cambiar la orquestación.",
+    "title": "Mantener salvaguarda temporal",
+    "body": "Conservar un cron supervisado mientras se valida en producción el evento, el segundo intento del bucket y el rollback.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta directamente con la configuración y operación del workflow afectado.",
-    "confidence": "high"
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor asignado por experiencia directa en el muestreo y los archivos afectados.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7702.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7702#issuecomment-5009832139",
-    "reviewedAt": "2026-07-21T12:22:15.145Z",
-    "mainSha": "f0b6b3a029198a052d51d500600d029dc7376a64"
+    "reviewedAt": "2026-07-21T13:31:59.660Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }
