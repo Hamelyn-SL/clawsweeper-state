@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:32:26.927Z",
-  "updatedAt": "2026-07-21T13:09:46Z",
+  "generatedAt": "2026-07-21T15:50:00.807Z",
+  "updatedAt": "2026-07-21T14:50:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "app:ecommerce",
       "reporter:miguel",
       "triage:pr-opened",
+      "P1",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:needs-security-review",
-      "issue-rating: 💎 diamond",
-      "P1",
       "impact:security",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-20T09:55:41Z",
-    "updatedAt": "2026-07-21T13:09:46Z"
+    "updatedAt": "2026-07-21T14:50:03Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se aprueba la contención operativa inmediata —rotación de Azeta y tratamiento de logs históricos— mientras se revisa e integra la mitigación de código?",
-  "rationale": "La modificación de código evita nuevas exposiciones, pero no puede decidir ni ejecutar por sí sola la respuesta ante secretos y PII ya persistidos.",
+  "question": "¿Quién asume la rotación de la credencial de Azeta y la decisión de retención o eliminación de los eventos históricos mientras se revisa la mitigación?",
+  "rationale": "El cambio de código puede cortar nuevas exposiciones, pero no puede decidir ni ejecutar la remediación de secretos y registros ya persistidos.",
   "options": [
     {
-      "title": "Contener y verificar antes de integrar",
-      "body": "Rotar la credencial, decidir la depuración o retención de los eventos afectados y exigir una ejecución redactada de la mitigación antes del merge.",
+      "title": "Coordinar contención inmediata",
+      "body": "Asignar responsable y fecha para rotar la credencial y revisar la retención o borrado de los eventos afectados en paralelo a la revisión de la PR.",
       "recommended": true
     },
     {
-      "title": "Mitigar código primero",
-      "body": "Integrar la PR tras la revisión de seguridad y tratar la rotación y los registros históricos como una respuesta operativa urgente separada.",
+      "title": "Diferir la remediación histórica",
+      "body": "Integrar la mitigación futura y documentar explícitamente un responsable y fecha posterior para la contención histórica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contener y verificar antes de integrar",
-    "body": "Rotar la credencial, decidir la depuración o retención de los eventos afectados y exigir una ejecución redactada de la mitigación antes del merge.",
+    "title": "Coordinar contención inmediata",
+    "body": "Asignar responsable y fecha para rotar la credencial y revisar la retención o borrado de los eventos afectados en paralelo a la revisión de la PR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada a esta incidencia y puede coordinar la respuesta entre ecommerce, infraestructura y seguridad.",
-    "confidence": "high"
+    "reason": "Figura como persona asignada actualmente al issue y puede coordinar la remediación entre ecommerce e infraestructura.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7771.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771#issuecomment-5022470902",
-    "reviewedAt": "2026-07-21T14:32:26.927Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T15:50:00.807Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }
