@@ -14,14 +14,14 @@
       "priority:p2",
       "app:infrastructure",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:data-loss",
-      "impact:message-loss"
+      "impact:message-loss",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
     "updatedAt": "2026-07-20T21:12:38Z"
