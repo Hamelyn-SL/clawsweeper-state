@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:42:08.714Z",
+  "generatedAt": "2026-07-21T11:45:16.498Z",
   "updatedAt": "2026-07-21T09:30:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -28,34 +28,39 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué semántica debe tener un deadline de fase Amazon: abortar y reintentar de forma diferida, o conservar la ejecución completa hasta contar con trazas de la fase retenida?",
-  "rationale": "Un límite evita el `504`, pero puede dejar fases parcialmente ejecutadas y cambiar la semántica de recuperación, duplicación o reintento.",
+  "question": "¿Debe el cron cortar todas las fases al exceder un presupuesto global o limitar y recuperar únicamente la fase identificada?",
+  "rationale": "La cancelación puede interrumpir operaciones externas ya iniciadas; elegir reintento, aislamiento o fallo completo requiere una política operativa explícita.",
   "options": [
     {
-      "title": "Instrumentar antes de cancelar",
-      "body": "Añadir correlación por fase y decidir el deadline con una muestra de ejecuciones retenidas, preservando mientras tanto el comportamiento actual.",
+      "title": "Instrumentar antes de limitar",
+      "body": "Capturar una nueva ocurrencia con la fase exacta y definir el límite y la recuperación sobre esa operación.",
       "recommended": true
     },
     {
-      "title": "Aplicar deadline conservador",
-      "body": "Cortar la fase que exceda un límite definido y registrar un fallo recuperable para que el siguiente cron retome el trabajo.",
+      "title": "Presupuesto global del cron",
+      "body": "Abortar el run antes de Vercel y registrar un fallo controlado para que el siguiente ciclo recupere el trabajo.",
+      "recommended": false
+    },
+    {
+      "title": "Aislar la fase vencida",
+      "body": "Permitir que las demás fases concluyan y registrar la fase excedida para una recuperación dirigida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Instrumentar antes de cancelar",
-    "body": "Añadir correlación por fase y decidir el deadline con una muestra de ejecuciones retenidas, preservando mientras tanto el comportamiento actual.",
+    "title": "Instrumentar antes de limitar",
+    "body": "Capturar una nueva ocurrencia con la fase exacta y definir el límite y la recuperación sobre esa operación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su discusión de la normalización previa fija la capa común como el lugar de la decisión.",
+    "reason": "Su revisión previa estableció que la solución debe vivir en la capa común, no en guards duplicados por ruta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-07-21T11:42:08.714Z",
+    "reviewedAt": "2026-07-21T11:45:16.498Z",
     "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
