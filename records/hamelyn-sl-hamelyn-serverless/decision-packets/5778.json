@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:26:17.213Z",
-  "updatedAt": "2026-07-21T12:18:46Z",
+  "generatedAt": "2026-07-21T14:55:01.241Z",
+  "updatedAt": "2026-07-21T14:49:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-21T12:18:46Z"
+    "updatedAt": "2026-07-21T14:49:22Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué condición operativa debe permitir reencolar SKU y reactivar `ebay.create()` cuando eBay retire una restricción de cuenta o política?",
-  "rationale": "La clasificación actual cubre una cadena concreta, pero no puede decidir por sí sola si una limitación de cuenta es permanente ni cuál debe ser la señal segura del cron.",
+  "question": "¿Qué recuperación debe aplicarse a rechazos de política y limitación de cuenta de eBay al reactivar `ebay.create()`: bloqueo terminal con revisión manual o reencolado controlado tras validar la cuenta?",
+  "rationale": "Los mensajes posteriores mezclan infracciones de catálogo con restricciones de cuenta potencialmente reversibles; el código no puede decidir de forma segura qué SKUs deben permanecer bloqueados.",
   "options": [
     {
-      "title": "Definir recuperación y reactivación",
-      "body": "Acordar señales de cuenta resuelta, reencolado de SKU afectados y una prueba controlada antes de volver a activar create.",
+      "title": "Separar política y cuenta",
+      "body": "Clasificar solo infracciones de contenido confirmadas como `PERMANENT` y habilitar reencolado controlado para restricciones de cuenta tras una validación operativa.",
       "recommended": true
     },
     {
-      "title": "Mantener la pausa",
-      "body": "Conservar create deshabilitado hasta que exista una recuperación operativa verificable para bloqueos de cuenta.",
+      "title": "Mantener bloqueo terminal",
+      "body": "Conservar todos los rechazos de esta familia como permanentes y recuperar SKUs únicamente mediante intervención manual documentada.",
       "recommended": false
     },
     {
-      "title": "Clasificar todo como permanente",
-      "body": "Evitar reintentos automáticos, asumiendo una intervención manual para cada futura liberación de cuenta.",
+      "title": "Pausar la reactivación",
+      "body": "Mantener create desactivado hasta que exista una señal por ruta para lotes totalmente fallidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir recuperación y reactivación",
-    "body": "Acordar señales de cuenta resuelta, reencolado de SKU afectados y una prueba controlada antes de volver a activar create.",
+    "title": "Separar política y cuenta",
+    "body": "Clasificar solo infracciones de contenido confirmadas como `PERMANENT` y habilitar reencolado controlado para restricciones de cuenta tras una validación operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta el manejo actual de errores por oferta con las reglas de retry que delimitan una reactivación segura.",
+    "reason": "Su historial reciente en la política de retry y en la incidencia transversal de severidad lo sitúa mejor para fijar este contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
-    "reviewedAt": "2026-07-21T14:26:17.213Z",
+    "reviewedAt": "2026-07-21T14:55:01.241Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

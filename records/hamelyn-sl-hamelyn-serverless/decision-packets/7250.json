@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:29:12.813Z",
-  "updatedAt": "2026-07-21T12:18:34Z",
+  "generatedAt": "2026-07-21T14:54:36.712Z",
+  "updatedAt": "2026-07-21T14:49:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,50 +16,49 @@
       "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-21T12:18:34Z"
+    "updatedAt": "2026-07-21T14:49:09Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba el plan por cortes, empezando por Flash Offers y continuando con Merchant, reportes y exportación solo tras medir paridad, frescura, coste y rollback de cada tramo?",
-  "rationale": "El destino técnico está respaldado por la política del repositorio, pero la secuencia, los límites de frescura y los criterios de aceptación afectan resultados de negocio y operación de producción.",
+  "question": "¿Qué orden de cortes y qué tolerancia de frescura/fallback deben aprobarse para Merchant, reportes marketplace y el exportador heredado tras aterrizar Flash Offers?",
+  "rationale": "El código confirma cargas pendientes, pero la aceptación depende de compromisos operativos distintos por feed, reporte y exportación que no puede fijar una revisión automática.",
   "options": [
     {
-      "title": "Aprobar ejecución por cortes",
-      "body": "Revisar y desplegar primero el tramo de Flash Offers de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710, medirlo en producción y usar sus criterios para los demás flujos.",
+      "title": "Priorizar Flash Offers y Merchant",
+      "body": "Aterrizar y observar primero la PR de Flash Offers, luego migrar Merchant con una comparación de filas y muestras por país.",
       "recommended": true
     },
     {
-      "title": "Priorizar Merchant antes",
-      "body": "Promover antes la migración de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663 si la prioridad comercial de los feeds supera el alivio inmediato del primario.",
+      "title": "Migrar por coste de lectura",
+      "body": "Ordenar los siguientes cortes según métricas recientes de CPU, documentos examinados y frecuencia real de cada cron.",
       "recommended": false
     },
     {
-      "title": "Limitar el alcance actual",
-      "body": "Mantener solo la retirada administrativa de Atlas Charts y posponer las migraciones de datos hasta definir presupuesto, SLA de frescura y propiedad operativa.",
+      "title": "Limitar el alcance a los cortes ya creados",
+      "body": "Tratar reportes marketplace y el exportador heredado como iniciativas separadas cuando haya presupuesto y contrato de datos definidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar ejecución por cortes",
-    "body": "Revisar y desplegar primero el tramo de Flash Offers de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710, medirlo en producción y usar sus criterios para los demás flujos.",
+    "title": "Priorizar Flash Offers y Merchant",
+    "body": "Aterrizar y observar primero la PR de Flash Offers, luego migrar Merchant con una comparación de filas y muestras por país.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor del informe y el contribuidor más reciente de los workflows centrales afectados.",
-    "confidence": "high"
+    "reason": "Su historial reciente conecta la iniciativa, la optimización de rotación y la exportación basada en BigQuery.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-21T14:29:12.813Z",
+    "reviewedAt": "2026-07-21T14:54:36.712Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:30:05.807Z",
-  "updatedAt": "2026-07-21T12:18:43Z",
+  "generatedAt": "2026-07-21T14:56:36.430Z",
+  "updatedAt": "2026-07-21T14:49:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-07-21T12:18:43Z"
+    "updatedAt": "2026-07-21T14:49:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué dos activos oficiales, ES e ENG, deben firmar el pie de las facturas comerciales?",
-  "rationale": "El repositorio muestra dónde se renderiza el pie, pero no puede determinar el firmante, cargo ni diseño corporativo o aduanero válido.",
+  "question": "¿Qué dos pies oficiales ES y ENG, incluido firmante, cargo y sello aplicables, deben usarse en las facturas comerciales?",
+  "rationale": "El repositorio confirma dónde se renderizan los activos, pero no puede determinar ni generar con seguridad la representación corporativa o aduanera vigente.",
   "options": [
     {
-      "title": "Aportar los PNG aprobados",
-      "body": "Entregar ambos footers oficiales permite una sustitución literal y una validación reproducible del PDF.",
+      "title": "Aportar ambos activos aprobados",
+      "body": "Facilitar los PNG finales ES y ENG para aplicar un reemplazo acotado y verificar el PDF resultante.",
       "recommended": true
     },
     {
-      "title": "Aprobar una nueva plantilla",
-      "body": "Definir firmante, cargo y diseño antes de regenerar los dos activos y modificar el generador.",
+      "title": "Autorizar un pie sin firma",
+      "body": "Confirmar explícitamente que las declaraciones deben mantenerse pero sin firma ni sello embebido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar los PNG aprobados",
-    "body": "Entregar ambos footers oficiales permite una sustitución literal y una validación reproducible del PDF.",
+    "title": "Aportar ambos activos aprobados",
+    "body": "Facilitar los PNG finales ES y ENG para aplicar un reemplazo acotado y verificar el PDF resultante.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona con relación más directa demostrable con la especificación validada y las divergencias de facturas.",
+    "reason": "Documentó la divergencia y concentra el historial reciente del bloque BL de invoices.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930#issuecomment-4911156878",
-    "reviewedAt": "2026-07-21T14:30:05.807Z",
+    "reviewedAt": "2026-07-21T14:56:36.430Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
