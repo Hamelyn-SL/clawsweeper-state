@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:00:24.795Z",
-  "updatedAt": "2026-07-21T10:23:23Z",
+  "generatedAt": "2026-07-21T14:11:56.534Z",
+  "updatedAt": "2026-07-21T12:18:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7815",
     "state": "open",
     "labels": [
-      "priority:p2",
       "app:infrastructure",
       "feature",
       "triage:done",
@@ -19,42 +18,46 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-21T09:19:32Z",
-    "updatedAt": "2026-07-21T10:23:23Z"
+    "updatedAt": "2026-07-21T12:18:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué dominio debe ser propietario de `isLowDemandByMetrics` y debe consolidarse antes de eliminar la copia de Buying?",
-  "rationale": "La producción importa Ecommerce, mientras Buying conserva un contrato BL documentado y pruebas propias; elegir una copia sin decisión explícita cambia la propiedad de la regla.",
+  "question": "¿Debe `isLowDemandByMetrics` quedar temporalmente duplicada con ownership explícito, o consolidarse ahora bajo Buying o Ecommerce antes de purgarla?",
+  "rationale": "El código de producción usa Ecommerce, pero Buying conserva una especificación BL y pruebas propias; la elección cambia la propiedad contractual de la regla.",
   "options": [
     {
-      "title": "Consolidar antes de borrar",
-      "body": "Decidir el dominio propietario, migrar consumidor, documentación y pruebas a una única regla antes de eliminar la duplicada.",
+      "title": "Excluir la regla de esta fase",
+      "body": "Mantener ambas variantes, documentar la duplicación y abrir una consolidación BL específica antes de cualquier borrado.",
       "recommended": true
     },
     {
-      "title": "Excluir de fase 0",
-      "body": "Mantener ambas variantes temporalmente y limitar la purga a candidatos con ausencia de consumidores y contratos confirmada.",
+      "title": "Consolidar bajo Ecommerce",
+      "body": "Mover la especificación y pruebas Buying a la variante Ecommerce tras confirmar que esa es la propiedad permanente.",
+      "recommended": false
+    },
+    {
+      "title": "Consolidar bajo Buying",
+      "body": "Redirigir el consumidor de producción a Buying y conservar allí la especificación como contrato único.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consolidar antes de borrar",
-    "body": "Decidir el dominio propietario, migrar consumidor, documentación y pruebas a una única regla antes de eliminar la duplicada.",
+    "title": "Excluir la regla de esta fase",
+    "body": "Mantener ambas variantes, documentar la duplicación y abrir una consolidación BL específica antes de cualquier borrado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el asignado actual y quien identificó expresamente el conflicto de propiedad dentro del alcance.",
+    "person": "banosdavidhamelyn",
+    "reason": "Es el autor de la extracción y especificación reciente de la variante Ecommerce afectada por la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7815.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7815#issuecomment-5032618973",
-    "reviewedAt": "2026-07-21T11:00:24.795Z",
-    "mainSha": "819dab48d3b1051351836003b89ed2bfe2e22ab4"
+    "reviewedAt": "2026-07-21T14:11:56.534Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
