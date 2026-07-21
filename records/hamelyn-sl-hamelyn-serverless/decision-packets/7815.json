@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T09:53:41.861Z",
+  "updatedAt": "2026-07-21T09:43:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7815,
+    "title": "Core: purga de código muerto (fase 0 de la escisión en subpaquetes)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7815",
+    "state": "open",
+    "labels": [
+      "priority:p2",
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "reporter:alejandro"
+    ],
+    "createdAt": "2026-07-21T09:19:32Z",
+    "updatedAt": "2026-07-21T09:43:49Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Deben seguir siendo superficies soportadas `drive-reader.service.ts` para scripts locales y `domain-services/buying/low-demand.ts` para su test versionado antes de iniciar la purga?",
+  "rationale": "El análisis muestra consumidores no pertenecientes a las entradas de producción; decidir si forman parte del contrato futuro de core condiciona qué se puede borrar sin convertir la escisión en una regresión.",
+  "options": [
+    {
+      "title": "Conservar superficies auxiliares",
+      "body": "Mantener ambos casos, documentar su soporte y limitar la primera fase a candidatos sin consumidor conocido.",
+      "recommended": true
+    },
+    {
+      "title": "Retirarlas con migración",
+      "body": "Mover o sustituir primero el script local y el test, y borrar después sus implementaciones de core.",
+      "recommended": false
+    },
+    {
+      "title": "Excluirlas temporalmente",
+      "body": "Cerrar la purga inicial sin esos dos casos y tratarlos como una decisión separada de arquitectura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar superficies auxiliares",
+    "body": "Mantener ambos casos, documentar su soporte y limitar la primera fase a candidatos sin consumidor conocido.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Aportó el análisis de alcance y tiene historial reciente en una de las áreas centrales de la limpieza.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7815.md",
+    "reviewedAt": "2026-07-21T09:53:41.861Z",
+    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+  }
+}

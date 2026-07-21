@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T09:54:59.063Z",
+  "updatedAt": "2026-07-21T09:43:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7771,
+    "title": "🐛 Ecommerce: los errores de dropshipping registran credenciales y PII en logs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "priority:p1",
+      "reporter:miguel",
+      "triage:pr-opened",
+      "P1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-20T09:55:41Z",
+    "updatedAt": "2026-07-21T09:43:04Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Quién asume la rotación de la credencial de Azeta y la eliminación o reducción de retención de los registros históricos tras integrar la corrección?",
+  "rationale": "El parche puede detener nuevas exposiciones, pero las credenciales y los datos ya persistidos exigen acceso y decisiones operacionales fuera del cambio de código.",
+  "options": [
+    {
+      "title": "Contención coordinada",
+      "body": "Integrar la PR y asignar en paralelo la rotación y el tratamiento de logs a la persona responsable de este flujo.",
+      "recommended": true
+    },
+    {
+      "title": "Contención previa",
+      "body": "Aplazar la integración hasta disponer de un plan operativo aprobado para la credencial y los eventos históricos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Contención coordinada",
+    "body": "Integrar la PR y asignar en paralelo la rotación y el tratamiento de logs a la persona responsable de este flujo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial sitúa a JavierHamelyn como la persona más conectada con la implementación original del flujo afectado.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7771.md",
+    "reviewedAt": "2026-07-21T09:54:59.063Z",
+    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+  }
+}
