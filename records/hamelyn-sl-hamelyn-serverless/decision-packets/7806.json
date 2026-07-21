@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T07:52:18.731Z",
+  "updatedAt": "2026-07-21T07:28:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7806,
+    "title": "fix: prevent false Amazon DB_ONLY reconciliation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7806",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-21T07:21:51Z",
+    "updatedAt": "2026-07-21T07:28:39Z",
+    "headSha": "f847d2d4bc78c35fca1ad9a35d368c17d448f06c"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe esta PR incluir una recuperación controlada de los SKU ya marcados falsamente como `DB_ONLY`, o aterrizar solo la prevención manteniendo abierta la incidencia de datos?",
+  "rationale": "La decisión implica mutar datos operativos ya afectados y elegir el alcance seguro de la recuperación; el patch actual no aporta una regla ni prueba para esa operación.",
+  "options": [
+    {
+      "title": "Añadir recuperación controlada",
+      "body": "Incluir una remediación basada en el snapshot afectado, con conteos verificables y una prueba de que restaura únicamente los falsos `DB_ONLY`.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la remediación",
+      "body": "Mantener esta prevención, retirar el cierre automático y conservar la incidencia abierta para una recuperación operativa revisada aparte.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la remediación",
+    "body": "Mantener esta prevención, retirar el cierre automático y conservar la incidencia abierta para una recuperación operativa revisada aparte.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial en los flujos de informes Amazon y su asignación de revisión lo sitúan cerca de la decisión de recuperación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7806.md",
+    "reviewedAt": "2026-07-21T07:52:18.731Z",
+    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+  }
+}
