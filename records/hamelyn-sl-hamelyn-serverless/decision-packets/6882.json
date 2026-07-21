@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:29:19.716Z",
-  "updatedAt": "2026-07-21T12:18:35Z",
+  "generatedAt": "2026-07-21T20:52:46.579Z",
+  "updatedAt": "2026-07-21T20:31:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,45 @@
       "app:infrastructure",
       "reporter:javier",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
+      "P1",
+      "impact:other",
+      "clawsweeper:source-repro",
       "impact:data-loss",
       "impact:message-loss",
-      "P1",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-21T12:18:35Z"
+    "updatedAt": "2026-07-21T20:31:35Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe aprobarse el acuse 200 para IPN legacy no verificables cuando tengan `topic` e `id`, sin procesarlas?",
-  "rationale": "El cambio evita reintentos, pero altera la respuesta a solicitudes no autenticadas y la evidencia técnica no confirma por sí sola la cobertura operativa de webhooks v2.",
+  "question": "¿Debe eDesk disponer de una cola durable con reintento automático, o aceptarse un dead-letter de recuperación manual para los 429 sostenidos?",
+  "rationale": "La PR cerrada proponía persistencia sin worker, mientras la canónica solicita una entrega diferida; elegir el contrato de recuperación afecta la fiabilidad visible al cliente.",
   "options": [
     {
-      "title": "Aprobar con cobertura v2 confirmada",
-      "body": "Fusionar la PR de IPN tras confirmar que los webhooks v2 firmados y el flujo síncrono cubren los pagos de producción.",
+      "title": "Cola durable con reintento",
+      "body": "Persistir antes de responder `202` y reprocesar con cron, estados y alerta para no perder tickets durante caídas sostenidas.",
       "recommended": true
     },
     {
-      "title": "Mantener 401",
-      "body": "Conservar el rechazo actual y resolver los reintentos mediante configuración o migración explícita en Mercado Pago.",
+      "title": "Dead-letter manual",
+      "body": "Persistir el payload para recuperación puntual por operador, aceptando que no habrá reintento automático ni garantía de entrega rápida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con cobertura v2 confirmada",
-    "body": "Fusionar la PR de IPN tras confirmar que los webhooks v2 firmados y el flujo síncrono cubren los pagos de producción.",
+    "title": "Cola durable con reintento",
+    "body": "Persistir antes de responder `202` y reprocesar con cron, estados y alerta para no perder tickets durante caídas sostenidas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha dirigido el desglose y es autor de la PR abierta que modifica esta ruta.",
+    "reason": "Está asignado a la canónica eDesk y a la propuesta previa de outbox.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-21T14:29:19.716Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T20:52:46.579Z",
+    "mainSha": "f38f8a74d679ae88596e46562cdd0757f7250e9e"
   }
 }
