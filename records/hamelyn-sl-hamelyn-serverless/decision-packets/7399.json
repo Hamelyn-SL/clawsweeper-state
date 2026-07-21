@@ -14,12 +14,12 @@
       "app:infrastructure",
       "triage:blocked",
       "P1",
-      "impact:security",
-      "issue-rating: 🥈 silver",
-      "clawsweeper:not-repro-on-main",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:not-repro-on-main",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-12T13:55:30Z",
     "updatedAt": "2026-07-21T12:18:30Z"
@@ -52,7 +52,6 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7399.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399#issuecomment-4951659866",
     "reviewedAt": "2026-07-21T13:41:09.244Z",
     "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
