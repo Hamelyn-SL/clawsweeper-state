@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T19:23:34.280Z",
-  "updatedAt": "2026-07-20T19:20:10Z",
+  "generatedAt": "2026-07-21T05:43:51.711Z",
+  "updatedAt": "2026-07-20T21:12:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,54 @@
       "bug",
       "priority:p2",
       "app:infrastructure",
+      "triage:done",
+      "P1",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P1",
       "impact:data-loss",
       "impact:message-loss",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
-    "updatedAt": "2026-07-20T19:20:10Z"
+    "updatedAt": "2026-07-20T21:12:38Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe agotarse una Vercel Queue con descarte tras reintentos, o debe conservarse obligatoriamente un dead-letter recuperable hasta que un operador resuelva la incidencia?",
-  "rationale": "Los comentarios descartan el cron automático, mientras la PR abierta propone una cola que todavía descarta tras cinco entregas; elegir la durabilidad final condiciona el contrato de pérdida cero.",
+  "question": "¿Debe la solución oficial usar Vercel Queue con reintentos automáticos, incluyendo `search-request`, o mantenerse como dead-letter durable con rescate manual?",
+  "rationale": "El último diseño documentado descarta automatismos de recuperación, pero la PR abierta adopta reintentos nativos de cola y deja fuera una ruta solicitada.",
   "options": [
     {
-      "title": "Dead-letter durable con rescate manual",
-      "body": "Conservar payload y checkpoint hasta resolución manual tras agotar la cola, evitando que un incidente de cliente vuelva a depender solo de logs.",
+      "title": "Aprobar cola con alcance completo",
+      "body": "Confirmar Vercel Queue como política válida, ampliar la PR a `search-request` y exigir prueba actualizada de reintentos, persistencia y recuperación.",
       "recommended": true
     },
     {
-      "title": "Aceptar descarte tras reintentos",
-      "body": "Mantener el límite de la cola y documentar que los fallos sostenidos terminan en diagnóstico manual desde logs.",
+      "title": "Mantener dead-letter manual",
+      "body": "Replantear la PR como persistencia durable sin consumer automático y documentar el rescate operativo para todas las rutas.",
       "recommended": false
     },
     {
-      "title": "Reintroducir recuperación automática",
-      "body": "Añadir un worker o cron que reprograme los fallos mientras persista una causa reintentable.",
+      "title": "Separar la ruta de búsqueda",
+      "body": "Aterrizar primero la política elegida para pedidos y abrir trabajo explícito para `search-request` con su propia idempotencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dead-letter durable con rescate manual",
-    "body": "Conservar payload y checkpoint hasta resolución manual tras agotar la cola, evitando que un incidente de cliente vuelva a depender solo de logs.",
+    "title": "Aprobar cola con alcance completo",
+    "body": "Confirmar Vercel Queue como política válida, ampliar la PR a `search-request` y exigir prueba actualizada de reintentos, persistencia y recuperación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el assignee actual, autor del retry vigente y de la PR abierta que materializa las alternativas de diseño.",
+    "reason": "Ha documentado la decisión de recuperación y mantiene la PR que materializa la alternativa de cola.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-20T19:23:34.280Z",
-    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+    "reviewedAt": "2026-07-21T05:43:51.711Z",
+    "mainSha": "0c2f6b169118753b42cccca6ed0f42092f5c3267"
   }
 }
