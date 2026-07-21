@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T16:01:38.719Z",
-  "updatedAt": "2026-07-21T15:57:12Z",
+  "generatedAt": "2026-07-21T12:41:40.752Z",
+  "updatedAt": "2026-07-21T12:18:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 7601,
-    "title": "Variable ECOMMERCE_POST_OFFICE en emails de Postlibris",
+    "title": "Volcar oficinas de Correos en el sistema y relacionarlas con el CP del cliente (para Postlibri)",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601",
     "state": "open",
     "labels": [
@@ -15,45 +15,46 @@
       "feature",
       "reporter:blanca",
       "triage:needs-info",
-      "P1",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-15T12:58:18Z",
-    "updatedAt": "2026-07-21T15:57:12Z"
+    "updatedAt": "2026-07-21T12:18:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Confirma Operaciones que `LOCALIZACION CP` identifica la oficina que gestiona los envíos Postlibri no entregados para cualquier domicilio de ese CP?",
-  "rationale": "El código puede implementar un lookup, pero no puede determinar si el fichero representa la oficina de devoluciones o únicamente la ubicación física de cada oficina.",
+  "question": "¿Se aprueba usar `LOCALIZACION CP` como asignación fiable de oficina de recogida para envíos Postlibri no entregados?",
+  "rationale": "El código puede almacenar y consultar el catálogo, pero no puede demostrar que la oficina física del CP gestione todas las direcciones de ese CP.",
   "options": [
     {
-      "title": "Validar y cargar el catálogo",
-      "body": "Confirmar la semántica con Correos e implementar un catálogo indexado por CP con fallback explícito para CP no cubiertos.",
+      "title": "Confirmar la correspondencia con Correos",
+      "body": "Operaciones aporta confirmación documental y ejemplos representativos antes de implementar el catálogo y el lookup.",
       "recommended": true
     },
     {
-      "title": "Aplazar la información al cliente",
-      "body": "Mantener las plantillas y eDesk sin oficina hasta disponer de una fuente contractual con cobertura adecuada.",
+      "title": "Mostrar el dato solo como orientación",
+      "body": "Se presenta como referencia no confirmada, con aviso y fallback de Atención al Cliente para casos sin correspondencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y cargar el catálogo",
-    "body": "Confirmar la semántica con Correos e implementar un catálogo indexado por CP con fallback explícito para CP no cubiertos.",
+    "title": "Confirmar la correspondencia con Correos",
+    "body": "Operaciones aporta confirmación documental y ejemplos representativos antes de implementar el catálogo y el lookup.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "blanca",
-    "reason": "El hilo asigna a Blanca/Operaciones la confirmación de la semántica del fichero aportado.",
-    "confidence": "high"
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona más conectada, por historial, al flujo Postlibri que consumiría el lookup.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7601.md",
-    "reviewedAt": "2026-07-21T16:01:38.719Z",
-    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601#issuecomment-4980998565",
+    "reviewedAt": "2026-07-21T12:41:40.752Z",
+    "mainSha": "f15fefc29ac97b7c29d8b1f9c080a156899c7f97"
   }
 }
