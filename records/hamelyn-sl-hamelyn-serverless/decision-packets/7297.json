@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:40:41.884Z",
-  "updatedAt": "2026-07-20T08:42:45Z",
+  "generatedAt": "2026-07-21T14:10:12.402Z",
+  "updatedAt": "2026-07-21T12:18:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,7 +11,6 @@
     "state": "open",
     "labels": [
       "app:admin",
-      "priority:p1",
       "feature",
       "triage:pr-opened",
       "epic:revision-v3",
@@ -23,38 +22,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-09T11:44:40Z",
-    "updatedAt": "2026-07-20T08:42:45Z"
+    "updatedAt": "2026-07-21T12:18:33Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se integra la rama `EPIC/revision-v3` en `dev` como entrega coordinada, o se extrae y adapta este cambio visual a la arquitectura actual de `dev`?",
-  "rationale": "El PR ya existe en una rama épica divergente, mientras que `dev` no contiene el módulo V3; elegir entre integración amplia o extracción selectiva cambia el límite técnico y de producto.",
+  "question": "¿Debe Revisión V3 incorporarse a `dev` mediante una integración planificada de la rama épica o mediante ports acotados de sus entregables?",
+  "rationale": "La funcionalidad está implementada, pero la rama que la contiene diverge ampliamente de la rama de entrega; elegir la estrategia requiere criterio de release y alcance.",
   "options": [
     {
-      "title": "Planificar la integración de la épica",
-      "body": "Integrar Revisión V3 como entrega coordinada y comprobar en `dev` las imágenes, el flujo táctil y sus dependencias.",
+      "title": "Planificar integración de la épica",
+      "body": "Preparar una incorporación revisada de Revisión V3 a `dev`, resolviendo explícitamente la divergencia y validando el flujo completo.",
       "recommended": true
     },
     {
-      "title": "Extraer un cambio mínimo",
-      "body": "Adaptar solo esta mejora a una superficie V3 que exista y esté aprobada para `dev`, si no se va a integrar la épica completa.",
+      "title": "Portar entregables aprobados",
+      "body": "Trasladar a `dev` cambios V3 seleccionados y autocontenidos, empezando por los que tengan dependencias ya disponibles.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la entrega V3",
+      "body": "Mantener la rama épica aislada hasta que exista una ventana de release y una estrategia de integración acordada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificar la integración de la épica",
-    "body": "Integrar Revisión V3 como entrega coordinada y comprobar en `dev` las imágenes, el flujo táctil y sus dependencias.",
+    "title": "Planificar integración de la épica",
+    "body": "Preparar una incorporación revisada de Revisión V3 a `dev`, resolviendo explícitamente la divergencia y validando el flujo completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Está asignado a la épica y su historial cubre el flujo de interfaz donde deben aparecer las referencias.",
-    "confidence": "high"
+    "reason": "Su historial conecta el flujo kiosk y las pantallas afectadas con la decisión de cómo llevarlas a la rama de entrega.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7297.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7297#issuecomment-4924752273",
-    "reviewedAt": "2026-07-20T12:40:41.884Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-21T14:10:12.402Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

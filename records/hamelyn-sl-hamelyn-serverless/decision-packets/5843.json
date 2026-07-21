@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:24:31.367Z",
-  "updatedAt": "2026-07-19T13:43:45Z",
+  "generatedAt": "2026-07-21T14:07:03.537Z",
+  "updatedAt": "2026-07-21T12:18:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,6 @@
     "labels": [
       "size/L",
       "app:ecommerce",
-      "priority:p2",
       "feature",
       "reporter:javier",
       "triage:no-change",
@@ -26,43 +25,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-13T22:17:19Z",
-    "updatedAt": "2026-07-19T13:43:45Z"
+    "updatedAt": "2026-07-21T12:18:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué proveedor, contrato de persistencia e invalidación deben aprobarse para las traducciones de ficha antes de exponerlas en la PDP?",
-  "rationale": "La issue exige benchmark y decisiones de coste, calidad, cache y override manual que no pueden deducirse de forma segura del código existente.",
+  "question": "¿Qué contrato persistido, proveedor y política de regeneración debe adoptar ecommerce para las traducciones de ficha por locale?",
+  "rationale": "La issue requiere decidir coste/calidad, estructura de datos, fallback y autoridad de los overrides antes de que una implementación pueda ser compatible y operable a escala.",
   "options": [
     {
-      "title": "Aprobar un contrato y benchmark primero",
-      "body": "Definir idiomas, forma de almacenamiento, proveedor, coste objetivo, regeneración y fallback antes de dividir la implementación.",
+      "title": "Aprobar contrato y benchmark primero",
+      "body": "Definir locales, campos, invalidación, proveedor y muestra de evaluación antes de abrir el trabajo de pipeline y PDP.",
       "recommended": true
     },
     {
       "title": "Reducir el alcance inicial",
-      "body": "Limitar la primera entrega a un locale y a descripciones persistidas, dejando títulos y edición administrativa para fases posteriores.",
+      "body": "Limitar la primera entrega a lectura de traducciones ya existentes y fallback, posponiendo generación masiva y admin.",
       "recommended": false
     },
     {
-      "title": "Mantener el contenido original",
-      "body": "Cerrar la iniciativa de datos y conservar únicamente la localización de copy y SEO ya entregada.",
+      "title": "Mantener el requisito en espera",
+      "body": "Posponer la iniciativa hasta disponer de presupuesto, criterios de calidad y ownership editorial para el catálogo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un contrato y benchmark primero",
-    "body": "Definir idiomas, forma de almacenamiento, proveedor, coste objetivo, regeneración y fallback antes de dividir la implementación.",
+    "title": "Aprobar contrato y benchmark primero",
+    "body": "Definir locales, campos, invalidación, proveedor y muestra de evaluación antes de abrir el trabajo de pipeline y PDP.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha mantenido recientemente la superficie de PDP y concretó las reglas funcionales pendientes en la discusión.",
+    "reason": "Aportó el contrato funcional y ha mantenido el alcance explícito tras los avances parciales.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5843.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5843#issuecomment-4909754959",
-    "reviewedAt": "2026-07-19T17:24:31.367Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T14:07:03.537Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

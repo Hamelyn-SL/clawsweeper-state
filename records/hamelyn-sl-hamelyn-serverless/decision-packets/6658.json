@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:52:20.967Z",
-  "updatedAt": "2026-07-19T17:47:15Z",
+  "generatedAt": "2026-07-21T14:13:14.864Z",
+  "updatedAt": "2026-07-21T12:18:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,10 +10,8 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658",
     "state": "open",
     "labels": [
-      "crons",
       "codex",
       "bug",
-      "priority:p1",
       "triage:done",
       "app:crons",
       "P1",
@@ -25,43 +23,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-24T22:50:08Z",
-    "updatedAt": "2026-07-19T17:47:15Z"
+    "updatedAt": "2026-07-21T12:18:37Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un `ORDER_CHANGE` `Unshipped` sin stock local persistirse como `TO_CANCEL`, enviarse a una cola de revisión o descartarse con auditoría terminal?",
-  "rationale": "El código ofrece una ruta `TO_CANCEL`, pero elegir entre conservar un pedido cancelable, aparcarlo o eliminarlo determina la trazabilidad operativa y no puede inferirse solo del error.",
+  "question": "¿Debe un `ORDER_CHANGE` `Unshipped` sin stock local persistirse como `TO_CANCEL` o consumirse con una alerta operativa?",
+  "rationale": "Ambas opciones eliminan el bucle, pero difieren en la trazabilidad y el tratamiento de una venta Amazon que no tiene inventario local.",
   "options": [
     {
       "title": "Persistir como `TO_CANCEL`",
-      "body": "Conservar el pedido y su auditoría usando la ruta de persistencia existente cuando los datos Amazon permitan construir atributos mínimos.",
+      "body": "Conserva un pedido terminal trazable y permite eliminar la notificación de la cola.",
       "recommended": true
     },
     {
-      "title": "Aparcar para revisión",
-      "body": "Enviar el caso a una ruta terminal auditable de revisión manual sin repetirlo en cada ejecución del cron.",
-      "recommended": false
-    },
-    {
-      "title": "Descartar con auditoría",
-      "body": "Marcar la notificación como procesada y registrar una alerta única, aceptando que no se cree ningún pedido local.",
+      "title": "Consumir y alertar",
+      "body": "Elimina el mensaje sin crear pedido y delega la investigación en una alerta operativa única.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Persistir como `TO_CANCEL`",
-    "body": "Conservar el pedido y su auditoría usando la ruta de persistencia existente cuando los datos Amazon permitan construir atributos mínimos.",
+    "body": "Conserva un pedido terminal trazable y permite eliminar la notificación de la cola.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona con contribución reciente en el procesador actual y coordinación histórica visible en esta incidencia.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y el contribuidor reciente del procesador de notificaciones Amazon.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6658.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658#issuecomment-4971281004",
-    "reviewedAt": "2026-07-19T17:52:20.967Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-21T14:13:14.864Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:39:30.795Z",
-  "updatedAt": "2026-07-19T13:43:26Z",
+  "generatedAt": "2026-07-21T14:03:55.333Z",
+  "updatedAt": "2026-07-21T12:18:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,10 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622",
     "state": "open",
     "labels": [
-      "crons",
-      "core",
       "bug",
-      "priority:p1",
       "app:infrastructure",
       "triage:needs-info",
       "triage:confirmed-live",
@@ -27,43 +24,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
-    "updatedAt": "2026-07-19T13:43:26Z"
+    "updatedAt": "2026-07-21T12:18:49Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la primera fase mantener HTTP 200 con una señal estructurada compatible, o qué rutas y fases deben pasar ya a 207/5xx?",
-  "rationale": "El mismo handler sirve rutas cuyos lotes pueden tolerar errores permanentes, mientras otras degradaciones requieren alerta; el código no puede decidir esa política de negocio por sí solo.",
+  "question": "¿La primera fase debe mantener HTTP 200 con una señal estructurada común, o deben determinadas rutas devolver ya 207/5xx ante rechazos parciales?",
+  "rationale": "La severidad depende de cada fase de negocio y el handler atiende rutas con tolerancias de error diferentes.",
   "options": [
     {
-      "title": "Señal compatible primero",
-      "body": "Mantener HTTP 200 inicialmente y normalizar `status`, recuentos y severidad para decidir después las rutas que deben fallar.",
+      "title": "Primera fase compatible",
+      "body": "Mantener HTTP 200 temporalmente y normalizar `status`, recuentos, razones y severidad para todas las rutas compartidas.",
       "recommended": true
     },
     {
-      "title": "Endurecer rutas críticas",
-      "body": "Definir ahora una lista reducida de rutas o fases cuyo rechazo parcial devuelva 207/5xx y probar su comportamiento de reintento.",
-      "recommended": false
-    },
-    {
-      "title": "Conservar el contrato actual",
-      "body": "Mantener HTTP 200 y logs actuales, aceptando que la detección operativa seguirá dependiendo de consultas y alertas específicas.",
+      "title": "Escalado selectivo",
+      "body": "Definir ahora las rutas o fases críticas que deben responder 207 o 5xx además de emitir la nueva señal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Señal compatible primero",
-    "body": "Mantener HTTP 200 inicialmente y normalizar `status`, recuentos y severidad para decidir después las rutas que deben fallar.",
+    "title": "Primera fase compatible",
+    "body": "Mantener HTTP 200 temporalmente y normalizar `status`, recuentos, razones y severidad para todas las rutas compartidas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es la mejor señal disponible de propiedad técnica del módulo compartido que materializa la decisión.",
-    "confidence": "medium"
+    "reason": "Su historial está ligado directamente al handler compartido que necesita evolucionar.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
-    "reviewedAt": "2026-07-19T17:39:30.795Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-21T14:03:55.333Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

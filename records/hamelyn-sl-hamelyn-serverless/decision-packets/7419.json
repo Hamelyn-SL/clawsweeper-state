@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:41:23.026Z",
-  "updatedAt": "2026-07-20T12:27:42Z",
+  "generatedAt": "2026-07-21T14:10:30.203Z",
+  "updatedAt": "2026-07-21T12:18:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,7 +11,6 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p1",
       "app:infrastructure",
       "triage:done",
       "P1",
@@ -23,38 +22,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-13T06:38:18Z",
-    "updatedAt": "2026-07-20T12:27:42Z"
+    "updatedAt": "2026-07-21T12:18:30Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué regla de consolidación y qué tratamiento de URLs deben aplicarse a las fichas duplicadas antes de imponer el índice único de `authorId`?",
-  "rationale": "La decisión reescribe datos de producción y determina el comportamiento de URLs existentes; la mitigación integrada evita colisiones, pero no decide ni ejecuta esa migración.",
+  "question": "¿Qué regla de conservación debe regir la fusión productiva de cada grupo duplicado de `authorId`, incluidos slug, enlaces de producto y campos enriquecidos?",
+  "rationale": "La selección técnica de una ficha canónica existe, pero decidir qué datos históricos se preservan o redirigen durante una mutación masiva requiere responsabilidad de producto y datos.",
   "options": [
     {
-      "title": "Usar la canónica actual",
-      "body": "Conservar la ficha más antigua mediante `pickCanonicalAuthorDoc` y aplicar el comportamiento de slugs ya aprobado para las fichas retiradas.",
+      "title": "Aprobar fusión canónica auditada",
+      "body": "Usar la ficha canónica actual, conservar y redirigir los slugs acordados, fusionar referencias y crear el índice único tras validar el dry-run.",
       "recommended": true
     },
     {
-      "title": "Definir una regla por completitud",
-      "body": "Aprobar primero una política que priorice contenido enriquecido antes de preparar el dry-run y la migración.",
+      "title": "Mantener solo la mitigación lógica",
+      "body": "Conservar la resolución canónica en lectura y cron, posponiendo la consolidación física y la restricción única.",
+      "recommended": false
+    },
+    {
+      "title": "Definir una política alternativa",
+      "body": "Especificar una regla distinta de conservación antes de preparar cualquier migración de documentos duplicados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Usar la canónica actual",
-    "body": "Conservar la ficha más antigua mediante `pickCanonicalAuthorDoc` y aplicar el comportamiento de slugs ya aprobado para las fichas retiradas.",
+    "title": "Aprobar fusión canónica auditada",
+    "body": "Usar la ficha canónica actual, conservar y redirigir los slugs acordados, fusionar referencias y crear el índice único tras validar el dry-run.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial reúne el diseño de identidad canónica, el cron y la mitigación actualmente integrada.",
+    "reason": "Es la persona con mayor continuidad en el cron, la identidad canónica y la incidencia asignada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7419.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7419#issuecomment-4955179633",
-    "reviewedAt": "2026-07-20T12:41:23.026Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-21T14:10:30.203Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
