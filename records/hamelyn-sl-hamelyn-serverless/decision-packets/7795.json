@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T05:54:05.968Z",
+  "generatedAt": "2026-07-21T05:55:13.718Z",
   "updatedAt": "2026-07-20T21:09:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,36 +22,35 @@
     "updatedAt": "2026-07-20T21:09:20Z",
     "headSha": "2be30584b0244a10d44e323cad0026ecfbf8700b"
   },
-  "lane": "merge_risk",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se acepta el riesgo operativo de dejar incidencias creadas en eDesk con `edeskTicketId = -1` tras un outage sostenido de Mongo, o se exige recuperación durable antes del merge?",
-  "rationale": "El autor describe ese estado como una decisión deliberada, pero convierte una incidencia ya enviada en un bloqueo persistente visible para el cliente; la aceptación del riesgo requiere intención de producto y operaciones.",
+  "question": "¿Debe el consumidor mantener una recuperación automática de solo persistencia cuando eDesk ya creó el ticket pero Mongo no guarda su identificador?",
+  "rationale": "El PR evita duplicar tickets deliberadamente, pero su alternativa actual deja un pedido bloqueado para ajuste manual; escoger el contrato operativo requiere intención mantenedora.",
   "options": [
     {
-      "title": "Añadir continuación solo de persistencia",
-      "body": "Reencolar el ticket ya creado con backoff sin llamar otra vez a eDesk y confirmar únicamente cuando Mongo guarde el identificador.",
+      "title": "Reintentar solo la persistencia",
+      "body": "Añadir un mensaje de continuación que transporte el ticket ya creado y reintente únicamente Mongo, sin repetir la creación ni el mensaje eDesk.",
       "recommended": true
     },
     {
-      "title": "Aceptar reconciliación manual",
-      "body": "Mantener el comportamiento actual y asumir un procedimiento operativo para localizar el ticket en eDesk y reparar `edeskTicketId`.",
+      "title": "Aceptar recuperación manual",
+      "body": "Mantener el log y el sentinel bloqueado, con un procedimiento operativo explícito y una decisión consciente de soporte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir continuación solo de persistencia",
-    "body": "Reencolar el ticket ya creado con backoff sin llamar otra vez a eDesk y confirmar únicamente cuando Mongo guarde el identificador.",
+    "title": "Reintentar solo la persistencia",
+    "body": "Añadir un mensaje de continuación que transporte el ticket ya creado y reintente únicamente Mongo, sin repetir la creación ni el mensaje eDesk.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Su historial conecta directamente con la semántica compartida de claim, persistencia y recuperación de incidencias.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial cubre el pipeline compartido, la idempotencia y el manejo de persistencia de incidencias.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7795.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7795#issuecomment-5025985772",
-    "reviewedAt": "2026-07-21T05:54:05.968Z",
+    "reviewedAt": "2026-07-21T05:55:13.718Z",
     "mainSha": "0c2f6b169118753b42cccca6ed0f42092f5c3267"
   }
 }
