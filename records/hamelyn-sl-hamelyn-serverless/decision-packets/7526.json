@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T05:43:51.711Z",
-  "updatedAt": "2026-07-20T21:12:38Z",
+  "generatedAt": "2026-07-21T14:38:06.264Z",
+  "updatedAt": "2026-07-21T12:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,56 +11,50 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:infrastructure",
       "triage:done",
-      "P1",
-      "impact:data-loss",
-      "impact:message-loss",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:data-loss",
+      "impact:message-loss"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
-    "updatedAt": "2026-07-20T21:12:38Z"
+    "updatedAt": "2026-07-21T12:27:53Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la solución oficial usar Vercel Queue con reintentos automáticos, incluyendo `search-request`, o mantenerse como dead-letter durable con rescate manual?",
-  "rationale": "El último diseño documentado descarta automatismos de recuperación, pero la PR abierta adopta reintentos nativos de cola y deja fuera una ruta solicitada.",
+  "question": "¿La solución definitiva debe usar Vercel Queue con reintentos automáticos o un dead-letter durable con rescate manual?",
+  "rationale": "El hilo descarta automatismos de recuperación, mientras la PR abierta introduce un consumer y reintentos nativos de cola.",
   "options": [
     {
-      "title": "Aprobar cola con alcance completo",
-      "body": "Confirmar Vercel Queue como política válida, ampliar la PR a `search-request` y exigir prueba actualizada de reintentos, persistencia y recuperación.",
+      "title": "Mantener rescate manual",
+      "body": "Reorientar la solución hacia un dead-letter durable sin consumer automático, con un runbook de recuperación acotado.",
       "recommended": true
     },
     {
-      "title": "Mantener dead-letter manual",
-      "body": "Replantear la PR como persistencia durable sin consumer automático y documentar el rescate operativo para todas las rutas.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la ruta de búsqueda",
-      "body": "Aterrizar primero la política elegida para pedidos y abrir trabajo explícito para `search-request` con su propia idempotencia.",
+      "title": "Adoptar Vercel Queue",
+      "body": "Respaldar explícitamente la entrega asíncrona con consumer y reintentos, definiendo su operación y condiciones de descarte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar cola con alcance completo",
-    "body": "Confirmar Vercel Queue como política válida, ampliar la PR a `search-request` y exigir prueba actualizada de reintentos, persistencia y recuperación.",
+    "title": "Mantener rescate manual",
+    "body": "Reorientar la solución hacia un dead-letter durable sin consumer automático, con un runbook de recuperación acotado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha documentado la decisión de recuperación y mantiene la PR que materializa la alternativa de cola.",
+    "reason": "Ha documentado las alternativas, es el assignee y mantiene la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-21T05:43:51.711Z",
-    "mainSha": "0c2f6b169118753b42cccca6ed0f42092f5c3267"
+    "reviewedAt": "2026-07-21T14:38:06.264Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

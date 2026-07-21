@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:29:12.813Z",
-  "updatedAt": "2026-07-21T12:18:34Z",
+  "generatedAt": "2026-07-21T11:23:24.052Z",
+  "updatedAt": "2026-07-21T09:42:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,6 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250",
     "state": "open",
     "labels": [
+      "priority:p1",
       "app:infrastructure",
       "feature",
       "reporter:javier",
@@ -23,42 +24,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-21T12:18:34Z"
+    "updatedAt": "2026-07-21T09:42:47Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba el plan por cortes, empezando por Flash Offers y continuando con Merchant, reportes y exportación solo tras medir paridad, frescura, coste y rollback de cada tramo?",
-  "rationale": "El destino técnico está respaldado por la política del repositorio, pero la secuencia, los límites de frescura y los criterios de aceptación afectan resultados de negocio y operación de producción.",
+  "question": "¿Aprueba Data/Platform BigQuery como fuente estándar para estas lecturas batch tolerantes a retraso y la priorización por cortes reversibles?",
+  "rationale": "La selección de frescura aceptable, coste operativo y política de fallback cambia por consumidor y no puede inferirse de forma segura solo desde el código.",
   "options": [
     {
-      "title": "Aprobar ejecución por cortes",
-      "body": "Revisar y desplegar primero el tramo de Flash Offers de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710, medirlo en producción y usar sus criterios para los demás flujos.",
+      "title": "Aprobar migración gradual",
+      "body": "Definir paridad, frescura, rollback y métrica de CPU para cada corte, comenzando por flash offers y Merchant.",
       "recommended": true
     },
     {
-      "title": "Priorizar Merchant antes",
-      "body": "Promover antes la migración de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663 si la prioridad comercial de los feeds supera el alivio inmediato del primario.",
+      "title": "Limitar el primer alcance",
+      "body": "Aterrizar solo flash offers y Merchant antes de extender la estrategia a reportes marketplace y exportaciones.",
       "recommended": false
     },
     {
-      "title": "Limitar el alcance actual",
-      "body": "Mantener solo la retirada administrativa de Atlas Charts y posponer las migraciones de datos hasta definir presupuesto, SLA de frescura y propiedad operativa.",
+      "title": "Mantener Mongo temporalmente",
+      "body": "Posponer el cambio de fuente y priorizar materializaciones o índices si la frescura o el coste de BigQuery no resultan aceptables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar ejecución por cortes",
-    "body": "Revisar y desplegar primero el tramo de Flash Offers de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710, medirlo en producción y usar sus criterios para los demás flujos.",
+    "title": "Aprobar migración gradual",
+    "body": "Definir paridad, frescura, rollback y métrica de CPU para cada corte, comenzando por flash offers y Merchant.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el autor del informe y el contribuidor más reciente de los workflows centrales afectados.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Coordina el primer corte de flash offers y puede alinear su PR con la decisión transversal.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewedAt": "2026-07-21T14:29:12.813Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T11:23:24.052Z",
+    "mainSha": "819dab48d3b1051351836003b89ed2bfe2e22ab4"
   }
 }

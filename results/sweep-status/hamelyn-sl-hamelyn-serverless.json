@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review publish complete",
-  "detail": "Merged 20 review artifacts for run 29838522536. Captured 8 shard metrics; 0 shards reported non-success review status. Folder reconciliation moved tracked files to match current GitHub open/closed state.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29838522536",
-  "planned_count": 20,
-  "planned_capacity": 24,
-  "planned_shards": 8,
+  "state": "Review comments checked",
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 5. Item numbers: 5184,5185,5353,5456,7526.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/29839489418",
+  "planned_count": 5,
+  "planned_capacity": 5,
+  "planned_shards": 5,
   "active_codex": 0,
-  "due_backlog": 20,
+  "due_backlog": 18,
   "oldest_unreviewed_at": null,
-  "capacity_reason": "under capacity: due backlog below planned capacity",
+  "capacity_reason": "saturated: due backlog filled planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,16 +21,16 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-07-21T14:20:48.457Z",
-    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "generated_at": "2026-07-21T14:37:39.616Z",
+    "target_repo": "hamelyn-sl/hamelyn-serverless",
     "mode": "comment_sync",
     "status": "ok",
-    "summary": "24/1000 processed; 0 closed, 24 comments synced, 0 skipped; no cursor recorded.",
-    "processed": 24,
+    "summary": "1/1000 processed; 0 closed, 1 comments synced, 0 skipped; no cursor recorded.",
+    "processed": 1,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 24,
+    "comment_synced": 1,
     "skipped": 0,
     "skip_reasons": {},
     "lanes": {
@@ -42,9 +42,9 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 24,
+        "processed": 1,
         "closed": 0,
-        "comment_synced": 24,
+        "comment_synced": 1,
         "skipped": 0,
         "skip_reasons": {}
       }
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-07-21T14:36:56.157Z"
+  "updated_at": "2026-07-21T14:46:33.633Z"
 }
