@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:37:00.248Z",
+  "generatedAt": "2026-07-21T14:24:38.880Z",
   "updatedAt": "2026-07-21T12:18:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -30,39 +30,34 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse a un `400` de `updatePrice` cuando el listing remoto sigue activo pero MercadoLibre no devuelve una causa clasificable?",
-  "rationale": "El código demuestra que no debe tratarse todo `400` como transitorio ni como listing inactivo; la decisión determina recuperación, terminalidad y el criterio seguro del backfill.",
+  "question": "¿Qué política debe aplicarse a un HTTP 400 de `updatePrice` cuando MercadoLibre confirma que el listing sigue activo?",
+  "rationale": "El código puede distinguir listings stale, pero decidir entre reintento, estado terminal o revisión manual para listings activos requiere conocer el significado operativo del body remoto.",
   "options": [
     {
-      "title": "Reconciliar y clasificar por causa",
-      "body": "Consultar el estado remoto y persistir el body estructurado; reintentar solo causas confirmadas transitorias y mantener revisión para las no clasificables.",
+      "title": "Clasificar desde la respuesta remota",
+      "body": "Persistir el body estructurado, definir reglas específicas y aplicar un dry-run de backfill antes de mutar los SKUs históricos.",
       "recommended": true
     },
     {
-      "title": "Marcar como terminal",
-      "body": "Detener todos los reintentos de `400` activos, aceptando que algunos fallos recuperables requerirán revisión manual.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener UNKNOWN sin drenaje",
-      "body": "Conservar el comportamiento actual hasta reunir más muestras, evitando mutaciones pero manteniendo el backlog pendiente.",
+      "title": "Mantenerlos en revisión manual",
+      "body": "Conservar `UNKNOWN` para listings activos y exponer una cola operativa hasta reunir muestras suficientes de respuestas 400.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar y clasificar por causa",
-    "body": "Consultar el estado remoto y persistir el body estructurado; reintentar solo causas confirmadas transitorias y mantener revisión para las no clasificables.",
+    "title": "Clasificar desde la respuesta remota",
+    "body": "Persistir el body estructurado, definir reglas específicas y aplicar un dry-run de backfill antes de mutar los SKUs históricos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La incidencia está asignada a esta persona y su historial concentra el flujo de recuperación de MercadoLibre.",
+    "reason": "Está asignado a la incidencia y su historial es el más concentrado en el flujo afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
-    "reviewedAt": "2026-07-21T14:37:00.248Z",
+    "reviewedAt": "2026-07-21T14:24:38.880Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

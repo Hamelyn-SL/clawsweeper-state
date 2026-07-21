@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:54:28.061Z",
-  "updatedAt": "2026-07-21T09:30:18Z",
+  "generatedAt": "2026-07-21T14:30:50.900Z",
+  "updatedAt": "2026-07-21T12:18:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,6 @@
     "labels": [
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:blocked",
       "triage:confirmed-live",
@@ -26,38 +25,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-08T02:35:52Z",
-    "updatedAt": "2026-07-21T09:30:18Z"
+    "updatedAt": "2026-07-21T12:18:47Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el cron añadir reintentos locales limitados para `getOrder` ante errores 5xx de SP-API, además de la reentrega SQS existente?",
-  "rationale": "La elección afecta simultáneamente a cuota de Amazon, latencia del cron y velocidad de recuperación; el código no puede fijar ese equilibrio sin una política operativa.",
+  "question": "¿Debe el cron añadir retry/backoff local específico para `getOrder` 500, o mantener exclusivamente el reintento diferido de SQS y escalar las incidencias sostenidas a Amazon?",
+  "rationale": "Ambas opciones protegen de pérdida de mensajes, pero cambian el consumo de cuota, la latencia y el riesgo de timeout; el código no puede elegir ese equilibrio por sí solo.",
   "options": [
     {
-      "title": "Mantener solo reentrega SQS",
-      "body": "Conservar el comportamiento actual y abrir caso con Amazon si reaparecen 5xx sostenidos con evidencias recientes.",
+      "title": "Mantener reintento SQS y observabilidad",
+      "body": "Conservar el comportamiento actual, añadir métricas o alerta para fallos sostenidos y escalar a Amazon cuando el proveedor persista.",
       "recommended": true
     },
     {
-      "title": "Añadir retry presupuestado",
-      "body": "Reintentar únicamente 5xx transitorios con un máximo pequeño, backoff y corte antes del presupuesto del cron.",
+      "title": "Añadir retry local limitado",
+      "body": "Aplicar pocos reintentos con backoff y presupuesto estricto antes de devolver el mensaje a SQS.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener solo reentrega SQS",
-    "body": "Conservar el comportamiento actual y abrir caso con Amazon si reaparecen 5xx sostenidos con evidencias recientes.",
+    "title": "Mantener reintento SQS y observabilidad",
+    "body": "Conservar el comportamiento actual, añadir métricas o alerta para fallos sostenidos y escalar a Amazon cuando el proveedor persista.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "El historial disponible lo vincula con la configuración y el runner actual del poller.",
+    "person": "PabloMoran34",
+    "reason": "El historial atribuye a esta persona la ruta que decide la retención y el borrado de mensajes.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5747.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5747#issuecomment-4971272554",
-    "reviewedAt": "2026-07-21T11:54:28.061Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewedAt": "2026-07-21T14:30:50.900Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

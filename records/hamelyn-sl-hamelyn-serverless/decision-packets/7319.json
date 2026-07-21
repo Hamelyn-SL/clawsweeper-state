@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T14:44:52.618Z",
-  "updatedAt": "2026-07-20T13:09:42Z",
+  "generatedAt": "2026-07-21T14:29:03.783Z",
+  "updatedAt": "2026-07-21T12:18:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,7 +11,6 @@
     "state": "open",
     "labels": [
       "app:supply",
-      "priority:p1",
       "feature",
       "reporter:miguel",
       "triage:done",
@@ -20,41 +19,42 @@
       "issue-rating: ➖ n/a",
       "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-10T06:23:02Z",
-    "updatedAt": "2026-07-20T13:09:42Z"
+    "updatedAt": "2026-07-21T12:18:32Z"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Están los binarios `2.6.04` publicados y verificables en ambas stores para autorizar el merge de la rama de release?",
-  "rationale": "La publicación en stores y la confirmación de disponibilidad no se pueden inferir desde el código; el endpoint cambia el comportamiento de actualización para usuarios ya instalados.",
+  "question": "¿Confirma el equipo de Supply que los binarios `2.6.04` ya están publicados en ambas stores y que el bloqueo de compilación iOS está resuelto o justificado por EAS?",
+  "rationale": "La disponibilidad externa y la validez del toolchain de release no pueden inferirse del checkout, y condicionan un merge seguro.",
   "options": [
     {
-      "title": "Confirmar publicación y continuar",
-      "body": "Verificar ambos binarios live, resolver la revisión de la PR vinculada y autorizar su merge a `dev`.",
+      "title": "Completar release y mergear",
+      "body": "Aportar confirmación de iOS y Android live, resolver o justificar la compilación iOS y autorizar el merge de la PR vinculada.",
       "recommended": true
     },
     {
-      "title": "Mantener la rama sin mergear",
-      "body": "Esperar a que EAS y las stores completen la publicación antes de anunciar la nueva versión.",
+      "title": "Mantener el bump pendiente",
+      "body": "Conservar la PR sin mergear hasta disponer de pruebas de compilación y publicación en stores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar publicación y continuar",
-    "body": "Verificar ambos binarios live, resolver la revisión de la PR vinculada y autorizar su merge a `dev`.",
+    "title": "Completar release y mergear",
+    "body": "Aportar confirmación de iOS y Android live, resolver o justificar la compilación iOS y autorizar el merge de la PR vinculada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha coordinado la secuencia acordada y actualmente lleva la rama candidata de release.",
+    "reason": "Es la persona asignada que fijó el orden de publicación y mantiene la PR de bump.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7319.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7319#issuecomment-4932690740",
-    "reviewedAt": "2026-07-20T14:44:52.618Z",
-    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+    "reviewedAt": "2026-07-21T14:29:03.783Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

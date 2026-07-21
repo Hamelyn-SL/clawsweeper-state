@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T14:35:22.885Z",
+  "updatedAt": "2026-07-21T11:30:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7820,
+    "title": "fix: redact abebooks transport errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7820",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "proof: sufficient",
+      "proof: 📸 screenshot",
+      "rating: 💎 diamond",
+      "status: 👀 ready for maintainer look",
+      "P1",
+      "merge-risk: 🚨 security-boundary"
+    ],
+    "createdAt": "2026-07-21T09:49:32Z",
+    "updatedAt": "2026-07-21T11:30:05Z",
+    "headSha": "c27684ea9b275aa7b0594d42cd8ec4e23526479f"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿La lista permitida actual aporta suficiente contexto operativo sin registrar datos de transporte de AbeBooks?",
+  "rationale": "La elección entre máxima redacción y detalle diagnóstico define una frontera de seguridad y observabilidad que requiere intención humana explícita.",
+  "options": [
+    {
+      "title": "Aprobar la lista permitida actual",
+      "body": "Conservar únicamente `name`, `message`, `code`, `status` y `method`, dejando el contexto XML seguro ya gestionado por la ruta de parser.",
+      "recommended": true
+    },
+    {
+      "title": "Ampliar contexto redaccionado",
+      "body": "Añadir solo campos extraídos y validados de forma explícita, junto con pruebas que demuestren que no incluyen respuesta, XML autenticado ni cabeceras.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la lista permitida actual",
+    "body": "Conservar únicamente `name`, `message`, `code`, `status` y `method`, dejando el contexto XML seguro ya gestionado por la ruta de parser.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor solicitado y su historial reciente en el archivo lo sitúa cerca de la política de observabilidad afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7820.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7820#issuecomment-5033396121",
+    "reviewedAt": "2026-07-21T14:35:22.885Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+  }
+}

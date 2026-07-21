@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:45:16.498Z",
-  "updatedAt": "2026-07-21T09:30:19Z",
+  "generatedAt": "2026-07-21T14:25:27.403Z",
+  "updatedAt": "2026-07-21T12:18:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,6 @@
     "labels": [
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:no-change",
       "P1",
@@ -24,43 +23,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-07-21T09:30:19Z"
+    "updatedAt": "2026-07-21T12:18:48Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el cron cortar todas las fases al exceder un presupuesto global o limitar y recuperar únicamente la fase identificada?",
-  "rationale": "La cancelación puede interrumpir operaciones externas ya iniciadas; elegir reintento, aislamiento o fallo completo requiere una política operativa explícita.",
+  "question": "¿Debe el cron común cancelar y diferir fases Amazon al agotarse un presupuesto propio, o permitir que continúen hasta el límite de Vercel?",
+  "rationale": "La implementación determina qué trabajo parcial puede ejecutarse, reintentarse o quedar pendiente; el código actual no define ese contrato operativo.",
   "options": [
     {
-      "title": "Instrumentar antes de limitar",
-      "body": "Capturar una nueva ocurrencia con la fase exacta y definir el límite y la recuperación sobre esa operación.",
+      "title": "Acotar y diferir",
+      "body": "Aplicar un presupuesto compartido por fase, registrar el corte y reintentar de forma explícita el trabajo no completado.",
       "recommended": true
     },
     {
-      "title": "Presupuesto global del cron",
-      "body": "Abortar el run antes de Vercel y registrar un fallo controlado para que el siguiente ciclo recupere el trabajo.",
+      "title": "Mantener ejecución completa",
+      "body": "Conservar los 800 segundos actuales y aceptar los 504 mientras se investigan las operaciones lentas por separado.",
       "recommended": false
     },
     {
-      "title": "Aislar la fase vencida",
-      "body": "Permitir que las demás fases concluyan y registrar la fase excedida para una recuperación dirigida.",
+      "title": "Presupuesto solo para conexión",
+      "body": "Limitar únicamente Mongo y mantener sin límite las fases posteriores de Amazon.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Instrumentar antes de limitar",
-    "body": "Capturar una nueva ocurrencia con la fase exacta y definir el límite y la recuperación sobre esa operación.",
+    "title": "Acotar y diferir",
+    "body": "Aplicar un presupuesto compartido por fase, registrar el corte y reintentar de forma explícita el trabajo no completado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su revisión previa estableció que la solución debe vivir en la capa común, no en guards duplicados por ruta.",
+    "reason": "Su seguimiento de la issue fijó la frontera entre guards locales y la capa común que ahora requiere decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-07-21T11:45:16.498Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewedAt": "2026-07-21T14:25:27.403Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

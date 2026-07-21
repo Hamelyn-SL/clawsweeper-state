@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:54:05.714Z",
-  "updatedAt": "2026-07-21T09:30:17Z",
+  "generatedAt": "2026-07-21T14:26:17.213Z",
+  "updatedAt": "2026-07-21T12:18:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,56 +12,55 @@
     "labels": [
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-21T09:30:17Z"
+    "updatedAt": "2026-07-21T12:18:46Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los bloqueos de cuenta o política de eBay deben quedar como permanentes o reencolarse manualmente tras verificar que eBay ha levantado la restricción?",
-  "rationale": "El código puede reconocer mensajes concretos, pero la recuperación correcta depende de la política operativa ante restricciones de vendedor y no de una equivalencia técnica segura.",
+  "question": "¿Qué condición operativa debe permitir reencolar SKU y reactivar `ebay.create()` cuando eBay retire una restricción de cuenta o política?",
+  "rationale": "La clasificación actual cubre una cadena concreta, pero no puede decidir por sí sola si una limitación de cuenta es permanente ni cuál debe ser la señal segura del cron.",
   "options": [
     {
-      "title": "Separar contenido y cuenta",
-      "body": "Mantener los rechazos de contenido como `PERMANENT` y definir un reencolado manual y auditado para bloqueos de cuenta cuando eBay confirme su levantamiento.",
+      "title": "Definir recuperación y reactivación",
+      "body": "Acordar señales de cuenta resuelta, reencolado de SKU afectados y una prueba controlada antes de volver a activar create.",
       "recommended": true
     },
     {
       "title": "Mantener la pausa",
-      "body": "Conservar `ebay.create()` deshabilitado hasta disponer de una respuesta operativa de eBay y muestras actuales clasificables.",
+      "body": "Conservar create deshabilitado hasta que exista una recuperación operativa verificable para bloqueos de cuenta.",
       "recommended": false
     },
     {
-      "title": "Tratar todo como terminal",
-      "body": "Marcar también los bloqueos de cuenta como permanentes, aceptando que requerirán corrección o reactivación explícita de catálogo.",
+      "title": "Clasificar todo como permanente",
+      "body": "Evitar reintentos automáticos, asumiendo una intervención manual para cada futura liberación de cuenta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar contenido y cuenta",
-    "body": "Mantener los rechazos de contenido como `PERMANENT` y definir un reencolado manual y auditado para bloqueos de cuenta cuando eBay confirme su levantamiento.",
+    "title": "Definir recuperación y reactivación",
+    "body": "Acordar señales de cuenta resuelta, reencolado de SKU afectados y una prueba controlada antes de volver a activar create.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su cambio conserva actualmente la pausa de creación y la decisión condiciona la reactivación segura del cron.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta el manejo actual de errores por oferta con las reglas de retry que delimitan una reactivación segura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5778#issuecomment-4909751684",
-    "reviewedAt": "2026-07-21T11:54:05.714Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewedAt": "2026-07-21T14:26:17.213Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
