@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:29:20.768Z",
-  "updatedAt": "2026-07-21T12:18:43Z",
+  "generatedAt": "2026-07-19T17:04:41.618Z",
+  "updatedAt": "2026-07-19T13:44:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,51 +10,59 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046",
     "state": "open",
     "labels": [
+      "marketplace-crons",
       "codex",
       "bug",
+      "priority:p1",
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "P1",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:not-repro-on-main",
-      "issue-rating: 🥈 silver"
+      "P1",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-05-25T20:33:08Z",
-    "updatedAt": "2026-07-21T12:18:43Z"
+    "updatedAt": "2026-07-19T13:44:33Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe reactivarse `ebay.create()` ya con la corrección por SKU, o mantenerse pausado hasta resolver también las señales de publicación en bloque?",
-  "rationale": "El código evita el aborto por precio ausente, pero la activación cambia el comportamiento operativo y puede exponer el flujo a fallos de publicación aún abiertos.",
+  "question": "¿Debe seguir pausada la creación de listings de eBay hasta resolver la observabilidad de publicaciones fallidas, o se autoriza una reactivación controlada con prueba real?",
+  "rationale": "El código resuelve el precio ausente, pero decidir cuándo reactivar una integración que publica listings y qué señal operativa exigir requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Reactivar con guardas y observabilidad",
-      "body": "Habilitar create para una cohorte acotada tras verificar errores por SKU y alertas de publicación.",
+      "title": "Mantener la pausa",
+      "body": "Conservar `ebay.create()` desactivado hasta resolver o acotar el fallo de publicación tratado en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184.",
       "recommended": true
     },
     {
-      "title": "Mantener la pausa",
-      "body": "Conservar la contención hasta que la incidencia de publicación en bloque tenga una señal de éxito suficiente.",
+      "title": "Reactivar de forma controlada",
+      "body": "Reactivar create tras definir alertas o fallo visible para lotes sin publicaciones y adjuntar evidencia real redacted del primer lote.",
+      "recommended": false
+    },
+    {
+      "title": "Reactivar sin cambios operativos",
+      "body": "Aceptar el contrato actual de HTTP 200 con fallos parciales y reactivar únicamente la llamada de creación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reactivar con guardas y observabilidad",
-    "body": "Habilitar create para una cohorte acotada tras verificar errores por SKU y alertas de publicación.",
+    "title": "Mantener la pausa",
+    "body": "Conservar `ebay.create()` desactivado hasta resolver o acotar el fallo de publicación tratado en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Introdujo la contención temporal y cuenta con la procedencia más directa para decidir su retirada.",
+    "person": "JavierHamelyn",
+    "reason": "La persona autora de la corrección fusionada es la mejor referencia histórica para evaluar la reactivación y su validación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6046.md",
-    "reviewedAt": "2026-07-21T13:29:20.768Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6046#issuecomment-4974262910",
+    "reviewedAt": "2026-07-19T17:04:41.618Z",
+    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
   }
 }
