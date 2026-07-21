@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T15:54:25.133Z",
-  "updatedAt": "2026-07-19T12:48:30Z",
+  "generatedAt": "2026-07-21T12:41:40.752Z",
+  "updatedAt": "2026-07-21T12:18:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,48 @@
     "labels": [
       "source:admin-panel",
       "app:ecommerce",
-      "priority:p1",
       "feature",
       "reporter:blanca",
       "triage:needs-info",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-15T12:58:18Z",
-    "updatedAt": "2026-07-19T12:48:30Z"
+    "updatedAt": "2026-07-21T12:18:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe tratarse la oficina asociada solo por el CP del fichero como destino fiable de recogida Postlibri, o únicamente como información orientativa?",
-  "rationale": "La fuente adjunta y el código no prueban que el CP físico de la oficina determine el punto que gestiona devoluciones de cualquier domicilio de ese CP.",
+  "question": "¿Se aprueba usar `LOCALIZACION CP` como asignación fiable de oficina de recogida para envíos Postlibri no entregados?",
+  "rationale": "El código puede almacenar y consultar el catálogo, pero no puede demostrar que la oficina física del CP gestione todas las direcciones de ese CP.",
   "options": [
     {
-      "title": "Validar el contrato con Correos",
-      "body": "Pedir confirmación escrita sobre semántica, cobertura y excepciones antes de importar o mostrar oficinas como destino de recogida.",
+      "title": "Confirmar la correspondencia con Correos",
+      "body": "Operaciones aporta confirmación documental y ejemplos representativos antes de implementar el catálogo y el lookup.",
       "recommended": true
     },
     {
-      "title": "Adoptarlo como dato orientativo",
-      "body": "Mostrar el resultado con una advertencia visible de que no confirma la oficina que gestionará el envío.",
+      "title": "Mostrar el dato solo como orientación",
+      "body": "Se presenta como referencia no confirmada, con aviso y fallback de Atención al Cliente para casos sin correspondencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar el contrato con Correos",
-    "body": "Pedir confirmación escrita sobre semántica, cobertura y excepciones antes de importar o mostrar oficinas como destino de recogida.",
+    "title": "Confirmar la correspondencia con Correos",
+    "body": "Operaciones aporta confirmación documental y ejemplos representativos antes de implementar el catálogo y el lookup.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Su trabajo reciente en la ruta administrativa Postlibri le conecta con la futura superficie técnica de consulta.",
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona más conectada, por historial, al flujo Postlibri que consumiría el lookup.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7601.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601#issuecomment-4980998565",
-    "reviewedAt": "2026-07-19T15:54:25.133Z",
-    "mainSha": "549d31b500dd08c82cf5783c0b1909202f237e53"
+    "reviewedAt": "2026-07-21T12:41:40.752Z",
+    "mainSha": "f15fefc29ac97b7c29d8b1f9c080a156899c7f97"
   }
 }

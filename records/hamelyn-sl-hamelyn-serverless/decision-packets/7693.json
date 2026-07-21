@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:33:16.121Z",
-  "updatedAt": "2026-07-19T16:26:09Z",
+  "generatedAt": "2026-07-21T12:42:09.751Z",
+  "updatedAt": "2026-07-21T12:18:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,49 +11,47 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 🥈 silver",
-      "clawsweeper:not-repro-on-main",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:not-repro-on-main",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-07-19T16:26:09Z"
+    "updatedAt": "2026-07-21T12:18:28Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Autoriza el equipo Marketplace/Data una reconciliación controlada de la cohorte Fnac histórica tras validar muestras contra el estado remoto?",
-  "rationale": "La corrección de código ya está en `dev`; el paso restante implica leer servicios productivos y potencialmente modificar miles de documentos, por lo que necesita aprobación humana.",
+  "question": "¿Autoriza el equipo Marketplace/Data un dry-run y una reconciliación productiva limitada de la cohorte Fnac histórica?",
+  "rationale": "La solución requiere consultar Fnac y puede modificar miles de documentos vivos; el código actual no demuestra una reparación autónoma segura.",
   "options": [
     {
-      "title": "Reconciliar con dry-run previo",
-      "body": "Validar recuento, tres muestras remotas y resultados esperados antes de ejecutar una mutación acotada y verificable.",
+      "title": "Autorizar dry-run y reconciliación acotada",
+      "body": "Muestrear varios `batchId`, documentar recuentos y escribir solo cambios validados frente al estado remoto.",
       "recommended": true
     },
     {
-      "title": "Conservar la cohorte temporalmente",
-      "body": "Mantener los datos intactos hasta disponer de una ventana operativa o de evidencia remota adicional.",
+      "title": "Conservar la cohorte para investigación",
+      "body": "No mutar datos hasta disponer de una política explícita para los errores históricos de marketplace.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconciliar con dry-run previo",
-    "body": "Validar recuento, tres muestras remotas y resultados esperados antes de ejecutar una mutación acotada y verificable.",
+    "title": "Autorizar dry-run y reconciliación acotada",
+    "body": "Muestrear varios `batchId`, documentar recuentos y escribir solo cambios validados frente al estado remoto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con la conexión histórica más directa con la corrección vigente y las mutaciones afectadas.",
+    "reason": "Conoce la corrección del productor y ha mantenido recientemente las mutaciones del área.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-07-19T17:33:16.121Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T12:42:09.751Z",
+    "mainSha": "f15fefc29ac97b7c29d8b1f9c080a156899c7f97"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:06:39.733Z",
-  "updatedAt": "2026-07-19T12:41:39Z",
+  "generatedAt": "2026-07-21T12:40:06.532Z",
+  "updatedAt": "2026-07-21T12:18:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,52 +11,50 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:infrastructure",
       "triage:done",
-      "security-alert",
-      "P2",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond",
+      "security-alert"
     ],
     "createdAt": "2026-07-16T06:09:31Z",
-    "updatedAt": "2026-07-19T12:41:39Z"
+    "updatedAt": "2026-07-21T12:18:30Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba incorporar la distribución oficial de SheetJS desde `cdn.sheetjs.com` como dependencia runtime para corregir ambas alertas de `xlsx`?",
-  "rationale": "La versión corregida propuesta queda fuera del registro npm habitual, por lo que la fuente, integridad y política de actualización necesitan una decisión humana.",
+  "question": "¿Se aprueba usar un tarball oficial e inmutable de SheetJS desde `cdn.sheetjs.com` como dependencia runtime para sustituir `xlsx@0.18.5`?",
+  "rationale": "La remediación disponible cambia el origen de la dependencia fuera de npm; aceptar su procedencia, integridad y mantenimiento requiere criterio humano de seguridad.",
   "options": [
     {
-      "title": "Aprobar el tarball oficial verificado",
-      "body": "Usar una URL versionada de SheetJS con controles de integridad y actualizar ambos consumidores directos en un único cambio.",
+      "title": "Aprobar el tarball oficial",
+      "body": "Fijar la versión corregida con integridad verificable en Admin y Core, regenerar el lockfile y validar los flujos XLSX compartidos.",
       "recommended": true
     },
     {
-      "title": "Elegir otra distribución compatible",
-      "body": "Mantener la alerta abierta mientras se selecciona una alternativa que cumpla la política de dependencias.",
+      "title": "Elegir otra vía de suministro",
+      "body": "Definir una alternativa aprobada o una migración de librería y mantener ambas alertas abiertas hasta disponer de una corrección equivalente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el tarball oficial verificado",
-    "body": "Usar una URL versionada de SheetJS con controles de integridad y actualizar ambos consumidores directos en un único cambio.",
+    "title": "Aprobar el tarball oficial",
+    "body": "Fijar la versión corregida con integridad verificable en Admin y Core, regenerar el lockfile y validar los flujos XLSX compartidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo el parser compartido y las rutas de carga que forman la superficie afectada.",
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el helper compartido y la ruta de carga que constituyen la superficie principal de esta alerta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7613.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7613#issuecomment-4989020624",
-    "reviewedAt": "2026-07-19T16:06:39.733Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T12:40:06.532Z",
+    "mainSha": "f15fefc29ac97b7c29d8b1f9c080a156899c7f97"
   }
 }
