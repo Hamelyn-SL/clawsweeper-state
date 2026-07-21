@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:35:35.856Z",
+  "generatedAt": "2026-07-21T14:24:51.895Z",
   "updatedAt": "2026-07-21T12:18:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -28,38 +28,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `create` reintentar de forma limitada dentro de `products`, diferir los SKUs pendientes o mantener el corte actual hasta la siguiente ejecución?",
-  "rationale": "El código confirma el corte actual, pero el límite remoto y el coste operativo aceptable de reintentar no están definidos por contrato ni por evidencia reciente del proveedor.",
+  "question": "¿Debe `create` reintentar dentro del mismo lote con una cuota confirmada o detenerlo y recuperar los elementos en una ejecución posterior?",
+  "rationale": "Ambas opciones protegen al proveedor, pero difieren en latencia, rendimiento y acumulación de trabajo; el contrato de TodoColeccion no está documentado en la evidencia disponible.",
   "options": [
     {
-      "title": "Definir backoff acotado por `products`",
-      "body": "Registrar la respuesta remota y aplicar reintentos limitados con espera y persistencia explícita de los SKUs no procesados.",
+      "title": "Reintento acotado por cuota",
+      "body": "Aplicar una espera y reintento limitados sólo tras confirmar el límite remoto, conservando el breaker por familia.",
       "recommended": true
     },
     {
-      "title": "Mantener corte diferido",
-      "body": "Conservar el corte del lote y priorizar una cola o recuperación posterior si el proveedor confirma una cuota estricta.",
-      "recommended": false
-    },
-    {
-      "title": "Separar `create` y `updatePrice`",
-      "body": "Dar a cada operación de `products` una política independiente si sus cuotas o consecuencias operativas difieren.",
+      "title": "Recuperación diferida",
+      "body": "Mantener el corte del lote, pero persistir el estado recuperable y emitir una señal explícita para reanudarlo después.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir backoff acotado por `products`",
-    "body": "Registrar la respuesta remota y aplicar reintentos limitados con espera y persistencia explícita de los SKUs no procesados.",
+    "title": "Reintento acotado por cuota",
+    "body": "Aplicar una espera y reintento limitados sólo tras confirmar el límite remoto, conservando el breaker por familia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Fusionó la mitigación existente y mantiene actualmente los caminos centrales de TodoColeccion.",
-    "confidence": "high"
+    "reason": "Es el contribuidor más reciente del código actual de TodoColeccion y ha intervenido en incidencias operativas relacionadas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewedAt": "2026-07-21T14:35:35.856Z",
+    "reviewedAt": "2026-07-21T14:24:51.895Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:31:12.656Z",
+  "generatedAt": "2026-07-21T14:32:26.927Z",
   "updatedAt": "2026-07-21T13:09:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,46 +16,45 @@
       "reporter:miguel",
       "triage:pr-opened",
       "P1",
-      "impact:security",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-security-review"
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-20T09:55:41Z",
     "updatedAt": "2026-07-21T13:09:46Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué plan operativo autoriza el equipo para rotar la credencial de Azeta y tratar los eventos históricos expuestos en Vercel y BigQuery?",
-  "rationale": "La PR puede impedir nuevas exposiciones, pero la rotación de secretos y la retención o eliminación de registros requieren acceso y criterios operativos que no determina el código.",
+  "question": "¿Se aprueba la contención operativa inmediata —rotación de Azeta y tratamiento de logs históricos— mientras se revisa e integra la mitigación de código?",
+  "rationale": "La modificación de código evita nuevas exposiciones, pero no puede decidir ni ejecutar por sí sola la respuesta ante secretos y PII ya persistidos.",
   "options": [
     {
-      "title": "Contener antes de cerrar",
-      "body": "Integrar la mitigación de código y ejecutar de inmediato rotación de la credencial y un plan documentado de retención o eliminación.",
+      "title": "Contener y verificar antes de integrar",
+      "body": "Rotar la credencial, decidir la depuración o retención de los eventos afectados y exigir una ejecución redactada de la mitigación antes del merge.",
       "recommended": true
     },
     {
-      "title": "Mitigar y calendarizar saneamiento",
-      "body": "Integrar la PR y registrar con seguridad una fecha, responsable y alcance explícitos para la rotación y el saneamiento.",
+      "title": "Mitigar código primero",
+      "body": "Integrar la PR tras la revisión de seguridad y tratar la rotación y los registros históricos como una respuesta operativa urgente separada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contener antes de cerrar",
-    "body": "Integrar la mitigación de código y ejecutar de inmediato rotación de la credencial y un plan documentado de retención o eliminación.",
+    "title": "Contener y verificar antes de integrar",
+    "body": "Rotar la credencial, decidir la depuración o retención de los eventos afectados y exigir una ejecución redactada de la mitigación antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual y puede coordinar la parte operativa con los responsables de infraestructura y seguridad.",
+    "reason": "Es la persona asignada a esta incidencia y puede coordinar la respuesta entre ecommerce, infraestructura y seguridad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7771.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771#issuecomment-5022470902",
-    "reviewedAt": "2026-07-21T14:31:12.656Z",
+    "reviewedAt": "2026-07-21T14:32:26.927Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

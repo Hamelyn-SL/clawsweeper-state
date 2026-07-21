@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:42:16.164Z",
-  "updatedAt": "2026-07-20T10:38:16Z",
+  "generatedAt": "2026-07-21T14:29:19.716Z",
+  "updatedAt": "2026-07-21T12:18:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p1",
       "app:infrastructure",
-      "reporter:JavierHamelyn",
+      "reporter:javier",
       "triage:done",
-      "impact:data-loss",
-      "impact:message-loss",
       "P1",
-      "issue-rating: ⚪ platinum",
+      "impact:other",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-20T10:38:16Z"
+    "updatedAt": "2026-07-21T12:18:35Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se aprueba para eDesk el contrato de respuesta diferida `202` respaldado por outbox y cron de rescate propuesto en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7783?",
-  "rationale": "Ese cambio modifica el comportamiento visible de incidencias ante fallos externos y la política de recuperación; no es una decisión que pueda cerrar automáticamente este índice.",
+  "question": "¿Debe aprobarse el acuse 200 para IPN legacy no verificables cuando tengan `topic` e `id`, sin procesarlas?",
+  "rationale": "El cambio evita reintentos, pero altera la respuesta a solicitudes no autenticadas y la evidencia técnica no confirma por sí sola la cobertura operativa de webhooks v2.",
   "options": [
     {
-      "title": "Aprobar entrega diferida con outbox",
-      "body": "Aceptar el `202` temporal y revisar la PR con la semántica de idempotencia, rescate y tratamiento de fallos terminales.",
+      "title": "Aprobar con cobertura v2 confirmada",
+      "body": "Fusionar la PR de IPN tras confirmar que los webhooks v2 firmados y el flujo síncrono cubren los pagos de producción.",
       "recommended": true
     },
     {
-      "title": "Mantener respuesta síncrona",
-      "body": "Rechazar el nuevo contrato y pedir un arreglo limitado que preserve el comportamiento HTTP actual mientras se define la persistencia.",
+      "title": "Mantener 401",
+      "body": "Conservar el rechazo actual y resolver los reintentos mediante configuración o migración explícita en Mercado Pago.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar entrega diferida con outbox",
-    "body": "Aceptar el `202` temporal y revisar la PR con la semántica de idempotencia, rescate y tratamiento de fallos terminales.",
+    "title": "Aprobar con cobertura v2 confirmada",
+    "body": "Fusionar la PR de IPN tras confirmar que los webhooks v2 firmados y el flujo síncrono cubren los pagos de producción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es la persona más conectada con el desglose reciente y los vehículos de resolución aún abiertos.",
+    "reason": "Ha dirigido el desglose y es autor de la PR abierta que modifica esta ruta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-20T12:42:16.164Z",
-    "mainSha": "002ed05570d3a62b65a6347b7e023057f60d8a38"
+    "reviewedAt": "2026-07-21T14:29:19.716Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

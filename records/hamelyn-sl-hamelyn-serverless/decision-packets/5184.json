@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:38:37.624Z",
+  "generatedAt": "2026-07-21T14:27:26.029Z",
   "updatedAt": "2026-07-21T12:18:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -29,38 +29,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué señal debe emitir `/api/ebay` cuando `bulkPublishOffer` rechaza todo o parte de un lote al reactivar `ebay.create()`?",
-  "rationale": "El handler compartido afecta varios crons y el código actual mantiene HTTP 200 intencionadamente ante rechazos parciales; elegir entre estado HTTP, métrica o política por ruta exige criterio operativo.",
+  "question": "¿Qué señal debe emitir `/api/ebay` al reactivar create cuando un lote de `bulkPublishOffer` falla parcial o totalmente: HTTP compatible más severidad estructurada, o un estado HTTP degradado por ruta?",
+  "rationale": "El handler es compartido por varios crons y los comentarios de la canónica muestran que una modificación global de HTTP puede romper flujos que continúan deliberadamente ante fallos permanentes.",
   "options": [
     {
-      "title": "Política por ruta y métrica estructurada",
-      "body": "Definir en el handler una severidad por cron y emitir `partial_failure` con contadores, manteniendo HTTP compatible donde el negocio lo requiera.",
+      "title": "Señal estructurada compatible",
+      "body": "Mantener temporalmente HTTP `200`, añadir estado y severidad consultables por ruta, y fijar un umbral explícito para eBay antes de reactivar create.",
       "recommended": true
     },
     {
-      "title": "Fallar siempre ante rechazos de create",
-      "body": "Hacer que cualquier fallo de creación eBay degrade la respuesta HTTP, aceptando el posible impacto en ejecuciones con errores permanentes por SKU.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la pausa",
-      "body": "Conservar `ebay.create()` desactivado hasta que se disponga de evidencia de causas remotas y una recuperación operativa definida.",
+      "title": "Degradar eBay por ruta",
+      "body": "Hacer que los fallos completos de publicación en eBay devuelvan un estado degradado, aceptando el impacto operativo documentado para esa ruta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Política por ruta y métrica estructurada",
-    "body": "Definir en el handler una severidad por cron y emitir `partial_failure` con contadores, manteniendo HTTP compatible donde el negocio lo requiera.",
+    "title": "Señal estructurada compatible",
+    "body": "Mantener temporalmente HTTP `200`, añadir estado y severidad consultables por ruta, y fijar un umbral explícito para eBay antes de reactivar create.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reúne la corrección de fallos parciales del cliente eBay y cambios recientes de este flujo.",
-    "confidence": "high"
+    "reason": "Ha documentado la necesidad de una política transversal y mantiene historial reciente en la integración eBay.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewedAt": "2026-07-21T14:38:37.624Z",
+    "reviewedAt": "2026-07-21T14:27:26.029Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
