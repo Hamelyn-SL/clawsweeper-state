@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T19:09:56.708Z",
-  "updatedAt": "2026-07-19T17:47:16Z",
+  "generatedAt": "2026-07-21T11:23:24.052Z",
+  "updatedAt": "2026-07-21T09:42:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,55 +12,54 @@
     "labels": [
       "priority:p1",
       "app:infrastructure",
-      "reporter:JavierHamelyn",
       "feature",
+      "reporter:javier",
       "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-19T17:47:16Z"
+    "updatedAt": "2026-07-21T09:42:47Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Aprueba Data/Platform usar BigQuery como fuente estándar para estas lecturas batch tolerantes a una hora y priorizar flash offers y Merchant por cortes reversibles?",
-  "rationale": "La corrección requiere decidir qué frescura, coste y fallback son aceptables por carga; el código no puede resolver esas políticas de operación por sí solo.",
+  "question": "¿Aprueba Data/Platform BigQuery como fuente estándar para estas lecturas batch tolerantes a retraso y la priorización por cortes reversibles?",
+  "rationale": "La selección de frescura aceptable, coste operativo y política de fallback cambia por consumidor y no puede inferirse de forma segura solo desde el código.",
   "options": [
     {
-      "title": "Aprobar migración por cortes",
-      "body": "Mantener la iniciativa paraguas y aterrizar primero los cortes con criterios de frescura, paridad, rollback y medición operacional definidos.",
+      "title": "Aprobar migración gradual",
+      "body": "Definir paridad, frescura, rollback y métrica de CPU para cada corte, comenzando por flash offers y Merchant.",
       "recommended": true
     },
     {
-      "title": "Limitar inicialmente el alcance",
-      "body": "Migrar solo flash offers y Merchant hasta validar coste, calidad de datos y descenso de CPU antes de abordar reportes y exportaciones.",
+      "title": "Limitar el primer alcance",
+      "body": "Aterrizar solo flash offers y Merchant antes de extender la estrategia a reportes marketplace y exportaciones.",
       "recommended": false
     },
     {
-      "title": "Posponer el cambio de fuente",
-      "body": "Conservar Mongo temporalmente y priorizar índices o materializaciones si BigQuery no satisface la frescura requerida.",
+      "title": "Mantener Mongo temporalmente",
+      "body": "Posponer el cambio de fuente y priorizar materializaciones o índices si la frescura o el coste de BigQuery no resultan aceptables.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración por cortes",
-    "body": "Mantener la iniciativa paraguas y aterrizar primero los cortes con criterios de frescura, paridad, rollback y medición operacional definidos.",
+    "title": "Aprobar migración gradual",
+    "body": "Definir paridad, frescura, rollback y métrica de CPU para cada corte, comenzando por flash offers y Merchant.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está conectado con el primer corte concreto y con la PR candidata que necesita encajar en la dirección aprobada.",
+    "reason": "Coordina el primer corte de flash offers y puede alinear su PR con la decisión transversal.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-07-19T19:09:56.708Z",
-    "mainSha": "04bbf4a60ab8d8ed05aeddd043d578d655844c7a"
+    "reviewedAt": "2026-07-21T11:23:24.052Z",
+    "mainSha": "819dab48d3b1051351836003b89ed2bfe2e22ab4"
   }
 }
