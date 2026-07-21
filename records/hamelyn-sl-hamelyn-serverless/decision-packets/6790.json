@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:50:23.104Z",
-  "updatedAt": "2026-07-19T14:00:58Z",
+  "generatedAt": "2026-07-21T13:30:00.308Z",
+  "updatedAt": "2026-07-21T12:18:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,9 +11,8 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:infrastructure",
-      "reporter:PabloMoran34",
+      "reporter:pablo",
       "triage:done",
       "P2",
       "impact:data-loss",
@@ -24,38 +23,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-02T10:21:44Z",
-    "updatedAt": "2026-07-19T14:00:58Z"
+    "updatedAt": "2026-07-21T12:18:47Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `soldAt` heredarse del marketplace del pedido también cuando la retirada es `SOLD_AS_ALTERNATIVE`, o debe representarse esa sustitución con otro dato?",
-  "rationale": "La respuesta determina el significado histórico del campo y el alcance seguro tanto de la corrección operativa como del backfill.",
+  "question": "¿Debe `soldAt` en una unidad `SOLD_AS_ALTERNATIVE` heredar el marketplace del `orderSell` original o debe conservarse esa relación en un campo distinto?",
+  "rationale": "El código permite identificar las rutas, pero no determina si una sustitución debe contarse como venta de marketplace de la unidad alternativa en analítica e histórico.",
   "options": [
     {
       "title": "Heredar el marketplace del pedido",
-      "body": "Usar el marketplace del pedido asociado para `SOLD` y `SOLD_AS_ALTERNATIVE`, documentando que indica el canal de la venta que consumió la unidad.",
+      "body": "Mantiene `soldAt` como marketplace de toda unidad físicamente suministrada para un pedido, incluida una sustitución.",
       "recommended": true
     },
     {
-      "title": "Separar las sustituciones",
-      "body": "Mantener `soldAt` reservado a la venta original y diseñar otro campo o relación para identificar unidades usadas como alternativa.",
+      "title": "Separar la semántica de sustitución",
+      "body": "Conserva `soldAt` para la venta original y añade o documenta una relación distinta para la unidad alternativa.",
+      "recommended": false
+    },
+    {
+      "title": "No completar alternativas históricas",
+      "body": "Corrige sólo `SOLD` y mantiene las alternativas fuera de las métricas basadas en `soldAt`.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Heredar el marketplace del pedido",
-    "body": "Usar el marketplace del pedido asociado para `SOLD` y `SOLD_AS_ALTERNATIVE`, documentando que indica el canal de la venta que consumió la unidad.",
+    "body": "Mantiene `soldAt` como marketplace de toda unidad físicamente suministrada para un pedido, incluida una sustitución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo la superficie de `soldAt` y mantiene historial reciente en las mutaciones de stock relacionadas.",
+    "reason": "Su historial está ligado a la introducción de `soldAt` y a las mutaciones de marketplace que definen su contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6790.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6790#issuecomment-4910268218",
-    "reviewedAt": "2026-07-19T16:50:23.104Z",
-    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+    "reviewedAt": "2026-07-21T13:30:00.308Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

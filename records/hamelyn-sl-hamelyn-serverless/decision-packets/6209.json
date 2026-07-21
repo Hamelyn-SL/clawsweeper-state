@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:18:01.208Z",
-  "updatedAt": "2026-07-19T14:02:35Z",
+  "generatedAt": "2026-07-21T13:31:21.232Z",
+  "updatedAt": "2026-07-21T12:18:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,55 +10,53 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
       "impact:other",
       "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-live-repro"
     ],
     "createdAt": "2026-06-02T15:35:06Z",
-    "updatedAt": "2026-07-19T14:02:35Z"
+    "updatedAt": "2026-07-21T12:18:42Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Queremos priorizar una mejora permanente de observabilidad batch para Feltrinelli aunque el patrón concreto no reaparezca desde el 15 de junio de 2026?",
-  "rationale": "La implementación parece pequeña, pero la recurrencia actual no justifica por sí sola cambiar el contrato de logs ni decidir qué detalle es seguro publicar.",
+  "question": "¿Qué campos de diagnóstico puede publicar el `catch` global de withdraw batch sin exponer bodies o datos sensibles de proveedores?",
+  "rationale": "La causa histórica ya se conserva en Mongo y los errores individuales se serializan; falta decidir el contrato seguro para el único camino que continúa dejando un evento genérico.",
   "options": [
     {
-      "title": "Añadir contexto estructurado saneado",
-      "body": "Conservar el comportamiento de estado y publicar SKU, tipo de error y mensaje resumido en los `catch` batch.",
+      "title": "Evento redactado y estructurado",
+      "body": "Registrar marketplace, recuento, errorType y un resumen de error limitado, sin body crudo ni credenciales.",
       "recommended": true
     },
     {
-      "title": "Cerrar como incidente histórico",
-      "body": "Mantener la correlación existente y reabrir una incidencia específica si vuelve a observarse el patrón.",
+      "title": "Conservar solo el detalle persistido",
+      "body": "Mantener el contador genérico en logs y usar `errorDetails` de Mongo para las investigaciones operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir contexto estructurado saneado",
-    "body": "Conservar el comportamiento de estado y publicar SKU, tipo de error y mensaje resumido en los `catch` batch.",
+    "title": "Evento redactado y estructurado",
+    "body": "Registrar marketplace, recuento, errorType y un resumen de error limitado, sin body crudo ni credenciales.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente conecta directamente la persistencia de errores con la observabilidad de retiradas.",
+    "reason": "Su cambio reciente introdujo la serialización actual y es el mejor contexto para acotar el formato seguro.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6209.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209#issuecomment-4909862960",
-    "reviewedAt": "2026-07-19T16:18:01.208Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T13:31:21.232Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

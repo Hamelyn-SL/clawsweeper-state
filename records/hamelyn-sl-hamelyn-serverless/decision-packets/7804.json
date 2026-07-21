@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:22:00.189Z",
-  "updatedAt": "2026-07-21T12:18:21Z",
+  "generatedAt": "2026-07-21T13:34:52.471Z",
+  "updatedAt": "2026-07-21T13:25:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,47 @@
       "bug",
       "app:marketplace",
       "triage:pr-opened",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr"
+      "issue-rating: 💎 diamond",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-21T07:08:31Z",
-    "updatedAt": "2026-07-21T12:18:21Z"
+    "updatedAt": "2026-07-21T13:25:22Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Debe la PR incorporar una recuperación histórica verificable de los SKU ya mutados antes de fusionarse?",
-  "rationale": "La prevención futura está acotada, pero decidir la población exacta y la mutación de recuperación requiere validar datos operativos históricos.",
+  "question": "¿Debe la corrección incluir una recuperación histórica verificable de los SKU ya mutados, o gestionarse como una operación separada tras fusionar la prevención?",
+  "rationale": "La lógica preventiva es concreta, pero seleccionar y restaurar la cohorte histórica exige criterio operativo sobre snapshots, estados y posibles cambios posteriores legítimos.",
   "options": [
     {
-      "title": "Incluir recuperación acotada",
-      "body": "Añadir una reparación basada en snapshots o evidencias del informe para restaurar solo los falsos `DB_ONLY` confirmados.",
+      "title": "Separar recuperación operativa",
+      "body": "Fusionar la prevención tras revisión y preparar una recuperación limitada con validación de snapshots y API antes de mutar estados históricos.",
       "recommended": true
     },
     {
-      "title": "Separar la recuperación",
-      "body": "Fusionar únicamente la prevención y abrir trabajo operativo explícito para recuperar la cohorte histórica con validación adicional.",
+      "title": "Incluir recuperación en la PR",
+      "body": "Ampliar la PR con una reparación idempotente y evidencias de la población afectada antes de fusionarla.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Incluir recuperación acotada",
-    "body": "Añadir una reparación basada en snapshots o evidencias del informe para restaurar solo los falsos `DB_ONLY` confirmados.",
+    "title": "Separar recuperación operativa",
+    "body": "Fusionar la prevención tras revisión y preparar una recuperación limitada con validación de snapshots y API antes de mutar estados históricos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el revisor solicitado y cuenta con el historial más directo en la reconciliación Amazon.",
+    "reason": "Su historial de incorporación y mantenimiento de los flujos Amazon lo sitúa como el mejor encaminador técnico para decidir el alcance operativo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7804.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7804#issuecomment-5031235289",
-    "reviewedAt": "2026-07-21T13:22:00.189Z",
-    "mainSha": "90a2ac80466acc656bb003dde93ebb811bcaed4e"
+    "reviewedAt": "2026-07-21T13:34:52.471Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

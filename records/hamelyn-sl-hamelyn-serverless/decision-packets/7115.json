@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:08:15.300Z",
-  "updatedAt": "2026-07-19T13:26:38Z",
+  "generatedAt": "2026-07-21T13:35:56.700Z",
+  "updatedAt": "2026-07-21T12:18:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,49 @@
     "labels": [
       "bug",
       "app:ecommerce",
-      "priority:p3",
       "triage:done",
       "business-logic",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
       "P3",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-07T10:01:02Z",
-    "updatedAt": "2026-07-19T13:26:38Z"
+    "updatedAt": "2026-07-21T12:18:20Z"
   },
   "lane": "manual_review",
   "priority": "P3",
-  "question": "¿Se autoriza una PR de limpieza acotada que retire el export legado tras confirmar que no hay consumidores privados externos al monorepo?",
-  "rationale": "La evidencia interna es concluyente, pero las etiquetas actuales piden revisión humana y el barrel puede tener consumidores no rastreables desde este checkout.",
+  "question": "¿Debe eliminarse ahora la exportación pública `searchProducts` o mantenerse temporalmente por compatibilidad con consumidores externos no rastreables?",
+  "rationale": "No hay callers en el monorepo, pero el símbolo permanece expuesto por el barrel y la issue ya está marcada para revisión humana.",
   "options": [
     {
-      "title": "Autorizar la limpieza acotada",
-      "body": "Eliminar el motor y su re-export, conservar `buildSearchStage` para prescriptor y ajustar la spec BL.",
+      "title": "Eliminar la superficie muerta",
+      "body": "Retirar las dos funciones, el re-export y las referencias BL heredadas, asumiendo que no existe contrato externo soportado.",
       "recommended": true
     },
     {
-      "title": "Mantener temporalmente el export",
-      "body": "Conservar la superficie hasta confirmar explícitamente que ningún consumidor privado la importa.",
+      "title": "Deprecar antes de retirar",
+      "body": "Conservar una exportación temporal documentada mientras se verifica el uso por cualquier consumidor fuera del monorepo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar la limpieza acotada",
-    "body": "Eliminar el motor y su re-export, conservar `buildSearchStage` para prescriptor y ajustar la spec BL.",
+    "title": "Eliminar la superficie muerta",
+    "body": "Retirar las dos funciones, el re-export y las referencias BL heredadas, asumiendo que no existe contrato externo soportado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Validó la regla F2 y llevó la extracción BL que dejó la divergencia documentada.",
+    "reason": "Validó la divergencia durante la extracción BL y es el mejor candidato para confirmar su frontera funcional.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7115.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7115#issuecomment-4913176651",
-    "reviewedAt": "2026-07-19T17:08:15.300Z",
-    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+    "reviewedAt": "2026-07-21T13:35:56.700Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

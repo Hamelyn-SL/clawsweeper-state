@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:57:33.937Z",
-  "updatedAt": "2026-07-19T13:52:45Z",
+  "generatedAt": "2026-07-21T13:36:12.150Z",
+  "updatedAt": "2026-07-21T12:18:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,55 +11,49 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:marketplace",
       "triage:done",
-      "P2",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:other",
+      "clawsweeper:fix-shape-clear"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
-    "updatedAt": "2026-07-19T13:52:45Z"
+    "updatedAt": "2026-07-21T12:18:37Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe `Product not found` de Fnac pasar a `PERMANENT` mientras no exista Catalog API, o debe activarse/construirse una recuperación que vuelva a intentar la creación de producto?",
-  "rationale": "El código permite ambas direcciones: ya hay recuperación registrada pero desactivada, mientras la integración no crea fichas de catálogo Fnac.",
+  "question": "¿Se aprueba tratar `Product not found` de Fnac como `PERMANENT` y planificar por separado el backfill de la cohorte ya reintentada?",
+  "rationale": "La corrección de código es acotada y está respaldada por la guía operativa, pero la transición de datos productivos necesita una aprobación explícita y un plan reversible.",
   "options": [
     {
-      "title": "Marcar como permanente",
-      "body": "Clasificar `Product not found` como `PERMANENT` y tratar la cohorte existente mediante una operación separada, acotada y aprobada.",
+      "title": "Aprobar corrección y backfill separado",
+      "body": "Cambiar primero la política y revisar después un backfill con `dry-run`, conteos y muestras antes de ejecutar la mutación.",
       "recommended": true
     },
     {
-      "title": "Activar recuperación existente",
-      "body": "Habilitar la recuperación Fnac y demostrar que el reintento de creación resuelve productos reales sin aumentar el bucle.",
-      "recommended": false
-    },
-    {
-      "title": "Integrar Catalog API",
-      "body": "Diseñar una integración de catálogo previa a la oferta cuando el negocio requiera publicar referencias aún ausentes en Fnac.",
+      "title": "Conservar reintentos controlados",
+      "body": "Mantener `STALE` solo si se documenta un flujo verificable que pueda crear o reconciliar referencias de catálogo Fnac.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Marcar como permanente",
-    "body": "Clasificar `Product not found` como `PERMANENT` y tratar la cohorte existente mediante una operación separada, acotada y aprobada.",
+    "title": "Aprobar corrección y backfill separado",
+    "body": "Cambiar primero la política y revisar después un backfill con `dry-run`, conteos y muestras antes de ejecutar la mutación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su historial reciente en la clasificación de políticas de reintento lo conecta con la decisión y la reparación mínima.",
+    "person": "JavierHamelyn",
+    "reason": "Es el vínculo histórico más directo con la semántica de `retryPolicy` y la evidencia operativa de esta cohorte.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
-    "reviewedAt": "2026-07-19T16:57:33.937Z",
-    "mainSha": "e11c80449ab8402b18a1e3a4d8986a08770c6ec4"
+    "reviewedAt": "2026-07-21T13:36:12.150Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

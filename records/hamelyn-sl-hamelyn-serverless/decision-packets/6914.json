@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:11:25.269Z",
-  "updatedAt": "2026-07-19T13:44:50Z",
+  "generatedAt": "2026-07-21T13:30:23.512Z",
+  "updatedAt": "2026-07-21T12:18:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,6 @@
     "labels": [
       "source:admin-panel",
       "app:ecommerce",
-      "priority:p2",
       "feature",
       "triage:pr-opened",
       "reporter:victor",
@@ -24,38 +23,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-06T08:33:34Z",
-    "updatedAt": "2026-07-19T13:44:50Z"
+    "updatedAt": "2026-07-21T12:18:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Hamelyn gestionar biografías editoriales propias por autor, separadas del resumen atribuido, y qué equipo aprueba su origen, traducciones y actualización?",
-  "rationale": "La separación técnica es acotada, pero la fuente y gobernanza del nuevo contenido determinan si debe poblarse manualmente, desde un CMS o mediante otro pipeline.",
+  "question": "¿Debe ecommerce almacenar una `biography` editorial propia separada de `description`, y qué fuente/proceso aprobado debe producirla por locale?",
+  "rationale": "La corrección ya fusionada atribuye el texto procedente de Wikipedia, mientras que la solicitud exige una bio propia. El código es acotado, pero decidir procedencia, revisión y localización no es una elección mecánica.",
   "options": [
     {
-      "title": "Campo editorial separado",
-      "body": "Añadir `biography` localizado con una ruta de edición y revisión de copy, preservando `description` y sus créditos como contenido de procedencia externa.",
+      "title": "Aprobar biografía editorial propia",
+      "body": "Definir hechos y fuentes permitidas, revisión editorial y locales iniciales; después implementar el campo localizado separado.",
       "recommended": true
     },
     {
-      "title": "Mantener solo contenido atribuido",
-      "body": "Conservar el modelo actual y no publicar biografías largas hasta disponer de una política editorial y una fuente aprobada.",
+      "title": "Mantener una única descripción atribuida",
+      "body": "Conservar el modelo actual y no añadir contenido largo hasta disponer de un flujo editorial aprobado.",
+      "recommended": false
+    },
+    {
+      "title": "Usar atribución para una bio larga de fuente externa",
+      "body": "Permitir texto largo solo si se conserva la atribución y las obligaciones de licencia correspondientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Campo editorial separado",
-    "body": "Añadir `biography` localizado con una ruta de edición y revisión de copy, preservando `description` y sus créditos como contenido de procedencia externa.",
+    "title": "Aprobar biografía editorial propia",
+    "body": "Definir hechos y fuentes permitidas, revisión editorial y locales iniciales; después implementar el campo localizado separado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su cambio reciente define la frontera actual entre el texto mostrado y su atribución en el storefront.",
+    "person": "Alex Cantón",
+    "reason": "Es el contribuidor más conectado con el componente público y el modelo de datos que tendrían que materializar la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6914.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6914#issuecomment-4911149508",
-    "reviewedAt": "2026-07-19T17:11:25.269Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T13:30:23.512Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

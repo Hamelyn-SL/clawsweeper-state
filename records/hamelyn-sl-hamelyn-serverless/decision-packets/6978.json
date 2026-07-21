@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:18:04.946Z",
-  "updatedAt": "2026-07-19T13:27:03Z",
+  "generatedAt": "2026-07-21T13:30:41.178Z",
+  "updatedAt": "2026-07-21T12:18:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,51 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978",
     "state": "open",
     "labels": [
-      "priority:p2",
       "app:infrastructure",
       "feature",
       "triage:done",
       "business-logic",
-      "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-07-06T10:16:53Z",
-    "updatedAt": "2026-07-19T13:27:03Z"
+    "updatedAt": "2026-07-21T12:18:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La migración debe preservar también el comportamiento histórico de las filas inactivas y de literales con `X`, o retirar/corregir esas filas antes de adoptar regex estándar?",
-  "rationale": "La compatibilidad activa es verificable, pero escoger entre conservar la semántica defectuosa o corregir datos inactivos cambia el comportamiento futuro y no puede deducirse de forma segura.",
+  "question": "¿La migración debe preservar literalmente `X` y las filas inactivas, o corregir sus divergencias al convertir los datos?",
+  "rationale": "La elección altera el matching futuro de datos persistidos y no puede resolverse con una sustitución mecánica del compilador.",
   "options": [
     {
-      "title": "Migrar reglas activas y retirar la fila defectuosa",
-      "body": "Preservar equivalencia de las filas con `priority > 0`, documentar `X` explícitamente y retirar o corregir la negación inactiva antes del corte.",
+      "title": "Preservar equivalencia",
+      "body": "Convertir cada patrón a una regex equivalente y dejar las correcciones de reglas para una issue separada.",
       "recommended": true
     },
     {
-      "title": "Preservar toda la semántica histórica",
-      "body": "Convertir también las filas inactivas a regex equivalentes, manteniendo la negación defectuosa hasta una decisión posterior.",
+      "title": "Corregir al migrar",
+      "body": "Actualizar la fila inactiva y documentar los cambios intencionados de matching antes del despliegue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migrar reglas activas y retirar la fila defectuosa",
-    "body": "Preservar equivalencia de las filas con `priority > 0`, documentar `X` explícitamente y retirar o corregir la negación inactiva antes del corte.",
+    "title": "Preservar equivalencia",
+    "body": "Convertir cada patrón a una regex equivalente y dejar las correcciones de reglas para una issue separada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El contexto del bloque BL le identifica como owner y el historial le vincula a la implementación actual.",
+    "reason": "Figura como owner del bloque y ha mantenido el matching de la matriz.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978#issuecomment-4911160747",
-    "reviewedAt": "2026-07-19T16:18:04.946Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T13:30:41.178Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

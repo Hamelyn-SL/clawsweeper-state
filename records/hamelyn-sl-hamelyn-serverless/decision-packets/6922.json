@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:17:44.789Z",
-  "updatedAt": "2026-07-19T13:44:42Z",
+  "generatedAt": "2026-07-21T13:34:01.994Z",
+  "updatedAt": "2026-07-21T12:18:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,7 +11,6 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:marketplace",
       "triage:done",
       "P2",
@@ -23,43 +22,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-07-19T13:44:42Z"
+    "updatedAt": "2026-07-21T12:18:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué códigos o métodos de envío deben marcar `URGENT` en eBay, Fnac, CDL y los demás marketplaces, y en cuáles se permite conservar el fallback por importe?",
-  "rationale": "El código muestra señales disponibles, pero no define su semántica contractual ni una política segura para canales que no exponen una señal comparable.",
+  "question": "¿Qué códigos o métodos de envío deben considerarse urgentes en eBay, Fnac, Casa del Libro y el resto de marketplaces, y dónde debe conservarse el fallback por importe?",
+  "rationale": "El código expone señales, pero el repositorio no contiene el contrato comercial por marketplace; inferirlo automáticamente podría cambiar SLA válidos.",
   "options": [
     {
-      "title": "Validar matriz por marketplace",
-      "body": "Aprobar los códigos urgentes y el fallback permitido por canal antes de implementar el cambio.",
+      "title": "Aprobar mapeos por marketplace",
+      "body": "Definir y versionar los códigos urgentes y normales por proveedor, conservando fallback solo cuando falte una señal fiable.",
       "recommended": true
     },
     {
-      "title": "Conservar los umbrales actuales",
-      "body": "Mantener la inferencia por importe hasta disponer de contratos o muestras operativas suficientes.",
-      "recommended": false
-    },
-    {
-      "title": "Limitar la primera fase",
-      "body": "Aplicar solo mapeos confirmados para eBay, Fnac y CDL y dejar los demás canales sin cambio.",
+      "title": "Mantener umbrales temporalmente",
+      "body": "Conservar la conducta actual hasta disponer de los contratos de nivel de servicio y de ejemplos representativos por marketplace.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar matriz por marketplace",
-    "body": "Aprobar los códigos urgentes y el fallback permitido por canal antes de implementar el cambio.",
+    "title": "Aprobar mapeos por marketplace",
+    "body": "Definir y versionar los códigos urgentes y normales por proveedor, conservando fallback solo cuando falte una señal fiable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su revisión y comentario previo conectan directamente la decisión con la validación de mecanismos de envío activos.",
+    "person": "PabloMoran34",
+    "reason": "La trazabilidad de la regla y de su validación de negocio le sitúa como la mejor persona para concretar el contrato.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
-    "reviewedAt": "2026-07-19T17:17:44.789Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T13:34:01.994Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }

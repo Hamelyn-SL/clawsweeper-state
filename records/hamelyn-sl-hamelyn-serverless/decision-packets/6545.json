@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:15:06.536Z",
-  "updatedAt": "2026-07-19T17:09:07Z",
+  "generatedAt": "2026-07-21T13:30:32.670Z",
+  "updatedAt": "2026-07-21T12:18:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,6 @@
     "labels": [
       "source:admin-panel",
       "app:ecommerce",
-      "priority:p1",
       "reporter:jesus",
       "feature",
       "triage:done",
@@ -25,38 +24,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-07-19T17:09:07Z"
+    "updatedAt": "2026-07-21T12:18:40Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe ejecutarse primero el piloto de MX sobre el generador actual, o incorporarse toda la metadata al trabajo abierto de BigQuery?",
-  "rationale": "Las dos rutas afectan el mismo contrato de salida, pero difieren en retrabajo, calendario y validación operativa de Merchant Center.",
+  "question": "¿Debemos ejecutar primero el piloto MX y corregir el mapper sobre el flujo actual, o incorporar ambas cosas directamente en la migración a BigQuery?",
+  "rationale": "Ambas rutas son viables, pero cambian el tiempo de entrega, la duplicación temporal de trabajo y el riesgo operativo de la primera carga.",
   "options": [
     {
-      "title": "Pilotar MX y extraer el mapper",
-      "body": "Validar ahora el orden y las columnas en MX, dejando el mapeador independiente de la fuente para reutilizarlo con BigQuery.",
+      "title": "Piloto MX antes de migrar",
+      "body": "Corregir el mapper y el orden de MX en el flujo actual, validarlo con Jesús y reutilizar después el contrato de salida en BigQuery.",
       "recommended": true
     },
     {
-      "title": "Esperar a BigQuery",
-      "body": "Incorporar las correcciones durante la migración de fuente, aceptando que los mapeos actuales continúen hasta ese corte.",
+      "title": "Unificar con BigQuery",
+      "body": "Esperar a que la migración de fuente incorpore el mapper y el piloto, reduciendo duplicación pero retrasando la corrección comercial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pilotar MX y extraer el mapper",
-    "body": "Validar ahora el orden y las columnas en MX, dejando el mapeador independiente de la fuente para reutilizarlo con BigQuery.",
+    "title": "Piloto MX antes de migrar",
+    "body": "Corregir el mapper y el orden de MX en el flujo actual, validarlo con Jesús y reutilizar después el contrato de salida en BigQuery.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su cambio previo ya delimitó el feed dedicado de MX y el contexto de la issue lo vincula a este flujo.",
+    "reason": "Es el asignado actual y ya llevó el corte integrado que separó México del cron histórico.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-07-19T17:15:06.536Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T13:30:32.670Z",
+    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
   }
 }
