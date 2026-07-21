@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:38:17.192Z",
-  "updatedAt": "2026-07-19T13:44:18Z",
+  "generatedAt": "2026-07-21T14:06:32.728Z",
+  "updatedAt": "2026-07-21T12:18:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,55 +11,48 @@
     "state": "open",
     "labels": [
       "app:admin",
-      "priority:p2",
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-23T17:19:08Z",
-    "updatedAt": "2026-07-19T13:44:18Z"
+    "updatedAt": "2026-07-21T12:18:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la atribución por operario sellarse en cada paso, en la sesión completa, o derivarse del revisor de la order?",
-  "rationale": "La elección determina la fidelidad de las métricas, la semántica ante relevos de operario y el esquema que deberá consumir BigQuery.",
+  "question": "¿Debe la atribución de productividad V3 guardarse por sesión de producto o en cada `ReviewStep` antes de diseñar el agregado diario?",
+  "rationale": "La elección determina la exactitud de las métricas ante re-revisiones o intervención de varios operarios y no puede deducirse de `dev`.",
   "options": [
     {
       "title": "Sellar operario por paso",
-      "body": "Persistir la identidad en cada evento permite atribución correcta incluso si una misma revisión pasa entre operarios.",
+      "body": "Persistir `reviewerEmail` en cada `ReviewStep` para que el fact diario conserve la atribución exacta.",
       "recommended": true
     },
     {
-      "title": "Sellar operario por sesión",
-      "body": "Reduce volumen de datos, pero presupone que toda la sesión corresponde a una sola persona.",
-      "recommended": false
-    },
-    {
-      "title": "Derivar desde la order",
-      "body": "Evita ampliar el contrato, pero conserva una ambigüedad cuando el revisor cambie durante el lote.",
+      "title": "Atribuir por sesión",
+      "body": "Guardar el operario en la sesión y aceptar que todos sus pasos pertenecen a una sola persona.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Sellar operario por paso",
-    "body": "Persistir la identidad en cada evento permite atribución correcta incluso si una misma revisión pasa entre operarios.",
+    "body": "Persistir `reviewerEmail` en cada `ReviewStep` para que el fact diario conserve la atribución exacta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial está ligado al contrato de productividad que debe mantenerse compatible con la nueva analítica.",
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo relacionado definió el contrato de sesión y la persistencia de los pasos que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6623.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623#issuecomment-4932689420",
-    "reviewedAt": "2026-07-19T17:38:17.192Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-21T14:06:32.728Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

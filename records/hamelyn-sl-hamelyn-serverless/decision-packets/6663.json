@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:24:50.451Z",
-  "updatedAt": "2026-07-19T13:44:41Z",
+  "generatedAt": "2026-07-21T14:02:28.702Z",
+  "updatedAt": "2026-07-21T12:18:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,52 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663",
     "state": "open",
     "labels": [
-      "priority:p2",
       "app:infrastructure",
-      "reporter:PabloMoran34",
+      "reporter:pablo",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-25T07:29:25Z",
-    "updatedAt": "2026-07-19T13:44:41Z"
+    "updatedAt": "2026-07-21T12:18:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la ejecución en GitHub Actions y hacerse una migración escalonada, o trasladar todos los feeds a `apps/data-platform` como parte del cambio?",
-  "rationale": "Ambas rutas cambian la operación, credenciales y observabilidad; el código actual y la iniciativa paraguas no fijan todavía un runtime definitivo.",
+  "question": "¿Se aprueba una migración en dos fases, manteniendo los cron de GitHub Actions, o se quiere trasladar también su runtime a `apps/data-platform`?",
+  "rationale": "La fuente BigQuery es viable para parte del alcance, pero la secuencia y el runtime determinan la propiedad operativa, las credenciales y el criterio de paridad.",
   "options": [
     {
-      "title": "Migración escalonada en Actions",
-      "body": "Conservar los cron y SFTP actuales, mover primero los feeds de usado a BigQuery y tratar libros nuevos tras verificar `newData.logista`.",
+      "title": "Migración en dos fases",
+      "body": "Mover primero los feeds de usado a BigQuery y ampliar después la materialización para incluir `newData.logista` antes de migrar libros nuevos.",
       "recommended": true
     },
     {
-      "title": "Traslado a data-platform",
-      "body": "Diseñar una ejecución centralizada en `apps/data-platform` antes de migrar las consultas, asumiendo más cambio operativo.",
+      "title": "Trasladar el runtime",
+      "body": "Diseñar primero un job en `apps/data-platform` que sustituya los cron y el upload actuales, asumiendo más cambio operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración escalonada en Actions",
-    "body": "Conservar los cron y SFTP actuales, mover primero los feeds de usado a BigQuery y tratar libros nuevos tras verificar `newData.logista`.",
+    "title": "Migración en dos fases",
+    "body": "Mover primero los feeds de usado a BigQuery y ampliar después la materialización para incluir `newData.logista` antes de migrar libros nuevos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La iniciativa paraguas y el diagnóstico técnico enlazado le sitúan como la mejor ruta para decidir el orden operativo.",
-    "confidence": "medium"
+    "reason": "Su trabajo reciente concentra el workflow actual y el análisis de la iniciativa paraguas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663#issuecomment-4971283237",
-    "reviewedAt": "2026-07-19T17:24:50.451Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T14:02:28.702Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

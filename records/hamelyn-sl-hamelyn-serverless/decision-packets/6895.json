@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:52:12.450Z",
-  "updatedAt": "2026-07-14T21:43:34Z",
+  "generatedAt": "2026-07-21T14:08:05.369Z",
+  "updatedAt": "2026-07-21T12:18:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,50 +11,53 @@
     "state": "open",
     "labels": [
       "app:supply",
-      "priority:p3",
       "feature",
       "triage:done",
       "business-logic",
       "hackathon",
-      "P3",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-07-14T21:43:34Z"
+    "updatedAt": "2026-07-21T12:18:21Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Deben incidencias y pedidos B2B permanecer como bloques propios de Supply o reasignarse oficialmente a `buying` y warehouse?",
-  "rationale": "La cobertura B2C se documentó bajo `buying`, mientras que la taxonomía Supply conserva ambos bloques sin specs BL-ID ni una delimitación F2 visible.",
+  "question": "¿Qué bloques deben seguir oficialmente en Supply tras la extracción de ciclo, inbound y PUDO hacia `buying` y `shipping`?",
+  "rationale": "El código y los artefactos BL actuales ya cambiaron las fronteras del checklist inicial; solo quien conoce el dominio puede fijar la propiedad definitiva antes de crear nuevas specs.",
   "options": [
     {
-      "title": "Conservar bloques en Supply",
-      "body": "Designar owners para incidencias y B2B, validar F2 y abrir un PR vertical separado por cada bloque.",
+      "title": "Reacotar la épica a incidencias y B2B",
+      "body": "Mantener esta issue como coordinación de los dos bloques sin artefactos BL y enlazar explícitamente las coberturas ya movidas.",
       "recommended": true
     },
     {
-      "title": "Reasignar las fronteras",
-      "body": "Mover ambos bloques a los subdominios existentes y actualizar la taxonomía y el checklist antes de cerrar esta épica.",
+      "title": "Restaurar el dominio Supply completo",
+      "body": "Crear specs propias de Supply para todos los bloques, definiendo cómo evitar duplicar los artefactos actuales de `buying` e `shipping`.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar y dividir por owners",
+      "body": "Sustituir esta épica por issues acotadas con owner y reviewer explícitos para cada bloque que permanezca pendiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar bloques en Supply",
-    "body": "Designar owners para incidencias y B2B, validar F2 y abrir un PR vertical separado por cada bloque.",
+    "title": "Reacotar la épica a incidencias y B2B",
+    "body": "Mantener esta issue como coordinación de los dos bloques sin artefactos BL y enlazar explícitamente las coberturas ya movidas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Creó la épica, introdujo el proceso BL y aparece como responsable del bloque de incidencias.",
+    "person": "Alex Cantón",
+    "reason": "La frontera actual de ciclo de pedidos y reprogramación está documentada y mantenida principalmente en el área `buying`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-07-19T17:52:12.450Z",
-    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
+    "reviewedAt": "2026-07-21T14:08:05.369Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

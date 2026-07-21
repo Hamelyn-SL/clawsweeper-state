@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:24:19.107Z",
-  "updatedAt": "2026-07-19T13:44:36Z",
+  "generatedAt": "2026-07-21T14:06:18.097Z",
+  "updatedAt": "2026-07-21T12:18:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,55 +11,53 @@
     "state": "open",
     "labels": [
       "app:admin",
-      "priority:p2",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-07-19T13:44:36Z"
+    "updatedAt": "2026-07-21T12:18:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué acciones excepcionales de la Estación Skypod deben incrementar `itemsProcessed` en la sesión `SKYPOD`?",
-  "rationale": "El código actual cuenta cualquier transición de `PENDING` a un estado final en `PICKING`, pero la métrica deseada de estación no especifica si esa regla se conserva o si solo cuentan confirmaciones correctas.",
+  "question": "¿Qué acciones excepcionales de la Estación Skypod deben incrementar `itemsProcessed` en una sesión `SKYPOD`?",
+  "rationale": "El código de Picking cuenta cualquier transición desde `PENDING` a un estado final, pero el objetivo no fija si Skypod debe conservar esa semántica o medir únicamente confirmaciones correctas.",
   "options": [
     {
       "title": "Contar toda transición final",
-      "body": "Mantener la semántica de Picking: cualquier salida desde `PENDING` cuenta como un producto procesado.",
+      "body": "Mantener la regla de Picking: cualquier salida desde `PENDING` a un estado final suma un producto procesado.",
       "recommended": true
     },
     {
       "title": "Contar solo confirmaciones correctas",
-      "body": "Incrementar la métrica únicamente tras `sendAckToAll` y excluir incidencias operativas.",
+      "body": "Incrementar la métrica únicamente tras `sendAckToAll(1)` y excluir no encontrado, roto, incompleto, diferente y urgente.",
       "recommended": false
     },
     {
-      "title": "Separar incidencias en metadata",
-      "body": "Contar todos los productos y conservar por motivo un desglose de incidencias para análisis posterior.",
+      "title": "Separar métricas de incidencias",
+      "body": "Contar confirmaciones correctas como productividad y persistir incidencias en metadatos sin sumarlas a `itemsProcessed`.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Contar toda transición final",
-    "body": "Mantener la semántica de Picking: cualquier salida desde `PENDING` cuenta como un producto procesado.",
+    "body": "Mantener la regla de Picking: cualquier salida desde `PENDING` a un estado final suma un producto procesado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial abarca tanto el flujo de Estación como la implementación de productividad que define la semántica comparable.",
+    "reason": "Su historial reciente en la Estación le conecta con las transiciones que determinan la métrica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-07-19T17:24:19.107Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T14:06:18.097Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
