@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T16:28:11.512Z",
-  "updatedAt": "2026-07-20T15:06:33Z",
+  "generatedAt": "2026-07-21T06:04:01.783Z",
+  "updatedAt": "2026-07-21T05:58:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,46 @@
     "state": "open",
     "labels": [
       "size/M",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-17T06:21:06Z",
-    "updatedAt": "2026-07-20T15:06:33Z",
-    "headSha": "23630597389a184e0856388c24d14c9d16f1a17c"
+    "updatedAt": "2026-07-21T05:58:06Z",
+    "headSha": "f831c901d1980973a22b1bb65fd10025eda68263"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe el despliegue de SDK 57 publicar un `runtimeVersion` nuevo y bloquear la OTA del runtime anterior hasta que existan binarios nativos actualizados?",
-  "rationale": "La elección determina si dispositivos ya instalados pueden recibir código incompatible con el nuevo runtime nativo y requiere coordinación de release, no solo un cambio mecánico.",
+  "question": "¿Qué `runtimeVersion` y secuencia de publicación deben aislar las OTA de SDK 57 respecto de los binarios SDK 55 ya distribuidos?",
+  "rationale": "La corrección mecánica no determina por sí sola el identificador ni el orden seguro de release para la flota instalada.",
   "options": [
     {
-      "title": "Separar el runtime OTA",
-      "body": "Incrementar `runtimeVersion`, publicar builds nativas nuevas y conservar las actualizaciones previas para los binarios existentes.",
+      "title": "Versionar el runtime antes del build",
+      "body": "Asignar un nuevo `runtimeVersion`, publicar primero los binarios SDK 57 y habilitar sus OTA únicamente tras verificar ambos sistemas.",
       "recommended": true
     },
     {
-      "title": "Aceptar el runtime compartido",
-      "body": "Mantener `1.0.0` y asumir explícitamente la entrega cruzada de OTA entre binarios antiguos y SDK 57.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el rollout",
-      "body": "No publicar builds ni OTA hasta acordar el plan de compatibilidad y obtener pruebas en dispositivos.",
+      "title": "Mantener el runtime compartido",
+      "body": "Aceptar explícitamente que binarios SDK 55 y 57 consuman el mismo canal, con el riesgo de incompatibilidad nativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el runtime OTA",
-    "body": "Incrementar `runtimeVersion`, publicar builds nativas nuevas y conservar las actualizaciones previas para los binarios existentes.",
+    "title": "Versionar el runtime antes del build",
+    "body": "Asignar un nuevo `runtimeVersion`, publicar primero los binarios SDK 57 y habilitar sus OTA únicamente tras verificar ambos sistemas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su cambio reciente introdujo la configuración nativa de Expo Updates que define el contrato de runtime.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente incluye el versionado y la configuración de build de Supply.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7682.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7682#issuecomment-5000013759",
-    "reviewedAt": "2026-07-20T16:28:11.512Z",
-    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+    "reviewedAt": "2026-07-21T06:04:01.783Z",
+    "mainSha": "0c2f6b169118753b42cccca6ed0f42092f5c3267"
   }
 }
