@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:14:52.687Z",
-  "updatedAt": "2026-07-19T14:02:32Z",
+  "generatedAt": "2026-07-21T11:54:28.061Z",
+  "updatedAt": "2026-07-21T09:30:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,8 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5747",
     "state": "open",
     "labels": [
-      "crons",
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -21,45 +19,44 @@
       "area:marketplace-orders",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-05-08T02:35:52Z",
-    "updatedAt": "2026-07-19T14:02:32Z"
+    "updatedAt": "2026-07-21T09:30:18Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `getOrder` hacer un retry HTTP acotado dentro de cada mensaje, o mantenerse exclusivamente la reentrega SQS ante `500` de Amazon?",
-  "rationale": "Ambas opciones preservan mensajes, pero cambian la latencia, el número de llamadas al proveedor y el riesgo de alcanzar el límite del cron.",
+  "question": "¿Debe el cron añadir reintentos locales limitados para `getOrder` ante errores 5xx de SP-API, además de la reentrega SQS existente?",
+  "rationale": "La elección afecta simultáneamente a cuota de Amazon, latencia del cron y velocidad de recuperación; el código no puede fijar ese equilibrio sin una política operativa.",
   "options": [
     {
-      "title": "Retry acotado con presupuesto",
-      "body": "Reutilizar `withHttpRetry` con pocos intentos y un límite compatible con el presupuesto restante del cron.",
+      "title": "Mantener solo reentrega SQS",
+      "body": "Conservar el comportamiento actual y abrir caso con Amazon si reaparecen 5xx sostenidos con evidencias recientes.",
       "recommended": true
     },
     {
-      "title": "Solo reentrega SQS",
-      "body": "Mantener una única llamada por ejecución y delegar todos los `500` transitorios a la siguiente entrega de SQS.",
+      "title": "Añadir retry presupuestado",
+      "body": "Reintentar únicamente 5xx transitorios con un máximo pequeño, backoff y corte antes del presupuesto del cron.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retry acotado con presupuesto",
-    "body": "Reutilizar `withHttpRetry` con pocos intentos y un límite compatible con el presupuesto restante del cron.",
+    "title": "Mantener solo reentrega SQS",
+    "body": "Conservar el comportamiento actual y abrir caso con Amazon si reaparecen 5xx sostenidos con evidencias recientes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Introdujo el patrón de retry Amazon actualmente fusionado y puede valorar su extensión a `getOrder`.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "El historial disponible lo vincula con la configuración y el runner actual del poller.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5747.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5747#issuecomment-4971272554",
-    "reviewedAt": "2026-07-19T16:14:52.687Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T11:54:28.061Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
