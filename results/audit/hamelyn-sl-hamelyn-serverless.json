@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-21T01:05:27.586Z",
+  "generatedAt": "2026-07-21T07:27:37.987Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 104
+    "openItemsSeen": 107
   },
   "counts": {
-    "itemRecords": 101,
-    "closedRecords": 527,
-    "missingOpen": 3,
+    "itemRecords": 103,
+    "closedRecords": 530,
+    "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 3,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -47,22 +47,33 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-20T10:52:44Z",
-        "updatedAt": "2026-07-20T20:29:12Z",
+        "updatedAt": "2026-07-21T07:22:56Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7796,
-        "kind": "issue",
-        "title": "🐛 Proof agent: los PRs grandes mueren en maxDuration (504@300s) y el body queda con veredicto rancio",
+        "number": 7805,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security-auxiliary group across 2 directories with 1 update",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:infrastructure",
-          "triage:blocked"
+          "size/M",
+          "dependencies",
+          "javascript"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-21T07:20:27Z",
+        "updatedAt": "2026-07-21T07:20:52Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7806,
+        "kind": "pull_request",
+        "title": "fix: prevent false Amazon DB_ONLY reconciliation",
+        "labels": [
+          "size/M"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-20T21:08:54Z",
-        "updatedAt": "2026-07-20T21:17:13Z",
+        "createdAt": "2026-07-21T07:21:51Z",
+        "updatedAt": "2026-07-21T07:25:49Z",
         "missingReason": "recently_created"
       }
     ],
@@ -96,22 +107,33 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-20T10:52:44Z",
-        "updatedAt": "2026-07-20T20:29:12Z",
+        "updatedAt": "2026-07-21T07:22:56Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 7796,
-        "kind": "issue",
-        "title": "🐛 Proof agent: los PRs grandes mueren en maxDuration (504@300s) y el body queda con veredicto rancio",
+        "number": 7805,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security-auxiliary group across 2 directories with 1 update",
         "labels": [
-          "bug",
-          "priority:p2",
-          "app:infrastructure",
-          "triage:blocked"
+          "size/M",
+          "dependencies",
+          "javascript"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-21T07:20:27Z",
+        "updatedAt": "2026-07-21T07:20:52Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7806,
+        "kind": "pull_request",
+        "title": "fix: prevent false Amazon DB_ONLY reconciliation",
+        "labels": [
+          "size/M"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-20T21:08:54Z",
-        "updatedAt": "2026-07-20T21:17:13Z",
+        "createdAt": "2026-07-21T07:21:51Z",
+        "updatedAt": "2026-07-21T07:25:49Z",
         "missingReason": "recently_created"
       }
     ],
