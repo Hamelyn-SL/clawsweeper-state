@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T09:20:11.044Z",
+  "updated_at": "2026-07-21T11:42:28.000Z",
   "commands": [
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7676:5019161874:2026-07-20T05:47:08Z:re_review",
@@ -493,6 +493,32 @@
       "finding_id": null,
       "status": "waiting",
       "processed_at": "2026-07-21T09:20:11.044Z",
+      "target": null
+    },
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7824:5033496345:2026-07-21T11:41:42Z:re_review",
+      "comment_id": "5033496345",
+      "comment_version_key": "5033496345:2026-07-21T11:41:42Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7824#issuecomment-5033496345",
+      "comment_created_at": "2026-07-21T11:41:42Z",
+      "comment_updated_at": "2026-07-21T11:41:42Z",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "issue_number": 7824,
+      "author": "MiguelHamelyn",
+      "author_id": 144336944,
+      "author_name": null,
+      "author_association": "CONTRIBUTOR",
+      "trigger": "mention",
+      "command": "re-review",
+      "intent": "re_review",
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "expected_head_sha": null,
+      "finding_id": null,
+      "status": "waiting",
+      "processed_at": "2026-07-21T11:42:28.000Z",
       "target": null
     }
   ]
