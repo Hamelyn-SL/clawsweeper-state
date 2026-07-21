@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-21T13:04:53.909Z",
+  "generatedAt": "2026-07-21T18:59:09.470Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 118
+    "openItemsSeen": 110
   },
   "counts": {
-    "itemRecords": 111,
-    "closedRecords": 553,
-    "missingOpen": 7,
+    "itemRecords": 108,
+    "closedRecords": 564,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 6,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,83 +39,15 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7841,
+        "number": 7850,
         "kind": "pull_request",
         "title": "Deploy to Prod",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:28:08Z",
-        "updatedAt": "2026-07-21T12:50:36Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7845,
-        "kind": "issue",
-        "title": "Evitar el fallo en la primera creación concurrente del lock de métricas",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:infrastructure",
-          "reporter:javier",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:54:11Z",
-        "updatedAt": "2026-07-21T13:01:44Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7846,
-        "kind": "pull_request",
-        "title": "chore: migrate admin to mui 9",
         "labels": [
           "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:55:09Z",
-        "updatedAt": "2026-07-21T13:01:39Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7847,
-        "kind": "pull_request",
-        "title": "chore: update typescript to 6.0",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:56:09Z",
-        "updatedAt": "2026-07-21T12:59:58Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7848,
-        "kind": "pull_request",
-        "title": "fix: handle initial metrics lock contention",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:59:30Z",
-        "updatedAt": "2026-07-21T13:04:47Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7849,
-        "kind": "issue",
-        "title": "Roles data-dashboards-user y cli se guardan sin name en Mongo al asignarlos desde admin",
-        "labels": [
-          "bug",
-          "app:admin",
-          "triage:queued",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T13:03:03Z",
-        "updatedAt": "2026-07-21T13:03:14Z",
+        "createdAt": "2026-07-21T13:16:04Z",
+        "updatedAt": "2026-07-21T18:38:14Z",
         "missingReason": "recently_created"
       }
     ],
@@ -141,83 +73,15 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 7841,
+        "number": 7850,
         "kind": "pull_request",
         "title": "Deploy to Prod",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:28:08Z",
-        "updatedAt": "2026-07-21T12:50:36Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7845,
-        "kind": "issue",
-        "title": "Evitar el fallo en la primera creación concurrente del lock de métricas",
-        "labels": [
-          "bug",
-          "source:admin-panel",
-          "app:infrastructure",
-          "reporter:javier",
-          "triage:done",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:54:11Z",
-        "updatedAt": "2026-07-21T13:01:44Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7846,
-        "kind": "pull_request",
-        "title": "chore: migrate admin to mui 9",
         "labels": [
           "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:55:09Z",
-        "updatedAt": "2026-07-21T13:01:39Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7847,
-        "kind": "pull_request",
-        "title": "chore: update typescript to 6.0",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:56:09Z",
-        "updatedAt": "2026-07-21T12:59:58Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7848,
-        "kind": "pull_request",
-        "title": "fix: handle initial metrics lock contention",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T12:59:30Z",
-        "updatedAt": "2026-07-21T13:04:47Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7849,
-        "kind": "issue",
-        "title": "Roles data-dashboards-user y cli se guardan sin name en Mongo al asignarlos desde admin",
-        "labels": [
-          "bug",
-          "app:admin",
-          "triage:queued",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-21T13:03:03Z",
-        "updatedAt": "2026-07-21T13:03:14Z",
+        "createdAt": "2026-07-21T13:16:04Z",
+        "updatedAt": "2026-07-21T18:38:14Z",
         "missingReason": "recently_created"
       }
     ],
