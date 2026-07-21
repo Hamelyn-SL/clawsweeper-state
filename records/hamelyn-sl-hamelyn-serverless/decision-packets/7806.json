@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T09:26:14.317Z",
-  "updatedAt": "2026-07-21T07:58:14Z",
+  "generatedAt": "2026-07-21T11:29:23.075Z",
+  "updatedAt": "2026-07-21T09:34:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,43 +18,38 @@
       "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-21T07:21:51Z",
-    "updatedAt": "2026-07-21T07:58:14Z",
+    "updatedAt": "2026-07-21T09:34:26Z",
     "headSha": "f847d2d4bc78c35fca1ad9a35d368c17d448f06c"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe esta PR detener los nuevos falsos `DB_ONLY` mientras se abre una recuperación separada, o debe incluirse una restauración aprobada antes de fusionarla?",
-  "rationale": "El código no determina qué estados históricos pueden restaurarse ni qué salvaguardas operativas exige una corrección masiva.",
+  "question": "¿Qué criterio debe restaurar los SKU ya marcados falsamente como `DB_ONLY`: presencia en cualquier fila del informe o una comprobación adicional de estado/listing?",
+  "rationale": "La prevención futura es clara, pero reactivar datos ya mutados puede cambiar el estado de listings realmente inactivos; el código no establece ese criterio de recuperación.",
   "options": [
     {
-      "title": "Separar prevención y recuperación",
-      "body": "Completar la guía operativa, fusionar la prevención y mantener la incidencia abierta con una recuperación aprobada y verificada.",
+      "title": "Recuperación basada en snapshot validado",
+      "body": "Definir un conjunto acotado a la instantánea afectada, contrastarlo y reactivar solo los falsos `DB_ONLY` confirmados.",
       "recommended": true
     },
     {
-      "title": "Ampliar esta PR",
-      "body": "Incluir una recuperación con dry-run, criterios de selección y validación de los registros restaurados.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el cambio",
-      "body": "Mantener la PR bloqueada hasta acordar la política de recuperación de los SKU ya mutados.",
+      "title": "Prevenir ahora y recuperar después",
+      "body": "Fusionar únicamente la prevención y abrir un procedimiento operativo separado, aceptando que los errores históricos seguirán bloqueados temporalmente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar prevención y recuperación",
-    "body": "Completar la guía operativa, fusionar la prevención y mantener la incidencia abierta con una recuperación aprobada y verificada.",
+    "title": "Recuperación basada en snapshot validado",
+    "body": "Definir un conjunto acotado a la instantánea afectada, contrastarlo y reactivar solo los falsos `DB_ONLY` confirmados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial cubre la reconciliación de informes Amazon y ya figura como revisor asignado.",
+    "reason": "Su historial cubre la estructura del informe Amazon y ya figura como revisor solicitado para esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7806.md",
-    "reviewedAt": "2026-07-21T09:26:14.317Z",
-    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+    "reviewedAt": "2026-07-21T11:29:23.075Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
