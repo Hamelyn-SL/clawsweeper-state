@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:45:14.646Z",
+  "generatedAt": "2026-07-21T11:42:32.642Z",
   "updatedAt": "2026-07-21T09:30:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -31,39 +31,39 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse a un 400 de `updatePrice` cuando MercadoLibre confirma que el listing sigue activo pero no aporta una causa estructurada clasificable?",
-  "rationale": "El código actual distingue stale y transitorio, pero no define si el resto debe reintentarse, quedar en revisión terminal o activar otra reconciliación antes del backfill.",
+  "question": "¿Qué política debe aplicarse a un `400` de `updatePrice` cuando MercadoLibre confirma que el listing sigue activo pero no aporta una causa clasificable?",
+  "rationale": "El código ya distingue transitorios y listings stale, pero decidir entre reintento, error terminal o revisión requiere el contrato operativo que el equipo quiera asumir.",
   "options": [
     {
-      "title": "Clasificación conservadora con revisión",
-      "body": "Mantener los 400 activos genéricos fuera del reintento automático, registrar su cuerpo estructurado y drenar solo los que una consulta remota clasifique con certeza.",
+      "title": "Clasificar tras consultar el listing",
+      "body": "Guardar el body estructurado, consultar el estado remoto y reintentar solo causas explícitamente transitorias; mantener los activos no clasificables en revisión.",
       "recommended": true
     },
     {
-      "title": "Reintentar los genéricos",
-      "body": "Marcar los 400 activos sin causa como transitorios para intentar recuperarlos, aceptando presión adicional sobre la API y posibles bucles.",
+      "title": "Tratarlo como permanente",
+      "body": "Detener los reintentos de los `400` genéricos activos, aceptando que puede persistir una desincronización hasta revisión manual.",
       "recommended": false
     },
     {
-      "title": "Resolverlos como terminales",
-      "body": "Marcar los 400 activos genéricos como permanentes y retirarlos de la cola, aceptando que algunos listings recuperables requerirán revisión manual.",
+      "title": "Mantener reintento limitado",
+      "body": "Crear una política transitoria con backoff y límite de intentos antes de pasar el listing a revisión manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificación conservadora con revisión",
-    "body": "Mantener los 400 activos genéricos fuera del reintento automático, registrar su cuerpo estructurado y drenar solo los que una consulta remota clasifique con certeza.",
+    "title": "Clasificar tras consultar el listing",
+    "body": "Guardar el body estructurado, consultar el estado remoto y reintentar solo causas explícitamente transitorias; mantener los activos no clasificables en revisión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La asignación y el historial de recuperación de MercadoLibre le sitúan como la mejor persona para decidir la política y el drenaje.",
-    "confidence": "medium"
+    "reason": "Está asignado a esta incidencia y su trabajo previo cubre la infraestructura de recuperación de MercadoLibre.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
-    "reviewedAt": "2026-07-21T11:45:14.646Z",
+    "reviewedAt": "2026-07-21T11:42:32.642Z",
     "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }

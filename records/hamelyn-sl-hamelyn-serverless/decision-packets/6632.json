@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:31:12.871Z",
-  "updatedAt": "2026-07-19T13:27:00Z",
+  "generatedAt": "2026-07-21T11:43:01.082Z",
+  "updatedAt": "2026-07-21T09:30:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6632",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -25,38 +24,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-23T20:34:10Z",
-    "updatedAt": "2026-07-19T13:27:00Z"
+    "updatedAt": "2026-07-21T09:30:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué clases de rechazo de Discogs deben considerarse terminales y quedar fuera del recovery automático?",
-  "rationale": "El código puede almacenar una causa, pero la evidencia no permite distinguir con seguridad respuestas terminales de fallos transitorios del proveedor.",
+  "question": "¿Qué clases de rechazo de Discogs deben considerarse terminales y dejar de rearmarse automáticamente en `shipping-recovery`?",
+  "rationale": "La evidencia actual solo conserva un error agregado; decidir qué 4xx o estados remotos cortan un reintento afecta la recuperación operativa de pedidos reales.",
   "options": [
     {
-      "title": "Clasificar y reintentar solo transitorios",
-      "body": "Propagar la causa remota y excluir del recovery únicamente errores terminales definidos, conservando los reintentos de red o servidor.",
+      "title": "Clasificación terminal acotada",
+      "body": "Persistir el motivo por pedido y excluir únicamente rechazos de Discogs comprobados como irreversibles, manteniendo los reintentos transitorios.",
       "recommended": true
     },
     {
-      "title": "Mantener el recovery genérico",
-      "body": "Conservar los cuatro días de reintento sin cambios y aceptar que rechazos persistentes consuman ejecuciones hasta que expiren.",
+      "title": "Seguir reintentando sin cambios",
+      "body": "Mantener el recovery actual hasta obtener más telemetría HTTP, aceptando que el mismo pedido pueda volver a fallar durante la ventana de cuatro días.",
+      "recommended": false
+    },
+    {
+      "title": "Desactivar el recovery para Discogs",
+      "body": "Evitar reintentos automáticos de Discogs por completo, a cambio de requerir recuperación manual para fallos temporales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar y reintentar solo transitorios",
-    "body": "Propagar la causa remota y excluir del recovery únicamente errores terminales definidos, conservando los reintentos de red o servidor.",
+    "title": "Clasificación terminal acotada",
+    "body": "Persistir el motivo por pedido y excluir únicamente rechazos de Discogs comprobados como irreversibles, manteniendo los reintentos transitorios.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su cambio anterior estableció la excepción de recovery más próxima a esta decisión de política.",
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente concentra la integración activa y la documentación operativa de Discogs.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6632.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6632#issuecomment-4969107983",
-    "reviewedAt": "2026-07-19T17:31:12.871Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T11:43:01.082Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
