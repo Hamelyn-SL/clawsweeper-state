@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T15:47:28.960Z",
-  "updatedAt": "2026-07-19T15:38:33Z",
+  "generatedAt": "2026-07-21T10:51:58.835Z",
+  "updatedAt": "2026-07-21T09:42:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,42 +13,41 @@
       "bug",
       "priority:p2",
       "app:marketplace",
-      "reporter:JavierHamelyn",
+      "reporter:javier",
       "triage:blocked"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
-    "updatedAt": "2026-07-19T15:38:33Z"
+    "updatedAt": "2026-07-21T09:42:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo bloquear cualquier muestreo automatizado hasta que TodoColección confirme el contrato autenticado de lectura?",
-  "rationale": "La lectura actual falla de forma conocida y la semántica del identificador es ambigua; elegir un fallback sin ese contrato puede generar señales falsas de inventario.",
+  "question": "¿Debe el equipo mantener bloqueado cualquier muestreo automatizado hasta que TodoColección confirme el contrato autenticado de `GET /products` y el significado de `stock=null`?",
+  "rationale": "El repositorio puede conservar la degradación segura, pero no puede decidir si respuestas ambiguas representan listings ausentes sin una garantía del proveedor.",
   "options": [
     {
       "title": "Escalar al proveedor primero",
-      "body": "Solicitar confirmación de permisos, parámetros e identificadores y no convertir 404 o listados vacíos en decisiones de inventario.",
+      "body": "Abrir o actualizar el ticket técnico, conservar la reconciliación conservadora y repetir la prueba por SKU cuando respondan.",
       "recommended": true
     },
     {
-      "title": "Muestreo inconclusivo temporal",
-      "body": "Añadir una comprobación limitada que registre respuestas, pero trate errores de lectura como inconclusos hasta recibir el contrato del proveedor.",
+      "title": "Autorizar un experimento aislado",
+      "body": "Permitir solo una prueba manual y redondeada con un conjunto pequeño de SKUs, sin usar su resultado para retirar ni reactivar listings.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Escalar al proveedor primero",
-    "body": "Solicitar confirmación de permisos, parámetros e identificadores y no convertir 404 o listados vacíos en decisiones de inventario.",
+    "body": "Abrir o actualizar el ticket técnico, conservar la reconciliación conservadora y repetir la prueba por SKU cuando respondan.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la señal histórica más directa para la reconciliación que quedaría condicionada por esta lectura.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo integrado define la reconciliación que depende de estas lecturas y es el mejor punto de entrada técnico.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-19T15:47:28.960Z",
-    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
+    "reviewedAt": "2026-07-21T10:51:58.835Z",
+    "mainSha": "81a98a89b76e6e926ca00071a05628190e6ef557"
   }
 }
