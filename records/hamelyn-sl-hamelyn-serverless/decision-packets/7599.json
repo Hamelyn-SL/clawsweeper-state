@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T10:39:46.032Z",
-  "updatedAt": "2026-07-21T09:42:27Z",
+  "generatedAt": "2026-07-21T12:33:30.357Z",
+  "updatedAt": "2026-07-21T12:18:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,56 +10,54 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599",
     "state": "open",
     "labels": [
-      "priority:p2",
       "app:marketplace",
       "question",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-07-21T09:42:27Z"
+    "updatedAt": "2026-07-21T12:18:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el sistema reintentar diariamente de forma indefinida o convertir el par EAN-región en no listable tras una ventana inicial y revalidarlo con menor frecuencia?",
-  "rationale": "La elección define coste de Catalog API, automatización de altas futuras y el contrato de visibilidad del inventario no publicable; el código no puede deducir esos umbrales por sí solo.",
+  "question": "¿Debe adoptarse una ventana limitada de retry seguida de estado no listable y revalidación mensual, o mantenerse el reintento diario indefinido?",
+  "rationale": "La elección determina compatibilidad operativa, campos persistidos, consultas al catálogo y la visibilidad del inventario regional.",
   "options": [
     {
-      "title": "Ventana de siete días y revalidación mensual",
-      "body": "Reintentar cada 24 horas durante siete días, marcar después el par como no listable y revalidarlo cada 30 días con visibilidad operativa.",
+      "title": "Ventana limitada y recadencia",
+      "body": "Reintentar durante siete días, marcar el par como no listable y revalidarlo cada 30 días con visibilidad operativa.",
       "recommended": true
     },
     {
-      "title": "Mantener el reintento actual",
-      "body": "Conservar los reintentos periódicos sin estado adicional y aceptar el coste operativo y el ruido asociados.",
+      "title": "Conservar el retry actual",
+      "body": "Mantener `RetryPolicy.STALE` y el cooldown de 24 horas sin estado adicional ni límite temporal.",
       "recommended": false
     },
     {
-      "title": "Retirar de la región",
-      "body": "Desactivar el stock para la región tras el umbral y exponerlo para revisión o reposición manual.",
+      "title": "Retirar y reportar",
+      "body": "Desactivar la publicación regional tras el fallo y mostrar el inventario afectado como no listable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ventana de siete días y revalidación mensual",
-    "body": "Reintentar cada 24 horas durante siete días, marcar después el par como no listable y revalidarlo cada 30 días con visibilidad operativa.",
+    "title": "Ventana limitada y recadencia",
+    "body": "Reintentar durante siete días, marcar el par como no listable y revalidarlo cada 30 días con visibilidad operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Consolidó el seguimiento de la firma y su historial reciente enlaza la operación del watcher con las regiones Amazon afectadas.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es la persona con mantenimiento más reciente del flujo de catálogo y recuperación Amazon afectado por la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-07-21T10:39:46.032Z",
-    "mainSha": "ff6242b6ba788aad42f270d21cb074c60feef071"
+    "reviewedAt": "2026-07-21T12:33:30.357Z",
+    "mainSha": "03444d8f705e99bf18d93596b754c654bcdec4f2"
   }
 }

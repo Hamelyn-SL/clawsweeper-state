@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:34:11.217Z",
+  "updatedAt": "2026-07-21T12:27:32Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7710,
+    "title": "feat: trigger flash offers after bigquery refresh",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-17T12:31:12Z",
+    "updatedAt": "2026-07-21T12:27:32Z",
+    "headSha": "4558e8bea19d8cc73f400de4c944dc3810fd580e"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se acepta retirar el cron fijo al desplegar esta cadena nueva, o debe mantenerse temporalmente una salvaguarda operativa supervisada?",
+  "rationale": "Define la tolerancia del negocio a una oferta sin renovación automática cuando falle la infraestructura cruzada; no puede resolverse solo con análisis estático.",
+  "options": [
+    {
+      "title": "Validar y retirar el cron",
+      "body": "Integrar tras publicar prueba del ciclo completo, el reintento del mismo bucket y el rollback manual verificado.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una salvaguarda temporal",
+      "body": "Conservar un mecanismo monitorizado de recuperación mientras se observan los primeros ciclos automáticos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y retirar el cron",
+    "body": "Integrar tras publicar prueba del ciclo completo, el reintento del mismo bucket y el rollback manual verificado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Está asignado como revisor por experiencia directa en el muestreo y en los archivos afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7710.md",
+    "reviewedAt": "2026-07-21T12:34:11.217Z",
+    "mainSha": "03444d8f705e99bf18d93596b754c654bcdec4f2"
+  }
+}

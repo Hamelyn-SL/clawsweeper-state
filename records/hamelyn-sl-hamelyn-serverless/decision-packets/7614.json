@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:00:15.564Z",
-  "updatedAt": "2026-07-19T12:41:45Z",
+  "generatedAt": "2026-07-21T12:32:47.549Z",
+  "updatedAt": "2026-07-21T12:18:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,51 +11,49 @@
     "state": "open",
     "labels": [
       "bug",
-      "priority:p2",
       "app:infrastructure",
       "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
+      "impact:security",
       "clawsweeper:needs-security-review",
       "issue-rating: 💎 diamond",
-      "security-alert",
-      "P2",
-      "impact:security"
+      "security-alert"
     ],
     "createdAt": "2026-07-16T06:09:56Z",
-    "updatedAt": "2026-07-19T12:41:45Z"
+    "updatedAt": "2026-07-21T12:18:30Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Aprueba el equipo de seguridad sustituir las dependencias directas de `xlsx` por un tarball versionado de SheetJS fuera de npm?",
-  "rationale": "La corrección técnica es acotada, pero cambiar el origen de una dependencia de ejecución requiere aceptar explícitamente su procedencia e integridad.",
+  "question": "¿Aprueba el equipo de seguridad usar un tarball inmutable y verificado de SheetJS como nueva fuente de `xlsx` para remediar ambas alertas?",
+  "rationale": "La solución elimina una vulnerabilidad conocida, pero desplaza la dependencia desde npm a una fuente externa que requiere una decisión explícita de procedencia e integridad.",
   "options": [
     {
-      "title": "Aprobar migración versionada",
-      "body": "Fijar un tarball concreto de SheetJS, revisar su integridad y validar las rutas de lectura y escritura afectadas.",
+      "title": "Aprobar tarball verificado",
+      "body": "Fijar una versión exacta con integridad comprobada y validar los flujos XLSX de Admin y Core.",
       "recommended": true
     },
     {
-      "title": "Mantener npm temporalmente",
-      "body": "Conservar `0.18.5` mientras se define una fuente de suministro aprobada, aceptando la exposición documentada.",
+      "title": "Definir otra fuente aprobada",
+      "body": "Mantener la alerta abierta hasta acordar una alternativa de distribución auditada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración versionada",
-    "body": "Fijar un tarball concreto de SheetJS, revisar su integridad y validar las rutas de lectura y escritura afectadas.",
+    "title": "Aprobar tarball verificado",
+    "body": "Fijar una versión exacta con integridad comprobada y validar los flujos XLSX de Admin y Core.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "El historial atribuye el helper y las rutas actualmente expuestas a su trabajo de flujo XLSX.",
-    "confidence": "high"
+    "person": "Alex Cantón",
+    "reason": "Su historial reciente abarca la ruta de parsing y el endpoint que determinan la compatibilidad funcional.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7614.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7614#issuecomment-4988995600",
-    "reviewedAt": "2026-07-19T16:00:15.564Z",
-    "mainSha": "597e9d3a43298d8c41ed5c2f58ff656d2627d7ee"
+    "reviewedAt": "2026-07-21T12:32:47.549Z",
+    "mainSha": "03444d8f705e99bf18d93596b754c654bcdec4f2"
   }
 }
