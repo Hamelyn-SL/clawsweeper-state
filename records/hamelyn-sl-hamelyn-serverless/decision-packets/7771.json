@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:01:23.740Z",
-  "updatedAt": "2026-07-21T09:59:35Z",
+  "generatedAt": "2026-07-21T13:07:11.900Z",
+  "updatedAt": "2026-07-21T12:18:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,53 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "priority:p1",
       "reporter:miguel",
       "triage:pr-opened",
+      "P1",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
+      "impact:security",
       "clawsweeper:needs-security-review",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:security"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-20T09:55:41Z",
-    "updatedAt": "2026-07-21T09:59:35Z"
+    "updatedAt": "2026-07-21T12:18:23Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Quién coordina la rotación inmediata de la credencial Azeta y la retención o eliminación de los registros históricos mientras se revisa la PR de mitigación?",
-  "rationale": "El código puede cortar nuevas exposiciones, pero la revocación de secretos y el tratamiento de datos ya persistidos necesitan responsabilidad operativa explícita.",
+  "question": "¿Qué plan y responsables autorizan la rotación inmediata de Azeta y la eliminación o reducción de retención de los eventos históricos afectados?",
+  "rationale": "La reparación de código no puede revocar una credencial ya expuesta ni modificar retención y borrado en sistemas operativos sin autorización y acceso de seguridad.",
   "options": [
     {
-      "title": "Coordinar contención inmediata",
-      "body": "Asignar la rotación de la credencial y el plan de saneamiento de logs como trabajo operativo paralelo a la revisión de la PR.",
+      "title": "Contener y sanear ahora",
+      "body": "Integrar la PR, rotar la credencial de Azeta y ejecutar un plan auditado de borrado o reducción de retención para los eventos identificados.",
       "recommended": true
     },
     {
-      "title": "Aceptar retención temporal",
-      "body": "Mantener los eventos históricos hasta una ventana operativa aprobada, documentando responsable, alcance y fecha límite de revisión.",
+      "title": "Contener primero, saneamiento programado",
+      "body": "Integrar la PR y rotar la credencial de inmediato, dejando el saneamiento histórico con fecha, responsable y alcance aprobados.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la retención vigente",
+      "body": "Mantener los eventos históricos conforme a la política actual, documentando explícitamente la excepción y el riesgo residual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar contención inmediata",
-    "body": "Asignar la rotación de la credencial y el plan de saneamiento de logs como trabajo operativo paralelo a la revisión de la PR.",
+    "title": "Contener y sanear ahora",
+    "body": "Integrar la PR, rotar la credencial de Azeta y ejecutar un plan auditado de borrado o reducción de retención para los eventos identificados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el revisor solicitado para la mitigación y figura entre los contribuyentes del área de checkout y dropshipping.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta directamente con la serialización actual y puede orientar la validación funcional tras la redacción.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7771.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771#issuecomment-5022470902",
-    "reviewedAt": "2026-07-21T11:01:23.740Z",
-    "mainSha": "819dab48d3b1051351836003b89ed2bfe2e22ab4"
+    "reviewedAt": "2026-07-21T13:07:11.900Z",
+    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
   }
 }
