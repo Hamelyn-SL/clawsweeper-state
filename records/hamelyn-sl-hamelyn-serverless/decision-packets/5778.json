@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:55:01.241Z",
-  "updatedAt": "2026-07-21T14:49:22Z",
+  "generatedAt": "2026-07-21T16:21:24.566Z",
+  "updatedAt": "2026-07-21T14:58:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,42 +24,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-05-09T06:34:37Z",
-    "updatedAt": "2026-07-21T14:49:22Z"
+    "updatedAt": "2026-07-21T14:58:46Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué recuperación debe aplicarse a rechazos de política y limitación de cuenta de eBay al reactivar `ebay.create()`: bloqueo terminal con revisión manual o reencolado controlado tras validar la cuenta?",
-  "rationale": "Los mensajes posteriores mezclan infracciones de catálogo con restricciones de cuenta potencialmente reversibles; el código no puede decidir de forma segura qué SKUs deben permanecer bloqueados.",
+  "question": "¿Qué política operativa debe aplicarse a los bloqueos de cuenta o política de eBay antes de reactivar `ebay.create()`?",
+  "rationale": "El código distingue la firma original, pero decidir qué errores son terminales, cuándo reencolar y qué señal debe detener la operación requiere criterio de catálogo y de la cuenta eBay.",
   "options": [
     {
-      "title": "Separar política y cuenta",
-      "body": "Clasificar solo infracciones de contenido confirmadas como `PERMANENT` y habilitar reencolado controlado para restricciones de cuenta tras una validación operativa.",
+      "title": "Política explícita antes de reactivar",
+      "body": "Catalogar las variantes confirmadas, definir reencolado y reactivar create con una ejecución controlada y observabilidad reforzada.",
       "recommended": true
     },
     {
-      "title": "Mantener bloqueo terminal",
-      "body": "Conservar todos los rechazos de esta familia como permanentes y recuperar SKUs únicamente mediante intervención manual documentada.",
+      "title": "Mantener create pausado",
+      "body": "Conservar la contención actual hasta que eBay o catálogo aporte una causa recuperable y un procedimiento de reintento seguro.",
       "recommended": false
     },
     {
-      "title": "Pausar la reactivación",
-      "body": "Mantener create desactivado hasta que exista una señal por ruta para lotes totalmente fallidos.",
+      "title": "Tratar todos los bloqueos como permanentes",
+      "body": "Extender `PERMANENT` a toda la familia reduce reintentos, pero puede exigir recuperación manual cuando un bloqueo de cuenta sea temporal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar política y cuenta",
-    "body": "Clasificar solo infracciones de contenido confirmadas como `PERMANENT` y habilitar reencolado controlado para restricciones de cuenta tras una validación operativa.",
+    "title": "Política explícita antes de reactivar",
+    "body": "Catalogar las variantes confirmadas, definir reencolado y reactivar create con una ejecución controlada y observabilidad reforzada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente en la política de retry y en la incidencia transversal de severidad lo sitúa mejor para fijar este contrato.",
+    "reason": "Su historial reciente en `retry-policy.ts` lo vincula con la clasificación que debe evolucionar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5778.md",
-    "reviewedAt": "2026-07-21T14:55:01.241Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T16:21:24.566Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }

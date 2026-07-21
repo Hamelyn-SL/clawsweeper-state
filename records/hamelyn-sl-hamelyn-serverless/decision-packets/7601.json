@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T16:15:51.043Z",
-  "updatedAt": "2026-07-21T16:06:52Z",
+  "generatedAt": "2026-07-21T16:23:26.714Z",
+  "updatedAt": "2026-07-21T16:17:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,45 @@
       "feature",
       "reporter:blanca",
       "triage:needs-info",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-15T12:58:18Z",
-    "updatedAt": "2026-07-21T16:06:52Z"
+    "updatedAt": "2026-07-21T16:17:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Confirma Operaciones que `LOCALIZACION CP` identifica la oficina responsable de los envíos Postlibri no entregados para cualquier domicilio de ese código postal?",
-  "rationale": "La respuesta determina si el Excel adjunto puede alimentar una comunicación al cliente y un dato operativo para eDesk sin inducir errores.",
+  "question": "¿Debe Ecommerce usar el fichero adjunto como asignación autorizada de oficina responsable de Postlibri para cada código postal?",
+  "rationale": "El código puede consumir un lookup, pero no puede decidir si la columna identifica la oficina responsable de no entregados o la ubicación física de una oficina.",
   "options": [
     {
-      "title": "Validar la correspondencia con Correos",
-      "body": "Confirmar cobertura, excepciones y semántica antes de importar oficinas y exponerlas en emails o Admin.",
+      "title": "Validar con Correos",
+      "body": "Confirmar formalmente la semántica y la cobertura de la tabla antes de comunicar una dirección al cliente.",
       "recommended": true
     },
     {
-      "title": "Aportar una fuente operativa alternativa",
-      "body": "Usar un servicio o export oficial que asigne explícitamente cada destino Postlibri a su oficina responsable.",
+      "title": "Mantenerlo interno",
+      "body": "No mostrar una oficina al cliente hasta disponer de una fuente autorizada para esa asignación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar la correspondencia con Correos",
-    "body": "Confirmar cobertura, excepciones y semántica antes de importar oficinas y exponerlas en emails o Admin.",
+    "title": "Validar con Correos",
+    "body": "Confirmar formalmente la semántica y la cobertura de la tabla antes de comunicar una dirección al cliente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "Su historial en la normalización postal y el área Postlibri lo sitúa cerca de la futura integración técnica.",
-    "confidence": "high"
+    "reason": "Su historial conecta la normalización postal de Postlibri con el detalle de pedidos usado por eDesk.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7601.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7601#issuecomment-4980998565",
-    "reviewedAt": "2026-07-21T16:15:51.043Z",
+    "reviewedAt": "2026-07-21T16:23:26.714Z",
     "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }
