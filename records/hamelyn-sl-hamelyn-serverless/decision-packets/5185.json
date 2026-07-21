@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:15:10.924Z",
-  "updatedAt": "2026-07-19T14:02:26Z",
+  "generatedAt": "2026-07-21T11:45:14.646Z",
+  "updatedAt": "2026-07-21T09:30:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -18,53 +17,52 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "no-stale",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "no-stale",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T01:26:56Z",
-    "updatedAt": "2026-07-19T14:02:26Z"
+    "updatedAt": "2026-07-21T09:30:21Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse a los `400` de `updatePrice` cuando el listing remoto sigue activo y la respuesta no identifica de forma segura una causa terminal o transitoria?",
-  "rationale": "El código puede obtener y persistir más contexto, pero decidir entre reintentar, marcar permanente o escalar a revisión cambia el comportamiento de sincronización y el tratamiento del backlog existente.",
+  "question": "¿Qué política debe aplicarse a un 400 de `updatePrice` cuando MercadoLibre confirma que el listing sigue activo pero no aporta una causa estructurada clasificable?",
+  "rationale": "El código actual distingue stale y transitorio, pero no define si el resto debe reintentarse, quedar en revisión terminal o activar otra reconciliación antes del backfill.",
   "options": [
     {
-      "title": "Clasificación estructurada con cola segura",
-      "body": "Reconsultar el listing, usar el body de MercadoLibre para clasificar causas conocidas y mantener los casos ambiguos fuera del retry automático hasta revisarlos.",
+      "title": "Clasificación conservadora con revisión",
+      "body": "Mantener los 400 activos genéricos fuera del reintento automático, registrar su cuerpo estructurado y drenar solo los que una consulta remota clasifique con certeza.",
       "recommended": true
     },
     {
-      "title": "Reintentar los 400 genéricos",
-      "body": "Tratar temporalmente los `400` activos como transitorios, aceptando más llamadas y posibles reintentos de fallos permanentes.",
+      "title": "Reintentar los genéricos",
+      "body": "Marcar los 400 activos sin causa como transitorios para intentar recuperarlos, aceptando presión adicional sobre la API y posibles bucles.",
       "recommended": false
     },
     {
-      "title": "Marcar todos como permanentes",
-      "body": "Detener el crecimiento del retry, pero aceptar que listings activos con una causa recuperable queden sin actualización automática.",
+      "title": "Resolverlos como terminales",
+      "body": "Marcar los 400 activos genéricos como permanentes y retirarlos de la cola, aceptando que algunos listings recuperables requerirán revisión manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificación estructurada con cola segura",
-    "body": "Reconsultar el listing, usar el body de MercadoLibre para clasificar causas conocidas y mantener los casos ambiguos fuera del retry automático hasta revisarlos.",
+    "title": "Clasificación conservadora con revisión",
+    "body": "Mantener los 400 activos genéricos fuera del reintento automático, registrar su cuerpo estructurado y drenar solo los que una consulta remota clasifique con certeza.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y ha mantenido recientemente el flujo de recuperación de MercadoLibre.",
-    "confidence": "high"
+    "reason": "La asignación y el historial de recuperación de MercadoLibre le sitúan como la mejor persona para decidir la política y el drenaje.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
-    "reviewedAt": "2026-07-19T16:15:10.924Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T11:45:14.646Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }

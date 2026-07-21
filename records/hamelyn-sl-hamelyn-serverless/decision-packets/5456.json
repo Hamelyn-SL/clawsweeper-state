@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T16:14:56.043Z",
-  "updatedAt": "2026-07-19T13:26:46Z",
+  "generatedAt": "2026-07-21T11:44:37.677Z",
+  "updatedAt": "2026-07-21T09:30:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -19,50 +18,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-19T13:26:46Z"
+    "updatedAt": "2026-07-21T09:30:19Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `products` conservar un corte compartido ante 429 o diferenciar explícitamente creación y actualización de precio según la cuota real del proveedor?",
-  "rationale": "El código confirma el corte actual, pero la cuota y el contrato operativo de TodoColeccion no determinan si aislar más el breaker es seguro.",
+  "question": "¿Qué política debe seguir `create` de TodoColeccion tras un rate limit dentro de `products`: reintento acotado, aplazamiento explícito o corte inmediato del lote?",
+  "rationale": "El código actual demuestra el corte, pero la cuota real, el backoff aceptable y el coste operativo de retrasar listings requieren una decisión de negocio y proveedor.",
   "options": [
     {
-      "title": "Definir la política desde trazas reales",
-      "body": "Capturar respuestas 429 y establecer límites, espera y reintentos antes de ajustar los scopes; conservar la protección actual mientras tanto.",
+      "title": "Backoff acotado y aplazamiento explícito",
+      "body": "Distinguir 429 reales de errores 40x funcionales, esperar según la cuota confirmada y persistir los pendientes para el siguiente ciclo.",
       "recommended": true
     },
     {
-      "title": "Separar create y updatePrice",
-      "body": "Usar scopes distintos solo si TodoColeccion confirma que ambas rutas no comparten cuota ni penalización.",
+      "title": "Conservar el corte inmediato",
+      "body": "Mantener la protección actual del proveedor y aceptar que el lote de `create` se complete en ejecuciones posteriores.",
       "recommended": false
     },
     {
-      "title": "Mantener fail-fast en products",
-      "body": "Aceptar que un 429 corte create y precio para priorizar la protección del proveedor sobre el rendimiento del lote.",
+      "title": "Separar create y precio en products",
+      "body": "Usar breakers distintos para `create` y `updatePrice`, con métricas que permitan comprobar que no se multiplican los 429.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir la política desde trazas reales",
-    "body": "Capturar respuestas 429 y establecer límites, espera y reintentos antes de ajustar los scopes; conservar la protección actual mientras tanto.",
+    "title": "Backoff acotado y aplazamiento explícito",
+    "body": "Distinguir 429 reales de errores 40x funcionales, esperar según la cuota confirmada y persistir los pendientes para el siguiente ciclo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Fusionó el aislamiento previo y mantiene actividad reciente en la API afectada.",
+    "reason": "Integró el aislamiento actual y ya participa en la decisión adyacente sobre severidad de crons.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-19T16:14:56.043Z",
-    "mainSha": "3e701a51783634733d86746c3425f42cce83da5a"
+    "reviewedAt": "2026-07-21T11:44:37.677Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }

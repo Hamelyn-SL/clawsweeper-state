@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T14:45:06.657Z",
-  "updatedAt": "2026-07-20T12:52:59Z",
+  "generatedAt": "2026-07-21T11:44:58.959Z",
+  "updatedAt": "2026-07-21T09:30:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
@@ -18,50 +17,44 @@
       "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-20T12:52:59Z"
+    "updatedAt": "2026-07-21T09:30:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un lote de `EBAY_ES` con SKUs rechazados permanentemente conservar HTTP 200 con señal estructurada o degradar la respuesta del cron?",
-  "rationale": "El código actual distingue fallos permanentes, pero el contrato HTTP compartido sigue reportando éxito agregado y afecta a múltiples rutas.",
+  "question": "¿Los rechazos parciales materialmente persistentes de `updatePrice` deben seguir devolviendo HTTP 200 o usar una señal HTTP/estructurada distinta por ruta?",
+  "rationale": "La elección afecta a varios crons y debe preservar los casos de negocio donde el lote continúa pese a errores permanentes por SKU.",
   "options": [
     {
-      "title": "Definir política compartida por severidad",
-      "body": "Mantener continuidad de lote cuando corresponda, pero publicar estado estructurado y un código HTTP decidido por la severidad de cada ruta.",
+      "title": "Definir una política compartida por severidad",
+      "body": "Establecer en la incidencia transversal cuándo conservar 200, cuándo degradar la respuesta y qué señal estructurada emitir.",
       "recommended": true
     },
     {
-      "title": "Degradar siempre eBay",
-      "body": "Hacer que cualquier fallo parcial de `EBAY_ES` deje de responder 200, aceptando el cambio de contrato operativo.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el contrato actual",
-      "body": "Conservar HTTP 200 y limitarse a mejorar logs, asumiendo que alertas y dashboards deberán interpretar la respuesta estructurada.",
+      "title": "Mantener HTTP 200 con señal operativa reforzada",
+      "body": "Conservar compatibilidad HTTP y añadir campos o métricas que permitan alertar sobre rechazos parciales materiales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir política compartida por severidad",
-    "body": "Mantener continuidad de lote cuando corresponda, pero publicar estado estructurado y un código HTTP decidido por la severidad de cada ruta.",
+    "title": "Definir una política compartida por severidad",
+    "body": "Establecer en la incidencia transversal cuándo conservar 200, cuándo degradar la respuesta y qué señal estructurada emitir.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta tanto la corrección eBay fusionada como el handler común que fija la respuesta HTTP.",
-    "confidence": "high"
+    "reason": "Conectó la corrección específica de eBay y su historial aparece en el área de crons y actualización de precios.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-20T14:45:06.657Z",
-    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+    "reviewedAt": "2026-07-21T11:44:58.959Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }

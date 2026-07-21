@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T17:16:31.329Z",
-  "updatedAt": "2026-07-19T13:44:19Z",
+  "generatedAt": "2026-07-21T11:45:16.498Z",
+  "updatedAt": "2026-07-21T09:30:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,58 +10,56 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
       "app:marketplace",
       "triage:no-change",
+      "P1",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "issue-rating: ⚪ platinum",
-      "P1",
+      "clawsweeper:needs-product-decision",
       "impact:crash-loop",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-05-03T01:34:14Z",
-    "updatedAt": "2026-07-19T13:44:19Z"
+    "updatedAt": "2026-07-21T09:30:19Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse cuando una fase Amazon COM supera un presupuesto operativo: abortar todo el run, aislar la fase y continuar, o reintentarla de forma diferida?",
-  "rationale": "El código permite medir la fase retenida, pero decidir cómo preservar la coherencia de operaciones parcialmente completadas requiere criterio operativo.",
+  "question": "¿Debe el cron cortar todas las fases al exceder un presupuesto global o limitar y recuperar únicamente la fase identificada?",
+  "rationale": "La cancelación puede interrumpir operaciones externas ya iniciadas; elegir reintento, aislamiento o fallo completo requiere una política operativa explícita.",
   "options": [
     {
       "title": "Instrumentar antes de limitar",
-      "body": "Capturar una nueva ocurrencia con la fase exacta y diseñar el límite y reintento sobre esa operación.",
+      "body": "Capturar una nueva ocurrencia con la fase exacta y definir el límite y la recuperación sobre esa operación.",
       "recommended": true
     },
     {
-      "title": "Abortar el run al exceder presupuesto",
-      "body": "Aplicar un deadline global o por fase y devolver un fallo controlado para reintento posterior.",
+      "title": "Presupuesto global del cron",
+      "body": "Abortar el run antes de Vercel y registrar un fallo controlado para que el siguiente ciclo recupere el trabajo.",
       "recommended": false
     },
     {
-      "title": "Aislar fases no críticas",
-      "body": "Permitir que las demás fases concluyan y registrar la fase vencida para recuperación dirigida.",
+      "title": "Aislar la fase vencida",
+      "body": "Permitir que las demás fases concluyan y registrar la fase excedida para una recuperación dirigida.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Instrumentar antes de limitar",
-    "body": "Capturar una nueva ocurrencia con la fase exacta y diseñar el límite y reintento sobre esa operación.",
+    "body": "Capturar una nueva ocurrencia con la fase exacta y definir el límite y la recuperación sobre esa operación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo previo fijó la frontera entre guards de ruta y la capa común de conexión y cron.",
+    "reason": "Su revisión previa estableció que la solución debe vivir en la capa común, no en guards duplicados por ruta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5632.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5632#issuecomment-4971269470",
-    "reviewedAt": "2026-07-19T17:16:31.329Z",
-    "mainSha": "50ecfced2ccb61fda78d4164715a4fcf47c93671"
+    "reviewedAt": "2026-07-21T11:45:16.498Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
