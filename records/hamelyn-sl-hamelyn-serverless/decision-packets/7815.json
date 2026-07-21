@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:11:56.534Z",
-  "updatedAt": "2026-07-21T12:18:19Z",
+  "generatedAt": "2026-07-21T15:52:20.555Z",
+  "updatedAt": "2026-07-21T14:14:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,50 +14,45 @@
       "feature",
       "triage:done",
       "reporter:alejandro",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-21T09:19:32Z",
-    "updatedAt": "2026-07-21T12:18:19Z"
+    "updatedAt": "2026-07-21T14:14:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `isLowDemandByMetrics` quedar temporalmente duplicada con ownership explícito, o consolidarse ahora bajo Buying o Ecommerce antes de purgarla?",
-  "rationale": "El código de producción usa Ecommerce, pero Buying conserva una especificación BL y pruebas propias; la elección cambia la propiedad contractual de la regla.",
+  "question": "¿Debe esta fase limitarse a borrados verificados y a la higiene de configuración, dejando la propiedad definitiva de `low-demand` para un cambio BL separado?",
+  "rationale": "La documentación Buying declara una propiedad distinta de la ruta que usa producción; elegir qué copia sobrevive fija un límite de dominio que el análisis estático no puede decidir.",
   "options": [
     {
-      "title": "Excluir la regla de esta fase",
-      "body": "Mantener ambas variantes, documentar la duplicación y abrir una consolidación BL específica antes de cualquier borrado.",
+      "title": "Acotar la fase 0",
+      "body": "Eliminar solo candidatos sin consumidores confirmados, separar la configuración rota y abrir una decisión BL específica para `low-demand`.",
       "recommended": true
     },
     {
-      "title": "Consolidar bajo Ecommerce",
-      "body": "Mover la especificación y pruebas Buying a la variante Ecommerce tras confirmar que esa es la propiedad permanente.",
-      "recommended": false
-    },
-    {
-      "title": "Consolidar bajo Buying",
-      "body": "Redirigir el consumidor de producción a Buying y conservar allí la especificación como contrato único.",
+      "title": "Resolver primero la propiedad BL",
+      "body": "Confirmar Buying o Ecommerce como dueño de `low-demand` y ejecutar después una purga única que incluya su código, pruebas y documentación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir la regla de esta fase",
-    "body": "Mantener ambas variantes, documentar la duplicación y abrir una consolidación BL específica antes de cualquier borrado.",
+    "title": "Acotar la fase 0",
+    "body": "Eliminar solo candidatos sin consumidores confirmados, separar la configuración rota y abrir una decisión BL específica para `low-demand`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es el autor de la extracción y especificación reciente de la variante Ecommerce afectada por la decisión.",
+    "reason": "La historia reciente le conecta con la extracción y documentación de la implementación Ecommerce que entra en conflicto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7815.md",
-    "reviewedAt": "2026-07-21T14:11:56.534Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T15:52:20.555Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T15:50:00.807Z",
+  "generatedAt": "2026-07-21T15:51:48.797Z",
   "updatedAt": "2026-07-21T14:50:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,47 +16,46 @@
       "reporter:miguel",
       "triage:pr-opened",
       "P1",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-20T09:55:41Z",
     "updatedAt": "2026-07-21T14:50:03Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Quién asume la rotación de la credencial de Azeta y la decisión de retención o eliminación de los eventos históricos mientras se revisa la mitigación?",
-  "rationale": "El cambio de código puede cortar nuevas exposiciones, pero no puede decidir ni ejecutar la remediación de secretos y registros ya persistidos.",
+  "question": "¿Qué plan operativo debe aprobarse para rotar la credencial Azeta y tratar los eventos históricos ya expuestos?",
+  "rationale": "El repositorio puede evitar nuevas exposiciones, pero la rotación y la gestión de retención requieren acceso y política operativa externos al cambio de código.",
   "options": [
     {
-      "title": "Coordinar contención inmediata",
-      "body": "Asignar responsable y fecha para rotar la credencial y revisar la retención o borrado de los eventos afectados en paralelo a la revisión de la PR.",
+      "title": "Contención completa",
+      "body": "Rotar la credencial y aplicar una eliminación o retención reducida documentada para los eventos afectados.",
       "recommended": true
     },
     {
-      "title": "Diferir la remediación histórica",
-      "body": "Integrar la mitigación futura y documentar explícitamente un responsable y fecha posterior para la contención histórica.",
+      "title": "Mitigación de código primero",
+      "body": "Integrar la redacción y calendarizar la rotación y el tratamiento histórico con responsables y fecha.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar contención inmediata",
-    "body": "Asignar responsable y fecha para rotar la credencial y revisar la retención o borrado de los eventos afectados en paralelo a la revisión de la PR.",
+    "title": "Contención completa",
+    "body": "Rotar la credencial y aplicar una eliminación o retención reducida documentada para los eventos afectados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Figura como persona asignada actualmente al issue y puede coordinar la remediación entre ecommerce e infraestructura.",
+    "reason": "Figura asignado a la incidencia y puede coordinar el cierre entre la mitigación de código y la operación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7771.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771#issuecomment-5022470902",
-    "reviewedAt": "2026-07-21T15:50:00.807Z",
+    "reviewedAt": "2026-07-21T15:51:48.797Z",
     "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }

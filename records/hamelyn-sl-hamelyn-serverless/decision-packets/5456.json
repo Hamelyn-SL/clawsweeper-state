@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:24:51.895Z",
-  "updatedAt": "2026-07-21T12:18:50Z",
+  "generatedAt": "2026-07-21T15:51:57.107Z",
+  "updatedAt": "2026-07-21T14:49:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear"
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-21T12:18:50Z"
+    "updatedAt": "2026-07-21T14:49:16Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `create` reintentar dentro del mismo lote con una cuota confirmada o detenerlo y recuperar los elementos en una ejecución posterior?",
-  "rationale": "Ambas opciones protegen al proveedor, pero difieren en latencia, rendimiento y acumulación de trabajo; el contrato de TodoColeccion no está documentado en la evidencia disponible.",
+  "question": "¿Debe TodoColeccion compartir una cuota única de `/products` entre `create` y precio, o aplicar límites y recuperación independientes por operación?",
+  "rationale": "La fuente confirma el corte actual, pero la cuota remota y el equilibrio entre protección, rendimiento y consistencia de precio no pueden inferirse de forma segura solo desde el código.",
   "options": [
     {
-      "title": "Reintento acotado por cuota",
-      "body": "Aplicar una espera y reintento limitados sólo tras confirmar el límite remoto, conservando el breaker por familia.",
+      "title": "Limitar y recuperar por operación",
+      "body": "Capturar la respuesta y cuota reales, aplicar una cola o backoff con `Retry-After` cuando exista y aislar `create` de precio si el proveedor admite cuotas separadas.",
       "recommended": true
     },
     {
-      "title": "Recuperación diferida",
-      "body": "Mantener el corte del lote, pero persistir el estado recuperable y emitir una señal explícita para reanudarlo después.",
+      "title": "Mantener el scope compartido",
+      "body": "Conservar `products` como cuota conjunta, pero documentar su contrato y ajustar el backoff tras comprobar la capacidad remota.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reintento acotado por cuota",
-    "body": "Aplicar una espera y reintento limitados sólo tras confirmar el límite remoto, conservando el breaker por familia.",
+    "title": "Limitar y recuperar por operación",
+    "body": "Capturar la respuesta y cuota reales, aplicar una cola o backoff con `Retry-After` cuando exista y aislar `create` de precio si el proveedor admite cuotas separadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el contribuidor más reciente del código actual de TodoColeccion y ha intervenido en incidencias operativas relacionadas.",
-    "confidence": "medium"
+    "reason": "Es el contribuidor más reciente y recurrente del cliente TodoColeccion en el historial disponible.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-21T14:24:51.895Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T15:51:57.107Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }

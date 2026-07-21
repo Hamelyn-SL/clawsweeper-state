@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:25:24.153Z",
-  "updatedAt": "2026-07-21T12:18:50Z",
+  "generatedAt": "2026-07-21T15:51:45.384Z",
+  "updatedAt": "2026-07-21T14:49:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,47 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:fix-shape-clear",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-21T12:18:50Z"
+    "updatedAt": "2026-07-21T14:49:14Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué señal HTTP y estructurada debe emitir `/api/ebay` cuando `updatePrice` deja fallos permanentes o transitorios por SKU?",
-  "rationale": "Cambiar el `200` compartido puede romper rutas que hoy toleran errores permanentes de lote; el código actual confirma que la elección afecta a varios crons.",
+  "question": "¿Qué contrato HTTP y señal estructurada deben usar los crons cuando hay rechazos parciales de marketplace?",
+  "rationale": "La elección afecta a varias rutas y a consumidores operativos; no es seguro imponerla desde una corrección exclusiva de eBay.",
   "options": [
     {
-      "title": "Definir severidad por ruta y fase",
-      "body": "Acordar en la incidencia compartida una respuesta estructurada y una política específica para `updatePrice` de eBay antes de modificar el handler.",
+      "title": "Primera fase compatible",
+      "body": "Mantener HTTP 200 temporalmente y añadir estado, recuentos, razones y severidad estructurados para que alertas y dashboards distingan la degradación.",
       "recommended": true
     },
     {
-      "title": "Conservar HTTP 200 con métrica explícita",
-      "body": "Mantener compatibilidad HTTP y exponer `partial_failure`, contadores y severidad para alertado y BigQuery.",
-      "recommended": false
-    },
-    {
-      "title": "Elevar cualquier fallo parcial a error HTTP",
-      "body": "Devolver error para todo rechazo parcial, aceptando el impacto en los crons que continúan lotes con fallos permanentes.",
+      "title": "Escalado selectivo",
+      "body": "Definir ahora qué rutas o fases críticas deben responder 207 o 5xx además de emitir la nueva señal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir severidad por ruta y fase",
-    "body": "Acordar en la incidencia compartida una respuesta estructurada y una política específica para `updatePrice` de eBay antes de modificar el handler.",
+    "title": "Primera fase compatible",
+    "body": "Mantener HTTP 200 temporalmente y añadir estado, recuentos, razones y severidad estructurados para que alertas y dashboards distingan la degradación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Conectó la corrección específica con el área eBay y puede orientar el contrato operativo junto al trabajo de cron común.",
+    "person": "MarcosTerroso",
+    "reason": "El bloque actual de respuesta del handler compartido aparece en su historial reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-21T14:25:24.153Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-21T15:51:45.384Z",
+    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
   }
 }
