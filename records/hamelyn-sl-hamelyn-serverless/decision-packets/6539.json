@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:02:54.144Z",
-  "updatedAt": "2026-07-21T12:18:52Z",
+  "generatedAt": "2026-07-20T13:02:10.343Z",
+  "updatedAt": "2026-07-20T07:42:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,53 +11,50 @@
     "state": "open",
     "labels": [
       "app:supply",
+      "priority:p2",
       "feature",
       "triage:done",
+      "P2",
       "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-07-21T12:18:52Z"
+    "updatedAt": "2026-07-20T07:42:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué autorización y secuencia debe exigir `Supply Deploy` antes de crear un bump y enviar una build de producción?",
-  "rationale": "La issue y la release relacionada muestran que el orden entre bump, binarios y actualización de `dev` afecta a usuarios; esa política no se deduce de la configuración EAS actual.",
+  "question": "¿Debe `Supply Deploy` permitir envíos de release desde GitHub Actions o limitarse inicialmente a beta?",
+  "rationale": "El workflow puede publicar binarios y modificar versiones; el nivel de autonomía de producción requiere una decisión explícita de release.",
   "options": [
     {
-      "title": "Separar beta y producción",
-      "body": "Permitir beta con controles acotados y exigir entorno protegido o aprobación explícita para producción y para cualquier commit de versión.",
+      "title": "Empezar por beta",
+      "body": "Automatizar TestFlight y Play internal, y aplazar el envío de producción hasta validar el flujo operativo.",
       "recommended": true
     },
     {
-      "title": "Mantener el flujo único propuesto",
-      "body": "Aceptar que el mismo workflow cree el bump y pueda enviar producción draft desde la rama invocada, documentando la responsabilidad operativa.",
-      "recommended": false
-    },
-    {
-      "title": "Automatizar solo builds",
-      "body": "Limitar inicialmente el workflow a EAS Build y conservar el submit y el bump como pasos manuales de release.",
+      "title": "Incluir release draft",
+      "body": "Permitir producción como borrador con controles de ramas, permisos y evidencia operativa reforzados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar beta y producción",
-    "body": "Permitir beta con controles acotados y exigir entorno protegido o aprobación explícita para producción y para cualquier commit de versión.",
+    "title": "Empezar por beta",
+    "body": "Automatizar TestFlight y Play internal, y aplazar el envío de producción hasta validar el flujo operativo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es el autor de la propuesta enlazada y la historia reciente lo conecta con la configuración EAS y el versionado de Supply.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta con la configuración EAS que define los perfiles y límites operativos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewedAt": "2026-07-21T14:02:54.144Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
+    "reviewedAt": "2026-07-20T13:02:10.343Z",
+    "mainSha": "198920796653e0c8a4ccdb8749482f13f3c626b7"
   }
 }

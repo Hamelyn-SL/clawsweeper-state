@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:09:02.611Z",
-  "updatedAt": "2026-07-21T12:18:37Z",
+  "generatedAt": "2026-07-19T17:51:36.084Z",
+  "updatedAt": "2026-07-14T21:40:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,47 +11,49 @@
     "state": "open",
     "labels": [
       "bug",
+      "priority:p2",
       "app:marketplace",
       "triage:done",
-      "impact:other",
-      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "P2",
-      "issue-rating: ⚪ platinum"
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro"
     ],
     "createdAt": "2026-07-12T07:26:25Z",
-    "updatedAt": "2026-07-21T12:18:37Z"
+    "updatedAt": "2026-07-14T21:40:11Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Debe Data Platform verificar primero el cutover CDC y después autorizar una reconciliación completa de `mk_casaDelLibro`?",
-  "rationale": "La operación usa Dataflow y escrituras en BigQuery; además, la configuración real del productor CDC no puede deducirse con seguridad solo desde el checkout.",
+  "question": "¿Aprueba Data Platform una reconciliación acotada de la cohorte de Casa del Libro después de validar el dry-run y las protecciones de timestamp?",
+  "rationale": "La corrección exige escribir o reconstruir datos analíticos históricos; el código actual no demuestra que una operación masiva sea segura sin validar su alcance.",
   "options": [
     {
-      "title": "Verificar CDC y reconciliar",
-      "body": "Confirmar el productor y tabla activos, ejecutar dry-run y aprobar la sincronización completa solo si los recuentos confirman el drift.",
+      "title": "Aprobar reconciliación acotada",
+      "body": "Validar la lista de SKUs, ejecutar el dry-run y aplicar una reparación idempotente preservando filas más recientes.",
       "recommended": true
     },
     {
-      "title": "Reconciliar sin diagnóstico previo",
-      "body": "Restaurar el espejo de Casa del Libro aceptando que una configuración CDC incorrecta podría volver a introducir discrepancias.",
+      "title": "Investigar primero el hueco CDC",
+      "body": "Posponer la escritura hasta identificar por qué los cambios posteriores no llegaron al raw de BigQuery.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar CDC y reconciliar",
-    "body": "Confirmar el productor y tabla activos, ejecutar dry-run y aprobar la sincronización completa solo si los recuentos confirman el drift.",
+    "title": "Aprobar reconciliación acotada",
+    "body": "Validar la lista de SKUs, ejecutar el dry-run y aplicar una reparación idempotente preservando filas más recientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el candidato más cercano al código actual de CDC, `bq-merge` y el mecanismo de reconciliación.",
+    "reason": "El historial reciente le vincula directamente al tooling de baseline y sincronización Mongo-BigQuery.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7380.md",
-    "reviewedAt": "2026-07-21T14:09:02.611Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380#issuecomment-4950403658",
+    "reviewedAt": "2026-07-19T17:51:36.084Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }

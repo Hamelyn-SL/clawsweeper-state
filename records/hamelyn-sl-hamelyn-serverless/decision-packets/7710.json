@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:14:22.505Z",
-  "updatedAt": "2026-07-21T13:08:13Z",
+  "generatedAt": "2026-07-21T12:34:11.217Z",
+  "updatedAt": "2026-07-21T12:27:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -17,43 +17,39 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-17T12:31:12Z",
-    "updatedAt": "2026-07-21T13:08:13Z",
-    "headSha": "86ce0624ba56f28faaa94f0e4e0d1817fb86da2b"
+    "updatedAt": "2026-07-21T12:27:32Z",
+    "headSha": "4558e8bea19d8cc73f400de4c944dc3810fd580e"
   },
-  "lane": "merge_risk",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe exigirse una prueba controlada del recorrido BigQuery→Pub/Sub→GitHub→KV antes de retirar el cron fijo en producción?",
-  "rationale": "La decisión afecta a la estrategia de despliegue y al riesgo operativo de sustituir el único disparador periódico; el código no puede demostrar por sí solo los permisos y la entrega entre servicios.",
+  "question": "¿Se acepta retirar el cron fijo al desplegar esta cadena nueva, o debe mantenerse temporalmente una salvaguarda operativa supervisada?",
+  "rationale": "Define la tolerancia del negocio a una oferta sin renovación automática cuando falle la infraestructura cruzada; no puede resolverse solo con análisis estático.",
   "options": [
     {
-      "title": "Exigir prueba controlada antes de integrar",
-      "body": "Aportar una ejecución redaccionada que muestre el dispatch automático, la rotación KV y el skip idempotente del segundo evento.",
+      "title": "Validar y retirar el cron",
+      "body": "Integrar tras publicar prueba del ciclo completo, el reintento del mismo bucket y el rollback manual verificado.",
       "recommended": true
     },
     {
-      "title": "Aceptar el rollout con riesgo explícito",
-      "body": "Integrar con el rollback manual `source=mongo` preparado y monitorizar inmediatamente la primera materialización en producción.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener una red de seguridad temporal",
-      "body": "Pausar el merge hasta definir un watchdog de frescura que no cause rotaciones adicionales fuera del bucket.",
+      "title": "Mantener una salvaguarda temporal",
+      "body": "Conservar un mecanismo monitorizado de recuperación mientras se observan los primeros ciclos automáticos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir prueba controlada antes de integrar",
-    "body": "Aportar una ejecución redaccionada que muestre el dispatch automático, la rotación KV y el skip idempotente del segundo evento.",
+    "title": "Validar y retirar el cron",
+    "body": "Integrar tras publicar prueba del ciclo completo, el reintento del mismo bucket y el rollback manual verificado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial cubre el workflow de rotación y el impacto operativo de sustituir el cron existente.",
+    "person": "alexcanHamelyn",
+    "reason": "Está asignado como revisor por experiencia directa en el muestreo y en los archivos afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7710.md",
-    "reviewedAt": "2026-07-21T14:14:22.505Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7710#issuecomment-5009905122",
+    "reviewedAt": "2026-07-21T12:34:11.217Z",
+    "mainSha": "03444d8f705e99bf18d93596b754c654bcdec4f2"
   }
 }

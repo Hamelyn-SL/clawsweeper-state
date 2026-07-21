@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:09:59.083Z",
-  "updatedAt": "2026-07-21T12:18:46Z",
+  "generatedAt": "2026-07-19T17:38:53.801Z",
+  "updatedAt": "2026-07-19T13:44:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,6 +11,7 @@
     "state": "open",
     "labels": [
       "app:supply",
+      "priority:p2",
       "feature",
       "reporter:miguel",
       "triage:done",
@@ -18,42 +19,43 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "clawsweeper:source-repro",
       "impact:ux-friction",
-      "issue-rating: 💎 diamond"
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro"
     ],
     "createdAt": "2026-07-03T10:44:24Z",
-    "updatedAt": "2026-07-21T12:18:46Z"
+    "updatedAt": "2026-07-19T13:44:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply adoptar `web.output: \"server\"` con SSR por request, o mantenerse en export estático y limitarse a sanear el pipeline actual de rutas?",
-  "rationale": "La elección fija coste operativo, estrategia de despliegue, compatibilidad de autenticación, rendimiento y capacidad de rollback; no puede deducirse con seguridad solo desde el código.",
+  "question": "¿Debe Supply adoptar `output: \"server\"` como arquitectura objetivo para la web, o conservar el export estático y limitarse a consolidar slugs y SEO?",
+  "rationale": "La elección modifica el modelo de despliegue, el coste operativo y el comportamiento web/nativo; no es una reparación mecánica que pueda fijarse sin dirección explícita.",
   "options": [
     {
-      "title": "Validar primero un PoC de servidor",
-      "body": "Probar en staging las rutas localizadas, hidratación, Auth0, SEO, TTFB y rollback antes de abrir fases de migración.",
+      "title": "Aprobar un PoC de servidor por fases",
+      "body": "Validar en staging rewrites, hidratación, Auth0, metadatos, TTFB y rollback antes de comprometer la migración completa.",
       "recommended": true
     },
     {
-      "title": "Conservar export estático",
-      "body": "Unificar los slugs y añadir detección de colisiones, pero mantener los builds separados por idioma sin SSR.",
+      "title": "Mantener export estático",
+      "body": "Limitar el alcance a una fuente tipada de slugs, validación de colisiones y mejoras incrementales de sitemap/SEO sin cambiar el runtime.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar primero un PoC de servidor",
-    "body": "Probar en staging las rutas localizadas, hidratación, Auth0, SEO, TTFB y rollback antes de abrir fases de migración.",
+    "title": "Aprobar un PoC de servidor por fases",
+    "body": "Validar en staging rewrites, hidratación, Auth0, metadatos, TTFB y rollback antes de comprometer la migración completa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la iniciativa y mantiene los cambios recientes del pipeline web de Supply.",
+    "reason": "Su historial reciente cubre el pipeline actual de rutas, build y sitemap de Supply.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6829.md",
-    "reviewedAt": "2026-07-21T14:09:59.083Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6829#issuecomment-4910270381",
+    "reviewedAt": "2026-07-19T17:38:53.801Z",
+    "mainSha": "a211664717be7c381973ac1a2f20bc5ec16d7799"
   }
 }
