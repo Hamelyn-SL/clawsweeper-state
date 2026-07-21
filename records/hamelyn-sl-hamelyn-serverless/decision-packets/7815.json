@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T09:53:41.861Z",
-  "updatedAt": "2026-07-21T09:43:49Z",
+  "generatedAt": "2026-07-21T11:00:24.795Z",
+  "updatedAt": "2026-07-21T10:23:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,46 @@
       "priority:p2",
       "app:infrastructure",
       "feature",
-      "triage:queued",
-      "reporter:alejandro"
+      "triage:done",
+      "reporter:alejandro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-21T09:19:32Z",
-    "updatedAt": "2026-07-21T09:43:49Z"
+    "updatedAt": "2026-07-21T10:23:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Deben seguir siendo superficies soportadas `drive-reader.service.ts` para scripts locales y `domain-services/buying/low-demand.ts` para su test versionado antes de iniciar la purga?",
-  "rationale": "El análisis muestra consumidores no pertenecientes a las entradas de producción; decidir si forman parte del contrato futuro de core condiciona qué se puede borrar sin convertir la escisión en una regresión.",
+  "question": "¿Qué dominio debe ser propietario de `isLowDemandByMetrics` y debe consolidarse antes de eliminar la copia de Buying?",
+  "rationale": "La producción importa Ecommerce, mientras Buying conserva un contrato BL documentado y pruebas propias; elegir una copia sin decisión explícita cambia la propiedad de la regla.",
   "options": [
     {
-      "title": "Conservar superficies auxiliares",
-      "body": "Mantener ambos casos, documentar su soporte y limitar la primera fase a candidatos sin consumidor conocido.",
+      "title": "Consolidar antes de borrar",
+      "body": "Decidir el dominio propietario, migrar consumidor, documentación y pruebas a una única regla antes de eliminar la duplicada.",
       "recommended": true
     },
     {
-      "title": "Retirarlas con migración",
-      "body": "Mover o sustituir primero el script local y el test, y borrar después sus implementaciones de core.",
-      "recommended": false
-    },
-    {
-      "title": "Excluirlas temporalmente",
-      "body": "Cerrar la purga inicial sin esos dos casos y tratarlos como una decisión separada de arquitectura.",
+      "title": "Excluir de fase 0",
+      "body": "Mantener ambas variantes temporalmente y limitar la purga a candidatos con ausencia de consumidores y contratos confirmada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar superficies auxiliares",
-    "body": "Mantener ambos casos, documentar su soporte y limitar la primera fase a candidatos sin consumidor conocido.",
+    "title": "Consolidar antes de borrar",
+    "body": "Decidir el dominio propietario, migrar consumidor, documentación y pruebas a una única regla antes de eliminar la duplicada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Aportó el análisis de alcance y tiene historial reciente en una de las áreas centrales de la limpieza.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y quien identificó expresamente el conflicto de propiedad dentro del alcance.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7815.md",
-    "reviewedAt": "2026-07-21T09:53:41.861Z",
-    "mainSha": "bc68a8cead61fe465728282e40142e082ed32cce"
+    "reviewedAt": "2026-07-21T11:00:24.795Z",
+    "mainSha": "819dab48d3b1051351836003b89ed2bfe2e22ab4"
   }
 }
