@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:44:37.677Z",
-  "updatedAt": "2026-07-21T09:30:19Z",
+  "generatedAt": "2026-07-21T14:35:35.856Z",
+  "updatedAt": "2026-07-21T12:18:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,56 +12,54 @@
     "labels": [
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-21T09:30:19Z"
+    "updatedAt": "2026-07-21T12:18:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe seguir `create` de TodoColeccion tras un rate limit dentro de `products`: reintento acotado, aplazamiento explícito o corte inmediato del lote?",
-  "rationale": "El código actual demuestra el corte, pero la cuota real, el backoff aceptable y el coste operativo de retrasar listings requieren una decisión de negocio y proveedor.",
+  "question": "¿Debe `create` reintentar de forma limitada dentro de `products`, diferir los SKUs pendientes o mantener el corte actual hasta la siguiente ejecución?",
+  "rationale": "El código confirma el corte actual, pero el límite remoto y el coste operativo aceptable de reintentar no están definidos por contrato ni por evidencia reciente del proveedor.",
   "options": [
     {
-      "title": "Backoff acotado y aplazamiento explícito",
-      "body": "Distinguir 429 reales de errores 40x funcionales, esperar según la cuota confirmada y persistir los pendientes para el siguiente ciclo.",
+      "title": "Definir backoff acotado por `products`",
+      "body": "Registrar la respuesta remota y aplicar reintentos limitados con espera y persistencia explícita de los SKUs no procesados.",
       "recommended": true
     },
     {
-      "title": "Conservar el corte inmediato",
-      "body": "Mantener la protección actual del proveedor y aceptar que el lote de `create` se complete en ejecuciones posteriores.",
+      "title": "Mantener corte diferido",
+      "body": "Conservar el corte del lote y priorizar una cola o recuperación posterior si el proveedor confirma una cuota estricta.",
       "recommended": false
     },
     {
-      "title": "Separar create y precio en products",
-      "body": "Usar breakers distintos para `create` y `updatePrice`, con métricas que permitan comprobar que no se multiplican los 429.",
+      "title": "Separar `create` y `updatePrice`",
+      "body": "Dar a cada operación de `products` una política independiente si sus cuotas o consecuencias operativas difieren.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Backoff acotado y aplazamiento explícito",
-    "body": "Distinguir 429 reales de errores 40x funcionales, esperar según la cuota confirmada y persistir los pendientes para el siguiente ciclo.",
+    "title": "Definir backoff acotado por `products`",
+    "body": "Registrar la respuesta remota y aplicar reintentos limitados con espera y persistencia explícita de los SKUs no procesados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Integró el aislamiento actual y ya participa en la decisión adyacente sobre severidad de crons.",
+    "reason": "Fusionó la mitigación existente y mantiene actualmente los caminos centrales de TodoColeccion.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-21T11:44:37.677Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewedAt": "2026-07-21T14:35:35.856Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

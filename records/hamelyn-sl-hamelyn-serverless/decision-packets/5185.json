@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:45:14.646Z",
-  "updatedAt": "2026-07-21T09:30:21Z",
+  "generatedAt": "2026-07-21T14:37:00.248Z",
+  "updatedAt": "2026-07-21T12:18:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,58 +12,56 @@
     "labels": [
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "no-stale",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "no-stale",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T01:26:56Z",
-    "updatedAt": "2026-07-21T09:30:21Z"
+    "updatedAt": "2026-07-21T12:18:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse a un 400 de `updatePrice` cuando MercadoLibre confirma que el listing sigue activo pero no aporta una causa estructurada clasificable?",
-  "rationale": "El código actual distingue stale y transitorio, pero no define si el resto debe reintentarse, quedar en revisión terminal o activar otra reconciliación antes del backfill.",
+  "question": "¿Qué política debe aplicarse a un `400` de `updatePrice` cuando el listing remoto sigue activo pero MercadoLibre no devuelve una causa clasificable?",
+  "rationale": "El código demuestra que no debe tratarse todo `400` como transitorio ni como listing inactivo; la decisión determina recuperación, terminalidad y el criterio seguro del backfill.",
   "options": [
     {
-      "title": "Clasificación conservadora con revisión",
-      "body": "Mantener los 400 activos genéricos fuera del reintento automático, registrar su cuerpo estructurado y drenar solo los que una consulta remota clasifique con certeza.",
+      "title": "Reconciliar y clasificar por causa",
+      "body": "Consultar el estado remoto y persistir el body estructurado; reintentar solo causas confirmadas transitorias y mantener revisión para las no clasificables.",
       "recommended": true
     },
     {
-      "title": "Reintentar los genéricos",
-      "body": "Marcar los 400 activos sin causa como transitorios para intentar recuperarlos, aceptando presión adicional sobre la API y posibles bucles.",
+      "title": "Marcar como terminal",
+      "body": "Detener todos los reintentos de `400` activos, aceptando que algunos fallos recuperables requerirán revisión manual.",
       "recommended": false
     },
     {
-      "title": "Resolverlos como terminales",
-      "body": "Marcar los 400 activos genéricos como permanentes y retirarlos de la cola, aceptando que algunos listings recuperables requerirán revisión manual.",
+      "title": "Mantener UNKNOWN sin drenaje",
+      "body": "Conservar el comportamiento actual hasta reunir más muestras, evitando mutaciones pero manteniendo el backlog pendiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificación conservadora con revisión",
-    "body": "Mantener los 400 activos genéricos fuera del reintento automático, registrar su cuerpo estructurado y drenar solo los que una consulta remota clasifique con certeza.",
+    "title": "Reconciliar y clasificar por causa",
+    "body": "Consultar el estado remoto y persistir el body estructurado; reintentar solo causas confirmadas transitorias y mantener revisión para las no clasificables.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La asignación y el historial de recuperación de MercadoLibre le sitúan como la mejor persona para decidir la política y el drenaje.",
-    "confidence": "medium"
+    "reason": "La incidencia está asignada a esta persona y su historial concentra el flujo de recuperación de MercadoLibre.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
-    "reviewedAt": "2026-07-21T11:45:14.646Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewedAt": "2026-07-21T14:37:00.248Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

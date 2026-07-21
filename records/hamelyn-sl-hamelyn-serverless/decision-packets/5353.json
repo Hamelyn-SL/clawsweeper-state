@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T11:44:58.959Z",
-  "updatedAt": "2026-07-21T09:30:20Z",
+  "generatedAt": "2026-07-21T14:37:01.894Z",
+  "updatedAt": "2026-07-21T12:18:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,47 @@
     "labels": [
       "codex",
       "bug",
-      "priority:p1",
       "app:marketplace",
       "triage:no-change",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-20T08:04:44Z",
-    "updatedAt": "2026-07-21T09:30:20Z"
+    "updatedAt": "2026-07-21T12:18:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Los rechazos parciales materialmente persistentes de `updatePrice` deben seguir devolviendo HTTP 200 o usar una señal HTTP/estructurada distinta por ruta?",
-  "rationale": "La elección afecta a varios crons y debe preservar los casos de negocio donde el lote continúa pese a errores permanentes por SKU.",
+  "question": "¿Qué contratos HTTP y de severidad deben aplicar los cron jobs cuando una parte del lote falla de forma permanente o transitoria?",
+  "rationale": "Cambiar el handler compartido afecta rutas que pueden continuar intencionadamente después de errores permanentes; el código no determina esa política por sí solo.",
   "options": [
     {
-      "title": "Definir una política compartida por severidad",
-      "body": "Establecer en la incidencia transversal cuándo conservar 200, cuándo degradar la respuesta y qué señal estructurada emitir.",
+      "title": "Definir política por ruta",
+      "body": "Establecer para cada ruta cuándo devolver estado degradado, error HTTP o una métrica estructurada, preservando los lotes que deban continuar.",
       "recommended": true
     },
     {
-      "title": "Mantener HTTP 200 con señal operativa reforzada",
-      "body": "Conservar compatibilidad HTTP y añadir campos o métricas que permitan alertar sobre rechazos parciales materiales.",
+      "title": "Conservar HTTP 200",
+      "body": "Mantener el contrato actual y añadir únicamente observabilidad estructurada para que alertas y dashboards distingan degradación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir una política compartida por severidad",
-    "body": "Establecer en la incidencia transversal cuándo conservar 200, cuándo degradar la respuesta y qué señal estructurada emitir.",
+    "title": "Definir política por ruta",
+    "body": "Establecer para cada ruta cuándo devolver estado degradado, error HTTP o una métrica estructurada, preservando los lotes que deban continuar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Conectó la corrección específica de eBay y su historial aparece en el área de crons y actualización de precios.",
-    "confidence": "medium"
+    "person": "PabloMoran34",
+    "reason": "Su historial está directamente ligado al handler compartido cuya política debe decidirse.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5353#issuecomment-4909521168",
-    "reviewedAt": "2026-07-21T11:44:58.959Z",
-    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
+    "reviewedAt": "2026-07-21T14:37:01.894Z",
+    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }

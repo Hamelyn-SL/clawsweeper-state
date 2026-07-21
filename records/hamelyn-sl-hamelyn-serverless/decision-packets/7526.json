@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:38:05.881Z",
+  "generatedAt": "2026-07-21T14:38:06.264Z",
   "updatedAt": "2026-07-21T12:27:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,49 +13,47 @@
       "bug",
       "app:infrastructure",
       "triage:done",
+      "P1",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P1",
       "impact:data-loss",
       "impact:message-loss",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:48:59Z",
     "updatedAt": "2026-07-21T12:27:53Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la garantía ante fallos prolongados ser una cola Vercel con descarte controlado o un dead-letter persistente recuperable manualmente?",
-  "rationale": "La issue y los comentarios cambiaron entre outbox, cron y recuperación manual; esa elección determina la retención de datos, el límite de reintentos y la experiencia posterior al 202.",
+  "question": "¿La solución definitiva debe usar Vercel Queue con reintentos automáticos o un dead-letter durable con rescate manual?",
+  "rationale": "El hilo descarta automatismos de recuperación, mientras la PR abierta introduce un consumer y reintentos nativos de cola.",
   "options": [
     {
-      "title": "Exigir recuperación durable",
-      "body": "Mantener la entrega diferida solo si el quinto fallo conserva una vía explícita de rescate manual o persistente para el payload y el `ticketId`.",
+      "title": "Mantener rescate manual",
+      "body": "Reorientar la solución hacia un dead-letter durable sin consumer automático, con un runbook de recuperación acotado.",
       "recommended": true
     },
     {
-      "title": "Aceptar descarte limitado",
-      "body": "Aceptar el límite de la cola Vercel si el equipo documenta que el dump y la respuesta operativa posterior son suficientes para este flujo.",
+      "title": "Adoptar Vercel Queue",
+      "body": "Respaldar explícitamente la entrega asíncrona con consumer y reintentos, definiendo su operación y condiciones de descarte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir recuperación durable",
-    "body": "Mantener la entrega diferida solo si el quinto fallo conserva una vía explícita de rescate manual o persistente para el payload y el `ticketId`.",
+    "title": "Mantener rescate manual",
+    "body": "Reorientar la solución hacia un dead-letter durable sin consumer automático, con un runbook de recuperación acotado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y ha documentado las alternativas de diseño en la discusión y en la PR candidata.",
+    "reason": "Ha documentado las alternativas, es el assignee y mantiene la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7526.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7526#issuecomment-4968216238",
-    "reviewedAt": "2026-07-21T14:38:05.881Z",
+    "reviewedAt": "2026-07-21T14:38:06.264Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
