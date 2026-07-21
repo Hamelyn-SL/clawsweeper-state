@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-21T06:50:43.427Z",
+  "generated_at": "2026-07-21T07:43:50.376Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-21T03:50:41.758Z",
+  "since": "2026-07-21T04:43:47.923Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 21,
-  "commands_seen": 0,
+  "scanned_comments": 30,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7803:5031024045:2026-07-21T06:55:12Z:automerge",
+      "comment_id": "5031024045",
+      "comment_version_key": "5031024045:2026-07-21T06:55:12Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7803#issuecomment-5031024045",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 7803,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-21T06:55:12Z",
+      "comment_updated_at": "2026-07-21T06:55:12Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "Actualiza versiones minor y patch en catorce manifests del workspace y regenera `pnpm-lock.yaml`.\n\nReproducibility: Sí, por fuente: pnpm aplica el override raíz `7.79.0` aunque el head propone `7.82.0` para admin.",
+      "review_followup": "- [P1] La divergencia tiene una reparación mecánica, localizada y verificable en el manifiesto, el override y el lockfile.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7803 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 1669,
+    "total_ms": 2453,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1668
+        "ms": 1546
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 902
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
