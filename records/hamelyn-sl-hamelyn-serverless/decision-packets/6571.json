@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:06:18.097Z",
-  "updatedAt": "2026-07-21T12:18:51Z",
+  "generatedAt": "2026-07-21T14:23:46.633Z",
+  "updatedAt": "2026-07-21T14:18:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,45 @@
       "app:admin",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-07-21T12:18:51Z"
+    "updatedAt": "2026-07-21T14:18:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué acciones excepcionales de la Estación Skypod deben incrementar `itemsProcessed` en una sesión `SKYPOD`?",
-  "rationale": "El código de Picking cuenta cualquier transición desde `PENDING` a un estado final, pero el objetivo no fija si Skypod debe conservar esa semántica o medir únicamente confirmaciones correctas.",
+  "question": "¿La productividad de Skypod debe contar solo confirmaciones correctas o toda transición final de un producto, incluidas incidencias?",
+  "rationale": "La elección cambia la comparabilidad de `itemsProcessed` con Picking y determina cómo migrar el rastreo actual de incidencias.",
   "options": [
     {
-      "title": "Contar toda transición final",
-      "body": "Mantener la regla de Picking: cualquier salida desde `PENDING` a un estado final suma un producto procesado.",
+      "title": "Contar solo confirmaciones correctas",
+      "body": "Registrar las incidencias en metadatos sin sumarlas a `itemsProcessed`, preservando una métrica de preparación efectiva.",
       "recommended": true
     },
     {
-      "title": "Contar solo confirmaciones correctas",
-      "body": "Incrementar la métrica únicamente tras `sendAckToAll(1)` y excluir no encontrado, roto, incompleto, diferente y urgente.",
-      "recommended": false
-    },
-    {
-      "title": "Separar métricas de incidencias",
-      "body": "Contar confirmaciones correctas como productividad y persistir incidencias en metadatos sin sumarlas a `itemsProcessed`.",
+      "title": "Contar toda salida final",
+      "body": "Sumar cada producto resuelto, incluidos no encontrados e incidencias, como medida de trabajo operativo total.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contar toda transición final",
-    "body": "Mantener la regla de Picking: cualquier salida desde `PENDING` a un estado final suma un producto procesado.",
+    "title": "Contar solo confirmaciones correctas",
+    "body": "Registrar las incidencias en metadatos sin sumarlas a `itemsProcessed`, preservando una métrica de preparación efectiva.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente en la Estación le conecta con las transiciones que determinan la métrica.",
+    "reason": "Su historial reciente está directamente ligado al flujo de Estación que define estas transiciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-07-21T14:06:18.097Z",
+    "reviewedAt": "2026-07-21T14:23:46.633Z",
     "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
   }
 }
