@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-20T19:12:16.848Z",
+  "generatedAt": "2026-07-21T01:05:27.586Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 111
+    "openItemsSeen": 104
   },
   "counts": {
-    "itemRecords": 109,
-    "closedRecords": 519,
-    "missingOpen": 2,
+    "itemRecords": 101,
+    "closedRecords": 527,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -47,7 +47,22 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-20T10:52:44Z",
-        "updatedAt": "2026-07-20T13:31:31Z",
+        "updatedAt": "2026-07-20T20:29:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7796,
+        "kind": "issue",
+        "title": "🐛 Proof agent: los PRs grandes mueren en maxDuration (504@300s) y el body queda con veredicto rancio",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:blocked"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-20T21:08:54Z",
+        "updatedAt": "2026-07-20T21:17:13Z",
         "missingReason": "recently_created"
       }
     ],
@@ -81,7 +96,22 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-20T10:52:44Z",
-        "updatedAt": "2026-07-20T13:31:31Z",
+        "updatedAt": "2026-07-20T20:29:12Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7796,
+        "kind": "issue",
+        "title": "🐛 Proof agent: los PRs grandes mueren en maxDuration (504@300s) y el body queda con veredicto rancio",
+        "labels": [
+          "bug",
+          "priority:p2",
+          "app:infrastructure",
+          "triage:blocked"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-20T21:08:54Z",
+        "updatedAt": "2026-07-20T21:17:13Z",
         "missingReason": "recently_created"
       }
     ],
