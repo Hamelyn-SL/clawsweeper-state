@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T14:57:01.335Z",
-  "updatedAt": "2026-07-20T14:52:49Z",
+  "generatedAt": "2026-07-21T11:46:02.118Z",
+  "updatedAt": "2026-07-21T09:30:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,53 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338",
     "state": "open",
     "labels": [
-      "marketplace-crons",
       "codex",
       "bug",
       "priority:p1",
       "app:marketplace",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P1",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-06-10T09:34:30Z",
-    "updatedAt": "2026-07-20T14:52:49Z"
+    "updatedAt": "2026-07-21T09:30:13Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `shipping.default.error` tratarse como un error transitorio de MercadoLibre o mantenerse fuera de los reintentos automáticos?",
-  "rationale": "La firma disponible no incluye estado ni causa suficiente para distinguir un fallo temporal del proveedor de una configuración inválida del anuncio.",
+  "question": "¿Debe `shipping.default.error` de MercadoLibre reintentarse automáticamente como error transitorio o mantenerse para diagnóstico de configuración?",
+  "rationale": "La evidencia reabierta nombra la firma y el departamento, pero no aporta el código, estado ni cuerpo completos para distinguir indisponibilidad temporal de configuración inválida.",
   "options": [
     {
-      "title": "Validar y acotar la regla",
-      "body": "Revisar ejemplos completos recientes y añadir una regla solo para la variante que demuestre un fallo externo recuperable.",
+      "title": "Exigir muestras completas",
+      "body": "Recopilar ejemplos redacted con estado, código y mensaje antes de ampliar el recovery automático.",
       "recommended": true
     },
     {
-      "title": "Mantenerla fuera de recovery",
-      "body": "Conservar la política actual y tratar esos casos como incidencias de configuración hasta disponer de evidencia adicional.",
+      "title": "Reintentar provisionalmente",
+      "body": "Clasificar la firma como transitoria y revisar telemetría de reintentos, aceptando el riesgo de recuperar errores permanentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y acotar la regla",
-    "body": "Revisar ejemplos completos recientes y añadir una regla solo para la variante que demuestre un fallo externo recuperable.",
+    "title": "Exigir muestras completas",
+    "body": "Recopilar ejemplos redacted con estado, código y mensaje antes de ampliar el recovery automático.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Introdujo la recuperación de create y figura asignado en el historial de esta incidencia.",
+    "reason": "Introdujo la recuperación específica de create de MercadoLibre y su clasificación asociada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6338.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338#issuecomment-4909866101",
-    "reviewedAt": "2026-07-20T14:57:01.335Z",
-    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+    "reviewedAt": "2026-07-21T11:46:02.118Z",
+    "mainSha": "d90d6095bdaef527cc7352c467c09aa931ff132c"
   }
 }
