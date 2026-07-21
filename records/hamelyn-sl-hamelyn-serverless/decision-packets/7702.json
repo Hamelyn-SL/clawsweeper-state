@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-21T12:22:15.145Z",
+  "updatedAt": "2026-07-21T12:18:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7702,
+    "title": "feat: migrate rotate-flash-offers sampling to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7702",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "reporter:alejandrodiaz",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-17T09:42:19Z",
+    "updatedAt": "2026-07-21T12:18:27Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe este primer corte limitarse al cambio de fuente BigQuery manteniendo el cron actual, o incluir ya el despacho por eventos Pub/Sub y Cloud Function?",
+  "rationale": "La issue pide cambiar la fuente y conservar rollback, mientras la PR abierta también sustituye la cadencia por una integración de producción entre varios sistemas.",
+  "options": [
+    {
+      "title": "Acotar la primera entrega",
+      "body": "Mantener el cron existente, sustituir solo el sampler por BigQuery y validar la reducción de CPU antes de cambiar la orquestación.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar la orquestación por eventos",
+      "body": "Aceptar Pub/Sub y Cloud Function como parte del corte, exigiendo prueba real del recorrido completo y recuperación ante fallos.",
+      "recommended": false
+    },
+    {
+      "title": "Separar las dos decisiones",
+      "body": "Llevar el sampler BigQuery y el disparo por eventos en PRs distintos para aislar el riesgo operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar la primera entrega",
+    "body": "Mantener el cron existente, sustituir solo el sampler por BigQuery y validar la reducción de CPU antes de cambiar la orquestación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta directamente con la configuración y operación del workflow afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7702.md",
+    "reviewedAt": "2026-07-21T12:22:15.145Z",
+    "mainSha": "f0b6b3a029198a052d51d500600d029dc7376a64"
+  }
+}
