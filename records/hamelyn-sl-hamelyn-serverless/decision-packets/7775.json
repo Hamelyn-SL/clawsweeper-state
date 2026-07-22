@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T14:45:22.796Z",
-  "updatedAt": "2026-07-20T13:09:47Z",
+  "generatedAt": "2026-07-22T08:23:44.902Z",
+  "updatedAt": "2026-07-22T08:02:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,46 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1"
     ],
     "createdAt": "2026-07-20T10:12:15Z",
-    "updatedAt": "2026-07-20T13:09:47Z",
-    "headSha": "231ae043d245f7f933cd643af6891bda2b66aa81"
+    "updatedAt": "2026-07-22T08:02:47Z",
+    "headSha": "5452b2da2d53e34c2d21b2ddf6696f6136b62b12"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Quién coordina la rotación de la credencial Azeta y el tratamiento de los eventos históricos identificados mientras se revisa esta mitigación?",
-  "rationale": "La rama reduce la exposición futura, pero no puede decidir ni ejecutar la remediación de secretos y logs ya persistidos.",
+  "question": "¿Debe crearse seguimiento operativo de rotación y limpieza antes de permitir que `Closes` cierre https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771?",
+  "rationale": "La PR puede detener nuevas exposiciones, pero no puede decidir ni ejecutar la respuesta sobre una credencial ya registrada ni sobre datos históricos.",
   "options": [
     {
-      "title": "Coordinar remediación inmediata",
-      "body": "Asignar la rotación de la credencial y la revisión de retención o borrado de logs como seguimiento operativo paralelo al merge.",
+      "title": "Crear seguimiento operativo separado",
+      "body": "Abrir y asignar una tarea de rotación y retención histórica antes de fusionar, manteniendo esta PR acotada a detener nuevas exposiciones.",
       "recommended": true
     },
     {
-      "title": "Aceptar el seguimiento diferido",
-      "body": "Integrar la mitigación y documentar una fecha y responsable para la remediación histórica posterior.",
+      "title": "Mantener la incidencia abierta",
+      "body": "Quitar la sintaxis de cierre y conservar la incidencia actual abierta hasta completar también las acciones operativas.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el merge",
+      "body": "Esperar si no existe un responsable ni un procedimiento aprobado para la rotación y la gestión de registros históricos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar remediación inmediata",
-    "body": "Asignar la rotación de la credencial y la revisión de retención o borrado de logs como seguimiento operativo paralelo al merge.",
+    "title": "Crear seguimiento operativo separado",
+    "body": "Abrir y asignar una tarea de rotación y retención histórica antes de fusionar, manteniendo esta PR acotada a detener nuevas exposiciones.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el revisor solicitado y ha mantenido recientemente el flujo de confirmación de dropshipping afectado.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su comentario identifica las acciones operativas pendientes y ya participó en la cobertura del flujo afectado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7775.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775#issuecomment-5022592194",
-    "reviewedAt": "2026-07-20T14:45:22.796Z",
-    "mainSha": "c3e33d1b80e95363644d3ad598763dd551a72a83"
+    "reviewedAt": "2026-07-22T08:23:44.902Z",
+    "mainSha": "855a534703be43af6705255c2dff909ab5a9ae31"
   }
 }

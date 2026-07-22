@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T15:51:48.797Z",
-  "updatedAt": "2026-07-21T14:50:03Z",
+  "generatedAt": "2026-07-22T08:22:14.015Z",
+  "updatedAt": "2026-07-22T07:57:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,46 @@
       "reporter:miguel",
       "triage:pr-opened",
       "P1",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-20T09:55:41Z",
-    "updatedAt": "2026-07-21T14:50:03Z"
+    "updatedAt": "2026-07-22T07:57:14Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué plan operativo debe aprobarse para rotar la credencial Azeta y tratar los eventos históricos ya expuestos?",
-  "rationale": "El repositorio puede evitar nuevas exposiciones, pero la rotación y la gestión de retención requieren acceso y política operativa externos al cambio de código.",
+  "question": "¿Debe esta incidencia permanecer como seguimiento de contención hasta completar rotación y tratamiento de logs, o separarse formalmente esa operación antes de integrar la PR vinculada?",
+  "rationale": "La PR resuelve la exposición futura en código, pero no puede rotar un secreto ni modificar retención o borrado de observabilidad; decidir la trazabilidad de esas obligaciones requiere autoridad operativa.",
   "options": [
     {
-      "title": "Contención completa",
-      "body": "Rotar la credencial y aplicar una eliminación o retención reducida documentada para los eventos afectados.",
+      "title": "Separar la contención operativa",
+      "body": "Crear un seguimiento de seguridad enlazado, retirar el cierre automático de la PR y mantener la evidencia de rotación y retención en un trabajo operativo separado.",
       "recommended": true
     },
     {
-      "title": "Mitigación de código primero",
-      "body": "Integrar la redacción y calendarizar la rotación y el tratamiento histórico con responsables y fecha.",
+      "title": "Mantener un único seguimiento",
+      "body": "Conservar esta incidencia abierta tras integrar el código hasta documentar la rotación de Azeta y el tratamiento de los eventos históricos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contención completa",
-    "body": "Rotar la credencial y aplicar una eliminación o retención reducida documentada para los eventos afectados.",
+    "title": "Separar la contención operativa",
+    "body": "Crear un seguimiento de seguridad enlazado, retirar el cierre automático de la PR y mantener la evidencia de rotación y retención en un trabajo operativo separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Figura asignado a la incidencia y puede coordinar el cierre entre la mitigación de código y la operación.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y ya documentó el límite entre la corrección de código y la contención operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7771.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771#issuecomment-5022470902",
-    "reviewedAt": "2026-07-21T15:51:48.797Z",
-    "mainSha": "28961cd9f75c53a05b3951bb081512652fe440ae"
+    "reviewedAt": "2026-07-22T08:22:14.015Z",
+    "mainSha": "855a534703be43af6705255c2dff909ab5a9ae31"
   }
 }
