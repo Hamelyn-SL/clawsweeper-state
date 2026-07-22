@@ -14,7 +14,7 @@
       "source:admin-panel",
       "app:ecommerce",
       "reporter:javier",
-      "triage:queued",
+      "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:source-repro",
@@ -54,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7856.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7856#issuecomment-5036622429",
     "reviewedAt": "2026-07-22T06:05:02.356Z",
     "mainSha": "f38f8a74d679ae88596e46562cdd0757f7250e9e"
   }
