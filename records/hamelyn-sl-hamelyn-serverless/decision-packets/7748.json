@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T12:55:50.618Z",
-  "updatedAt": "2026-07-22T12:42:31Z",
+  "generatedAt": "2026-07-22T15:23:10.022Z",
+  "updatedAt": "2026-07-22T14:50:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,51 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T23:49:57Z",
-    "updatedAt": "2026-07-22T12:42:31Z"
+    "updatedAt": "2026-07-22T14:50:08Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba ejecutar una vez al día a las 05:00 UTC y eliminar por completo el guard de hora Madrid?",
-  "rationale": "La propuesta evita el no-op estructural, pero fija una hora local distinta entre invierno y verano.",
+  "question": "¿Debe aprobarse el tick único `0 5 * * *` y la ejecución incondicional, aceptando 06:00 CET y 07:00 CEST como ventana diaria?",
+  "rationale": "La corrección técnica evita el no-op, pero fija una hora local distinta según la estación y la incidencia dejó esa decisión operativa abierta.",
   "options": [
     {
-      "title": "Aprobar tick único sin guard",
-      "body": "Programar las 05:00 UTC y ejecutar siempre, conservando el lookback de 24 horas.",
+      "title": "Aprobar 05:00 UTC",
+      "body": "Mantener un único tick y eliminar el gate, conservando una sincronización diaria a las 06:00 CET o 07:00 CEST.",
       "recommended": true
     },
     {
-      "title": "Mantener doble cron con ventana",
-      "body": "Conservar ambos ticks y aceptar una franja horaria, asumiendo protección adicional contra duplicados.",
+      "title": "Elegir otra hora única",
+      "body": "Definir otra hora UTC de negocio y mantener igualmente la ejecución incondicional para no depender del retraso del runner.",
       "recommended": false
     },
     {
-      "title": "Definir otro horario operativo",
-      "body": "Elegir un tick UTC distinto y eliminar igualmente la dependencia de la hora efectiva de arranque.",
+      "title": "Conservar doble tick con protección",
+      "body": "Mantener dos disparos solo si se añade una protección explícita contra sincronizaciones duplicadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar tick único sin guard",
-    "body": "Programar las 05:00 UTC y ejecutar siempre, conservando el lookback de 24 horas.",
+    "title": "Aprobar 05:00 UTC",
+    "body": "Mantener un único tick y eliminar el gate, conservando una sincronización diaria a las 06:00 CET o 07:00 CEST.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada a la incidencia y debe coordinar la decisión operativa.",
+    "person": "JavierHamelyn",
+    "reason": "Aportó la investigación operativa, mantiene el workflow recientemente y es el revisor solicitado de la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7748.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7748#issuecomment-5022274434",
-    "reviewedAt": "2026-07-22T12:55:50.618Z",
+    "reviewedAt": "2026-07-22T15:23:10.022Z",
     "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
   }
 }
