@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:12:35.006Z",
-  "updatedAt": "2026-07-21T12:18:29Z",
+  "generatedAt": "2026-07-22T09:48:57.620Z",
+  "updatedAt": "2026-07-22T09:36:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "source:admin-panel",
       "app:supply",
       "reporter:arineligrigore",
-      "triage:done",
+      "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 🥈 silver",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-13T09:48:16Z",
-    "updatedAt": "2026-07-21T12:18:29Z"
+    "updatedAt": "2026-07-22T09:36:52Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Consta el abono de 20,45 € de este lote para reconciliarlo como `PAID`, o debe mantenerse como `CANCELLED`?",
-  "rationale": "El código no puede inferir un hecho financiero histórico; elegir el estado sin esa confirmación podría alterar la contabilidad operativa.",
+  "question": "¿Confirma Finanzas el abono IBAN de 20,45 € del lote `01MAY_786HA` antes de que Supply modifique su estado histórico?",
+  "rationale": "El código no puede inferir de forma segura si un pago externo se ejecutó; los campos heredados sugieren pago, pero no lo demuestran.",
   "options": [
     {
-      "title": "Confirmar y reconciliar",
-      "body": "Verificar el pago y corregir el documento al estado resultante, limpiando únicamente los metadatos incompatibles.",
+      "title": "Verificar antes de reconciliar",
+      "body": "Confirmar el abono con Finanzas y aplicar el estado y metadatos coherentes con el resultado.",
       "recommended": true
     },
     {
-      "title": "Mantener cancelado",
-      "body": "Si Finanzas confirma que no hubo abono, conservar `CANCELLED` con fecha y motivo de cancelación coherentes.",
+      "title": "Forzar `PAID` ahora",
+      "body": "Reconciliar a `PAID` basándose en `wasPaid` y `paymentDate`, asumiendo el riesgo de un abono no confirmado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar y reconciliar",
-    "body": "Verificar el pago y corregir el documento al estado resultante, limpiando únicamente los metadatos incompatibles.",
+    "title": "Verificar antes de reconciliar",
+    "body": "Confirmar el abono con Finanzas y aplicar el estado y metadatos coherentes con el resultado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el mejor punto de enlace disponible por el diagnóstico y la relación reciente con el flujo de pedidos; debe coordinar la confirmación con Finanzas.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada y ya reunió la evidencia operativa necesaria para coordinar con Finanzas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7454.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454#issuecomment-4956923389",
-    "reviewedAt": "2026-07-21T14:12:35.006Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-22T09:48:57.620Z",
+    "mainSha": "51574df0884842bc6f64caa65bbca884f76c59c9"
   }
 }

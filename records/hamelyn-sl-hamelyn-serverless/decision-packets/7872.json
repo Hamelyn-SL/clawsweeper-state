@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T09:48:23.388Z",
+  "generatedAt": "2026-07-22T09:49:41.091Z",
   "updatedAt": "2026-07-22T09:42:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,47 +13,41 @@
       "source:admin-panel",
       "app:infrastructure",
       "feature",
-      "triage:done",
+      "triage:running",
       "P1"
     ],
     "createdAt": "2026-07-22T09:41:56Z",
     "updatedAt": "2026-07-22T09:42:17Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `apps/agents` custodiar una credencial de Atlas Admin API y qué conjunto mínimo de métricas, permisos y reglas de escalado se aprueba para este watcher?",
-  "rationale": "La petición crea una nueva frontera de secretos y observabilidad operativa; el código existente no determina qué privilegios ni qué alertas son aceptables.",
+  "question": "¿Debe Eve incorporar observabilidad de Atlas, MongoDB y BigQuery, y qué límites de acceso, retención y escalado a Slack/GitHub se aceptan?",
+  "rationale": "La propuesta añade una responsabilidad operativa y permisos sensibles que los watchers actuales no determinan por sí solos.",
   "options": [
     {
       "title": "Aprobar un diseño mínimo",
-      "body": "Autorizar credenciales separadas de solo lectura, métricas explícitas y una primera entrega limitada a salud, replicación y frescura.",
+      "body": "Acordar señales, secretos, almacenamiento y umbrales antes de dividir la implementación en entregas acotadas.",
       "recommended": true
     },
     {
-      "title": "Limitarlo a fuentes actuales",
-      "body": "Mantener inicialmente Mongo y BigQuery de solo lectura sin Atlas Admin API, posponiendo las métricas de control-plane de Atlas.",
-      "recommended": false
-    },
-    {
-      "title": "Derivarlo a monitorización externa",
-      "body": "Decidir que Atlas se supervise fuera de `apps/agents` y conservar en Eve solo la correlación de hallazgos ya publicados.",
+      "title": "Mantener el alcance actual",
+      "body": "No incorporar esta responsabilidad a Eve y gestionar la observabilidad desde la plataforma correspondiente.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar un diseño mínimo",
-    "body": "Autorizar credenciales separadas de solo lectura, métricas explícitas y una primera entrega limitada a salud, replicación y frescura.",
+    "body": "Acordar señales, secretos, almacenamiento y umbrales antes de dividir la implementación en entregas acotadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor del armazón Eve y de los watchers compartidos que delimitarían esta integración.",
+    "reason": "Su historial reciente en Eve y su asignación actual lo sitúan como el mejor punto de entrada para la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7872.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7872#issuecomment-5044367604",
-    "reviewedAt": "2026-07-22T09:48:23.388Z",
+    "reviewedAt": "2026-07-22T09:49:41.091Z",
     "mainSha": "51574df0884842bc6f64caa65bbca884f76c59c9"
   }
 }

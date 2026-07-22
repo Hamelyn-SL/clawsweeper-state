@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T08:23:44.902Z",
-  "updatedAt": "2026-07-22T08:02:47Z",
+  "generatedAt": "2026-07-22T09:49:53.762Z",
+  "updatedAt": "2026-07-22T08:46:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-20T10:12:15Z",
-    "updatedAt": "2026-07-22T08:02:47Z",
-    "headSha": "5452b2da2d53e34c2d21b2ddf6696f6136b62b12"
+    "updatedAt": "2026-07-22T08:46:49Z",
+    "headSha": "52c1b9f287280fd5c080fd137ccbca5d19b7d7f4"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe crearse seguimiento operativo de rotación y limpieza antes de permitir que `Closes` cierre https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7771?",
-  "rationale": "La PR puede detener nuevas exposiciones, pero no puede decidir ni ejecutar la respuesta sobre una credencial ya registrada ni sobre datos históricos.",
+  "question": "¿Debe esta PR conservar el cierre automático de la incidencia vinculada, o debe separarse antes un seguimiento operativo para rotación y limpieza histórica?",
+  "rationale": "El código puede cortar exposiciones nuevas, pero no puede decidir ni ejecutar la respuesta sobre secretos y datos ya persistidos fuera del repositorio.",
   "options": [
     {
-      "title": "Crear seguimiento operativo separado",
-      "body": "Abrir y asignar una tarea de rotación y retención histórica antes de fusionar, manteniendo esta PR acotada a detener nuevas exposiciones.",
+      "title": "Separar la respuesta operativa",
+      "body": "Crear o enlazar un seguimiento de seguridad para rotación y depuración, y conservar esta PR como corrección preventiva.",
       "recommended": true
     },
     {
-      "title": "Mantener la incidencia abierta",
-      "body": "Quitar la sintaxis de cierre y conservar la incidencia actual abierta hasta completar también las acciones operativas.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el merge",
-      "body": "Esperar si no existe un responsable ni un procedimiento aprobado para la rotación y la gestión de registros históricos.",
+      "title": "Retirar el cierre automático",
+      "body": "Eliminar `Closes #7771` y cerrar manualmente la incidencia solo cuando concluyan también las acciones operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Crear seguimiento operativo separado",
-    "body": "Abrir y asignar una tarea de rotación y retención histórica antes de fusionar, manteniendo esta PR acotada a detener nuevas exposiciones.",
+    "title": "Separar la respuesta operativa",
+    "body": "Crear o enlazar un seguimiento de seguridad para rotación y depuración, y conservar esta PR como corrección preventiva.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su comentario identifica las acciones operativas pendientes y ya participó en la cobertura del flujo afectado.",
+    "person": "MarcosTerroso",
+    "reason": "Es el revisor asignado por conocimiento del flujo afectado y puede coordinar la decisión con quien gestione los secretos y los logs.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7775.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775#issuecomment-5022592194",
-    "reviewedAt": "2026-07-22T08:23:44.902Z",
-    "mainSha": "855a534703be43af6705255c2dff909ab5a9ae31"
+    "reviewedAt": "2026-07-22T09:49:53.762Z",
+    "mainSha": "51574df0884842bc6f64caa65bbca884f76c59c9"
   }
 }
