@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T10:54:48.911Z",
+  "updatedAt": "2026-07-22T10:41:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7880,
+    "title": "Extend withdrawn-orphan recovery to eBay, MercadoLibre and Abebooks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7880",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-07-22T10:34:30Z",
+    "updatedAt": "2026-07-22T10:41:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba dividir esta ampliación en tres entregas canario con dry-run operativo independiente antes de activar escrituras?",
+  "rationale": "La fuente e identidad remota difieren por proveedor y un fallo puede retirar listings válidos; el código común no decide los umbrales ni la activación operativa.",
+  "options": [
+    {
+      "title": "Aprobar tres canarios",
+      "body": "Implementar y validar eBay, MercadoLibre y AbeBooks por separado, activando escrituras solo tras cada dry-run satisfactorio.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance inicial",
+      "body": "Priorizar eBay o MercadoLibre y mantener los otros proveedores sin siembra hasta disponer de más evidencia operativa.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar tres canarios",
+    "body": "Implementar y validar eBay, MercadoLibre y AbeBooks por separado, activando escrituras solo tras cada dry-run satisfactorio.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Definió el alcance y llevó la generalización previa que dejó estos adaptadores fuera.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7880.md",
+    "reviewedAt": "2026-07-22T10:54:48.911Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+  }
+}
