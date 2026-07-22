@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T07:19:05.478Z",
+  "updatedAt": "2026-07-22T07:00:33Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7862,
+    "title": "Infraestructura: evitar reconexiones masivas al refrescar config de Mongo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7862",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:infrastructure",
+      "triage:done",
+      "P1",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-07-22T06:41:29Z",
+    "updatedAt": "2026-07-22T07:00:33Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe Analytics Supply conservar `mongo_user_id` síncrono, o puede pasar a registrar solo `auth0_user_id` mientras el enriquecimiento se mueve fuera de la petición?",
+  "rationale": "La reducción de reconexiones es mecánica, pero cambiar o diferir el enriquecimiento modifica la completitud de la analítica autenticada.",
+  "options": [
+    {
+      "title": "Conservar el enriquecimiento actual",
+      "body": "Mantener una conexión disponible para las peticiones autenticadas mientras se aplica el cache de configuración y se evita reciclar el pool.",
+      "recommended": true
+    },
+    {
+      "title": "Mover el enriquecimiento a segundo plano",
+      "body": "Registrar `auth0_user_id` en línea y completar `mongo_user_id` mediante un proceso asíncrono validado con los consumidores analíticos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar el enriquecimiento actual",
+    "body": "Mantener una conexión disponible para las peticiones autenticadas mientras se aplica el cache de configuración y se evita reciclar el pool.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Es el responsable asignado y el colaborador reciente más cercano a ambos puntos de integración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7862.md",
+    "reviewedAt": "2026-07-22T07:19:05.478Z",
+    "mainSha": "f38f8a74d679ae88596e46562cdd0757f7250e9e"
+  }
+}
