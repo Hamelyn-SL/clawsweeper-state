@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-22T13:20:16.162Z",
+  "generated_at": "2026-07-22T14:07:21.864Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-22T10:20:13.238Z",
+  "since": "2026-07-22T11:07:18.913Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 34,
+  "scanned_comments": 35,
   "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
@@ -29,9 +29,9 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7855:5036457262:2026-07-22T13:20:12Z:automerge",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7855:5036457262:2026-07-22T13:22:35Z:automerge",
       "comment_id": "5036457262",
-      "comment_version_key": "5036457262:2026-07-22T13:20:12Z",
+      "comment_version_key": "5036457262:2026-07-22T13:22:35Z",
       "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7855#issuecomment-5036457262",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
@@ -40,7 +40,7 @@
       "author_id": 301054459,
       "author_association": "NONE",
       "comment_created_at": "2026-07-21T16:25:34Z",
-      "comment_updated_at": "2026-07-22T13:20:12Z",
+      "comment_updated_at": "2026-07-22T13:22:35Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -71,15 +71,15 @@
     }
   ],
   "timings": {
-    "total_ms": 2923,
+    "total_ms": 2950,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1791
+        "ms": 1335
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1128
+        "ms": 1610
       },
       {
         "name": "classify_comment_commands",
