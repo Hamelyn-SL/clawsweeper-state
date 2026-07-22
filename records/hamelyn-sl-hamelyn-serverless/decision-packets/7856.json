@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T06:05:02.356Z",
+  "updatedAt": "2026-07-22T05:57:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7856,
+    "title": "Ecommerce: el perfil falla tras iniciar sesión por cierres concurrentes de MongoDB",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7856",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:javier",
+      "triage:queued",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:source-repro",
+      "impact:auth-provider",
+      "P0",
+      "impact:ux-release-blocker",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-21T16:25:22Z",
+    "updatedAt": "2026-07-22T05:57:57Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P0",
+  "question": "¿Debe priorizarse un hotfix coordinado y redespliegue internacional antes de investigar la lentitud de `config`?",
+  "rationale": "La evidencia describe indisponibilidad regional amplia y el arreglo modifica un recurso global compartido; el orden operativo requiere intención humana.",
+  "options": [
+    {
+      "title": "Aplicar hotfix y redesplegar",
+      "body": "Eliminar el cierre inducido por el sondeo, validar concurrencia y redesplegar los proyectos internacionales afectados.",
+      "recommended": true
+    },
+    {
+      "title": "Investigar antes de desplegar",
+      "body": "Analizar primero la latencia de `config`, asumiendo temporalmente el riesgo del cierre concurrente existente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar hotfix y redesplegar",
+    "body": "Eliminar el cierre inducido por el sondeo, validar concurrencia y redesplegar los proyectos internacionales afectados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La incidencia está asignada a esta persona y el contexto ya identifica esta ruta como el siguiente trabajo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7856.md",
+    "reviewedAt": "2026-07-22T06:05:02.356Z",
+    "mainSha": "f38f8a74d679ae88596e46562cdd0757f7250e9e"
+  }
+}
