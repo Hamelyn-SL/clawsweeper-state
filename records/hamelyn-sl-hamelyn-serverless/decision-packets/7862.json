@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T07:19:05.478Z",
-  "updatedAt": "2026-07-22T07:00:33Z",
+  "generatedAt": "2026-07-22T08:31:13.799Z",
+  "updatedAt": "2026-07-22T07:20:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,40 +15,46 @@
       "app:infrastructure",
       "triage:done",
       "P1",
+      "impact:other",
       "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-07-22T06:41:29Z",
-    "updatedAt": "2026-07-22T07:00:33Z"
+    "updatedAt": "2026-07-22T07:20:18Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Analytics Supply conservar `mongo_user_id` síncrono, o puede pasar a registrar solo `auth0_user_id` mientras el enriquecimiento se mueve fuera de la petición?",
-  "rationale": "La reducción de reconexiones es mecánica, pero cambiar o diferir el enriquecimiento modifica la completitud de la analítica autenticada.",
+  "question": "¿Debe Analytics Supply conservar `mongo_user_id` síncrono en eventos autenticados o aceptarse su ausencia y trasladar el enriquecimiento a un proceso posterior?",
+  "rationale": "El código actual lo resuelve y sincroniza dentro de la petición, mientras que la PR cerrada lo eliminaba; ambas alternativas cambian coste, disponibilidad y semántica de analítica.",
   "options": [
     {
-      "title": "Conservar el enriquecimiento actual",
-      "body": "Mantener una conexión disponible para las peticiones autenticadas mientras se aplica el cache de configuración y se evita reciclar el pool.",
+      "title": "Conservar identidad con enriquecimiento diferido",
+      "body": "Mantener `auth0_user_id` en la petición y completar `mongo_user_id` fuera del endpoint para retirar Mongo sin perder la capacidad analítica.",
       "recommended": true
     },
     {
-      "title": "Mover el enriquecimiento a segundo plano",
-      "body": "Registrar `auth0_user_id` en línea y completar `mongo_user_id` mediante un proceso asíncrono validado con los consumidores analíticos.",
+      "title": "Mantener enriquecimiento síncrono",
+      "body": "Conservar la dependencia Mongo de Analytics y limitar esta incidencia al cacheo seguro del refresh de configuración.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar eventos sin Mongo",
+      "body": "Eliminar el enriquecimiento y documentar que los nuevos eventos autenticados pueden llevar `mongo_user_id` nulo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar el enriquecimiento actual",
-    "body": "Mantener una conexión disponible para las peticiones autenticadas mientras se aplica el cache de configuración y se evita reciclar el pool.",
+    "title": "Conservar identidad con enriquecimiento diferido",
+    "body": "Mantener `auth0_user_id` en la petición y completar `mongo_user_id` fuera del endpoint para retirar Mongo sin perder la capacidad analítica.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Es el responsable asignado y el colaborador reciente más cercano a ambos puntos de integración.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el responsable asignado y ya propuso una reparación sobre ambos límites del cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7862.md",
-    "reviewedAt": "2026-07-22T07:19:05.478Z",
-    "mainSha": "f38f8a74d679ae88596e46562cdd0757f7250e9e"
+    "reviewedAt": "2026-07-22T08:31:13.799Z",
+    "mainSha": "855a534703be43af6705255c2dff909ab5a9ae31"
   }
 }
