@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-22T07:27:54.891Z",
+  "generatedAt": "2026-07-22T13:07:58.677Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 115
+    "openItemsSeen": 111
   },
   "counts": {
-    "itemRecords": 113,
-    "closedRecords": 564,
-    "missingOpen": 2,
+    "itemRecords": 107,
+    "closedRecords": 581,
+    "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
-    "missingProtectedOpen": 1,
-    "missingRecentOpen": 1,
+    "missingProtectedOpen": 2,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,15 +39,48 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7863,
+        "number": 7869,
+        "kind": "issue",
+        "title": "🔒 Ecommerce: firmar las peticiones del frontend a los endpoints de disponibilidad para cortar el scraper axios",
+        "labels": [
+          "app:ecommerce",
+          "feature",
+          "security",
+          "reporter:miguel",
+          "triage:done",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-22T08:25:15Z",
+        "updatedAt": "2026-07-22T09:27:16Z",
+        "missingReason": "protected_label"
+      },
+      {
+        "number": 7884,
         "kind": "pull_request",
-        "title": "fix: prevent Mongo config refresh reconnect storms",
+        "title": "fix: run amazon returns sync on every trigger",
         "labels": [
           "size/M"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-22T06:48:30Z",
-        "updatedAt": "2026-07-22T07:01:18Z",
+        "createdAt": "2026-07-22T13:00:50Z",
+        "updatedAt": "2026-07-22T13:04:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7885,
+        "kind": "issue",
+        "title": "Cupón N-ésima unidad descuenta el más barato de cada grupo en vez de las N más baratas del carrito",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "reporter:miguel",
+          "triage:running",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-22T13:03:27Z",
+        "updatedAt": "2026-07-22T13:06:26Z",
         "missingReason": "recently_created"
       }
     ],
@@ -69,19 +102,52 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-21T12:18:31Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7869,
+        "kind": "issue",
+        "title": "🔒 Ecommerce: firmar las peticiones del frontend a los endpoints de disponibilidad para cortar el scraper axios",
+        "labels": [
+          "app:ecommerce",
+          "feature",
+          "security",
+          "reporter:miguel",
+          "triage:done",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-22T08:25:15Z",
+        "updatedAt": "2026-07-22T09:27:16Z",
+        "missingReason": "protected_label"
       }
     ],
     "missingRecentOpen": [
       {
-        "number": 7863,
+        "number": 7884,
         "kind": "pull_request",
-        "title": "fix: prevent Mongo config refresh reconnect storms",
+        "title": "fix: run amazon returns sync on every trigger",
         "labels": [
           "size/M"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-22T06:48:30Z",
-        "updatedAt": "2026-07-22T07:01:18Z",
+        "createdAt": "2026-07-22T13:00:50Z",
+        "updatedAt": "2026-07-22T13:04:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7885,
+        "kind": "issue",
+        "title": "Cupón N-ésima unidad descuenta el más barato de cada grupo en vez de las N más baratas del carrito",
+        "labels": [
+          "bug",
+          "app:ecommerce",
+          "reporter:miguel",
+          "triage:running",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-22T13:03:27Z",
+        "updatedAt": "2026-07-22T13:06:26Z",
         "missingReason": "recently_created"
       }
     ],
