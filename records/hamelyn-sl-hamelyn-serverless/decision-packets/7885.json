@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T13:29:46.107Z",
+  "updatedAt": "2026-07-22T13:09:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7885,
+    "title": "Cupón N-ésima unidad descuenta el más barato de cada grupo en vez de las N más baratas del carrito",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7885",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:miguel",
+      "triage:done",
+      "P1"
+    ],
+    "createdAt": "2026-07-22T13:03:27Z",
+    "updatedAt": "2026-07-22T13:09:21Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `secondUnitPercentage` sustituir el criterio documentado de una unidad barata por bloque por las N unidades más baratas del carrito completo?",
+  "rationale": "El código, la BL y los tests actuales coinciden en la regla por bloques; la PR propone una política comercial distinta que modifica importes de checkout.",
+  "options": [
+    {
+      "title": "Adoptar selección global",
+      "body": "Aprobar la regla de las N unidades más baratas y revisar/fusionar la PR vinculada como cambio intencionado de promoción.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener grupos",
+      "body": "Conservar el contrato actual por bloques y cerrar o reconducir la PR tras explicar el criterio comercial vigente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar selección global",
+    "body": "Aprobar la regla de las N unidades más baratas y revisar/fusionar la PR vinculada como cambio intencionado de promoción.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor solicitado y tiene la señal histórica más fuerte en la lógica de cupones afectada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7885.md",
+    "reviewedAt": "2026-07-22T13:29:46.107Z",
+    "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
+  }
+}
