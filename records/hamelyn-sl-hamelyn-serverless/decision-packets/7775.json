@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T09:49:53.762Z",
-  "updatedAt": "2026-07-22T08:46:49Z",
+  "generatedAt": "2026-07-22T09:55:33.776Z",
+  "updatedAt": "2026-07-22T09:51:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,39 +18,38 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-20T10:12:15Z",
-    "updatedAt": "2026-07-22T08:46:49Z",
+    "updatedAt": "2026-07-22T09:51:44Z",
     "headSha": "52c1b9f287280fd5c080fd137ccbca5d19b7d7f4"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe esta PR conservar el cierre automático de la incidencia vinculada, o debe separarse antes un seguimiento operativo para rotación y limpieza histórica?",
-  "rationale": "El código puede cortar exposiciones nuevas, pero no puede decidir ni ejecutar la respuesta sobre secretos y datos ya persistidos fuera del repositorio.",
+  "question": "¿Debe mantenerse abierta la incidencia de seguridad hasta completar rotación y saneamiento histórico, o separarse esas acciones en un seguimiento operativo antes de fusionar?",
+  "rationale": "La rama mitiga exposiciones nuevas, pero no puede ejecutar ni demostrar la revocación de una credencial ya registrada ni la gestión de datos históricos.",
   "options": [
     {
-      "title": "Separar la respuesta operativa",
-      "body": "Crear o enlazar un seguimiento de seguridad para rotación y depuración, y conservar esta PR como corrección preventiva.",
+      "title": "Separar y preservar el seguimiento",
+      "body": "Crear o confirmar un seguimiento operativo para rotación y depuración, y sustituir el cierre automático por una referencia antes de fusionar.",
       "recommended": true
     },
     {
-      "title": "Retirar el cierre automático",
-      "body": "Eliminar `Closes #7771` y cerrar manualmente la incidencia solo cuando concluyan también las acciones operativas.",
+      "title": "Fusionar con aceptación explícita",
+      "body": "Fusionar y aceptar que la incidencia principal se cierre, dejando documentado un propietario y una fecha para las dos acciones operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la respuesta operativa",
-    "body": "Crear o enlazar un seguimiento de seguridad para rotación y depuración, y conservar esta PR como corrección preventiva.",
+    "title": "Separar y preservar el seguimiento",
+    "body": "Crear o confirmar un seguimiento operativo para rotación y depuración, y sustituir el cierre automático por una referencia antes de fusionar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el revisor asignado por conocimiento del flujo afectado y puede coordinar la decisión con quien gestione los secretos y los logs.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Añadió la protección de regresión y dejó documentado el límite operativo concreto de la mitigación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7775.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775#issuecomment-5022592194",
-    "reviewedAt": "2026-07-22T09:49:53.762Z",
-    "mainSha": "51574df0884842bc6f64caa65bbca884f76c59c9"
+    "reviewedAt": "2026-07-22T09:55:33.776Z",
+    "mainSha": "26f3f8f75bbd7f4637708e4296ab4893bbe38d89"
   }
 }

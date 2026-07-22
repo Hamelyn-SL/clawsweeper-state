@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T09:55:46.935Z",
+  "updatedAt": "2026-07-22T09:51:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7870,
+    "title": "fix: close public availability endpoint",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7870",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-22T09:05:54Z",
+    "updatedAt": "2026-07-22T09:51:37Z",
+    "headSha": "8d4048bef5c11156a4e6b0c44f7b3cf044d80c8b"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe Ecommerce retirar definitivamente la API pública con `405` o conservar un acceso firmado o señuelo para peticiones no autorizadas?",
+  "rationale": "La incidencia vinculada deja abierta la política de respuesta a consumidores no autorizados; el parche elige retirar el método sin una decisión de producto y seguridad registrada.",
+  "options": [
+    {
+      "title": "Confirmar el cierre con 405",
+      "body": "Aprobar la retirada del GET público tras verificar que el frontend obtiene la disponibilidad desde prescriptor y no hay integraciones externas soportadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una ruta controlada",
+      "body": "Conservar un endpoint firmado o una respuesta señuelo si se decide que debe existir una superficie de consulta no pública.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el cierre con 405",
+    "body": "Aprobar la retirada del GET público tras verificar que el frontend obtiene la disponibilidad desde prescriptor y no hay integraciones externas soportadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta directamente con el endurecimiento de las superficies públicas de producto y disponibilidad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7870.md",
+    "reviewedAt": "2026-07-22T09:55:46.935Z",
+    "mainSha": "26f3f8f75bbd7f4637708e4296ab4893bbe38d89"
+  }
+}

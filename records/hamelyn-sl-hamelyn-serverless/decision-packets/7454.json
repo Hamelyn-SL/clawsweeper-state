@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T09:48:57.620Z",
-  "updatedAt": "2026-07-22T09:36:52Z",
+  "generatedAt": "2026-07-22T09:55:01.865Z",
+  "updatedAt": "2026-07-22T09:51:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,44 +17,43 @@
       "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 🥇 gold",
-      "clawsweeper:needs-info",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: 🥇 gold",
+      "clawsweeper:needs-info"
     ],
     "createdAt": "2026-07-13T09:48:16Z",
-    "updatedAt": "2026-07-22T09:36:52Z"
+    "updatedAt": "2026-07-22T09:51:55Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Confirma Finanzas el abono IBAN de 20,45 € del lote `01MAY_786HA` antes de que Supply modifique su estado histórico?",
-  "rationale": "El código no puede inferir de forma segura si un pago externo se ejecutó; los campos heredados sugieren pago, pero no lo demuestran.",
+  "question": "¿Confirma Finanzas el abono IBAN de 20,45 € del lote antes de autorizar su reconciliación?",
+  "rationale": "El repositorio acredita recepción y señales de pago legacy, pero no puede demostrar por sí solo que el ingreso externo se ejecutó.",
   "options": [
     {
-      "title": "Verificar antes de reconciliar",
-      "body": "Confirmar el abono con Finanzas y aplicar el estado y metadatos coherentes con el resultado.",
+      "title": "Verificar y reconciliar",
+      "body": "Comprobar el abono y, si consta, dejar el lote en `PAID` con la recepción del 07/05 y sin metadatos de cancelación.",
       "recommended": true
     },
     {
-      "title": "Forzar `PAID` ahora",
-      "body": "Reconciliar a `PAID` basándose en `wasPaid` y `paymentDate`, asumiendo el riesgo de un abono no confirmado.",
+      "title": "Investigar pago pendiente",
+      "body": "Si no consta el abono, conservar la recepción y revisar el lote como pago pendiente antes de cambiar su estado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar antes de reconciliar",
-    "body": "Confirmar el abono con Finanzas y aplicar el estado y metadatos coherentes con el resultado.",
+    "title": "Verificar y reconciliar",
+    "body": "Comprobar el abono y, si consta, dejar el lote en `PAID` con la recepción del 07/05 y sin metadatos de cancelación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y ya reunió la evidencia operativa necesaria para coordinar con Finanzas.",
-    "confidence": "high"
+    "reason": "Ya está asignado y su comentario reúne la evidencia operativa necesaria para coordinar Supply y Finanzas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7454.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7454#issuecomment-4956923389",
-    "reviewedAt": "2026-07-22T09:48:57.620Z",
-    "mainSha": "51574df0884842bc6f64caa65bbca884f76c59c9"
+    "reviewedAt": "2026-07-22T09:55:01.865Z",
+    "mainSha": "26f3f8f75bbd7f4637708e4296ab4893bbe38d89"
   }
 }
