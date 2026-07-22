@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-22T01:04:50.549Z",
+  "generatedAt": "2026-07-22T07:27:54.891Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 109
+    "openItemsSeen": 115
   },
   "counts": {
-    "itemRecords": 108,
+    "itemRecords": 113,
     "closedRecords": 564,
-    "missingOpen": 1,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,18 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-21T12:18:31Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7863,
+        "kind": "pull_request",
+        "title": "fix: prevent Mongo config refresh reconnect storms",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-22T06:48:30Z",
+        "updatedAt": "2026-07-22T07:01:18Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +71,20 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7863,
+        "kind": "pull_request",
+        "title": "fix: prevent Mongo config refresh reconnect storms",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-22T06:48:30Z",
+        "updatedAt": "2026-07-22T07:01:18Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
