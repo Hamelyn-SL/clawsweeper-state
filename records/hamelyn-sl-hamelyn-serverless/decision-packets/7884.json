@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T14:37:44.406Z",
-  "updatedAt": "2026-07-22T13:36:05Z",
+  "generatedAt": "2026-07-22T15:46:33.389Z",
+  "updatedAt": "2026-07-22T14:41:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/M",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 availability"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-22T13:00:50Z",
-    "updatedAt": "2026-07-22T13:36:05Z",
+    "updatedAt": "2026-07-22T14:41:31Z",
     "headSha": "5e9dfdc307532ee7f461795619c821792b906378"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe fijarse la sincronización diaria en `0 5 * * *` aunque durante CEST se ejecute a las 07:00 locales?",
-  "rationale": "La incidencia canónica dejó pendiente la franja estacional, y el cambio sustituye los dos ticks previos por una sola hora operativa.",
+  "question": "¿Debe el cron quedar fijado a las 05:00 UTC, aceptando una ejecución a las 07:00 CEST en verano?",
+  "rationale": "La incidencia canónica describe la franja estacional como una decisión pendiente, mientras que esta PR elige 05:00 UTC sin una confirmación operativa visible.",
   "options": [
     {
-      "title": "Confirmar 05:00 UTC",
-      "body": "Mantener el cron propuesto si una ejecución diaria a las 06:00 CET o 07:00 CEST satisface el proceso de devoluciones.",
-      "recommended": true
+      "title": "Aprobar 05:00 UTC",
+      "body": "Aceptar formalmente el horario de 06:00 CET y 07:00 CEST y conservar el diff actual.",
+      "recommended": false
     },
     {
-      "title": "Ajustar la hora",
-      "body": "Cambiar el cron antes del merge si el proceso necesita una hora local distinta durante CEST o CET.",
-      "recommended": false
+      "title": "Definir el horario local objetivo",
+      "body": "Acordar primero el compromiso CET/CEST y ajustar el cron o la estrategia de ejecución a esa política.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Confirmar 05:00 UTC",
-    "body": "Mantener el cron propuesto si una ejecución diaria a las 06:00 CET o 07:00 CEST satisface el proceso de devoluciones.",
+    "title": "Definir el horario local objetivo",
+    "body": "Acordar primero el compromiso CET/CEST y ajustar el cron o la estrategia de ejecución a esa política.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el revisor solicitado y aportó la investigación operativa de la incidencia canónica.",
+    "reason": "Es el revisor asignado y el contribuidor reciente más conectado al workflow afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7884.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7884#issuecomment-5046528285",
-    "reviewedAt": "2026-07-22T14:37:44.406Z",
+    "reviewedAt": "2026-07-22T15:46:33.389Z",
     "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
   }
 }
