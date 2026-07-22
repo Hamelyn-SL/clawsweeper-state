@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T13:32:34.398Z",
+  "updatedAt": "2026-07-22T13:04:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7884,
+    "title": "fix: run amazon returns sync on every trigger",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7884",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-22T13:00:50Z",
+    "updatedAt": "2026-07-22T13:04:38Z",
+    "headSha": "5e9dfdc307532ee7f461795619c821792b906378"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Aprueba el equipo que esta sincronización diaria se ejecute siempre a las 05:00 UTC, aunque en verano corresponda a las 07:00 CEST?",
+  "rationale": "El cambio elimina el no-op estructural, pero fija una hora local distinta entre invierno y verano; la issue canónica aún señala esta elección para revisión.",
+  "options": [
+    {
+      "title": "Aprobar el tick único de 05:00 UTC",
+      "body": "Eliminar el guard y ejecutar siempre una vez al día, aceptando 06:00 CET y 07:00 CEST.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir otro tick UTC",
+      "body": "Mantener la eliminación del guard, pero fijar una hora diaria distinta según la necesidad operativa.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar dos ticks con protección explícita",
+      "body": "Usar dos schedules solo si se define una protección clara contra ejecuciones duplicadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el tick único de 05:00 UTC",
+    "body": "Eliminar el guard y ejecutar siempre una vez al día, aceptando 06:00 CET y 07:00 CEST.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor solicitado, autor de la incidencia canónica y contribuidor reciente del workflow.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7884.md",
+    "reviewedAt": "2026-07-22T13:32:34.398Z",
+    "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
+  }
+}
