@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T09:55:33.776Z",
-  "updatedAt": "2026-07-22T09:51:44Z",
+  "generatedAt": "2026-07-22T11:41:54.082Z",
+  "updatedAt": "2026-07-22T10:03:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,39 +18,43 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-20T10:12:15Z",
-    "updatedAt": "2026-07-22T09:51:44Z",
+    "updatedAt": "2026-07-22T10:03:04Z",
     "headSha": "52c1b9f287280fd5c080fd137ccbca5d19b7d7f4"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe mantenerse abierta la incidencia de seguridad hasta completar rotación y saneamiento histórico, o separarse esas acciones en un seguimiento operativo antes de fusionar?",
-  "rationale": "La rama mitiga exposiciones nuevas, pero no puede ejecutar ni demostrar la revocación de una credencial ya registrada ni la gestión de datos históricos.",
+  "question": "¿Debe crearse un seguimiento operativo de seguridad para rotación y logs históricos antes de permitir que esta PR cierre automáticamente la incidencia vinculada?",
+  "rationale": "El parche detiene exposiciones futuras, pero no puede revocar la credencial ya expuesta ni borrar o reducir la retención de observabilidad; conservar ambas obligaciones requiere una decisión operativa humana.",
   "options": [
     {
-      "title": "Separar y preservar el seguimiento",
-      "body": "Crear o confirmar un seguimiento operativo para rotación y depuración, y sustituir el cierre automático por una referencia antes de fusionar.",
+      "title": "Separar la contención operativa",
+      "body": "Crear un seguimiento restringido para rotación y saneamiento histórico, mantenerlo asignado y permitir que esta PR cierre solo la mitigación de código.",
       "recommended": true
     },
     {
-      "title": "Fusionar con aceptación explícita",
-      "body": "Fusionar y aceptar que la incidencia principal se cierre, dejando documentado un propietario y una fecha para las dos acciones operativas.",
+      "title": "Mantener la incidencia abierta",
+      "body": "Retirar el cierre automático y usar la incidencia actual para coordinar tanto la integración como la contención hasta completarla.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la integración",
+      "body": "Esperar a que exista un propietario y un plan operativo confirmado antes de desplegar la mitigación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar y preservar el seguimiento",
-    "body": "Crear o confirmar un seguimiento operativo para rotación y depuración, y sustituir el cierre automático por una referencia antes de fusionar.",
+    "title": "Separar la contención operativa",
+    "body": "Crear un seguimiento restringido para rotación y saneamiento histórico, mantenerlo asignado y permitir que esta PR cierre solo la mitigación de código.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Añadió la protección de regresión y dejó documentado el límite operativo concreto de la mitigación.",
+    "reason": "Es el asignado actual de la incidencia y ya delimitó en la discusión las acciones operativas que quedan fuera de la rama.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7775.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775#issuecomment-5022592194",
-    "reviewedAt": "2026-07-22T09:55:33.776Z",
-    "mainSha": "26f3f8f75bbd7f4637708e4296ab4893bbe38d89"
+    "reviewedAt": "2026-07-22T11:41:54.082Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
   }
 }

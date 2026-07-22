@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T11:41:06.047Z",
+  "updatedAt": "2026-07-22T11:31:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7837,
+    "title": "fix: recover mercadolibre item id by seller_sku on withdraw",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7837",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-21T12:00:24Z",
+    "updatedAt": "2026-07-22T11:31:58Z",
+    "headSha": "a8be26e7fc8291588de2a061d2f9082effa179d6"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Una búsqueda `seller_sku` correcta sin resultados para un stock sin `marketplaceId` debe reconciliarse como retirada ya completada o quedar en `SYNC_ERROR`?",
+  "rationale": "La API confirma que no hay listing activo, pero el modelo local necesita una señal de éxito para limpiar el documento; ambas políticas cambian la observabilidad operativa.",
+  "options": [
+    {
+      "title": "Reconciliar como retirada",
+      "body": "Tratar cero listings activos como éxito y eliminar el documento local, pues ya no queda un listing comprable que cerrar.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener `SYNC_ERROR`",
+      "body": "Conservar el error reintentable para investigar toda pérdida de identidad remota, aceptando ruido operativo recurrente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Reconciliar como retirada",
+    "body": "Tratar cero listings activos como éxito y eliminar el documento local, pues ya no queda un listing comprable que cerrar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial cubre la protección original ante IDs de retirada ausentes y la semántica asociada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7837.md",
+    "reviewedAt": "2026-07-22T11:41:06.047Z",
+    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+  }
+}
