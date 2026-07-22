@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-22T08:23:13.227Z",
+  "generated_at": "2026-07-22T09:17:47.047Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-22T05:23:10.146Z",
+  "since": "2026-07-22T06:17:42.005Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 38,
-  "commands_seen": 1,
+  "scanned_comments": 40,
+  "commands_seen": 2,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,47 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7775:5022592194:2026-07-22T08:24:58Z:automerge",
+      "comment_id": "5022592194",
+      "comment_version_key": "5022592194:2026-07-22T08:24:58Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7775#issuecomment-5022592194",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 7775,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-20T13:09:02Z",
+      "comment_updated_at": "2026-07-22T08:24:58Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "La PR elimina XML, respuestas y errores Axios retenidos por Azeta, usa logging estructurado permitido y añade una prueba de regresión contra credenciales y PII.\n\nReproducibility: Sí, a nivel de código: `AzetaError.toDetailedString()` incorpora la respuesta y el XML, y checkout registra esa superficie. No se ejecutó una reproducción productiva por contener datos sensibles.",
+      "review_followup": "- [P1] Necesita decisión de respuesta operativa y prueba real del head, no una reparación mecánica adicional sobre la rama.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7775 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7865:5043282218:2026-07-22T07:54:27Z:automerge",
       "comment_id": "5043282218",
@@ -71,15 +112,15 @@
     }
   ],
   "timings": {
-    "total_ms": 3080,
+    "total_ms": 5041,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1662
+        "ms": 3674
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1414
+        "ms": 1362
       },
       {
         "name": "classify_comment_commands",
@@ -91,7 +132,7 @@
       },
       {
         "name": "classify_repair_loop_sweeps",
-        "ms": 0
+        "ms": 1
       }
     ]
   }
