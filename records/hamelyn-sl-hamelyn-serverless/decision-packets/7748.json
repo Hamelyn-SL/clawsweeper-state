@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-22T12:55:50.618Z",
+  "updatedAt": "2026-07-22T12:42:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7748,
+    "title": "Cron de Amazon Returns Pendings en no-op silencioso desde su creación: el gate de hora exacta nunca se cumple",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7748",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-19T23:49:57Z",
+    "updatedAt": "2026-07-22T12:42:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba ejecutar una vez al día a las 05:00 UTC y eliminar por completo el guard de hora Madrid?",
+  "rationale": "La propuesta evita el no-op estructural, pero fija una hora local distinta entre invierno y verano.",
+  "options": [
+    {
+      "title": "Aprobar tick único sin guard",
+      "body": "Programar las 05:00 UTC y ejecutar siempre, conservando el lookback de 24 horas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener doble cron con ventana",
+      "body": "Conservar ambos ticks y aceptar una franja horaria, asumiendo protección adicional contra duplicados.",
+      "recommended": false
+    },
+    {
+      "title": "Definir otro horario operativo",
+      "body": "Elegir un tick UTC distinto y eliminar igualmente la dependencia de la hora efectiva de arranque.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar tick único sin guard",
+    "body": "Programar las 05:00 UTC y ejecutar siempre, conservando el lookback de 24 horas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es la persona asignada a la incidencia y debe coordinar la decisión operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7748.md",
+    "reviewedAt": "2026-07-22T12:55:50.618Z",
+    "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
+  }
+}
