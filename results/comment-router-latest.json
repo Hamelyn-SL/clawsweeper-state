@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-23T12:26:56.561Z",
+  "generated_at": "2026-07-23T13:02:06.171Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-23T09:26:51.909Z",
+  "since": "2026-07-23T10:02:04.909Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 30,
-  "commands_seen": 1,
+  "scanned_comments": 23,
+  "commands_seen": 0,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,63 +27,21 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7892:5056373410:2026-07-23T11:49:20Z:automerge",
-      "comment_id": "5056373410",
-      "comment_version_key": "5056373410:2026-07-23T11:49:20Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7892#issuecomment-5056373410",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 7892,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-07-23T08:54:39Z",
-      "comment_updated_at": "2026-07-23T11:49:20Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "La rama actualiza `next` de `16.2.10` a `16.2.11` en diez manifiestos de workspace y regenera `pnpm-lock.yaml`.\n\nReproducibility: no. aplicable: es una actualización de dependencia de seguridad, no un fallo funcional con pasos de reproducción.",
-      "review_followup": "- Hay un bloqueo mecánico y acotado: reducir el lockfile a la actualización de seguridad declarada antes de volver a revisar.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7892 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    }
-  ],
+  "commands": [],
   "timings": {
-    "total_ms": 4652,
+    "total_ms": 1261,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 3455
+        "ms": 1258
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1192
+        "ms": 0
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 0
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
