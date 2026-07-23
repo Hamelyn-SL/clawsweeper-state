@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T08:52:04.688Z",
-  "updatedAt": "2026-07-23T08:29:55Z",
+  "generatedAt": "2026-07-23T10:44:20.447Z",
+  "updatedAt": "2026-07-23T09:57:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "feature",
       "reporter:miguel",
       "triage:no-change",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-23T07:02:17Z",
-    "updatedAt": "2026-07-23T08:29:55Z"
+    "updatedAt": "2026-07-23T09:57:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que la configuración promocional y el experimento proporcional se consoliden mediante un KV compartido entre Admin y Ecommerce?",
-  "rationale": "La elección añade infraestructura, credenciales y una política persistente de asignación de variantes que exceden el comportamiento estático actual.",
+  "question": "¿Debe Ecommerce adoptar Vercel KV compartido con Admin como fuente operativa de la promoStrip y de sus variantes proporcionales?",
+  "rationale": "La propuesta añade dependencia externa, configuración de entorno y un mecanismo permanente de experimentación en el escaparate global; la aceptación del producto no se deduce solo del código.",
   "options": [
     {
-      "title": "Aprobar KV compartido",
-      "body": "Mantener la dirección de la PR si se acepta el aprovisionamiento y la operación conjunta del KV en Admin y Ecommerce.",
+      "title": "Patrocinar la gestión por KV",
+      "body": "Continuar con la PR vinculada, exigiendo prueba real actualizada y una verificación clara de la configuración en Admin y Ecommerce.",
       "recommended": true
     },
     {
-      "title": "Consolidar otra persistencia",
-      "body": "Definir una fuente de configuración existente antes de continuar con una implementación que dependa de un KV nuevo.",
+      "title": "Mantener la promoción estática",
+      "body": "Cerrar o reconducir la PR y conservar los mensajes i18n hasta disponer de una estrategia de campañas más amplia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar KV compartido",
-    "body": "Mantener la dirección de la PR si se acepta el aprovisionamiento y la operación conjunta del KV en Admin y Ecommerce.",
+    "title": "Patrocinar la gestión por KV",
+    "body": "Continuar con la PR vinculada, exigiendo prueba real actualizada y una verificación clara de la configuración en Admin y Ecommerce.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Es la persona con la procedencia más directa sobre el componente de Ecommerce que cambia de contrato.",
+    "person": "MarcosTerroso",
+    "reason": "Es la persona con procedencia directa en la promoStrip actual y el mejor punto de partida para revisar el impacto en Ecommerce.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7897.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7897#issuecomment-5056296710",
-    "reviewedAt": "2026-07-23T08:52:04.688Z",
-    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+    "reviewedAt": "2026-07-23T10:44:20.447Z",
+    "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
   }
 }
