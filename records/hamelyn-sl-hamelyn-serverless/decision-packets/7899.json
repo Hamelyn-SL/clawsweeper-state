@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T08:49:45.819Z",
-  "updatedAt": "2026-07-23T07:05:18Z",
+  "generatedAt": "2026-07-23T10:46:24.968Z",
+  "updatedAt": "2026-07-23T10:03:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,45 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7899",
     "state": "open",
     "labels": [
-      "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
+      "size/XXL",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-23T07:05:08Z",
-    "updatedAt": "2026-07-23T07:05:18Z",
-    "headSha": "2037c94cebff8978029a1627407f7f6528ae4f76"
+    "updatedAt": "2026-07-23T10:03:56Z",
+    "headSha": "7e4f7ddaafcc6625fb3cbf85a0999abe5df42590"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se patrocina este nuevo panel y KV compartido como la vía operativa permanente para campañas de ecommerce?",
-  "rationale": "La rama añade una nueva capacidad y dos variables de entorno desplegables entre Admin y ecommerce; la corrección técnica no decide por sí sola esa dirección.",
+  "question": "¿Se aprueba operar la promo strip y su experimento proporcional con un KV compartido entre Admin y todos los despliegues de Ecommerce?",
+  "rationale": "La implementación introduce infraestructura externa, variables de entorno coordinadas y una política persistente de experimentación que no existen en el comportamiento actual.",
   "options": [
     {
-      "title": "Patrocinar tras correcciones",
-      "body": "Mantener el diseño KV, resolver los bloqueos de validación y consistencia, y exigir prueba integrada antes de convertir la PR en candidata a merge.",
+      "title": "Aprobar KV compartido",
+      "body": "Aceptar la dirección tras corregir los defectos y demostrar el guardado y renderizado en un entorno con todos los proyectos configurados.",
       "recommended": true
     },
     {
-      "title": "Mantener la promo en código",
-      "body": "Cerrar esta dirección y conservar el flujo actual basado en copy i18n y deploys hasta definir otro canal de campañas.",
+      "title": "Elegir otra persistencia",
+      "body": "Definir una fuente de configuración ya operada por la plataforma antes de incorporar esta dependencia y sus credenciales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar tras correcciones",
-    "body": "Mantener el diseño KV, resolver los bloqueos de validación y consistencia, y exigir prueba integrada antes de convertir la PR en candidata a merge.",
+    "title": "Aprobar KV compartido",
+    "body": "Aceptar la dirección tras corregir los defectos y demostrar el guardado y renderizado en un entorno con todos los proyectos configurados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Es el autor identificable de la superficie actual de promo strip y puede orientar la compatibilidad de ecommerce.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Su historial está ligado al contrato actual de la promo strip y ya figura como revisor solicitado para esta PR.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7899.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7899#issuecomment-5056384041",
-    "reviewedAt": "2026-07-23T08:49:45.819Z",
-    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+    "reviewedAt": "2026-07-23T10:46:24.968Z",
+    "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
   }
 }

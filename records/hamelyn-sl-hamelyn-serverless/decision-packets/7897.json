@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T10:44:20.447Z",
+  "generatedAt": "2026-07-23T10:46:17.013Z",
   "updatedAt": "2026-07-23T09:57:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,46 +14,50 @@
       "feature",
       "reporter:miguel",
       "triage:no-change",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-23T07:02:17Z",
     "updatedAt": "2026-07-23T09:57:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Ecommerce adoptar Vercel KV compartido con Admin como fuente operativa de la promoStrip y de sus variantes proporcionales?",
-  "rationale": "La propuesta añade dependencia externa, configuración de entorno y un mecanismo permanente de experimentación en el escaparate global; la aceptación del producto no se deduce solo del código.",
+  "question": "¿Debe la PR vinculada implementar el alcance completo, incluido el reparto proporcional, como solución canónica de la issue 7760?",
+  "rationale": "La base editable del banner ya está definida en la issue canónica, pero KV compartido y variantes A/B amplían el contrato operativo y requieren una decisión explícita de producto.",
   "options": [
     {
-      "title": "Patrocinar la gestión por KV",
-      "body": "Continuar con la PR vinculada, exigiendo prueba real actualizada y una verificación clara de la configuración en Admin y Ecommerce.",
+      "title": "Consolidar en la issue canónica",
+      "body": "Revisar la PR como la implementación única de la configuración editable y alinear sus criterios con https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760.",
       "recommended": true
     },
     {
-      "title": "Mantener la promoción estática",
-      "body": "Cerrar o reconducir la PR y conservar los mensajes i18n hasta disponer de una estrategia de campañas más amplia.",
+      "title": "Fase inicial sin reparto",
+      "body": "Aceptar primero el copy y gradiente por locale, dejando las variantes proporcionales para una propuesta posterior y acotada.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener dos alcances",
+      "body": "Conservar esta petición separada solo si el experimento proporcional necesita criterios, métricas y operación distintos del banner editable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la gestión por KV",
-    "body": "Continuar con la PR vinculada, exigiendo prueba real actualizada y una verificación clara de la configuración en Admin y Ecommerce.",
+    "title": "Consolidar en la issue canónica",
+    "body": "Revisar la PR como la implementación única de la configuración editable y alinear sus criterios con https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es la persona con procedencia directa en la promoStrip actual y el mejor punto de partida para revisar el impacto en Ecommerce.",
+    "person": "JavierHamelyn",
+    "reason": "El historial relacionado reúne el componente de ecommerce y el patrón de cupones/Admin alrededor de esta persona.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7897.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7897#issuecomment-5056296710",
-    "reviewedAt": "2026-07-23T10:44:20.447Z",
+    "reviewedAt": "2026-07-23T10:46:17.013Z",
     "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
   }
 }
