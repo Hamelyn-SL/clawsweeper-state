@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T12:30:22.545Z",
-  "updatedAt": "2026-07-23T12:18:35Z",
+  "generatedAt": "2026-07-23T12:32:04.908Z",
+  "updatedAt": "2026-07-23T12:25:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,44 +18,38 @@
       "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-07-23T07:05:08Z",
-    "updatedAt": "2026-07-23T12:18:35Z",
+    "updatedAt": "2026-07-23T12:25:36Z",
     "headSha": "e9997d8f53b90a739f3a1bb04e391bcce5d94808"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba Vercel KV compartido como fuente operativa de campañas para Admin y todos los despliegues de Ecommerce, con la issue amplia como seguimiento canónico?",
-  "rationale": "La rama añade una dependencia externa, configuración por entorno y reparto de variantes global; elegir el contrato operativo y la issue canónica requiere intención de producto.",
+  "question": "¿Se aprueba operar la promo strip global mediante un KV compartido entre Admin y todos los despliegues de Ecommerce?",
+  "rationale": "La funcionalidad incorpora una dependencia operativa y credenciales coordinadas entre varios proyectos; el código no puede decidir por sí solo quién asume esa configuración y soporte.",
   "options": [
     {
-      "title": "Aprobar KV compartido y consolidar seguimiento",
-      "body": "Confirmar el KV común, documentar el alta por entorno y usar la issue amplia como referencia de producto.",
+      "title": "Adoptar el KV compartido",
+      "body": "Confirmar el modelo operativo, provisionar un único store por entorno y exigir la corrección de locales antes de continuar.",
       "recommended": true
     },
     {
-      "title": "Usar una configuración existente",
-      "body": "Pedir una alternativa persistente ya operada por la plataforma antes de continuar con este diseño.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener la strip estática",
-      "body": "Cerrar o pausar la dirección si Marketing no necesita edición inmediata ni experimentación de variantes.",
+      "title": "Mantener la promo strip estática",
+      "body": "Rechazar esta nueva superficie de configuración y conservar el mensaje i18n hasta definir otra vía de gestión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar KV compartido y consolidar seguimiento",
-    "body": "Confirmar el KV común, documentar el alta por entorno y usar la issue amplia como referencia de producto.",
+    "title": "Adoptar el KV compartido",
+    "body": "Confirmar el modelo operativo, provisionar un único store por entorno y exigir la corrección de locales antes de continuar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es revisor solicitado y su historial incluye la localización del comportamiento promocional existente.",
-    "confidence": "high"
+    "reason": "Es el revisor solicitado con señal específica sobre las áreas afectadas y puede encauzar la decisión técnica-operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7899.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7899#issuecomment-5056384041",
-    "reviewedAt": "2026-07-23T12:30:22.545Z",
+    "reviewedAt": "2026-07-23T12:32:04.908Z",
     "mainSha": "4df284cf1a4b740370f25994b2d2670e44ff1e07"
   }
 }
