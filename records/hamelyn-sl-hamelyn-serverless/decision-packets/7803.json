@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T08:48:04.139Z",
-  "updatedAt": "2026-07-23T07:42:58Z",
+  "generatedAt": "2026-07-23T09:00:00.298Z",
+  "updatedAt": "2026-07-23T08:55:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,44 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P3",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-21T06:26:03Z",
-    "updatedAt": "2026-07-23T07:42:58Z",
+    "updatedAt": "2026-07-23T08:55:09Z",
     "headSha": "b3611701dd390932a75d83cea3ae0fbfdb174dab"
   },
   "lane": "merge_risk",
   "priority": "P3",
-  "question": "¿Debe mantenerse el pin global de `react-hook-form` en 7.79.0 o aprobarse su subida coordinada a 7.82.0?",
-  "rationale": "El override fue introducido deliberadamente para resolver el árbol de admin; el diff no demuestra que eliminar esa restricción sea seguro.",
+  "question": "¿Debe este mantenimiento conservar el override global de `react-hook-form` 7.79.0 o promoverlo explícitamente a 7.82.0 para admin?",
+  "rationale": "El override se introdujo como una resolución coordinada y la rama actual no revela si sigue protegiendo una incompatibilidad; cambiarlo afectaría la versión efectiva instalada.",
   "options": [
     {
-      "title": "Confirmar el pin y alinear",
-      "body": "Decidir la versión soportada y hacer coincidir `apps/admin/package.json`, `package.json` y `pnpm-lock.yaml` antes del merge.",
+      "title": "Conservar el pin actual",
+      "body": "Revertir el bump declarado de admin y dejar una actualización futura de `react-hook-form` separada con su validación de compatibilidad.",
       "recommended": true
     },
     {
-      "title": "Mantener 7.79.0",
-      "body": "Revertir el bump declarado de admin si el override sigue siendo la compatibilidad aprobada del workspace.",
-      "recommended": false
-    },
-    {
-      "title": "Subir a 7.82.0",
-      "body": "Actualizar el override raíz y validar el flujo de admin si se aprueba la nueva resolución para todo el árbol.",
+      "title": "Promover la versión global",
+      "body": "Actualizar el override y lockfile a 7.82.0 tras validar explícitamente los flujos de admin dependientes de React Admin.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el pin y alinear",
-    "body": "Decidir la versión soportada y hacer coincidir `apps/admin/package.json`, `package.json` y `pnpm-lock.yaml` antes del merge.",
+    "title": "Conservar el pin actual",
+    "body": "Revertir el bump declarado de admin y dejar una actualización futura de `react-hook-form` separada con su validación de compatibilidad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Introdujo el override cuya intención de compatibilidad debe confirmarse.",
+    "reason": "Introdujo el pin global y el ajuste de admin que definen la decisión de compatibilidad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7803.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7803#issuecomment-5031024045",
-    "reviewedAt": "2026-07-23T08:48:04.139Z",
+    "reviewedAt": "2026-07-23T09:00:00.298Z",
     "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
   }
 }
