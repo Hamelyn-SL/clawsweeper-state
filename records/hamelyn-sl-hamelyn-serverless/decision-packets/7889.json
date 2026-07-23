@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T09:37:47.660Z",
+  "updatedAt": "2026-07-23T08:45:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7889,
+    "title": "Supply: capability token para el carrito (cierra IDOR en /api/v4/cart)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7889",
+    "state": "open",
+    "labels": [
+      "app:supply",
+      "feature",
+      "reporter:javier",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-22T21:49:45Z",
+    "updatedAt": "2026-07-23T08:45:53Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Qué política de transición se aprueba para los carritos anónimos existentes antes de exigir el capability token en todas las operaciones?",
+  "rationale": "La ventana de compatibilidad, su fecha de corte y el comportamiento de recuperación definen un límite de autorización activo y requieren intención explícita del equipo.",
+  "options": [
+    {
+      "title": "Transición acotada por servidor",
+      "body": "Emitir token para carritos nuevos, admitir temporalmente los heredados y hacer obligatorio el token en una fecha de corte verificable.",
+      "recommended": true
+    },
+    {
+      "title": "Corte inmediato",
+      "body": "Exigir el token de inmediato y recrear carritos anónimos existentes, priorizando el cierre rápido del IDOR.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Transición acotada por servidor",
+    "body": "Emitir token para carritos nuevos, admitir temporalmente los heredados y hacer obligatorio el token en una fecha de corte verificable.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el contribuidor más reciente de la ruta central que hoy asocia y fusiona carritos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7889.md",
+    "reviewedAt": "2026-07-23T09:37:47.660Z",
+    "mainSha": "27b49ae30333ab9a1db22c2412d37a24f45a8149"
+  }
+}
