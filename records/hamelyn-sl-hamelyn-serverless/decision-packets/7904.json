@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T10:52:09.191Z",
+  "generatedAt": "2026-07-23T10:54:33.908Z",
   "updatedAt": "2026-07-23T09:51:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,33 +22,33 @@
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Puede el equipo de plataforma crear y custodiar los hooks `API_DEV` y `API_PROD` para que una PR acotada active el despliegue de `hamelyn-api`?",
-  "rationale": "Las URLs de hooks y sus secretos son configuración externa a Git; el repositorio no permite derivarlas ni verificar los despliegues reales sin esa provisión.",
+  "question": "¿Qué responsable aprovisiona y valida los hooks `API_DEV` y `API_PROD` antes de abrir la PR de corrección?",
+  "rationale": "Los cambios de repositorio son mecánicos, pero los secrets y los endpoints de despliegue requieren acceso operativo a Vercel que no puede inferirse ni crearse desde el código.",
   "options": [
     {
-      "title": "Provisionar hooks y desbloquear la PR",
-      "body": "Crear `API_DEV` y `API_PROD`, autorizar la modificación del workflow y validar un despliegue dirigido en cada rama.",
+      "title": "Provisionar hooks y abrir la corrección",
+      "body": "Crear ambos hooks en Vercel, guardarlos como secrets y permitir una PR acotada con prueba dirigida en los dos branches.",
       "recommended": true
     },
     {
-      "title": "Mantener despliegue manual temporal",
-      "body": "Conservar el proceso manual hasta que plataforma pueda gestionar los hooks y aceptar el riesgo de divergencia de API.",
+      "title": "Asignar la configuración a plataforma",
+      "body": "Mantener esta incidencia bloqueada hasta que el equipo con acceso a Vercel confirme los endpoints y su propietario operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Provisionar hooks y desbloquear la PR",
-    "body": "Crear `API_DEV` y `API_PROD`, autorizar la modificación del workflow y validar un despliegue dirigido en cada rama.",
+    "title": "Provisionar hooks y abrir la corrección",
+    "body": "Crear ambos hooks en Vercel, guardarlos como secrets y permitir una PR acotada con prueba dirigida en los dos branches.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el mejor punto de enlace por su historial tanto en `apps/api` como en el enrutado de despliegues.",
+    "reason": "Su historial conecta la base de API v6 con el diseño actual del pipeline afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7904.md",
-    "reviewedAt": "2026-07-23T10:52:09.191Z",
+    "reviewedAt": "2026-07-23T10:54:33.908Z",
     "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
   }
 }
