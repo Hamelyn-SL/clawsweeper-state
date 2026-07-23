@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-23T13:08:24.366Z",
+  "generatedAt": "2026-07-23T18:57:17.636Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 108
+    "openItemsSeen": 109
   },
   "counts": {
     "itemRecords": 105,
     "closedRecords": 604,
-    "missingOpen": 3,
+    "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 2,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -64,7 +64,19 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-23T12:34:58Z",
-        "updatedAt": "2026-07-23T12:56:12Z",
+        "updatedAt": "2026-07-23T13:12:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7914,
+        "kind": "pull_request",
+        "title": "fix: retry amazon purchasable_offer conflicts via price update",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T18:54:08Z",
+        "updatedAt": "2026-07-23T18:54:35Z",
         "missingReason": "recently_created"
       }
     ],
@@ -115,7 +127,19 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-23T12:34:58Z",
-        "updatedAt": "2026-07-23T12:56:12Z",
+        "updatedAt": "2026-07-23T13:12:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7914,
+        "kind": "pull_request",
+        "title": "fix: retry amazon purchasable_offer conflicts via price update",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T18:54:08Z",
+        "updatedAt": "2026-07-23T18:54:35Z",
         "missingReason": "recently_created"
       }
     ],
