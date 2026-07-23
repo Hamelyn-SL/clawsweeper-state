@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T08:52:04.688Z",
+  "updatedAt": "2026-07-23T08:29:55Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7897,
+    "title": "Gestionar la promoStrip del ecommerce desde Admin vía KV con reparto proporcional",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7897",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "reporter:miguel",
+      "triage:no-change",
+      "P2"
+    ],
+    "createdAt": "2026-07-23T07:02:17Z",
+    "updatedAt": "2026-07-23T08:29:55Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que la configuración promocional y el experimento proporcional se consoliden mediante un KV compartido entre Admin y Ecommerce?",
+  "rationale": "La elección añade infraestructura, credenciales y una política persistente de asignación de variantes que exceden el comportamiento estático actual.",
+  "options": [
+    {
+      "title": "Aprobar KV compartido",
+      "body": "Mantener la dirección de la PR si se acepta el aprovisionamiento y la operación conjunta del KV en Admin y Ecommerce.",
+      "recommended": true
+    },
+    {
+      "title": "Consolidar otra persistencia",
+      "body": "Definir una fuente de configuración existente antes de continuar con una implementación que dependa de un KV nuevo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar KV compartido",
+    "body": "Mantener la dirección de la PR si se acepta el aprovisionamiento y la operación conjunta del KV en Admin y Ecommerce.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Es la persona con la procedencia más directa sobre el componente de Ecommerce que cambia de contrato.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7897.md",
+    "reviewedAt": "2026-07-23T08:52:04.688Z",
+    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+  }
+}
