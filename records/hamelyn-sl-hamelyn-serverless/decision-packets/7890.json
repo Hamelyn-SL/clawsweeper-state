@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T08:51:44.767Z",
+  "generatedAt": "2026-07-23T08:52:23.504Z",
   "updatedAt": "2026-07-23T08:18:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,33 +21,38 @@
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba una transición acotada para carritos heredados y el contrato definitivo de cookie capability más JWT para el merge de ecommerce y supply?",
-  "rationale": "La política de compatibilidad y el límite entre capability anónima e identidad autenticada afectan dos aplicaciones y no debe decidirse automáticamente.",
+  "question": "¿Se aprueba un contrato compartido de capability token para ambos carritos, con transición temporal de anónimos heredados y JWT obligatorio para el merge?",
+  "rationale": "La elección de cookie, derivación de identidad y ventana de transición cambia el límite de autorización de dos aplicaciones y requiere aprobación de seguridad.",
   "options": [
     {
       "title": "Aprobar contrato compartido",
-      "body": "Adoptar capability token con caducidad de transición explícita y un merge autenticado por JWT para ambos carritos.",
+      "body": "Implementar emisión, hash, comparación timing-safe y transición comunes; es la vía recomendada para no duplicar límites de autorización.",
       "recommended": true
     },
     {
       "title": "Separar los despliegues",
-      "body": "Resolver primero ecommerce con una utilidad interna equivalente y programar la convergencia posterior con supply.",
+      "body": "Resolver Ecommerce y Supply con contratos independientes si sus ciclos de despliegue exigen ventanas distintas.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar para diseño de seguridad",
+      "body": "Documentar primero el contrato de migración y autenticación antes de cambiar rutas en producción.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar contrato compartido",
-    "body": "Adoptar capability token con caducidad de transición explícita y un merge autenticado por JWT para ambos carritos.",
+    "body": "Implementar emisión, hash, comparación timing-safe y transición comunes; es la vía recomendada para no duplicar límites de autorización.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "El historial local lo vincula a la base actual del cliente y del modelo de carrito de ecommerce.",
+    "person": "HamelynDev",
+    "reason": "Su historial reciente está ligado a la ruta principal afectada y puede coordinar el contrato con el área de seguridad.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7890.md",
-    "reviewedAt": "2026-07-23T08:51:44.767Z",
+    "reviewedAt": "2026-07-23T08:52:23.504Z",
     "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
   }
 }

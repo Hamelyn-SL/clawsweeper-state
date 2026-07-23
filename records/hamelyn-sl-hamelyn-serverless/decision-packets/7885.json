@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T13:29:46.107Z",
-  "updatedAt": "2026-07-22T13:09:21Z",
+  "generatedAt": "2026-07-23T08:52:27.807Z",
+  "updatedAt": "2026-07-23T07:42:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,40 +14,41 @@
       "app:ecommerce",
       "reporter:miguel",
       "triage:done",
-      "P1"
+      "P1",
+      "impact:other"
     ],
     "createdAt": "2026-07-22T13:03:27Z",
-    "updatedAt": "2026-07-22T13:09:21Z"
+    "updatedAt": "2026-07-23T07:42:47Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `secondUnitPercentage` sustituir el criterio documentado de una unidad barata por bloque por las N unidades más baratas del carrito completo?",
-  "rationale": "El código, la BL y los tests actuales coinciden en la regla por bloques; la PR propone una política comercial distinta que modifica importes de checkout.",
+  "question": "¿Debe `secondUnitPercentage` cambiar de una unidad más barata por bloque a las N unidades más baratas del carrito completo?",
+  "rationale": "El código, la BL y las pruebas actuales documentan el comportamiento por bloques, mientras que la incidencia y la PR solicitan una política de precios distinta.",
   "options": [
     {
       "title": "Adoptar selección global",
-      "body": "Aprobar la regla de las N unidades más baratas y revisar/fusionar la PR vinculada como cambio intencionado de promoción.",
+      "body": "Aprobar la regla de las N unidades globalmente más baratas y mergear la PR vinculada tras confirmar su efecto sobre promociones activas.",
       "recommended": true
     },
     {
-      "title": "Mantener grupos",
-      "body": "Conservar el contrato actual por bloques y cerrar o reconducir la PR tras explicar el criterio comercial vigente.",
+      "title": "Mantener selección por bloques",
+      "body": "Conservar el contrato BL actual y cerrar la PR candidata si la segmentación por grupos es la política comercial intencionada.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Adoptar selección global",
-    "body": "Aprobar la regla de las N unidades más baratas y revisar/fusionar la PR vinculada como cambio intencionado de promoción.",
+    "body": "Aprobar la regla de las N unidades globalmente más baratas y mergear la PR vinculada tras confirmar su efecto sobre promociones activas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el revisor solicitado y tiene la señal histórica más fuerte en la lógica de cupones afectada.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el autor de la BL de cupones, la incidencia y la propuesta concreta de cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7885.md",
-    "reviewedAt": "2026-07-22T13:29:46.107Z",
-    "mainSha": "dc339efb37ef7634c3e8283b8feca9d42ae17532"
+    "reviewedAt": "2026-07-23T08:52:27.807Z",
+    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
   }
 }
