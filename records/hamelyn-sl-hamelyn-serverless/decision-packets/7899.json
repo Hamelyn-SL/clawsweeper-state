@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T10:46:24.968Z",
+  "generatedAt": "2026-07-23T10:52:42.305Z",
   "updatedAt": "2026-07-23T10:03:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,11 +11,10 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-23T07:05:08Z",
     "updatedAt": "2026-07-23T10:03:56Z",
@@ -23,34 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba operar la promo strip y su experimento proporcional con un KV compartido entre Admin y todos los despliegues de Ecommerce?",
-  "rationale": "La implementación introduce infraestructura externa, variables de entorno coordinadas y una política persistente de experimentación que no existen en el comportamiento actual.",
+  "question": "¿Se aprueba operar campañas globales de Ecommerce desde Admin mediante un KV externo compartido y su configuración coordinada por entorno?",
+  "rationale": "El parche añade una dependencia operativa y una nueva superficie de marketing; la corrección técnica no decide por sí sola el modelo permanente de operación.",
   "options": [
     {
-      "title": "Aprobar KV compartido",
-      "body": "Aceptar la dirección tras corregir los defectos y demostrar el guardado y renderizado en un entorno con todos los proyectos configurados.",
+      "title": "Patrocinar el flujo KV con guardas",
+      "body": "Mantener la dirección y pedir las correcciones, el rollout documentado y prueba real antes de mergear.",
       "recommended": true
     },
     {
-      "title": "Elegir otra persistencia",
-      "body": "Definir una fuente de configuración ya operada por la plataforma antes de incorporar esta dependencia y sus credenciales.",
+      "title": "Mantener la promo strip en código",
+      "body": "Rechazar esta nueva superficie operativa y conservar el mensaje i18n hasta definir otra solución de campañas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar KV compartido",
-    "body": "Aceptar la dirección tras corregir los defectos y demostrar el guardado y renderizado en un entorno con todos los proyectos configurados.",
+    "title": "Patrocinar el flujo KV con guardas",
+    "body": "Mantener la dirección y pedir las correcciones, el rollout documentado y prueba real antes de mergear.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su historial está ligado al contrato actual de la promo strip y ya figura como revisor solicitado para esta PR.",
-    "confidence": "high"
+    "reason": "Está solicitado como revisor para las áreas centrales del cambio y puede encauzar la decisión de Ecommerce.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7899.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7899#issuecomment-5056384041",
-    "reviewedAt": "2026-07-23T10:46:24.968Z",
+    "reviewedAt": "2026-07-23T10:52:42.305Z",
     "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
   }
 }
