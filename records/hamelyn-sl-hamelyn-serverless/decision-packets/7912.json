@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-23T13:46:11.247Z",
+  "updatedAt": "2026-07-23T13:24:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7912,
+    "title": "feat: gate bq workflows on freshness markers",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7912",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-23T12:21:45Z",
+    "updatedAt": "2026-07-23T13:24:44Z",
+    "headSha": "8d88e79e47d5458a20eddb638cc485291e489a2e"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se aprueba retirar de forma declarativa los recursos Pub/Sub/Cloud Function antiguos en este PR, o se conserva temporalmente compatibilidad con sus dispatches?",
+  "rationale": "La decisión determina si la transición puede borrar el contrato anterior o debe mantenerlo durante una ventana de migración.",
+  "options": [
+    {
+      "title": "Retirada declarativa completa",
+      "body": "Añadir reconciliación o borrado explícito de la función y del topic antes de integrar el workflow sin los inputs antiguos.",
+      "recommended": true
+    },
+    {
+      "title": "Compatibilidad temporal",
+      "body": "Mantener los inputs y una ruta compatible hasta que la retirada remota esté confirmada en todos los entornos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirada declarativa completa",
+    "body": "Añadir reconciliación o borrado explícito de la función y del topic antes de integrar el workflow sin los inputs antiguos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre directamente el dispatcher, la frescura y las alertas que define esta transición.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7912.md",
+    "reviewedAt": "2026-07-23T13:46:11.247Z",
+    "mainSha": "f059a096f8dd9fb0ae1a474acbd4c74599789ad3"
+  }
+}
