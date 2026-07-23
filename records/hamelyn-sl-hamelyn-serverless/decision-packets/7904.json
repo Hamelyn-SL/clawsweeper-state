@@ -15,7 +15,8 @@
       "app:infrastructure",
       "reporter:javier",
       "triage:blocked",
-      "P1"
+      "P1",
+      "impact:auth-provider"
     ],
     "createdAt": "2026-07-23T09:28:42Z",
     "updatedAt": "2026-07-23T09:51:57Z"
@@ -48,6 +49,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7904.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7904#issuecomment-5056965975",
     "reviewedAt": "2026-07-23T10:54:33.908Z",
     "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
   }
