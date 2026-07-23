@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-23T01:07:10.652Z",
+  "generatedAt": "2026-07-23T07:27:26.364Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 114
+    "openItemsSeen": 112
   },
   "counts": {
-    "itemRecords": 107,
-    "closedRecords": 585,
-    "missingOpen": 7,
+    "itemRecords": 101,
+    "closedRecords": 591,
+    "missingOpen": 11,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 2,
-    "missingRecentOpen": 5,
+    "missingRecentOpen": 9,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -56,18 +56,6 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 7888,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-22T16:13:43Z",
-        "updatedAt": "2026-07-22T16:30:48Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7889,
         "kind": "issue",
         "title": "Supply: capability token para el carrito (cierra IDOR en /api/v4/cart)",
@@ -80,7 +68,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-22T21:49:45Z",
-        "updatedAt": "2026-07-22T21:50:15Z",
+        "updatedAt": "2026-07-23T07:13:23Z",
         "missingReason": "recently_created"
       },
       {
@@ -96,7 +84,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-22T21:49:56Z",
-        "updatedAt": "2026-07-22T21:50:19Z",
+        "updatedAt": "2026-07-23T06:58:23Z",
         "missingReason": "recently_created"
       },
       {
@@ -124,7 +112,71 @@
         ],
         "authorAssociation": "NONE",
         "createdAt": "2026-07-22T23:36:29Z",
-        "updatedAt": "2026-07-22T23:44:12Z",
+        "updatedAt": "2026-07-23T07:15:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7893,
+        "kind": "pull_request",
+        "title": "chore: update remaining majors and migrate to tailwind 4",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T05:44:48Z",
+        "updatedAt": "2026-07-23T07:22:45Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7894,
+        "kind": "pull_request",
+        "title": "fix: resolve supply Fabric Yoga crashes on Expo SDK 57",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T05:55:11Z",
+        "updatedAt": "2026-07-23T06:53:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7897,
+        "kind": "issue",
+        "title": "Gestionar la promoStrip del ecommerce desde Admin vía KV con reparto proporcional",
+        "labels": [
+          "app:ecommerce",
+          "feature",
+          "reporter:miguel",
+          "triage:queued",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T07:02:17Z",
+        "updatedAt": "2026-07-23T07:02:28Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7899,
+        "kind": "pull_request",
+        "title": "feat: manage ecommerce promo strip from admin via kv",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T07:05:08Z",
+        "updatedAt": "2026-07-23T07:05:18Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7900,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T07:08:43Z",
+        "updatedAt": "2026-07-23T07:12:53Z",
         "missingReason": "recently_created"
       }
     ],
@@ -167,18 +219,6 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 7888,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-22T16:13:43Z",
-        "updatedAt": "2026-07-22T16:30:48Z",
-        "missingReason": "recently_created"
-      },
-      {
         "number": 7889,
         "kind": "issue",
         "title": "Supply: capability token para el carrito (cierra IDOR en /api/v4/cart)",
@@ -191,7 +231,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-22T21:49:45Z",
-        "updatedAt": "2026-07-22T21:50:15Z",
+        "updatedAt": "2026-07-23T07:13:23Z",
         "missingReason": "recently_created"
       },
       {
@@ -207,7 +247,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-22T21:49:56Z",
-        "updatedAt": "2026-07-22T21:50:19Z",
+        "updatedAt": "2026-07-23T06:58:23Z",
         "missingReason": "recently_created"
       },
       {
@@ -235,7 +275,71 @@
         ],
         "authorAssociation": "NONE",
         "createdAt": "2026-07-22T23:36:29Z",
-        "updatedAt": "2026-07-22T23:44:12Z",
+        "updatedAt": "2026-07-23T07:15:09Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7893,
+        "kind": "pull_request",
+        "title": "chore: update remaining majors and migrate to tailwind 4",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T05:44:48Z",
+        "updatedAt": "2026-07-23T07:22:45Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7894,
+        "kind": "pull_request",
+        "title": "fix: resolve supply Fabric Yoga crashes on Expo SDK 57",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T05:55:11Z",
+        "updatedAt": "2026-07-23T06:53:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7897,
+        "kind": "issue",
+        "title": "Gestionar la promoStrip del ecommerce desde Admin vía KV con reparto proporcional",
+        "labels": [
+          "app:ecommerce",
+          "feature",
+          "reporter:miguel",
+          "triage:queued",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T07:02:17Z",
+        "updatedAt": "2026-07-23T07:02:28Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7899,
+        "kind": "pull_request",
+        "title": "feat: manage ecommerce promo strip from admin via kv",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T07:05:08Z",
+        "updatedAt": "2026-07-23T07:05:18Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7900,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-23T07:08:43Z",
+        "updatedAt": "2026-07-23T07:12:53Z",
         "missingReason": "recently_created"
       }
     ],
