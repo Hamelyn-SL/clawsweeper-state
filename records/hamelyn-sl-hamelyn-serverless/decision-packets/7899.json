@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T10:52:42.305Z",
-  "updatedAt": "2026-07-23T10:03:56Z",
+  "generatedAt": "2026-07-23T12:30:22.545Z",
+  "updatedAt": "2026-07-23T12:18:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,42 +13,48 @@
       "size/XXL",
       "P2",
       "status: 📣 needs proof",
+      "merge-risk: 🚨 security-boundary",
       "merge-risk: 🚨 other",
       "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-23T07:05:08Z",
-    "updatedAt": "2026-07-23T10:03:56Z",
-    "headSha": "7e4f7ddaafcc6625fb3cbf85a0999abe5df42590"
+    "updatedAt": "2026-07-23T12:18:35Z",
+    "headSha": "e9997d8f53b90a739f3a1bb04e391bcce5d94808"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba operar campañas globales de Ecommerce desde Admin mediante un KV externo compartido y su configuración coordinada por entorno?",
-  "rationale": "El parche añade una dependencia operativa y una nueva superficie de marketing; la corrección técnica no decide por sí sola el modelo permanente de operación.",
+  "question": "¿Se aprueba Vercel KV compartido como fuente operativa de campañas para Admin y todos los despliegues de Ecommerce, con la issue amplia como seguimiento canónico?",
+  "rationale": "La rama añade una dependencia externa, configuración por entorno y reparto de variantes global; elegir el contrato operativo y la issue canónica requiere intención de producto.",
   "options": [
     {
-      "title": "Patrocinar el flujo KV con guardas",
-      "body": "Mantener la dirección y pedir las correcciones, el rollout documentado y prueba real antes de mergear.",
+      "title": "Aprobar KV compartido y consolidar seguimiento",
+      "body": "Confirmar el KV común, documentar el alta por entorno y usar la issue amplia como referencia de producto.",
       "recommended": true
     },
     {
-      "title": "Mantener la promo strip en código",
-      "body": "Rechazar esta nueva superficie operativa y conservar el mensaje i18n hasta definir otra solución de campañas.",
+      "title": "Usar una configuración existente",
+      "body": "Pedir una alternativa persistente ya operada por la plataforma antes de continuar con este diseño.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la strip estática",
+      "body": "Cerrar o pausar la dirección si Marketing no necesita edición inmediata ni experimentación de variantes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar el flujo KV con guardas",
-    "body": "Mantener la dirección y pedir las correcciones, el rollout documentado y prueba real antes de mergear.",
+    "title": "Aprobar KV compartido y consolidar seguimiento",
+    "body": "Confirmar el KV común, documentar el alta por entorno y usar la issue amplia como referencia de producto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Está solicitado como revisor para las áreas centrales del cambio y puede encauzar la decisión de Ecommerce.",
-    "confidence": "medium"
+    "reason": "Es revisor solicitado y su historial incluye la localización del comportamiento promocional existente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7899.md",
-    "reviewedAt": "2026-07-23T10:52:42.305Z",
-    "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
+    "reviewedAt": "2026-07-23T12:30:22.545Z",
+    "mainSha": "4df284cf1a4b740370f25994b2d2670e44ff1e07"
   }
 }
