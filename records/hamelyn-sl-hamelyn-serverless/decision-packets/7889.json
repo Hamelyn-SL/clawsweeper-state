@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T10:52:12.576Z",
-  "updatedAt": "2026-07-24T10:47:43Z",
+  "generatedAt": "2026-07-24T12:09:34.157Z",
+  "updatedAt": "2026-07-24T11:12:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,44 +17,48 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
+      "impact:security",
       "clawsweeper:needs-security-review",
-      "issue-rating: 💎 diamond",
       "P0",
-      "impact:security"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-22T21:49:45Z",
-    "updatedAt": "2026-07-24T10:47:43Z"
+    "updatedAt": "2026-07-24T11:12:22Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba una transición acotada por servidor para carritos anónimos heredados o se exige capability de forma inmediata?",
-  "rationale": "La elección determina cuánto tiempo permanece una excepción de autorización y qué recuperación experimentarán los usuarios con carritos existentes.",
+  "question": "¿Se aprueba la transición de carritos legacy propuesta —incluido su corte temporal— para exigir capability en todos los carritos Supply?",
+  "rationale": "El cierre seguro afecta a carritos existentes y a los flujos de login; el plazo de compatibilidad y la política de corte requieren decisión humana de seguridad y producto.",
   "options": [
     {
-      "title": "Transición acotada por servidor",
-      "body": "Emitir capability para nuevos carritos, actualizar heredados durante una ventana con fecha de corte verificable y exigirla después.",
+      "title": "Aprobar corte acotado",
+      "body": "Integrar la capability con la fecha de corte propuesta, monitorizando rechazos y documentando la recuperación de carritos legacy.",
       "recommended": true
     },
     {
-      "title": "Corte inmediato",
-      "body": "Exigir capability desde el despliegue y recrear carritos anónimos sin secreto, priorizando el cierre inmediato del IDOR.",
+      "title": "Acortar la ventana",
+      "body": "Reducir el periodo legacy si el riesgo de exposición supera el coste de recrear carritos anónimos existentes.",
+      "recommended": false
+    },
+    {
+      "title": "Exigir token de inmediato",
+      "body": "Eliminar la compatibilidad legacy para cerrar la exposición antes, asumiendo pérdida de continuidad en carritos anónimos previos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transición acotada por servidor",
-    "body": "Emitir capability para nuevos carritos, actualizar heredados durante una ventana con fecha de corte verificable y exigirla después.",
+    "title": "Aprobar corte acotado",
+    "body": "Integrar la capability con la fecha de corte propuesta, monitorizando rechazos y documentando la recuperación de carritos legacy.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y el contribuidor más reciente de la ruta que asocia y fusiona carritos.",
+    "reason": "Ha mantenido recientemente el controlador afectado y está vinculado a la implementación propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7889.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7889#issuecomment-5055999691",
-    "reviewedAt": "2026-07-24T10:52:12.576Z",
-    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
+    "reviewedAt": "2026-07-24T12:09:34.157Z",
+    "mainSha": "0a7f0581be6f3331d023df1fc2590dac0c6e22b7"
   }
 }
