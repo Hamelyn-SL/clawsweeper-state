@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T11:34:45.557Z",
+  "generatedAt": "2026-07-24T11:37:26.570Z",
   "updatedAt": "2026-07-24T10:54:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,11 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
-      "P0",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-24T09:11:49Z",
     "updatedAt": "2026-07-24T10:54:50Z",
@@ -24,34 +23,33 @@
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba mantener la ventana de compatibilidad para carritos legacy hasta el 24 de agosto de 2026 antes de exigir capability en todos los carritos anónimos?",
-  "rationale": "La fecha de corte cambia el comportamiento de usuarios existentes y determina el equilibrio entre recuperación de carritos legacy y cierre completo del límite de autorización.",
+  "question": "¿Debe mantenerse hasta el 24 de agosto de 2026 la autorización implícita de carritos legacy anónimos sin hash, o debe exigirse capability inmediatamente?",
+  "rationale": "Ambas opciones intercambian la continuidad de carritos existentes frente a una ventana conocida de acceso por posesión de `cartId`; el código no puede escoger esa política con seguridad.",
   "options": [
     {
-      "title": "Mantener la ventana documentada",
-      "body": "Conservar la migración oportunista hasta el 24 de agosto de 2026 y validar manualmente la rotación del cliente antes del corte.",
+      "title": "Exigir capability de inmediato",
+      "body": "Cierra la ventana IDOR para carritos legacy, aceptando que los clientes sin cookie roten a un carrito nuevo.",
       "recommended": true
     },
     {
-      "title": "Exigir capability de inmediato",
-      "body": "Eliminar la excepción legacy para cerrar antes el límite, aceptando que los carritos anónimos previos se regeneren.",
+      "title": "Mantener la ventana acotada",
+      "body": "Preserva temporalmente carritos legacy, pero deja explícitamente aceptado el acceso por `cartId` hasta la fecha de corte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la ventana documentada",
-    "body": "Conservar la migración oportunista hasta el 24 de agosto de 2026 y validar manualmente la rotación del cliente antes del corte.",
+    "title": "Exigir capability de inmediato",
+    "body": "Cierra la ventana IDOR para carritos legacy, aceptando que los clientes sin cookie roten a un carrito nuevo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente conecta las rutas de carrito, la limpieza posterior a checkout y el comportamiento de recuperación afectado por la decisión.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con historial directo sobre el flujo de checkout que debe aplicar la política elegida.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7923.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7923#issuecomment-5068447091",
-    "reviewedAt": "2026-07-24T11:34:45.557Z",
+    "reviewedAt": "2026-07-24T11:37:26.570Z",
     "mainSha": "e25e85331b56c86b2de77ee3749a0186258df42f"
   }
 }
