@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T13:46:11.247Z",
-  "updatedAt": "2026-07-23T13:24:44Z",
+  "generatedAt": "2026-07-24T07:41:49.171Z",
+  "updatedAt": "2026-07-24T07:11:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 availability",
-      "rating: 🥈 silver",
+      "P1",
       "status: 📣 needs proof",
-      "P1"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-23T12:21:45Z",
-    "updatedAt": "2026-07-23T13:24:44Z",
-    "headSha": "8d88e79e47d5458a20eddb638cc485291e489a2e"
+    "updatedAt": "2026-07-24T07:11:16Z",
+    "headSha": "c09a5923c4b7032cca853050d3ea5882f6ccf4ec"
   },
-  "lane": "merge_risk",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se aprueba retirar de forma declarativa los recursos Pub/Sub/Cloud Function antiguos en este PR, o se conserva temporalmente compatibilidad con sus dispatches?",
-  "rationale": "La decisión determina si la transición puede borrar el contrato anterior o debe mantenerlo durante una ventana de migración.",
+  "question": "¿Debe este flujo aceptar que el token REST de KV se publique como variable de entorno de Cloud Functions, o exigimos Secret Manager antes de fusionar?",
+  "rationale": "La elección determina quién puede leer y rotar una credencial con acceso al KV; el repositorio ya dispone de una vía de secretos gestionados, pero requiere provisionado e IAM de GCP.",
   "options": [
     {
-      "title": "Retirada declarativa completa",
-      "body": "Añadir reconciliación o borrado explícito de la función y del topic antes de integrar el workflow sin los inputs antiguos.",
+      "title": "Mover el token a Secret Manager",
+      "body": "Crear o reutilizar un secreto de GCP, declararlo en `secretEnvironmentVariables` y conceder al runtime solo el acceso mínimo necesario.",
       "recommended": true
     },
     {
-      "title": "Compatibilidad temporal",
-      "body": "Mantener los inputs y una ruta compatible hasta que la retirada remota esté confirmada en todos los entornos.",
+      "title": "Aceptar la variable de entorno actual",
+      "body": "Mantener el token como `environmentVariables` y documentar explícitamente la justificación y el perímetro IAM que puede leer la configuración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Retirada declarativa completa",
-    "body": "Añadir reconciliación o borrado explícito de la función y del topic antes de integrar el workflow sin los inputs antiguos.",
+    "title": "Mover el token a Secret Manager",
+    "body": "Crear o reutilizar un secreto de GCP, declararlo en `secretEnvironmentVariables` y conceder al runtime solo el acceso mínimo necesario.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre directamente el dispatcher, la frescura y las alertas que define esta transición.",
+    "person": "JavierHamelyn",
+    "reason": "Está solicitado como revisor por experiencia en Data Platform y el historial lo vincula a los workflows afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7912.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7912#issuecomment-5058411752",
-    "reviewedAt": "2026-07-23T13:46:11.247Z",
-    "mainSha": "f059a096f8dd9fb0ae1a474acbd4c74599789ad3"
+    "reviewedAt": "2026-07-24T07:41:49.171Z",
+    "mainSha": "b3f9af8bf1544cffcd064a0557146fce6e65ea53"
   }
 }
