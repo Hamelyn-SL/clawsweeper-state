@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-24T13:05:38.713Z",
+  "generatedAt": "2026-07-24T19:04:44.379Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 1,
-    "openItemsSeen": 95
+    "openItemsSeen": 94
   },
   "counts": {
-    "itemRecords": 93,
-    "closedRecords": 627,
-    "missingOpen": 2,
+    "itemRecords": 91,
+    "closedRecords": 629,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 2,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -54,6 +54,18 @@
         "createdAt": "2026-07-22T08:25:15Z",
         "updatedAt": "2026-07-22T09:27:16Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 7936,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-24T13:29:53Z",
+        "updatedAt": "2026-07-24T15:38:31Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -93,7 +105,20 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7936,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-24T13:29:53Z",
+        "updatedAt": "2026-07-24T15:38:31Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
