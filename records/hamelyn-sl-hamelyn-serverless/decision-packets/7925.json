@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T09:44:48.085Z",
+  "updatedAt": "2026-07-24T09:27:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7925,
+    "title": "Infra: reducir LABEL_ISSUE recurrentes por CP/dirección que almacén no puede resolver",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7925",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-07-24T09:27:25Z",
+    "updatedAt": "2026-07-24T09:27:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba una primera entrega limitada a códigos postales de Cainiao ES, dejando PUDO, ciudad/provincia e internacionales para decisiones posteriores basadas en datos?",
+  "rationale": "La incidencia combina una corrección determinista con mutaciones de dirección y alternativas de carrier cuyo comportamiento seguro requiere una política operativa explícita.",
+  "options": [
+    {
+      "title": "Acotar a CP de Cainiao ES",
+      "body": "Corregir y probar formatos reales de CP, registrar resultados y usar el reparto observado para priorizar el siguiente hueco.",
+      "recommended": true
+    },
+    {
+      "title": "Incluir ciudad y provincia",
+      "body": "Ampliar la mutación automática usando Google Address Validation, con reglas de confianza y trazabilidad del dato original.",
+      "recommended": false
+    },
+    {
+      "title": "Resolver también PUDO e internacionales",
+      "body": "Diseñar reglas específicas de refresco, fallback o cambio de carrier antes de incorporar esas categorías.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar a CP de Cainiao ES",
+    "body": "Corregir y probar formatos reales de CP, registrar resultados y usar el reparto observado para priorizar el siguiente hueco.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo reciente conecta la gestión de fallos de etiqueta y los reintentos que condicionan el alcance operativo.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7925.md",
+    "reviewedAt": "2026-07-24T09:44:48.085Z",
+    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
+  }
+}
