@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T12:24:18.043Z",
+  "updatedAt": "2026-07-24T11:49:11Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7932,
+    "title": "feat: generate ecommerce sitemaps from bigquery products",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7932",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-07-24T11:49:11Z",
+    "updatedAt": "2026-07-24T11:49:11Z",
+    "headSha": "f393fd1c3c9a1241afde5ab765cf4da5e914815b"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se acepta que los sitemaps pasen de una fuente Mongo cada seis horas a una réplica BigQuery diaria con rollback manual a Mongo?",
+  "rationale": "El cambio reduce carga del primario, pero modifica deliberadamente la latencia máxima con la que productos y grupos llegan al sitemap.",
+  "options": [
+    {
+      "title": "Aceptar la cadencia diaria tras prueba",
+      "body": "Aprobar BigQuery como fuente predeterminada después de integrar la dependencia y verificar paridad operativa con el rollback Mongo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la cadencia anterior",
+      "body": "Conservar la frecuencia de seis horas hasta disponer de una réplica de productos con una frescura compatible con ese contrato.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar la cadencia diaria tras prueba",
+    "body": "Aprobar BigQuery como fuente predeterminada después de integrar la dependencia y verificar paridad operativa con el rollback Mongo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es autor del objetivo de migración que define la tolerancia de frescura y ha mantenido recientemente los workflows relacionados.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7932.md",
+    "reviewedAt": "2026-07-24T12:24:18.043Z",
+    "mainSha": "91e58ae7051a9c48e457b151a14d8cb9821488eb"
+  }
+}
