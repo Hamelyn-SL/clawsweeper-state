@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T11:41:26.154Z",
-  "updatedAt": "2026-07-24T11:28:38Z",
+  "generatedAt": "2026-07-24T13:24:28.248Z",
+  "updatedAt": "2026-07-24T12:39:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-24T11:28:38Z",
+    "updatedAt": "2026-07-24T12:39:52Z",
     "headSha": "cbccddc2eb146454386a9091a164614bb2dc3956"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba conservar la reclamación legacy por `cartId` hasta el 24 de agosto de 2026 si el cliente añade una recuperación automática para carritos sin token?",
-  "rationale": "La ventana preserva compatibilidad temporal, pero conserva el acceso implícito y el corte actual puede bloquear a instalaciones no migradas.",
+  "question": "¿Debe mantenerse hasta el 24 de agosto de 2026 el reclamo de cualquier carrito legacy por `cartId`, aun sabiendo que el primer solicitante puede tomar su capability?",
+  "rationale": "El código puede implementar cualquiera de las alternativas, pero el equilibrio entre conservar carritos legacy y cerrar inmediatamente el acceso basado en identificador requiere aceptación explícita del riesgo de producto y seguridad.",
   "options": [
     {
-      "title": "Transición controlada con recuperación",
-      "body": "Mantener la fecha propuesta, añadir recuperación automática y vigilar reclamaciones legacy y 404 antes y después del corte.",
+      "title": "Corte inmediato para legacy",
+      "body": "Rechazar carritos sin hash y crear uno nuevo, eliminando cuanto antes el acceso basado sólo en `cartId`.",
+      "recommended": false
+    },
+    {
+      "title": "Ventana legacy acotada",
+      "body": "Mantener la fecha de corte actual, documentar el riesgo y añadir recuperación automática cuando el cliente pierda su capability.",
       "recommended": true
     },
     {
-      "title": "Endurecer la transición",
-      "body": "Acortar o eliminar la ventana legacy y comunicar que los clientes afectados deberán recrear el carrito.",
+      "title": "Migración con prueba adicional",
+      "body": "Conservar legacy sólo si existe una señal de posesión adicional que permita emitir la capability sin basarse únicamente en `cartId`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transición controlada con recuperación",
-    "body": "Mantener la fecha propuesta, añadir recuperación automática y vigilar reclamaciones legacy y 404 antes y después del corte.",
+    "title": "Ventana legacy acotada",
+    "body": "Mantener la fecha de corte actual, documentar el riesgo y añadir recuperación automática cuando el cliente pierda su capability.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Definió el diseño de capability vinculado y ya está solicitado como revisor del cambio de seguridad.",
+    "reason": "La issue relacionada fue reportada por JavierHamelyn y su historial incluye el controlador público afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-24T11:41:26.154Z",
-    "mainSha": "e25e85331b56c86b2de77ee3749a0186258df42f"
+    "reviewedAt": "2026-07-24T13:24:28.248Z",
+    "mainSha": "918fe7df4751bef0d3105032bee4c43de2955fc5"
   }
 }
