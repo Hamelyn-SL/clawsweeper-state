@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T09:46:00.527Z",
+  "updatedAt": "2026-07-24T09:14:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7923,
+    "title": "fix: secure ecommerce carts with capability tokens",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7923",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-07-24T09:11:49Z",
+    "updatedAt": "2026-07-24T09:14:35Z",
+    "headSha": "9e29c065f9630716d94cb8b25c9c8c6853eff664"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Se aprueba la ventana concreta de transición para carritos legacy y qué recuperación verá el cliente cuando expire?",
+  "rationale": "El PR introduce una fecha de corte que puede invalidar carritos invitados existentes; la seguridad no determina por sí sola la política de compatibilidad.",
+  "options": [
+    {
+      "title": "Aprobar transición acotada",
+      "body": "Mantener la actualización oportunista hasta una fecha publicada y mostrar una recuperación clara al expirar.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir capability de inmediato",
+      "body": "Cerrar el acceso legacy al desplegar y aceptar que los invitados afectados creen un carrito nuevo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar transición acotada",
+    "body": "Mantener la actualización oportunista hasta una fecha publicada y mostrar una recuperación clara al expirar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está llevando el cambio activo y concentra el historial reciente de la superficie de carrito.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7923.md",
+    "reviewedAt": "2026-07-24T09:46:00.527Z",
+    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
+  }
+}

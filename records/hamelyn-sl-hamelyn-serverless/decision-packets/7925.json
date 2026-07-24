@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T09:44:48.085Z",
+  "generatedAt": "2026-07-24T09:44:59.744Z",
   "updatedAt": "2026-07-24T09:27:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -20,39 +20,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una primera entrega limitada a códigos postales de Cainiao ES, dejando PUDO, ciudad/provincia e internacionales para decisiones posteriores basadas en datos?",
-  "rationale": "La incidencia combina una corrección determinista con mutaciones de dirección y alternativas de carrier cuyo comportamiento seguro requiere una política operativa explícita.",
+  "question": "¿Qué cambios puede aplicar automáticamente el sistema a una dirección o envío antes de requerir intervención de almacén?",
+  "rationale": "La incidencia combina normalización inocua con cambios potencialmente operativos de PUDO, ciudad, provincia y mensajera; el código no define el límite aceptable.",
   "options": [
     {
-      "title": "Acotar a CP de Cainiao ES",
-      "body": "Corregir y probar formatos reales de CP, registrar resultados y usar el reparto observado para priorizar el siguiente hueco.",
+      "title": "Automatización gradual",
+      "body": "Corregir primero formatos de CP con reglas deterministas y registrar el resto para decidirlo con datos.",
       "recommended": true
     },
     {
-      "title": "Incluir ciudad y provincia",
-      "body": "Ampliar la mutación automática usando Google Address Validation, con reglas de confianza y trazabilidad del dato original.",
+      "title": "Corrección amplia",
+      "body": "Permitir cambios de localidad, provincia y PUDO cuando una fuente externa los valide, con auditoría explícita.",
       "recommended": false
     },
     {
-      "title": "Resolver también PUDO e internacionales",
-      "body": "Diseñar reglas específicas de refresco, fallback o cambio de carrier antes de incorporar esas categorías.",
+      "title": "Solo diagnóstico",
+      "body": "Instrumentar categorías y mantener la corrección manual hasta disponer de una política posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar a CP de Cainiao ES",
-    "body": "Corregir y probar formatos reales de CP, registrar resultados y usar el reparto observado para priorizar el siguiente hueco.",
+    "title": "Automatización gradual",
+    "body": "Corregir primero formatos de CP con reglas deterministas y registrar el resto para decidirlo con datos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente conecta la gestión de fallos de etiqueta y los reintentos que condicionan el alcance operativo.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Impulsó la recuperación inicial y ya está asignado a esta incidencia.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7925.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7925#issuecomment-5068447341",
-    "reviewedAt": "2026-07-24T09:44:48.085Z",
+    "reviewedAt": "2026-07-24T09:44:59.744Z",
     "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
   }
 }
