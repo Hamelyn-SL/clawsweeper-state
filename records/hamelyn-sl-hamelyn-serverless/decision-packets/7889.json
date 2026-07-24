@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T12:09:34.157Z",
-  "updatedAt": "2026-07-24T11:12:22Z",
+  "generatedAt": "2026-07-24T12:13:29.133Z",
+  "updatedAt": "2026-07-24T12:10:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,50 +17,49 @@
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "issue-rating: 💎 diamond",
-      "P0",
+      "clawsweeper:linked-pr-open",
       "impact:security",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:needs-security-review",
+      "P0",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-22T21:49:45Z",
-    "updatedAt": "2026-07-24T11:12:22Z"
+    "updatedAt": "2026-07-24T12:10:43Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba la transición de carritos legacy propuesta —incluido su corte temporal— para exigir capability en todos los carritos Supply?",
-  "rationale": "El cierre seguro afecta a carritos existentes y a los flujos de login; el plazo de compatibilidad y la política de corte requieren decisión humana de seguridad y producto.",
+  "question": "¿Se aprueba el plazo y la política de corte para carritos legacy sin `accessSecretHash` propuestos en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926?",
+  "rationale": "La fecha de corte equilibra exposición residual frente a pérdida de acceso de usuarios existentes; el código no puede determinar ese compromiso operativo por sí solo.",
   "options": [
     {
-      "title": "Aprobar corte acotado",
-      "body": "Integrar la capability con la fecha de corte propuesta, monitorizando rechazos y documentando la recuperación de carritos legacy.",
+      "title": "Aprobar corte fail-closed",
+      "body": "Mantener el plazo propuesto y exigir capability después de la fecha, con comunicación y monitorización de carritos legacy.",
       "recommended": true
     },
     {
-      "title": "Acortar la ventana",
-      "body": "Reducir el periodo legacy si el riesgo de exposición supera el coste de recrear carritos anónimos existentes.",
+      "title": "Ajustar el plazo",
+      "body": "Modificar la fecha tras medir uso legacy, conservando el cierre obligatorio y una fecha final explícita.",
       "recommended": false
     },
     {
-      "title": "Exigir token de inmediato",
-      "body": "Eliminar la compatibilidad legacy para cerrar la exposición antes, asumiendo pérdida de continuidad en carritos anónimos previos.",
+      "title": "Pausar la transición",
+      "body": "No integrar el cambio hasta definir una política alternativa que no prolongue indefinidamente el acceso por `cartId`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar corte acotado",
-    "body": "Integrar la capability con la fecha de corte propuesta, monitorizando rechazos y documentando la recuperación de carritos legacy.",
+    "title": "Aprobar corte fail-closed",
+    "body": "Mantener el plazo propuesto y exigir capability después de la fecha, con comunicación y monitorización de carritos legacy.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha mantenido recientemente el controlador afectado y está vinculado a la implementación propuesta.",
+    "reason": "Está asignado a la corrección candidata y mantiene el controlador de merge afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7889.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7889#issuecomment-5055999691",
-    "reviewedAt": "2026-07-24T12:09:34.157Z",
-    "mainSha": "0a7f0581be6f3331d023df1fc2590dac0c6e22b7"
+    "reviewedAt": "2026-07-24T12:13:29.133Z",
+    "mainSha": "4fa3866b3b3896e0fb63c5288c62a0a4af28106d"
   }
 }
