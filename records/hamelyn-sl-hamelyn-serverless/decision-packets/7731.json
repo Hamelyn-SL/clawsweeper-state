@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T05:52:35.349Z",
+  "generatedAt": "2026-07-24T05:54:16.317Z",
   "updatedAt": "2026-07-24T05:43:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,46 @@
       "app:marketplace",
       "reporter:javier",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
     "updatedAt": "2026-07-24T05:43:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el equipo Marketplace limitarse a la escalada con TodoColección hasta que se aclare el contrato, o patrocinar después un muestreo dirigido con criterios de aceptación explícitos?",
-  "rationale": "El repositorio no puede corregir una respuesta vacía del proveedor, y el tamaño, las señales y el uso operativo del futuro muestreo requieren una decisión de producto antes de abrir un trabajo de implementación.",
+  "question": "¿Debe Marketplace mantener el bloqueo hasta recibir una respuesta contractual de TodoColección, o aceptar una reconciliación limitada basada solo en existencia y estado por SKU?",
+  "rationale": "El código local ya aplica la ruta y autenticación documentadas; decidir qué señal remota basta para automatizar reconciliación es un compromiso operativo que no resuelve el código.",
   "options": [
     {
-      "title": "Escalar y pausar el muestreo",
-      "body": "Abrir y seguir el ticket con TodoColección, manteniendo los watchers actuales hasta recibir un contrato de lectura verificable.",
+      "title": "Escalar y conservar el bloqueo",
+      "body": "Mantener esta incidencia como seguimiento del soporte de TodoColección y repetir una muestra pequeña cuando confirme el contrato de lectura.",
       "recommended": true
     },
     {
-      "title": "Patrocinar muestreo tras validación",
-      "body": "Cuando el proveedor confirme el contrato, definir una muestra diaria acotada, métricas de frescura y reglas para no concluir sobreventa con datos incompletos.",
+      "title": "Aceptar muestreo limitado",
+      "body": "Autorizar una futura verificación por SKU de existencia y estado, documentando que `stock=null` no prueba disponibilidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar y pausar el muestreo",
-    "body": "Abrir y seguir el ticket con TodoColección, manteniendo los watchers actuales hasta recibir un contrato de lectura verificable.",
+    "title": "Escalar y conservar el bloqueo",
+    "body": "Mantener esta incidencia como seguimiento del soporte de TodoColección y repetir una muestra pequeña cuando confirme el contrato de lectura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada actualmente y puede coordinar la respuesta del proveedor con la prioridad de Marketplace.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y cuenta con historial directo en la recuperación de la integración afectada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-24T05:52:35.349Z",
+    "reviewedAt": "2026-07-24T05:54:16.317Z",
     "mainSha": "b3f9af8bf1544cffcd064a0557146fce6e65ea53"
   }
 }
