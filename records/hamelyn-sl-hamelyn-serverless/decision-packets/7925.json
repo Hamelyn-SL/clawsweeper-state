@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T09:44:59.744Z",
-  "updatedAt": "2026-07-24T09:27:45Z",
+  "generatedAt": "2026-07-24T11:32:36.605Z",
+  "updatedAt": "2026-07-24T09:51:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,52 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:running",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-24T09:27:25Z",
-    "updatedAt": "2026-07-24T09:27:45Z"
+    "updatedAt": "2026-07-24T09:51:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué cambios puede aplicar automáticamente el sistema a una dirección o envío antes de requerir intervención de almacén?",
-  "rationale": "La incidencia combina normalización inocua con cambios potencialmente operativos de PUDO, ciudad, provincia y mensajera; el código no define el límite aceptable.",
+  "question": "¿Qué campos de dirección, PUDO y carrier puede modificar automáticamente el sistema, y cuáles deben requerir revisión humana por país y proveedor?",
+  "rationale": "La implementación debe decidir límites operativos de corrección automática antes de persistir cambios que pueden afectar al destino o al transportista.",
   "options": [
     {
-      "title": "Automatización gradual",
-      "body": "Corregir primero formatos de CP con reglas deterministas y registrar el resto para decidirlo con datos.",
+      "title": "Fase de observabilidad",
+      "body": "Registrar errores estructurados y medir intervención manual antes de automatizar cambios persistentes.",
       "recommended": true
     },
     {
-      "title": "Corrección amplia",
-      "body": "Permitir cambios de localidad, provincia y PUDO cuando una fuente externa los valide, con auditoría explícita.",
+      "title": "Reglas deterministas acotadas",
+      "body": "Autorizar solo normalizaciones demostrablemente seguras por país y mantener PUDO/carrier sin cambios automáticos.",
       "recommended": false
     },
     {
-      "title": "Solo diagnóstico",
-      "body": "Instrumentar categorías y mantener la corrección manual hasta disponer de una política posterior.",
+      "title": "Automatización amplia",
+      "body": "Permitir correcciones de dirección y fallback de carrier tras definir salvaguardas, auditoría y reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Automatización gradual",
-    "body": "Corregir primero formatos de CP con reglas deterministas y registrar el resto para decidirlo con datos.",
+    "title": "Fase de observabilidad",
+    "body": "Registrar errores estructurados y medir intervención manual antes de automatizar cambios persistentes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Impulsó la recuperación inicial y ya está asignado a esta incidencia.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre los reintentos y la clasificación de errores que delimitan la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7925.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7925#issuecomment-5068447341",
-    "reviewedAt": "2026-07-24T09:44:59.744Z",
-    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
+    "reviewedAt": "2026-07-24T11:32:36.605Z",
+    "mainSha": "e25e85331b56c86b2de77ee3749a0186258df42f"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T09:46:00.527Z",
-  "updatedAt": "2026-07-24T09:14:35Z",
+  "generatedAt": "2026-07-24T11:34:45.557Z",
+  "updatedAt": "2026-07-24T10:54:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-24T09:11:49Z",
-    "updatedAt": "2026-07-24T09:14:35Z",
-    "headSha": "9e29c065f9630716d94cb8b25c9c8c6853eff664"
+    "updatedAt": "2026-07-24T10:54:50Z",
+    "headSha": "94db81aa0e1146c5e130f0cec27c8c9425e0b7fd"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba la ventana concreta de transición para carritos legacy y qué recuperación verá el cliente cuando expire?",
-  "rationale": "El PR introduce una fecha de corte que puede invalidar carritos invitados existentes; la seguridad no determina por sí sola la política de compatibilidad.",
+  "question": "¿Se aprueba mantener la ventana de compatibilidad para carritos legacy hasta el 24 de agosto de 2026 antes de exigir capability en todos los carritos anónimos?",
+  "rationale": "La fecha de corte cambia el comportamiento de usuarios existentes y determina el equilibrio entre recuperación de carritos legacy y cierre completo del límite de autorización.",
   "options": [
     {
-      "title": "Aprobar transición acotada",
-      "body": "Mantener la actualización oportunista hasta una fecha publicada y mostrar una recuperación clara al expirar.",
+      "title": "Mantener la ventana documentada",
+      "body": "Conservar la migración oportunista hasta el 24 de agosto de 2026 y validar manualmente la rotación del cliente antes del corte.",
       "recommended": true
     },
     {
       "title": "Exigir capability de inmediato",
-      "body": "Cerrar el acceso legacy al desplegar y aceptar que los invitados afectados creen un carrito nuevo.",
+      "body": "Eliminar la excepción legacy para cerrar antes el límite, aceptando que los carritos anónimos previos se regeneren.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar transición acotada",
-    "body": "Mantener la actualización oportunista hasta una fecha publicada y mostrar una recuperación clara al expirar.",
+    "title": "Mantener la ventana documentada",
+    "body": "Conservar la migración oportunista hasta el 24 de agosto de 2026 y validar manualmente la rotación del cliente antes del corte.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está llevando el cambio activo y concentra el historial reciente de la superficie de carrito.",
+    "reason": "Su historial reciente conecta las rutas de carrito, la limpieza posterior a checkout y el comportamiento de recuperación afectado por la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7923.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7923#issuecomment-5068447091",
-    "reviewedAt": "2026-07-24T09:46:00.527Z",
-    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
+    "reviewedAt": "2026-07-24T11:34:45.557Z",
+    "mainSha": "e25e85331b56c86b2de77ee3749a0186258df42f"
   }
 }

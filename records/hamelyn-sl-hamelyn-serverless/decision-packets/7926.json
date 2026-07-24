@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T11:33:26.997Z",
+  "updatedAt": "2026-07-24T11:28:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7926,
+    "title": "fix: secure supply carts with capability tokens",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-07-24T11:00:23Z",
+    "updatedAt": "2026-07-24T11:28:38Z",
+    "headSha": "cbccddc2eb146454386a9091a164614bb2dc3956"
+  },
+  "lane": "security_boundary",
+  "priority": "P0",
+  "question": "¿Se acepta mantener reclamables por `cartId` los carritos legacy sin hash hasta el 24 de agosto de 2026, con el riesgo residual y el posible corte para clientes sin actualizar?",
+  "rationale": "La ventana reduce la rotura de usuarios existentes, pero conserva temporalmente la propiedad implícita que este PR pretende eliminar y requiere una decisión de seguridad y operación.",
+  "options": [
+    {
+      "title": "Aprobar transición controlada",
+      "body": "Mantener el corte propuesto, documentar la recuperación y vigilar reclamaciones legacy y respuestas 404 antes y después de la fecha.",
+      "recommended": true
+    },
+    {
+      "title": "Endurecer antes del despliegue",
+      "body": "Eliminar o acortar la reclamación legacy y aceptar que los clientes afectados deban recrear el carrito con una comunicación explícita.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar transición controlada",
+    "body": "Mantener el corte propuesto, documentar la recuperación y vigilar reclamaciones legacy y respuestas 404 antes y después de la fecha.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Definió el diseño de capability del informe vinculado y figura entre los revisores solicitados para este cambio de seguridad.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
+    "reviewedAt": "2026-07-24T11:33:26.997Z",
+    "mainSha": "e25e85331b56c86b2de77ee3749a0186258df42f"
+  }
+}
