@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T05:54:16.317Z",
-  "updatedAt": "2026-07-24T05:43:23Z",
+  "generatedAt": "2026-07-24T11:22:54.822Z",
+  "updatedAt": "2026-07-24T11:04:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,52 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:blocked",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
-    "updatedAt": "2026-07-24T05:43:23Z"
+    "updatedAt": "2026-07-24T11:04:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Marketplace mantener el bloqueo hasta recibir una respuesta contractual de TodoColección, o aceptar una reconciliación limitada basada solo en existencia y estado por SKU?",
-  "rationale": "El código local ya aplica la ruta y autenticación documentadas; decidir qué señal remota basta para automatizar reconciliación es un compromiso operativo que no resuelve el código.",
+  "question": "Tras integrar la corrección de stock, ¿debe Marketplace limitarse al soporte de TodoColección o autorizar también un muestreo dirigido con una ordenación alternativa validada?",
+  "rationale": "El parser tiene una reparación concreta, pero el alcance operativo del snapshot, su coste y la tolerancia a resultados ordenados de forma distinta requieren decisión del equipo.",
   "options": [
     {
-      "title": "Escalar y conservar el bloqueo",
-      "body": "Mantener esta incidencia como seguimiento del soporte de TodoColección y repetir una muestra pequeña cuando confirme el contrato de lectura.",
+      "title": "Corregir y acotar",
+      "body": "Integrar la normalización de stock y abrir el ticket al proveedor, sin crear todavía un cron de muestreo.",
       "recommended": true
     },
     {
-      "title": "Aceptar muestreo limitado",
-      "body": "Autorizar una futura verificación por SKU de existencia y estado, documentando que `stock=null` no prueba disponibilidad.",
+      "title": "Autorizar muestreo dirigido",
+      "body": "Además de la corrección, diseñar un muestreo limitado con `orderby` funcional y límites explícitos de coste y paginación.",
+      "recommended": false
+    },
+    {
+      "title": "Esperar al proveedor",
+      "body": "Mantener los watchers actuales hasta que TodoColección confirme la semántica de ordenación y los límites reales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar y conservar el bloqueo",
-    "body": "Mantener esta incidencia como seguimiento del soporte de TodoColección y repetir una muestra pequeña cuando confirme el contrato de lectura.",
+    "title": "Corregir y acotar",
+    "body": "Integrar la normalización de stock y abrir el ticket al proveedor, sin crear todavía un cron de muestreo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual y cuenta con historial directo en la recuperación de la integración afectada.",
+    "reason": "Es el asignado actual y está llevando la corrección local vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-24T05:54:16.317Z",
-    "mainSha": "b3f9af8bf1544cffcd064a0557146fce6e65ea53"
+    "reviewedAt": "2026-07-24T11:22:54.822Z",
+    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
   }
 }
