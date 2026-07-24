@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-23T18:57:17.636Z",
+  "generatedAt": "2026-07-24T01:05:23.158Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 109
+    "openItemsSeen": 108
   },
   "counts": {
-    "itemRecords": 105,
-    "closedRecords": 604,
-    "missingOpen": 4,
+    "itemRecords": 106,
+    "closedRecords": 607,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 2,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 0,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -54,30 +54,6 @@
         "createdAt": "2026-07-22T08:25:15Z",
         "updatedAt": "2026-07-22T09:27:16Z",
         "missingReason": "protected_label"
-      },
-      {
-        "number": 7913,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-23T12:34:58Z",
-        "updatedAt": "2026-07-23T13:12:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7914,
-        "kind": "pull_request",
-        "title": "fix: retry amazon purchasable_offer conflicts via price update",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-23T18:54:08Z",
-        "updatedAt": "2026-07-23T18:54:35Z",
-        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -117,32 +93,7 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [
-      {
-        "number": 7913,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-23T12:34:58Z",
-        "updatedAt": "2026-07-23T13:12:35Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7914,
-        "kind": "pull_request",
-        "title": "fix: retry amazon purchasable_offer conflicts via price update",
-        "labels": [
-          "size/XS"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-23T18:54:08Z",
-        "updatedAt": "2026-07-23T18:54:35Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingRecentOpen": [],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
