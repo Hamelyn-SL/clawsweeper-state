@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T10:46:17.013Z",
-  "updatedAt": "2026-07-23T09:57:50Z",
+  "generatedAt": "2026-07-24T06:50:30.944Z",
+  "updatedAt": "2026-07-24T06:42:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,51 +14,50 @@
       "feature",
       "reporter:miguel",
       "triage:no-change",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:ux-friction",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-23T07:02:17Z",
-    "updatedAt": "2026-07-23T09:57:50Z"
+    "updatedAt": "2026-07-24T06:42:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la PR vinculada implementar el alcance completo, incluido el reparto proporcional, como solución canónica de la issue 7760?",
-  "rationale": "La base editable del banner ya está definida en la issue canónica, pero KV compartido y variantes A/B amplían el contrato operativo y requieren una decisión explícita de producto.",
+  "question": "¿Debe el reparto proporcional formar parte de la solución canónica del banner editable o entregarse después de la configuración básica por locale?",
+  "rationale": "La edición por locale coincide con la petición canónica, pero las variantes proporcionales amplían el contrato operativo y requieren una decisión explícita de alcance.",
   "options": [
     {
-      "title": "Consolidar en la issue canónica",
-      "body": "Revisar la PR como la implementación única de la configuración editable y alinear sus criterios con https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760.",
+      "title": "Consolidar el alcance",
+      "body": "Alinear la PR con la issue canónica e incluir reparto proporcional, con el contrato de primera visita corregido.",
       "recommended": true
     },
     {
-      "title": "Fase inicial sin reparto",
-      "body": "Aceptar primero el copy y gradiente por locale, dejando las variantes proporcionales para una propuesta posterior y acotada.",
+      "title": "Entregar en dos fases",
+      "body": "Integrar primero texto, gradientes y preview por locale, dejando el experimento proporcional para una propuesta acotada.",
       "recommended": false
     },
     {
-      "title": "Mantener dos alcances",
-      "body": "Conservar esta petición separada solo si el experimento proporcional necesita criterios, métricas y operación distintos del banner editable.",
+      "title": "Mantener ámbitos separados",
+      "body": "Conservar ambas peticiones solo si las variantes necesitan métricas, operación o propiedad independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consolidar en la issue canónica",
-    "body": "Revisar la PR como la implementación única de la configuración editable y alinear sus criterios con https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7760.",
+    "title": "Consolidar el alcance",
+    "body": "Alinear la PR con la issue canónica e incluir reparto proporcional, con el contrato de primera visita corregido.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial relacionado reúne el componente de ecommerce y el patrón de cupones/Admin alrededor de esta persona.",
+    "reason": "Su historial conecta el componente actual con el patrón de configuración promocional en Admin.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7897.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7897#issuecomment-5056296710",
-    "reviewedAt": "2026-07-23T10:46:17.013Z",
-    "mainSha": "eac5610f3b2419bc9f6cb3d4cc85f459a4698f4c"
+    "reviewedAt": "2026-07-24T06:50:30.944Z",
+    "mainSha": "b3f9af8bf1544cffcd064a0557146fce6e65ea53"
   }
 }
