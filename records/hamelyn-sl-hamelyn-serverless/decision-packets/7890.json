@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T08:51:44.767Z",
-  "updatedAt": "2026-07-23T08:18:19Z",
+  "generatedAt": "2026-07-24T09:05:20.055Z",
+  "updatedAt": "2026-07-24T08:59:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,52 @@
       "app:ecommerce",
       "feature",
       "reporter:javier",
-      "triage:done",
-      "P0",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
+      "triage:no-change",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-22T21:49:56Z",
-    "updatedAt": "2026-07-23T08:18:19Z"
+    "updatedAt": "2026-07-24T08:59:21Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba una transición acotada para carritos heredados y el contrato definitivo de cookie capability más JWT para el merge de ecommerce y supply?",
-  "rationale": "La política de compatibilidad y el límite entre capability anónima e identidad autenticada afectan dos aplicaciones y no debe decidirse automáticamente.",
+  "question": "¿Se aprueba la ventana exacta de transición para carritos ecommerce heredados y el contrato común de capability/JWT compartido con Supply?",
+  "rationale": "La duración y el comportamiento de compatibilidad determinan si instalaciones existentes conservan un bypass de autorización o sufren una interrupción durante la actualización.",
   "options": [
     {
-      "title": "Aprobar contrato compartido",
-      "body": "Adoptar capability token con caducidad de transición explícita y un merge autenticado por JWT para ambos carritos.",
+      "title": "Aprobar transición acotada",
+      "body": "Exigir capability cuando exista hash, actualizar oportunistamente los carritos heredados y fijar una fecha de corte aplicada por servidor.",
       "recommended": true
     },
     {
-      "title": "Separar los despliegues",
-      "body": "Resolver primero ecommerce con una utilidad interna equivalente y programar la convergencia posterior con supply.",
+      "title": "Corte inmediato",
+      "body": "Exigir capability a todos los carritos desde el despliegue, aceptando que los invitados existentes deberán crear un carrito nuevo.",
+      "recommended": false
+    },
+    {
+      "title": "Separar contratos",
+      "body": "Resolver primero ecommerce y definir después la reutilización con Supply, con riesgo de duplicar el límite de seguridad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato compartido",
-    "body": "Adoptar capability token con caducidad de transición explícita y un merge autenticado por JWT para ambos carritos.",
+    "title": "Aprobar transición acotada",
+    "body": "Exigir capability cuando exista hash, actualizar oportunistamente los carritos heredados y fijar una fecha de corte aplicada por servidor.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "El historial local lo vincula a la base actual del cliente y del modelo de carrito de ecommerce.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado al trabajo activo y concentra el historial reciente de esta superficie.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7890.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7890#issuecomment-5056363795",
-    "reviewedAt": "2026-07-23T08:51:44.767Z",
-    "mainSha": "e9f37693091b2ec22737d422d27c57db642842dc"
+    "reviewedAt": "2026-07-24T09:05:20.055Z",
+    "mainSha": "6f2d5b6cd8cb5e775f0c4374b48e574806554a4e"
   }
 }
