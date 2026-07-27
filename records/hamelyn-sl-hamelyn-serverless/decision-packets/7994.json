@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T20:22:00.650Z",
-  "updatedAt": "2026-07-27T20:17:07Z",
+  "generatedAt": "2026-07-27T17:43:45.376Z",
+  "updatedAt": "2026-07-27T17:33:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,47 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 automation",
-      "merge-risk: 🚨 security-boundary",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 availability"
+      "P1"
     ],
     "createdAt": "2026-07-27T10:56:00Z",
-    "updatedAt": "2026-07-27T20:17:07Z",
-    "headSha": "acf6613ddfde2708de3543e271a4f3ee006aa918"
+    "updatedAt": "2026-07-27T17:33:28Z",
+    "headSha": "d0af1fc02e1d7df0f8f3041cb45c818b7b286344"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe `text-delta` poder emitir `CORRECTO` para documentación bajo `docs/`, o se limita a rutas explícitamente no ejecutables?",
-  "rationale": "La frontera entre documentación descriptiva y prompts o instrucciones normativas determina qué evidencia puede aprobar un gate de seguridad.",
+  "question": "¿Se autoriza ampliar la instalación de la GitHub App de Proof con los permisos mínimos de lectura y escritura de PR que exige esta rama?",
+  "rationale": "La corrección de código requiere cambiar una frontera de permisos operativa; decidir entre otorgarlos o rediseñar el flujo no es una reparación mecánica segura.",
   "options": [
     {
-      "title": "Limitar a documentación no ejecutable",
-      "body": "Excluir `docs/prompts/**`, guías de skills y cualquier ruta de instrucciones, manteniendo el atajo solo para documentación estática delimitada.",
+      "title": "Aprobar permisos mínimos",
+      "body": "Conceder los permisos declarados, documentarlos y validar el canario de staging antes de hacer obligatorio el gate.",
       "recommended": true
     },
     {
-      "title": "Mantener la allowlist amplia",
-      "body": "Aceptar el riesgo de que cambios ejecutables Markdown reciban un veredicto estructural en lugar de una prueba causal.",
+      "title": "Reducir el diseño",
+      "body": "Mantener la App solo para checks y conservar las lecturas o publicaciones en un componente con permisos ya aprobados.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el hardening",
+      "body": "Dejar el gate actual mientras se acuerda la propiedad y el alcance de la nueva App.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar a documentación no ejecutable",
-    "body": "Excluir `docs/prompts/**`, guías de skills y cualquier ruta de instrucciones, manteniendo el atajo solo para documentación estática delimitada.",
+    "title": "Aprobar permisos mínimos",
+    "body": "Conceder los permisos declarados, documentarlos y validar el canario de staging antes de hacer obligatorio el gate.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre el contrato de evidencia causal y la implementación del gate.",
+    "reason": "Es la persona con mayor continuidad técnica en el protocolo, los canarios y el diseño de la App de Proof.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
-    "reviewedAt": "2026-07-27T20:22:00.650Z",
+    "reviewedAt": "2026-07-27T17:43:45.376Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
