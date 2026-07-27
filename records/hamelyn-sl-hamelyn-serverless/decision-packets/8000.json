@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T13:56:53.535Z",
+  "generatedAt": "2026-07-27T13:55:36.613Z",
   "updatedAt": "2026-07-27T13:33:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,10 +11,11 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "P2",
-      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "rating: 🥉 bronze"
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 automation"
     ],
     "createdAt": "2026-07-27T12:00:38Z",
     "updatedAt": "2026-07-27T13:33:06Z",
@@ -22,33 +23,39 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta primera fase corregir y persistir provincia y municipio para todos los carriers, o acotarse a Cainiao hasta validar los contratos de cada carrier?",
-  "rationale": "El PR introduce una política de modificación automática de datos de entrega y una cobertura multi-carrier que no queda determinada por el contrato actual ni por pruebas reales aportadas.",
+  "question": "¿Debe la corrección automática y global de provincia/municipio sobrescribir direcciones operativas de todos los carriers, y qué política de reversión y aviso debe acompañarla?",
+  "rationale": "El código puede corregir los defectos mecánicos, pero la extensión de una corrección automática a todos los carriers cambia una decisión operativa sobre datos de destinatario.",
   "options": [
     {
-      "title": "Acotar la primera fase a Cainiao",
-      "body": "Mantener el reintento reactivo Cainiao con auditoría reversible y ampliar a otros carriers tras validar sus respuestas reales.",
+      "title": "Acotar y auditar primero",
+      "body": "Mantener la recuperación reactiva, conservar los tres valores originales y activar el pase preventivo global solo tras evidencia controlada por carrier.",
       "recommended": true
     },
     {
-      "title": "Aprobar la cobertura global",
-      "body": "Mantener todos los carriers, pero exigir una matriz de errores aceptados, trazabilidad completa y prueba real por cada integración incluida.",
+      "title": "Aceptar el alcance global",
+      "body": "Autorizar la sobrescritura preventiva para todos los carriers con auditoría completa, límites de alertas y prueba operativa previa.",
+      "recommended": false
+    },
+    {
+      "title": "Limitarlo a Cainiao",
+      "body": "Conservar la recuperación específica de Cainiao hasta caracterizar los mensajes y contratos de los demás carriers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar la primera fase a Cainiao",
-    "body": "Mantener el reintento reactivo Cainiao con auditoría reversible y ampliar a otros carriers tras validar sus respuestas reales.",
+    "title": "Acotar y auditar primero",
+    "body": "Mantener la recuperación reactiva, conservar los tres valores originales y activar el pase preventivo global solo tras evidencia controlada por carrier.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente define el orden entre reintentos y notificación en el flujo Cainiao afectado.",
+    "reason": "El historial reciente le vincula directamente con el orden entre reintentos y avisos de errores Cainiao.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8000.md",
-    "reviewedAt": "2026-07-27T13:56:53.535Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000#issuecomment-5091267886",
+    "reviewedAt": "2026-07-27T13:55:36.613Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
