@@ -14,16 +14,16 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:blocked",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "clawsweeper:needs-security-review",
-      "issue-rating: 💎 diamond",
       "reporter:JavierHamelyn",
       "P1",
       "impact:security",
       "impact:other",
-      "clawsweeper:linked-pr-open"
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
     "updatedAt": "2026-07-27T10:21:45Z"
