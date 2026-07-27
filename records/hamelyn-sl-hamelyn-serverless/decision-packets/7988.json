@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T10:26:15.703Z",
-  "updatedAt": "2026-07-27T09:51:40Z",
+  "generatedAt": "2026-07-27T12:17:27.783Z",
+  "updatedAt": "2026-07-27T11:57:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,46 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7988",
     "state": "open",
     "labels": [
-      "size/L"
+      "size/L",
+      "P1",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-27T09:31:28Z",
-    "updatedAt": "2026-07-27T09:51:40Z",
-    "headSha": "9eab2ae92ed84267dad8a97530a7029e0c85700b"
+    "updatedAt": "2026-07-27T11:57:24Z",
+    "headSha": "f4ca9d048e23e1dd0be02945b799699171a98c2c"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe el export purge de Alibris abortar cuando `bq-freshness-gate` agote su espera, o se acepta publicar el snapshot stale?",
-  "rationale": "La acción compartida continúa tras el timeout, pero este flujo reemplaza el catálogo completo y la incidencia asociada dejó explícita esta decisión como pendiente.",
+  "question": "¿Autoriza el equipo el rollout escalonado que deja los schedules en Mongo hasta verificar materialización, backfill y una comparación BigQuery en producción?",
+  "rationale": "La rama ya contiene el mecanismo técnico y la prueba local, pero decidir cuándo un export purge puede cambiar de fuente exige aceptar una ventana de frescura y coordinar una operación fuera del código.",
   "options": [
     {
-      "title": "Abortar y usar rollback manual",
-      "body": "Fallar el run stale y dejar un dispatch explícito con `source=mongo` para preservar la exactitud normal del catálogo.",
+      "title": "Autorizar rollout escalonado",
+      "body": "Mergear a `dev` con `ALIBRIS_FORCE_MONGO_SOURCE=true`, completar y verificar el backfill, ejecutar un dry-run BigQuery y retirar la variable solo tras revisar la paridad.",
       "recommended": true
     },
     {
-      "title": "Aceptar datos stale",
-      "body": "Conservar el comportamiento actual del gate y publicar el TSV anterior tras avisar por Slack.",
-      "recommended": false
-    },
-    {
-      "title": "Cambiar a Mongo automáticamente",
-      "body": "Usar Mongo al vencer el gate, asumiendo carga adicional sobre el primario durante incidencias.",
+      "title": "Mantener Mongo temporalmente",
+      "body": "Conservar el kill switch y aplazar la activación de BigQuery hasta que exista evidencia operativa adicional del materializador y del backfill.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Abortar y usar rollback manual",
-    "body": "Fallar el run stale y dejar un dispatch explícito con `source=mongo` para preservar la exactitud normal del catálogo.",
+    "title": "Autorizar rollout escalonado",
+    "body": "Mergear a `dev` con `ALIBRIS_FORCE_MONGO_SOURCE=true`, completar y verificar el backfill, ejecutar un dry-run BigQuery y retirar la variable solo tras revisar la paridad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor original del flujo purge y ha mantenido sus protecciones operativas recientes.",
+    "reason": "Es el revisor solicitado y la persona con mayor continuidad en el comportamiento de export y upload de Alibris.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7988.md",
-    "reviewedAt": "2026-07-27T10:26:15.703Z",
-    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
+    "reviewedAt": "2026-07-27T12:17:27.783Z",
+    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
   }
 }
