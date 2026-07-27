@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T13:52:34.323Z",
-  "updatedAt": "2026-07-27T12:26:49Z",
+  "generatedAt": "2026-07-27T23:10:35.874Z",
+  "updatedAt": "2026-07-27T22:12:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-27T12:26:49Z",
+    "updatedAt": "2026-07-27T22:12:38Z",
     "headSha": "ef6497e9aedf43a3fbe060f6c0078fd25e10c515"
   },
-  "lane": "release_inclusion",
+  "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se acepta un corte de compatibilidad para clientes Supply ya distribuidos, o debe existir una vía de actualización obligatoria antes de activar el nuevo contrato de carrito?",
-  "rationale": "El cierre del IDOR requiere dejar de confiar en el contrato anterior, pero esos clientes no pueden enviar la capability ni usar el nuevo endpoint de merge.",
+  "question": "¿Se acepta una compatibilidad temporal de servidor para las builds Supply instaladas o se bloqueará el despliegue hasta garantizar su actualización?",
+  "rationale": "Ambas rutas modifican el límite de autorización y el comportamiento de usuarios existentes; el código no puede decidir por sí solo el riesgo operativo aceptable.",
   "options": [
     {
-      "title": "Coordinar actualización antes del corte",
-      "body": "Exigir una versión mínima o actualización obligatoria de Supply y demostrar la migración al nuevo token antes de desplegar el cambio.",
+      "title": "Añadir transición temporal",
+      "body": "Conservar un contrato limitado para clientes antiguos, acotado por versión o fecha, y probar que no reabre el IDOR.",
       "recommended": true
     },
     {
-      "title": "Aceptar la interrupción temporal",
-      "body": "Activar el contrato nuevo de inmediato y asumir que clientes antiguos deberán actualizarse tras recibir errores de carrito.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la activación",
-      "body": "Mantener el PR sin merge hasta definir una transición que no reabra el IDOR ni deje carritos inaccesibles.",
+      "title": "Exigir actualización previa",
+      "body": "Desplegar únicamente tras un gate de versión o rollout que demuestre que ninguna build antigua alcanza estas rutas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar actualización antes del corte",
-    "body": "Exigir una versión mínima o actualización obligatoria de Supply y demostrar la migración al nuevo token antes de desplegar el cambio.",
+    "title": "Añadir transición temporal",
+    "body": "Conservar un contrato limitado para clientes antiguos, acotado por versión o fecha, y probar que no reabre el IDOR.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su integración reciente de la rama y la asignación de revisión lo sitúan como el mejor punto de coordinación técnica del rollout.",
+    "reason": "Conoce el contrato previo del cliente Supply y ha revisado los riesgos de transición del PR.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-27T13:52:34.323Z",
+    "reviewedAt": "2026-07-27T23:10:35.874Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
