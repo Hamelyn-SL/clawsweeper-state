@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T08:07:42.317Z",
-  "updatedAt": "2026-07-27T07:57:33Z",
+  "generatedAt": "2026-07-27T08:17:21.690Z",
+  "updatedAt": "2026-07-27T08:12:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,47 @@
       "feature",
       "triage:running",
       "reporter:alejandrodiaz",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-27T06:40:39Z",
-    "updatedAt": "2026-07-27T07:57:33Z"
+    "updatedAt": "2026-07-27T08:12:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El fallback a Mongo debe ser automático ante falta de frescura o fallo de BigQuery, o debe requerir una selección explícita del operador?",
-  "rationale": "La elección determina si un problema de datos secundarios puede reintroducir carga en el primario o bloquear un export mensual.",
+  "question": "¿Los exports mensuales deben continuar con el último snapshot de BigQuery tras agotar el gate de frescura, o fallar para alertar de una materialización retrasada?",
+  "rationale": "Ambas opciones evitan MongoDB, pero difieren entre continuidad del informe y señalización estricta de datos retrasados.",
   "options": [
     {
-      "title": "Fallback explícito controlado",
-      "body": "Usar BigQuery por defecto y permitir Mongo únicamente mediante una entrada o variable de workflow documentada.",
+      "title": "Continuar con el último snapshot BigQuery",
+      "body": "Mantiene la entrega mensual con datos potencialmente retrasados y sigue el comportamiento ya documentado del gate.",
       "recommended": true
     },
     {
-      "title": "Fallback automático a Mongo",
-      "body": "Mantener la entrega mensual aunque BigQuery no esté disponible, aceptando que el cron pueda volver a cargar el primario.",
-      "recommended": false
-    },
-    {
-      "title": "Fallo cerrado con alerta",
-      "body": "No ejecutar el export si BigQuery o su frescura fallan y escalar la incidencia al equipo operador.",
+      "title": "Fallar el workflow",
+      "body": "Hace visible cualquier retraso de materialización, a costa de no publicar el export hasta resolverlo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fallback explícito controlado",
-    "body": "Usar BigQuery por defecto y permitir Mongo únicamente mediante una entrada o variable de workflow documentada.",
+    "title": "Continuar con el último snapshot BigQuery",
+    "body": "Mantiene la entrega mensual con datos potencialmente retrasados y sigue el comportamiento ya documentado del gate.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente en los workflows y en la iniciativa de reducción de carga le sitúa cerca de la política operativa.",
+    "reason": "Conecta el programa de reducción de carga MongoDB y los workflows que deben adoptar la política.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7974.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7974#issuecomment-5088895430",
-    "reviewedAt": "2026-07-27T08:07:42.317Z",
+    "reviewedAt": "2026-07-27T08:17:21.690Z",
     "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
   }
 }
