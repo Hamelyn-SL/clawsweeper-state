@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T00:22:06.314Z",
-  "updatedAt": "2026-07-27T00:16:34Z",
+  "generatedAt": "2026-07-27T10:25:17.240Z",
+  "updatedAt": "2026-07-27T10:12:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,50 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:done",
-      "impact:security",
-      "reporter:JavierHamelyn",
+      "triage:running",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-07-27T00:16:34Z"
+    "updatedAt": "2026-07-27T10:12:37Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe PR Proof pasar a bloquear por defecto cuando no obtiene un resultado terminal verificable, y qué evidencia mínima debe conservar cada ejecución?",
-  "rationale": "La corrección cruza semántica de checks, costes de ejecución, retención de artefactos y la frontera de seguridad del sandbox; no es una decisión mecánica de código.",
+  "question": "¿Se aprueba desplegar el controlador v2 con la GitHub App en staging y convertir `proof-evidence` en requerido únicamente después de un canario terminal correcto?",
+  "rationale": "El cambio altera el límite de confianza entre eventos de PR, credenciales de GitHub y sandboxes; la aceptación del riesgo operativo requiere una decisión humana.",
   "options": [
     {
-      "title": "Adoptar contrato fail-closed",
-      "body": "Esperar el estado terminal del mismo `runId`, fallar ante evidencia ausente y persistir manifiestos verificables por ejecución.",
+      "title": "Rollout gradual en staging",
+      "body": "Configurar la App y las credenciales, repetir el canario con trazas redacted y activar el check requerido solo si el mismo run alcanza un resultado terminal verificable.",
       "recommended": true
     },
     {
-      "title": "Mantener modo informativo",
-      "body": "Conservar Proof no bloqueante, pero diferenciar claramente aceptación, resultado terminal y evidencia insuficiente en el check y el body.",
+      "title": "Mantener el gate no obligatorio",
+      "body": "Integrar la infraestructura sin bloquear merges hasta disponer de observabilidad suficiente para diagnosticar rechazos de identidad y fallos de despliegue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar contrato fail-closed",
-    "body": "Esperar el estado terminal del mismo `runId`, fallar ante evidencia ausente y persistir manifiestos verificables por ejecución.",
+    "title": "Rollout gradual en staging",
+    "body": "Configurar la App y las credenciales, repetir el canario con trazas redacted y activar el check requerido solo si el mismo run alcanza un resultado terminal verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial cubre el endpoint, la ejecución y el sandbox que definen el contrato de Proof.",
+    "reason": "Ha llevado el contrato v2, el hotfix de identidad y el PR de rollout actualmente abierto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
-    "reviewedAt": "2026-07-27T00:22:06.314Z",
-    "mainSha": "799fe633acf95116c76b7c25d0e866401e49d675"
+    "reviewedAt": "2026-07-27T10:25:17.240Z",
+    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
   }
 }
