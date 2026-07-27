@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:41:09.244Z",
-  "updatedAt": "2026-07-21T12:18:30Z",
+  "generatedAt": "2026-07-27T08:17:06.022Z",
+  "updatedAt": "2026-07-27T06:30:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,46 +14,45 @@
       "app:infrastructure",
       "triage:blocked",
       "P1",
-      "impact:security",
-      "issue-rating: 🥈 silver",
-      "clawsweeper:not-repro-on-main",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:not-repro-on-main",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-12T13:55:30Z",
-    "updatedAt": "2026-07-21T12:18:30Z"
+    "updatedAt": "2026-07-27T06:30:17Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué responsable con acceso a Google Cloud, Atlas y GitHub Actions confirma la rotación, revocación y retirada segura de las variables duplicadas?",
-  "rationale": "El repositorio prueba el consumo por secretos, pero no puede observar ni ejecutar la revocación de identidades o los consumidores externos.",
+  "question": "¿Se autorizan la rotación y revocación externas, y la retirada de las variables de hooks tras confirmar que no tienen consumidores fuera de los workflows?",
+  "rationale": "El repositorio demuestra el uso de secretos, pero no puede probar el estado de la cuenta de Drive, Atlas ni de integraciones externas.",
   "options": [
     {
       "title": "Completar la remediación externa",
-      "body": "Rotar Drive, invalidar el acceso histórico de Atlas y retirar las variables de hooks después de un inventario externo.",
+      "body": "Rotar la clave de Drive, revocar o deshabilitar el acceso de Atlas y verificar los consumidores antes de borrar los hooks duplicados.",
       "recommended": true
     },
     {
-      "title": "Mantener hooks temporalmente",
-      "body": "Conservar las variables de hooks hasta identificar integraciones externas, con una fecha y responsable de retirada.",
+      "title": "Conservar temporalmente los hooks duplicados",
+      "body": "Mantenerlos hasta disponer de una confirmación operativa explícita sobre sus posibles consumidores externos.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Completar la remediación externa",
-    "body": "Rotar Drive, invalidar el acceso histórico de Atlas y retirar las variables de hooks después de un inventario externo.",
+    "body": "Rotar la clave de Drive, revocar o deshabilitar el acceso de Atlas y verificar los consumidores antes de borrar los hooks duplicados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el candidato técnico más cercano por el historial reciente de los workflows de despliegue y crons.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Es el asignado actual para coordinar la verificación operativa y el cierre seguro.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7399.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7399#issuecomment-4951659866",
-    "reviewedAt": "2026-07-21T13:41:09.244Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-07-27T08:17:06.022Z",
+    "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
   }
 }

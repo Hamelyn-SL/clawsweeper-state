@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:35:22.885Z",
-  "updatedAt": "2026-07-21T11:30:05Z",
+  "generatedAt": "2026-07-27T08:19:36.676Z",
+  "updatedAt": "2026-07-27T07:05:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "size/M",
+      "P1",
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 security-boundary",
       "proof: sufficient",
       "proof: 📸 screenshot",
-      "rating: 💎 diamond",
-      "status: 👀 ready for maintainer look",
-      "P1",
-      "merge-risk: 🚨 security-boundary"
+      "rating: 💎 diamond"
     ],
     "createdAt": "2026-07-21T09:49:32Z",
-    "updatedAt": "2026-07-21T11:30:05Z",
-    "headSha": "c27684ea9b275aa7b0594d42cd8ec4e23526479f"
+    "updatedAt": "2026-07-27T07:05:56Z",
+    "headSha": "6141bea4851d1b185b93cd2739f4e1dfa2668256"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿La lista permitida actual aporta suficiente contexto operativo sin registrar datos de transporte de AbeBooks?",
-  "rationale": "La elección entre máxima redacción y detalle diagnóstico define una frontera de seguridad y observabilidad que requiere intención humana explícita.",
+  "question": "¿Aceptamos que las alertas y logs de transporte conserven solo los metadatos permitidos, priorizando la no exposición de secretos frente a detalles de respuesta?",
+  "rationale": "El código puede verificar la ausencia de payloads, pero el nivel mínimo de diagnóstico operativo para AbeBooks es una decisión del equipo responsable de la integración.",
   "options": [
     {
-      "title": "Aprobar la lista permitida actual",
-      "body": "Conservar únicamente `name`, `message`, `code`, `status` y `method`, dejando el contexto XML seguro ya gestionado por la ruta de parser.",
+      "title": "Mantener la lista permitida",
+      "body": "Integrar `dev`, resolver los conflictos y conservar únicamente metadatos de transporte no sensibles tras repetir la prueba de redacción.",
       "recommended": true
     },
     {
-      "title": "Ampliar contexto redaccionado",
-      "body": "Añadir solo campos extraídos y validados de forma explícita, junto con pruebas que demuestren que no incluyen respuesta, XML autenticado ni cabeceras.",
+      "title": "Añadir campos operativos seguros",
+      "body": "Definir explícitamente campos adicionales permitidos antes del merge, sin volver a registrar XML, cuerpos, cabeceras ni URLs sensibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la lista permitida actual",
-    "body": "Conservar únicamente `name`, `message`, `code`, `status` y `method`, dejando el contexto XML seguro ya gestionado por la ruta de parser.",
+    "title": "Mantener la lista permitida",
+    "body": "Integrar `dev`, resolver los conflictos y conservar únicamente metadatos de transporte no sensibles tras repetir la prueba de redacción.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Es el revisor solicitado y su historial reciente en el archivo lo sitúa cerca de la política de observabilidad afectada.",
+    "reason": "Está asignado como revisor por experiencia directa en la integración y ha contribuido al endurecimiento final del digest.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7820.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7820#issuecomment-5033396121",
-    "reviewedAt": "2026-07-21T14:35:22.885Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-27T08:19:36.676Z",
+    "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
   }
 }
