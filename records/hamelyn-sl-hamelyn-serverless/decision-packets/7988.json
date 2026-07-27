@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T12:17:27.783Z",
-  "updatedAt": "2026-07-27T11:57:24Z",
+  "generatedAt": "2026-07-27T12:31:04.659Z",
+  "updatedAt": "2026-07-27T12:25:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P1",
-      "merge-risk: 🚨 compatibility"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-27T09:31:28Z",
-    "updatedAt": "2026-07-27T11:57:24Z",
+    "updatedAt": "2026-07-27T12:25:40Z",
     "headSha": "f4ca9d048e23e1dd0be02945b799699171a98c2c"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Autoriza el equipo el rollout escalonado que deja los schedules en Mongo hasta verificar materialización, backfill y una comparación BigQuery en producción?",
-  "rationale": "La rama ya contiene el mecanismo técnico y la prueba local, pero decidir cuándo un export purge puede cambiar de fuente exige aceptar una ventana de frescura y coordinar una operación fuera del código.",
+  "question": "¿Se aprueba integrar el código manteniendo `ALIBRIS_FORCE_MONGO_SOURCE=true` hasta completar y verificar el backfill histórico?",
+  "rationale": "La rama contiene el rollback necesario, pero decidir cuándo cambiar un export purge de producción a una réplica BigQuery depende de la validación operativa posterior al despliegue.",
   "options": [
     {
-      "title": "Autorizar rollout escalonado",
-      "body": "Mergear a `dev` con `ALIBRIS_FORCE_MONGO_SOURCE=true`, completar y verificar el backfill, ejecutar un dry-run BigQuery y retirar la variable solo tras revisar la paridad.",
+      "title": "Integrar con activación diferida",
+      "body": "Aceptar la rama, conservar el schedule en Mongo y retirar el kill switch solo tras el backfill y un dry-run BigQuery validado.",
       "recommended": true
     },
     {
-      "title": "Mantener Mongo temporalmente",
-      "body": "Conservar el kill switch y aplazar la activación de BigQuery hasta que exista evidencia operativa adicional del materializador y del backfill.",
+      "title": "Esperar al backfill",
+      "body": "Posponer el merge hasta que las columnas históricas estén rellenadas y pueda demostrarse la paridad sobre la tabla servida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar rollout escalonado",
-    "body": "Mergear a `dev` con `ALIBRIS_FORCE_MONGO_SOURCE=true`, completar y verificar el backfill, ejecutar un dry-run BigQuery y retirar la variable solo tras revisar la paridad.",
+    "title": "Integrar con activación diferida",
+    "body": "Aceptar la rama, conservar el schedule en Mongo y retirar el kill switch solo tras el backfill y un dry-run BigQuery validado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el revisor solicitado y la persona con mayor continuidad en el comportamiento de export y upload de Alibris.",
+    "reason": "Es el revisor asignado y figura como principal contribuidor histórico del flujo Alibris afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7988.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7988#issuecomment-5090252790",
-    "reviewedAt": "2026-07-27T12:17:27.783Z",
+    "reviewedAt": "2026-07-27T12:31:04.659Z",
     "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
   }
 }
