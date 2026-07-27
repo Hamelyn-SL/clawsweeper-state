@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T17:43:45.376Z",
-  "updatedAt": "2026-07-27T17:33:28Z",
+  "generatedAt": "2026-07-27T21:26:48.586Z",
+  "updatedAt": "2026-07-27T20:24:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "P1"
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-27T10:56:00Z",
-    "updatedAt": "2026-07-27T17:33:28Z",
-    "headSha": "d0af1fc02e1d7df0f8f3041cb45c818b7b286344"
+    "updatedAt": "2026-07-27T20:24:46Z",
+    "headSha": "acf6613ddfde2708de3543e271a4f3ee006aa918"
   },
-  "lane": "security_boundary",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Se autoriza ampliar la instalación de la GitHub App de Proof con los permisos mínimos de lectura y escritura de PR que exige esta rama?",
-  "rationale": "La corrección de código requiere cambiar una frontera de permisos operativa; decidir entre otorgarlos o rediseñar el flujo no es una reparación mecánica segura.",
+  "question": "¿Debe activarse el gate v2 como requisito de `dev` tras corregir los bypasses y ejecutar el canario completo de GitHub Actions?",
+  "rationale": "La decisión afecta a todos los merges y depende de permisos de GitHub App, despliegue y una prueba operativa que la revisión estática no puede sustituir.",
   "options": [
     {
-      "title": "Aprobar permisos mínimos",
-      "body": "Conceder los permisos declarados, documentarlos y validar el canario de staging antes de hacer obligatorio el gate.",
+      "title": "Corregir y canarizar antes de activar",
+      "body": "Corregir las dos rutas, añadir cobertura focalizada y habilitar el requisito solo tras observar un canario causal completo.",
       "recommended": true
     },
     {
-      "title": "Reducir el diseño",
-      "body": "Mantener la App solo para checks y conservar las lecturas o publicaciones en un componente con permisos ya aprobados.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el hardening",
-      "body": "Dejar el gate actual mientras se acuerda la propiedad y el alcance de la nueva App.",
+      "title": "Mantener el despliegue sin requisito",
+      "body": "Conservar el backend en observación mientras se recopila evidencia operativa adicional, sin bloquear merges todavía.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar permisos mínimos",
-    "body": "Conceder los permisos declarados, documentarlos y validar el canario de staging antes de hacer obligatorio el gate.",
+    "title": "Corregir y canarizar antes de activar",
+    "body": "Corregir las dos rutas, añadir cobertura focalizada y habilitar el requisito solo tras observar un canario causal completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor continuidad técnica en el protocolo, los canarios y el diseño de la App de Proof.",
+    "reason": "Es el principal autor del comportamiento actual de PR Proof integrado y de las correcciones recientes de identidad y evidencia.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
-    "reviewedAt": "2026-07-27T17:43:45.376Z",
+    "reviewedAt": "2026-07-27T21:26:48.586Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
