@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T10:24:24.376Z",
-  "updatedAt": "2026-07-27T10:21:45Z",
+  "generatedAt": "2026-07-27T17:23:49.504Z",
+  "updatedAt": "2026-07-27T17:15:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,49 @@
       "bug",
       "source:admin-panel",
       "app:infrastructure",
-      "triage:blocked",
+      "triage:queued",
       "P1",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
       "impact:security",
       "clawsweeper:needs-security-review",
       "issue-rating: 💎 diamond",
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-07-27T10:21:45Z"
+    "updatedAt": "2026-07-27T17:15:21Z"
   },
-  "lane": "security_boundary",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Debe activarse el gate autoritativo de Proof tras resolver el 403 de staging, o mantenerse el flujo actual no bloqueante hasta completar esa certificación?",
-  "rationale": "La decisión combina credenciales de la GitHub App, despliegue de Vercel y el comportamiento fail-closed de un check que condiciona merges.",
+  "question": "¿Debe la PR https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994 dejar de cerrar esta issue y continuar como hardening independiente?",
+  "rationale": "El problema reportado está resuelto en `dev`, pero la PR abierta mezcla cambios de seguridad y automatización más amplios bajo la misma sintaxis de cierre.",
   "options": [
     {
-      "title": "Certificar y activar v2",
-      "body": "Resolver el rollout, repetir el canario con estado terminal y revisar la PR abierta antes de hacer autoritativo el check.",
+      "title": "Separar el seguimiento",
+      "body": "Cambiar la PR para que referencie un seguimiento de hardening independiente y cerrar esta issue como implementada en `dev`.",
       "recommended": true
     },
     {
-      "title": "Mantener el gate actual temporalmente",
-      "body": "Dejar Proof como señal no autoritativa hasta contar con evidencia de staging y un diagnóstico reproducible del HTTP 403.",
+      "title": "Mantener el enlace actual",
+      "body": "Conservar esta issue abierta hasta que la PR aporte prueba concluyente y se decida si su alcance adicional forma parte del arreglo original.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Certificar y activar v2",
-    "body": "Resolver el rollout, repetir el canario con estado terminal y revisar la PR abierta antes de hacer autoritativo el check.",
+    "title": "Separar el seguimiento",
+    "body": "Cambiar la PR para que referencie un seguimiento de hardening independiente y cerrar esta issue como implementada en `dev`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a esta issue y concentra los cambios recientes de contrato, sandbox e identidad del flujo.",
+    "reason": "Es la persona con mayor continuidad en los commits, canarios y PRs del protocolo Proof.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewedAt": "2026-07-27T10:24:24.376Z",
-    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
+    "reviewedAt": "2026-07-27T17:23:49.504Z",
+    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
