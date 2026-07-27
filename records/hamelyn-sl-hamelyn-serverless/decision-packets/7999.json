@@ -16,11 +16,9 @@
       "triage:running",
       "reporter:irenegarcia",
       "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
+      "issue-rating: ⚪ platinum",
       "P0",
-      "impact:ux-release-blocker",
-      "issue-rating: ⚪ platinum"
+      "impact:ux-release-blocker"
     ],
     "createdAt": "2026-07-27T11:56:55Z",
     "updatedAt": "2026-07-27T12:12:40Z"
@@ -53,6 +51,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7999.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7999#issuecomment-5091063584",
     "reviewedAt": "2026-07-27T12:15:37.456Z",
     "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
   }
