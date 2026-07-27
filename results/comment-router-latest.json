@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-27T11:31:40.177Z",
+  "generated_at": "2026-07-27T12:40:52.776Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-27T08:31:37.110Z",
+  "since": "2026-07-27T09:40:50.349Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -29,9 +29,9 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7981:5089156999:2026-07-27T10:33:20Z:automerge",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7981:5089156999:2026-07-27T12:25:15Z:automerge",
       "comment_id": "5089156999",
-      "comment_version_key": "5089156999:2026-07-27T10:33:20Z",
+      "comment_version_key": "5089156999:2026-07-27T12:25:15Z",
       "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7981#issuecomment-5089156999",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
@@ -40,7 +40,7 @@
       "author_id": 301054459,
       "author_association": "NONE",
       "comment_created_at": "2026-07-27T08:41:11Z",
-      "comment_updated_at": "2026-07-27T10:33:20Z",
+      "comment_updated_at": "2026-07-27T12:25:15Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -52,8 +52,8 @@
       "trusted_bot_author": null,
       "automation_source": null,
       "repair_reason": null,
-      "review_summary": "La PR pasa el feed diario de IndexNow a BigQuery por defecto, conserva Mongo como fallback y espera la materialización diaria antes de los runs programados.\n\nReproducibility: Sí, desde el código: con unas 740.319 URLs hay alrededor de 75 lotes; el gate y los timeouts configurados permiten superar el límite nuevo de 45 minutos.",
-      "review_followup": "- [P1] Hay una corrección mecánica localizada en el workflow; la prueba de comportamiento real seguirá siendo un requisito del autor antes de fusionar.",
+      "review_summary": "La PR cambia el cron diario de IndexNow para seleccionar productos desde BigQuery, con fallback manual a Mongo y un gate de frescura antes de los runs programados.\n\nReproducibility: Sí, por código: una espera completa del gate más lotes con solicitudes cercanas a 30 segundos excede el nuevo presupuesto de 45 minutos.",
+      "review_followup": "- [P2] Hay una corrección mecánica y localizada del timeout; la prueba real del autor continúa siendo un requisito separado antes del merge.",
       "freeform_prompt": null,
       "visual_lens": null,
       "expected_head_sha": null,
@@ -112,15 +112,15 @@
     }
   ],
   "timings": {
-    "total_ms": 3067,
+    "total_ms": 2427,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1767
+        "ms": 1324
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1292
+        "ms": 1097
       },
       {
         "name": "classify_comment_commands",
