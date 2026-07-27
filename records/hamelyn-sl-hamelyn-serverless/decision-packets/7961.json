@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T06:16:01.131Z",
+  "updatedAt": "2026-07-27T05:58:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7961,
+    "title": "eBay ES creation queue drains far below configured throughput",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-07-27T05:58:02Z",
+    "updatedAt": "2026-07-27T05:58:12Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué incidente de creación justificó la pausa de junio y qué criterio verificable permite reactivar eBay ES sin repetirlo?",
+  "rationale": "El código confirma que no existe consumidor, pero no conserva la causa técnica ni una condición de salida para retirar el hotfix temporal.",
+  "options": [
+    {
+      "title": "Diagnosticar y reactivar controladamente",
+      "body": "Recuperar el incidente original, corregirlo y habilitar creación con observabilidad de outcomes antes de ampliar el ritmo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la pausa",
+      "body": "Conservar la creación desactivada si el incidente sigue activo, documentando la decisión y el impacto de cola.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Diagnosticar y reactivar controladamente",
+    "body": "Recuperar el incidente original, corregirlo y habilitar creación con observabilidad de outcomes antes de ampliar el ritmo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "La pausa temporal procede de su cambio y de la PR que describió el incidente pendiente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7961.md",
+    "reviewedAt": "2026-07-27T06:16:01.131Z",
+    "mainSha": "799fe633acf95116c76b7c25d0e866401e49d675"
+  }
+}
