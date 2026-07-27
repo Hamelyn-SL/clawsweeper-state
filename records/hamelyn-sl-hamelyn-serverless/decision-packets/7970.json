@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T08:24:14.262Z",
+  "generatedAt": "2026-07-27T08:19:48.533Z",
   "updatedAt": "2026-07-27T06:56:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,51 +14,52 @@
       "feature",
       "triage:blocked",
       "reporter:alejandrodiaz",
+      "P2",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-27T06:40:32Z",
     "updatedAt": "2026-07-27T06:56:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el export diario abortar al vencer la frescura de BigQuery y requerir `source=mongo` manual, o se acepta publicar un catálogo potencialmente stale?",
-  "rationale": "La acción de frescura existente permite continuar con datos anteriores, mientras este flujo purge puede reemplazar el catálogo entero y la issue solo define rollback manual.",
+  "question": "¿Debe el export purge de Alibris continuar con una réplica BigQuery stale tras el timeout del gate, o abortar hasta disponer de un marcador fresco?",
+  "rationale": "La acción compartida continúa con datos anteriores, pero un fichero purge representa el catálogo completo y la issue no establece la tolerancia de datos stale tras el timeout.",
   "options": [
     {
-      "title": "Abortar y permitir rollback manual",
-      "body": "Si el marcador no está fresco tras el timeout, fallar el run y exigir un dispatch explícito con `source=mongo`.",
+      "title": "Abortar si no hay frescura",
+      "body": "No generar ni subir el purge cuando el marcador de `mongodata.stocks` no alcance el bucket esperado.",
       "recommended": true
     },
     {
-      "title": "Aceptar datos stale",
-      "body": "Mantener el comportamiento de la acción compartida y publicar el TSV aunque el snapshot horario esté retrasado.",
+      "title": "Permitir stale acotado",
+      "body": "Continuar tras el timeout con una antigüedad máxima explícita y alerta operativa, asumiendo el retraso del catálogo.",
       "recommended": false
     },
     {
-      "title": "Fallback automático a Mongo",
-      "body": "Cambiar automáticamente a Mongo cuando falte frescura, aceptando que el cron vuelva a cargar el primario en incidentes.",
+      "title": "Mantener Mongo como fuente por defecto",
+      "body": "Posponer el cambio de fuente hasta observar más ciclos de frescura y paridad en producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Abortar y permitir rollback manual",
-    "body": "Si el marcador no está fresco tras el timeout, fallar el run y exigir un dispatch explícito con `source=mongo`.",
+    "title": "Abortar si no hay frescura",
+    "body": "No generar ni subir el purge cuando el marcador de `mongodata.stocks` no alcance el bucket esperado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo el export de Alibris y puede decidir el contrato operativo de un catálogo purge.",
+    "reason": "Su historial cubre el flujo de exportación y el workflow cuyo contrato operativo debe preservarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7970.md",
-    "reviewedAt": "2026-07-27T08:24:14.262Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7970#issuecomment-5088194594",
+    "reviewedAt": "2026-07-27T08:19:48.533Z",
     "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
   }
 }
