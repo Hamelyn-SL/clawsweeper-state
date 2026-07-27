@@ -1,20 +1,5 @@
 [
   {
-    "number": 7530,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7951,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7959,
-    "action": "skipped_changed_since_review",
-    "reason": "live PR head 25858de5d29802c4173db8b264cfeac413a11d60 differs from reviewed head 08448d8c7a43d02aae90c025e8b9b8f1b1971b5e"
-  },
-  {
     "number": 7970,
     "action": "review_comment_synced",
     "reason": "updated durable Codex review comment"
@@ -30,37 +15,12 @@
     "reason": "updated durable Codex review comment"
   },
   {
-    "number": 7978,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7979,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7981,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7982,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
-  },
-  {
     "number": 7985,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
+    "action": "skipped_already_closed",
+    "reason": "state is closed"
   },
   {
-    "number": 7987,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7988,
+    "number": 7992,
     "action": "review_comment_synced",
     "reason": "updated durable Codex review comment"
   }
