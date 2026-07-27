@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T17:43:45.376Z",
+  "updatedAt": "2026-07-27T17:33:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7994,
+    "title": "fix: harden PR proof evidence gate",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-07-27T10:56:00Z",
+    "updatedAt": "2026-07-27T17:33:28Z",
+    "headSha": "d0af1fc02e1d7df0f8f3041cb45c818b7b286344"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Se autoriza ampliar la instalación de la GitHub App de Proof con los permisos mínimos de lectura y escritura de PR que exige esta rama?",
+  "rationale": "La corrección de código requiere cambiar una frontera de permisos operativa; decidir entre otorgarlos o rediseñar el flujo no es una reparación mecánica segura.",
+  "options": [
+    {
+      "title": "Aprobar permisos mínimos",
+      "body": "Conceder los permisos declarados, documentarlos y validar el canario de staging antes de hacer obligatorio el gate.",
+      "recommended": true
+    },
+    {
+      "title": "Reducir el diseño",
+      "body": "Mantener la App solo para checks y conservar las lecturas o publicaciones en un componente con permisos ya aprobados.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el hardening",
+      "body": "Dejar el gate actual mientras se acuerda la propiedad y el alcance de la nueva App.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar permisos mínimos",
+    "body": "Conceder los permisos declarados, documentarlos y validar el canario de staging antes de hacer obligatorio el gate.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad técnica en el protocolo, los canarios y el diseño de la App de Proof.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
+    "reviewedAt": "2026-07-27T17:43:45.376Z",
+    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+  }
+}
