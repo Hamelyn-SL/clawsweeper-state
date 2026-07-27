@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T12:18:38.398Z",
-  "updatedAt": "2026-07-27T11:18:33Z",
+  "generatedAt": "2026-07-27T13:52:34.323Z",
+  "updatedAt": "2026-07-27T12:26:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-27T11:18:33Z",
+    "updatedAt": "2026-07-27T12:26:49Z",
     "headSha": "ef6497e9aedf43a3fbe060f6c0078fd25e10c515"
   },
   "lane": "release_inclusion",
   "priority": "P0",
-  "question": "¿Debe exigirse una versión mínima de Supply o coordinarse un despliegue que garantice soporte de `x-cart-token` antes de activar esta API?",
-  "rationale": "El cambio elimina un IDOR, pero el backend y las aplicaciones móviles no se actualizan de forma atómica; elegir la transición segura requiere responsabilidad de release.",
+  "question": "¿Se acepta un corte de compatibilidad para clientes Supply ya distribuidos, o debe existir una vía de actualización obligatoria antes de activar el nuevo contrato de carrito?",
+  "rationale": "El cierre del IDOR requiere dejar de confiar en el contrato anterior, pero esos clientes no pueden enviar la capability ni usar el nuevo endpoint de merge.",
   "options": [
     {
-      "title": "Coordinar actualización obligatoria",
-      "body": "Publicar o exigir primero una versión de Supply que persista y envíe `cartToken`, y después activar la API protegida.",
+      "title": "Coordinar actualización antes del corte",
+      "body": "Exigir una versión mínima o actualización obligatoria de Supply y demostrar la migración al nuevo token antes de desplegar el cambio.",
       "recommended": true
     },
     {
       "title": "Aceptar la interrupción temporal",
-      "body": "Fusionar y asumir que las versiones anteriores de Supply perderán acceso a los carritos recién creados hasta actualizarse.",
+      "body": "Activar el contrato nuevo de inmediato y asumir que clientes antiguos deberán actualizarse tras recibir errores de carrito.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta definir el rollout",
-      "body": "Mantener el PR abierto hasta disponer de un plan de versión mínima, activación o recuperación segura.",
+      "title": "Pausar la activación",
+      "body": "Mantener el PR sin merge hasta definir una transición que no reabra el IDOR ni deje carritos inaccesibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar actualización obligatoria",
-    "body": "Publicar o exigir primero una versión de Supply que persista y envíe `cartToken`, y después activar la API protegida.",
+    "title": "Coordinar actualización antes del corte",
+    "body": "Exigir una versión mínima o actualización obligatoria de Supply y demostrar la migración al nuevo token antes de desplegar el cambio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es revisor solicitado y participó en la integración reciente de la rama de seguridad.",
-    "confidence": "medium"
+    "reason": "Su integración reciente de la rama y la asignación de revisión lo sitúan como el mejor punto de coordinación técnica del rollout.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-27T12:18:38.398Z",
-    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+    "reviewedAt": "2026-07-27T13:52:34.323Z",
+    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }

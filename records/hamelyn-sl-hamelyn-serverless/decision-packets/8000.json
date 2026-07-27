@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T12:22:02.150Z",
-  "updatedAt": "2026-07-27T12:00:47Z",
+  "generatedAt": "2026-07-27T13:55:36.613Z",
+  "updatedAt": "2026-07-27T13:33:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,47 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000",
     "state": "open",
     "labels": [
-      "size/XL"
+      "size/XXL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-27T12:00:38Z",
-    "updatedAt": "2026-07-27T12:00:47Z",
-    "headSha": "a32012ee1e098e899699f4d9d628cb9f8e0630f2"
+    "updatedAt": "2026-07-27T13:33:06Z",
+    "headSha": "b7feebee4b56f45b8bb5e8226f48dceb678500c1"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la recuperación automática persistir provincia y municipio en el pedido, o limitarse a usarlos para el reintento mientras se valida la política de corrección automática?",
-  "rationale": "La incidencia canónica deja pendiente qué campos pueden corregirse automáticamente; esa política afecta a datos persistidos y no puede deducirse solo del código.",
+  "question": "¿Debe la corrección automática y global de provincia/municipio sobrescribir direcciones operativas de todos los carriers, y qué política de reversión y aviso debe acompañarla?",
+  "rationale": "El código puede corregir los defectos mecánicos, pero la extensión de una corrección automática a todos los carriers cambia una decisión operativa sobre datos de destinatario.",
   "options": [
     {
-      "title": "Persistir con procedencia reversible",
-      "body": "Guardar los valores originales de provincia y municipio junto con los resueltos y permitir el reintento Cainiao tras una prueba real.",
+      "title": "Acotar y auditar primero",
+      "body": "Mantener la recuperación reactiva, conservar los tres valores originales y activar el pase preventivo global solo tras evidencia controlada por carrier.",
       "recommended": true
     },
     {
-      "title": "Corregir solo durante el reintento",
-      "body": "Usar los valores resueltos en la petición de Cainiao sin reemplazar la dirección canónica del pedido hasta acordar la política.",
+      "title": "Aceptar el alcance global",
+      "body": "Autorizar la sobrescritura preventiva para todos los carriers con auditoría completa, límites de alertas y prueba operativa previa.",
       "recommended": false
     },
     {
-      "title": "Pausar la ampliación de campos",
-      "body": "Mantener la recuperación actual de CP y separar provincia y municipio en una propuesta con evidencia operativa adicional.",
+      "title": "Limitarlo a Cainiao",
+      "body": "Conservar la recuperación específica de Cainiao hasta caracterizar los mensajes y contratos de los demás carriers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir con procedencia reversible",
-    "body": "Guardar los valores originales de provincia y municipio junto con los resueltos y permitir el reintento Cainiao tras una prueba real.",
+    "title": "Acotar y auditar primero",
+    "body": "Mantener la recuperación reactiva, conservar los tres valores originales y activar el pase preventivo global solo tras evidencia controlada por carrier.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre los reintentos de etiquetas y la notificación de fallos agotados.",
-    "confidence": "medium"
+    "reason": "El historial reciente le vincula directamente con el orden entre reintentos y avisos de errores Cainiao.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8000.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000#issuecomment-5091267886",
-    "reviewedAt": "2026-07-27T12:22:02.150Z",
-    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+    "reviewedAt": "2026-07-27T13:55:36.613Z",
+    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }

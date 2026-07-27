@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T13:51:36.493Z",
+  "updatedAt": "2026-07-27T12:28:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7998,
+    "title": "Increase Amazon SE listing creation throughput for the persistent backlog",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7998",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-27T11:39:40Z",
+    "updatedAt": "2026-07-27T12:28:02Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el equipo mantener la cadencia actual hasta cerrar la medición de 48 horas, o autoriza un ajuste adicional de pacing pese al riesgo de solape?",
+  "rationale": "El código ya admite el lote vivo y la siguiente modificación afecta cuotas, duración y concurrencia de un flujo de producción; las métricas pendientes no permiten inferir ese umbral con seguridad.",
+  "options": [
+    {
+      "title": "Esperar la ventana acordada",
+      "body": "Conservar `create=200` y decidir con snapshots de 48 horas que incluyan altas efectivas, 429 y 504.",
+      "recommended": true
+    },
+    {
+      "title": "Aumentar pacing ahora",
+      "body": "Modificar lote o frecuencia de forma limitada y asumir una validación reforzada de solapes, cuotas y duración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Esperar la ventana acordada",
+    "body": "Conservar `create=200` y decidir con snapshots de 48 horas que incluyan altas efectivas, 429 y 504.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el contribuidor más reciente con cambios específicos en Amazon SE y en la lógica compartida del marketplace.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7998.md",
+    "reviewedAt": "2026-07-27T13:51:36.493Z",
+    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+  }
+}
