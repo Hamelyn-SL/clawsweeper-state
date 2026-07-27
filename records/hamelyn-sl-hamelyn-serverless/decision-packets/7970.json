@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T06:51:33.041Z",
+  "updatedAt": "2026-07-27T06:42:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7970,
+    "title": "feat: migrate alibris inventory export to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7970",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:running",
+      "reporter:alejandrodiaz",
+      "P2"
+    ],
+    "createdAt": "2026-07-27T06:40:32Z",
+    "updatedAt": "2026-07-27T06:42:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que el export programado de Alibris use BigQuery como fuente por defecto, manteniendo MongoDB solo como rollback manual?",
+  "rationale": "El patrón técnico existe, pero aceptar datos horarios para un catálogo purge/replace y definir el rollback afecta a la operación del marketplace.",
+  "options": [
+    {
+      "title": "Aprobar migración gradual",
+      "body": "Usar BigQuery por defecto con gate KV y mantener `source=mongo` únicamente en el dispatch manual.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener Mongo temporalmente",
+      "body": "Posponer el cambio hasta disponer de una comprobación operativa adicional de paridad y frescura del TSV.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar migración gradual",
+    "body": "Usar BigQuery por defecto con gate KV y mantener `source=mongo` únicamente en el dispatch manual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial cubre el flujo productivo de Alibris y sus salvaguardas de publicación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7970.md",
+    "reviewedAt": "2026-07-27T06:51:33.041Z",
+    "mainSha": "2ab2c68a88092ae3c3e300d29323927f11e717c4"
+  }
+}
