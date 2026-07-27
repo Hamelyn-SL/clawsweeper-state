@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-27T01:09:55.707Z",
+  "generatedAt": "2026-07-27T07:48:51.476Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 112
+    "openItemsSeen": 121
   },
   "counts": {
-    "itemRecords": 107,
-    "closedRecords": 629,
-    "missingOpen": 5,
+    "itemRecords": 109,
+    "closedRecords": 636,
+    "missingOpen": 12,
     "missingEligibleOpen": 1,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 2,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 9,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -52,7 +52,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-22T08:25:15Z",
-        "updatedAt": "2026-07-22T09:27:16Z",
+        "updatedAt": "2026-07-27T07:42:34Z",
         "missingReason": "protected_label"
       },
       {
@@ -64,31 +64,141 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-24T13:29:53Z",
-        "updatedAt": "2026-07-26T18:15:48Z",
+        "updatedAt": "2026-07-27T07:22:42Z",
         "missingReason": "eligible"
       },
       {
-        "number": 7955,
+        "number": 7967,
         "kind": "pull_request",
-        "title": "fix: manage mobile filter dialog focus",
+        "title": "chore(deps): bump requests from 2.32.3 to 2.33.0 in /.github/scripts",
+        "labels": [
+          "size/XS",
+          "dependencies",
+          "python"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-27T06:39:00Z",
+        "updatedAt": "2026-07-27T06:39:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7969,
+        "kind": "issue",
+        "title": "feat: migrate ecommerce sitemaps generation to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:queued",
+          "reporter:alejandrodiaz",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:30Z",
+        "updatedAt": "2026-07-27T06:41:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7971,
+        "kind": "issue",
+        "title": "feat: migrate category stock counts aggregation to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:34Z",
+        "updatedAt": "2026-07-27T07:02:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7972,
+        "kind": "issue",
+        "title": "feat: migrate index-now product feed to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:blocked",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:36Z",
+        "updatedAt": "2026-07-27T07:31:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7973,
+        "kind": "issue",
+        "title": "feat: migrate discogs and fnac report reads to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:blocked",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:38Z",
+        "updatedAt": "2026-07-27T07:26:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7974,
+        "kind": "issue",
+        "title": "feat: migrate monthly ordersell exports to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:queued",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:39Z",
+        "updatedAt": "2026-07-27T06:40:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7975,
+        "kind": "issue",
+        "title": "feat: migrate skypod monthly differences scan to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:running",
+          "reporter:alejandrodiaz",
+          "P3"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:42Z",
+        "updatedAt": "2026-07-27T07:42:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7977,
+        "kind": "pull_request",
+        "title": "ci: exclude supply from major dependency updates",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:58:56Z",
+        "updatedAt": "2026-07-27T07:03:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7978,
+        "kind": "pull_request",
+        "title": "feat: deterministic pdp bestsellers and taxonomic breadcrumb",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-27T00:26:24Z",
-        "updatedAt": "2026-07-27T01:02:30Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7957,
-        "kind": "pull_request",
-        "title": "fix: validate catalog search page size",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-27T00:37:44Z",
-        "updatedAt": "2026-07-27T00:43:11Z",
+        "createdAt": "2026-07-27T07:25:29Z",
+        "updatedAt": "2026-07-27T07:25:38Z",
         "missingReason": "recently_created"
       }
     ],
@@ -102,7 +212,7 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-24T13:29:53Z",
-        "updatedAt": "2026-07-26T18:15:48Z",
+        "updatedAt": "2026-07-27T07:22:42Z",
         "missingReason": "eligible"
       }
     ],
@@ -138,33 +248,143 @@
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-22T08:25:15Z",
-        "updatedAt": "2026-07-22T09:27:16Z",
+        "updatedAt": "2026-07-27T07:42:34Z",
         "missingReason": "protected_label"
       }
     ],
     "missingRecentOpen": [
       {
-        "number": 7955,
+        "number": 7967,
         "kind": "pull_request",
-        "title": "fix: manage mobile filter dialog focus",
+        "title": "chore(deps): bump requests from 2.32.3 to 2.33.0 in /.github/scripts",
+        "labels": [
+          "size/XS",
+          "dependencies",
+          "python"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-07-27T06:39:00Z",
+        "updatedAt": "2026-07-27T06:39:19Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7969,
+        "kind": "issue",
+        "title": "feat: migrate ecommerce sitemaps generation to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:queued",
+          "reporter:alejandrodiaz",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:30Z",
+        "updatedAt": "2026-07-27T06:41:54Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7971,
+        "kind": "issue",
+        "title": "feat: migrate category stock counts aggregation to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:done",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:34Z",
+        "updatedAt": "2026-07-27T07:02:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7972,
+        "kind": "issue",
+        "title": "feat: migrate index-now product feed to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:blocked",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:36Z",
+        "updatedAt": "2026-07-27T07:31:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7973,
+        "kind": "issue",
+        "title": "feat: migrate discogs and fnac report reads to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:blocked",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:38Z",
+        "updatedAt": "2026-07-27T07:26:10Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7974,
+        "kind": "issue",
+        "title": "feat: migrate monthly ordersell exports to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:queued",
+          "reporter:alejandrodiaz",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:39Z",
+        "updatedAt": "2026-07-27T06:40:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7975,
+        "kind": "issue",
+        "title": "feat: migrate skypod monthly differences scan to bigquery source",
+        "labels": [
+          "app:infrastructure",
+          "feature",
+          "triage:running",
+          "reporter:alejandrodiaz",
+          "P3"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:40:42Z",
+        "updatedAt": "2026-07-27T07:42:35Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7977,
+        "kind": "pull_request",
+        "title": "ci: exclude supply from major dependency updates",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T06:58:56Z",
+        "updatedAt": "2026-07-27T07:03:31Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7978,
+        "kind": "pull_request",
+        "title": "feat: deterministic pdp bestsellers and taxonomic breadcrumb",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-27T00:26:24Z",
-        "updatedAt": "2026-07-27T01:02:30Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 7957,
-        "kind": "pull_request",
-        "title": "fix: validate catalog search page size",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-27T00:37:44Z",
-        "updatedAt": "2026-07-27T00:43:11Z",
+        "createdAt": "2026-07-27T07:25:29Z",
+        "updatedAt": "2026-07-27T07:25:38Z",
         "missingReason": "recently_created"
       }
     ],
