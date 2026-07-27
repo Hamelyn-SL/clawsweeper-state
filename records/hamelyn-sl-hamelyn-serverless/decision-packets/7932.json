@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T12:24:18.043Z",
-  "updatedAt": "2026-07-24T11:49:11Z",
+  "generatedAt": "2026-07-27T06:07:00.908Z",
+  "updatedAt": "2026-07-27T05:57:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,45 +10,45 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7932",
     "state": "open",
     "labels": [
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
+      "size/XL",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-24T11:49:11Z",
-    "updatedAt": "2026-07-24T11:49:11Z",
-    "headSha": "f393fd1c3c9a1241afde5ab765cf4da5e914815b"
+    "updatedAt": "2026-07-27T05:57:15Z",
+    "headSha": "05b04970f602e50c445aeb8a5f76d331390039f5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que los sitemaps pasen de una fuente Mongo cada seis horas a una réplica BigQuery diaria con rollback manual a Mongo?",
-  "rationale": "El cambio reduce carga del primario, pero modifica deliberadamente la latencia máxima con la que productos y grupos llegan al sitemap.",
+  "question": "¿Se acepta para SEO que los sitemaps usen un snapshot diario de BigQuery y que, tras 20 minutos de espera, publiquen el último snapshot disponible?",
+  "rationale": "La PR cambia deliberadamente la cadencia y la fuente de verdad de un output público; esa tolerancia de frescura no puede decidirse solo con comprobaciones estáticas.",
   "options": [
     {
-      "title": "Aceptar la cadencia diaria tras prueba",
-      "body": "Aprobar BigQuery como fuente predeterminada después de integrar la dependencia y verificar paridad operativa con el rollback Mongo.",
+      "title": "Aceptar el modelo diario con fallback",
+      "body": "Confirmar la tolerancia de SEO y fusionar tras completar la documentación y la prueba real del workflow.",
       "recommended": true
     },
     {
-      "title": "Mantener la cadencia anterior",
-      "body": "Conservar la frecuencia de seis horas hasta disponer de una réplica de productos con una frescura compatible con ese contrato.",
+      "title": "Mantener mayor frescura",
+      "body": "Conservar Mongo por defecto o definir una materialización incremental antes de sustituir la cadencia de seis horas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la cadencia diaria tras prueba",
-    "body": "Aprobar BigQuery como fuente predeterminada después de integrar la dependencia y verificar paridad operativa con el rollback Mongo.",
+    "title": "Aceptar el modelo diario con fallback",
+    "body": "Confirmar la tolerancia de SEO y fusionar tras completar la documentación y la prueba real del workflow.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es autor del objetivo de migración que define la tolerancia de frescura y ha mantenido recientemente los workflows relacionados.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona más conectada con el comportamiento actual de sitemaps y fue solicitada como revisora de esta migración.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7932.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7932#issuecomment-5069824078",
-    "reviewedAt": "2026-07-24T12:24:18.043Z",
-    "mainSha": "91e58ae7051a9c48e457b151a14d8cb9821488eb"
+    "reviewedAt": "2026-07-27T06:07:00.908Z",
+    "mainSha": "799fe633acf95116c76b7c25d0e866401e49d675"
   }
 }
