@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T10:25:17.240Z",
-  "updatedAt": "2026-07-27T10:12:37Z",
+  "generatedAt": "2026-07-27T10:24:24.376Z",
+  "updatedAt": "2026-07-27T10:21:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -26,38 +26,37 @@
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-07-27T10:12:37Z"
+    "updatedAt": "2026-07-27T10:21:45Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se aprueba desplegar el controlador v2 con la GitHub App en staging y convertir `proof-evidence` en requerido únicamente después de un canario terminal correcto?",
-  "rationale": "El cambio altera el límite de confianza entre eventos de PR, credenciales de GitHub y sandboxes; la aceptación del riesgo operativo requiere una decisión humana.",
+  "question": "¿Debe activarse el gate autoritativo de Proof tras resolver el 403 de staging, o mantenerse el flujo actual no bloqueante hasta completar esa certificación?",
+  "rationale": "La decisión combina credenciales de la GitHub App, despliegue de Vercel y el comportamiento fail-closed de un check que condiciona merges.",
   "options": [
     {
-      "title": "Rollout gradual en staging",
-      "body": "Configurar la App y las credenciales, repetir el canario con trazas redacted y activar el check requerido solo si el mismo run alcanza un resultado terminal verificable.",
+      "title": "Certificar y activar v2",
+      "body": "Resolver el rollout, repetir el canario con estado terminal y revisar la PR abierta antes de hacer autoritativo el check.",
       "recommended": true
     },
     {
-      "title": "Mantener el gate no obligatorio",
-      "body": "Integrar la infraestructura sin bloquear merges hasta disponer de observabilidad suficiente para diagnosticar rechazos de identidad y fallos de despliegue.",
+      "title": "Mantener el gate actual temporalmente",
+      "body": "Dejar Proof como señal no autoritativa hasta contar con evidencia de staging y un diagnóstico reproducible del HTTP 403.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rollout gradual en staging",
-    "body": "Configurar la App y las credenciales, repetir el canario con trazas redacted y activar el check requerido solo si el mismo run alcanza un resultado terminal verificable.",
+    "title": "Certificar y activar v2",
+    "body": "Resolver el rollout, repetir el canario con estado terminal y revisar la PR abierta antes de hacer autoritativo el check.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha llevado el contrato v2, el hotfix de identidad y el PR de rollout actualmente abierto.",
+    "reason": "Está asignado a esta issue y concentra los cambios recientes de contrato, sandbox e identidad del flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
-    "reviewedAt": "2026-07-27T10:25:17.240Z",
+    "reviewedAt": "2026-07-27T10:24:24.376Z",
     "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
   }
 }

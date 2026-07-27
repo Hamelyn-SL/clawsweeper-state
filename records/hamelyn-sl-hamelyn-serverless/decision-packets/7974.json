@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T08:17:21.690Z",
-  "updatedAt": "2026-07-27T08:12:27Z",
+  "generatedAt": "2026-07-27T10:25:28.924Z",
+  "updatedAt": "2026-07-27T08:27:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,7 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
+      "triage:pr-opened",
       "reporter:alejandrodiaz",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -24,38 +24,37 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-27T06:40:39Z",
-    "updatedAt": "2026-07-27T08:12:27Z"
+    "updatedAt": "2026-07-27T08:27:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Los exports mensuales deben continuar con el último snapshot de BigQuery tras agotar el gate de frescura, o fallar para alertar de una materialización retrasada?",
-  "rationale": "Ambas opciones evitan MongoDB, pero difieren entre continuidad del informe y señalización estricta de datos retrasados.",
+  "question": "¿Debe BigQuery ser la fuente predeterminada de estos exports mensuales cuando el gate detecta una tabla fresca, aun con la ventana limitada de materialización de `ordersells`?",
+  "rationale": "La implementación técnica puede mantener rollback, pero aceptar una fuente diaria como referencia para CSVs financieros requiere decidir la tolerancia operativa ante datos tipados desactualizados.",
   "options": [
     {
-      "title": "Continuar con el último snapshot BigQuery",
-      "body": "Mantiene la entrega mensual con datos potencialmente retrasados y sigue el comportamiento ya documentado del gate.",
+      "title": "Exigir paridad reforzada",
+      "body": "Corregir las dos discusiones abiertas y aportar una verificación de paridad que cubra actualizaciones tardías, borrados y divisores cero antes de integrar.",
       "recommended": true
     },
     {
-      "title": "Fallar el workflow",
-      "body": "Hace visible cualquier retraso de materialización, a costa de no publicar el export hasta resolverlo.",
+      "title": "Aceptar la tolerancia mensual",
+      "body": "Integrar manteniendo el rollback a Mongo y documentar que los exports cerrados aceptan la frescura y límites actuales de la tabla tipada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Continuar con el último snapshot BigQuery",
-    "body": "Mantiene la entrega mensual con datos potencialmente retrasados y sigue el comportamiento ya documentado del gate.",
+    "title": "Exigir paridad reforzada",
+    "body": "Corregir las dos discusiones abiertas y aportar una verificación de paridad que cubra actualizaciones tardías, borrados y divisores cero antes de integrar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Conecta el programa de reducción de carga MongoDB y los workflows que deben adoptar la política.",
-    "confidence": "high"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre el gate de frescura y el patrón de consumo de BigQuery que condicionan esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7974.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7974#issuecomment-5088895430",
-    "reviewedAt": "2026-07-27T08:17:21.690Z",
-    "mainSha": "c172a48c32fcc505985814bd5fee713f5476e8b1"
+    "reviewedAt": "2026-07-27T10:25:28.924Z",
+    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
   }
 }

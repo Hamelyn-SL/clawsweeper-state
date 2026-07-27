@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-27T10:26:15.703Z",
+  "updatedAt": "2026-07-27T09:51:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7988,
+    "title": "feat: export alibris inventory from bigquery stocks",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7988",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-27T09:31:28Z",
+    "updatedAt": "2026-07-27T09:51:40Z",
+    "headSha": "9eab2ae92ed84267dad8a97530a7029e0c85700b"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el export purge de Alibris abortar cuando `bq-freshness-gate` agote su espera, o se acepta publicar el snapshot stale?",
+  "rationale": "La acción compartida continúa tras el timeout, pero este flujo reemplaza el catálogo completo y la incidencia asociada dejó explícita esta decisión como pendiente.",
+  "options": [
+    {
+      "title": "Abortar y usar rollback manual",
+      "body": "Fallar el run stale y dejar un dispatch explícito con `source=mongo` para preservar la exactitud normal del catálogo.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar datos stale",
+      "body": "Conservar el comportamiento actual del gate y publicar el TSV anterior tras avisar por Slack.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar a Mongo automáticamente",
+      "body": "Usar Mongo al vencer el gate, asumiendo carga adicional sobre el primario durante incidencias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Abortar y usar rollback manual",
+    "body": "Fallar el run stale y dejar un dispatch explícito con `source=mongo` para preservar la exactitud normal del catálogo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el autor original del flujo purge y ha mantenido sus protecciones operativas recientes.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7988.md",
+    "reviewedAt": "2026-07-27T10:26:15.703Z",
+    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
+  }
+}

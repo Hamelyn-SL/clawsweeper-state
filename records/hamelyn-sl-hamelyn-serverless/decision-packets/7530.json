@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T15:20:36.881Z",
-  "updatedAt": "2026-07-19T13:28:01Z",
+  "generatedAt": "2026-07-27T10:25:16.494Z",
+  "updatedAt": "2026-07-27T08:31:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,55 +10,48 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530",
     "state": "open",
     "labels": [
-      "priority:p3",
       "app:infrastructure",
       "question",
       "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "P2",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:10Z",
-    "updatedAt": "2026-07-19T13:28:01Z"
+    "updatedAt": "2026-07-27T08:31:54Z"
   },
-  "lane": "manual_review",
-  "priority": "P2",
-  "question": "¿Se prioriza primero la observabilidad común de estas rutas o se crean incidencias separadas para cart, drop-off y profile/payment?",
-  "rationale": "La investigación reúne fallos de clientes vivos con causas distintas; un único cambio de estado HTTP no tiene una semántica segura sin decidir el desglose y la prioridad.",
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué respuesta y política de reintento debe recibir Supply cuando Celeritas devuelve 2xx sin `results[0].label.url`?",
+  "rationale": "La corrección fusionada identifica y registra el contrato inválido, pero no determina si debe tratarse como fallo funcional, transitorio o recuperable.",
   "options": [
     {
-      "title": "Desglosar por causa",
-      "body": "Crear seguimientos acotados tras añadir correlación en cart y drop-off, conservando esta issue como contexto de la investigación.",
+      "title": "Definir fallo controlado",
+      "body": "Acordar un error de integración visible para Supply y no reintentar hasta conocer la semántica remota.",
       "recommended": true
     },
     {
-      "title": "Priorizar sólo observabilidad",
-      "body": "Limitar el siguiente trabajo a `requestId`, logging y clasificación de errores antes de decidir cambios de comportamiento HTTP.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el fallback actual",
-      "body": "Mantener 501 temporalmente y revisar la telemetría más adelante, asumiendo que los clientes seguirán recibiendo un error genérico.",
+      "title": "Aplicar reintento acotado",
+      "body": "Añadir reintentos solo si Celeritas confirma que esta forma de respuesta puede ser transitoria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desglosar por causa",
-    "body": "Crear seguimientos acotados tras añadir correlación en cart y drop-off, conservando esta issue como contexto de la investigación.",
+    "title": "Definir fallo controlado",
+    "body": "Acordar un error de integración visible para Supply y no reintentar hasta conocer la semántica remota.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es quien aportó la evidencia operativa que define el desglose seguro.",
+    "person": "MiguelHamelyn",
+    "reason": "Ha llevado los cambios fusionados que hicieron diagnosticable la ruta afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7530.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530#issuecomment-4968442778",
-    "reviewedAt": "2026-07-19T15:20:36.881Z",
-    "mainSha": "9d51092df1746f4eb40871505f40e101c5767705"
+    "reviewedAt": "2026-07-27T10:25:16.494Z",
+    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
   }
 }
