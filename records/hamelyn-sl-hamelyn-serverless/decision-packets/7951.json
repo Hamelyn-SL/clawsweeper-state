@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T00:16:28.818Z",
-  "updatedAt": "2026-07-27T00:12:34Z",
+  "generatedAt": "2026-07-27T00:22:06.314Z",
+  "updatedAt": "2026-07-27T00:16:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,41 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:done",
-      "reporter:JavierHamelyn",
       "P1",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-07-27T00:12:34Z"
+    "updatedAt": "2026-07-27T00:16:34Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe PR Proof convertirse en un gate bloqueante que espere un resultado terminal verificable, y qué resultado debe producir un timeout o evidencia incompleta?",
-  "rationale": "La implementación requiere definir una política de merge y de seguridad operacional, no solo sustituir una llamada HTTP.",
+  "question": "¿Debe PR Proof pasar a bloquear por defecto cuando no obtiene un resultado terminal verificable, y qué evidencia mínima debe conservar cada ejecución?",
+  "rationale": "La corrección cruza semántica de checks, costes de ejecución, retención de artefactos y la frontera de seguridad del sandbox; no es una decisión mecánica de código.",
   "options": [
     {
-      "title": "Hacer Proof bloqueante y trazable",
-      "body": "Esperar el mismo `runId` hasta estado terminal, fallar ante evidencia insuficiente y desactivar lifecycle scripts durante instalaciones de PRs.",
+      "title": "Adoptar contrato fail-closed",
+      "body": "Esperar el estado terminal del mismo `runId`, fallar ante evidencia ausente y persistir manifiestos verificables por ejecución.",
       "recommended": true
     },
     {
-      "title": "Mantenerlo informativo",
-      "body": "Conservar el comportamiento asíncrono, pero etiquetar explícitamente que la tarjeta no es una señal apta para merge.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar Proof automático",
-      "body": "Desactivar la invocación automática hasta disponer de trazabilidad y aislamiento suficientes.",
+      "title": "Mantener modo informativo",
+      "body": "Conservar Proof no bloqueante, pero diferenciar claramente aceptación, resultado terminal y evidencia insuficiente en el check y el body.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Hacer Proof bloqueante y trazable",
-    "body": "Esperar el mismo `runId` hasta estado terminal, fallar ante evidencia insuficiente y desactivar lifecycle scripts durante instalaciones de PRs.",
+    "title": "Adoptar contrato fail-closed",
+    "body": "Esperar el estado terminal del mismo `runId`, fallar ante evidencia ausente y persistir manifiestos verificables por ejecución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra el diseño actual del agente, el sandbox y la publicación de la prueba.",
+    "reason": "Su historial cubre el endpoint, la ejecución y el sandbox que definen el contrato de Proof.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
-    "reviewedAt": "2026-07-27T00:16:28.818Z",
+    "reviewedAt": "2026-07-27T00:22:06.314Z",
     "mainSha": "799fe633acf95116c76b7c25d0e866401e49d675"
   }
 }
