@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-26T18:57:02.197Z",
+  "generatedAt": "2026-07-27T01:09:55.707Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 101
+    "openItemsSeen": 112
   },
   "counts": {
-    "itemRecords": 98,
+    "itemRecords": 107,
     "closedRecords": 629,
-    "missingOpen": 3,
+    "missingOpen": 5,
     "missingEligibleOpen": 1,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 2,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -66,6 +66,30 @@
         "createdAt": "2026-07-24T13:29:53Z",
         "updatedAt": "2026-07-26T18:15:48Z",
         "missingReason": "eligible"
+      },
+      {
+        "number": 7955,
+        "kind": "pull_request",
+        "title": "fix: manage mobile filter dialog focus",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T00:26:24Z",
+        "updatedAt": "2026-07-27T01:02:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7957,
+        "kind": "pull_request",
+        "title": "fix: validate catalog search page size",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T00:37:44Z",
+        "updatedAt": "2026-07-27T00:43:11Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [
@@ -118,7 +142,32 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 7955,
+        "kind": "pull_request",
+        "title": "fix: manage mobile filter dialog focus",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T00:26:24Z",
+        "updatedAt": "2026-07-27T01:02:30Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 7957,
+        "kind": "pull_request",
+        "title": "fix: validate catalog search page size",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-27T00:37:44Z",
+        "updatedAt": "2026-07-27T00:43:11Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
