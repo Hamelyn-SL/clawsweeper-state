@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-27T15:33:31.608Z",
+  "generated_at": "2026-07-27T16:26:44.392Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-27T12:33:29.117Z",
+  "since": "2026-07-27T13:26:40.946Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 40,
+  "scanned_comments": 32,
   "commands_seen": 3,
   "actionable": 0,
   "trusted_bots": [
@@ -29,18 +29,18 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8000:5091267886:2026-07-27T14:00:39Z:automerge",
-      "comment_id": "5091267886",
-      "comment_version_key": "5091267886:2026-07-27T14:00:39Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000#issuecomment-5091267886",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7979:5089036300:2026-07-27T16:01:49Z:automerge",
+      "comment_id": "5089036300",
+      "comment_version_key": "5089036300:2026-07-27T16:01:49Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7979#issuecomment-5089036300",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
-      "issue_number": 8000,
+      "issue_number": 7979,
       "author": "clawsweeper-hamelyn[bot]",
       "author_id": 301054459,
       "author_association": "NONE",
-      "comment_created_at": "2026-07-27T12:26:18Z",
-      "comment_updated_at": "2026-07-27T14:00:39Z",
+      "comment_created_at": "2026-07-27T08:27:24Z",
+      "comment_updated_at": "2026-07-27T16:01:49Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -52,8 +52,8 @@
       "trusted_bot_author": null,
       "automation_source": null,
       "repair_reason": null,
-      "review_summary": "Amplía la recuperación de direcciones de Cainiao a todos los carriers, corrige CP, provincia y municipio, y añade un cron proactivo para pedidos españoles en `PENDING_PICKING`.\n\nReproducibility: Sí, por código: un fallo Cainiao recuperable recorre primero `handleCainiaoErrors` en la nueva secuencia propuesta, y Google deshabilitado deja al cron sin marcador persistido.",
-      "review_followup": "- [P1] La reparación mecánica es conocida, pero conservar la cobertura global y la política de sobrescritura automática requiere una decisión explícita antes de automatizar cambios.",
+      "review_summary": "Migra el inventario esperado del informe mensual de Skypod de MongoDB a BigQuery, añade un gate de frescura y conserva Mongo como fuente manual alternativa.\n\nReproducibility: Sí, por inspección de código: basta con que el marcador KV siga viejo hasta el timeout; la action devuelve éxito stale y el siguiente paso aún genera el informe.",
+      "review_followup": "- Hay una reparación mecánica y localizada en el workflow: consumir la salida del gate y detener el generador cuando la réplica no esté fresca.",
       "freeform_prompt": null,
       "visual_lens": null,
       "expected_head_sha": null,
@@ -67,7 +67,7 @@
       "status": "waiting",
       "actions": [],
       "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8000 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7979 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
     },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7820:5033396121:2026-07-27T13:57:53Z:automerge",
@@ -315,23 +315,23 @@
     }
   ],
   "timings": {
-    "total_ms": 2491,
+    "total_ms": 3446,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1210
+        "ms": 1708
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1274
+        "ms": 1731
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 2
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
-        "ms": 1
+        "ms": 0
       },
       {
         "name": "classify_repair_loop_sweeps",
