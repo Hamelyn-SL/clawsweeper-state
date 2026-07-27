@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T10:33:21.649Z",
-  "updatedAt": "2026-07-27T08:39:04Z",
+  "generatedAt": "2026-07-27T12:21:42.475Z",
+  "updatedAt": "2026-07-27T11:57:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,51 +14,45 @@
       "feature",
       "triage:blocked",
       "reporter:alejandrodiaz",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
       "P2",
-      "impact:other",
+      "clawsweeper:linked-pr-open",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T06:40:32Z",
-    "updatedAt": "2026-07-27T08:39:04Z"
+    "updatedAt": "2026-07-27T11:57:39Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "Cuando el gate agote su espera, ¿el export programado debe cambiar automáticamente a `source=mongo`, abortar antes del purge o aceptar de forma explícita datos BigQuery antiguos?",
-  "rationale": "La acción compartida informa que continúa con datos anteriores, mientras que el flujo propuesto siempre pasa `source=bigquery`; la elección determina la seguridad del catálogo externo frente a la carga del primario.",
+  "question": "¿Se aprueba el rollout escalonado que mantiene los schedules en MongoDB hasta completar el backfill y la validación operativa de BigQuery?",
+  "rationale": "La propuesta afecta un feed purge/replace de gran volumen y el cambio de fuente depende de acciones postdespliegue que no puede decidir automáticamente el flujo de revisión.",
   "options": [
     {
-      "title": "Fallback automático a MongoDB",
-      "body": "Usar `source=mongo` cuando el gate devuelva stale y registrar la excepción, preservando la frescura previa del catálogo.",
+      "title": "Aprobar rollout escalonado",
+      "body": "Fusionar la PR manteniendo el forzado a MongoDB hasta que el materializador, el backfill y una ejecución real validen la paridad.",
       "recommended": true
     },
     {
-      "title": "Abortar el export",
-      "body": "Detener el purge cuando BigQuery no esté fresco para evitar publicar información antigua, asumiendo que Alibris conservará el catálogo anterior.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar BigQuery stale",
-      "body": "Mantener el export con el snapshot antiguo y documentar el máximo retraso operativo aceptado.",
+      "title": "Exigir paridad antes del merge",
+      "body": "Posponer la fusión hasta disponer del backfill y de evidencia completa de las columnas históricas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fallback automático a MongoDB",
-    "body": "Usar `source=mongo` cuando el gate devuelva stale y registrar la excepción, preservando la frescura previa del catálogo.",
+    "title": "Aprobar rollout escalonado",
+    "body": "Fusionar la PR manteniendo el forzado a MongoDB hasta que el materializador, el backfill y una ejecución real validen la paridad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo y mantiene el export y el workflow afectados, además de figurar como revisor asignado de la PR.",
+    "reason": "Introdujo el sync de Alibris y ha mantenido recientemente el comportamiento operativo del export.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7970.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7970#issuecomment-5088194594",
-    "reviewedAt": "2026-07-27T10:33:21.649Z",
-    "mainSha": "a8dc6aa6e2c4a83966482486233fda1331467aa9"
+    "reviewedAt": "2026-07-27T12:21:42.475Z",
+    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
   }
 }
