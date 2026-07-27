@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T12:18:38.398Z",
-  "updatedAt": "2026-07-27T11:18:33Z",
+  "generatedAt": "2026-07-24T13:24:28.248Z",
+  "updatedAt": "2026-07-24T12:39:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
+      "rating: 🥉 bronze",
       "status: 📣 needs proof",
-      "merge-risk: 🚨 compatibility",
       "P0",
-      "merge-risk: 🚨 security-boundary",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze"
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-27T11:18:33Z",
-    "headSha": "ef6497e9aedf43a3fbe060f6c0078fd25e10c515"
+    "updatedAt": "2026-07-24T12:39:52Z",
+    "headSha": "cbccddc2eb146454386a9091a164614bb2dc3956"
   },
-  "lane": "release_inclusion",
+  "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Debe exigirse una versión mínima de Supply o coordinarse un despliegue que garantice soporte de `x-cart-token` antes de activar esta API?",
-  "rationale": "El cambio elimina un IDOR, pero el backend y las aplicaciones móviles no se actualizan de forma atómica; elegir la transición segura requiere responsabilidad de release.",
+  "question": "¿Debe mantenerse hasta el 24 de agosto de 2026 el reclamo de cualquier carrito legacy por `cartId`, aun sabiendo que el primer solicitante puede tomar su capability?",
+  "rationale": "El código puede implementar cualquiera de las alternativas, pero el equilibrio entre conservar carritos legacy y cerrar inmediatamente el acceso basado en identificador requiere aceptación explícita del riesgo de producto y seguridad.",
   "options": [
     {
-      "title": "Coordinar actualización obligatoria",
-      "body": "Publicar o exigir primero una versión de Supply que persista y envíe `cartToken`, y después activar la API protegida.",
-      "recommended": true
-    },
-    {
-      "title": "Aceptar la interrupción temporal",
-      "body": "Fusionar y asumir que las versiones anteriores de Supply perderán acceso a los carritos recién creados hasta actualizarse.",
+      "title": "Corte inmediato para legacy",
+      "body": "Rechazar carritos sin hash y crear uno nuevo, eliminando cuanto antes el acceso basado sólo en `cartId`.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta definir el rollout",
-      "body": "Mantener el PR abierto hasta disponer de un plan de versión mínima, activación o recuperación segura.",
+      "title": "Ventana legacy acotada",
+      "body": "Mantener la fecha de corte actual, documentar el riesgo y añadir recuperación automática cuando el cliente pierda su capability.",
+      "recommended": true
+    },
+    {
+      "title": "Migración con prueba adicional",
+      "body": "Conservar legacy sólo si existe una señal de posesión adicional que permita emitir la capability sin basarse únicamente en `cartId`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar actualización obligatoria",
-    "body": "Publicar o exigir primero una versión de Supply que persista y envíe `cartToken`, y después activar la API protegida.",
+    "title": "Ventana legacy acotada",
+    "body": "Mantener la fecha de corte actual, documentar el riesgo y añadir recuperación automática cuando el cliente pierda su capability.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es revisor solicitado y participó en la integración reciente de la rama de seguridad.",
-    "confidence": "medium"
+    "reason": "La issue relacionada fue reportada por JavierHamelyn y su historial incluye el controlador público afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewedAt": "2026-07-27T12:18:38.398Z",
-    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
+    "reviewedAt": "2026-07-24T13:24:28.248Z",
+    "mainSha": "918fe7df4751bef0d3105032bee4c43de2955fc5"
   }
 }

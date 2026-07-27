@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T12:16:47.352Z",
-  "updatedAt": "2026-07-27T10:32:43Z",
+  "generatedAt": "2026-07-27T10:25:16.494Z",
+  "updatedAt": "2026-07-27T08:31:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,42 +17,41 @@
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-14T09:49:10Z",
-    "updatedAt": "2026-07-27T10:32:43Z"
+    "updatedAt": "2026-07-27T08:31:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato HTTP y política de reintento debe aplicar Supply cuando Celeritas responde 2xx sin una URL de etiqueta?",
-  "rationale": "El código ya identifica y conserva evidencia del fallo, pero decidir entre error controlado, reintento o tratamiento funcional depende del efecto de una posible creación parcial de etiqueta.",
+  "question": "¿Qué respuesta y política de reintento debe recibir Supply cuando Celeritas devuelve 2xx sin `results[0].label.url`?",
+  "rationale": "La corrección fusionada identifica y registra el contrato inválido, pero no determina si debe tratarse como fallo funcional, transitorio o recuperable.",
   "options": [
     {
-      "title": "Decidir con un payload correlacionado",
-      "body": "Mantener el comportamiento actual hasta capturar una respuesta saneada y abrir una canónica que fije status y reintentos por contrato.",
+      "title": "Definir fallo controlado",
+      "body": "Acordar un error de integración visible para Supply y no reintentar hasta conocer la semántica remota.",
       "recommended": true
     },
     {
-      "title": "Definir un fallo de integración inmediato",
-      "body": "Cambiar ya a una respuesta controlada sin reintento, aceptando que aún no se conoce si Celeritas pudo crear una etiqueta parcialmente.",
+      "title": "Aplicar reintento acotado",
+      "body": "Añadir reintentos solo si Celeritas confirma que esta forma de respuesta puede ser transitoria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Decidir con un payload correlacionado",
-    "body": "Mantener el comportamiento actual hasta capturar una respuesta saneada y abrir una canónica que fije status y reintentos por contrato.",
+    "title": "Definir fallo controlado",
+    "body": "Acordar un error de integración visible para Supply y no reintentar hasta conocer la semántica remota.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha llevado la observabilidad y el guardado del contrato que habilitan esta decisión.",
+    "reason": "Ha llevado los cambios fusionados que hicieron diagnosticable la ruta afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7530.md",
-    "reviewedAt": "2026-07-27T12:16:47.352Z",
-    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+    "reviewedAt": "2026-07-27T10:25:16.494Z",
+    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
   }
 }
