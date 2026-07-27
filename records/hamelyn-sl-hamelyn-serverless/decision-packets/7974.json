@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T10:25:28.924Z",
+  "generatedAt": "2026-07-27T10:32:15.044Z",
   "updatedAt": "2026-07-27T08:27:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,46 +14,47 @@
       "feature",
       "triage:pr-opened",
       "reporter:alejandrodiaz",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-27T06:40:39Z",
     "updatedAt": "2026-07-27T08:27:35Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe BigQuery ser la fuente predeterminada de estos exports mensuales cuando el gate detecta una tabla fresca, aun con la ventana limitada de materialización de `ordersells`?",
-  "rationale": "La implementación técnica puede mantener rollback, pero aceptar una fuente diaria como referencia para CSVs financieros requiere decidir la tolerancia operativa ante datos tipados desactualizados.",
+  "question": "¿Debe aprobarse BigQuery como fuente predeterminada de ambos exports mensuales, aceptando el gate blando y el rollback manual a Mongo?",
+  "rationale": "La implementación está acotada y probada, pero la política ante datos BigQuery retrasados cambia el comportamiento operativo de exports financieros.",
   "options": [
     {
-      "title": "Exigir paridad reforzada",
-      "body": "Corregir las dos discusiones abiertas y aportar una verificación de paridad que cubra actualizaciones tardías, borrados y divisores cero antes de integrar.",
+      "title": "Aprobar BigQuery por defecto",
+      "body": "Integrar la PR con el rollback `source=mongo` y el gate actual para retirar los aggregates mensuales del primario.",
       "recommended": true
     },
     {
-      "title": "Aceptar la tolerancia mensual",
-      "body": "Integrar manteniendo el rollback a Mongo y documentar que los exports cerrados aceptan la frescura y límites actuales de la tabla tipada.",
+      "title": "Conservar Mongo por defecto",
+      "body": "Pedir que BigQuery quede como modo opt-in hasta definir una política más estricta ante frescura insuficiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir paridad reforzada",
-    "body": "Corregir las dos discusiones abiertas y aportar una verificación de paridad que cubra actualizaciones tardías, borrados y divisores cero antes de integrar.",
+    "title": "Aprobar BigQuery por defecto",
+    "body": "Integrar la PR con el rollback `source=mongo` y el gate actual para retirar los aggregates mensuales del primario.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre el gate de frescura y el patrón de consumo de BigQuery que condicionan esta decisión.",
+    "person": "JavierHamelyn",
+    "reason": "La iniciativa paraguas de reducción de lecturas pesadas en Mongo parte de su issue y define el objetivo operativo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7974.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7974#issuecomment-5088895430",
-    "reviewedAt": "2026-07-27T10:25:28.924Z",
-    "mainSha": "56640c2d22379cd966d74aaf370dad4e6e61642a"
+    "reviewedAt": "2026-07-27T10:32:15.044Z",
+    "mainSha": "a8dc6aa6e2c4a83966482486233fda1331467aa9"
   }
 }
