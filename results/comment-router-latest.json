@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-27T13:38:50.882Z",
+  "generated_at": "2026-07-27T14:35:51.927Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-27T10:38:48.648Z",
+  "since": "2026-07-27T11:35:46.301Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 63,
-  "commands_seen": 2,
+  "scanned_comments": 54,
+  "commands_seen": 5,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,291 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8000:5091267886:2026-07-27T14:00:39Z:automerge",
+      "comment_id": "5091267886",
+      "comment_version_key": "5091267886:2026-07-27T14:00:39Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000#issuecomment-5091267886",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8000,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-27T12:26:18Z",
+      "comment_updated_at": "2026-07-27T14:00:39Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "Amplía la recuperación de direcciones de Cainiao a todos los carriers, corrige CP, provincia y municipio, y añade un cron proactivo para pedidos españoles en `PENDING_PICKING`.\n\nReproducibility: Sí, por código: un fallo Cainiao recuperable recorre primero `handleCainiaoErrors` en la nueva secuencia propuesta, y Google deshabilitado deja al cron sin marcador persistido.",
+      "review_followup": "- [P1] La reparación mecánica es conocida, pero conservar la cobertura global y la política de sobrescritura automática requiere una decisión explícita antes de automatizar cambios.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8000 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7820:5033396121:2026-07-27T13:57:53Z:automerge",
+      "comment_id": "5033396121",
+      "comment_version_key": "5033396121:2026-07-27T13:57:53Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7820#issuecomment-5033396121",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 7820,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-21T11:30:05Z",
+      "comment_updated_at": "2026-07-27T13:57:53Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "Sustituye digests y registros de errores de AbeBooks/Axios para excluir cuerpos, cabeceras y otros datos sensibles en logs y notificaciones.\n\nReproducibility: Sí, con alta confianza en fuente: un callback de AbeBooks puede relanzar un AxiosError hasta los catches crudos de recreación o retirada del actualizador compartido.",
+      "review_followup": "- [P1] Hace falta que el contribuidor resuelva el conflicto y aporte prueba del head integrado; la reparación de seguridad es concreta, pero la evidencia no puede sustituirse desde fuera.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7820 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7978:5089035773:2026-07-27T13:57:14Z:automerge",
+      "comment_id": "5089035773",
+      "comment_version_key": "5089035773:2026-07-27T13:57:14Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7978#issuecomment-5089035773",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 7978,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-27T08:27:20Z",
+      "comment_updated_at": "2026-07-27T13:57:14Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR hace deterministas los carruseles de la PDP, actualiza títulos, enlaces taxonómicos y migas de pan, y evita duplicados por obra.\n\nReproducibility: no. aplica como reproducción de un bug: es una propuesta de comportamiento de PDP. El desajuste con el contrato se verifica directamente en el código y en el feedback relacionado.",
+      "review_followup": "- [P1] La decisión entre ventana circular y muestreo global requiere confirmación de producto; la evidencia real de PDP corresponde al autor antes de fusionar.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "ignored",
+      "actions": [],
+      "author_repository_permission": "none",
+      "target": {
+        "kind": "pull_request",
+        "title": "feat: deterministic pdp related & bestsellers, real urls and breadcrumb",
+        "body": "## Qué hace este PR\n\nImplementa el feedback de Victor en #6741 sobre la PDP: hace deterministas los\ndos carruseles (Relacionados y Más vendidos), rompe la concentración de enlaces\nen unos pocos productos, ancla los títulos a la obra y enruta \"Ver todos\" y las\nmigas de pan a URLs de categoría reales en vez de a `/catalogo`.\n\n## Cambios principales\n\n- **Relacionados determinista + cascada:** se elimina el rebarajado por request.\n  El pool se ordena por cascada de relevancia (mismo autor → misma saga/serie →\n  resto) y se cortan los 8 primeros de forma determinista (mismo ISBN → mismos\n  títulos). Los slots que falten se rellenan con un muestreo determinista\n  (semilla = hash ISBN) del pool de la subcategoría **ya cargado para Más\n  vendidos** (sin query extra). Nuevo `orderRecommendationsByCascade` en core;\n  spec `BL-ecommerce-recommendations-04` y tests actualizados.\n- **H2 de Relacionados:** \"Más títulos para quienes han leído/visto/jugado/\n  escuchado {obra}\", por tipo de producto y anclado al título. i18n en 8 locales.\n- **Más vendidos determinista (2 fijos + 6 muestreados):** 2 fijos = top-2 de la\n  subcategoría + 6 muestreados del top-100 con semilla del ISBN. Excluye los\n  títulos de Relacionados (que tiene precedencia), así ningún título se repite\n  entre los dos carruseles. Nueva `pickBestsellersForPdp` + `sampleProductsForPdp`\n  en core, con test.\n- **\"Ver todos\" a URL real:** enlaza a la URL taxonómica de la categoría (p.ej.\n  `/libros/filosofia`) en vez de `/catalogo`; fallback a `/catalogo` solo si la\n  categoría no está en la taxonomía.\n- **Migas de pan:** `Inicio > Libros > Categoría > Subcategoría > Obra` — se\n  añade el nivel de tipo de producto enlazando a su ruta limpia, y las migas\n  apuntan a URLs taxonómicas reales. Se añade `es-MX` a los locales taxonómicos.\n\n## Cómo probarlo\n\n- `pnpm exec tsx --test packages/core/src/domain-services/ecommerce/__tests__/product-recommendation-selection.service.bl.test.ts packages/core/src/domain-services/ecommerce/__tests__/product-bestsellers-selection.service.test.ts` → 22/22 en verde.\n- Lint + typecheck de `@hamelyn/core` y `ecommerce` en verde.\n- No añade queries nuevas a Mongo: el relleno de Relacionados reutiliza el pool de subcategoría cacheado 24h que ya usa Más vendidos.\n\nRelacionada con #6741\n\n<!-- CURSOR_SUMMARY -->\n---\n\n> [!NOTE]\n> **Medium Risk**\n> Touches PDP merchandising and internal linking logic used on every product page; behavior is deterministic but different from prior random selection, and breadcrumb/listing URLs change for taxonomy locales.\n> \n> **Overview**\n> **PDP carousels** stop reshuffling on every request. Related products are ordered by relevance cascade (author → saga → rest), capped at 8, and backfilled from the cached subcategory bestsellers pool when needed—no extra query. **Bestsellers** use a top-100 pool (was 40), keep the top 2 fixed, and seed-sample the other 6 per ISBN; related wins on overlap, with dedupe by `workId` so editions do not repeat across or within carousels.\n> \n> **Core** adds `orderRecommendationsByCascade`, `pickBestsellersForPdp`, and `sampleProductsForPdp`; `pickProductsForPdp` is now a simple deterministic slice (random top-4 + shuffle removed). BL doc and tests updated.\n> \n> **SEO/navigation:** recommendation headings use work title by product type (`recommendations.byWork.*`) in 8 locales. Breadcrumbs add a product-type root (e.g. Libros → `/libros`) for taxonomy locales (including **es-MX**); category/subcategory and listing scope **Ver todos** prefer clean taxonomy paths over `/catalogo` when mapped.\n> \n> <sup>Reviewed by [Cursor Bugbot](https://cursor.com/bugbot) for commit b9569be6d7f060987c0f2293b14afe46a96c67b5. Configure [here](https://www.cursor.com/dashboard/bugbot).</sup>\n<!-- /CURSOR_SUMMARY -->",
+        "branch": "feature/pdp-bestsellers-breadcrumbs",
+        "head_sha": "565c8d9efd2d60b29117946fbe33f087801dbf7e",
+        "author": "alexcanhamelyn",
+        "labels": [
+          "size/XL",
+          "P2",
+          "status: 📣 needs proof",
+          "merge-risk: 🚨 compatibility",
+          "rating: 🥈 silver"
+        ],
+        "files": [
+          {
+            "path": "apps/hamelyn-ecommerce/components/product/ProductPage.tsx",
+            "additions": 46,
+            "deletions": 3,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/components/product/productPageUtils.ts",
+            "additions": 16,
+            "deletions": 5,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/controllers/product/bestsellers-by-subcategory.ts",
+            "additions": 5,
+            "deletions": 4,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/controllers/product/recommendations.ts",
+            "additions": 7,
+            "deletions": 3,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/libs/product-taxonomy.ts",
+            "additions": 64,
+            "deletions": 12,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/libs/products.ts",
+            "additions": 10,
+            "deletions": 2,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/ca/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/de/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/en/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/es/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/fr/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/it/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/nl/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "apps/hamelyn-ecommerce/public/locales/pt/productPage.json",
+            "additions": 7,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "docs/business-logic/ecommerce/recommendations/BL-ecommerce-recommendations-04.md",
+            "additions": 21,
+            "deletions": 15,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "packages/core/src/domain-services/ecommerce/__tests__/product-bestsellers-selection.service.test.ts",
+            "additions": 133,
+            "deletions": 0,
+            "changeType": "ADDED"
+          },
+          {
+            "path": "packages/core/src/domain-services/ecommerce/__tests__/product-recommendation-selection.service.bl.test.ts",
+            "additions": 54,
+            "deletions": 43,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "packages/core/src/domain-services/ecommerce/product-bestsellers-selection.service.ts",
+            "additions": 113,
+            "deletions": 0,
+            "changeType": "ADDED"
+          },
+          {
+            "path": "packages/core/src/domain-services/ecommerce/product-recommendation-selection.service.ts",
+            "additions": 25,
+            "deletions": 42,
+            "changeType": "MODIFIED"
+          },
+          {
+            "path": "skills/hamelyn-knowledge/ecommerce/04-seo-i18n.md",
+            "additions": 3,
+            "deletions": 1,
+            "changeType": "MODIFIED"
+          }
+        ],
+        "changedFiles": 20,
+        "additions": 553,
+        "deletions": 138,
+        "is_clawsweeper_pr": false,
+        "cluster_id": null,
+        "job_path": null,
+        "source_job_path": null,
+        "has_automerge_job": false,
+        "automerge_cluster_id": "automerge-hamelyn-sl-hamelyn-serverless-7978",
+        "automerge_job_path": "jobs/Hamelyn-SL/inbox/automerge-hamelyn-sl-hamelyn-serverless-7978.md",
+        "mode": "autonomous",
+        "mergeable": "MERGEABLE",
+        "merge_state_status": "BLOCKED",
+        "review_decision": "REVIEW_REQUIRED",
+        "checks": {
+          "total": 0,
+          "gatingTotal": 0,
+          "counts": {},
+          "blockers": [],
+          "pending": [],
+          "terminalBlockers": [],
+          "externalBlockers": []
+        }
+      },
+      "maintainer_authorized": false,
+      "author_readonly_authorized": false,
+      "reason": "author association NONE and repository permission none are not allowed"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8003:5091854596:2026-07-27T13:22:12Z:automerge",
       "comment_id": "5091854596",
@@ -112,19 +397,19 @@
     }
   ],
   "timings": {
-    "total_ms": 2234,
+    "total_ms": 5626,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1116
+        "ms": 3794
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1113
+        "ms": 1822
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 2
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
