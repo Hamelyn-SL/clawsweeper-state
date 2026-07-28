@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:57:15.577Z",
-  "updatedAt": "2026-07-28T07:20:13Z",
+  "generatedAt": "2026-07-28T08:04:27.170Z",
+  "updatedAt": "2026-07-28T07:57:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,43 +23,38 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-28T07:19:52Z",
-    "updatedAt": "2026-07-28T07:20:13Z"
+    "updatedAt": "2026-07-28T07:57:24Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué unidad debe gobernar el 85 % de calidad y cómo se cierra una gaveta seleccionada que no llega a la revisión del supervisor?",
-  "rationale": "El comparador existente puntúa secciones, pero la issue plantea alternativas con consecuencias distintas para el resultado y la cuota semanal.",
+  "question": "¿El 85 % debe medir productos completamente idénticos o desperfectos individuales, y qué estado terminal tendrá una gaveta seleccionada que no se aparte?",
+  "rationale": "Estas decisiones determinan el significado del indicador, el esquema persistido, la cola y las acciones operativas; no pueden resolverse con una implementación mecánica.",
   "options": [
     {
-      "title": "Secciones con caducidad",
-      "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
+      "title": "Producto completo con caducidad",
+      "body": "Contar coincidencia solo cuando todas las secciones del producto coincidan y caducar o descartar explícitamente las gavetas no apartadas.",
       "recommended": true
     },
     {
-      "title": "Producto completo",
-      "body": "Contar un producto solo cuando todas sus secciones coincidan y aplicar la misma política explícita de caducidad.",
-      "recommended": false
-    },
-    {
       "title": "Desperfectos individuales",
-      "body": "Normalizar cada desperfecto para puntuar aciertos individuales, aceptando mayor complejidad y una nueva semántica de vacíos.",
+      "body": "Medir cada desperfecto por separado y redefinir el umbral, el resumen y la interpretación del resultado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Secciones con caducidad",
-    "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
+    "title": "Producto completo con caducidad",
+    "body": "Contar coincidencia solo cuando todas las secciones del producto coincidan y caducar o descartar explícitamente las gavetas no apartadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre el comparador, la selección y la persistencia QA que condicionan esta decisión.",
+    "reason": "Su historial concentra la implementación del flujo QA y del modelo de comparación que debe ampliarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
-    "reviewedAt": "2026-07-28T07:57:15.577Z",
+    "reviewedAt": "2026-07-28T08:04:27.170Z",
     "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
   }
 }
