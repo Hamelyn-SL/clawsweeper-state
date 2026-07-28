@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-28T10:14:55.202Z",
+  "generated_at": "2026-07-28T11:04:34.124Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-28T07:14:50.921Z",
+  "since": "2026-07-28T08:04:31.084Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 71,
-  "commands_seen": 2,
+  "scanned_comments": 70,
+  "commands_seen": 3,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -29,9 +29,50 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8019:5102723817:2026-07-28T10:05:26Z:automerge",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7981:5089156999:2026-07-28T10:23:57Z:automerge",
+      "comment_id": "5089156999",
+      "comment_version_key": "5089156999:2026-07-28T10:23:57Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7981#issuecomment-5089156999",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 7981,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-27T08:41:11Z",
+      "comment_updated_at": "2026-07-28T10:23:57Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "La PR cambia el cron diario de IndexNow para seleccionar productos desde BigQuery, con fallback manual a Mongo, dry-run y un gate de frescura programado.\n\nReproducibility: Sí, por código: al combinar el máximo de gate, ~75 peticiones de hasta 30 segundos y las pausas entre lotes se supera el límite nuevo de 45 minutos.",
+      "review_followup": "- [P2] La corrección del timeout es mecánica y localizada; la prueba real del autor continúa siendo un requisito separado antes del merge.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7981 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8019:5102723817:2026-07-28T10:14:58Z:automerge",
       "comment_id": "5102723817",
-      "comment_version_key": "5102723817:2026-07-28T10:05:26Z",
+      "comment_version_key": "5102723817:2026-07-28T10:14:58Z",
       "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8019#issuecomment-5102723817",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
@@ -40,7 +81,7 @@
       "author_id": 301054459,
       "author_association": "NONE",
       "comment_created_at": "2026-07-28T10:05:26Z",
-      "comment_updated_at": "2026-07-28T10:05:26Z",
+      "comment_updated_at": "2026-07-28T10:14:58Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -112,15 +153,15 @@
     }
   ],
   "timings": {
-    "total_ms": 4281,
+    "total_ms": 3040,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2904
+        "ms": 1485
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1367
+        "ms": 1548
       },
       {
         "name": "classify_comment_commands",
