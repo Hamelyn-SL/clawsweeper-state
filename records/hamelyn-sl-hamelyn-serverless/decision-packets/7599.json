@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:09:53.625Z",
-  "updatedAt": "2026-07-28T20:59:36Z",
+  "generatedAt": "2026-07-28T23:09:49.490Z",
+  "updatedAt": "2026-07-28T22:59:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,52 +12,51 @@
     "labels": [
       "app:marketplace",
       "question",
-      "triage:queued",
-      "P2",
+      "triage:no-change",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-07-28T20:59:36Z"
+    "updatedAt": "2026-07-28T22:59:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el sistema conservar el reintento diario indefinido o pasar, tras una ventana inicial, a un estado no listable con revalidación espaciada y visibilidad operativa?",
-  "rationale": "El código actual no define un límite ni un modelo de estado; elegir cadencia, recuperación y visibilidad cambia el coste operativo y el significado del inventario regional.",
+  "question": "¿Qué política permanente debe aplicarse a un par `(EAN, región)` sin ASIN regional: reintento limitado, estado no listable y revalidación, o retry indefinido?",
+  "rationale": "El código puede materializar cualquiera de las alternativas, pero no puede decidir por sí solo el coste de catálogo, la recuperabilidad esperada ni la visibilidad operativa del inventario.",
   "options": [
     {
-      "title": "Acotar y revalidar",
-      "body": "Reintentar 24 horas durante siete días, marcar el par como no listable y revalidarlo cada 30 días con una vista operativa.",
+      "title": "Limitar y revalidar",
+      "body": "Reintentar durante siete días, marcar después el par como no listable y revalidarlo cada 30 días con visibilidad separada.",
       "recommended": true
     },
     {
       "title": "Mantener el comportamiento actual",
-      "body": "Conservar el retry diario indefinido y aceptar el coste de Catalog API y el ruido operativo asociado.",
+      "body": "Conservar el retry con cooldown de 24 horas sin un estado adicional ni reducción de consultas.",
       "recommended": false
     },
     {
-      "title": "Retirar por región",
-      "body": "Excluir el stock de la región tras el umbral y publicar un reporte explícito del inventario no listable.",
+      "title": "Retirar de la región",
+      "body": "Desactivar el stock regional y exponer una cola operativa para revisión humana antes de cualquier futura reactivación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar y revalidar",
-    "body": "Reintentar 24 horas durante siete días, marcar el par como no listable y revalidarlo cada 30 días con una vista operativa.",
+    "title": "Limitar y revalidar",
+    "body": "Reintentar durante siete días, marcar después el par como no listable y revalidarlo cada 30 días con visibilidad separada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su comentario más reciente delimita esta firma frente a las incidencias regionales y plantea el contrato operativo pendiente.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta el recovery Amazon con la doctrina de watcher que ya reconoce la firma como estructural.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-07-28T21:09:53.625Z",
+    "reviewedAt": "2026-07-28T23:09:49.490Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
