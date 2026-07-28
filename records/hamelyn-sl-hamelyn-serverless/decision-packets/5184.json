@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T11:44:33.703Z",
-  "updatedAt": "2026-07-28T10:57:25Z",
+  "generatedAt": "2026-07-28T13:40:58.066Z",
+  "updatedAt": "2026-07-28T13:12:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,50 +18,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-28T10:57:25Z"
+    "updatedAt": "2026-07-28T13:12:25Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la reactivación de `ebay.create()` esperar una política específica de señal HTTP/alerta para lotes totalmente fallidos, o basta inicialmente con la observabilidad de la PR vinculada?",
-  "rationale": "La modificación de observabilidad es mecánica, pero cambiar el contrato de respuesta del cron afecta a rutas compartidas y requiere decidir compatibilidad operativa.",
+  "question": "¿Debe un lote de eBay con cero publicaciones correctas seguir con HTTP 200 o producir una señal de fallo específica por ruta?",
+  "rationale": "La PR deja deliberadamente intacto el contrato compartido, y cambiarlo sin una política por ruta puede alterar la supervisión de otros crons.",
   "options": [
     {
-      "title": "Aterrizar observabilidad y sondear",
-      "body": "Integrar la PR de logging, mantener `create` pausado y hacer una sonda limitada antes de decidir la señal HTTP transversal.",
+      "title": "Mantener 200 con telemetría reforzada",
+      "body": "Conservar compatibilidad del handler y alertar mediante el evento estructurado de lote completamente fallido.",
       "recommended": true
     },
     {
-      "title": "Definir primero la política del handler",
-      "body": "Resolver la severidad por ruta en la incidencia transversal antes de cualquier reactivación de eBay.",
+      "title": "Degradar solo `/api/ebay`",
+      "body": "Definir una respuesta o métrica de severidad específica para eBay sin cambiar el comportamiento de todos los crons.",
       "recommended": false
     },
     {
-      "title": "Reactivar sin cambio de señal",
-      "body": "Aceptar temporalmente HTTP 200 y vigilar los nuevos `errorId` mediante observabilidad externa.",
+      "title": "Rediseñar el contrato compartido",
+      "body": "Resolver primero la política transversal en la incidencia de cron-handler antes de cambiar rutas individuales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar observabilidad y sondear",
-    "body": "Integrar la PR de logging, mantener `create` pausado y hacer una sonda limitada antes de decidir la señal HTTP transversal.",
+    "title": "Mantener 200 con telemetría reforzada",
+    "body": "Conservar compatibilidad del handler y alertar mediante el evento estructurado de lote completamente fallido.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia y lidera el diagnóstico y la PR de observabilidad actualmente vinculada.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "La decisión afecta al contrato del cron-handler y a la política de recuperación mantenida recientemente en ese entorno.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-28T11:44:33.703Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-07-28T13:40:58.066Z",
+    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
   }
 }

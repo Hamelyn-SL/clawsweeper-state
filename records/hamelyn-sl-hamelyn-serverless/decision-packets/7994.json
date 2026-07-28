@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:56:10.275Z",
-  "updatedAt": "2026-07-28T07:41:10Z",
+  "generatedAt": "2026-07-28T13:41:59.152Z",
+  "updatedAt": "2026-07-28T12:23:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,41 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 automation"
+      "P1"
     ],
     "createdAt": "2026-07-27T10:56:00Z",
-    "updatedAt": "2026-07-28T07:41:10Z",
-    "headSha": "1875ddde65a3ffd4e5a3d46b117f91e589cda32f"
+    "updatedAt": "2026-07-28T12:23:11Z",
+    "headSha": "6cf6187898bf09b5b2ee65520f04f7d87994d966"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe aprobarse el nuevo modelo de credenciales y gate solo tras un canario integral del SHA final, o aceptarse la cobertura parcial actual?",
-  "rationale": "La decisión afecta a un boundary de credenciales y a un required check; la evidencia disponible no demuestra el flujo completo ni permite inferir con seguridad el riesgo operativo.",
+  "question": "¿Debe aterrizar este endurecimiento solo cuando los fallos de cobertura y disponibilidad queden resueltos, o se acepta temporalmente que el nuevo gate bloquee PRs válidas?",
+  "rationale": "La PR cambia un límite de confianza y un check requerido; aceptar su degradación operativa es una decisión de seguridad y disponibilidad que no debe inferirse automáticamente.",
   "options": [
     {
-      "title": "Exigir canario integral",
-      "body": "Ejecutar en staging el flujo completo del SHA final, con logs redactados de API, ledger, check, cierre y recuperación, antes de aprobar.",
+      "title": "Corregir antes de mergear",
+      "body": "Completar el delta Git, comprobar el lector de ledger y soportar sintaxis TypeScript antes de volver a ejecutar la prueba autoritativa.",
       "recommended": true
     },
     {
-      "title": "Aceptar cobertura parcial",
-      "body": "Aprobar con la prueba causal del helper y asumir explícitamente el riesgo restante sobre automatización y credenciales.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar el hardening",
-      "body": "Mantener la solución ya integrada en `dev` y retomar esta ampliación cuando exista un entorno de prueba integral estable.",
+      "title": "Aceptar el bloqueo temporal",
+      "body": "Mantener el fail-closed actual y asumir que algunos PRs necesitarán intervención operativa hasta un seguimiento posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir canario integral",
-    "body": "Ejecutar en staging el flujo completo del SHA final, con logs redactados de API, ledger, check, cierre y recuperación, antes de aprobar.",
+    "title": "Corregir antes de mergear",
+    "body": "Completar el delta Git, comprobar el lector de ledger y soportar sintaxis TypeScript antes de volver a ejecutar la prueba autoritativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Está solicitado como revisor y tiene historial reciente en el flujo de presentación de Proof.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor historial reciente sobre la arquitectura de PR Proof y la configuración del gate.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
-    "reviewedAt": "2026-07-28T07:56:10.275Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T13:41:59.152Z",
+    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
   }
 }
