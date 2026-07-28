@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T15:12:19.943Z",
-  "updatedAt": "2026-07-28T15:09:31Z",
+  "generatedAt": "2026-07-28T16:24:57.015Z",
+  "updatedAt": "2026-07-28T16:18:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,45 @@
       "reporter:beltran",
       "feature",
       "triage:needs-info",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T13:36:47Z",
-    "updatedAt": "2026-07-28T15:09:31Z"
+    "updatedAt": "2026-07-28T16:18:09Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué identificador de la última etiqueta debe compararse y qué debe ocurrir si no se lee o no coincide antes de cambiar de cubeta?",
-  "rationale": "El código actual no define una identidad verificable de etiqueta ni una política de bloqueo; ambas decisiones cambian el alcance de Admin, impresión y operación física.",
+  "question": "¿La primera versión debe excluir explícitamente las cubetas MercadoLibre hasta confirmar el código impreso, o debe incluirlas con una regla basada en `shipmentId` validada con una etiqueta real?",
+  "rationale": "El flujo ya cubre esas cubetas, pero no existe evidencia de que el valor visible en su etiqueta corresponda al dato persistido; elegir una regla incorrecta permitiría validaciones falsas.",
   "options": [
     {
-      "title": "Tracking obligatorio con bloqueo",
-      "body": "Comparar el tracking del transportista y bloquear el cambio de cubeta hasta una lectura válida.",
+      "title": "Excluir MercadoLibre inicialmente",
+      "body": "Implementar Cainiao, Spring y Postlibri con recuperación manual, mostrando que MercadoLibre queda fuera hasta disponer de una muestra verificable.",
       "recommended": true
     },
     {
-      "title": "Código de barras o matricial",
-      "body": "Comparar el valor codificado en la etiqueta, definiendo por transportista el formato admitido y su normalización.",
-      "recommended": false
-    },
-    {
-      "title": "Aviso con continuidad manual",
-      "body": "Mostrar el mismatch y permitir continuar mediante una confirmación manual registrada.",
+      "title": "Aportar muestra de MercadoLibre",
+      "body": "Confirmar con un PDF o foto legible qué identificador visible se compara con `shipmentId` antes de incluir esas cubetas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Tracking obligatorio con bloqueo",
-    "body": "Comparar el tracking del transportista y bloquear el cambio de cubeta hasta una lectura válida.",
+    "title": "Excluir MercadoLibre inicialmente",
+    "body": "Implementar Cainiao, Spring y Postlibri con recuperación manual, mostrando que MercadoLibre queda fuera hasta disponer de una muestra verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre la coordinación entre AutoPacking y la generación de etiquetas.",
+    "reason": "Su trabajo reciente mantiene el flujo de impresión y avance de AutoPacking donde se insertaría la puerta de verificación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8031#issuecomment-5104971844",
-    "reviewedAt": "2026-07-28T15:12:19.943Z",
+    "reviewedAt": "2026-07-28T16:24:57.015Z",
     "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
   }
 }
