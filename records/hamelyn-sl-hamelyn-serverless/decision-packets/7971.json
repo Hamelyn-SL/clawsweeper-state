@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T10:06:59.660Z",
+  "updatedAt": "2026-07-28T09:12:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 7971,
+    "title": "feat: migrate category stock counts aggregation to bigquery source",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7971",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "reporter:alejandrodiaz",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: ➖ n/a"
+    ],
+    "createdAt": "2026-07-27T06:40:34Z",
+    "updatedAt": "2026-07-28T09:12:25Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se acepta que los contadores de categoría pasen por defecto al snapshot diario de BigQuery con la desviación de frescura documentada y el rollback manual a Mongo?",
+  "rationale": "La decisión altera la fuente de datos de Redis orientado al storefront; el código y la comparación aportados no sustituyen la aceptación operativa de esa tolerancia ni la revisión de la PR.",
+  "options": [
+    {
+      "title": "Aprobar la migración con pruebas reales",
+      "body": "Completar la revisión de la PR enlazada y exigir una ejecución redacted de BigQuery→Redis, además de confirmar la paridad y el rollback antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener Mongo como fuente predeterminada",
+      "body": "Conservar el cron actual hasta que Platform defina una tolerancia de frescura distinta o una materialización más frecuente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la migración con pruebas reales",
+    "body": "Completar la revisión de la PR enlazada y exigir una ejecución redacted de BigQuery→Redis, además de confirmar la paridad y el rollback antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es el revisor solicitado de la PR que implementa exactamente esta migración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7971.md",
+    "reviewedAt": "2026-07-28T10:06:59.660Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+  }
+}
