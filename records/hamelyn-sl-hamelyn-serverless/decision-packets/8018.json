@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:56:51.873Z",
-  "updatedAt": "2026-07-28T07:20:15Z",
+  "generatedAt": "2026-07-28T09:09:02.978Z",
+  "updatedAt": "2026-07-28T09:00:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,9 +10,10 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8018",
     "state": "open",
     "labels": [
+      "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "epic:revision-v3",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
@@ -23,38 +24,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:57Z",
-    "updatedAt": "2026-07-28T07:20:15Z"
+    "updatedAt": "2026-07-28T09:00:27Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Qué orden exacto de clips del canal de revisión debe ser canónico para cada fase antes de modificar `PHASE_VIDEOS`?",
-  "rationale": "El repositorio contiene una secuencia técnica, pero ni la issue ni el epic aportan la fuente operativa necesaria para determinar si representa el orden correcto.",
+  "question": "¿Cuál es la secuencia canónica, fase por fase, de los clips del canal de revisión, o se confirma que la configuración ya incorporada es la definitiva?",
+  "rationale": "El código permite modificar un único array, pero no contiene una fuente fiable que determine el orden operativo correcto.",
   "options": [
     {
-      "title": "Aportar lista canónica",
-      "body": "Producto u Operaciones añade los nombres de clip y el orden de cada fase; después se aplica el cambio mínimo al catálogo.",
+      "title": "Publicar la secuencia canónica",
+      "body": "Producto u Operaciones aporta los nombres exactos de los clips en el orden definitivo para aplicar un cambio acotado.",
       "recommended": true
     },
     {
-      "title": "Validar el orden actual",
-      "body": "Producto confirma expresamente que el orden ya declarado es correcto y la issue puede cerrarse sin cambio de código.",
+      "title": "Confirmar la configuración actual",
+      "body": "Se declara canónico el orden ya configurado y la issue puede cerrarse sin cambio de código.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar lista canónica",
-    "body": "Producto u Operaciones añade los nombres de clip y el orden de cada fase; después se aplica el cambio mínimo al catálogo.",
+    "title": "Publicar la secuencia canónica",
+    "body": "Producto u Operaciones aporta los nombres exactos de los clips en el orden definitivo para aplicar un cambio acotado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es la persona con mayor conexión verificable al catálogo y al epic donde debe integrarse la decisión.",
+    "person": "HamelynDev",
+    "reason": "Ha realizado el triage más reciente y ha identificado formalmente la dependencia de Producto/Operaciones.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8018.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8018#issuecomment-5101541717",
-    "reviewedAt": "2026-07-28T07:56:51.873Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T09:09:02.978Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
