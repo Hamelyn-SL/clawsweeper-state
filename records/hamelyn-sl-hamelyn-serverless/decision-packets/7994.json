@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T21:26:48.586Z",
-  "updatedAt": "2026-07-27T20:24:46Z",
+  "generatedAt": "2026-07-28T02:30:52.808Z",
+  "updatedAt": "2026-07-28T02:22:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary",
       "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 automation"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-27T10:56:00Z",
-    "updatedAt": "2026-07-27T20:24:46Z",
-    "headSha": "acf6613ddfde2708de3543e271a4f3ee006aa918"
+    "updatedAt": "2026-07-28T02:22:59Z",
+    "headSha": "097058fd65f67271f7fefb10f55cd1c078eef61e"
   },
-  "lane": "release_inclusion",
+  "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Debe activarse el gate v2 como requisito de `dev` tras corregir los bypasses y ejecutar el canario completo de GitHub Actions?",
-  "rationale": "La decisión afecta a todos los merges y depende de permisos de GitHub App, despliegue y una prueba operativa que la revisión estática no puede sustituir.",
+  "question": "¿Se acepta este rediseño amplio del gate de PR Proof tras validar en staging el head actual y revisar sus permisos mínimos de GitHub App?",
+  "rationale": "El código cambia el límite de confianza de CI y publicación de checks; la suficiencia de la prueba operativa y del despliegue de permisos requiere criterio humano.",
   "options": [
     {
-      "title": "Corregir y canarizar antes de activar",
-      "body": "Corregir las dos rutas, añadir cobertura focalizada y habilitar el requisito solo tras observar un canario causal completo.",
+      "title": "Esperar Proof y revisar",
+      "body": "Esperar el veredicto autoritativo del run actual y revisar el flujo de staging, permisos y fallback antes de decidir el merge.",
       "recommended": true
     },
     {
-      "title": "Mantener el despliegue sin requisito",
-      "body": "Conservar el backend en observación mientras se recopila evidencia operativa adicional, sin bloquear merges todavía.",
+      "title": "Pausar el rediseño",
+      "body": "Mantener el gate existente y dividir la migración si la prueba actual vuelve a quedar inconclusa o muestra incompatibilidades operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y canarizar antes de activar",
-    "body": "Corregir las dos rutas, añadir cobertura focalizada y habilitar el requisito solo tras observar un canario causal completo.",
+    "title": "Esperar Proof y revisar",
+    "body": "Esperar el veredicto autoritativo del run actual y revisar el flujo de staging, permisos y fallback antes de decidir el merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el principal autor del comportamiento actual de PR Proof integrado y de las correcciones recientes de identidad y evidencia.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Está solicitado como revisor por experiencia directa en los ficheros afectados y el cambio necesita validación operativa independiente.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
-    "reviewedAt": "2026-07-27T21:26:48.586Z",
+    "reviewedAt": "2026-07-28T02:30:52.808Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
