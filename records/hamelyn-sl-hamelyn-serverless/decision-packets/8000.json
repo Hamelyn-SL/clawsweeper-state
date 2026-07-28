@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T05:52:10.656Z",
+  "generatedAt": "2026-07-28T05:52:22.942Z",
   "updatedAt": "2026-07-28T05:38:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,39 +19,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política de reintento y conservación de datos debe aplicar el cron cuando Google está deshabilitado o devuelve errores transitorios?",
-  "rationale": "La frecuencia de nuevas llamadas externas y el periodo de retención de valores originales afectan coste operativo, equidad entre pedidos y capacidad de reversión.",
+  "question": "¿Debe esta primera fase modificar automáticamente provincia y municipio de pedidos españoles para todos los carriers, además del CP, antes de crear una etiqueta?",
+  "rationale": "La solicitud relacionada deja la cobertura fuera de Cainiao como decisión a evaluar, y este PR introduce escrituras automáticas persistentes y llamadas proactivas a Google en toda la cola ES.",
   "options": [
     {
-      "title": "Priorizar nuevos pedidos y limitar reintentos",
-      "body": "Ordenar primero los pedidos sin marcador, aplicar backoff a errores de Google y guardar el snapshot completo antes de cada corrección.",
+      "title": "Validar la entrega multi-carrier ES",
+      "body": "Mantener el alcance propuesto tras añadir auditoría, backoff y prueba real de recuperación de etiqueta para los carriers representativos.",
       "recommended": true
     },
     {
-      "title": "Reintentar sin límite",
-      "body": "Mantener la consulta actual y aceptar que una caída de Google puede consumir repetidamente toda la capacidad del cron.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la recuperación reactiva",
-      "body": "Aplazar el cron proactivo y aterrizar únicamente la recuperación tras un error de etiqueta con snapshot completo.",
+      "title": "Acotar a Cainiao reactivo",
+      "body": "Limitar esta fase al caso de error Cainiao ya conocido y dejar el cron y la ampliación global para una fase posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Priorizar nuevos pedidos y limitar reintentos",
-    "body": "Ordenar primero los pedidos sin marcador, aplicar backoff a errores de Google y guardar el snapshot completo antes de cada corrección.",
+    "title": "Validar la entrega multi-carrier ES",
+    "body": "Mantener el alcance propuesto tras añadir auditoría, backoff y prueba real de recuperación de etiqueta para los carriers representativos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre el contrato de reintentos y la notificación tras fallos de etiquetas.",
+    "reason": "Su historial conecta directamente con la política actual de reintentos y notificación de etiquetas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8000.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000#issuecomment-5091267886",
-    "reviewedAt": "2026-07-28T05:52:10.656Z",
+    "reviewedAt": "2026-07-28T05:52:22.942Z",
     "mainSha": "9dbd0a5effbbb8512a6a2f6bab94ed9585096a8d"
   }
 }
