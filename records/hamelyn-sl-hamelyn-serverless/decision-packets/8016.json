@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T07:57:15.577Z",
+  "updatedAt": "2026-07-28T07:20:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8016,
+    "title": "feat: auditoría de calidad del supervisor (cuota semanal, apartar gaveta y % de coincidencia)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "epic:revision-v3",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-07-28T07:19:52Z",
+    "updatedAt": "2026-07-28T07:20:13Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué unidad debe gobernar el 85 % de calidad y cómo se cierra una gaveta seleccionada que no llega a la revisión del supervisor?",
+  "rationale": "El comparador existente puntúa secciones, pero la issue plantea alternativas con consecuencias distintas para el resultado y la cuota semanal.",
+  "options": [
+    {
+      "title": "Secciones con caducidad",
+      "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
+      "recommended": true
+    },
+    {
+      "title": "Producto completo",
+      "body": "Contar un producto solo cuando todas sus secciones coincidan y aplicar la misma política explícita de caducidad.",
+      "recommended": false
+    },
+    {
+      "title": "Desperfectos individuales",
+      "body": "Normalizar cada desperfecto para puntuar aciertos individuales, aceptando mayor complejidad y una nueva semántica de vacíos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Secciones con caducidad",
+    "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre el comparador, la selección y la persistencia QA que condicionan esta decisión.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
+    "reviewedAt": "2026-07-28T07:57:15.577Z",
+    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+  }
+}

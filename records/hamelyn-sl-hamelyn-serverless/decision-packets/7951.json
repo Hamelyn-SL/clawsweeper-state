@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:54:18.342Z",
+  "generatedAt": "2026-07-28T07:55:32.397Z",
   "updatedAt": "2026-07-28T07:42:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,47 @@
       "source:admin-panel",
       "app:infrastructure",
       "triage:done",
+      "P1",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:linked-pr-open",
+      "impact:security",
       "clawsweeper:needs-security-review",
       "issue-rating: 🥈 silver",
-      "reporter:JavierHamelyn",
-      "P1",
-      "impact:security"
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
     "updatedAt": "2026-07-28T07:42:25Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994 conservar `Closes #7951` pese a que el canario ya certificó la corrección central en `dev`?",
-  "rationale": "La PR abierta amplía una frontera de seguridad y automatización más allá del fallo original; decidir si sigue siendo el cierre canónico requiere intención del responsable del área.",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994 seguir cerrando esta issue, o debe separarse como endurecimiento adicional del gate Proof?",
+  "rationale": "El problema central está cubierto en `dev`, pero la PR abierta amplía el perímetro de seguridad y automatización con evidencia inconcluyente.",
   "options": [
     {
-      "title": "Separar el hardening adicional",
-      "body": "Recomendada: retirar el cierre de esta issue de la PR y tratar su endurecimiento amplio como seguimiento independiente con pruebas específicas.",
+      "title": "Separar el hardening",
+      "body": "Cambiar la PR para que referencie esta issue sin cerrarla y abrir o usar seguimiento específico para el endurecimiento amplio.",
       "recommended": true
     },
     {
-      "title": "Mantener el vínculo hasta merge",
-      "body": "Conservar esta issue abierta como contenedor mientras la PR siga siendo la vía elegida para completar el endurecimiento de seguridad.",
+      "title": "Mantener el cierre enlazado",
+      "body": "Conservar la PR como cierre solo tras obtener evidencia terminal suficiente de staging y revisión de su superficie de seguridad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el hardening adicional",
-    "body": "Recomendada: retirar el cierre de esta issue de la PR y tratar su endurecimiento amplio como seguimiento independiente con pruebas específicas.",
+    "title": "Separar el hardening",
+    "body": "Cambiar la PR para que referencie esta issue sin cerrarla y abrir o usar seguimiento específico para el endurecimiento amplio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor continuidad histórica en el contrato de Proof y autora de la PR enlazada.",
+    "reason": "Es la persona con mayor continuidad en los commits recientes del controlador, la API y el sandbox de Proof.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
-    "reviewedAt": "2026-07-28T07:54:18.342Z",
+    "reviewedAt": "2026-07-28T07:55:32.397Z",
     "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
   }
 }

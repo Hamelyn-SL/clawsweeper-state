@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T07:55:52.088Z",
+  "updatedAt": "2026-07-28T07:20:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8015,
+    "title": "feat: avisos de ritmo cada 90 min (tortuga/liebre) y confeti al llegar a 1000 productos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8015",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "epic:revision-v3",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-07-28T07:19:49Z",
+    "updatedAt": "2026-07-28T07:20:20Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué roles pueden modificar el objetivo único de ritmo del equipo y qué auditoría mínima debe conservarse para esos cambios?",
+  "rationale": "La propuesta exige configuración desde admin y menciona histórico opcional, pero no define autorización ni retención; esa elección condiciona el modelo y la interfaz.",
+  "options": [
+    {
+      "title": "Definir roles y auditoría mínima",
+      "body": "Restringir la edición a los roles operativos acordados y guardar autor, valor anterior, valor nuevo y fecha.",
+      "recommended": true
+    },
+    {
+      "title": "Fijar el objetivo temporalmente",
+      "body": "Mantener un valor operativo inicial hasta aprobar permisos e histórico, sin exponer edición general.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir roles y auditoría mínima",
+    "body": "Restringir la edición a los roles operativos acordados y guardar autor, valor anterior, valor nuevo y fecha.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el mejor candidato disponible por la procedencia del subsistema actual de productividad y revisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8015.md",
+    "reviewedAt": "2026-07-28T07:55:52.088Z",
+    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T07:56:51.873Z",
+  "updatedAt": "2026-07-28T07:20:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8018,
+    "title": "chore: ordenar los vídeos formativos por fase del puesto de revisión V3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8018",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "epic:revision-v3",
+      "P3",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-07-28T07:19:57Z",
+    "updatedAt": "2026-07-28T07:20:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Qué orden exacto de clips del canal de revisión debe ser canónico para cada fase antes de modificar `PHASE_VIDEOS`?",
+  "rationale": "El repositorio contiene una secuencia técnica, pero ni la issue ni el epic aportan la fuente operativa necesaria para determinar si representa el orden correcto.",
+  "options": [
+    {
+      "title": "Aportar lista canónica",
+      "body": "Producto u Operaciones añade los nombres de clip y el orden de cada fase; después se aplica el cambio mínimo al catálogo.",
+      "recommended": true
+    },
+    {
+      "title": "Validar el orden actual",
+      "body": "Producto confirma expresamente que el orden ya declarado es correcto y la issue puede cerrarse sin cambio de código.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aportar lista canónica",
+    "body": "Producto u Operaciones añade los nombres de clip y el orden de cada fase; después se aplica el cambio mínimo al catálogo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es la persona con mayor conexión verificable al catálogo y al epic donde debe integrarse la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8018.md",
+    "reviewedAt": "2026-07-28T07:56:51.873Z",
+    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+  }
+}

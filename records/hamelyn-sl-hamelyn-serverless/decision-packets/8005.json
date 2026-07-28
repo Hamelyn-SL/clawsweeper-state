@@ -1,66 +1,57 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T14:40:34.503Z",
-  "updatedAt": "2026-07-27T14:35:31Z",
+  "generatedAt": "2026-07-28T07:55:00.769Z",
+  "updatedAt": "2026-07-28T07:22:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 8005,
-    "title": "Mejoras Revisión V3",
+    "title": "EPIC · Revisión V3 — Mejoras del puesto (paquete de Dani)",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005",
     "state": "open",
     "labels": [
       "source:admin-panel",
-      "app:supply",
+      "app:admin",
       "feature",
-      "triage:needs-info",
-      "reporter:daniellopez",
+      "epic:revision-v3",
+      "impact:other",
       "P2",
       "impact:ux-friction",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-07-27T14:35:31Z"
+    "updatedAt": "2026-07-28T07:22:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué requisitos de esta solicitud entran en la siguiente entrega del puesto V3 y cuál es la ruta canónica que debe modificarse?",
-  "rationale": "El epic existente cubre parte del dominio, pero las maquetas añaden objetivos, paneles y reglas operativas no decididas en `dev`.",
+  "question": "¿Qué valores operativos comunes se aprueban para ritmo, orden de vídeos, cálculo de coincidencia y nomenclatura antes de iniciar las sub-issues dependientes?",
+  "rationale": "Esas elecciones cambian configuración, métricas y criterios de auditoría; no pueden inferirse de forma segura del código actual.",
   "options": [
     {
-      "title": "Priorizar y dividir el paquete",
-      "body": "Añadir los requisitos confirmados al epic V3 y abrir subtareas separadas por superficie; recomendado.",
+      "title": "Aprobar el paquete de definiciones",
+      "body": "Confirmar objetivo de ritmo, responsable de edición, orden de vídeos, métrica de coincidencia y término visible antes de implementar dependencias.",
       "recommended": true
     },
     {
-      "title": "Limitar la primera entrega",
-      "body": "Empezar solo por el aviso de gaveta y los ajustes de flujo tras identificar la pantalla V3.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener los paneles como fase posterior",
-      "body": "Dejar métricas de equipo y supervisión fuera del primer despliegue hasta acordar datos y objetivos.",
+      "title": "Delegar por sub-issue",
+      "body": "Permitir que cada sub-issue solicite su definición específica, aceptando que productividad y paneles queden bloqueados hasta entonces.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Priorizar y dividir el paquete",
-    "body": "Añadir los requisitos confirmados al epic V3 y abrir subtareas separadas por superficie; recomendado.",
+    "title": "Aprobar el paquete de definiciones",
+    "body": "Confirmar objetivo de ritmo, responsable de edición, orden de vídeos, métrica de coincidencia y término visible antes de implementar dependencias.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Está asignado al epic que concentra el flujo táctil V3 afectado por la mayor parte de la solicitud.",
+    "person": "daniellopez",
+    "reason": "El epic atribuye a Dani, junto con Operaciones, las definiciones funcionales que bloquean varios bloques.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-07-27T14:40:34.503Z",
-    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+    "reviewedAt": "2026-07-28T07:55:00.769Z",
+    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
   }
 }

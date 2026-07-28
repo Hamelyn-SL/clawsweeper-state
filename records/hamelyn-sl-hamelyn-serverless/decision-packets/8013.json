@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T08:00:08.153Z",
+  "updatedAt": "2026-07-28T07:20:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8013,
+    "title": "feat: cambiar de gaveta para un producto concreto en el puesto de revisión V3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8013",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:queued",
+      "epic:revision-v3",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-07-28T07:19:45Z",
+    "updatedAt": "2026-07-28T07:20:19Z"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Debe integrarse primero el epic V3 en `dev` para implementar esta mejora bajo la política normal, o se autoriza una excepción acotada sobre `EPIC/revision-v3`?",
+  "rationale": "La capacidad solicitada solo existe en una rama de epic distinta de la rama por defecto, mientras la política del repositorio establece `dev` como base de las PRs.",
+  "options": [
+    {
+      "title": "Integrar primero V3 en `dev`",
+      "body": "Llevar el epic V3 a la rama por defecto y abrir después una PR focalizada para la excepción de gaveta por producto.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar trabajo en el epic",
+      "body": "Permitir una PR excepcional contra `EPIC/revision-v3` y planificar su posterior integración completa en `dev`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar primero V3 en `dev`",
+    "body": "Llevar el epic V3 a la rama por defecto y abrir después una PR focalizada para la excepción de gaveta por producto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona con la procedencia más directa sobre el flujo global de gaveta V3 y su rama de epic.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8013.md",
+    "reviewedAt": "2026-07-28T08:00:08.153Z",
+    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+  }
+}
