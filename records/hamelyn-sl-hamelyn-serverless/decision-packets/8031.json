@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T15:02:49.621Z",
-  "updatedAt": "2026-07-28T14:44:32Z",
+  "generatedAt": "2026-07-28T15:12:19.943Z",
+  "updatedAt": "2026-07-28T15:09:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,50 @@
       "reporter:beltran",
       "feature",
       "triage:needs-info",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T13:36:47Z",
-    "updatedAt": "2026-07-28T14:44:32Z"
+    "updatedAt": "2026-07-28T15:09:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué código debe compararse con cada pedido y debe bloquearse el cambio de cubeta cuando la cámara no lea o detecte una discrepancia?",
-  "rationale": "La respuesta determina el contrato de impresión, la integración de captura y el comportamiento operativo; el código actual no permite inferir una política segura.",
+  "question": "¿Qué identificador de la última etiqueta debe compararse y qué debe ocurrir si no se lee o no coincide antes de cambiar de cubeta?",
+  "rationale": "El código actual no define una identidad verificable de etiqueta ni una política de bloqueo; ambas decisiones cambian el alcance de Admin, impresión y operación física.",
   "options": [
     {
-      "title": "Tracking obligatorio",
-      "body": "Comparar el tracking de transportista y bloquear hasta coincidencia, con una excepción manual registrada.",
+      "title": "Tracking obligatorio con bloqueo",
+      "body": "Comparar el tracking del transportista y bloquear el cambio de cubeta hasta una lectura válida.",
       "recommended": true
     },
     {
-      "title": "Aviso confirmable",
-      "body": "Mostrar la discrepancia y permitir continuar mediante una confirmación manual documentada.",
+      "title": "Código de barras o matricial",
+      "body": "Comparar el valor codificado en la etiqueta, definiendo por transportista el formato admitido y su normalización.",
       "recommended": false
     },
     {
-      "title": "Otro identificador",
-      "body": "Definir primero el código matricial o de barras que será la identidad canónica.",
+      "title": "Aviso con continuidad manual",
+      "body": "Mostrar el mismatch y permitir continuar mediante una confirmación manual registrada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Tracking obligatorio",
-    "body": "Comparar el tracking de transportista y bloquear hasta coincidencia, con una excepción manual registrada.",
+    "title": "Tracking obligatorio con bloqueo",
+    "body": "Comparar el tracking del transportista y bloquear el cambio de cubeta hasta una lectura válida.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la mejor ruta técnica por su historial directo sobre el flujo de impresión de AutoPacking.",
+    "reason": "Su historial reciente cubre la coordinación entre AutoPacking y la generación de etiquetas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8031#issuecomment-5104971844",
-    "reviewedAt": "2026-07-28T15:02:49.621Z",
+    "reviewedAt": "2026-07-28T15:12:19.943Z",
     "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T13:59:19.959Z",
-  "updatedAt": "2026-07-28T13:43:24Z",
+  "generatedAt": "2026-07-28T15:14:07.186Z",
+  "updatedAt": "2026-07-28T14:21:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "app:infrastructure",
       "feature",
-      "triage:queued",
+      "triage:pr-opened",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-28T13:43:06Z",
-    "updatedAt": "2026-07-28T13:43:24Z"
+    "updatedAt": "2026-07-28T14:21:09Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el contrato compartido de `FTP` rechazar las operaciones ante un fallo global de transporte en vez de simular una respuesta vacía?",
-  "rationale": "Es el arreglo más coherente con el cron y con SFTP, pero cambia la semántica observable de los consumidores existentes.",
+  "question": "¿Debe `FTP` dejar de representar fallos globales de transporte como resultados vacíos para todos sus consumidores?",
+  "rationale": "La propuesta es acotada, pero convierte un contrato tolerante compartido en rechazos visibles de cron y puede alterar automatizaciones que dependen de valores vacíos.",
   "options": [
     {
-      "title": "Adoptar errores tipados",
-      "body": "Propagar `FtpOperationError` en los fallos globales y mantener sólo la tolerancia por fichero durante descargas por lote.",
+      "title": "Propagar los fallos globales",
+      "body": "Aceptar `FtpOperationError` para accesos, listados y transferencias globalmente fallidos, manteniendo solo la tolerancia por fichero.",
       "recommended": true
     },
     {
-      "title": "Conservar el contrato silencioso",
-      "body": "Mantener retornos vacíos y obligar a cada consumidor a instrumentar su propia detección de fallo.",
+      "title": "Mantener el contrato vacío",
+      "body": "Conservar los valores vacíos del servicio y resolver la observabilidad de FTP en consumidores o crons específicos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar errores tipados",
-    "body": "Propagar `FtpOperationError` en los fallos globales y mantener sólo la tolerancia por fichero durante descargas por lote.",
+    "title": "Propagar los fallos globales",
+    "body": "Aceptar `FtpOperationError` para accesos, listados y transferencias globalmente fallidos, manteniendo solo la tolerancia por fichero.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial le vincula con la interfaz FTP, el flujo de Alibris y la ruta de resumen de rechazos del cron.",
+    "reason": "La historia de `ftp.service.ts` y de la integración Alibris concentra en esta persona la mayor señal sobre el contrato existente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8033.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8033#issuecomment-5105132582",
-    "reviewedAt": "2026-07-28T13:59:19.959Z",
+    "reviewedAt": "2026-07-28T15:14:07.186Z",
     "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
   }
 }
