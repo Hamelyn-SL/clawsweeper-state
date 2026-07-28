@@ -15,13 +15,13 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:49Z",
     "updatedAt": "2026-07-28T08:32:05Z"
@@ -54,7 +54,6 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8015.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8015#issuecomment-5101537349",
     "reviewedAt": "2026-07-28T09:57:03.710Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }

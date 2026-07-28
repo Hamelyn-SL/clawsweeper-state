@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T10:06:57.795Z",
+  "generatedAt": "2026-07-28T09:57:58.807Z",
   "updatedAt": "2026-07-28T08:41:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,33 +27,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba dividir la entrega en integración V3 de sesiones `REVIEW` y endpoint Mongo diario ponderado, antes de iniciar los paneles dependientes?",
-  "rationale": "La funcionalidad V3 aún vive fuera de `dev` y el cambio cruza kiosco, API, repositorio e índice; hace falta coordinar el orden de aterrizaje y el contrato operativo.",
+  "question": "¿Se aprueba el agregado diario calculado al vuelo en Mongo como contrato operativo inicial, dejando BigQuery para las series históricas?",
+  "rationale": "La elección fija la consulta, los índices y el límite de responsabilidades antes de implementar el enganche V3 y los paneles dependientes.",
   "options": [
     {
-      "title": "Aprobar entrega Mongo sobre la épica",
-      "body": "Implementar el tracker y el agregado diario ponderado sobre `EPIC/revision-v3`, manteniendo BigQuery como consumidor histórico.",
+      "title": "Aprobar Mongo operativo",
+      "body": "Exponer totales y minutos activos ponderados desde `opProductivity` para refrescos de cinco minutos, con BigQuery como consumidor histórico.",
       "recommended": true
     },
     {
-      "title": "Esperar a integrar V3 en dev",
-      "body": "Posponer el agregado hasta que la épica aterrice en `dev`, evitando publicar un endpoint sin emisor operativo.",
+      "title": "Exigir rollup persistido",
+      "body": "Crear una colección diaria si se prefiere pagar complejidad de consistencia a cambio de lecturas agregadas precomputadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar entrega Mongo sobre la épica",
-    "body": "Implementar el tracker y el agregado diario ponderado sobre `EPIC/revision-v3`, manteniendo BigQuery como consumidor histórico.",
+    "title": "Aprobar Mongo operativo",
+    "body": "Exponer totales y minutos activos ponderados desde `opProductivity` para refrescos de cinco minutos, con BigQuery como consumidor histórico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Está asignado a esta issue y su historial cubre el contrato V3 que condiciona la integración.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Ya dejó una propuesta técnica concreta y el reparto entre las superficies afectadas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8014.md",
-    "reviewedAt": "2026-07-28T10:06:57.795Z",
+    "reviewedAt": "2026-07-28T09:57:58.807Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

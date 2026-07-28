@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T10:05:22.200Z",
+  "generatedAt": "2026-07-28T09:56:54.760Z",
   "updatedAt": "2026-07-28T08:49:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -28,33 +28,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El dashboard del operario puede mostrar nombres y posiciones nominales del resto del equipo, o debe limitarse a su posición y métricas agregadas anónimas?",
-  "rationale": "La decisión define qué datos personales puede recibir una pantalla visible en el puesto y no puede inferirse de la implementación existente.",
+  "question": "¿El dashboard del operario debe mostrar un ranking nominal del resto del equipo o sólo su posición y métricas agregadas anónimas?",
+  "rationale": "La implementación no puede resolver por sí sola el equilibrio entre utilidad operativa, privacidad y percepción de evaluación entre compañeros.",
   "options": [
     {
-      "title": "Ranking anónimo por defecto",
-      "body": "Mostrar la posición propia, el tamaño del equipo y métricas agregadas, sin identificar a otros operarios.",
+      "title": "Ranking anónimo para operario",
+      "body": "Mostrar su posición y comparativas agregadas, reservando los nombres y rankings completos para el panel de supervisor.",
       "recommended": true
     },
     {
       "title": "Ranking nominal visible",
-      "body": "Mostrar nombres y posiciones del equipo, documentando expresamente la política operativa y de privacidad.",
+      "body": "Mantener los nombres en la tablet con una política operativa explícita de acceso, comunicación y uso del dato.",
+      "recommended": false
+    },
+    {
+      "title": "Sin ranking de equipo",
+      "body": "Limitar la tablet a las métricas personales y la media del equipo, sin posiciones relativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ranking anónimo por defecto",
-    "body": "Mostrar la posición propia, el tamaño del equipo y métricas agregadas, sin identificar a otros operarios.",
+    "title": "Ranking anónimo para operario",
+    "body": "Mostrar su posición y comparativas agregadas, reservando los nombres y rankings completos para el panel de supervisor.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Su historial en el contrato de productividad y la nomenclatura actual lo sitúan cerca de la decisión técnica resultante.",
+    "person": "daniellopez",
+    "reason": "Es el referente del flujo operativo y de las maquetas que introducen el ranking visible.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8017.md",
-    "reviewedAt": "2026-07-28T10:05:22.200Z",
+    "reviewedAt": "2026-07-28T09:56:54.760Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

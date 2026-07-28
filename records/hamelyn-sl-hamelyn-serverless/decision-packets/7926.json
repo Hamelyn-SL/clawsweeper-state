@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T10:06:03.165Z",
-  "updatedAt": "2026-07-28T10:01:01Z",
+  "generatedAt": "2026-07-28T09:57:39.141Z",
+  "updatedAt": "2026-07-28T09:45:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -19,38 +19,43 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-28T10:01:01Z",
-    "headSha": "93d8b2def7a9bce4a647c5911ac6cb71f9eb803d"
+    "updatedAt": "2026-07-28T09:45:55Z",
+    "headSha": "2bd8fe84460938868530ca0d50c356c38c166579"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba mantener hasta el 24 de agosto de 2026 el acceso legacy por `cartId` para no bloquear builds Supply ya desplegadas?",
-  "rationale": "La alternativa estricta cierra antes el IDOR pero puede inutilizar clientes instalados; el código no puede decidir por sí solo qué riesgo operativo y de seguridad acepta el producto.",
+  "question": "¿Debe aceptarse hasta el 24 de agosto de 2026 que los carritos legacy asociados sigan autorizables solo con `cartId`, o debe desplegarse una transición que los proteja antes?",
+  "rationale": "La excepción preserva clientes nativos instalados, pero mantiene explícitamente el acceso no autorizado que motivó esta corrección; decidir el nivel de compatibilidad aceptable requiere autoridad de producto y seguridad.",
   "options": [
     {
-      "title": "Transición acotada y validada",
-      "body": "Mantener el deadline sólo con aprobación explícita, prueba real del head y un plan verificable de actualización o retirada de clientes antiguos.",
+      "title": "Proteger primero los carritos asociados",
+      "body": "Mantener compatibilidad solo para carritos legacy anónimos o mediante un gate de versión, evitando que un `cartId` autorice datos de un usuario.",
       "recommended": true
     },
     {
-      "title": "Cierre inmediato",
-      "body": "Eliminar el contrato legacy y asumir la necesidad de actualizar las builds antiguas antes de desplegar la API.",
+      "title": "Aceptar la ventana temporal",
+      "body": "Conservar el contrato dual completo hasta el deadline y aceptar explícitamente el riesgo de exposición durante ese periodo.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue de la migración",
+      "body": "No fusionar hasta disponer de una actualización o rollout que elimine la dependencia de los clientes antiguos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transición acotada y validada",
-    "body": "Mantener el deadline sólo con aprobación explícita, prueba real del head y un plan verificable de actualización o retirada de clientes antiguos.",
+    "title": "Proteger primero los carritos asociados",
+    "body": "Mantener compatibilidad solo para carritos legacy anónimos o mediante un gate de versión, evitando que un `cartId` autorice datos de un usuario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su reporte canónico y su revisión ya delimitan el riesgo de IDOR y el requisito de compatibilidad de clientes desplegados.",
+    "reason": "Sus comentarios de revisión describen la compatibilidad de clientes desplegados y la recuperación de capabilities que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewedAt": "2026-07-28T10:06:03.165Z",
+    "reviewedAt": "2026-07-28T09:57:39.141Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
