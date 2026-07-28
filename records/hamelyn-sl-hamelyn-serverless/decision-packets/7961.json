@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T06:16:01.131Z",
-  "updatedAt": "2026-07-27T05:58:12Z",
+  "generatedAt": "2026-07-28T21:37:56.561Z",
+  "updatedAt": "2026-07-28T21:31:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,42 +12,41 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:running",
+      "triage:done",
       "P2"
     ],
     "createdAt": "2026-07-27T05:58:02Z",
-    "updatedAt": "2026-07-27T05:58:12Z"
+    "updatedAt": "2026-07-28T21:31:27Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué incidente de creación justificó la pausa de junio y qué criterio verificable permite reactivar eBay ES sin repetirlo?",
-  "rationale": "El código confirma que no existe consumidor, pero no conserva la causa técnica ni una condición de salida para retirar el hotfix temporal.",
+  "question": "¿Debe Marketplace reactivar `ebay.create()` tras una cohorte mínima instrumentada, con umbrales explícitos de éxito y rollback?",
+  "rationale": "La decisión transforma un consumidor deliberadamente apagado en tráfico de publicación de producción y requiere aceptar el alcance operativo de la cohorte.",
   "options": [
     {
-      "title": "Diagnosticar y reactivar controladamente",
-      "body": "Recuperar el incidente original, corregirlo y habilitar creación con observabilidad de outcomes antes de ampliar el ritmo.",
+      "title": "Sonda antes de reactivar",
+      "body": "Fusionar la observabilidad, publicar una cohorte mínima y decidir la reactivación masiva solo con outcomes remotos clasificados.",
       "recommended": true
     },
     {
       "title": "Mantener la pausa",
-      "body": "Conservar la creación desactivada si el incidente sigue activo, documentando la decisión y el impacto de cola.",
+      "body": "Conservar `create` desactivado hasta que la incidencia canónica identifique y delimite los rechazos remotos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Diagnosticar y reactivar controladamente",
-    "body": "Recuperar el incidente original, corregirlo y habilitar creación con observabilidad de outcomes antes de ampliar el ritmo.",
+    "title": "Sonda antes de reactivar",
+    "body": "Fusionar la observabilidad, publicar una cohorte mínima y decidir la reactivación masiva solo con outcomes remotos clasificados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "La pausa temporal procede de su cambio y de la PR que describió el incidente pendiente.",
+    "person": "JavierHamelyn",
+    "reason": "El historial del controlador vigente y el arreglo previo de create lo conectan directamente con la decisión de reactivación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7961.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961#issuecomment-5087934598",
-    "reviewedAt": "2026-07-27T06:16:01.131Z",
-    "mainSha": "799fe633acf95116c76b7c25d0e866401e49d675"
+    "reviewedAt": "2026-07-28T21:37:56.561Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
