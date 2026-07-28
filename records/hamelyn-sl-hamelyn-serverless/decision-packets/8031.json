@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T16:24:57.015Z",
-  "updatedAt": "2026-07-28T16:18:09Z",
+  "generatedAt": "2026-07-28T18:36:02.885Z",
+  "updatedAt": "2026-07-28T16:46:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,51 @@
       "app:admin",
       "reporter:beltran",
       "feature",
-      "triage:needs-info",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T13:36:47Z",
-    "updatedAt": "2026-07-28T16:18:09Z"
+    "updatedAt": "2026-07-28T16:46:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La primera versión debe excluir explícitamente las cubetas MercadoLibre hasta confirmar el código impreso, o debe incluirlas con una regla basada en `shipmentId` validada con una etiqueta real?",
-  "rationale": "El flujo ya cubre esas cubetas, pero no existe evidencia de que el valor visible en su etiqueta corresponda al dato persistido; elegir una regla incorrecta permitiría validaciones falsas.",
+  "question": "¿Se aprueba como contrato estable de la primera versión la exclusión de MercadoLibre, la comparación por carrier y la continuación manual registrada cuando falle la lectura?",
+  "rationale": "El reportero definió el comportamiento operativo, pero la feature introduce un nuevo control físico y un bypass manual entre dos repositorios que requiere patrocinio y responsabilidad de producto.",
   "options": [
     {
-      "title": "Excluir MercadoLibre inicialmente",
-      "body": "Implementar Cainiao, Spring y Postlibri con recuperación manual, mostrando que MercadoLibre queda fuera hasta disponer de una muestra verificable.",
+      "title": "Aprobar la primera versión acotada",
+      "body": "Implementar Cainiao, Spring y Postlibri, excluir `ML-I-*` y registrar toda continuación manual tras un fallo de lectura.",
       "recommended": true
     },
     {
-      "title": "Aportar muestra de MercadoLibre",
-      "body": "Confirmar con un PDF o foto legible qué identificador visible se compara con `shipmentId` antes de incluir esas cubetas.",
+      "title": "Exigir bloqueo estricto",
+      "body": "No permitir continuar ante fallo de OCR, aceptando que la operación quede bloqueada hasta resolver la etiqueta.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer hasta MercadoLibre",
+      "body": "Esperar a definir el identificador físico de MercadoLibre para lanzar una cobertura uniforme de todos los carriers.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Excluir MercadoLibre inicialmente",
-    "body": "Implementar Cainiao, Spring y Postlibri con recuperación manual, mostrando que MercadoLibre queda fuera hasta disponer de una muestra verificable.",
+    "title": "Aprobar la primera versión acotada",
+    "body": "Implementar Cainiao, Spring y Postlibri, excluir `ML-I-*` y registrar toda continuación manual tras un fallo de lectura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente mantiene el flujo de impresión y avance de AutoPacking donde se insertaría la puerta de verificación.",
-    "confidence": "high"
+    "reason": "Es el contribuidor reciente del flujo de AutoPacking donde se materializa la decisión operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8031#issuecomment-5104971844",
-    "reviewedAt": "2026-07-28T16:24:57.015Z",
+    "reviewedAt": "2026-07-28T18:36:02.885Z",
     "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
   }
 }
