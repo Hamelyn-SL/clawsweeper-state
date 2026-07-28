@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-28T02:16:31.753Z",
+  "generated_at": "2026-07-28T03:28:43.488Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-27T23:16:30.618Z",
+  "since": "2026-07-28T00:28:40.312Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 11,
-  "commands_seen": 0,
+  "scanned_comments": 9,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:7994:5091264459:2026-07-28T02:32:09Z:automerge",
+      "comment_id": "5091264459",
+      "comment_version_key": "5091264459:2026-07-28T02:32:09Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 7994,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-07-27T12:25:56Z",
+      "comment_updated_at": "2026-07-28T02:32:09Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "La PR sustituye el gate de PR Proof por un flujo v2 con estado autoritativo, GitHub App dedicada, ledger ligado a SHA y controles de concurrencia, cierre y evidencia causal.\n\nReproducibility: Sí, a nivel de código: el problema original está definido por el workflow y la API de Proof de `dev`. No se ha reproducido en runtime el comportamiento final porque la ejecución autoritativa del head actual sigue en curso.",
+      "review_followup": "- [P1] La siguiente acción es esperar la prueba terminal y decidir la aceptación operativa de un cambio sensible de CI y permisos, no aplicar una reparación mecánica.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 7994 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 1135,
+    "total_ms": 3175,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1133
+        "ms": 1531
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 1641
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
