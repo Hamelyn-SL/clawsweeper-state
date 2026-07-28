@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T07:55:43.998Z",
+  "updatedAt": "2026-07-28T07:46:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8014,
+    "title": "feat: productividad de Revisión V3 (sesión, productos/min y agregado diario)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:done",
+      "epic:revision-v3",
+      "P2",
+      "reporter:daniellopez"
+    ],
+    "createdAt": "2026-07-28T07:19:47Z",
+    "updatedAt": "2026-07-28T07:46:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se confirma el agregado diario en Mongo para el flujo operativo y se reserva BigQuery para histórico?",
+  "rationale": "La issue relacionada dejó abierto el modelo de agregación; el comentario de triage recomienda Mongo, pero la decisión condiciona API, índice y consumidores.",
+  "options": [
+    {
+      "title": "Agregado operativo en Mongo",
+      "body": "Devolver por rango y operario opcional los totales, minutos activos y ritmo ponderado para refrescos de cinco minutos.",
+      "recommended": true
+    },
+    {
+      "title": "Colección de rollup diaria",
+      "body": "Persistir el agregado si las consultas Mongo no cubren el volumen o la latencia exigidos por los paneles.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Agregado operativo en Mongo",
+    "body": "Devolver por rango y operario opcional los totales, minutos activos y ritmo ponderado para refrescos de cinco minutos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El contrato existente de `opProductivity` condiciona la decisión de almacenamiento y API.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8014.md",
+    "reviewedAt": "2026-07-28T07:55:43.998Z",
+    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+  }
+}
