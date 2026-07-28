@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T13:22:22.592Z",
-  "updatedAt": "2026-07-28T12:27:25Z",
+  "generatedAt": "2026-07-28T12:14:34.455Z",
+  "updatedAt": "2026-07-28T12:09:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,42 +25,38 @@
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-07-27T00:01:13Z",
-    "updatedAt": "2026-07-28T12:27:25Z"
+    "updatedAt": "2026-07-28T12:09:00Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994 seguir siendo el vehículo de cierre de esta incidencia o reencuadrarse como endurecimiento independiente?",
-  "rationale": "El comportamiento central ya existe en `dev`, pero la PR abierta amplía el gate y la superficie de seguridad; solo el equipo puede decidir si ese alcance debe condicionar el cierre.",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994 conservar el cierre de esta issue como endurecimiento necesario, o reencuadrarse como una iniciativa de seguridad independiente?",
+  "rationale": "La corrección observable ya existe en `dev`, pero la PR pendiente añade una superficie amplia de política de evidencia, permisos y workflow que no puede aceptarse ni desacoplarse solo por automatización.",
   "options": [
     {
-      "title": "Separar el endurecimiento",
-      "body": "Eliminar la referencia de cierre de la PR y mantenerla como trabajo de seguridad independiente mientras esta incidencia conserva solo el defecto ya corregido.",
+      "title": "Mantenerla vinculada",
+      "body": "Tratar el endurecimiento como parte necesaria de esta incidencia y mantener la issue abierta hasta que la PR pase revisión de seguridad y prueba integral.",
       "recommended": true
     },
     {
-      "title": "Adoptar la PR como cierre",
-      "body": "Revisar y aterrizar la PR como la entrega completa del contrato antes de cerrar la incidencia.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la PR",
-      "body": "Cerrar o pausar la PR si su amplitud no compensa el riesgo, conservando los cambios ya presentes en `dev`.",
+      "title": "Separar el endurecimiento",
+      "body": "Retirar el cierre de la PR, crear o usar seguimiento específico de seguridad y cerrar esta issue solo tras confirmar que el gate actual cubre su contrato original.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar el endurecimiento",
-    "body": "Eliminar la referencia de cierre de la PR y mantenerla como trabajo de seguridad independiente mientras esta incidencia conserva solo el defecto ya corregido.",
+    "title": "Mantenerla vinculada",
+    "body": "Tratar el endurecimiento como parte necesaria de esta incidencia y mantener la issue abierta hasta que la PR pase revisión de seguridad y prueba integral.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona más conectada al contrato actual y a la PR abierta por el historial de commits y discusión.",
+    "reason": "Ha llevado las correcciones centrales y la PR abierta asociada al contrato de Proof.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7951.md",
-    "reviewedAt": "2026-07-28T13:22:22.592Z",
-    "mainSha": "d2eb9f2cae9d89d2401113e185dc6f3c83829165"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7951#issuecomment-5086112215",
+    "reviewedAt": "2026-07-28T12:14:34.455Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
