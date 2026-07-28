@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T11:44:33.703Z",
-  "updatedAt": "2026-07-28T10:57:25Z",
+  "generatedAt": "2026-07-28T09:58:39.614Z",
+  "updatedAt": "2026-07-28T09:38:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,7 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:done",
+      "triage:running",
       "triage:confirmed-live",
       "area:marketplace-sync",
       "P1",
@@ -25,42 +25,43 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-28T10:57:25Z"
+    "updatedAt": "2026-07-28T09:38:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la reactivación de `ebay.create()` esperar una política específica de señal HTTP/alerta para lotes totalmente fallidos, o basta inicialmente con la observabilidad de la PR vinculada?",
-  "rationale": "La modificación de observabilidad es mecánica, pero cambiar el contrato de respuesta del cron afecta a rutas compartidas y requiere decidir compatibilidad operativa.",
+  "question": "¿Qué señal operativa debe emitir `/api/ebay` ante un lote de publicación completamente fallido antes de reactivar `ebay.create()`?",
+  "rationale": "El handler compartido afecta a varios crons y la elección entre HTTP, respuesta estructurada, alerta o combinación requiere decidir compatibilidad y observabilidad.",
   "options": [
     {
-      "title": "Aterrizar observabilidad y sondear",
-      "body": "Integrar la PR de logging, mantener `create` pausado y hacer una sonda limitada antes de decidir la señal HTTP transversal.",
+      "title": "Señal por fase y reactivación controlada",
+      "body": "Añadir resultado estructurado para publish, activar una cohorte limitada y revertir si aumentan los `SYNC_ERROR`.",
       "recommended": true
     },
     {
-      "title": "Definir primero la política del handler",
-      "body": "Resolver la severidad por ruta en la incidencia transversal antes de cualquier reactivación de eBay.",
+      "title": "Mantener la pausa",
+      "body": "Conservar `ebay.create()` desactivado hasta diseñar una política común de fallos parciales para todos los crons.",
       "recommended": false
     },
     {
-      "title": "Reactivar sin cambio de señal",
-      "body": "Aceptar temporalmente HTTP 200 y vigilar los nuevos `errorId` mediante observabilidad externa.",
+      "title": "Cambiar el handler global",
+      "body": "Modificar la semántica compartida de fallos parciales antes de reactivar eBay, asumiendo el impacto en otras rutas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar observabilidad y sondear",
-    "body": "Integrar la PR de logging, mantener `create` pausado y hacer una sonda limitada antes de decidir la señal HTTP transversal.",
+    "title": "Señal por fase y reactivación controlada",
+    "body": "Añadir resultado estructurado para publish, activar una cohorte limitada y revertir si aumentan los `SYNC_ERROR`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia y lidera el diagnóstico y la PR de observabilidad actualmente vinculada.",
+    "reason": "Figura asignado en esta incidencia y en la relacionada con el contrato compartido.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewedAt": "2026-07-28T11:44:33.703Z",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
+    "reviewedAt": "2026-07-28T09:58:39.614Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
