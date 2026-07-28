@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T13:59:19.959Z",
+  "updatedAt": "2026-07-28T13:43:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8033,
+    "title": "ftp.service: propagar errores tipados en vez de tragarlos y devolver éxito vacío",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8033",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P1"
+    ],
+    "createdAt": "2026-07-28T13:43:06Z",
+    "updatedAt": "2026-07-28T13:43:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el contrato compartido de `FTP` rechazar las operaciones ante un fallo global de transporte en vez de simular una respuesta vacía?",
+  "rationale": "Es el arreglo más coherente con el cron y con SFTP, pero cambia la semántica observable de los consumidores existentes.",
+  "options": [
+    {
+      "title": "Adoptar errores tipados",
+      "body": "Propagar `FtpOperationError` en los fallos globales y mantener sólo la tolerancia por fichero durante descargas por lote.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar el contrato silencioso",
+      "body": "Mantener retornos vacíos y obligar a cada consumidor a instrumentar su propia detección de fallo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar errores tipados",
+    "body": "Propagar `FtpOperationError` en los fallos globales y mantener sólo la tolerancia por fichero durante descargas por lote.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial le vincula con la interfaz FTP, el flujo de Alibris y la ruta de resumen de rechazos del cron.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8033.md",
+    "reviewedAt": "2026-07-28T13:59:19.959Z",
+    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+  }
+}
