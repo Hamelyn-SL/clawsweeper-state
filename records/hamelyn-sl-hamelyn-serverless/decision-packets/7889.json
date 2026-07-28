@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T12:13:29.133Z",
-  "updatedAt": "2026-07-24T12:10:43Z",
+  "generatedAt": "2026-07-28T09:40:28.943Z",
+  "updatedAt": "2026-07-28T08:57:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "P0",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-22T21:49:45Z",
-    "updatedAt": "2026-07-24T12:10:43Z"
+    "updatedAt": "2026-07-28T08:57:26Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se aprueba el plazo y la política de corte para carritos legacy sin `accessSecretHash` propuestos en https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926?",
-  "rationale": "La fecha de corte equilibra exposición residual frente a pérdida de acceso de usuarios existentes; el código no puede determinar ese compromiso operativo por sí solo.",
+  "question": "¿Qué transición se aprueba para los clientes Supply desplegados: compatibilidad limitada y segura, o corte inmediato de los flujos heredados?",
+  "rationale": "La capability cierra el IDOR, pero el periodo de convivencia puede conservar accesos indebidos o bloquear builds anteriores; ese equilibrio de seguridad y despliegue requiere intención explícita.",
   "options": [
     {
-      "title": "Aprobar corte fail-closed",
-      "body": "Mantener el plazo propuesto y exigir capability después de la fecha, con comunicación y monitorización de carritos legacy.",
+      "title": "Compatibilidad limitada y segura",
+      "body": "Permitir solo el mínimo legado necesario para carritos anónimos, proteger desde ya los carritos asociados y añadir recuperación o reinicio visible del carrito.",
       "recommended": true
     },
     {
-      "title": "Ajustar el plazo",
-      "body": "Modificar la fecha tras medir uso legacy, conservando el cierre obligatorio y una fecha final explícita.",
+      "title": "Corte inmediato",
+      "body": "Exigir capability en todos los carritos desde el despliegue y aceptar que las builds antiguas deban actualizarse o reiniciar su carrito.",
       "recommended": false
     },
     {
-      "title": "Pausar la transición",
-      "body": "No integrar el cambio hasta definir una política alternativa que no prolongue indefinidamente el acceso por `cartId`.",
+      "title": "Mantener legado amplio",
+      "body": "Conservar temporalmente el acceso por `cartId`, aceptando que el IDOR persista hasta la fecha de corte.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar corte fail-closed",
-    "body": "Mantener el plazo propuesto y exigir capability después de la fecha, con comunicación y monitorización de carritos legacy.",
+    "title": "Compatibilidad limitada y segura",
+    "body": "Permitir solo el mínimo legado necesario para carritos anónimos, proteger desde ya los carritos asociados y añadir recuperación o reinicio visible del carrito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la corrección candidata y mantiene el controlador de merge afectado.",
+    "reason": "Está asignado a la issue y su PR concentra la implementación y los compromisos de transición.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7889.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7889#issuecomment-5055999691",
-    "reviewedAt": "2026-07-24T12:13:29.133Z",
-    "mainSha": "4fa3866b3b3896e0fb63c5288c62a0a4af28106d"
+    "reviewedAt": "2026-07-28T09:40:28.943Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
