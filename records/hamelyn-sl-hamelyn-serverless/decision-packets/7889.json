@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:40:28.943Z",
-  "updatedAt": "2026-07-28T08:57:26Z",
+  "generatedAt": "2026-07-28T11:32:58.320Z",
+  "updatedAt": "2026-07-28T10:12:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,48 @@
       "app:supply",
       "feature",
       "reporter:javier",
-      "triage:queued",
-      "P0",
-      "impact:security",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
+      "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "P0",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-22T21:49:45Z",
-    "updatedAt": "2026-07-28T08:57:26Z"
+    "updatedAt": "2026-07-28T10:12:28Z"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Qué transición se aprueba para los clientes Supply desplegados: compatibilidad limitada y segura, o corte inmediato de los flujos heredados?",
-  "rationale": "La capability cierra el IDOR, pero el periodo de convivencia puede conservar accesos indebidos o bloquear builds anteriores; ese equilibrio de seguridad y despliegue requiere intención explícita.",
+  "question": "¿Debe la transición legacy permitir acceso sin token a algún carrito asociado a usuario, o bloquearse ya y reservar cualquier compatibilidad temporal para carritos anónimos?",
+  "rationale": "La elección determina si el IDOR permanece explotable durante la transición; no puede resolverse solo con un cambio mecánico sin aceptar explícitamente su impacto operativo.",
   "options": [
     {
-      "title": "Compatibilidad limitada y segura",
-      "body": "Permitir solo el mínimo legado necesario para carritos anónimos, proteger desde ya los carritos asociados y añadir recuperación o reinicio visible del carrito.",
+      "title": "Bloquear carritos asociados inmediatamente",
+      "body": "Exigir `x-cart-token` para todo carrito con usuario y limitar la compatibilidad temporal a anónimos sin hash.",
       "recommended": true
     },
     {
-      "title": "Corte inmediato",
-      "body": "Exigir capability en todos los carritos desde el despliegue y aceptar que las builds antiguas deban actualizarse o reiniciar su carrito.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener legado amplio",
-      "body": "Conservar temporalmente el acceso por `cartId`, aceptando que el IDOR persista hasta la fecha de corte.",
+      "title": "Aceptar una ventana amplia",
+      "body": "Permitir acceso legacy por `cartId` hasta la fecha de corte, asumiendo que los carritos asociados siguen expuestos temporalmente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Compatibilidad limitada y segura",
-    "body": "Permitir solo el mínimo legado necesario para carritos anónimos, proteger desde ya los carritos asociados y añadir recuperación o reinicio visible del carrito.",
+    "title": "Bloquear carritos asociados inmediatamente",
+    "body": "Exigir `x-cart-token` para todo carrito con usuario y limitar la compatibilidad temporal a anónimos sin hash.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y su PR concentra la implementación y los compromisos de transición.",
+    "reason": "Está asignado a la reparación y ha mantenido recientemente el controlador afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7889.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7889#issuecomment-5055999691",
-    "reviewedAt": "2026-07-28T09:40:28.943Z",
+    "reviewedAt": "2026-07-28T11:32:58.320Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
