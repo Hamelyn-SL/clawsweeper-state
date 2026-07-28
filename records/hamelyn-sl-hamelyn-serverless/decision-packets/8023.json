@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T10:29:57.136Z",
+  "updatedAt": "2026-07-28T09:58:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8023,
+    "title": "fix: prevent stale Amazon candidates from starving create",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8023",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-07-28T09:54:23Z",
+    "updatedAt": "2026-07-28T09:58:15Z",
+    "headSha": "652579fc1b5e04d3007d80353559a190beb6cac5"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe la selección garantizar que busca hasta llenar el lote remoto, o se acepta explícitamente el límite fijo de `5x` como mitigación incompleta?",
+  "rationale": "El código actual prioriza una consulta indexada y acotada; eliminar la inanición por completo requiere decidir el coste operativo aceptable de seguir escaneando candidatos.",
+  "options": [
+    {
+      "title": "Garantizar el llenado del lote",
+      "body": "Iterar por páginas indexadas hasta reunir `limit` maestros elegibles o agotar candidatos, preservando el límite remoto y añadiendo una regresión.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la mitigación 5x",
+      "body": "Mantener el multiplicador fijo, documentar que puede persistir la inanición con rachas mayores y vigilar el nuevo log.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Garantizar el llenado del lote",
+    "body": "Iterar por páginas indexadas hasta reunir `limit` maestros elegibles o agotar candidatos, preservando el límite remoto y añadiendo una regresión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta directamente la consulta de candidatos con las validaciones maestras que condicionan el diseño.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8023.md",
+    "reviewedAt": "2026-07-28T10:29:57.136Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+  }
+}
