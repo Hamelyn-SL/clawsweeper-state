@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T13:57:27.400Z",
-  "updatedAt": "2026-07-28T13:48:57Z",
+  "generatedAt": "2026-07-28T19:41:54.736Z",
+  "updatedAt": "2026-07-28T17:42:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,46 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-28T13:48:57Z"
+    "updatedAt": "2026-07-28T17:42:25Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe mantenerse `ebay.create()` pausado hasta la respuesta de eBay o autorizarse una sonda limitada para capturar los `errorId` después de integrar la PR?",
-  "rationale": "El código puede aportar diagnóstico, pero no puede decidir el riesgo comercial y operativo de volver a enviar inventario rechazado por políticas remotas.",
+  "question": "¿Debe mantenerse `ebay.create()` pausado hasta validar con eBay el rechazo de política mediante una sonda limitada instrumentada?",
+  "rationale": "El cambio de logging es acotado, pero reactivar publicaciones y planificar la recuperación masiva exige asumir riesgo operativo y coordinar una causa externa.",
   "options": [
     {
-      "title": "Mantener la pausa hasta eBay",
-      "body": "Integrar primero la observabilidad y reactivar create solo tras confirmar con soporte de eBay la causa de política.",
+      "title": "Mantener pausa y sondear",
+      "body": "Integrar la observabilidad y ejecutar una sonda limitada tras revisar con eBay los rechazos de política.",
       "recommended": true
     },
     {
-      "title": "Autorizar una sonda limitada",
-      "body": "Reactivar temporalmente un lote acotado para capturar `errorId` y volver a pausar create si persisten los rechazos.",
+      "title": "Reactivar inmediatamente",
+      "body": "Reanudar create para recoger evidencia adicional, aceptando que pueden regenerarse errores permanentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la pausa hasta eBay",
-    "body": "Integrar primero la observabilidad y reactivar create solo tras confirmar con soporte de eBay la causa de política.",
+    "title": "Mantener pausa y sondear",
+    "body": "Integrar la observabilidad y ejecutar una sonda limitada tras revisar con eBay los rechazos de política.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la incidencia y documentó la secuencia operativa necesaria.",
+    "reason": "Está asignado a la incidencia y conduce la reparación candidata y el diagnóstico operativo asociado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-28T13:57:27.400Z",
-    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+    "reviewedAt": "2026-07-28T19:41:54.736Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }

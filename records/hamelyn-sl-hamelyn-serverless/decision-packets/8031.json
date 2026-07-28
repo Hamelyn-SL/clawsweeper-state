@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T18:36:02.885Z",
-  "updatedAt": "2026-07-28T16:46:01Z",
+  "generatedAt": "2026-07-28T19:41:30.758Z",
+  "updatedAt": "2026-07-28T18:39:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -20,45 +20,41 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "issue-rating: ➖ n/a"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-28T13:36:47Z",
-    "updatedAt": "2026-07-28T16:46:01Z"
+    "updatedAt": "2026-07-28T18:39:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba como contrato estable de la primera versión la exclusión de MercadoLibre, la comparación por carrier y la continuación manual registrada cuando falle la lectura?",
-  "rationale": "El reportero definió el comportamiento operativo, pero la feature introduce un nuevo control físico y un bypass manual entre dos repositorios que requiere patrocinio y responsabilidad de producto.",
+  "question": "¿Se aprueba esta primera versión con bypass manual de discrepancias y quién coordina el cambio entre Admin, Postlibri y `Record-revision-Windows`?",
+  "rationale": "El comportamiento de excepción afecta al control operativo de empaquetado y el agente que debe leer OCR no está en este repositorio.",
   "options": [
     {
-      "title": "Aprobar la primera versión acotada",
-      "body": "Implementar Cainiao, Spring y Postlibri, excluir `ML-I-*` y registrar toda continuación manual tras un fallo de lectura.",
+      "title": "Patrocinar la primera versión",
+      "body": "Confirmar el bypass manual acordado, mantener excluidas las cubetas `ML-I-*` y coordinar un contrato OCR compatible entre los dos repositorios.",
       "recommended": true
     },
     {
-      "title": "Exigir bloqueo estricto",
-      "body": "No permitir continuar ante fallo de OCR, aceptando que la operación quede bloqueada hasta resolver la etiqueta.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer hasta MercadoLibre",
-      "body": "Esperar a definir el identificador físico de MercadoLibre para lanzar una cobertura uniforme de todos los carriers.",
+      "title": "Endurecer la validación",
+      "body": "Exigir bloqueo sin bypass o ampliar carriers antes de desarrollar, aceptando mayor alcance y necesidad de nueva validación física.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la primera versión acotada",
-    "body": "Implementar Cainiao, Spring y Postlibri, excluir `ML-I-*` y registrar toda continuación manual tras un fallo de lectura.",
+    "title": "Patrocinar la primera versión",
+    "body": "Confirmar el bypass manual acordado, mantener excluidas las cubetas `ML-I-*` y coordinar un contrato OCR compatible entre los dos repositorios.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el contribuidor reciente del flujo de AutoPacking donde se materializa la decisión operativa.",
+    "reason": "Su trabajo reciente cubre el punto de avance e impresión de AutoPacking que debe integrar el contrato aprobado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewedAt": "2026-07-28T18:36:02.885Z",
-    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+    "reviewedAt": "2026-07-28T19:41:30.758Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
