@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T03:49:28.928Z",
-  "updatedAt": "2026-07-28T03:21:30Z",
+  "generatedAt": "2026-07-28T03:53:13.434Z",
+  "updatedAt": "2026-07-28T03:49:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 security-boundary",
       "merge-risk: 🚨 availability",
-      "merge-risk: 🚨 automation"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-27T10:56:00Z",
-    "updatedAt": "2026-07-28T03:21:30Z",
+    "updatedAt": "2026-07-28T03:49:37Z",
     "headSha": "79349365a08c2d6ae718b8bd39a97730fb8eeb76"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se aprueba desplegar y activar este gate con los nuevos permisos de GitHub App tras un canario completo del workflow?",
-  "rationale": "La aceptación cambia el límite operativo de permisos y el comportamiento de bloqueo de PRs; la evidencia actual solo confirma capacidades parciales y el run final es no concluyente.",
+  "question": "¿Se aprueba activar este gate con los nuevos permisos de GitHub App tras corregir el runbook y observar un canario terminal completo?",
+  "rationale": "La decisión cambia el límite operativo de permisos y el comportamiento que bloquea PRs; la evidencia actual confirma capacidades parciales, no el flujo final.",
   "options": [
     {
-      "title": "Corregir y demostrar antes de fusionar",
-      "body": "Alinear el runbook heredado y adjuntar un canario del head que recorra el workflow real hasta un resultado terminal verificable.",
+      "title": "Corregir y validar antes de activar",
+      "body": "Alinear toda la guía con `proof-evidence` y adjuntar un canario terminal del workflow con secretos y datos sensibles redactados.",
       "recommended": true
     },
     {
-      "title": "Pausar la activación",
-      "body": "Mantener el gate actual hasta que se valide la App instalada, los roles y la recuperación operacional en staging.",
+      "title": "Pausar el rollout",
+      "body": "Mantener el gate sin activar como requerido hasta validar permisos instalados y recorrido end-to-end en staging.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y demostrar antes de fusionar",
-    "body": "Alinear el runbook heredado y adjuntar un canario del head que recorra el workflow real hasta un resultado terminal verificable.",
+    "title": "Corregir y validar antes de activar",
+    "body": "Alinear toda la guía con `proof-evidence` y adjuntar un canario terminal del workflow con secretos y datos sensibles redactados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es revisor asignado y su historial conecta con el comportamiento de Proof que este cambio reemplaza.",
+    "reason": "Está solicitado como revisor por experiencia directa en los archivos de Proof afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
-    "reviewedAt": "2026-07-28T03:49:28.928Z",
+    "reviewedAt": "2026-07-28T03:53:13.434Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
