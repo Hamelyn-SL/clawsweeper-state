@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T15:58:39.636Z",
-  "updatedAt": "2026-07-27T14:00:39Z",
+  "generatedAt": "2026-07-28T05:52:10.656Z",
+  "updatedAt": "2026-07-28T05:38:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-27T12:00:38Z",
-    "updatedAt": "2026-07-27T14:00:39Z",
-    "headSha": "b7feebee4b56f45b8bb5e8226f48dceb678500c1"
+    "updatedAt": "2026-07-28T05:38:29Z",
+    "headSha": "4bc369a47ca110092ff9dae01e6d815bb8edfc63"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta primera entrega corregir automáticamente provincia y municipio para todos los carriers, o limitarse a una recuperación compatible y reversible por carrier?",
-  "rationale": "La propuesta cambia datos de dirección persistidos y amplía el reintento a varios proveedores; el código no puede decidir por sí solo qué sobrescrituras y contratos de carrier son aceptables.",
+  "question": "¿Qué política de reintento y conservación de datos debe aplicar el cron cuando Google está deshabilitado o devuelve errores transitorios?",
+  "rationale": "La frecuencia de nuevas llamadas externas y el periodo de retención de valores originales afectan coste operativo, equidad entre pedidos y capacidad de reversión.",
   "options": [
     {
-      "title": "Acotar y blindar la entrega",
-      "body": "Mantener una recuperación reversible, retrasar los efectos Cainiao y ampliar carriers solo con contratos y pruebas específicas.",
+      "title": "Priorizar nuevos pedidos y limitar reintentos",
+      "body": "Ordenar primero los pedidos sin marcador, aplicar backoff a errores de Google y guardar el snapshot completo antes de cada corrección.",
       "recommended": true
     },
     {
-      "title": "Aceptar la política global",
-      "body": "Aprobar expresamente la sobrescritura automática y asumir la compatibilidad de todos los carriers cubiertos.",
+      "title": "Reintentar sin límite",
+      "body": "Mantener la consulta actual y aceptar que una caída de Google puede consumir repetidamente toda la capacidad del cron.",
       "recommended": false
     },
     {
-      "title": "Dividir por carrier",
-      "body": "Aterrizar primero Cainiao y SEUR con casos reales, dejando el resto para PRs posteriores.",
+      "title": "Separar la recuperación reactiva",
+      "body": "Aplazar el cron proactivo y aterrizar únicamente la recuperación tras un error de etiqueta con snapshot completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar y blindar la entrega",
-    "body": "Mantener una recuperación reversible, retrasar los efectos Cainiao y ampliar carriers solo con contratos y pruebas específicas.",
+    "title": "Priorizar nuevos pedidos y limitar reintentos",
+    "body": "Ordenar primero los pedidos sin marcador, aplicar backoff a errores de Google y guardar el snapshot completo antes de cada corrección.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "El historial lo conecta directamente con la política Cainiao de reintentos, avisos y exclusión de etiquetas.",
+    "reason": "Su historial reciente cubre el contrato de reintentos y la notificación tras fallos de etiquetas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8000.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8000#issuecomment-5091267886",
-    "reviewedAt": "2026-07-27T15:58:39.636Z",
-    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+    "reviewedAt": "2026-07-28T05:52:10.656Z",
+    "mainSha": "9dbd0a5effbbb8512a6a2f6bab94ed9585096a8d"
   }
 }
