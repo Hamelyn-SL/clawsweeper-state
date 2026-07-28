@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:32:47.685Z",
-  "updatedAt": "2026-07-28T20:59:48Z",
+  "generatedAt": "2026-07-28T23:40:24.260Z",
+  "updatedAt": "2026-07-28T22:31:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:queued",
-      "P2",
+      "triage:done",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
-    "updatedAt": "2026-07-28T20:59:48Z"
+    "updatedAt": "2026-07-28T22:31:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Marketplace implantar ya un muestreo dirigido con una ordenación alternativa o esperar confirmación formal de TodoColección sobre `ultima_modificacion`?",
-  "rationale": "Las dos rutas son técnicamente viables, pero determinan cobertura, coste y garantías de la reconciliación externa.",
+  "question": "¿Debe esta issue limitarse al seguimiento con TodoColección o aprobar además un muestreo dirigido recurrente de listings?",
+  "rationale": "La reparación local ya está fusionada; el trabajo restante depende de un proveedor externo y añade una cobertura operativa que no existe hoy.",
   "options": [
     {
-      "title": "Adoptar el workaround acotado",
-      "body": "Usar un `orderby` explícito funcional y muestreo dirigido por SKU o sección mientras se mantiene el ticket externo.",
+      "title": "Separar proveedor y muestreo",
+      "body": "Mantener aquí el ticket de TodoColección y abrir un alcance técnico independiente si se decide implantar muestreo.",
       "recommended": true
     },
     {
-      "title": "Esperar el contrato del proveedor",
-      "body": "No habilitar el listado operativo hasta que TodoColección confirme la ordenación y los límites reales del endpoint.",
+      "title": "Aprobar muestreo dirigido",
+      "body": "Definir una cadencia, presupuesto de llamadas, ordenación válida y métricas antes de implementar el cron.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar el workaround acotado",
-    "body": "Usar un `orderby` explícito funcional y muestreo dirigido por SKU o sección mientras se mantiene el ticket externo.",
+    "title": "Separar proveedor y muestreo",
+    "body": "Mantener aquí el ticket de TodoColección y abrir un alcance técnico independiente si se decide implantar muestreo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona con evidencia más directa de investigación de endpoints y de la reparación integrada.",
+    "reason": "Es la persona asignada y quien integró la corrección local directamente relacionada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-28T21:32:47.685Z",
+    "reviewedAt": "2026-07-28T23:40:24.260Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }

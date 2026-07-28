@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:26:04.915Z",
-  "updatedAt": "2026-07-28T20:59:36Z",
+  "generatedAt": "2026-07-28T23:40:27.156Z",
+  "updatedAt": "2026-07-28T23:31:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,54 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-28T20:59:36Z"
+    "updatedAt": "2026-07-28T23:31:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe TodoColeccion reintentar o reanudar automáticamente create tras un 429, o mantener el aborto conservador del batch de `products`?",
-  "rationale": "El código actual implementa deliberadamente el corte para evitar cascadas, y la evidencia reciente no confirma una incidencia nueva que determine una única política segura.",
+  "question": "¿Debe `create` mantener el corte del lote tras un rate limit, o debe adoptar una política documentada de espera y reanudación?",
+  "rationale": "La mitigación fusionada resolvió el bloqueo entre familias, pero elegir reintentos o reanudación sin cuota real cambia la presión sobre un proveedor externo.",
   "options": [
     {
-      "title": "Mantener el corte conservador",
-      "body": "Conservar el `break` actual y reabrir una reparación solo con una respuesta 429 reciente y datos de cuota del proveedor.",
+      "title": "Conservar la política actual",
+      "body": "Mantener el corte del lote de productos y reabrir solo con una nueva evidencia causal de rate limit.",
       "recommended": true
     },
     {
-      "title": "Introducir recuperación acotada",
-      "body": "Añadir backoff y reanudación limitados por cuota confirmada, preservando el breaker para evitar ráfagas.",
+      "title": "Definir reanudación controlada",
+      "body": "Acordar cuota, backoff máximo y observabilidad antes de reintentar los chunks restantes.",
       "recommended": false
     },
     {
-      "title": "Separar create de precio",
-      "body": "Usar scopes distintos para reducir el impacto cruzado dentro de `products`, definiendo antes la semántica de recuperación.",
+      "title": "Separar aún más los productos",
+      "body": "Valorar scopes independientes para create y precio si la telemetría demuestra que comparten indebidamente el límite remoto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el corte conservador",
-    "body": "Conservar el `break` actual y reabrir una reparación solo con una respuesta 429 reciente y datos de cuota del proveedor.",
+    "title": "Conservar la política actual",
+    "body": "Mantener el corte del lote de productos y reabrir solo con una nueva evidencia causal de rate limit.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Fusionó la mitigación anterior y ha mantenido recientemente los flujos de recuperación de TodoColeccion.",
+    "reason": "Fusionó la mitigación vigente y mantiene cambios recientes en el cliente y recovery de TodoColeccion.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-28T21:26:04.915Z",
+    "reviewedAt": "2026-07-28T23:40:27.156Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
