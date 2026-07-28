@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:56:53.169Z",
-  "updatedAt": "2026-07-28T08:31:52Z",
+  "generatedAt": "2026-07-28T11:01:39.786Z",
+  "updatedAt": "2026-07-28T10:42:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:52Z",
-    "updatedAt": "2026-07-28T08:31:52Z"
+    "updatedAt": "2026-07-28T10:42:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La auditoría debe medir coincidencia por producto completo o por desperfecto individual, y la cuota debe atribuirse al operario que cierra la gaveta física?",
-  "rationale": "Estas elecciones determinan la identidad auditada, el esquema persistente, la selección semanal y el significado del veredicto; no son decisiones seguras de inferir desde el código previo.",
+  "question": "¿La auditoría se mide por gaveta física cerrada por su operario y el 85 % cuenta productos completamente idénticos, o se adopta otra unidad y fórmula?",
+  "rationale": "Ambas decisiones determinan la identidad almacenada, la cuota semanal, el comparador y el veredicto; el código actual y la issue presentan alternativas incompatibles.",
   "options": [
     {
-      "title": "Gaveta y producto completo",
-      "body": "Usar la gaveta física cerrada por el operario y considerar acertado un producto solo si todos sus estados coinciden.",
+      "title": "Gaveta física y producto completo",
+      "body": "Guardar una auditoría por gaveta cerrada por el operario y calcular coincidencia por productos cuyos estados completos sean idénticos.",
       "recommended": true
     },
     {
-      "title": "Gaveta y desperfectos",
-      "body": "Usar la gaveta física, pero calcular la calidad por cada desperfecto individual acertado.",
+      "title": "Gaveta física y desperfectos",
+      "body": "Mantener la unidad por gaveta, pero medir el porcentaje por desperfectos individuales acertados y redefinir el comparador.",
       "recommended": false
     },
     {
-      "title": "Mantener comparación por secciones",
-      "body": "Conservar la semántica existente de conjuntos por sección y definir explícitamente sus implicaciones operativas.",
+      "title": "Conservar comparación por secciones",
+      "body": "Usar la semántica actual de igualdad de conjuntos por sección, documentando su efecto sobre el umbral del 85 %.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Gaveta y producto completo",
-    "body": "Usar la gaveta física cerrada por el operario y considerar acertado un producto solo si todos sus estados coinciden.",
+    "title": "Gaveta física y producto completo",
+    "body": "Guardar una auditoría por gaveta cerrada por el operario y calcular coincidencia por productos cuyos estados completos sean idénticos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "daniellopez",
-    "reason": "El paquete y la necesidad de gestión proceden de sus requisitos operativos; puede validar qué métrica representa mejor la auditoría real.",
+    "reason": "Es el referente visible de las reglas operativas que fijan la semántica de calidad y la gestión de gavetas.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
-    "reviewedAt": "2026-07-28T09:56:53.169Z",
+    "reviewedAt": "2026-07-28T11:01:39.786Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
