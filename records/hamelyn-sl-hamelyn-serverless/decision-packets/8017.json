@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:57:11.861Z",
-  "updatedAt": "2026-07-28T07:20:21Z",
+  "generatedAt": "2026-07-28T09:56:54.760Z",
+  "updatedAt": "2026-07-28T08:49:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,56 +10,56 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8017",
     "state": "open",
     "labels": [
+      "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:55Z",
-    "updatedAt": "2026-07-28T07:20:21Z"
+    "updatedAt": "2026-07-28T08:49:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba mostrar rankings nominales al operario y se fija `apps/admin` con Mongo como superficie inicial, o se separa el análisis supervisor en BigQuery?",
-  "rationale": "La elección define privacidad, contratos de agregación, latencia y dónde vivirán los filtros y comparativas; no es una decisión que pueda inferirse de la implementación existente.",
+  "question": "¿El dashboard del operario debe mostrar un ranking nominal del resto del equipo o sólo su posición y métricas agregadas anónimas?",
+  "rationale": "La implementación no puede resolver por sí sola el equilibrio entre utilidad operativa, privacidad y percepción de evaluación entre compañeros.",
   "options": [
     {
-      "title": "Admin y Mongo como primera entrega",
-      "body": "Aprobar dashboard de tablet y panel supervisor en `apps/admin` tras el agregado de productividad, con una política explícita para el ranking nominal.",
+      "title": "Ranking anónimo para operario",
+      "body": "Mostrar su posición y comparativas agregadas, reservando los nombres y rankings completos para el panel de supervisor.",
       "recommended": true
     },
     {
-      "title": "Separar analítica de supervisor",
-      "body": "Mantener la tablet en Admin y diseñar el análisis histórico del supervisor sobre BigQuery antes de implementar sus filtros y series.",
+      "title": "Ranking nominal visible",
+      "body": "Mantener los nombres en la tablet con una política operativa explícita de acceso, comunicación y uso del dato.",
       "recommended": false
     },
     {
-      "title": "Limitar inicialmente la exposición",
-      "body": "Entregar métricas personales y agregadas del equipo sin ranking nominal hasta acordar privacidad y comunicación operativa.",
+      "title": "Sin ranking de equipo",
+      "body": "Limitar la tablet a las métricas personales y la media del equipo, sin posiciones relativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Admin y Mongo como primera entrega",
-    "body": "Aprobar dashboard de tablet y panel supervisor en `apps/admin` tras el agregado de productividad, con una política explícita para el ranking nominal.",
+    "title": "Ranking anónimo para operario",
+    "body": "Mostrar su posición y comparativas agregadas, reservando los nombres y rankings completos para el panel de supervisor.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La infraestructura de sesiones y agregados actual es la base técnica que condiciona la decisión de superficie.",
+    "person": "daniellopez",
+    "reason": "Es el referente del flujo operativo y de las maquetas que introducen el ranking visible.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8017.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8017#issuecomment-5101539679",
-    "reviewedAt": "2026-07-28T07:57:11.861Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T09:56:54.760Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

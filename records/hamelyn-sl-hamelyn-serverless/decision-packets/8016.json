@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:57:15.577Z",
-  "updatedAt": "2026-07-28T07:20:13Z",
+  "generatedAt": "2026-07-28T09:56:53.169Z",
+  "updatedAt": "2026-07-28T08:31:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,56 +10,56 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016",
     "state": "open",
     "labels": [
+      "source:admin-panel",
       "app:admin",
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:52Z",
-    "updatedAt": "2026-07-28T07:20:13Z"
+    "updatedAt": "2026-07-28T08:31:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué unidad debe gobernar el 85 % de calidad y cómo se cierra una gaveta seleccionada que no llega a la revisión del supervisor?",
-  "rationale": "El comparador existente puntúa secciones, pero la issue plantea alternativas con consecuencias distintas para el resultado y la cuota semanal.",
+  "question": "¿La auditoría debe medir coincidencia por producto completo o por desperfecto individual, y la cuota debe atribuirse al operario que cierra la gaveta física?",
+  "rationale": "Estas elecciones determinan la identidad auditada, el esquema persistente, la selección semanal y el significado del veredicto; no son decisiones seguras de inferir desde el código previo.",
   "options": [
     {
-      "title": "Secciones con caducidad",
-      "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
+      "title": "Gaveta y producto completo",
+      "body": "Usar la gaveta física cerrada por el operario y considerar acertado un producto solo si todos sus estados coinciden.",
       "recommended": true
     },
     {
-      "title": "Producto completo",
-      "body": "Contar un producto solo cuando todas sus secciones coincidan y aplicar la misma política explícita de caducidad.",
+      "title": "Gaveta y desperfectos",
+      "body": "Usar la gaveta física, pero calcular la calidad por cada desperfecto individual acertado.",
       "recommended": false
     },
     {
-      "title": "Desperfectos individuales",
-      "body": "Normalizar cada desperfecto para puntuar aciertos individuales, aceptando mayor complejidad y una nueva semántica de vacíos.",
+      "title": "Mantener comparación por secciones",
+      "body": "Conservar la semántica existente de conjuntos por sección y definir explícitamente sus implicaciones operativas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Secciones con caducidad",
-    "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
+    "title": "Gaveta y producto completo",
+    "body": "Usar la gaveta física cerrada por el operario y considerar acertado un producto solo si todos sus estados coinciden.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre el comparador, la selección y la persistencia QA que condicionan esta decisión.",
-    "confidence": "high"
+    "person": "daniellopez",
+    "reason": "El paquete y la necesidad de gestión proceden de sus requisitos operativos; puede validar qué métrica representa mejor la auditoría real.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
-    "reviewedAt": "2026-07-28T07:57:15.577Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T09:56:53.169Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

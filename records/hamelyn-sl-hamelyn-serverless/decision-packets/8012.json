@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:58:59.427Z",
-  "updatedAt": "2026-07-28T07:31:14Z",
+  "generatedAt": "2026-07-28T10:00:26.226Z",
+  "updatedAt": "2026-07-28T08:31:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,56 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8012",
     "state": "open",
     "labels": [
+      "source:admin-panel",
       "app:admin",
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:43Z",
-    "updatedAt": "2026-07-28T07:31:14Z"
+    "updatedAt": "2026-07-28T08:31:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aterrizarse primero `EPIC/revision-v3` en `dev`, o se aprueba otro vehículo de integración para construir estos ajustes sin reconstruir el puesto?",
-  "rationale": "La UI afectada no existe en `dev` y las decisiones sobre el aviso de 70 y el temporizador cambian el comportamiento operativo del kiosco.",
+  "question": "¿Debe integrarse primero `EPIC/revision-v3` en `dev`, o se autoriza un vehículo alternativo para implementar estos ajustes sin reconstruir el puesto?",
+  "rationale": "La UI afectada no existe en `dev`, y la respuesta condiciona la rama, el alcance y la validación de cualquier cambio posterior.",
   "options": [
     {
-      "title": "Aterrizar primero la épica",
-      "body": "Integrar Revisión V3 con un plan controlado y ejecutar después esta issue sobre la ruta canónica.",
+      "title": "Aterrizar V3 antes",
+      "body": "Integrar el puesto V3 en `dev` y desarrollar los ajustes como una mejora posterior, aislada y verificable.",
       "recommended": true
     },
     {
-      "title": "Definir una rama de integración",
-      "body": "Autorizar una rama o PR de integración específica para V3 y fijar allí las decisiones de UX antes de implementar.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer los ajustes",
-      "body": "Mantener la issue bloqueada hasta que Producto confirme el vehículo y las reglas de interacción.",
+      "title": "Autorizar trabajo en la épica",
+      "body": "Mantener el cambio en `EPIC/revision-v3` con una estrategia explícita para sincronizar e integrar esa rama después.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar primero la épica",
-    "body": "Integrar Revisión V3 con un plan controlado y ejecutar después esta issue sobre la ruta canónica.",
+    "title": "Aterrizar V3 antes",
+    "body": "Integrar el puesto V3 en `dev` y desarrollar los ajustes como una mejora posterior, aislada y verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el mejor punto de coordinación disponible como autor de la épica que define la superficie y su aterrizaje.",
+    "reason": "Es el mejor punto de coordinación disponible como autor de la épica que define la superficie y su integración.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8012.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8012#issuecomment-5101532309",
-    "reviewedAt": "2026-07-28T07:58:59.427Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T10:00:26.226Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

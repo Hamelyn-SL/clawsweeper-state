@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:27:26.029Z",
-  "updatedAt": "2026-07-21T12:18:52Z",
+  "generatedAt": "2026-07-28T09:58:39.614Z",
+  "updatedAt": "2026-07-28T09:38:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,45 +18,49 @@
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-21T12:18:52Z"
+    "updatedAt": "2026-07-28T09:38:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué señal debe emitir `/api/ebay` al reactivar create cuando un lote de `bulkPublishOffer` falla parcial o totalmente: HTTP compatible más severidad estructurada, o un estado HTTP degradado por ruta?",
-  "rationale": "El handler es compartido por varios crons y los comentarios de la canónica muestran que una modificación global de HTTP puede romper flujos que continúan deliberadamente ante fallos permanentes.",
+  "question": "¿Qué señal operativa debe emitir `/api/ebay` ante un lote de publicación completamente fallido antes de reactivar `ebay.create()`?",
+  "rationale": "El handler compartido afecta a varios crons y la elección entre HTTP, respuesta estructurada, alerta o combinación requiere decidir compatibilidad y observabilidad.",
   "options": [
     {
-      "title": "Señal estructurada compatible",
-      "body": "Mantener temporalmente HTTP `200`, añadir estado y severidad consultables por ruta, y fijar un umbral explícito para eBay antes de reactivar create.",
+      "title": "Señal por fase y reactivación controlada",
+      "body": "Añadir resultado estructurado para publish, activar una cohorte limitada y revertir si aumentan los `SYNC_ERROR`.",
       "recommended": true
     },
     {
-      "title": "Degradar eBay por ruta",
-      "body": "Hacer que los fallos completos de publicación en eBay devuelvan un estado degradado, aceptando el impacto operativo documentado para esa ruta.",
+      "title": "Mantener la pausa",
+      "body": "Conservar `ebay.create()` desactivado hasta diseñar una política común de fallos parciales para todos los crons.",
+      "recommended": false
+    },
+    {
+      "title": "Cambiar el handler global",
+      "body": "Modificar la semántica compartida de fallos parciales antes de reactivar eBay, asumiendo el impacto en otras rutas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Señal estructurada compatible",
-    "body": "Mantener temporalmente HTTP `200`, añadir estado y severidad consultables por ruta, y fijar un umbral explícito para eBay antes de reactivar create.",
+    "title": "Señal por fase y reactivación controlada",
+    "body": "Añadir resultado estructurado para publish, activar una cohorte limitada y revertir si aumentan los `SYNC_ERROR`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Ha documentado la necesidad de una política transversal y mantiene historial reciente en la integración eBay.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Figura asignado en esta incidencia y en la relacionada con el contrato compartido.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-21T14:27:26.029Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-28T09:58:39.614Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

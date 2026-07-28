@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T23:10:35.874Z",
-  "updatedAt": "2026-07-27T22:12:38Z",
+  "generatedAt": "2026-07-28T09:57:39.141Z",
+  "updatedAt": "2026-07-28T09:45:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-27T22:12:38Z",
-    "headSha": "ef6497e9aedf43a3fbe060f6c0078fd25e10c515"
+    "updatedAt": "2026-07-28T09:45:55Z",
+    "headSha": "2bd8fe84460938868530ca0d50c356c38c166579"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se acepta una compatibilidad temporal de servidor para las builds Supply instaladas o se bloqueará el despliegue hasta garantizar su actualización?",
-  "rationale": "Ambas rutas modifican el límite de autorización y el comportamiento de usuarios existentes; el código no puede decidir por sí solo el riesgo operativo aceptable.",
+  "question": "¿Debe aceptarse hasta el 24 de agosto de 2026 que los carritos legacy asociados sigan autorizables solo con `cartId`, o debe desplegarse una transición que los proteja antes?",
+  "rationale": "La excepción preserva clientes nativos instalados, pero mantiene explícitamente el acceso no autorizado que motivó esta corrección; decidir el nivel de compatibilidad aceptable requiere autoridad de producto y seguridad.",
   "options": [
     {
-      "title": "Añadir transición temporal",
-      "body": "Conservar un contrato limitado para clientes antiguos, acotado por versión o fecha, y probar que no reabre el IDOR.",
+      "title": "Proteger primero los carritos asociados",
+      "body": "Mantener compatibilidad solo para carritos legacy anónimos o mediante un gate de versión, evitando que un `cartId` autorice datos de un usuario.",
       "recommended": true
     },
     {
-      "title": "Exigir actualización previa",
-      "body": "Desplegar únicamente tras un gate de versión o rollout que demuestre que ninguna build antigua alcanza estas rutas.",
+      "title": "Aceptar la ventana temporal",
+      "body": "Conservar el contrato dual completo hasta el deadline y aceptar explícitamente el riesgo de exposición durante ese periodo.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue de la migración",
+      "body": "No fusionar hasta disponer de una actualización o rollout que elimine la dependencia de los clientes antiguos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir transición temporal",
-    "body": "Conservar un contrato limitado para clientes antiguos, acotado por versión o fecha, y probar que no reabre el IDOR.",
+    "title": "Proteger primero los carritos asociados",
+    "body": "Mantener compatibilidad solo para carritos legacy anónimos o mediante un gate de versión, evitando que un `cartId` autorice datos de un usuario.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Conoce el contrato previo del cliente Supply y ha revisado los riesgos de transición del PR.",
+    "reason": "Sus comentarios de revisión describen la compatibilidad de clientes desplegados y la recuperación de capabilities que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-27T23:10:35.874Z",
-    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+    "reviewedAt": "2026-07-28T09:57:39.141Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

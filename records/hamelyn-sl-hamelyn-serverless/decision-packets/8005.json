@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:54:14.166Z",
+  "generatedAt": "2026-07-28T09:56:18.242Z",
   "updatedAt": "2026-07-28T09:27:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,52 +15,46 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "P2",
       "impact:ux-friction",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
     "updatedAt": "2026-07-28T09:27:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este epic mantenerse solo como coordinación hasta integrar la rama base V3 en `dev`, dejando la ejecución en las siete sub-issues enlazadas?",
-  "rationale": "El alcance incluye nuevas pantallas, persistencia, reglas de auditoría y configuración cuyos criterios operativos aún no están cerrados.",
+  "question": "¿Qué corte del puesto Revisión V3 debe integrarse en `dev` antes de priorizar este paquete de mejoras, y qué decisiones operativas deben cerrarse previamente?",
+  "rationale": "La rama por defecto no contiene V3 y varias sub-issues dependen de reglas de negocio que el código actual no puede inferir.",
   "options": [
     {
-      "title": "Mantener el epic de coordinación",
-      "body": "Conservar este epic como seguimiento de dependencias y avanzar mediante las siete sub-issues, empezando por productividad.",
+      "title": "Integrar primero el flujo operativo V3",
+      "body": "Promover un corte verificado del puesto y dejar productividad avanzada, auditoría y paneles como entregas posteriores coordinadas.",
       "recommended": true
     },
     {
-      "title": "Integrar primero la base V3",
-      "body": "Priorizar la revisión e integración de `EPIC/revision-v3` antes de planificar cambios derivados sobre `dev`.",
-      "recommended": false
-    },
-    {
-      "title": "Reducir el paquete",
-      "body": "Aplazar auditoría, métricas o avisos hasta que Operaciones confirme sus criterios y dejar solo ajustes de UX cerrados.",
+      "title": "Cerrar decisiones antes de integrar",
+      "body": "Mantener V3 fuera de `dev` hasta acordar productividad, objetivo de ritmo, auditoría y materiales formativos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el epic de coordinación",
-    "body": "Conservar este epic como seguimiento de dependencias y avanzar mediante las siete sub-issues, empezando por productividad.",
+    "title": "Integrar primero el flujo operativo V3",
+    "body": "Promover un corte verificado del puesto y dejar productividad avanzada, auditoría y paneles como entregas posteriores coordinadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor del epic base que define la frontera funcional del puesto V3.",
+    "reason": "Es el autor de la épica base y el enlace visible entre el flujo ya construido y el alcance pendiente.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-07-28T09:54:14.166Z",
+    "reviewedAt": "2026-07-28T09:56:18.242Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

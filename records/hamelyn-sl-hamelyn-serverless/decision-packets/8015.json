@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:55:52.088Z",
-  "updatedAt": "2026-07-28T07:20:20Z",
+  "generatedAt": "2026-07-28T09:57:03.710Z",
+  "updatedAt": "2026-07-28T08:32:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,51 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8015",
     "state": "open",
     "labels": [
+      "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:49Z",
-    "updatedAt": "2026-07-28T07:20:20Z"
+    "updatedAt": "2026-07-28T08:32:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué roles pueden modificar el objetivo único de ritmo del equipo y qué auditoría mínima debe conservarse para esos cambios?",
-  "rationale": "La propuesta exige configuración desde admin y menciona histórico opcional, pero no define autorización ni retención; esa elección condiciona el modelo y la interfaz.",
+  "question": "¿Qué roles pueden editar el objetivo de ritmo y qué campos mínimos debe conservar su historial de cambios?",
+  "rationale": "La decisión determina autorización, almacenamiento y auditoría; no puede inferirse de la infraestructura de productividad existente.",
   "options": [
     {
-      "title": "Definir roles y auditoría mínima",
-      "body": "Restringir la edición a los roles operativos acordados y guardar autor, valor anterior, valor nuevo y fecha.",
+      "title": "Configurar con auditoría completa",
+      "body": "Permitir edición a los roles operativos confirmados y registrar autor, valor anterior, valor nuevo y fecha.",
       "recommended": true
     },
     {
-      "title": "Fijar el objetivo temporalmente",
-      "body": "Mantener un valor operativo inicial hasta aprobar permisos e histórico, sin exponer edición general.",
+      "title": "Aplazar la edición configurable",
+      "body": "Mantener el objetivo fuera de la entrega hasta que Operaciones defina permisos e histórico exigidos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir roles y auditoría mínima",
-    "body": "Restringir la edición a los roles operativos acordados y guardar autor, valor anterior, valor nuevo y fecha.",
+    "title": "Configurar con auditoría completa",
+    "body": "Permitir edición a los roles operativos confirmados y registrar autor, valor anterior, valor nuevo y fecha.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el mejor candidato disponible por la procedencia del subsistema actual de productividad y revisión.",
+    "person": "Alex Cantón",
+    "reason": "La decisión afecta directamente al contrato de productividad y a su persistencia actual.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8015.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8015#issuecomment-5101537349",
-    "reviewedAt": "2026-07-28T07:55:52.088Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T09:57:03.710Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

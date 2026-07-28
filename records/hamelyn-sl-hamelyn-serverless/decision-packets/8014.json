@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:55:43.998Z",
-  "updatedAt": "2026-07-28T07:46:57Z",
+  "generatedAt": "2026-07-28T09:57:58.807Z",
+  "updatedAt": "2026-07-28T08:41:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,51 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014",
     "state": "open",
     "labels": [
+      "source:admin-panel",
       "app:admin",
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:47Z",
-    "updatedAt": "2026-07-28T07:46:57Z"
+    "updatedAt": "2026-07-28T08:41:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se confirma el agregado diario en Mongo para el flujo operativo y se reserva BigQuery para histórico?",
-  "rationale": "La issue relacionada dejó abierto el modelo de agregación; el comentario de triage recomienda Mongo, pero la decisión condiciona API, índice y consumidores.",
+  "question": "¿Se aprueba el agregado diario calculado al vuelo en Mongo como contrato operativo inicial, dejando BigQuery para las series históricas?",
+  "rationale": "La elección fija la consulta, los índices y el límite de responsabilidades antes de implementar el enganche V3 y los paneles dependientes.",
   "options": [
     {
-      "title": "Agregado operativo en Mongo",
-      "body": "Devolver por rango y operario opcional los totales, minutos activos y ritmo ponderado para refrescos de cinco minutos.",
+      "title": "Aprobar Mongo operativo",
+      "body": "Exponer totales y minutos activos ponderados desde `opProductivity` para refrescos de cinco minutos, con BigQuery como consumidor histórico.",
       "recommended": true
     },
     {
-      "title": "Colección de rollup diaria",
-      "body": "Persistir el agregado si las consultas Mongo no cubren el volumen o la latencia exigidos por los paneles.",
+      "title": "Exigir rollup persistido",
+      "body": "Crear una colección diaria si se prefiere pagar complejidad de consistencia a cambio de lecturas agregadas precomputadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Agregado operativo en Mongo",
-    "body": "Devolver por rango y operario opcional los totales, minutos activos y ritmo ponderado para refrescos de cinco minutos.",
+    "title": "Aprobar Mongo operativo",
+    "body": "Exponer totales y minutos activos ponderados desde `opProductivity` para refrescos de cinco minutos, con BigQuery como consumidor histórico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El contrato existente de `opProductivity` condiciona la decisión de almacenamiento y API.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Ya dejó una propuesta técnica concreta y el reparto entre las superficies afectadas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8014.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014#issuecomment-5101484628",
-    "reviewedAt": "2026-07-28T07:55:43.998Z",
-    "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
+    "reviewedAt": "2026-07-28T09:57:58.807Z",
+    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }
