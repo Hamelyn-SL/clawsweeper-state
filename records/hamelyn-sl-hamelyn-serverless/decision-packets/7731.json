@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T11:22:54.822Z",
-  "updatedAt": "2026-07-24T11:04:17Z",
+  "generatedAt": "2026-07-28T21:32:47.685Z",
+  "updatedAt": "2026-07-28T20:59:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,47 @@
       "bug",
       "app:marketplace",
       "reporter:javier",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T15:38:21Z",
-    "updatedAt": "2026-07-24T11:04:17Z"
+    "updatedAt": "2026-07-28T20:59:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "Tras integrar la corrección de stock, ¿debe Marketplace limitarse al soporte de TodoColección o autorizar también un muestreo dirigido con una ordenación alternativa validada?",
-  "rationale": "El parser tiene una reparación concreta, pero el alcance operativo del snapshot, su coste y la tolerancia a resultados ordenados de forma distinta requieren decisión del equipo.",
+  "question": "¿Debe Marketplace implantar ya un muestreo dirigido con una ordenación alternativa o esperar confirmación formal de TodoColección sobre `ultima_modificacion`?",
+  "rationale": "Las dos rutas son técnicamente viables, pero determinan cobertura, coste y garantías de la reconciliación externa.",
   "options": [
     {
-      "title": "Corregir y acotar",
-      "body": "Integrar la normalización de stock y abrir el ticket al proveedor, sin crear todavía un cron de muestreo.",
+      "title": "Adoptar el workaround acotado",
+      "body": "Usar un `orderby` explícito funcional y muestreo dirigido por SKU o sección mientras se mantiene el ticket externo.",
       "recommended": true
     },
     {
-      "title": "Autorizar muestreo dirigido",
-      "body": "Además de la corrección, diseñar un muestreo limitado con `orderby` funcional y límites explícitos de coste y paginación.",
-      "recommended": false
-    },
-    {
-      "title": "Esperar al proveedor",
-      "body": "Mantener los watchers actuales hasta que TodoColección confirme la semántica de ordenación y los límites reales.",
+      "title": "Esperar el contrato del proveedor",
+      "body": "No habilitar el listado operativo hasta que TodoColección confirme la ordenación y los límites reales del endpoint.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y acotar",
-    "body": "Integrar la normalización de stock y abrir el ticket al proveedor, sin crear todavía un cron de muestreo.",
+    "title": "Adoptar el workaround acotado",
+    "body": "Usar un `orderby` explícito funcional y muestreo dirigido por SKU o sección mientras se mantiene el ticket externo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual y está llevando la corrección local vinculada.",
+    "reason": "Es la persona con evidencia más directa de investigación de endpoints y de la reparación integrada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7731.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7731#issuecomment-5016337327",
-    "reviewedAt": "2026-07-24T11:22:54.822Z",
-    "mainSha": "d08a519772cf404cb72b3c5eddf0e06276fd52a8"
+    "reviewedAt": "2026-07-28T21:32:47.685Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
