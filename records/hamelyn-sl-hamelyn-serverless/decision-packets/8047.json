@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T23:23:57.509Z",
+  "updatedAt": "2026-07-28T23:19:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8047,
+    "title": "fix: demote amazon report-inactive skus in reconciliation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8047",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-28T22:45:47Z",
+    "updatedAt": "2026-07-28T23:19:35Z",
+    "headSha": "4b01b56c6d64393790684f8fd820e39bf42ebb07"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe un SKU presente como `Inactive`, `Incomplete` o `Active` sin cantidad `1` pasar directamente a `SYNC_ERROR/REPORT_INACTIVE` con `RetryPolicy.PERMANENT`?",
+  "rationale": "La PR prevé una transición masiva y el propio reporte asociado aclara que `Inactive` no demuestra por sí solo que el listing no sea `BUYABLE`; elegir el estado persistente requiere intención del área.",
+  "options": [
+    {
+      "title": "Aprobar la democión con evidencia operativa",
+      "body": "Mantener `REPORT_INACTIVE` tras una prueba con report real y comunicar la caída esperada de `ACTIVE` antes de la primera ejecución.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir una señal adicional de vendibilidad",
+      "body": "No demotar de forma permanente hasta incorporar una confirmación adicional que diferencie inactividad temporal de supresión efectiva.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la democión con evidencia operativa",
+    "body": "Mantener `REPORT_INACTIVE` tras una prueba con report real y comunicar la caída esperada de `ACTIVE` antes de la primera ejecución.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Introdujo la semántica actual que este PR extiende y concentra varias correcciones recientes del reconciliador.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8047.md",
+    "reviewedAt": "2026-07-28T23:23:57.509Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:25:31.239Z",
-  "updatedAt": "2026-07-28T20:59:35Z",
+  "generatedAt": "2026-07-28T23:22:31.263Z",
+  "updatedAt": "2026-07-28T23:17:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:no-change",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
-    "updatedAt": "2026-07-28T20:59:35Z"
+    "updatedAt": "2026-07-28T23:17:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `Product not found` durante la creación Fnac considerarse no publicable por defecto, o debe verificarse primero la existencia posterior de la ficha remota antes de decidir el reintento?",
-  "rationale": "El código no crea fichas de catálogo y la evidencia no demuestra que todos los EAN sigan ausentes; elegir una política permanente sin este contrato puede descartar ofertas recuperables.",
+  "question": "¿Qué contrato debe aplicar Fnac cuando `offers_update` devuelve `Product not found` para un EAN sin ficha remota: comprobar catálogo y persistir estados, o declarar la ausencia definitivamente no publicable?",
+  "rationale": "El código actual puede reintentar, pero no existe integración de catálogo ni una semántica aprobada que distinga ausencia temporal, recuperable y no publicable.",
   "options": [
     {
-      "title": "Clasificar ausencia confirmada",
-      "body": "Añadir una comprobación remota agrupada por EAN y marcar como permanente solo la ausencia confirmada; reencolar las fichas existentes.",
+      "title": "Verificar por EAN y persistir estados",
+      "body": "Añadir una comprobación remota agrupada por EAN y definir transiciones para recuperable, ausente y no publicable, incluida su reevaluación.",
       "recommended": true
     },
     {
-      "title": "Detener todos los reintentos",
-      "body": "Clasificar inmediatamente la firma como `PERMANENT`, asumiendo que la integración no puede recuperar ningún EAN sin ficha.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el comportamiento actual",
-      "body": "Conservar `STALE` y el reintento periódico mientras se obtiene una definición de catálogo Fnac.",
+      "title": "Marcar como no publicable",
+      "body": "Clasificar directamente la firma como permanente, aceptando que los EAN recuperables requerirán una ruta posterior de revisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar ausencia confirmada",
-    "body": "Añadir una comprobación remota agrupada por EAN y marcar como permanente solo la ausencia confirmada; reencolar las fichas existentes.",
+    "title": "Verificar por EAN y persistir estados",
+    "body": "Añadir una comprobación remota agrupada por EAN y definir transiciones para recuperable, ausente y no publicable, incluida su reevaluación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su trabajo reciente concentra las rutas de recuperación Fnac y el precedente más próximo de reconciliación.",
+    "reason": "Ha delimitado la diferencia entre esta cohorte y la reconciliación Fnac ya integrada, y conoce la ruta de recuperación actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
-    "reviewedAt": "2026-07-28T21:25:31.239Z",
+    "reviewedAt": "2026-07-28T23:22:31.263Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }

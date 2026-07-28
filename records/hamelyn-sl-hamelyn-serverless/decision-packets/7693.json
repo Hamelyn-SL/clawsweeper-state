@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:26:00.200Z",
-  "updatedAt": "2026-07-28T20:59:45Z",
+  "generatedAt": "2026-07-28T23:23:28.788Z",
+  "updatedAt": "2026-07-28T22:48:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,52 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:needs-info",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: 🥈 silver",
       "clawsweeper:not-repro-on-main",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-07-28T20:59:45Z"
+    "updatedAt": "2026-07-28T22:48:09Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Autoriza el equipo Marketplace una recuperación productiva por cohortes para las filas Fnac históricas, con consulta remota y gate de escritura masiva?",
-  "rationale": "La corrección de código ya está en `dev`; decidir qué subconjuntos pueden mutarse exige acceso a Fnac, validación remota y responsabilidad operativa sobre datos históricos.",
+  "question": "¿Qué predicados exactos se autorizan para el dry-run y qué subconjuntos, tras contrastarlos con Fnac, pueden recibir una mutación productiva?",
+  "rationale": "La decisión combina estado remoto, semántica comercial de retiradas y una escritura masiva irreversible; el código no puede inferir esa autorización.",
   "options": [
     {
-      "title": "Recuperar por cohortes verificadas",
-      "body": "Congelar los subconjuntos, consultar cada batch remoto y mutar únicamente SKU con transición remota confirmada.",
+      "title": "Autorizar primero un dry-run acotado",
+      "body": "Congelar SQL, recuentos y tres muestras por cohorte antes de decidir ninguna escritura productiva.",
       "recommended": true
     },
     {
-      "title": "Conservar los estados como históricos",
-      "body": "No mutar hasta disponer de una ventana operativa y de evidencia remota suficiente para cada cohorte.",
+      "title": "Autorizar ejecución escalonada",
+      "body": "Tras validar el dry-run, aplicar solo transiciones verificadas por batch y SKU con registro de resultados.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la recuperación",
+      "body": "Mantener la cohorte monitorizada hasta disponer de predicado y acceso operativo suficientes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperar por cohortes verificadas",
-    "body": "Congelar los subconjuntos, consultar cada batch remoto y mutar únicamente SKU con transición remota confirmada.",
+    "title": "Autorizar primero un dry-run acotado",
+    "body": "Congelar SQL, recuentos y tres muestras por cohorte antes de decidir ninguna escritura productiva.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Conoce la corrección vigente y ha aportado la evidencia operativa más directamente relacionada con esta firma.",
+    "person": "MiguelHamelyn",
+    "reason": "Su análisis más reciente define las cohortes, las incompatibilidades de estado y las precondiciones operativas pendientes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-07-28T21:26:00.200Z",
+    "reviewedAt": "2026-07-28T23:23:28.788Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
