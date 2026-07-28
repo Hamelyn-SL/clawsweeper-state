@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T12:49:30.125Z",
-  "updatedAt": "2026-07-21T12:18:27Z",
+  "generatedAt": "2026-07-28T21:24:06.367Z",
+  "updatedAt": "2026-07-28T20:59:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,52 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T12:20:01Z",
-    "updatedAt": "2026-07-21T12:18:27Z"
+    "updatedAt": "2026-07-28T20:59:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué semántica debe tener eBay ES para un SKU ausente del snapshot pero `PUBLISHED/ACTIVE`, y cómo debe recuperarse el backlog ya marcado como `DB_ONLY`?",
-  "rationale": "La evidencia confirma el falso positivo, pero la política ante `listingOnHold`, fallos de Inventory API, rate limits y la reparación masiva de estados persistidos requiere intención operativa.",
+  "question": "¿Qué estado operativo y qué acción deben aplicarse a un SKU ausente del snapshot cuando Inventory API devuelve `PUBLISHED/ACTIVE` con `listingOnHold=true`?",
+  "rationale": "La evidencia confirma que `DB_ONLY` mezcla causas, pero decidir entre conservar, reintentar, crear un estado específico o iniciar recuperación afecta la semántica operativa y una posible resincronización existente.",
   "options": [
     {
-      "title": "Validar y preservar",
-      "body": "Conservar `ACTIVE` ante `PUBLISHED/ACTIVE` o error transitorio, registrar un estado reintentable y ejecutar una recuperación auditada del backlog.",
+      "title": "Conservar y registrar estado remoto",
+      "body": "No marcar `DB_ONLY` las ofertas vivas; persistir el resultado remoto y usar una categoría reintentable o informativa para on-hold.",
       "recommended": true
     },
     {
-      "title": "Confirmación estricta",
-      "body": "Mantener `DB_ONLY` solo después de una confirmación negativa de eBay y de un número acordado de reintentos fallidos.",
+      "title": "Mantener `DB_ONLY` con excepción manual",
+      "body": "Conservar la clasificación actual y definir una lista operativa de excepciones on-hold, asumiendo revisión manual continua.",
+      "recommended": false
+    },
+    {
+      "title": "Reconciliador dirigido de cohorte estable",
+      "body": "Aprobar una resincronización limitada que persista decisiones remotas antes de decidir recreaciones para los `404`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y preservar",
-    "body": "Conservar `ACTIVE` ante `PUBLISHED/ACTIVE` o error transitorio, registrar un estado reintentable y ejecutar una recuperación auditada del backlog.",
+    "title": "Conservar y registrar estado remoto",
+    "body": "No marcar `DB_ONLY` las ofertas vivas; persistir el resultado remoto y usar una categoría reintentable o informativa para on-hold.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el contribuidor más reciente del runner eBay ES y puede concretar el contrato operativo con el equipo de Marketplace.",
-    "confidence": "high"
+    "reason": "Es la señal histórica más cercana disponible para el script de reconciliación afectado.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721#issuecomment-5015714604",
-    "reviewedAt": "2026-07-21T12:49:30.125Z",
-    "mainSha": "520a8106a8e3e44ff9895a404cc39a2ebd4bf719"
+    "reviewedAt": "2026-07-28T21:24:06.367Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
