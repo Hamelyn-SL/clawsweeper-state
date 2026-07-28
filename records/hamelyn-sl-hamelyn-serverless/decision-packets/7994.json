@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T02:30:52.808Z",
-  "updatedAt": "2026-07-28T02:22:59Z",
+  "generatedAt": "2026-07-28T03:49:28.928Z",
+  "updatedAt": "2026-07-28T03:21:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -19,39 +19,38 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-27T10:56:00Z",
-    "updatedAt": "2026-07-28T02:22:59Z",
-    "headSha": "097058fd65f67271f7fefb10f55cd1c078eef61e"
+    "updatedAt": "2026-07-28T03:21:30Z",
+    "headSha": "79349365a08c2d6ae718b8bd39a97730fb8eeb76"
   },
-  "lane": "manual_review",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Se acepta este rediseño amplio del gate de PR Proof tras validar en staging el head actual y revisar sus permisos mínimos de GitHub App?",
-  "rationale": "El código cambia el límite de confianza de CI y publicación de checks; la suficiencia de la prueba operativa y del despliegue de permisos requiere criterio humano.",
+  "question": "¿Se aprueba desplegar y activar este gate con los nuevos permisos de GitHub App tras un canario completo del workflow?",
+  "rationale": "La aceptación cambia el límite operativo de permisos y el comportamiento de bloqueo de PRs; la evidencia actual solo confirma capacidades parciales y el run final es no concluyente.",
   "options": [
     {
-      "title": "Esperar Proof y revisar",
-      "body": "Esperar el veredicto autoritativo del run actual y revisar el flujo de staging, permisos y fallback antes de decidir el merge.",
+      "title": "Corregir y demostrar antes de fusionar",
+      "body": "Alinear el runbook heredado y adjuntar un canario del head que recorra el workflow real hasta un resultado terminal verificable.",
       "recommended": true
     },
     {
-      "title": "Pausar el rediseño",
-      "body": "Mantener el gate existente y dividir la migración si la prueba actual vuelve a quedar inconclusa o muestra incompatibilidades operativas.",
+      "title": "Pausar la activación",
+      "body": "Mantener el gate actual hasta que se valide la App instalada, los roles y la recuperación operacional en staging.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar Proof y revisar",
-    "body": "Esperar el veredicto autoritativo del run actual y revisar el flujo de staging, permisos y fallback antes de decidir el merge.",
+    "title": "Corregir y demostrar antes de fusionar",
+    "body": "Alinear el runbook heredado y adjuntar un canario del head que recorra el workflow real hasta un resultado terminal verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está solicitado como revisor por experiencia directa en los ficheros afectados y el cambio necesita validación operativa independiente.",
-    "confidence": "medium"
+    "reason": "Es revisor asignado y su historial conecta con el comportamiento de Proof que este cambio reemplaza.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7994.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7994#issuecomment-5091264459",
-    "reviewedAt": "2026-07-28T02:30:52.808Z",
+    "reviewedAt": "2026-07-28T03:49:28.928Z",
     "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
   }
 }
