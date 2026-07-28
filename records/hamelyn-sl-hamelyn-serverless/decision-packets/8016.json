@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T08:05:50.865Z",
-  "updatedAt": "2026-07-28T08:01:43Z",
+  "generatedAt": "2026-07-28T07:57:15.577Z",
+  "updatedAt": "2026-07-28T07:20:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,43 +23,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-28T07:19:52Z",
-    "updatedAt": "2026-07-28T08:01:43Z"
+    "updatedAt": "2026-07-28T07:20:13Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe auditarse una gaveta física atribuida a quien la cierra y calcular el 85 % por productos completamente coincidentes, o adoptarse otra semántica de atribución y comparación?",
-  "rationale": "La decisión cambia el identificador persistido, la cuota semanal, el modelo de comparación y el significado de los resultados de calidad.",
+  "question": "¿Qué unidad debe gobernar el 85 % de calidad y cómo se cierra una gaveta seleccionada que no llega a la revisión del supervisor?",
+  "rationale": "El comparador existente puntúa secciones, pero la issue plantea alternativas con consecuencias distintas para el resultado y la cuota semanal.",
   "options": [
     {
-      "title": "Gaveta física y coincidencia por producto",
-      "body": "Usar la gaveta cerrada por el operario y considerar correcto un producto solo si todos sus estados coinciden; permite una cuota y un porcentaje inequívocos.",
+      "title": "Secciones con caducidad",
+      "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
       "recommended": true
     },
     {
-      "title": "Gaveta física y coincidencia por desperfecto",
-      "body": "Mantener la gaveta como unidad, pero medir cada desperfecto individualmente; ofrece más granularidad a costa de alterar el umbral operativo.",
+      "title": "Producto completo",
+      "body": "Contar un producto solo cuando todas sus secciones coincidan y aplicar la misma política explícita de caducidad.",
       "recommended": false
     },
     {
-      "title": "Posponer hasta definir operación",
-      "body": "No iniciar el modelo ni la selección hasta que Operaciones defina ambos criterios y el tratamiento de gavetas perdidas o caducadas.",
+      "title": "Desperfectos individuales",
+      "body": "Normalizar cada desperfecto para puntuar aciertos individuales, aceptando mayor complejidad y una nueva semántica de vacíos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Gaveta física y coincidencia por producto",
-    "body": "Usar la gaveta cerrada por el operario y considerar correcto un producto solo si todos sus estados coinciden; permite una cuota y un porcentaje inequívocos.",
+    "title": "Secciones con caducidad",
+    "body": "Mantener coincidencia exacta por sección, calcular el porcentaje agregado y marcar como caducada una gaveta no revisada dentro del plazo acordado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Coordina la épica donde se debe decidir el corte de integración y el contrato funcional de QA.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre el comparador, la selección y la persistencia QA que condicionan esta decisión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
-    "reviewedAt": "2026-07-28T08:05:50.865Z",
+    "reviewedAt": "2026-07-28T07:57:15.577Z",
     "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
   }
 }
