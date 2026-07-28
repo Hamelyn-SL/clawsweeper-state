@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:55:00.769Z",
+  "generatedAt": "2026-07-28T08:02:08.587Z",
   "updatedAt": "2026-07-28T07:22:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,48 @@
       "app:admin",
       "feature",
       "epic:revision-v3",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "reporter:daniellopez",
-      "issue-rating: ➖ n/a",
+      "impact:other",
       "P2",
       "impact:ux-friction",
-      "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
     "updatedAt": "2026-07-28T07:22:05Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué valores operativos comunes se aprueban para ritmo, orden de vídeos, cálculo de coincidencia y nomenclatura antes de iniciar las sub-issues dependientes?",
-  "rationale": "Esas elecciones cambian configuración, métricas y criterios de auditoría; no pueden inferirse de forma segura del código actual.",
+  "question": "¿Se mantiene el epic como seguimiento de los siete subissues y se prioriza primero productividad antes de los avisos y paneles dependientes?",
+  "rationale": "El desglose ya existe, pero las dependencias técnicas y varias reglas de negocio requieren una secuencia acordada antes de promover trabajo transversal.",
   "options": [
     {
-      "title": "Aprobar el paquete de definiciones",
-      "body": "Confirmar objetivo de ritmo, responsable de edición, orden de vídeos, métrica de coincidencia y término visible antes de implementar dependencias.",
+      "title": "Mantener el epic como coordinador",
+      "body": "Conservarlo abierto y usar los siete subissues como unidades de entrega, priorizando productividad antes de avisos y dashboards.",
       "recommended": true
     },
     {
-      "title": "Delegar por sub-issue",
-      "body": "Permitir que cada sub-issue solicite su definición específica, aceptando que productividad y paneles queden bloqueados hasta entonces.",
+      "title": "Reducir el alcance inicial",
+      "body": "Aplazar auditoría y paneles hasta validar el puesto V3 básico con los ajustes de UX y productividad.",
+      "recommended": false
+    },
+    {
+      "title": "Integrar primero la rama V3",
+      "body": "Acordar una promoción controlada de la base V3 a `dev` antes de continuar con mejoras que dependen de ella.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el paquete de definiciones",
-    "body": "Confirmar objetivo de ritmo, responsable de edición, orden de vídeos, métrica de coincidencia y término visible antes de implementar dependencias.",
+    "title": "Mantener el epic como coordinador",
+    "body": "Conservarlo abierto y usar los siete subissues como unidades de entrega, priorizando productividad antes de avisos y dashboards.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "daniellopez",
-    "reason": "El epic atribuye a Dani, junto con Operaciones, las definiciones funcionales que bloquean varios bloques.",
+    "person": "JavierHamelyn",
+    "reason": "Abrió el epic base y su historial conecta la infraestructura de productividad reutilizable con la coordinación visible del alcance.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
     "reviewedAt": "2026-07-28T08:02:08.587Z",
     "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
   }

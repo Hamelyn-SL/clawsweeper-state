@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T07:58:59.427Z",
+  "generatedAt": "2026-07-28T08:02:32.233Z",
   "updatedAt": "2026-07-28T07:31:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,51 +14,40 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "reporter:daniellopez"
     ],
     "createdAt": "2026-07-28T07:19:43Z",
     "updatedAt": "2026-07-28T07:31:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aterrizarse primero `EPIC/revision-v3` en `dev`, o se aprueba otro vehículo de integración para construir estos ajustes sin reconstruir el puesto?",
-  "rationale": "La UI afectada no existe en `dev` y las decisiones sobre el aviso de 70 y el temporizador cambian el comportamiento operativo del kiosco.",
+  "question": "¿El aviso de 70 sustituye el límite Exotec de 50 y «Sin desperfectos» puede avanzar aunque no se haya cumplido el tiempo mínimo de fase?",
+  "rationale": "Ambas elecciones alteran reglas visibles del puesto; el código actual y la issue documentan alternativas sin una decisión definitiva.",
   "options": [
     {
-      "title": "Aterrizar primero la épica",
-      "body": "Integrar Revisión V3 con un plan controlado y ejecutar después esta issue sobre la ruta canónica.",
+      "title": "Fijar las reglas antes de integrar",
+      "body": "Acordar el umbral y el comportamiento del temporizador como parte del plan de aterrizaje de V3 en `dev`.",
       "recommended": true
     },
     {
-      "title": "Definir una rama de integración",
-      "body": "Autorizar una rama o PR de integración específica para V3 y fijar allí las decisiones de UX antes de implementar.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer los ajustes",
-      "body": "Mantener la issue bloqueada hasta que Producto confirme el vehículo y las reglas de interacción.",
+      "title": "Conservar las reglas heredadas",
+      "body": "Mantener el límite de 50 y el tiempo mínimo, dejando los cambios UX para una revisión posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar primero la épica",
-    "body": "Integrar Revisión V3 con un plan controlado y ejecutar después esta issue sobre la ruta canónica.",
+    "title": "Fijar las reglas antes de integrar",
+    "body": "Acordar el umbral y el comportamiento del temporizador como parte del plan de aterrizaje de V3 en `dev`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el mejor punto de coordinación disponible como autor de la épica que define la superficie y su aterrizaje.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo previo cubre la trazabilidad V3 que habilita una parte central del historial solicitado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8012.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8012#issuecomment-5101532309",
     "reviewedAt": "2026-07-28T08:02:32.233Z",
     "mainSha": "99976746210c043a6496f1854c20a2c3e10a5cac"
   }
