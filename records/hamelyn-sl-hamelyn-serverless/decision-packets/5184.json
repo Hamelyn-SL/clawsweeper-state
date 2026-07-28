@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:42:24.112Z",
-  "updatedAt": "2026-07-28T20:59:34Z",
+  "generatedAt": "2026-07-28T23:50:21.166Z",
+  "updatedAt": "2026-07-28T23:42:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,55 +13,49 @@
       "codex",
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:running",
       "triage:confirmed-live",
       "area:marketplace-sync",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-28T20:59:34Z"
+    "updatedAt": "2026-07-28T23:42:52Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "Tras integrar la observabilidad, ¿se autoriza una sonda limitada de publicación eBay antes de reactivar el create de forma sostenida?",
-  "rationale": "El código puede capturar mejor la causa, pero el riesgo operativo de volver a enviar listings rechazados por política requiere criterio de negocio y soporte del proveedor.",
+  "question": "¿Qué límite de volumen y criterio de parada debe tener la reactivación temporal de `ebay.create()` tras integrar la observabilidad?",
+  "rationale": "La implementación puede mejorar los datos, pero el coste operativo de volver a enviar ofertas rechazadas exige una decisión humana y coordinación externa.",
   "options": [
     {
-      "title": "Sonda limitada tras integrar la PR",
-      "body": "Fusionar la mejora de logs y probar un lote pequeño, preservando `errorId`, estado remoto y resultado por oferta antes de cambiar la capacidad normal.",
+      "title": "Sonda limitada y reversible",
+      "body": "Reactivar una muestra pequeña tras fusionar la PR, guardar `errorId` por oferta y parar ante un rechazo dominante.",
       "recommended": true
     },
     {
       "title": "Mantener create pausado",
-      "body": "Conservar la pausa hasta obtener una respuesta de eBay/Seller Hub sobre los rechazos de política.",
-      "recommended": false
-    },
-    {
-      "title": "Reactivar create completo",
-      "body": "Reanudar el flujo normal aceptando que pueden reaparecer rechazos y requerir una recuperación posterior.",
+      "body": "Esperar confirmación de eBay o una política de catálogo antes de volver a enviar publicaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sonda limitada tras integrar la PR",
-    "body": "Fusionar la mejora de logs y probar un lote pequeño, preservando `errorId`, estado remoto y resultado por oferta antes de cambiar la capacidad normal.",
+    "title": "Sonda limitada y reversible",
+    "body": "Reactivar una muestra pequeña tras fusionar la PR, guardar `errorId` por oferta y parar ante un rechazo dominante.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y ha reunido la evidencia operativa junto con la reparación de observabilidad.",
+    "reason": "Ha reunido la evidencia de producción y es el responsable asignado de la PR vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-28T21:42:24.112Z",
+    "reviewedAt": "2026-07-28T23:50:21.166Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }

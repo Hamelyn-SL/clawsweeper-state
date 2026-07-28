@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:24:06.367Z",
-  "updatedAt": "2026-07-28T20:59:46Z",
+  "generatedAt": "2026-07-28T23:48:58.863Z",
+  "updatedAt": "2026-07-28T22:05:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
-      "P2",
+      "triage:pr-opened",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-19T12:20:01Z",
-    "updatedAt": "2026-07-28T20:59:46Z"
+    "updatedAt": "2026-07-28T22:05:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estado operativo y qué acción deben aplicarse a un SKU ausente del snapshot cuando Inventory API devuelve `PUBLISHED/ACTIVE` con `listingOnHold=true`?",
-  "rationale": "La evidencia confirma que `DB_ONLY` mezcla causas, pero decidir entre conservar, reintentar, crear un estado específico o iniciar recuperación afecta la semántica operativa y una posible resincronización existente.",
+  "question": "¿Debe aprobarse ahora solo la prevención para snapshots futuros, dejando la cohorte histórica `DB_ONLY` para una resincronización separada?",
+  "rationale": "La PR preserva explícitamente el backlog histórico; reinterpretarlo o recrearlo requiere definir una cohorte estable y una política operativa por respuesta remota.",
   "options": [
     {
-      "title": "Conservar y registrar estado remoto",
-      "body": "No marcar `DB_ONLY` las ofertas vivas; persistir el resultado remoto y usar una categoría reintentable o informativa para on-hold.",
+      "title": "Limitar la PR a futuros candidatos",
+      "body": "Integrar la prevención de nuevos falsos `DB_ONLY` y abrir una intervención separada, auditada y estable para el backlog histórico.",
       "recommended": true
     },
     {
-      "title": "Mantener `DB_ONLY` con excepción manual",
-      "body": "Conservar la clasificación actual y definir una lista operativa de excepciones on-hold, asumiendo revisión manual continua.",
-      "recommended": false
-    },
-    {
-      "title": "Reconciliador dirigido de cohorte estable",
-      "body": "Aprobar una resincronización limitada que persista decisiones remotas antes de decidir recreaciones para los `404`.",
+      "title": "Añadir resincronización histórica",
+      "body": "Extender el trabajo solo tras definir respuestas para `404`, ofertas on-hold y stocks no activos sobre el universo completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar y registrar estado remoto",
-    "body": "No marcar `DB_ONLY` las ofertas vivas; persistir el resultado remoto y usar una categoría reintentable o informativa para on-hold.",
+    "title": "Limitar la PR a futuros candidatos",
+    "body": "Integrar la prevención de nuevos falsos `DB_ONLY` y abrir una intervención separada, auditada y estable para el backlog histórico.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la señal histórica más cercana disponible para el script de reconciliación afectado.",
-    "confidence": "medium"
+    "reason": "Su historial reciente conecta directamente con el extractor y la política de reconciliación afectada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7721.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7721#issuecomment-5015714604",
-    "reviewedAt": "2026-07-28T21:24:06.367Z",
+    "reviewedAt": "2026-07-28T23:48:58.863Z",
     "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
