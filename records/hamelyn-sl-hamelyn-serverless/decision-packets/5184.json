@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T11:59:06.045Z",
-  "updatedAt": "2026-07-28T11:51:20Z",
+  "generatedAt": "2026-07-28T11:44:33.703Z",
+  "updatedAt": "2026-07-28T10:57:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,43 +25,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-28T11:51:20Z"
+    "updatedAt": "2026-07-28T10:57:25Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué señal operativa debe emitir `/api/ebay` cuando una fase de publicación falla totalmente, sin romper los crons que necesitan continuar otras fases?",
-  "rationale": "La PR abierta limita deliberadamente su alcance a observabilidad; escoger HTTP, alerta o severidad por ruta afecta al contrato compartido y requiere criterio operativo.",
+  "question": "¿Debe la reactivación de `ebay.create()` esperar una política específica de señal HTTP/alerta para lotes totalmente fallidos, o basta inicialmente con la observabilidad de la PR vinculada?",
+  "rationale": "La modificación de observabilidad es mecánica, pero cambiar el contrato de respuesta del cron afecta a rutas compartidas y requiere decidir compatibilidad operativa.",
   "options": [
     {
-      "title": "Separar observabilidad y política HTTP",
-      "body": "Corregir e integrar la PR de logs, validar una sonda limitada y decidir el contrato transversal en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622.",
+      "title": "Aterrizar observabilidad y sondear",
+      "body": "Integrar la PR de logging, mantener `create` pausado y hacer una sonda limitada antes de decidir la señal HTTP transversal.",
       "recommended": true
     },
     {
-      "title": "Degradar solo eBay",
-      "body": "Definir una respuesta o métrica específica para fallo total de `create` en eBay sin modificar todavía el handler compartido.",
+      "title": "Definir primero la política del handler",
+      "body": "Resolver la severidad por ruta en la incidencia transversal antes de cualquier reactivación de eBay.",
       "recommended": false
     },
     {
-      "title": "Mantener HTTP 200 con alerta externa",
-      "body": "Conservar el contrato actual y exigir una alerta estructurada consumida por la operación antes de reactivar `create`.",
+      "title": "Reactivar sin cambio de señal",
+      "body": "Aceptar temporalmente HTTP 200 y vigilar los nuevos `errorId` mediante observabilidad externa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar observabilidad y política HTTP",
-    "body": "Corregir e integrar la PR de logs, validar una sonda limitada y decidir el contrato transversal en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622.",
+    "title": "Aterrizar observabilidad y sondear",
+    "body": "Integrar la PR de logging, mantener `create` pausado y hacer una sonda limitada antes de decidir la señal HTTP transversal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado al trabajo y mantiene la PR que delimita la decisión pendiente.",
+    "reason": "Está asignado a la incidencia y lidera el diagnóstico y la PR de observabilidad actualmente vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-28T11:59:06.045Z",
+    "reviewedAt": "2026-07-28T11:44:33.703Z",
     "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
   }
 }

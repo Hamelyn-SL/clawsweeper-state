@@ -3,5 +3,15 @@
     "number": 5184,
     "action": "review_comment_synced",
     "reason": "updated durable Codex review comment"
+  },
+  {
+    "number": 7926,
+    "action": "review_comment_synced",
+    "reason": "recorded existing durable comment metadata"
+  },
+  {
+    "number": 8024,
+    "action": "skipped_stale_review_comment_sync",
+    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-28T11:51:01.014Z, report reviewed_at=2026-07-28T11:46:30.208Z"
   }
 ]
