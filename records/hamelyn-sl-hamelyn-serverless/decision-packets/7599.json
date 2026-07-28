@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T12:33:30.357Z",
-  "updatedAt": "2026-07-21T12:18:31Z",
+  "generatedAt": "2026-07-28T21:06:22.072Z",
+  "updatedAt": "2026-07-28T20:59:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,52 @@
     "labels": [
       "app:marketplace",
       "question",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-07-21T12:18:31Z"
+    "updatedAt": "2026-07-28T20:59:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe adoptarse una ventana limitada de retry seguida de estado no listable y revalidación mensual, o mantenerse el reintento diario indefinido?",
-  "rationale": "La elección determina compatibilidad operativa, campos persistidos, consultas al catálogo y la visibilidad del inventario regional.",
+  "question": "¿Debe Amazon conservar el reintento diario indefinido o desescalar los pares EAN-región sin ASIN a un estado no listable con revalidación programada?",
+  "rationale": "El código actual soporta el retry, pero elegir umbral, cadencia y visibilidad cambia el modelo persistido, las llamadas a Catalog API y la expectativa comercial.",
   "options": [
     {
-      "title": "Ventana limitada y recadencia",
-      "body": "Reintentar durante siete días, marcar el par como no listable y revalidarlo cada 30 días con visibilidad operativa.",
+      "title": "Desescalado medido",
+      "body": "Reintentar durante 7 días, marcar el par como no listable y revalidarlo cada 30 días con visibilidad separada.",
       "recommended": true
     },
     {
-      "title": "Conservar el retry actual",
-      "body": "Mantener `RetryPolicy.STALE` y el cooldown de 24 horas sin estado adicional ni límite temporal.",
+      "title": "Mantener retry diario",
+      "body": "Conservar el comportamiento actual para maximizar la detección inmediata de nuevas altas regionales.",
       "recommended": false
     },
     {
-      "title": "Retirar y reportar",
-      "body": "Desactivar la publicación regional tras el fallo y mostrar el inventario afectado como no listable.",
+      "title": "Retirada terminal",
+      "body": "Dejar de reintentar tras un umbral y exigir una acción operativa para volver a evaluar el par.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ventana limitada y recadencia",
-    "body": "Reintentar durante siete días, marcar el par como no listable y revalidarlo cada 30 días con visibilidad operativa.",
+    "title": "Desescalado medido",
+    "body": "Reintentar durante 7 días, marcar el par como no listable y revalidarlo cada 30 días con visibilidad separada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Es la persona con mantenimiento más reciente del flujo de catálogo y recuperación Amazon afectado por la decisión.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente cubre la clasificación y el recovery de catálogo, y ha aportado el análisis operativo más específico.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-07-21T12:33:30.357Z",
-    "mainSha": "03444d8f705e99bf18d93596b754c654bcdec4f2"
+    "reviewedAt": "2026-07-28T21:06:22.072Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
