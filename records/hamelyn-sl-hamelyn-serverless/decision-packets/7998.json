@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T15:57:15.315Z",
-  "updatedAt": "2026-07-27T14:00:26Z",
+  "generatedAt": "2026-07-28T21:51:41.928Z",
+  "updatedAt": "2026-07-28T20:59:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,46 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T11:39:40Z",
-    "updatedAt": "2026-07-27T14:00:26Z"
+    "updatedAt": "2026-07-28T20:59:48Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se mantiene la cadencia actual mientras se valida `create=200`, o se autoriza una segunda intervención de pacing si la ventana de 48 horas no alcanza el objetivo?",
-  "rationale": "La cuota sostenible y el umbral aceptable de 429/504 dependen de métricas de PROD y de una decisión operativa que el código no puede inferir.",
+  "question": "¿Debe priorizarse instrumentar y corregir la conversión hacia seller manteniendo `create=200`, o autorizar un aumento adicional de cadencia/concurrencia como experimento controlado?",
+  "rationale": "Los datos separan capacidad nominal, salida local y activación remota; elegir cuál optimizar primero y qué riesgo de cuota aceptar exige criterio operativo del equipo Marketplace.",
   "options": [
     {
-      "title": "Validar primero el lote de 200",
-      "body": "Conservar el cron cada 12 minutos y decidir con los snapshots de 48 horas antes de cambiar la cadencia.",
+      "title": "Investigar la convergencia seller",
+      "body": "Mantener el pacing actual y medir cohortes por ejecución hasta localizar restricciones, fases intermedias o fallos que explican la conversión observada.",
       "recommended": true
     },
     {
-      "title": "Aumentar la cadencia ahora",
-      "body": "Elevar los ticks antes de completar la medición, asumiendo un riesgo mayor de solape y de errores de API.",
+      "title": "Aumentar pacing con guardas",
+      "body": "Subir cadencia o concurrencia mediante un experimento acotado con límites de `429` y `504`, asumiendo que no resuelve necesariamente la confirmación remota.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar primero el lote de 200",
-    "body": "Conservar el cron cada 12 minutos y decidir con los snapshots de 48 horas antes de cambiar la cadencia.",
+    "title": "Investigar la convergencia seller",
+    "body": "Mantener el pacing actual y medir cohortes por ejecución hasta localizar restricciones, fases intermedias o fallos que explican la conversión observada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el contribuidor reciente más cercano a Amazon SE y aportó el análisis operativo inicial.",
+    "reason": "Su historial reciente cubre la validación del pipeline de creación y el contexto operativo de esta issue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7998.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7998#issuecomment-5091241221",
-    "reviewedAt": "2026-07-27T15:57:15.315Z",
-    "mainSha": "c3e6775d0096d857e94f60b7633176bd7450df30"
+    "reviewedAt": "2026-07-28T21:51:41.928Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
   }
 }
