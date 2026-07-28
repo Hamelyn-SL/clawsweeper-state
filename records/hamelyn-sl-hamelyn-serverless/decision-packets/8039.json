@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-28T21:42:25.097Z",
+  "updatedAt": "2026-07-28T21:00:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8039,
+    "title": "Amazon FR marks accepted creation attempts active without seller conversion",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8039",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "reporter:miguel",
+      "triage:queued",
+      "area:marketplace-sync",
+      "P1"
+    ],
+    "createdAt": "2026-07-28T20:54:32Z",
+    "updatedAt": "2026-07-28T21:00:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `ACTIVE` seguir significando aceptación de API o reservarse para disponibilidad seller confirmada, y qué verificación asíncrona será la fuente de verdad?",
+  "rationale": "La corrección requiere definir el contrato persistido, la cadencia de sondeo y la compatibilidad con reportes y recoveries regionales.",
+  "options": [
+    {
+      "title": "Confirmación seller separada",
+      "body": "Persistir el intento aceptado como pendiente y promoverlo solo tras una comprobación seller que confirme comprabilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar ACTIVE optimista",
+      "body": "Mantener la semántica actual y añadir métricas o alertas que expongan divergencias sin cambiar estados.",
+      "recommended": false
+    },
+    {
+      "title": "Usar solo reconciliación por report",
+      "body": "Corregir el estado cuando llegue el report diario, aceptando el retraso y sin sondeo dedicado tras creación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmación seller separada",
+    "body": "Persistir el intento aceptado como pendiente y promoverlo solo tras una comprobación seller que confirme comprabilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Su historial conecta la incorporación de FR con el registro y los consumidores Amazon que determinan este contrato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8039.md",
+    "reviewedAt": "2026-07-28T21:42:25.097Z",
+    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+  }
+}
