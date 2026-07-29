@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T01:27:53.794Z",
-  "updatedAt": "2026-07-29T00:28:49Z",
+  "generatedAt": "2026-07-29T02:50:48.647Z",
+  "updatedAt": "2026-07-29T01:29:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -17,38 +17,43 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-21T15:53:50Z",
-    "updatedAt": "2026-07-29T00:28:49Z",
+    "updatedAt": "2026-07-29T01:29:00Z",
     "headSha": "7adee31fcc212f101144f7464827bac60e0e4095"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Las salidas administrativas deben priorizar el envío normalizado en EUR, el importe original, o mostrar ambos explícitamente?",
-  "rationale": "El cambio altera el significado de un campo persistido que ya consume Admin; el contrato visible de lista y exportación requiere una decisión de producto antes de codificarlo.",
+  "question": "¿Las vistas y exportaciones administrativas deben mostrar el envío original junto a `currency`, el importe normalizado en EUR, o ambos valores etiquetados?",
+  "rationale": "El PR modifica la semántica persistida de un campo que ya consume Admin; escoger la presentación financiera correcta exige intención de producto, no solo una corrección mecánica.",
   "options": [
     {
-      "title": "Mostrar ambos importes",
-      "body": "Conservar `shipPrice` como EUR y añadir el importe original con su moneda en lista y exportación para eliminar ambigüedad.",
+      "title": "Mostrar el importe original con la moneda del pedido",
+      "body": "Usar `originalShipPrice` en las columnas y exportaciones asociadas a `currency`, conservando `shipPrice` en EUR para métricas internas.",
       "recommended": true
     },
     {
-      "title": "Priorizar el importe original",
-      "body": "Mantener el valor visible en moneda del pedido y reservar el EUR para cálculos e informes internos.",
+      "title": "Exponer ambos importes con etiquetas explícitas",
+      "body": "Mantener el importe normalizado para análisis y añadir el original con su moneda para operaciones y exportación.",
+      "recommended": false
+    },
+    {
+      "title": "Mostrar únicamente EUR",
+      "body": "Renombrar y documentar todas las superficies administrativas para que `shipPrice` se interprete siempre como EUR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mostrar ambos importes",
-    "body": "Conservar `shipPrice` como EUR y añadir el importe original con su moneda en lista y exportación para eliminar ambigüedad.",
+    "title": "Mostrar el importe original con la moneda del pedido",
+    "body": "Usar `originalShipPrice` en las columnas y exportaciones asociadas a `currency`, conservando `shipPrice` en EUR para métricas internas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el revisor asignado con contexto explícito de ordersells y marketplaces.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente conecta los flujos de checkout y marketplace con la superficie afectada, y ya fue seleccionado como revisor por este conocimiento.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7855.md",
-    "reviewedAt": "2026-07-29T01:27:53.794Z",
-    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+    "reviewedAt": "2026-07-29T02:50:48.647Z",
+    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
   }
 }

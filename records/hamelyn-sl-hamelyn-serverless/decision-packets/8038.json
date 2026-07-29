@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T02:47:33.551Z",
+  "generatedAt": "2026-07-29T02:48:32.136Z",
   "updatedAt": "2026-07-29T01:29:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -16,52 +16,50 @@
       "reporter:miguel",
       "triage:needs-info",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:not-repro-on-main",
-      "issue-rating: 🥈 silver",
       "P0",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-28T20:53:55Z",
     "updatedAt": "2026-07-29T01:29:09Z"
   },
-  "lane": "product_direction",
+  "lane": "manual_review",
   "priority": "P0",
-  "question": "¿Debe el equipo bloquear explícitamente toda resincronización mutante de Amazon IT hasta obtener una causa Amazon-side y una cohorte que vuelva a `BUYABLE`?",
-  "rationale": "La evidencia disponible señala una restricción externa; elegir entre esperar, escalar o intentar recuperación cambia la seguridad operativa y no se resuelve desde el código.",
+  "question": "¿Qué evidencia de Seller Central o Seller Support confirma la causa de la restricción italiana y qué gate `BUYABLE` autorizará una recuperación por lotes?",
+  "rationale": "La causa y el desbloqueo dependen de una decisión y evidencia del seller que el repositorio y las APIs read-only no pueden producir ni ejecutar de forma segura.",
   "options": [
     {
-      "title": "Escalar y congelar mutaciones",
-      "body": "Mantener los manifests y la monitorización actuales mientras Seller Central o Seller Support identifica la medida y una muestra vuelve a `BUYABLE`.",
+      "title": "Mantener seguimiento P0",
+      "body": "Conservar la incidencia abierta hasta disponer de la causa Amazon-side y dos snapshots frescos que demuestren recuperación significativa.",
       "recommended": true
     },
     {
-      "title": "Autorizar una resincronización limitada",
-      "body": "Permitirla solo con una aprobación operativa explícita, un manifest excluyente y validación seller/SP-API por lote.",
+      "title": "Autorizar recuperación acotada",
+      "body": "Tras confirmar el desbloqueo, aprobar un manifest separado y una prueba limitada con verificación `BUYABLE` posterior.",
       "recommended": false
     },
     {
-      "title": "Cerrar como incidente externo",
-      "body": "Cerrar cuando el equipo acepte que la recuperación depende exclusivamente de Amazon y tras documentar el canal operativo propietario.",
+      "title": "Cerrar como incidencia externa resuelta",
+      "body": "Cerrar únicamente cuando Seller Central confirme la medida y los indicadores seller, API y pedidos vuelvan a una banda operativa aceptable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar y congelar mutaciones",
-    "body": "Mantener los manifests y la monitorización actuales mientras Seller Central o Seller Support identifica la medida y una muestra vuelve a `BUYABLE`.",
+    "title": "Mantener seguimiento P0",
+    "body": "Conservar la incidencia abierta hasta disponer de la causa Amazon-side y dos snapshots frescos que demuestren recuperación significativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es asignado actual y su historial reciente cubre la reconciliación, la recuperación Amazon y la señal de Account Health.",
+    "reason": "Figura como responsable asignado y es el contribuidor más cercano al monitor de salud de cuenta que puede coordinar la comprobación Amazon-side.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8038.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8038#issuecomment-5109943437",
-    "reviewedAt": "2026-07-29T02:47:33.551Z",
+    "reviewedAt": "2026-07-29T02:48:32.136Z",
     "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
   }
 }
