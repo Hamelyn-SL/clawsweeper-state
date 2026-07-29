@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-28T07:28:35.999Z",
+  "generatedAt": "2026-07-29T01:05:54.031Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 113
+    "openItemsSeen": 128
   },
   "counts": {
-    "itemRecords": 104,
-    "closedRecords": 674,
-    "missingOpen": 9,
+    "itemRecords": 127,
+    "closedRecords": 686,
+    "missingOpen": 1,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 8,
+    "missingRecentOpen": 0,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,137 +37,6 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-21T12:18:31Z",
         "missingReason": "protected_label"
-      },
-      {
-        "number": 8011,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T06:59:57Z",
-        "updatedAt": "2026-07-28T07:04:48Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8012,
-        "kind": "issue",
-        "title": "feat: ajustes de UX del puesto de revisión V3 (aviso de 70, Continuar abajo, historial y sin desperfectos)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:running",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:43Z",
-        "updatedAt": "2026-07-28T07:27:25Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8013,
-        "kind": "issue",
-        "title": "feat: cambiar de gaveta para un producto concreto en el puesto de revisión V3",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:45Z",
-        "updatedAt": "2026-07-28T07:20:19Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8014,
-        "kind": "issue",
-        "title": "feat: productividad de Revisión V3 (sesión, productos/min y agregado diario)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:47Z",
-        "updatedAt": "2026-07-28T07:20:04Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8015,
-        "kind": "issue",
-        "title": "feat: avisos de ritmo cada 90 min (tortuga/liebre) y confeti al llegar a 1000 productos",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:49Z",
-        "updatedAt": "2026-07-28T07:20:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8016,
-        "kind": "issue",
-        "title": "feat: auditoría de calidad del supervisor (cuota semanal, apartar gaveta y % de coincidencia)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:52Z",
-        "updatedAt": "2026-07-28T07:20:13Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8017,
-        "kind": "issue",
-        "title": "feat: paneles de métricas de revisión (dashboard de operario y panel de supervisor)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:55Z",
-        "updatedAt": "2026-07-28T07:20:21Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8018,
-        "kind": "issue",
-        "title": "chore: ordenar los vídeos formativos por fase del puesto de revisión V3",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P3",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:57Z",
-        "updatedAt": "2026-07-28T07:20:15Z",
-        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -190,139 +59,7 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [
-      {
-        "number": 8011,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T06:59:57Z",
-        "updatedAt": "2026-07-28T07:04:48Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8012,
-        "kind": "issue",
-        "title": "feat: ajustes de UX del puesto de revisión V3 (aviso de 70, Continuar abajo, historial y sin desperfectos)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:running",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:43Z",
-        "updatedAt": "2026-07-28T07:27:25Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8013,
-        "kind": "issue",
-        "title": "feat: cambiar de gaveta para un producto concreto en el puesto de revisión V3",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:45Z",
-        "updatedAt": "2026-07-28T07:20:19Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8014,
-        "kind": "issue",
-        "title": "feat: productividad de Revisión V3 (sesión, productos/min y agregado diario)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:47Z",
-        "updatedAt": "2026-07-28T07:20:04Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8015,
-        "kind": "issue",
-        "title": "feat: avisos de ritmo cada 90 min (tortuga/liebre) y confeti al llegar a 1000 productos",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:49Z",
-        "updatedAt": "2026-07-28T07:20:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8016,
-        "kind": "issue",
-        "title": "feat: auditoría de calidad del supervisor (cuota semanal, apartar gaveta y % de coincidencia)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:52Z",
-        "updatedAt": "2026-07-28T07:20:13Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8017,
-        "kind": "issue",
-        "title": "feat: paneles de métricas de revisión (dashboard de operario y panel de supervisor)",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P2",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:55Z",
-        "updatedAt": "2026-07-28T07:20:21Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8018,
-        "kind": "issue",
-        "title": "chore: ordenar los vídeos formativos por fase del puesto de revisión V3",
-        "labels": [
-          "app:admin",
-          "feature",
-          "triage:queued",
-          "epic:revision-v3",
-          "P3",
-          "reporter:daniellopez"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-28T07:19:57Z",
-        "updatedAt": "2026-07-28T07:20:15Z",
-        "missingReason": "recently_created"
-      }
-    ],
+    "missingRecentOpen": [],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
