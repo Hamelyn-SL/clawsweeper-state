@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:46:59.447Z",
+  "updatedAt": "2026-07-29T01:12:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8046,
+    "title": "fix: stop untracked batch outcomes from stranding rows in batch",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8046",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-28T22:45:44Z",
+    "updatedAt": "2026-07-29T01:12:27Z",
+    "headSha": "04d9e1d8b79562bb46a5735474413cbaf4e9999e"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza el despliegue tras avisar a los watchers de marketplace del aumento esperado de `SYNC_ERROR` y acordar su seguimiento?",
+  "rationale": "El cambio es correcto, pero hace visible una cohorte histórica que puede activar alertas operativas y requiere coordinación humana antes de producción.",
+  "options": [
+    {
+      "title": "Coordinar y desplegar",
+      "body": "Avisar a los responsables de marketplace, desplegar y vigilar los warnings de outcomes ajenos junto con la cohorte Fnac en `BATCH`.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer para observación adicional",
+      "body": "Mantener el PR abierto hasta definir una ventana de despliegue y una medición posterior del backlog esperado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Coordinar y desplegar",
+    "body": "Avisar a los responsables de marketplace, desplegar y vigilar los warnings de outcomes ajenos junto con la cohorte Fnac en `BATCH`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor asignado y el colaborador reciente con mayor continuidad en la ruta de batches.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8046.md",
+    "reviewedAt": "2026-07-29T01:46:59.447Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+  }
+}
