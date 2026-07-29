@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T08:53:29.294Z",
-  "updatedAt": "2026-07-29T08:44:15Z",
+  "generatedAt": "2026-07-29T11:04:17.972Z",
+  "updatedAt": "2026-07-29T09:46:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,47 @@
       "source:admin-panel",
       "app:admin",
       "reporter:davidgonzalez",
+      "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-29T08:43:46Z",
-    "updatedAt": "2026-07-29T08:44:15Z"
+    "updatedAt": "2026-07-29T09:46:34Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe soportarse oficialmente activar multiestación durante un picking legacy abierto, o debe mantenerse como requisito operativo cerrar el picking antes del despliegue?",
-  "rationale": "La PR previa trató esta coexistencia como no soportada; elegir una migración cambia el contrato de despliegue y la numeración visible de carros.",
+  "question": "¿Debe la transición usar un asignador global atómico de bloques `M-` o rangos fijos documentados para cada estación?",
+  "rationale": "El código actual mantiene contadores independientes por estación pero no codifica rangos distintos; esa elección determina la compatibilidad de pickings nuevos y en curso.",
   "options": [
     {
-      "title": "Añadir migración compatible",
-      "body": "Inicializar de forma atómica los contadores por estación desde un bloque posterior a los carros legacy ya usados y documentar la recuperación.",
+      "title": "Asignador global atómico",
+      "body": "Reservar cada bloque `M-` desde una única secuencia garantiza ausencia de colisiones durante la transición y en operación multiestación.",
       "recommended": true
     },
     {
-      "title": "Mantener el corte operativo",
-      "body": "Conservar el requisito de desplegar con el picking cerrado y añadir una comprobación visible que impida la activación insegura.",
+      "title": "Rangos fijos por estación",
+      "body": "Conservar contadores independientes exige documentar y aplicar una partición estable de rangos para todas las estaciones configuradas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir migración compatible",
-    "body": "Inicializar de forma atómica los contadores por estación desde un bloque posterior a los carros legacy ya usados y documentar la recuperación.",
+    "title": "Asignador global atómico",
+    "body": "Reservar cada bloque `M-` desde una única secuencia garantiza ausencia de colisiones durante la transición y en operación multiestación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Es la persona con historial directo sobre la implementación multiestación y el límite de despliegue original.",
+    "reason": "Introdujo y ha actualizado recientemente la ruta de contadores y numeración multiestación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8075.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8075#issuecomment-5115371985",
-    "reviewedAt": "2026-07-29T08:53:29.294Z",
-    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+    "reviewedAt": "2026-07-29T11:04:17.972Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }
