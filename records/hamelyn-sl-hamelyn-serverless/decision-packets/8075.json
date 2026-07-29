@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T08:53:29.294Z",
+  "updatedAt": "2026-07-29T08:44:15Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8075,
+    "title": "Station reinicia los contadores M al activar multiestación con un picking abierto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8075",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "reporter:davidgonzalez",
+      "P1"
+    ],
+    "createdAt": "2026-07-29T08:43:46Z",
+    "updatedAt": "2026-07-29T08:44:15Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe soportarse oficialmente activar multiestación durante un picking legacy abierto, o debe mantenerse como requisito operativo cerrar el picking antes del despliegue?",
+  "rationale": "La PR previa trató esta coexistencia como no soportada; elegir una migración cambia el contrato de despliegue y la numeración visible de carros.",
+  "options": [
+    {
+      "title": "Añadir migración compatible",
+      "body": "Inicializar de forma atómica los contadores por estación desde un bloque posterior a los carros legacy ya usados y documentar la recuperación.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el corte operativo",
+      "body": "Conservar el requisito de desplegar con el picking cerrado y añadir una comprobación visible que impida la activación insegura.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir migración compatible",
+    "body": "Inicializar de forma atómica los contadores por estación desde un bloque posterior a los carros legacy ya usados y documentar la recuperación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Es la persona con historial directo sobre la implementación multiestación y el límite de despliegue original.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8075.md",
+    "reviewedAt": "2026-07-29T08:53:29.294Z",
+    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+  }
+}
