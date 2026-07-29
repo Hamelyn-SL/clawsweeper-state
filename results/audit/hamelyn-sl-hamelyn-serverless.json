@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-29T01:05:54.031Z",
+  "generatedAt": "2026-07-29T07:32:14.994Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 128
+    "openItemsSeen": 135
   },
   "counts": {
-    "itemRecords": 127,
-    "closedRecords": 686,
-    "missingOpen": 1,
+    "itemRecords": 131,
+    "closedRecords": 691,
+    "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 3,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,46 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-21T12:18:31Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 8063,
+        "kind": "issue",
+        "title": "[SECURITY-ALERT] Pillow: DoS por decodificación de tiles JPEG2000",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "P2",
+          "security-alert"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-29T07:03:18Z",
+        "updatedAt": "2026-07-29T07:18:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8065,
+        "kind": "pull_request",
+        "title": "fix: upgrade Pillow to patched release",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-29T07:17:43Z",
+        "updatedAt": "2026-07-29T07:22:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8066,
+        "kind": "pull_request",
+        "title": "fix: serialize non-error provider failures with their real cause",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-29T07:27:04Z",
+        "updatedAt": "2026-07-29T07:30:44Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +99,48 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 8063,
+        "kind": "issue",
+        "title": "[SECURITY-ALERT] Pillow: DoS por decodificación de tiles JPEG2000",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "P2",
+          "security-alert"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-29T07:03:18Z",
+        "updatedAt": "2026-07-29T07:18:55Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8065,
+        "kind": "pull_request",
+        "title": "fix: upgrade Pillow to patched release",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-29T07:17:43Z",
+        "updatedAt": "2026-07-29T07:22:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8066,
+        "kind": "pull_request",
+        "title": "fix: serialize non-error provider failures with their real cause",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-07-29T07:27:04Z",
+        "updatedAt": "2026-07-29T07:30:44Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
