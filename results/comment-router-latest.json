@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-07-29T04:37:47.058Z",
+  "generated_at": "2026-07-29T05:39:24.279Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-07-29T01:37:44.502Z",
+  "since": "2026-07-29T02:39:23.323Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 43,
-  "commands_seen": 1,
+  "scanned_comments": 7,
+  "commands_seen": 0,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,63 +27,21 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8045:5110380241:2026-07-29T01:48:51Z:automerge",
-      "comment_id": "5110380241",
-      "comment_version_key": "5110380241:2026-07-29T01:48:51Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8045#issuecomment-5110380241",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8045,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-07-28T22:33:49Z",
-      "comment_updated_at": "2026-07-29T01:48:51Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "La rama encadena `requeueDuplicates` antes de `create` en el cron de MercadoLibre y actualiza la documentación operativa de esa dependencia.\n\nReproducibility: Sí, con alta confianza desde el código: el cron inicia todas las fases a la vez y la PR hace que un rechazo de promoción evite llamar a `create`. La prueba adjunta reproduce el orden, aunque con dependencias simuladas.",
-      "review_followup": "- [P1] Existe una reparación mecánica y acotada para preservar la creación tras el error; la prueba de entorno real sigue requiriendo aportación del contribuidor.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8045 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    }
-  ],
+  "commands": [],
   "timings": {
-    "total_ms": 2556,
+    "total_ms": 955,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1315
+        "ms": 953
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1234
+        "ms": 0
       },
       {
         "name": "classify_comment_commands",
-        "ms": 1
+        "ms": 0
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
