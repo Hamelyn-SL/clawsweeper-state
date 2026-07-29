@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T10:21:21.518Z",
+  "updatedAt": "2026-07-29T10:14:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8085,
+    "title": "Ingestar en BigQuery los webhooks de Mandrill para trazar el ciclo de vida de cada email",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-07-29T10:14:09Z",
+    "updatedAt": "2026-07-29T10:14:21Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Qué campos personales se conservarán en BigQuery, durante cuánto tiempo y qué alerta o recuperación cubrirá fallos de inserción sin bloquear a Mandrill?",
+  "rationale": "La implementación abre un endpoint público firmado y propone conservar datos personales y eventos en bruto; esa frontera no debe decidirse implícitamente en una PR técnica.",
+  "options": [
+    {
+      "title": "Aprobar esquema minimizado",
+      "body": "Guardar solo campos necesarios para trazabilidad, definir retención y alertar sobre fallos de inserción antes de iniciar los dos PRs.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar evento bruto limitado",
+      "body": "Permitir `raw` con acceso restringido y caducidad corta documentada, manteniendo campos normalizados para consulta.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la ingesta",
+      "body": "Mantener el log síncrono actual hasta acordar propiedad operativa, privacidad y reconciliación de eventos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar esquema minimizado",
+    "body": "Guardar solo campos necesarios para trazabilidad, definir retención y alertar sobre fallos de inserción antes de iniciar los dos PRs.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial actual y el diseño detallado de la propuesta lo conectan con el punto de envío y la ingesta comparable.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
+    "reviewedAt": "2026-07-29T10:21:21.518Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+  }
+}
