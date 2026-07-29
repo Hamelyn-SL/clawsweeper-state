@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T08:56:19.448Z",
-  "updatedAt": "2026-07-29T08:45:44Z",
+  "generatedAt": "2026-07-29T13:40:38.124Z",
+  "updatedAt": "2026-07-29T12:57:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,44 +13,38 @@
       "size/L"
     ],
     "createdAt": "2026-07-29T08:22:39Z",
-    "updatedAt": "2026-07-29T08:45:44Z",
-    "headSha": "5ea9ed4ce28d3b17feb2ae2a791954de0fd22275"
+    "updatedAt": "2026-07-29T12:57:43Z",
+    "headSha": "5f21384f6a4967474b5b89589a03ff72d3cd5dca"
   },
-  "lane": "merge_risk",
+  "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Qué estrategia de corte acepta el equipo para instalar Cloud Scheduler sin dejar los ocho workflows sin disparador ni duplicarlos de forma no controlada?",
-  "rationale": "El diff reconoce un paso manual posterior al merge y el workflow de despliegue no se ejecuta automáticamente en `dev`; elegir el orden operativo exige asumir disponibilidad o solapamiento.",
+  "question": "¿Se acepta guardar un PAT de GitHub con permiso `Actions: read and write` en las configuraciones de Cloud Scheduler para despachar los ocho workflows?",
+  "rationale": "El código limita el token al repositorio y a Actions, pero trasladarlo desde GitHub Secrets a metadatos de Scheduler cambia quién puede acceder a esa credencial y exige una decisión operativa explícita.",
   "options": [
     {
-      "title": "Transición en dos fases",
-      "body": "Provisionar y verificar los jobs antes de retirar los triggers nativos, rebasando esta rama después de que aterrice la dependencia.",
+      "title": "Aceptar el PAT acotado",
+      "body": "Mantener el diseño actual, confirmar que los permisos de lectura de Scheduler están restringidos y registrar rotación antes del despliegue.",
       "recommended": true
     },
     {
-      "title": "Ventana operativa explícita",
-      "body": "Aceptar una ventana breve sin cron y ejecutar inmediatamente el despliegue manual con una persona responsable presente.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la migración",
-      "body": "Mantener los triggers actuales hasta disponer de un mecanismo de corte automatizado y verificable.",
+      "title": "Aislar el token tras un proxy",
+      "body": "Sustituir los dispatches directos por un servicio intermedio que conserve la credencial fuera de los jobs de Scheduler.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Transición en dos fases",
-    "body": "Provisionar y verificar los jobs antes de retirar los triggers nativos, rebasando esta rama después de que aterrice la dependencia.",
+    "title": "Aceptar el PAT acotado",
+    "body": "Mantener el diseño actual, confirmar que los permisos de lectura de Scheduler están restringidos y registrar rotación antes del despliegue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está solicitado como revisor por conocimiento directo de los workflows y del despliegue de Data Platform.",
-    "confidence": "high"
+    "reason": "Es el revisor asignado por experiencia directa en Scheduler, gates de frescura y workflows de BigQuery.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8071.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8071#issuecomment-5115410653",
-    "reviewedAt": "2026-07-29T08:56:19.448Z",
-    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+    "reviewedAt": "2026-07-29T13:40:38.124Z",
+    "mainSha": "dcf997d47a1b16be43c67c4d074f4abeb40e997c"
   }
 }

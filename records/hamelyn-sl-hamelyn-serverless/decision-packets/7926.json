@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T11:04:29.476Z",
-  "updatedAt": "2026-07-29T10:59:21Z",
+  "generatedAt": "2026-07-29T13:41:00.358Z",
+  "updatedAt": "2026-07-29T13:36:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
       "status: 👀 ready for maintainer look",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-29T10:59:21Z",
-    "headSha": "a21d06bc1273770073a9bd8f8f85ec1aa6e489f1"
+    "updatedAt": "2026-07-29T13:36:01Z",
+    "headSha": "c0775ddb7bafa8468a341392f29b9b91f42c00e8"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Aceptamos mantener el acceso legacy por `cartId` y asociación por `userId` hasta el 24 de agosto de 2026 para conservar las builds Supply ya instaladas?",
-  "rationale": "El código reduce el IDOR para carritos nuevos, pero conserva temporalmente la vía vulnerable para compatibilidad; decidir esa exposición no es una corrección mecánica.",
+  "question": "¿Se acepta mantener el acceso legacy tokenless de los carritos sin hash hasta el 24 de agosto de 2026 para compatibilizar las builds Supply ya instaladas?",
+  "rationale": "La excepción conserva el comportamiento de clientes antiguos, pero deja una frontera de autorización más débil durante el rollout; el intercambio requiere intención humana.",
   "options": [
     {
-      "title": "Aceptar transición acotada",
-      "body": "Fusionar tras integrar `dev`, verificando que la distribución de clientes capability-aware estará completada antes del deadline.",
+      "title": "Aceptar la ventana temporal",
+      "body": "Fusionar el doble contrato hasta el deadline y programar la retirada comprobable de las rutas legacy.",
       "recommended": true
     },
     {
-      "title": "Cerrar el acceso legacy ahora",
-      "body": "Eliminar la excepción temporal y asumir que las builds nativas antiguas deben actualizarse antes de usar la API.",
+      "title": "Cerrar antes el legacy",
+      "body": "Retirar el acceso tokenless antes de la fecha y exigir actualización de las builds antiguas.",
+      "recommended": false
+    },
+    {
+      "title": "Aplicar gate por versión",
+      "body": "Mantener el flujo anterior únicamente para versiones de cliente conocidas y exigir capability al resto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar transición acotada",
-    "body": "Fusionar tras integrar `dev`, verificando que la distribución de clientes capability-aware estará completada antes del deadline.",
+    "title": "Aceptar la ventana temporal",
+    "body": "Fusionar el doble contrato hasta el deadline y programar la retirada comprobable de las rutas legacy.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su revisión identificó el conflicto entre compatibilidad de builds desplegadas y cierre completo del IDOR.",
+    "reason": "Su revisión documenta el conflicto entre las builds nativas instaladas y el cierre inmediato de las rutas legacy.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-29T11:04:29.476Z",
-    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+    "reviewedAt": "2026-07-29T13:41:00.358Z",
+    "mainSha": "dcf997d47a1b16be43c67c4d074f4abeb40e997c"
   }
 }
