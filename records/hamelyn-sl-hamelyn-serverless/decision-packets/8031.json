@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T19:41:30.758Z",
-  "updatedAt": "2026-07-28T18:39:13Z",
+  "generatedAt": "2026-07-29T10:53:18.659Z",
+  "updatedAt": "2026-07-29T10:14:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:admin",
       "reporter:beltran",
       "feature",
-      "triage:done",
+      "triage:no-change",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T13:36:47Z",
-    "updatedAt": "2026-07-28T18:39:13Z"
+    "updatedAt": "2026-07-29T10:14:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba esta primera versión con bypass manual de discrepancias y quién coordina el cambio entre Admin, Postlibri y `Record-revision-Windows`?",
-  "rationale": "El comportamiento de excepción afecta al control operativo de empaquetado y el agente que debe leer OCR no está en este repositorio.",
+  "question": "¿Se aprueba invertir en la primera versión interrepositorio de verificación OCR para Cainiao, Spring y Postlibri, manteniendo MercadoLibre fuera?",
+  "rationale": "El comportamiento funcional está acordado con el reportante, pero la inversión, el protocolo del agente Windows y la responsabilidad entre repositorios requieren patrocinio y propiedad explícitos.",
   "options": [
     {
       "title": "Patrocinar la primera versión",
-      "body": "Confirmar el bypass manual acordado, mantener excluidas las cubetas `ML-I-*` y coordinar un contrato OCR compatible entre los dos repositorios.",
+      "body": "Definir un responsable de Admin y otro del agente Windows para acordar el contrato OCR, persistir la referencia Postlibri y validar la cámara física.",
       "recommended": true
     },
     {
-      "title": "Endurecer la validación",
-      "body": "Exigir bloqueo sin bypass o ampliar carriers antes de desarrollar, aceptando mayor alcance y necesidad de nueva validación física.",
+      "title": "Aplazar hasta tener capacidad",
+      "body": "Mantener la incidencia como especificación aprobada y no iniciar cambios hasta asignar responsables de ambos repositorios.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Patrocinar la primera versión",
-    "body": "Confirmar el bypass manual acordado, mantener excluidas las cubetas `ML-I-*` y coordinar un contrato OCR compatible entre los dos repositorios.",
+    "body": "Definir un responsable de Admin y otro del agente Windows para acordar el contrato OCR, persistir la referencia Postlibri y validar la cámara física.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente cubre el punto de avance e impresión de AutoPacking que debe integrar el contrato aprobado.",
+    "reason": "Su trabajo reciente es el rastro más directo en el flujo de impresión y navegación de AutoPacking afectado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8031#issuecomment-5104971844",
-    "reviewedAt": "2026-07-28T19:41:30.758Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-07-29T10:53:18.659Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }
