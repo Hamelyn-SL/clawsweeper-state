@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T11:45:52.239Z",
-  "updatedAt": "2026-07-28T10:10:44Z",
+  "generatedAt": "2026-07-29T00:18:33.204Z",
+  "updatedAt": "2026-07-29T00:14:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-28T10:10:44Z",
+    "updatedAt": "2026-07-29T00:14:44Z",
     "headSha": "93d8b2def7a9bce4a647c5911ac6cb71f9eb803d"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se acepta explícitamente que el contrato legacy conserve acceso por `cartId` y asociación por `userId` hasta el 24 de agosto de 2026 para no bloquear las builds Supply instaladas?",
-  "rationale": "El parche resuelve el nuevo contrato seguro, pero la exposición temporal y el impacto de un corte inmediato son decisiones de seguridad y despliegue que el código no puede resolver por sí solo.",
+  "question": "¿Se acepta que los carritos legacy asociados sigan accesibles sin token hasta el 24 de agosto de 2026, o deben quedar protegidos al integrar este cambio?",
+  "rationale": "La compatibilidad propuesta mantiene temporalmente el límite de autorización roto; elegir entre seguridad inmediata y soporte de builds instaladas requiere asumir explícitamente el impacto operativo.",
   "options": [
     {
-      "title": "Patrocinar la excepción temporal",
-      "body": "Aceptar el contrato dual hasta la fecha configurada, con un responsable de actualización de clientes y evidencia real de ambos caminos.",
+      "title": "Proteger los carritos asociados",
+      "body": "Exigir token para cualquier carrito con usuario y sustituir el bypass por un gate de versión o rollout compatible para builds antiguas.",
       "recommended": true
     },
     {
-      "title": "Cerrar el acceso legacy antes",
-      "body": "Exigir capability también a los carritos legacy y asumir un rollout o actualización urgente de las builds instaladas.",
+      "title": "Aceptar la ventana amplia",
+      "body": "Mantener acceso legacy por `cartId` también para carritos asociados hasta el deadline, asumiendo temporalmente el riesgo IDOR.",
       "recommended": false
     },
     {
-      "title": "Pausar el merge",
-      "body": "No desplegar la nueva superficie hasta acordar un mecanismo de versionado, actualización forzosa o transición que elimine el IDOR.",
+      "title": "Pausar el despliegue",
+      "body": "Detener esta rama hasta definir una estrategia de actualización que no deje carritos asociados sin autorización.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la excepción temporal",
-    "body": "Aceptar el contrato dual hasta la fecha configurada, con un responsable de actualización de clientes y evidencia real de ambos caminos.",
+    "title": "Proteger los carritos asociados",
+    "body": "Exigir token para cualquier carrito con usuario y sustituir el bypass por un gate de versión o rollout compatible para builds antiguas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su revisión previa definió los riesgos de compatibilidad de las builds nativas y la recuperación de capabilities.",
+    "reason": "Su historial en los controladores afectados y sus revisiones previas conectan directamente con la decisión de compatibilidad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-28T11:45:52.239Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-07-29T00:18:33.204Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
   }
 }
