@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T08:55:18.612Z",
-  "updatedAt": "2026-07-29T08:50:07Z",
+  "generatedAt": "2026-07-29T10:56:01.136Z",
+  "updatedAt": "2026-07-29T09:00:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,44 +15,43 @@
       "triage:needs-info",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-29T08:24:22Z",
-    "updatedAt": "2026-07-29T08:50:07Z"
+    "updatedAt": "2026-07-29T09:00:15Z"
   },
   "lane": "proof_sufficiency",
   "priority": "P1",
-  "question": "¿Puede el equipo aportar el resultado remoto de Alibris para el fichero subido, incluida la acción aplicada y cualquier error de procesamiento?",
-  "rationale": "El checkout acredita el estado deseado local y la transferencia, pero no permite distinguir un fallo de interpretación remota de una causa distinta sin acceso a Seller Hub.",
+  "question": "¿Puede el equipo aportar el resultado de Alibris para `hamelyn_purge_books_std_2026-07-28_20-23-42.txt`, con acción aplicada y estado de procesamiento?",
+  "rationale": "El repositorio demuestra la exclusión de SKU y la transferencia, pero no puede inferir desde código si AUS aceptó, retrasó o interpretó el lote como `PURGE`.",
   "options": [
     {
       "title": "Aportar historial remoto",
-      "body": "Adjuntar el estado y la acción aplicada al fichero para acotar una corrección segura del exportador.",
+      "body": "Compartir el resultado de Inventory History o Seller Hub para fijar la causa antes de modificar generación, nombre o estrategia.",
       "recommended": true
     },
     {
-      "title": "Mantener observación",
-      "body": "Esperar dos ciclos completos y nuevos pedidos antes de cambiar código si Seller Hub no conserva historial consultable.",
+      "title": "Confirmar limitación externa",
+      "body": "Si AUS no expone ese historial, decidir explícitamente qué señal operativa alternativa acepta el equipo para vigilar las bajas.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aportar historial remoto",
-    "body": "Adjuntar el estado y la acción aplicada al fichero para acotar una corrección segura del exportador.",
+    "body": "Compartir el resultado de Inventory History o Seller Hub para fijar la causa antes de modificar generación, nombre o estrategia.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su cambio reciente controla la selección actual de candidatos que debe contrastarse con el resultado remoto.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Es la persona con mayor continuidad en la integración y en el diagnóstico previo de este mismo efecto observable.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073#issuecomment-5115369962",
-    "reviewedAt": "2026-07-29T08:55:18.612Z",
-    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+    "reviewedAt": "2026-07-29T10:56:01.136Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }

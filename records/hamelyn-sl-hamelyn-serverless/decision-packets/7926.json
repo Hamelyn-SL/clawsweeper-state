@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T09:02:43.822Z",
-  "updatedAt": "2026-07-29T08:57:31Z",
+  "generatedAt": "2026-07-29T10:56:09.679Z",
+  "updatedAt": "2026-07-29T09:57:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -14,44 +14,43 @@
       "P0"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
-    "updatedAt": "2026-07-29T08:57:31Z",
-    "headSha": "93d8b2def7a9bce4a647c5911ac6cb71f9eb803d"
+    "updatedAt": "2026-07-29T09:57:42Z",
+    "headSha": "a21d06bc1273770073a9bd8f8f85ec1aa6e489f1"
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se acepta hasta el 24 de agosto de 2026 que los carritos legacy asociados sigan autorizándose solo con `cartId` para mantener compatibilidad con builds Supply instaladas?",
-  "rationale": "El código y la prueba describen esta exposición como una elección deliberada de compatibilidad; resolverla requiere decidir el nivel de riesgo aceptable y el rollout.",
+  "question": "¿Se acepta mantener hasta el 24 de agosto de 2026 el acceso tokenless por `cartId` para los carritos legacy, incluidos los asociados a usuario, para preservar las builds Supply instaladas?",
+  "rationale": "El código implementa una compensación real entre continuidad de clientes desplegados y cierre inmediato de un IDOR conocido; ninguna comprobación automática puede decidir qué riesgo operativo debe asumir el producto.",
   "options": [
     {
-      "title": "Cerrar el fallback de asociados",
-      "body": "Limitar el contrato temporal a carritos anónimos y publicar una recuperación o actualización explícita para clientes antiguos.",
+      "title": "Aceptar ventana acotada",
+      "body": "Mantener el contrato dual hasta la fecha configurada, con un responsable y plan de actualización de las builds nativas antes del corte.",
       "recommended": true
     },
     {
-      "title": "Aceptar la ventana temporal",
-      "body": "Integrar con una aprobación explícita de seguridad, una fecha de corte operativa y evidencia real de las builds anteriores.",
+      "title": "Restringir el contrato legacy",
+      "body": "Añadir un gate de versión o reducir las rutas legacy permitidas para limitar el acceso tokenless antes de desplegar.",
       "recommended": false
     },
     {
-      "title": "Pausar el despliegue",
-      "body": "No integrar hasta disponer de un rollout por versión que conserve clientes antiguos sin exponer carritos asociados.",
+      "title": "Posponer el despliegue",
+      "body": "No fusionar hasta disponer de un rollout de cliente que permita retirar el contrato antiguo sin dejar usuarios bloqueados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cerrar el fallback de asociados",
-    "body": "Limitar el contrato temporal a carritos anónimos y publicar una recuperación o actualización explícita para clientes antiguos.",
+    "title": "Aceptar ventana acotada",
+    "body": "Mantener el contrato dual hasta la fecha configurada, con un responsable y plan de actualización de las builds nativas antes del corte.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su revisión ya identificó el conflicto entre la compatibilidad de builds instaladas y el cierre efectivo del IDOR.",
+    "reason": "Su revisión anterior identificó tanto la necesidad de compatibilidad como los requisitos de recuperación y transición segura.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7926.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7926#issuecomment-5069394639",
-    "reviewedAt": "2026-07-29T09:02:43.822Z",
-    "mainSha": "6ac6b489342f1089d6dfb9adcfbce31228dd6168"
+    "reviewedAt": "2026-07-29T10:56:09.679Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }

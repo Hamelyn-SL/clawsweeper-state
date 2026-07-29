@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T08:56:29.255Z",
-  "updatedAt": "2026-07-29T07:03:04Z",
+  "generatedAt": "2026-07-29T10:55:25.144Z",
+  "updatedAt": "2026-07-29T08:59:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:ecommerce",
       "feature",
       "triage:needs-info",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "reporter:jorgecano",
       "P2",
-      "impact:other",
+      "clawsweeper:source-repro",
       "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-07-29T06:42:59Z",
-    "updatedAt": "2026-07-29T07:03:04Z"
+    "updatedAt": "2026-07-29T08:59:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Los pedidos desde 15 € deben seguir mostrando y guardando `URGENT` aunque se envíen por Postlibri, o deben pasar a envío económico gratuito?",
-  "rationale": "Ambas opciones cambian la experiencia del cliente y el alcance de los pedidos urgentes de pago; el código no puede inferir esa política.",
+  "question": "¿Los pedidos desde 15 € deben conservar la promesa y prioridad de «envío urgente gratis», o pasar a mostrarse y guardarse como envío económico gratuito cuando se cursen por Postlibri?",
+  "rationale": "Las dos alternativas eliminan el efecto del importe, pero afectan de forma distinta a la experiencia del cliente y a los urgentes de pago.",
   "options": [
     {
-      "title": "Conservar la promesa urgente",
-      "body": "Mantener `URGENT` gratuito y añadir un criterio logístico que lo distinga de un urgente de pago.",
+      "title": "Convertir la promoción a económico",
+      "body": "Mostrar y persistir envío económico gratuito para los pedidos que Postlibri vaya a procesar, manteniendo los urgentes de pago fuera de esa ruta.",
       "recommended": true
     },
     {
-      "title": "Pasar a envío económico",
-      "body": "Dejar de promover esos pedidos a `URGENT` y comunicar envío económico gratuito.",
+      "title": "Mantener la promesa urgente",
+      "body": "Conservar `URGENT` para el cliente y añadir un criterio logístico explícito que permita Postlibri sin reutilizar esa prioridad comercial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar la promesa urgente",
-    "body": "Mantener `URGENT` gratuito y añadir un criterio logístico que lo distinga de un urgente de pago.",
+    "title": "Convertir la promoción a económico",
+    "body": "Mostrar y persistir envío económico gratuito para los pedidos que Postlibri vaya a procesar, manteniendo los urgentes de pago fuera de esa ruta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente la promoción de 15 € y las reglas de selección de Postlibri.",
+    "reason": "Su historial reciente conecta el umbral comercial y el flujo de checkout afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8062.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8062#issuecomment-5114228409",
-    "reviewedAt": "2026-07-29T08:56:29.255Z",
-    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+    "reviewedAt": "2026-07-29T10:55:25.144Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }

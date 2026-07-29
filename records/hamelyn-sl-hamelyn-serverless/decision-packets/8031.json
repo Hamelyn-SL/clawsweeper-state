@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T10:53:18.659Z",
+  "generatedAt": "2026-07-29T10:55:47.988Z",
   "updatedAt": "2026-07-29T10:14:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,34 +27,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba invertir en la primera versión interrepositorio de verificación OCR para Cainiao, Spring y Postlibri, manteniendo MercadoLibre fuera?",
-  "rationale": "El comportamiento funcional está acordado con el reportante, pero la inversión, el protocolo del agente Windows y la responsabilidad entre repositorios requieren patrocinio y propiedad explícitos.",
+  "question": "¿Se patrocina esta primera versión interrepositorio con Cainiao, Spring y Postlibri, y quién asume el contrato OCR del agente Windows?",
+  "rationale": "El alcance funcional está acordado, pero el repositorio no contiene el agente que debe producir la lectura ni un contrato existente para integrarlo con seguridad.",
   "options": [
     {
       "title": "Patrocinar la primera versión",
-      "body": "Definir un responsable de Admin y otro del agente Windows para acordar el contrato OCR, persistir la referencia Postlibri y validar la cámara física.",
+      "body": "Asignar responsables de Admin y del agente Windows para fijar el protocolo OCR, el fallback manual y una prueba física antes de abrir la implementación.",
       "recommended": true
     },
     {
-      "title": "Aplazar hasta tener capacidad",
-      "body": "Mantener la incidencia como especificación aprobada y no iniciar cambios hasta asignar responsables de ambos repositorios.",
+      "title": "Limitar el alcance a preparación interna",
+      "body": "Persistir los identificadores y preparar la puerta de AutoPacking, dejando la activación OCR detrás de una integración posterior del agente.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar hasta disponer del agente",
+      "body": "Mantener la especificación acordada sin desarrollo hasta que el responsable externo confirme una API de lectura viable.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Patrocinar la primera versión",
-    "body": "Definir un responsable de Admin y otro del agente Windows para acordar el contrato OCR, persistir la referencia Postlibri y validar la cámara física.",
+    "body": "Asignar responsables de Admin y del agente Windows para fijar el protocolo OCR, el fallback manual y una prueba física antes de abrir la implementación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente es el rastro más directo en el flujo de impresión y navegación de AutoPacking afectado.",
+    "reason": "Su trabajo reciente cubre el carrusel de AutoPacking donde se integra la decisión de avanzar o volver a la cubeta.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8031#issuecomment-5104971844",
-    "reviewedAt": "2026-07-29T10:53:18.659Z",
+    "reviewedAt": "2026-07-29T10:55:47.988Z",
     "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }
