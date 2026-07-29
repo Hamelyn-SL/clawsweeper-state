@@ -14,7 +14,13 @@
       "source:admin-panel",
       "app:admin",
       "reporter:davidgonzalez",
-      "P1"
+      "P1",
+      "impact:other",
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-29T08:43:46Z",
     "updatedAt": "2026-07-29T08:44:15Z"
@@ -47,6 +53,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8075.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8075#issuecomment-5115371985",
     "reviewedAt": "2026-07-29T08:53:29.294Z",
     "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
   }
