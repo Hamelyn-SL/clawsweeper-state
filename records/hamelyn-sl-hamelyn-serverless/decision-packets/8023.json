@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T10:29:57.136Z",
-  "updatedAt": "2026-07-28T09:58:15Z",
+  "generatedAt": "2026-07-29T00:21:18.031Z",
+  "updatedAt": "2026-07-29T00:15:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,44 +11,43 @@
     "state": "open",
     "labels": [
       "size/S",
-      "rating: 🥈 silver",
+      "P2",
       "status: 📣 needs proof",
-      "P2"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-28T09:54:23Z",
-    "updatedAt": "2026-07-28T09:58:15Z",
+    "updatedAt": "2026-07-29T00:15:10Z",
     "headSha": "652579fc1b5e04d3007d80353559a190beb6cac5"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la selección garantizar que busca hasta llenar el lote remoto, o se acepta explícitamente el límite fijo de `5x` como mitigación incompleta?",
-  "rationale": "El código actual prioriza una consulta indexada y acotada; eliminar la inanición por completo requiere decidir el coste operativo aceptable de seguir escaneando candidatos.",
+  "question": "¿Debe el selector de Amazon garantizar hasta el límite configurado mediante paginación acotada, o se acepta formalmente que un prepool 5x pueda dejar ciclos vacíos?",
+  "rationale": "La elección fija el equilibrio entre drenaje garantizado y coste de consulta; la evidencia actual demuestra que 5x mejora el corte observado, pero no elimina la condición de starvation.",
   "options": [
     {
-      "title": "Garantizar el llenado del lote",
-      "body": "Iterar por páginas indexadas hasta reunir `limit` maestros elegibles o agotar candidatos, preservando el límite remoto y añadiendo una regresión.",
+      "title": "Completar el lote con paginación acotada",
+      "body": "Continuar desde la última candidata hasta reunir `limit` maestros elegibles, con un presupuesto explícito de páginas y telemetría.",
       "recommended": true
     },
     {
-      "title": "Aceptar la mitigación 5x",
-      "body": "Mantener el multiplicador fijo, documentar que puede persistir la inanición con rachas mayores y vigilar el nuevo log.",
+      "title": "Aceptar el prepool 5x",
+      "body": "Mantener el límite finito y documentar el riesgo residual, con métricas que alerten cuando no se complete el lote.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Garantizar el llenado del lote",
-    "body": "Iterar por páginas indexadas hasta reunir `limit` maestros elegibles o agotar candidatos, preservando el límite remoto y añadiendo una regresión.",
+    "title": "Completar el lote con paginación acotada",
+    "body": "Continuar desde la última candidata hasta reunir `limit` maestros elegibles, con un presupuesto explícito de páginas y telemetría.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta directamente la consulta de candidatos con las validaciones maestras que condicionan el diseño.",
+    "reason": "Su cambio reciente cubre el selector y la revalidación maestra que determinan este contrato de rendimiento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8023.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8023#issuecomment-5102988496",
-    "reviewedAt": "2026-07-28T10:29:57.136Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-07-29T00:21:18.031Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
   }
 }
