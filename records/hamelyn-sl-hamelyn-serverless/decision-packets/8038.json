@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T01:27:01.701Z",
-  "updatedAt": "2026-07-29T01:02:30Z",
+  "generatedAt": "2026-07-29T02:47:33.551Z",
+  "updatedAt": "2026-07-29T01:29:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,44 +17,49 @@
       "triage:needs-info",
       "area:marketplace-sync",
       "impact:other",
-      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:not-repro-on-main",
       "P0",
-      "issue-rating: ⚪ platinum"
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-28T20:53:55Z",
-    "updatedAt": "2026-07-29T01:02:30Z"
+    "updatedAt": "2026-07-29T01:29:09Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P0",
-  "question": "¿Se escala ya a Seller Support/Account Health para obtener el enforcement concreto y se mantiene bloqueada cualquier mutación masiva hasta confirmar recuperación de `BUYABLE`?",
-  "rationale": "La evidencia actual apunta a una restricción externa y no determina una acción de código o una cola de recreación segura.",
+  "question": "¿Debe el equipo bloquear explícitamente toda resincronización mutante de Amazon IT hasta obtener una causa Amazon-side y una cohorte que vuelva a `BUYABLE`?",
+  "rationale": "La evidencia disponible señala una restricción externa; elegir entre esperar, escalar o intentar recuperación cambia la seguridad operativa y no se resuelve desde el código.",
   "options": [
     {
-      "title": "Escalar y conservar la traza",
-      "body": "Solicitar a Amazon la causa y la medida aplicada, manteniendo la monitorización y sin resincronización hasta observar `BUYABLE`.",
+      "title": "Escalar y congelar mutaciones",
+      "body": "Mantener los manifests y la monitorización actuales mientras Seller Central o Seller Support identifica la medida y una muestra vuelve a `BUYABLE`.",
       "recommended": true
     },
     {
-      "title": "Autorizar resincronización condicionada",
-      "body": "Permitir una cola acotada únicamente cuando un manifest pruebe recuperación seller/API para cada lote.",
+      "title": "Autorizar una resincronización limitada",
+      "body": "Permitirla solo con una aprobación operativa explícita, un manifest excluyente y validación seller/SP-API por lote.",
+      "recommended": false
+    },
+    {
+      "title": "Cerrar como incidente externo",
+      "body": "Cerrar cuando el equipo acepte que la recuperación depende exclusivamente de Amazon y tras documentar el canal operativo propietario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar y conservar la traza",
-    "body": "Solicitar a Amazon la causa y la medida aplicada, manteniendo la monitorización y sin resincronización hasta observar `BUYABLE`.",
+    "title": "Escalar y congelar mutaciones",
+    "body": "Mantener los manifests y la monitorización actuales mientras Seller Central o Seller Support identifica la medida y una muestra vuelve a `BUYABLE`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura como responsable asignado y su historial reciente cubre la reconciliación que delimita el incidente.",
+    "reason": "Es asignado actual y su historial reciente cubre la reconciliación, la recuperación Amazon y la señal de Account Health.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8038.md",
-    "reviewedAt": "2026-07-29T01:27:01.701Z",
-    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+    "reviewedAt": "2026-07-29T02:47:33.551Z",
+    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
   }
 }
