@@ -15,12 +15,13 @@
       "reporter:javier",
       "triage:needs-info",
       "impact:other",
+      "P2",
+      "impact:security",
+      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:needs-security-review",
-      "issue-rating: ➖ n/a"
+      "clawsweeper:needs-security-review"
     ],
     "createdAt": "2026-07-29T10:14:09Z",
     "updatedAt": "2026-07-29T10:31:36Z"
@@ -53,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
     "reviewedAt": "2026-07-29T11:48:39.675Z",
     "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
