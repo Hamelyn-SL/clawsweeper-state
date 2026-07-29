@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T10:21:21.518Z",
-  "updatedAt": "2026-07-29T10:14:21Z",
+  "generatedAt": "2026-07-29T11:48:39.675Z",
+  "updatedAt": "2026-07-29T10:31:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,47 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:queued",
-      "P2",
+      "triage:needs-info",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-29T10:14:09Z",
-    "updatedAt": "2026-07-29T10:14:21Z"
+    "updatedAt": "2026-07-29T10:31:36Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué campos personales se conservarán en BigQuery, durante cuánto tiempo y qué alerta o recuperación cubrirá fallos de inserción sin bloquear a Mandrill?",
-  "rationale": "La implementación abre un endpoint público firmado y propone conservar datos personales y eventos en bruto; esa frontera no debe decidirse implícitamente en una PR técnica.",
+  "question": "¿Qué campos de eventos Mandrill pueden conservarse, con qué retención, y debe el endpoint confirmar únicamente tras persistir el lote en una cola durable?",
+  "rationale": "Esta decisión fija la frontera de privacidad y la garantía de entrega; el código actual no establece ninguna de las dos políticas.",
   "options": [
     {
-      "title": "Aprobar esquema minimizado",
-      "body": "Guardar solo campos necesarios para trazabilidad, definir retención y alertar sobre fallos de inserción antes de iniciar los dos PRs.",
+      "title": "Minimizar datos y usar cola durable",
+      "body": "Guardar solo los campos necesarios con retención explícita y responder 2xx después de publicar el lote autenticado en una cola durable.",
       "recommended": true
     },
     {
-      "title": "Conservar evento bruto limitado",
-      "body": "Permitir `raw` con acceso restringido y caducidad corta documentada, manteniendo campos normalizados para consulta.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la ingesta",
-      "body": "Mantener el log síncrono actual hasta acordar propiedad operativa, privacidad y reconciliación de eventos.",
+      "title": "Insertar directamente en BigQuery",
+      "body": "Aceptar el riesgo operativo de una persistencia directa y documentar qué fallos pueden producir pérdida o bloqueo de eventos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar esquema minimizado",
-    "body": "Guardar solo campos necesarios para trazabilidad, definir retención y alertar sobre fallos de inserción antes de iniciar los dos PRs.",
+    "title": "Minimizar datos y usar cola durable",
+    "body": "Guardar solo los campos necesarios con retención explícita y responder 2xx después de publicar el lote autenticado en una cola durable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial actual y el diseño detallado de la propuesta lo conectan con el punto de envío y la ingesta comparable.",
-    "confidence": "medium"
+    "reason": "Su historial conecta los dos patrones de código implicados y es el mejor candidato visible para encauzar la decisión técnica.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
-    "reviewedAt": "2026-07-29T10:21:21.518Z",
+    "reviewedAt": "2026-07-29T11:48:39.675Z",
     "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
   }
 }
