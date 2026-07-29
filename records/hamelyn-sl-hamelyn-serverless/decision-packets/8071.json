@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T08:56:19.448Z",
+  "updatedAt": "2026-07-29T08:45:44Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8071,
+    "title": "feat: trigger bq fleet crons via cloud scheduler dispatch",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8071",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-29T08:22:39Z",
+    "updatedAt": "2026-07-29T08:45:44Z",
+    "headSha": "5ea9ed4ce28d3b17feb2ae2a791954de0fd22275"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Qué estrategia de corte acepta el equipo para instalar Cloud Scheduler sin dejar los ocho workflows sin disparador ni duplicarlos de forma no controlada?",
+  "rationale": "El diff reconoce un paso manual posterior al merge y el workflow de despliegue no se ejecuta automáticamente en `dev`; elegir el orden operativo exige asumir disponibilidad o solapamiento.",
+  "options": [
+    {
+      "title": "Transición en dos fases",
+      "body": "Provisionar y verificar los jobs antes de retirar los triggers nativos, rebasando esta rama después de que aterrice la dependencia.",
+      "recommended": true
+    },
+    {
+      "title": "Ventana operativa explícita",
+      "body": "Aceptar una ventana breve sin cron y ejecutar inmediatamente el despliegue manual con una persona responsable presente.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la migración",
+      "body": "Mantener los triggers actuales hasta disponer de un mecanismo de corte automatizado y verificable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Transición en dos fases",
+    "body": "Provisionar y verificar los jobs antes de retirar los triggers nativos, rebasando esta rama después de que aterrice la dependencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Está solicitado como revisor por conocimiento directo de los workflows y del despliegue de Data Platform.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8071.md",
+    "reviewedAt": "2026-07-29T08:56:19.448Z",
+    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+  }
+}

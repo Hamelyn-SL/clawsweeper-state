@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T08:55:18.612Z",
+  "updatedAt": "2026-07-29T08:50:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8073,
+    "title": "Alibris purge feed leaves withdrawn books orderable after successful uploads",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:needs-info",
+      "P1"
+    ],
+    "createdAt": "2026-07-29T08:24:22Z",
+    "updatedAt": "2026-07-29T08:50:07Z"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P1",
+  "question": "¿Puede el equipo aportar el resultado remoto de Alibris para el fichero subido, incluida la acción aplicada y cualquier error de procesamiento?",
+  "rationale": "El checkout acredita el estado deseado local y la transferencia, pero no permite distinguir un fallo de interpretación remota de una causa distinta sin acceso a Seller Hub.",
+  "options": [
+    {
+      "title": "Aportar historial remoto",
+      "body": "Adjuntar el estado y la acción aplicada al fichero para acotar una corrección segura del exportador.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener observación",
+      "body": "Esperar dos ciclos completos y nuevos pedidos antes de cambiar código si Seller Hub no conserva historial consultable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aportar historial remoto",
+    "body": "Adjuntar el estado y la acción aplicada al fichero para acotar una corrección segura del exportador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su cambio reciente controla la selección actual de candidatos que debe contrastarse con el resultado remoto.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
+    "reviewedAt": "2026-07-29T08:55:18.612Z",
+    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+  }
+}

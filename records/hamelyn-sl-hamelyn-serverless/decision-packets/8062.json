@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T06:53:26.705Z",
-  "updatedAt": "2026-07-29T06:43:16Z",
+  "generatedAt": "2026-07-29T08:56:29.255Z",
+  "updatedAt": "2026-07-29T07:03:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "source:admin-panel",
       "app:ecommerce",
       "feature",
-      "triage:running",
-      "reporter:jorgecano",
-      "P2",
+      "triage:needs-info",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-07-29T06:42:59Z",
-    "updatedAt": "2026-07-29T06:43:16Z"
+    "updatedAt": "2026-07-29T07:03:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Está aprobada la política operativa de enviar también por Postlibri los pedidos económicos de más de 15 €, salvo sus límites físicos?",
-  "rationale": "El repositorio no contiene una condición monetaria versionada; la aceptación depende de tarifas y capacidad operativa actuales, no solo de una corrección de código.",
+  "question": "¿Los pedidos desde 15 € deben seguir mostrando y guardando `URGENT` aunque se envíen por Postlibri, o deben pasar a envío económico gratuito?",
+  "rationale": "Ambas opciones cambian la experiencia del cliente y el alcance de los pedidos urgentes de pago; el código no puede inferir esa política.",
   "options": [
     {
-      "title": "Validar y retirar el umbral",
-      "body": "Confirmar con logística la política y actualizar la fuente de datos operativa que hoy aplique el límite, preservando los fallbacks físicos.",
+      "title": "Conservar la promesa urgente",
+      "body": "Mantener `URGENT` gratuito y añadir un criterio logístico que lo distinga de un urgente de pago.",
       "recommended": true
     },
     {
-      "title": "Mantener el límite actual",
-      "body": "Conservar el umbral hasta disponer de confirmación de tarifas, cobertura y gestión de incidencias para pedidos de mayor importe.",
+      "title": "Pasar a envío económico",
+      "body": "Dejar de promover esos pedidos a `URGENT` y comunicar envío económico gratuito.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y retirar el umbral",
-    "body": "Confirmar con logística la política y actualizar la fuente de datos operativa que hoy aplique el límite, preservando los fallbacks físicos.",
+    "title": "Conservar la promesa urgente",
+    "body": "Mantener `URGENT` gratuito y añadir un criterio logístico que lo distinga de un urgente de pago.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el candidato con mayor relación histórica con la selección de carrier y la matriz de envío.",
+    "reason": "Su historial conecta directamente la promoción de 15 € y las reglas de selección de Postlibri.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8062.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8062#issuecomment-5114228409",
-    "reviewedAt": "2026-07-29T06:53:26.705Z",
-    "mainSha": "2675559da67f4c0a1fa68f23271c9de307b28638"
+    "reviewedAt": "2026-07-29T08:56:29.255Z",
+    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
   }
 }

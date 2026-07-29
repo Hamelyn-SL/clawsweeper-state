@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T08:55:55.260Z",
+  "updatedAt": "2026-07-29T08:28:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8072,
+    "title": "fix: run mercadolibre requeue before create within the same cron cycle",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8072",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-07-29T08:23:32Z",
+    "updatedAt": "2026-07-29T08:28:27Z",
+    "headSha": "df6cce55be217e74ad75f3024aebcdc7712d6a79"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Qué límite operativo debe preservar la ejecución de `create` si `requeueDuplicates` queda pendiente?",
+  "rationale": "El parche elimina la independencia actual entre ambas fases; elegir el plazo y la semántica de timeout requiere una política operativa del cron.",
+  "options": [
+    {
+      "title": "Añadir espera acotada",
+      "body": "Tras un límite explícito, registrar el timeout y ejecutar `create` para conservar la disponibilidad existente.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar el bloqueo del ciclo",
+      "body": "Mantener la espera indefinida y asumir que un reencolado pendiente puede impedir la creación hasta que termine.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir espera acotada",
+    "body": "Tras un límite explícito, registrar el timeout y ejecutar `create` para conservar la disponibilidad existente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado por conocimiento específico del controller y de la secuenciación del cron.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8072.md",
+    "reviewedAt": "2026-07-29T08:55:55.260Z",
+    "mainSha": "60c9b2b6f4b20ba2ddb6b725a1a8b275c7fef5cf"
+  }
+}
