@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T06:53:26.705Z",
+  "updatedAt": "2026-07-29T06:43:16Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8062,
+    "title": "Quitar el tope de 15€ para los pedidos de postlibri en ecommerce",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8062",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-07-29T06:42:59Z",
+    "updatedAt": "2026-07-29T06:43:16Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Está aprobada la política operativa de enviar también por Postlibri los pedidos económicos de más de 15 €, salvo sus límites físicos?",
+  "rationale": "El repositorio no contiene una condición monetaria versionada; la aceptación depende de tarifas y capacidad operativa actuales, no solo de una corrección de código.",
+  "options": [
+    {
+      "title": "Validar y retirar el umbral",
+      "body": "Confirmar con logística la política y actualizar la fuente de datos operativa que hoy aplique el límite, preservando los fallbacks físicos.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el límite actual",
+      "body": "Conservar el umbral hasta disponer de confirmación de tarifas, cobertura y gestión de incidencias para pedidos de mayor importe.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y retirar el umbral",
+    "body": "Confirmar con logística la política y actualizar la fuente de datos operativa que hoy aplique el límite, preservando los fallbacks físicos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Es el candidato con mayor relación histórica con la selección de carrier y la matriz de envío.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8062.md",
+    "reviewedAt": "2026-07-29T06:53:26.705Z",
+    "mainSha": "2675559da67f4c0a1fa68f23271c9de307b28638"
+  }
+}
