@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T15:13:28.901Z",
-  "updatedAt": "2026-07-28T14:17:35Z",
+  "generatedAt": "2026-07-29T00:26:21.214Z",
+  "updatedAt": "2026-07-29T00:15:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-28T13:45:23Z",
-    "updatedAt": "2026-07-28T14:17:35Z",
+    "updatedAt": "2026-07-29T00:15:17Z",
     "headSha": "552ad3477cdf59966250fd8388d6bff68ecb3ab5"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la señal usar una fuente o guard de frescura verificable y qué evidencia mínima autoriza cerrar una incidencia de pedidos Alibris?",
-  "rationale": "La elección determina la semántica operativa de un `critical` y del cierre de incidentes; no es solo un ajuste editorial mecánico.",
+  "question": "¿Qué fuente o guard de frescura autoriza la severidad de esta señal y qué evidencia mínima permite cerrar una incidencia de pedidos Alibris?",
+  "rationale": "La elección fija el significado de `critical` y de `verified_ok`; no es un ajuste editorial mecánico ni queda resuelta por la consulta actual.",
   "options": [
     {
-      "title": "Exigir frescura y evidencia de pipeline",
-      "body": "Clasificar una tabla materializada obsoleta como observabilidad y cerrar solo tras nuevo OrderSell o comprobación FTPS con errores propagados.",
+      "title": "Exigir fuente fresca y prueba de pipeline",
+      "body": "Clasificar un materializado obsoleto como observabilidad y cerrar solo tras nuevo OrderSell o una comprobación FTPS que exponga el resultado.",
       "recommended": true
     },
     {
-      "title": "Aceptar la heurística actual",
-      "body": "Mantener la señal basada únicamente en silencio y permitir el cierre por Seller Hub, asumiendo falsos positivos y verificaciones incompletas.",
+      "title": "Aceptar la heurística de silencio",
+      "body": "Mantener la tabla materializada como única fuente y permitir cierre por Seller Hub, asumiendo falsos positivos y recuperación no ejercitada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir frescura y evidencia de pipeline",
-    "body": "Clasificar una tabla materializada obsoleta como observabilidad y cerrar solo tras nuevo OrderSell o comprobación FTPS con errores propagados.",
+    "title": "Exigir fuente fresca y prueba de pipeline",
+    "body": "Clasificar un materializado obsoleto como observabilidad y cerrar solo tras nuevo OrderSell o una comprobación FTPS que exponga el resultado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor continuidad en el watcher, el ledger y la materialización que alimenta esta señal.",
+    "reason": "Tiene la mayor continuidad demostrable en el watcher, el ledger y la señal propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8034.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8034#issuecomment-5105133994",
-    "reviewedAt": "2026-07-28T15:13:28.901Z",
-    "mainSha": "b51990706ed92bd6e079838b426e85028efe087e"
+    "reviewedAt": "2026-07-29T00:26:21.214Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
   }
 }
