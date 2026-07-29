@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:27:01.701Z",
+  "updatedAt": "2026-07-29T01:02:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8038,
+    "title": "Amazon IT catalog collapses under restriction 18076",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8038",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "reporter:miguel",
+      "triage:needs-info",
+      "area:marketplace-sync",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P0",
+      "issue-rating: ⚪ platinum"
+    ],
+    "createdAt": "2026-07-28T20:53:55Z",
+    "updatedAt": "2026-07-29T01:02:30Z"
+  },
+  "lane": "manual_review",
+  "priority": "P0",
+  "question": "¿Se escala ya a Seller Support/Account Health para obtener el enforcement concreto y se mantiene bloqueada cualquier mutación masiva hasta confirmar recuperación de `BUYABLE`?",
+  "rationale": "La evidencia actual apunta a una restricción externa y no determina una acción de código o una cola de recreación segura.",
+  "options": [
+    {
+      "title": "Escalar y conservar la traza",
+      "body": "Solicitar a Amazon la causa y la medida aplicada, manteniendo la monitorización y sin resincronización hasta observar `BUYABLE`.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar resincronización condicionada",
+      "body": "Permitir una cola acotada únicamente cuando un manifest pruebe recuperación seller/API para cada lote.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Escalar y conservar la traza",
+    "body": "Solicitar a Amazon la causa y la medida aplicada, manteniendo la monitorización y sin resincronización hasta observar `BUYABLE`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Figura como responsable asignado y su historial reciente cubre la reconciliación que delimita el incidente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8038.md",
+    "reviewedAt": "2026-07-29T01:27:01.701Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+  }
+}

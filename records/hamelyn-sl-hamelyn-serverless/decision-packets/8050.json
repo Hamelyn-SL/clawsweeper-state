@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:27:36.823Z",
+  "updatedAt": "2026-07-29T01:18:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8050,
+    "title": "fix: readmit aged todocoleccion reconciliation diagnoses",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8050",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-07-28T22:45:53Z",
+    "updatedAt": "2026-07-29T01:18:25Z",
+    "headSha": "d09fb3e91931e58ae14c367a90427ad61f8694d3"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el reconciliador reintentar todos los diagnósticos `Reconciliation skipped:` o solo la cohorte histórica causada por `stock=null`?",
+  "rationale": "El informe describe una cohorte concreta, pero la implementación convierte una clase amplia de diagnósticos en reintentos periódicos con tráfico remoto.",
+  "options": [
+    {
+      "title": "Acotar a `stock=null`",
+      "body": "Restringir el patrón y la prueba negativa a la cohorte confirmada, evitando reintentos periódicos de estados remotos no recuperables.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar reintentos amplios",
+      "body": "Mantener todos los diagnósticos omitidos, pero documentar la política, justificar la carga y añadir cobertura de cada motivo readmitido.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar a `stock=null`",
+    "body": "Restringir el patrón y la prueba negativa a la cohorte confirmada, evitando reintentos periódicos de estados remotos no recuperables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el revisor asignado por experiencia directa en el selector y las pruebas de reconciliación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8050.md",
+    "reviewedAt": "2026-07-29T01:27:36.823Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+  }
+}

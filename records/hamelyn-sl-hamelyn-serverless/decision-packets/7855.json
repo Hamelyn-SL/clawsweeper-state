@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T01:27:53.794Z",
+  "updatedAt": "2026-07-29T00:28:49Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 7855,
+    "title": "fix: normalize ordersell shipPrice to EUR in factory",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/7855",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
+    ],
+    "createdAt": "2026-07-21T15:53:50Z",
+    "updatedAt": "2026-07-29T00:28:49Z",
+    "headSha": "7adee31fcc212f101144f7464827bac60e0e4095"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Las salidas administrativas deben priorizar el envío normalizado en EUR, el importe original, o mostrar ambos explícitamente?",
+  "rationale": "El cambio altera el significado de un campo persistido que ya consume Admin; el contrato visible de lista y exportación requiere una decisión de producto antes de codificarlo.",
+  "options": [
+    {
+      "title": "Mostrar ambos importes",
+      "body": "Conservar `shipPrice` como EUR y añadir el importe original con su moneda en lista y exportación para eliminar ambigüedad.",
+      "recommended": true
+    },
+    {
+      "title": "Priorizar el importe original",
+      "body": "Mantener el valor visible en moneda del pedido y reservar el EUR para cálculos e informes internos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mostrar ambos importes",
+    "body": "Conservar `shipPrice` como EUR y añadir el importe original con su moneda en lista y exportación para eliminar ambigüedad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor asignado con contexto explícito de ordersells y marketplaces.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7855.md",
+    "reviewedAt": "2026-07-29T01:27:53.794Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+  }
+}
