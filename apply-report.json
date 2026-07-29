@@ -1,41 +1,26 @@
 [
   {
     "number": 7805,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "action": "skipped_stale_review_comment_sync",
+    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-29T00:24:09.273Z, report reviewed_at=2026-07-29T00:19:09.113Z"
   },
   {
     "number": 7820,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "action": "skipped_stale_review_comment_sync",
+    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-29T00:25:41.144Z, report reviewed_at=2026-07-29T00:21:10.943Z"
   },
   {
     "number": 7855,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "action": "skipped_stale_review_comment_sync",
+    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-29T00:26:46.695Z, report reviewed_at=2026-07-29T00:22:19.679Z"
   },
   {
     "number": 7926,
     "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 7820,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 7855,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 8034,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 8035,
     "action": "review_comment_synced",
     "reason": "updated durable Codex review comment"
   },
@@ -47,12 +32,12 @@
   {
     "number": 7959,
     "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 7994,
     "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 8000,
@@ -72,17 +57,17 @@
   {
     "number": 8023,
     "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 8024,
     "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 8030,
     "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
+    "reason": "recorded existing durable comment metadata"
   },
   {
     "number": 8034,

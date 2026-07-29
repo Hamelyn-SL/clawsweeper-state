@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T00:24:00.790Z",
+  "generatedAt": "2026-07-29T00:20:45.771Z",
   "updatedAt": "2026-07-29T00:15:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -22,34 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el contrato interno de FTP rechazar fallos globales en vez de conservar los resultados vacíos históricos?",
-  "rationale": "La rama cambia deliberadamente la semántica observada por crons existentes; el incidente respalda el cambio, pero la compatibilidad requiere aceptación humana explícita.",
+  "question": "¿Debe Alibris tratar los fallos globales de transporte o listado FTP como una fase rechazada, en lugar de conservar el resultado vacío heredado?",
+  "rationale": "El parche cambia deliberadamente el contrato observable del cron para evitar falsos éxitos; la corrección mecánica parece acotada, pero la política de fallo debe validarse por quien opera la integración.",
   "options": [
     {
-      "title": "Confirmar el contrato de rechazo",
-      "body": "Aceptar `FtpOperationError` para fallos globales tras revisar una prueba real del cron de Alibris.",
+      "title": "Aceptar el contrato de rechazo explícito",
+      "body": "Mantener `FtpOperationError` tras aportar prueba vigente de rechazo global y tolerancia por fichero.",
       "recommended": true
     },
     {
-      "title": "Mantener compatibilidad explícita",
-      "body": "Conservar el comportamiento vacío por defecto y diseñar una vía estricta separada si algún consumidor actual necesita ambas semánticas.",
+      "title": "Conservar el contrato heredado",
+      "body": "Mantener resultados vacíos y abordar la visibilidad mediante una alternativa de observabilidad acordada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el contrato de rechazo",
-    "body": "Aceptar `FtpOperationError` para fallos globales tras revisar una prueba real del cron de Alibris.",
+    "title": "Aceptar el contrato de rechazo explícito",
+    "body": "Mantener `FtpOperationError` tras aportar prueba vigente de rechazo global y tolerancia por fichero.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente conecta la sesión FTPS de Alibris con el comportamiento que esta rama modifica.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado como revisor para validar precisamente la propagación FTP y el impacto de Alibris.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8035.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8035#issuecomment-5105651159",
-    "reviewedAt": "2026-07-29T00:24:00.790Z",
+    "reviewedAt": "2026-07-29T00:20:45.771Z",
     "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
   }
 }
