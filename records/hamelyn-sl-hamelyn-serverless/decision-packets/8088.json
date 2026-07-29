@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-29T11:36:30.227Z",
+  "updatedAt": "2026-07-29T11:27:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8088,
+    "title": "Productos erróneos y prohibidos subidos a Decathlon",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8088",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "reporter:rubenmorueco",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-07-29T11:17:54Z",
+    "updatedAt": "2026-07-29T11:27:25Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se autoriza retirar inmediatamente las 68 ofertas confirmadas fuera de elegibilidad y tratar los dos ejemplos remotos con una conciliación específica antes de automatizar una revisión periódica?",
+  "rationale": "La evidencia separa ofertas locales heredadas, un posible huérfano remoto y un desajuste visual; elegir el alcance de retirada exige validar catálogo vivo y política comercial.",
+  "options": [
+    {
+      "title": "Retirada validada y reconciliación",
+      "body": "Cruzar API o export vivo, retirar la cohorte confirmada y diseñar una reconciliación periódica con trazabilidad.",
+      "recommended": true
+    },
+    {
+      "title": "Solo corrección puntual",
+      "body": "Retirar únicamente los productos confirmados en la auditoría actual y mantener el filtro de altas sin automatizar revisiones retroactivas.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta respuesta de Decathlon",
+      "body": "Conservar las ofertas mientras Decathlon concreta qué regla explica el desajuste visual y los posibles huérfanos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Retirada validada y reconciliación",
+    "body": "Cruzar API o export vivo, retirar la cohorte confirmada y diseñar una reconciliación periódica con trazabilidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El historial conecta este autor con la integración, el filtro y las fases de Decathlon; puede encauzar la decisión con el equipo de Marketplace.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8088.md",
+    "reviewedAt": "2026-07-29T11:36:30.227Z",
+    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+  }
+}
