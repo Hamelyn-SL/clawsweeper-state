@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T00:18:33.204Z",
+  "generatedAt": "2026-07-29T00:20:22.082Z",
   "updatedAt": "2026-07-29T00:14:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,11 +11,11 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
       "status: 📣 needs proof",
-      "P0",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "P0",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-07-24T11:00:23Z",
     "updatedAt": "2026-07-29T00:14:44Z",
@@ -23,33 +23,33 @@
   },
   "lane": "security_boundary",
   "priority": "P0",
-  "question": "¿Se acepta que los carritos legacy asociados sigan accesibles sin token hasta el 24 de agosto de 2026, o deben quedar protegidos al integrar este cambio?",
-  "rationale": "La compatibilidad propuesta mantiene temporalmente el límite de autorización roto; elegir entre seguridad inmediata y soporte de builds instaladas requiere asumir explícitamente el impacto operativo.",
+  "question": "¿Se acepta una excepción temporal al IDOR para carritos legacy asociados hasta el 24 de agosto de 2026, o se exige capability para esos carritos antes de desplegar?",
+  "rationale": "La compatibilidad con builds nativas instaladas compite directamente con el objetivo de cerrar acceso no autenticado a carritos asociados; el código no puede decidir esa frontera de riesgo por sí solo.",
   "options": [
     {
-      "title": "Proteger los carritos asociados",
-      "body": "Exigir token para cualquier carrito con usuario y sustituir el bypass por un gate de versión o rollout compatible para builds antiguas.",
+      "title": "Pausar y definir rollout seguro",
+      "body": "No integrar hasta acordar una transición que conserve clientes antiguos sin autorizar carritos asociados solo por `cartId`.",
       "recommended": true
     },
     {
-      "title": "Aceptar la ventana amplia",
-      "body": "Mantener acceso legacy por `cartId` también para carritos asociados hasta el deadline, asumiendo temporalmente el riesgo IDOR.",
+      "title": "Aceptar excepción temporal",
+      "body": "Integrar el contrato dual actual, asumiendo explícitamente el IDOR residual hasta el deadline configurado.",
       "recommended": false
     },
     {
-      "title": "Pausar el despliegue",
-      "body": "Detener esta rama hasta definir una estrategia de actualización que no deje carritos asociados sin autorización.",
+      "title": "Exigir capability ya",
+      "body": "Eliminar el fallback tokenless para carritos asociados y planificar la actualización de las builds antiguas por separado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Proteger los carritos asociados",
-    "body": "Exigir token para cualquier carrito con usuario y sustituir el bypass por un gate de versión o rollout compatible para builds antiguas.",
+    "title": "Pausar y definir rollout seguro",
+    "body": "No integrar hasta acordar una transición que conserve clientes antiguos sin autorizar carritos asociados solo por `cartId`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial en los controladores afectados y sus revisiones previas conectan directamente con la decisión de compatibilidad.",
+    "reason": "Su revisión previa identifica el equilibrio concreto entre el cierre del IDOR y la compatibilidad de clientes desplegados.",
     "confidence": "high"
   },
   "source": {
