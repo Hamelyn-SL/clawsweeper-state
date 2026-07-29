@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:51:41.928Z",
-  "updatedAt": "2026-07-28T20:59:48Z",
+  "generatedAt": "2026-07-29T00:35:50.251Z",
+  "updatedAt": "2026-07-29T00:27:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:queued",
+      "triage:running",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-07-27T11:39:40Z",
-    "updatedAt": "2026-07-28T20:59:48Z"
+    "updatedAt": "2026-07-29T00:27:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe priorizarse instrumentar y corregir la conversión hacia seller manteniendo `create=200`, o autorizar un aumento adicional de cadencia/concurrencia como experimento controlado?",
-  "rationale": "Los datos separan capacidad nominal, salida local y activación remota; elegir cuál optimizar primero y qué riesgo de cuota aceptar exige criterio operativo del equipo Marketplace.",
+  "question": "¿Debe el equipo optimizar primero la confirmación seller con el pacing actual o autorizar un experimento acotado de mayor cadencia/concurrencia?",
+  "rationale": "El código ya admite el lote operativo de 200; elegir la métrica de éxito y el riesgo aceptable de cuota requiere criterio del equipo Marketplace.",
   "options": [
     {
       "title": "Investigar la convergencia seller",
-      "body": "Mantener el pacing actual y medir cohortes por ejecución hasta localizar restricciones, fases intermedias o fallos que explican la conversión observada.",
+      "body": "Mantener el pacing actual y medir cohortes hasta separar restricciones, fases intermedias y fallos remotos.",
       "recommended": true
     },
     {
       "title": "Aumentar pacing con guardas",
-      "body": "Subir cadencia o concurrencia mediante un experimento acotado con límites de `429` y `504`, asumiendo que no resuelve necesariamente la confirmación remota.",
+      "body": "Subir cadencia o concurrencia con límites explícitos de 429 y 504, aceptando que no garantiza más confirmaciones seller.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Investigar la convergencia seller",
-    "body": "Mantener el pacing actual y medir cohortes por ejecución hasta localizar restricciones, fases intermedias o fallos que explican la conversión observada.",
+    "body": "Mantener el pacing actual y medir cohortes hasta separar restricciones, fases intermedias y fallos remotos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre la validación del pipeline de creación y el contexto operativo de esta issue.",
+    "reason": "Su historial reciente cubre la lógica de creación y el contexto operativo de este flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7998.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7998#issuecomment-5091241221",
-    "reviewedAt": "2026-07-28T21:51:41.928Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-07-29T00:35:50.251Z",
+    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
   }
 }
