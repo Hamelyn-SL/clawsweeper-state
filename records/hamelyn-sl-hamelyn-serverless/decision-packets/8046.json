@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T01:46:59.447Z",
-  "updatedAt": "2026-07-29T01:12:27Z",
+  "generatedAt": "2026-07-30T10:57:38.788Z",
+  "updatedAt": "2026-07-30T10:34:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P1",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-28T22:45:44Z",
-    "updatedAt": "2026-07-29T01:12:27Z",
+    "updatedAt": "2026-07-30T10:34:31Z",
     "headSha": "04d9e1d8b79562bb46a5735474413cbaf4e9999e"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se autoriza el despliegue tras avisar a los watchers de marketplace del aumento esperado de `SYNC_ERROR` y acordar su seguimiento?",
-  "rationale": "El cambio es correcto, pero hace visible una cohorte histórica que puede activar alertas operativas y requiere coordinación humana antes de producción.",
+  "question": "¿Qué política debe aplicarse cuando un batch antiguo no devuelve ningún outcome rastreado para que no monopolice el límite de polling?",
+  "rationale": "El cambio correcto depende de decidir entre priorizar reintento inmediato, aplicar backoff o rotar el batch; no es una elección mecánica de implementación.",
   "options": [
     {
-      "title": "Coordinar y desplegar",
-      "body": "Avisar a los responsables de marketplace, desplegar y vigilar los warnings de outcomes ajenos junto con la cohorte Fnac en `BATCH`.",
+      "title": "Aplicar backoff y rotación",
+      "body": "Tras una respuesta sin outcomes rastreados, diferir temporalmente ese `batchId` para que la ventana pueda avanzar a los siguientes batches.",
       "recommended": true
     },
     {
-      "title": "Posponer para observación adicional",
-      "body": "Mantener el PR abierto hasta definir una ventana de despliegue y una medición posterior del backlog esperado.",
+      "title": "Mantener FIFO estricto",
+      "body": "Conservar el reintento inmediato del batch más antiguo, aceptando que un informe incompleto puede retrasar otros batches.",
+      "recommended": false
+    },
+    {
+      "title": "Separar los batches sin progreso",
+      "body": "Enviar esos batches a una cola o estado de reintento específico con observabilidad y revisión operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar y desplegar",
-    "body": "Avisar a los responsables de marketplace, desplegar y vigilar los warnings de outcomes ajenos junto con la cohorte Fnac en `BATCH`.",
+    "title": "Aplicar backoff y rotación",
+    "body": "Tras una respuesta sin outcomes rastreados, diferir temporalmente ese `batchId` para que la ventana pueda avanzar a los siguientes batches.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el revisor asignado y el colaborador reciente con mayor continuidad en la ruta de batches.",
+    "reason": "Su cambio reciente controla el aislamiento y el bucle de procesamiento por batch afectado por esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8046.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8046#issuecomment-5110894660",
-    "reviewedAt": "2026-07-29T01:46:59.447Z",
-    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+    "reviewedAt": "2026-07-30T10:57:38.788Z",
+    "mainSha": "d73d24b1ae9c5ceae038737753cbd50bbf7f0201"
   }
 }
