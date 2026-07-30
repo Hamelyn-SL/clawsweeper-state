@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T12:17:23.017Z",
-  "updatedAt": "2026-07-30T11:10:38Z",
+  "generatedAt": "2026-07-30T19:39:14.985Z",
+  "updatedAt": "2026-07-30T12:22:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,43 +17,45 @@
       "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
       "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-30T09:33:37Z",
-    "updatedAt": "2026-07-30T11:10:38Z"
+    "updatedAt": "2026-07-30T12:22:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la interfaz ocultar `pickup` únicamente fuera de España o para cualquier causa de indisponibilidad, incluidos productos nuevos en España?",
-  "rationale": "La especificación separa mercado y carrito, pero el PR candidato los trata igual; esa diferencia cambia la UX establecida y no se resuelve de forma segura solo con código.",
+  "question": "¿Debe España con productos nuevos conservar la opción `pickup` deshabilitada, o también debe ocultarse como propone el PR enlazado?",
+  "rationale": "La issue pide el cambio para tiendas internacionales, pero el PR modifica además una interacción española existente; el código actual no distingue ambas decisiones en el componente.",
   "options": [
     {
-      "title": "Limitar el ocultado al mercado",
-      "body": "Exponer la disponibilidad PUDO del sitio y ocultar `pickup` solo fuera de España, conservando el estado deshabilitado español actual.",
+      "title": "Conservar el estado español actual",
+      "body": "Exponer la elegibilidad por mercado al componente y ocultar `pickup` solo fuera de España; mantenerlo deshabilitado en España con productos nuevos.",
       "recommended": true
     },
     {
-      "title": "Unificar toda indisponibilidad",
-      "body": "Aceptar que cualquier indisponibilidad oculte la opción y actualizar la regla UX y la prueba para cubrir España con productos nuevos.",
+      "title": "Ocultar siempre que no esté disponible",
+      "body": "Aceptar que la opción desaparezca también en España con productos nuevos y actualizar el alcance funcional de la issue.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar el ocultado al mercado",
-    "body": "Exponer la disponibilidad PUDO del sitio y ocultar `pickup` solo fuera de España, conservando el estado deshabilitado español actual.",
+    "title": "Conservar el estado español actual",
+    "body": "Exponer la elegibilidad por mercado al componente y ocultar `pickup` solo fuera de España; mantenerlo deshabilitado en España con productos nuevos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Tiene experiencia reciente en el componente afectado y figura como revisor asignado de la implementación candidata.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Tiene la asignación y el PR candidato, por lo que puede incorporar la decisión de alcance acordada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8128.md",
-    "reviewedAt": "2026-07-30T12:17:23.017Z",
-    "mainSha": "71e2c6802face434f0b74ed881ce18b0712ea236"
+    "reviewedAt": "2026-07-30T19:39:14.985Z",
+    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
   }
 }

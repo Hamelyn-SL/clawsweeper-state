@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T09:33:01.898Z",
-  "updatedAt": "2026-07-30T09:27:51Z",
+  "generatedAt": "2026-07-30T19:37:58.134Z",
+  "updatedAt": "2026-07-30T11:10:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,41 +14,46 @@
       "app:supply",
       "reporter:marta",
       "feature",
-      "triage:running",
-      "P2"
+      "triage:blocked",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-30T09:23:51Z",
-    "updatedAt": "2026-07-30T09:27:51Z"
+    "updatedAt": "2026-07-30T11:10:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el rediseño activarse al reemplazar Supply actual o convivir temporalmente con una ruta específica de Supply V2?",
-  "rationale": "La issue condiciona el cambio al lanzamiento de Supply V2, pero no define fecha, coexistencia ni el inventario final de flujos que deben cambiar.",
+  "question": "¿Qué señal de lanzamiento debe activar las plantillas de Supply V2 y qué periodo de convivencia debe mantenerse para los correos de Supply V1?",
+  "rationale": "La decisión determina si hace falta un selector configurable, un corte único o una transición compatible; el código actual no expresa esa política.",
   "options": [
     {
-      "title": "Planificarlo con Supply V2",
-      "body": "Mantener esta issue abierta y concretar el inventario de correos, variables y momento de activación dentro del plan de lanzamiento.",
+      "title": "Activación explícita de V2",
+      "body": "Añadir una señal de versión o rollout que seleccione las nuevas plantillas y mantener V1 como ruta compatible hasta el corte coordinado.",
       "recommended": true
     },
     {
-      "title": "Preparar migración anticipada",
-      "body": "Autorizar un PR independiente si las nuevas plantillas Mandrill y su activación para usuarios actuales ya están aprobadas.",
+      "title": "Corte único planificado",
+      "body": "Sustituir los slugs actuales en una fecha de lanzamiento aprobada, tras validar todos los contratos de variables y plantillas en producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificarlo con Supply V2",
-    "body": "Mantener esta issue abierta y concretar el inventario de correos, variables y momento de activación dentro del plan de lanzamiento.",
+    "title": "Activación explícita de V2",
+    "body": "Añadir una señal de versión o rollout que seleccione las nuevas plantillas y mantener V1 como ruta compatible hasta el corte coordinado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente con el catálogo y la localización de las plantillas Supply existentes.",
+    "reason": "Introdujo el resolvedor actual de plantillas y es la referencia histórica más cercana para decidir la transición.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8127.md",
-    "reviewedAt": "2026-07-30T09:33:01.898Z",
-    "mainSha": "397a69300315a73b6042ec31fd98ba59917f8897"
+    "reviewedAt": "2026-07-30T19:37:58.134Z",
+    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
   }
 }
