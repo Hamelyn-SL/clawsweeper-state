@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T19:48:48.090Z",
+  "generatedAt": "2026-07-30T19:38:32.974Z",
   "updatedAt": "2026-07-30T17:06:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-28T22:45:44Z",
     "updatedAt": "2026-07-30T17:06:56Z",
     "headSha": "04d9e1d8b79562bb46a5735474413cbaf4e9999e"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P1",
-  "question": "¿Los batches sin outcomes rastreados deben conservar prioridad absoluta en cada vuelta, o ceder temporalmente su plaza para que otros batches pendientes progresen?",
-  "rationale": "El PR identifica que un batch puede quedar pendiente sin progreso, pero no define la política de equidad bajo el límite de polling.",
+  "question": "¿Debe un batch que devuelve repetidamente solo outcomes no rastreados conservar prioridad FIFO absoluta o ceder temporalmente su plaza a otros batches pendientes?",
+  "rationale": "El comportamiento seguro de persistencia ya está definido, pero la equidad entre reintentos y el coste operativo del polling requieren una política deliberada.",
   "options": [
     {
-      "title": "Añadir rotación o backoff",
-      "body": "Reintentar el batch pendiente de forma acotada sin permitir que monopolice repetidamente la ventana FIFO.",
+      "title": "Añadir backoff o exclusión temporal",
+      "body": "Tras un resultado sin outcomes rastreados, registrar el intento y evitar que ese batch ocupe de nuevo una plaza del límite hasta que venza un intervalo acotado.",
       "recommended": true
     },
     {
       "title": "Aceptar FIFO estricto",
-      "body": "Mantener prioridad absoluta del batch más antiguo y asumir la posible espera de los demás con monitorización operativa.",
+      "body": "Mantener la prioridad absoluta por antigüedad y asumir que un batch sin progreso puede consumir repetidamente una parte del límite.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir rotación o backoff",
-    "body": "Reintentar el batch pendiente de forma acotada sin permitir que monopolice repetidamente la ventana FIFO.",
+    "title": "Añadir backoff o exclusión temporal",
+    "body": "Tras un resultado sin outcomes rastreados, registrar el intento y evitar que ese batch ocupe de nuevo una plaza del límite hasta que venza un intervalo acotado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre el bucle por batch y fue asignado como revisor por experiencia en esta área.",
+    "reason": "Su cambio reciente aisló los fallos por batch y su historial es el más directo para calibrar la política de reintentos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8046.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8046#issuecomment-5110894660",
-    "reviewedAt": "2026-07-30T19:48:48.090Z",
+    "reviewedAt": "2026-07-30T19:38:32.974Z",
     "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
   }
 }
