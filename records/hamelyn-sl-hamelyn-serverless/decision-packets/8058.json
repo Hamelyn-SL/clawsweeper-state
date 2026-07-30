@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T07:03:26.592Z",
-  "updatedAt": "2026-07-29T06:57:13Z",
+  "generatedAt": "2026-07-30T06:56:24.713Z",
+  "updatedAt": "2026-07-30T06:28:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
+      "P2",
       "status: 📣 needs proof",
-      "P2"
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-29T05:55:17Z",
-    "updatedAt": "2026-07-29T06:57:13Z",
+    "updatedAt": "2026-07-30T06:28:52Z",
     "headSha": "b833628becbf27c7fe034c68e84458b6cc48cd14"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta PR continuar como cambio apilado sobre `EPIC/revision-v3` o prepararse para la ruta de integración obligatoria hacia `dev`?",
-  "rationale": "La política del repositorio exige base `dev`, pero Revisión V3 no está presente en el checkout de `dev`; solo quien mantiene la épica puede decidir el orden de integración seguro.",
+  "question": "¿Debe esta mejora seguir integrándose temporalmente en `EPIC/revision-v3` o debe esperar a un PR contra `dev` conforme a la política del repositorio?",
+  "rationale": "La superficie todavía no existe en `dev`, mientras que `AGENTS.md` exige esa base para los PRs; elegir el vehículo de integración no es una corrección mecánica.",
   "options": [
     {
-      "title": "Integrar mediante `dev`",
-      "body": "Aterrizar primero la épica o preparar una PR hacia `dev` que conserve el orden de dependencias y permita validar el merge final.",
+      "title": "Aprobar una excepción de épica",
+      "body": "Mantener el PR contra `EPIC/revision-v3` y documentar que su integración en `dev` se revisará con la épica.",
+      "recommended": false
+    },
+    {
+      "title": "Integrar primero la superficie V3",
+      "body": "Aterrizar o sincronizar la épica en `dev` y retargetear este cambio al destino estándar.",
       "recommended": true
     },
     {
-      "title": "Autorizar la PR apilada",
-      "body": "Mantener la base `EPIC/revision-v3` con una excepción explícita, propietario y orden de merge documentados antes de aprobarla.",
+      "title": "Pausar el bloque UX",
+      "body": "Detener esta entrega hasta que el equipo defina un vehículo de integración estable para Revisión V3.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar mediante `dev`",
-    "body": "Aterrizar primero la épica o preparar una PR hacia `dev` que conserve el orden de dependencias y permita validar el merge final.",
+    "title": "Integrar primero la superficie V3",
+    "body": "Aterrizar o sincronizar la épica en `dev` y retargetear este cambio al destino estándar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial concentra la mayor parte de la implementación reciente de la épica y del flujo afectado.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "La épica abierta y la política reciente de proof e integración apuntan a este ámbito de decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8058.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8058#issuecomment-5114239459",
-    "reviewedAt": "2026-07-29T07:03:26.592Z",
-    "mainSha": "2675559da67f4c0a1fa68f23271c9de307b28638"
+    "reviewedAt": "2026-07-30T06:56:24.713Z",
+    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
   }
 }

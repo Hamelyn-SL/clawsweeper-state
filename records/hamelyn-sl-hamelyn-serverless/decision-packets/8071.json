@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T13:40:38.124Z",
-  "updatedAt": "2026-07-29T12:57:43Z",
+  "generatedAt": "2026-07-30T07:00:25.136Z",
+  "updatedAt": "2026-07-30T06:48:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,48 +11,47 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: 🥈 silver",
-      "status: ⏳ waiting on author",
       "P1",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-29T08:22:39Z",
-    "updatedAt": "2026-07-29T12:57:43Z",
-    "headSha": "5f21384f6a4967474b5b89589a03ff72d3cd5dca"
+    "updatedAt": "2026-07-30T06:48:54Z",
+    "headSha": "811bc072c3bc023617ac194ae5f3e5034384d734"
   },
-  "lane": "security_boundary",
+  "lane": "merge_risk",
   "priority": "P1",
-  "question": "¿Se acepta guardar un PAT de GitHub con permiso `Actions: read and write` en las configuraciones de Cloud Scheduler para despachar los ocho workflows?",
-  "rationale": "El código limita el token al repositorio y a Actions, pero trasladarlo desde GitHub Secrets a metadatos de Scheduler cambia quién puede acceder a esa credencial y exige una decisión operativa explícita.",
+  "question": "¿Se acepta el riesgo de reintentar llamadas `workflow_dispatch` no idempotentes, o se exige una garantía de una sola ejecución por tick?",
+  "rationale": "La elección afecta a ocho crons con efectos operativos; el código actual no conserva una clave de entrega que permita distinguir un reintento de un tick independiente.",
   "options": [
     {
-      "title": "Aceptar el PAT acotado",
-      "body": "Mantener el diseño actual, confirmar que los permisos de lectura de Scheduler están restringidos y registrar rotación antes del despliegue.",
+      "title": "Eliminar los reintentos",
+      "body": "Fijar `maxRetryAttempts` a `0` conserva la semántica de una ejecución por tick y deja los fallos visibles para la operación.",
       "recommended": true
     },
     {
-      "title": "Aislar el token tras un proxy",
-      "body": "Sustituir los dispatches directos por un servicio intermedio que conserve la credencial fuera de los jobs de Scheduler.",
+      "title": "Añadir deduplicación durable",
+      "body": "Conservar reintentos solo si cada workflow puede rechazar de forma fiable una segunda entrega del mismo tick.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el PAT acotado",
-    "body": "Mantener el diseño actual, confirmar que los permisos de lectura de Scheduler están restringidos y registrar rotación antes del despliegue.",
+    "title": "Eliminar los reintentos",
+    "body": "Fijar `maxRetryAttempts` a `0` conserva la semántica de una ejecución por tick y deja los fallos visibles para la operación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el revisor asignado por experiencia directa en Scheduler, gates de frescura y workflows de BigQuery.",
-    "confidence": "medium"
+    "reason": "Su historial cubre el aplicador de Scheduler y el despliegue de Data Platform donde se materializa el contrato operativo.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8071.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8071#issuecomment-5115410653",
-    "reviewedAt": "2026-07-29T13:40:38.124Z",
-    "mainSha": "dcf997d47a1b16be43c67c4d074f4abeb40e997c"
+    "reviewedAt": "2026-07-30T07:00:25.136Z",
+    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
   }
 }

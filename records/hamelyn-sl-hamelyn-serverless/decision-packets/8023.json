@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T00:21:18.031Z",
-  "updatedAt": "2026-07-29T00:15:10Z",
+  "generatedAt": "2026-07-30T06:55:04.270Z",
+  "updatedAt": "2026-07-30T06:39:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,44 +11,44 @@
     "state": "open",
     "labels": [
       "size/S",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P2"
+      "P2",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-28T09:54:23Z",
-    "updatedAt": "2026-07-29T00:15:10Z",
+    "updatedAt": "2026-07-30T06:39:11Z",
     "headSha": "652579fc1b5e04d3007d80353559a190beb6cac5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el selector de Amazon garantizar hasta el límite configurado mediante paginación acotada, o se acepta formalmente que un prepool 5x pueda dejar ciclos vacíos?",
-  "rationale": "La elección fija el equilibrio entre drenaje garantizado y coste de consulta; la evidencia actual demuestra que 5x mejora el corte observado, pero no elimina la condición de starvation.",
+  "question": "¿Debe create de Amazon garantizar completar el lote mediante paginación acotada, o se acepta explícitamente que un margen fijo de cinco veces pueda volver a dejar la cola sin trabajo?",
+  "rationale": "La garantía de drenaje y el presupuesto de lectura por tick son una decisión operativa; el código actual no demuestra que un multiplicador fijo sea suficiente para producción.",
   "options": [
     {
-      "title": "Completar el lote con paginación acotada",
-      "body": "Continuar desde la última candidata hasta reunir `limit` maestros elegibles, con un presupuesto explícito de páginas y telemetría.",
+      "title": "Paginar con presupuesto explícito",
+      "body": "Continuar leyendo páginas hasta llenar el límite remoto o alcanzar un tope observable de trabajo por ejecución.",
       "recommended": true
     },
     {
-      "title": "Aceptar el prepool 5x",
-      "body": "Mantener el límite finito y documentar el riesgo residual, con métricas que alerten cuando no se complete el lote.",
+      "title": "Aceptar la mitigación 5x",
+      "body": "Mantener el multiplicador fijo y documentar que sigue existiendo inanición cuando la cabecera stale supera ese margen.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar el lote con paginación acotada",
-    "body": "Continuar desde la última candidata hasta reunir `limit` maestros elegibles, con un presupuesto explícito de páginas y telemetría.",
+    "title": "Paginar con presupuesto explícito",
+    "body": "Continuar leyendo páginas hasta llenar el límite remoto o alcanzar un tope observable de trabajo por ejecución.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su cambio reciente cubre el selector y la revalidación maestra que determinan este contrato de rendimiento.",
+    "reason": "El historial conecta su trabajo con la revalidación autoritativa que condiciona la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8023.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8023#issuecomment-5102988496",
-    "reviewedAt": "2026-07-29T00:21:18.031Z",
-    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+    "reviewedAt": "2026-07-30T06:55:04.270Z",
+    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
   }
 }
