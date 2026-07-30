@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T10:00:26.226Z",
-  "updatedAt": "2026-07-28T08:31:42Z",
+  "generatedAt": "2026-07-30T07:21:18.443Z",
+  "updatedAt": "2026-07-30T07:12:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:43Z",
-    "updatedAt": "2026-07-28T08:31:42Z"
+    "updatedAt": "2026-07-30T07:12:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse primero `EPIC/revision-v3` en `dev`, o se autoriza un vehículo alternativo para implementar estos ajustes sin reconstruir el puesto?",
-  "rationale": "La UI afectada no existe en `dev`, y la respuesta condiciona la rama, el alcance y la validación de cualquier cambio posterior.",
+  "question": "¿Se aprueba integrar Revisión V3 en `dev` y adoptar la PR candidata, confirmando que el aviso de 70 convive o sustituye al límite 50 y que «Sin desperfectos» espera el mínimo temporal?",
+  "rationale": "La implementación existe fuera de la rama predeterminada y la issue conserva dos decisiones operativas explícitas; ninguna se deduce con seguridad del código actual.",
   "options": [
     {
-      "title": "Aterrizar V3 antes",
-      "body": "Integrar el puesto V3 en `dev` y desarrollar los ajustes como una mejora posterior, aislada y verificable.",
+      "title": "Integrar V3 y patrocinar la PR",
+      "body": "Definir el aterrizaje de `EPIC/revision-v3` en `dev`, confirmar ambas reglas de flujo y continuar con la PR abierta como vehículo de entrega.",
       "recommended": true
     },
     {
-      "title": "Autorizar trabajo en la épica",
-      "body": "Mantener el cambio en `EPIC/revision-v3` con una estrategia explícita para sincronizar e integrar esa rama después.",
+      "title": "Mantener V3 aislado por ahora",
+      "body": "Conservar la rama épica fuera de `dev` y dejar esta mejora bloqueada hasta que exista un plan de integración y reglas operativas aprobadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar V3 antes",
-    "body": "Integrar el puesto V3 en `dev` y desarrollar los ajustes como una mejora posterior, aislada y verificable.",
+    "title": "Integrar V3 y patrocinar la PR",
+    "body": "Definir el aterrizaje de `EPIC/revision-v3` en `dev`, confirmar ambas reglas de flujo y continuar con la PR abierta como vehículo de entrega.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el mejor punto de coordinación disponible como autor de la épica que define la superficie y su integración.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la issue y posee el contexto más directo de la PR candidata y de la traza previa del flujo.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8012.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8012#issuecomment-5101532309",
-    "reviewedAt": "2026-07-28T10:00:26.226Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-07-30T07:21:18.443Z",
+    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
   }
 }
