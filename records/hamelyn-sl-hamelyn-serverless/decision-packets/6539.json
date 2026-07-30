@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:02:54.144Z",
-  "updatedAt": "2026-07-21T12:18:52Z",
+  "generatedAt": "2026-07-30T09:33:10.485Z",
+  "updatedAt": "2026-07-30T09:27:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,46 @@
       "app:supply",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-07-21T12:18:52Z"
+    "updatedAt": "2026-07-30T09:27:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué autorización y secuencia debe exigir `Supply Deploy` antes de crear un bump y enviar una build de producción?",
-  "rationale": "La issue y la release relacionada muestran que el orden entre bump, binarios y actualización de `dev` afecta a usuarios; esa política no se deduce de la configuración EAS actual.",
+  "question": "¿Debe descartarse definitivamente la automatización EAS por el replanteamiento de Supply, o mantenerse una ruta EAS protegida mientras la app Expo siga activa?",
+  "rationale": "El cierre de la PR propone un cambio de dirección, pero no hay una iniciativa canónica de reemplazo ni una decisión mantenedora enlazada que resuelva la necesidad operativa actual.",
   "options": [
     {
-      "title": "Separar beta y producción",
-      "body": "Permitir beta con controles acotados y exigir entorno protegido o aprobación explícita para producción y para cualquier commit de versión.",
+      "title": "Pausar EAS y enlazar el reemplazo",
+      "body": "Confirmar el cambio a Next.js + Capacitor y cerrar esta dirección solo cuando exista una iniciativa canónica para su despliegue.",
       "recommended": true
     },
     {
-      "title": "Mantener el flujo único propuesto",
-      "body": "Aceptar que el mismo workflow cree el bump y pueda enviar producción draft desde la rama invocada, documentando la responsabilidad operativa.",
-      "recommended": false
-    },
-    {
-      "title": "Automatizar solo builds",
-      "body": "Limitar inicialmente el workflow a EAS Build y conservar el submit y el bump como pasos manuales de release.",
+      "title": "Mantener EAS con controles de release",
+      "body": "Retomar una solución limitada que separe beta de producción y proteja los envíos y bumps de versión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar beta y producción",
-    "body": "Permitir beta con controles acotados y exigir entorno protegido o aprobación explícita para producción y para cualquier commit de versión.",
+    "title": "Pausar EAS y enlazar el reemplazo",
+    "body": "Confirmar el cambio a Next.js + Capacitor y cerrar esta dirección solo cuando exista una iniciativa canónica para su despliegue.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es el autor de la propuesta enlazada y la historia reciente lo conecta con la configuración EAS y el versionado de Supply.",
+    "person": "MiguelHamelyn",
+    "reason": "Su trabajo reciente de release establece la secuencia de publicación que condiciona cualquier automatización.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
-    "reviewedAt": "2026-07-21T14:02:54.144Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-07-30T09:33:10.485Z",
+    "mainSha": "397a69300315a73b6042ec31fd98ba59917f8897"
   }
 }

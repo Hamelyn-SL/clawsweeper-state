@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T07:00:25.136Z",
-  "updatedAt": "2026-07-30T06:48:54Z",
+  "generatedAt": "2026-07-30T09:34:01.375Z",
+  "updatedAt": "2026-07-30T09:24:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,49 +10,48 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8071",
     "state": "open",
     "labels": [
-      "size/L",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
+      "size/XL",
       "P1",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-29T08:22:39Z",
-    "updatedAt": "2026-07-30T06:48:54Z",
-    "headSha": "811bc072c3bc023617ac194ae5f3e5034384d734"
+    "updatedAt": "2026-07-30T09:24:40Z",
+    "headSha": "bb3c9bf219947624837ed5afcae819490ab44b62"
   },
   "lane": "merge_risk",
   "priority": "P1",
-  "question": "¿Se acepta el riesgo de reintentar llamadas `workflow_dispatch` no idempotentes, o se exige una garantía de una sola ejecución por tick?",
-  "rationale": "La elección afecta a ocho crons con efectos operativos; el código actual no conserva una clave de entrega que permita distinguir un reintento de un tick independiente.",
+  "question": "¿Se acepta un corte operativo manual tras el merge o se exige un despliegue escalonado que mantenga los triggers existentes hasta verificar Cloud Scheduler?",
+  "rationale": "La elección determina si ocho tareas recurrentes pueden quedar temporalmente sin ejecución; no es una corrección mecánica que deba decidir la automatización.",
   "options": [
     {
-      "title": "Eliminar los reintentos",
-      "body": "Fijar `maxRetryAttempts` a `0` conserva la semántica de una ejecución por tick y deja los fallos visibles para la operación.",
+      "title": "Despliegue escalonado",
+      "body": "Crear y verificar los jobs de Cloud Scheduler antes de retirar los triggers actuales, dejando una transición explícita y reversible.",
       "recommended": true
     },
     {
-      "title": "Añadir deduplicación durable",
-      "body": "Conservar reintentos solo si cada workflow puede rechazar de forma fiable una segunda entrega del mismo tick.",
+      "title": "Corte manual coordinado",
+      "body": "Aceptar el riesgo y fusionar solo con una persona responsable preparada para ejecutar y verificar `[Deploy] Data Platform` inmediatamente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Eliminar los reintentos",
-    "body": "Fijar `maxRetryAttempts` a `0` conserva la semántica de una ejecución por tick y deja los fallos visibles para la operación.",
+    "title": "Despliegue escalonado",
+    "body": "Crear y verificar los jobs de Cloud Scheduler antes de retirar los triggers actuales, dejando una transición explícita y reversible.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial cubre el aplicador de Scheduler y el despliegue de Data Platform donde se materializa el contrato operativo.",
+    "reason": "Su historial del monitor de crons y de los workflows afectados le sitúa como mejor responsable para validar el plan de corte.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8071.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8071#issuecomment-5115410653",
-    "reviewedAt": "2026-07-30T07:00:25.136Z",
-    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
+    "reviewedAt": "2026-07-30T09:34:01.375Z",
+    "mainSha": "397a69300315a73b6042ec31fd98ba59917f8897"
   }
 }
