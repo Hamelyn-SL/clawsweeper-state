@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T09:33:01.898Z",
-  "updatedAt": "2026-07-30T09:27:51Z",
+  "generatedAt": "2026-07-30T10:57:34.437Z",
+  "updatedAt": "2026-07-30T09:36:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,41 +14,52 @@
       "app:supply",
       "reporter:marta",
       "feature",
-      "triage:running",
-      "P2"
+      "triage:blocked",
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-30T09:23:51Z",
-    "updatedAt": "2026-07-30T09:27:51Z"
+    "updatedAt": "2026-07-30T09:36:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el rediseño activarse al reemplazar Supply actual o convivir temporalmente con una ruta específica de Supply V2?",
-  "rationale": "La issue condiciona el cambio al lanzamiento de Supply V2, pero no define fecha, coexistencia ni el inventario final de flujos que deben cambiar.",
+  "question": "¿Qué señal de lanzamiento debe seleccionar las plantillas de Supply V2 y durante cuánto tiempo deben coexistir las de Supply V1?",
+  "rationale": "El código actual comparte los slugs de producción de V1; elegir fecha, mecanismo de activación y compatibilidad determina si el cambio es seguro.",
   "options": [
     {
-      "title": "Planificarlo con Supply V2",
-      "body": "Mantener esta issue abierta y concretar el inventario de correos, variables y momento de activación dentro del plan de lanzamiento.",
+      "title": "Activación explícita de V2",
+      "body": "Añadir una condición de lanzamiento acotada y conservar los slugs de V1 hasta completar el corte coordinado.",
       "recommended": true
     },
     {
-      "title": "Preparar migración anticipada",
-      "body": "Autorizar un PR independiente si las nuevas plantillas Mandrill y su activación para usuarios actuales ya están aprobadas.",
+      "title": "Corte único programado",
+      "body": "Sustituir los slugs en una fecha acordada tras confirmar que ningún flujo de V1 seguirá enviando correos.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar el rediseño",
+      "body": "Mantener el contrato actual hasta que Supply V2 tenga alcance, fecha y responsable de despliegue confirmados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificarlo con Supply V2",
-    "body": "Mantener esta issue abierta y concretar el inventario de correos, variables y momento de activación dentro del plan de lanzamiento.",
+    "title": "Activación explícita de V2",
+    "body": "Añadir una condición de lanzamiento acotada y conservar los slugs de V1 hasta completar el corte coordinado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente con el catálogo y la localización de las plantillas Supply existentes.",
-    "confidence": "high"
+    "reason": "Es el candidato más cercano al contrato de plantillas que debe convivir con el nuevo conjunto.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8127.md",
-    "reviewedAt": "2026-07-30T09:33:01.898Z",
-    "mainSha": "397a69300315a73b6042ec31fd98ba59917f8897"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8127#issuecomment-5129139177",
+    "reviewedAt": "2026-07-30T10:57:34.437Z",
+    "mainSha": "d73d24b1ae9c5ceae038737753cbd50bbf7f0201"
   }
 }
