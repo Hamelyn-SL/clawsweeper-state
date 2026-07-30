@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T01:34:31.101Z",
-  "updatedAt": "2026-07-29T01:27:33Z",
+  "generatedAt": "2026-07-30T09:01:51.689Z",
+  "updatedAt": "2026-07-30T08:42:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,38 +25,37 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-28T20:54:32Z",
-    "updatedAt": "2026-07-29T01:27:33Z"
+    "updatedAt": "2026-07-30T08:42:49Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un listing presente pero no vendible pasar a `SYNC_ERROR` con `REPORT_INACTIVE` y `RetryPolicy.PERMANENT`, o conservar una vía de recuperación distinta?",
-  "rationale": "La elección determina si cientos de miles de listings se excluyen de reintentos automáticos y cómo se interpretan las métricas operativas posteriores.",
+  "question": "¿Debe un listing presente pero no vendible quedar en un estado terminal `REPORT_INACTIVE`, o conservar una ruta recuperable y de retirada hasta confirmar su evolución en Amazon?",
+  "rationale": "La elección determina la semántica persistida, las políticas de reintento y la exposición a sobreventa; no se resuelve de forma segura solo con una clasificación técnica.",
   "options": [
     {
-      "title": "Aceptar la clasificación terminal",
-      "body": "Aprobar `REPORT_INACTIVE` con `PERMANENT` y desplegar la PR con monitorización del primer snapshot y de la reactivación automática.",
+      "title": "Contrato recuperable con retirada",
+      "body": "Añadir una transición específica que no represente conversión, pero siga siendo elegible para retirada y pueda reactivarse cuando el report confirme venta.",
       "recommended": true
     },
     {
-      "title": "Definir recuperación diferenciada",
-      "body": "Mantener la PR abierta y sustituir la política terminal por un estado o recuperación acordados para restricciones potencialmente reversibles.",
+      "title": "Estado permanente excluido",
+      "body": "Mantener `REPORT_INACTIVE` como terminal y aceptar explícitamente que la retirada requiera otro mecanismo operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar la clasificación terminal",
-    "body": "Aprobar `REPORT_INACTIVE` con `PERMANENT` y desplegar la PR con monitorización del primer snapshot y de la reactivación automática.",
+    "title": "Contrato recuperable con retirada",
+    "body": "Añadir una transición específica que no represente conversión, pero siga siendo elegible para retirada y pueda reactivarse cuando el report confirme venta.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Está asignado a revisar la PR sensible que concreta esta decisión en el reconciliador.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre el reconciliador y la recuperación de huérfanos que condicionan esta decisión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8039.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8039#issuecomment-5110017260",
-    "reviewedAt": "2026-07-29T01:34:31.101Z",
-    "mainSha": "d11d46521e4b6b56b9f2ea06c01f89ef555261e9"
+    "reviewedAt": "2026-07-30T09:01:51.689Z",
+    "mainSha": "fb9450466a1ba11cb30e92b0a59e5db27bd82a78"
   }
 }
