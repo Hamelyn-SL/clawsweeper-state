@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T12:17:23.017Z",
+  "updatedAt": "2026-07-30T11:10:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8128,
+    "title": "No mostrar opción punto recogida ecommerces internacionales. ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8128",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "feature",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-30T09:33:37Z",
+    "updatedAt": "2026-07-30T11:10:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la interfaz ocultar `pickup` únicamente fuera de España o para cualquier causa de indisponibilidad, incluidos productos nuevos en España?",
+  "rationale": "La especificación separa mercado y carrito, pero el PR candidato los trata igual; esa diferencia cambia la UX establecida y no se resuelve de forma segura solo con código.",
+  "options": [
+    {
+      "title": "Limitar el ocultado al mercado",
+      "body": "Exponer la disponibilidad PUDO del sitio y ocultar `pickup` solo fuera de España, conservando el estado deshabilitado español actual.",
+      "recommended": true
+    },
+    {
+      "title": "Unificar toda indisponibilidad",
+      "body": "Aceptar que cualquier indisponibilidad oculte la opción y actualizar la regla UX y la prueba para cubrir España con productos nuevos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar el ocultado al mercado",
+    "body": "Exponer la disponibilidad PUDO del sitio y ocultar `pickup` solo fuera de España, conservando el estado deshabilitado español actual.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Tiene experiencia reciente en el componente afectado y figura como revisor asignado de la implementación candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8128.md",
+    "reviewedAt": "2026-07-30T12:17:23.017Z",
+    "mainSha": "71e2c6802face434f0b74ed881ce18b0712ea236"
+  }
+}
