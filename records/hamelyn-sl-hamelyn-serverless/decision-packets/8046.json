@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T10:24:38.730Z",
+  "generatedAt": "2026-07-30T10:29:19.306Z",
   "updatedAt": "2026-07-30T09:49:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,11 +11,11 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-07-28T22:45:44Z",
     "updatedAt": "2026-07-30T09:49:37Z",
@@ -23,34 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política debe aplicarse a un batch que continúa en `BATCH` tras devolver únicamente outcomes no rastreados: aplazamiento temporal, rotación de la ventana o cuarentena monitorizada?",
-  "rationale": "Evitar el completado falso es correcto, pero decidir cómo cede turno un batch sin progreso afecta a la frescura de retiradas y a la carga contra el marketplace.",
+  "question": "¿Qué política de fairness debe aplicarse cuando el batch más antiguo no devuelve ningún outcome rastreado?",
+  "rationale": "Backoff, exclusión temporal o FIFO estricto implican distintas garantías de frescura, capacidad y observabilidad del cron.",
   "options": [
     {
-      "title": "Añadir fairness de reintento",
-      "body": "Mantener el batch pendiente, pero registrarlo o seleccionarlo de modo que una repetición sin progreso no bloquee los demás batches.",
+      "title": "Aplicar backoff por batch",
+      "body": "Tras un informe sin progreso, retrasar ese batch para que otros pendientes puedan ocupar la ventana limitada.",
       "recommended": true
     },
     {
       "title": "Aceptar FIFO estricto",
-      "body": "Mantener siempre el batch más antiguo al frente y asumir que su respuesta terminará cambiando sin una política adicional.",
+      "body": "Mantener el batch más antiguo en cada ejecución y asumir la reducción de capacidad con monitorización operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir fairness de reintento",
-    "body": "Mantener el batch pendiente, pero registrarlo o seleccionarlo de modo que una repetición sin progreso no bloquee los demás batches.",
+    "title": "Aplicar backoff por batch",
+    "body": "Tras un informe sin progreso, retrasar ese batch para que otros pendientes puedan ocupar la ventana limitada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su cambio reciente introdujo el aislamiento por batch que esta política debe complementar.",
+    "reason": "Su historial reciente cubre la ruta de aislamiento y reintentos de batches que determina esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8046.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8046#issuecomment-5110894660",
-    "reviewedAt": "2026-07-30T10:24:38.730Z",
+    "reviewedAt": "2026-07-30T10:29:19.306Z",
     "mainSha": "e1b4cbb898a1a995883a99cfd1b1bb7976d760a1"
   }
 }
