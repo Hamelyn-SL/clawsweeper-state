@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T10:16:05.021Z",
-  "updatedAt": "2026-07-30T09:57:51Z",
+  "generatedAt": "2026-07-30T11:22:18.998Z",
+  "updatedAt": "2026-07-30T10:29:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "source:admin-panel",
       "app:ecommerce",
       "reporter:jesus",
-      "triage:queued",
+      "triage:no-change",
       "P1",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-30T09:41:54Z",
-    "updatedAt": "2026-07-30T09:57:51Z"
+    "updatedAt": "2026-07-30T10:29:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `us.hamelyn.com` absorber íntegramente la tarifa estándar de `11,99 €` en el precio de catálogo?",
-  "rationale": "La reparación técnica es de una constante, pero elegir el importe determina los precios mostrados a clientes estadounidenses.",
+  "question": "¿Debe `us.hamelyn.com` absorber 11,99 € en el precio de catálogo o debe corregirse la tarifa estándar almacenada a 8,99 €?",
+  "rationale": "Ambas alternativas eliminan el cobro residual, pero tienen efectos comerciales distintos sobre precio visible, margen y servicio de envío.",
   "options": [
     {
-      "title": "Absorber 11,99 €",
-      "body": "Alinear la sobretarifa con la tarifa base indicada en la incidencia y eliminar el cargo estándar residual.",
+      "title": "Absorber 11,99 € en catálogo",
+      "body": "Actualizar el suplemento regional a 11,99 € para que el checkout estándar quede a cero y el coste se refleje antes del checkout.",
       "recommended": true
     },
     {
-      "title": "Mantener 8,99 €",
-      "body": "Conservar los precios actuales, pero retirar o acotar el mensaje de envío gratuito para evitar una promesa contradictoria.",
+      "title": "Corregir la tarifa de BDD",
+      "body": "Mantener el suplemento de 8,99 € y ajustar la tarifa estándar si logística confirma que ese es el coste comercial aplicable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Absorber 11,99 €",
-    "body": "Alinear la sobretarifa con la tarifa base indicada en la incidencia y eliminar el cargo estándar residual.",
+    "title": "Absorber 11,99 € en catálogo",
+    "body": "Actualizar el suplemento regional a 11,99 € para que el checkout estándar quede a cero y el coste se refleje antes del checkout.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La incidencia está asignada a esta persona y su historial conecta directamente con la política de sobretarifas regionales.",
+    "reason": "Está asignado y ya ha trasladado la consulta al responsable de logística.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8130.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8130#issuecomment-5129375544",
-    "reviewedAt": "2026-07-30T10:16:05.021Z",
-    "mainSha": "e1b4cbb898a1a995883a99cfd1b1bb7976d760a1"
+    "reviewedAt": "2026-07-30T11:22:18.998Z",
+    "mainSha": "d73d24b1ae9c5ceae038737753cbd50bbf7f0201"
   }
 }
