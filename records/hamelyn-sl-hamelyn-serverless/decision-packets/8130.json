@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T10:05:49.027Z",
+  "generatedAt": "2026-07-30T10:16:05.021Z",
   "updatedAt": "2026-07-30T09:57:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,34 +21,34 @@
     "updatedAt": "2026-07-30T09:57:51Z"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe `us.hamelyn.com` absorber el recargo de 1,99 para productos nuevos inferiores a 15 o mantener esa excepción y comunicarla de forma explícita?",
-  "rationale": "El código y la ficha de producto establecen hoy una excepción, mientras la incidencia reclama una promesa comercial universal; ninguna opción puede inferirse de forma segura solo desde el código.",
+  "priority": "P1",
+  "question": "¿Debe `us.hamelyn.com` absorber íntegramente la tarifa estándar de `11,99 €` en el precio de catálogo?",
+  "rationale": "La reparación técnica es de una constante, pero elegir el importe determina los precios mostrados a clientes estadounidenses.",
   "options": [
     {
-      "title": "Absorber el recargo",
-      "body": "Eliminar el suplemento de productos nuevos bajo 15 o trasladarlo al precio para que la promesa de envío gratis sea universal.",
+      "title": "Absorber 11,99 €",
+      "body": "Alinear la sobretarifa con la tarifa base indicada en la incidencia y eliminar el cargo estándar residual.",
       "recommended": true
     },
     {
-      "title": "Conservar la excepción",
-      "body": "Mantener el suplemento y actualizar todos los copys estadounidenses para indicar claramente el mínimo y las condiciones aplicables.",
+      "title": "Mantener 8,99 €",
+      "body": "Conservar los precios actuales, pero retirar o acotar el mensaje de envío gratuito para evitar una promesa contradictoria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Absorber el recargo",
-    "body": "Eliminar el suplemento de productos nuevos bajo 15 o trasladarlo al precio para que la promesa de envío gratis sea universal.",
+    "title": "Absorber 11,99 €",
+    "body": "Alinear la sobretarifa con la tarifa base indicada en la incidencia y eliminar el cargo estándar residual.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente une la regla de envío de checkout con el lanzamiento y copy del escaparate estadounidense.",
+    "person": "MiguelHamelyn",
+    "reason": "La incidencia está asignada a esta persona y su historial conecta directamente con la política de sobretarifas regionales.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8130.md",
-    "reviewedAt": "2026-07-30T10:05:49.027Z",
+    "reviewedAt": "2026-07-30T10:16:05.021Z",
     "mainSha": "e1b4cbb898a1a995883a99cfd1b1bb7976d760a1"
   }
 }
