@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T07:04:27.481Z",
+  "updatedAt": "2026-07-30T06:59:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8109,
+    "title": "fix: sync product coupon with active promo strip",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8109",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-30T06:54:08Z",
+    "updatedAt": "2026-07-30T06:59:22Z",
+    "headSha": "c367997d84eaef7831438c22609a521473a1c5e2"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Las variantes de promo strip deben definir una oferta estructurada para la PDP, incluidos código, mecánica y progreso, o limitarse al mensaje superior?",
+  "rationale": "El KV actual almacena texto libre y el parche intenta deducir una oferta comercial completa desde HTML presentacional, sin un contrato que conserve compatibilidad semántica.",
+  "options": [
+    {
+      "title": "Formalizar la oferta compartida",
+      "body": "Añadir campos validados de campaña en el contrato y actualizar Admin, banner y PDP para que compartan código y beneficio de forma explícita.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la PDP en la oferta principal",
+      "body": "Conservar el cupón y el progreso estáticos de la ficha y limitar las variantes alternativas a la comunicación del banner.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Formalizar la oferta compartida",
+    "body": "Añadir campos validados de campaña en el contrato y actualizar Admin, banner y PDP para que compartan código y beneficio de forma explícita.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial cubre el modelo, la resolución por visitante y el override de la promo strip.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8109.md",
+    "reviewedAt": "2026-07-30T07:04:27.481Z",
+    "mainSha": "41eef5939c07bce7116c9832459978fb6d17f9e8"
+  }
+}
