@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T10:05:49.027Z",
+  "updatedAt": "2026-07-30T09:57:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8130,
+    "title": "No figura envío GRATIS en us.hamelyn.com",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8130",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "reporter:jesus",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-07-30T09:41:54Z",
+    "updatedAt": "2026-07-30T09:57:51Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe `us.hamelyn.com` absorber el recargo de 1,99 para productos nuevos inferiores a 15 o mantener esa excepción y comunicarla de forma explícita?",
+  "rationale": "El código y la ficha de producto establecen hoy una excepción, mientras la incidencia reclama una promesa comercial universal; ninguna opción puede inferirse de forma segura solo desde el código.",
+  "options": [
+    {
+      "title": "Absorber el recargo",
+      "body": "Eliminar el suplemento de productos nuevos bajo 15 o trasladarlo al precio para que la promesa de envío gratis sea universal.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar la excepción",
+      "body": "Mantener el suplemento y actualizar todos los copys estadounidenses para indicar claramente el mínimo y las condiciones aplicables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Absorber el recargo",
+    "body": "Eliminar el suplemento de productos nuevos bajo 15 o trasladarlo al precio para que la promesa de envío gratis sea universal.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente une la regla de envío de checkout con el lanzamiento y copy del escaparate estadounidense.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8130.md",
+    "reviewedAt": "2026-07-30T10:05:49.027Z",
+    "mainSha": "e1b4cbb898a1a995883a99cfd1b1bb7976d760a1"
+  }
+}
