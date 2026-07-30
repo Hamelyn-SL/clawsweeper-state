@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T19:40:37.781Z",
+  "updatedAt": "2026-07-30T11:49:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8134,
+    "title": "feat: hide pickup point option when unavailable for site",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8134",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-07-30T11:22:00Z",
+    "updatedAt": "2026-07-30T11:49:20Z",
+    "headSha": "636eda33856399ca98c3a69145f3cd734bb8bbb8"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe ocultarse `pickup` solo en sitios sin PUDO o también cuando un carrito español contiene productos nuevos?",
+  "rationale": "La señal usada por el PR mezcla una regla de mercado con una regla de carrito, y elegir entre ambas altera la UX existente de España.",
+  "options": [
+    {
+      "title": "Limitarlo por sitio",
+      "body": "Ocultar `pickup` solo cuando el dominio no habilita PUDO y conservar el estado deshabilitado para productos nuevos en España.",
+      "recommended": true
+    },
+    {
+      "title": "Unificar indisponibilidad",
+      "body": "Aceptar que cualquier causa de indisponibilidad oculte la opción y documentar la nueva regla para España con productos nuevos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitarlo por sitio",
+    "body": "Ocultar `pickup` solo cuando el dominio no habilita PUDO y conservar el estado deshabilitado para productos nuevos en España.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el revisor asignado y tiene una modificación reciente en el componente afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8134.md",
+    "reviewedAt": "2026-07-30T19:40:37.781Z",
+    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
+  }
+}

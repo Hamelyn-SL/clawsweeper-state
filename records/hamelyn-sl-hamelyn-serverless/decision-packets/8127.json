@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T19:37:58.134Z",
+  "generatedAt": "2026-07-30T19:41:36.182Z",
   "updatedAt": "2026-07-30T11:10:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,46 +15,45 @@
       "reporter:marta",
       "feature",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-30T09:23:51Z",
     "updatedAt": "2026-07-30T11:10:33Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué señal de lanzamiento debe activar las plantillas de Supply V2 y qué periodo de convivencia debe mantenerse para los correos de Supply V1?",
-  "rationale": "La decisión determina si hace falta un selector configurable, un corte único o una transición compatible; el código actual no expresa esa política.",
+  "question": "¿Qué mecanismo o fecha separará los correos de Supply V2 de los envíos actuales de Supply V1?",
+  "rationale": "La sustitución inmediata de slugs cambia producción; el código no aporta una condición de V2 que resuelva por sí sola la convivencia.",
   "options": [
     {
-      "title": "Activación explícita de V2",
-      "body": "Añadir una señal de versión o rollout que seleccione las nuevas plantillas y mantener V1 como ruta compatible hasta el corte coordinado.",
+      "title": "Definir un corte versionado",
+      "body": "Acordar una señal de V2 y aplicar entonces la migración completa de slugs, idiomas y variables.",
       "recommended": true
     },
     {
-      "title": "Corte único planificado",
-      "body": "Sustituir los slugs actuales en una fecha de lanzamiento aprobada, tras validar todos los contratos de variables y plantillas en producción.",
+      "title": "Mantener el contrato actual",
+      "body": "Posponer el rediseño hasta que la activación de V2 y las variables finales estén confirmadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Activación explícita de V2",
-    "body": "Añadir una señal de versión o rollout que seleccione las nuevas plantillas y mantener V1 como ruta compatible hasta el corte coordinado.",
+    "title": "Definir un corte versionado",
+    "body": "Acordar una señal de V2 y aplicar entonces la migración completa de slugs, idiomas y variables.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo el resolvedor actual de plantillas y es la referencia histórica más cercana para decidir la transición.",
-    "confidence": "high"
+    "reason": "Su historial conecta directamente con el registro que debe versionarse o sustituirse.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8127.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8127#issuecomment-5129139177",
-    "reviewedAt": "2026-07-30T19:37:58.134Z",
+    "reviewedAt": "2026-07-30T19:41:36.182Z",
     "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
   }
 }
