@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:56:18.242Z",
-  "updatedAt": "2026-07-28T09:27:25Z",
+  "generatedAt": "2026-07-31T09:43:59.233Z",
+  "updatedAt": "2026-07-31T08:18:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-07-28T09:27:25Z"
+    "updatedAt": "2026-07-31T08:18:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué corte del puesto Revisión V3 debe integrarse en `dev` antes de priorizar este paquete de mejoras, y qué decisiones operativas deben cerrarse previamente?",
-  "rationale": "La rama por defecto no contiene V3 y varias sub-issues dependen de reglas de negocio que el código actual no puede inferir.",
+  "question": "¿Qué decisiones operativas deben aprobarse antes de secuenciar auditoría, objetivo de ritmo y vídeos del puesto V3?",
+  "rationale": "Las sub-issues describen alternativas funcionales que el código no puede decidir de forma segura, especialmente la cuota de auditoría y la métrica de calidad.",
   "options": [
     {
-      "title": "Integrar primero el flujo operativo V3",
-      "body": "Promover un corte verificado del puesto y dejar productividad avanzada, auditoría y paneles como entregas posteriores coordinadas.",
+      "title": "Aprobar decisiones y mantener el epic",
+      "body": "Definir cuota, criterio de coincidencia, objetivo de ritmo y orden de vídeos; después continuar cada sub-issue según sus dependencias.",
       "recommended": true
     },
     {
-      "title": "Cerrar decisiones antes de integrar",
-      "body": "Mantener V3 fuera de `dev` hasta acordar productividad, objetivo de ritmo, auditoría y materiales formativos.",
+      "title": "Reducir el alcance inicial",
+      "body": "Posponer auditoría, paneles y avisos motivacionales para integrar primero productividad y cambio individual de gaveta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar primero el flujo operativo V3",
-    "body": "Promover un corte verificado del puesto y dejar productividad avanzada, auditoría y paneles como entregas posteriores coordinadas.",
+    "title": "Aprobar decisiones y mantener el epic",
+    "body": "Definir cuota, criterio de coincidencia, objetivo de ritmo y orden de vídeos; después continuar cada sub-issue según sus dependencias.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el autor de la épica base y el enlace visible entre el flujo ya construido y el alcance pendiente.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Ha estructurado el paquete en sub-issues y conectó sus dependencias y bloqueos operativos.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-07-28T09:56:18.242Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-07-31T09:43:59.233Z",
+    "mainSha": "cd21cc4f963350e0545c4432168c983436d361ed"
   }
 }
