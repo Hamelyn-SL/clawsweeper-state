@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T19:38:37.703Z",
+  "updatedAt": "2026-07-31T12:29:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8154,
+    "title": "feat: stop forcing urgent priority on the free-shipping promo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8154",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-31T10:43:46Z",
+    "updatedAt": "2026-07-31T12:29:45Z",
+    "headSha": "d94af15aadd304cc6248a37332154db8099dc292"
+  },
+  "lane": "merge_risk",
+  "priority": "P2",
+  "question": "¿Debe el despliegue aceptar rechazos transitorios de sesiones antiguas o incorporar compatibilidad temporal para esos importes urgentes?",
+  "rationale": "El PR documenta una incompatibilidad conocida entre cliente anterior y servidor nuevo; el coste operativo aceptable requiere criterio del área.",
+  "options": [
+    {
+      "title": "Añadir compatibilidad temporal",
+      "body": "Permitir durante una ventana limitada los importes urgentes generados por el bundle anterior para evitar rechazos al pagar.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ventana de despliegue",
+      "body": "Desplegar con coordinación operativa y asumir que las sesiones antiguas deberán recargar antes de reintentar el pago.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir compatibilidad temporal",
+    "body": "Permitir durante una ventana limitada los importes urgentes generados por el bundle anterior para evitar rechazos al pagar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el revisor solicitado y tiene historial directo en el recálculo de envío del checkout.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8154.md",
+    "reviewedAt": "2026-07-31T19:38:37.703Z",
+    "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
+  }
+}
