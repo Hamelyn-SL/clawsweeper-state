@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T13:45:22.028Z",
-  "updatedAt": "2026-07-30T13:32:27Z",
+  "generatedAt": "2026-07-31T06:31:29.991Z",
+  "updatedAt": "2026-07-31T06:04:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,52 +14,46 @@
       "app:supply",
       "feature",
       "triage:done",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-30T13:15:00Z",
-    "updatedAt": "2026-07-30T13:32:27Z"
+    "updatedAt": "2026-07-31T06:04:12Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estados, persistencia y destino operativo debe tener el flujo de «Nueva entrada» y las incidencias de recepción antes de construir la V2?",
-  "rationale": "El código actual separa estrictamente transiciones a PICKED_UP de los estados de pago, y la petición añade datos y automatizaciones sin contrato persistente definido.",
+  "question": "¿Qué operación y estado persistente deben representar «Nueva entrada», «faltan bultos» y la cancelación total antes de ampliar el panel?",
+  "rationale": "El flujo solicitado atraviesa el grafo de pedidos, métricas de operario y alertas; el código actual no define una semántica única para esas acciones.",
   "options": [
     {
-      "title": "Acordar contratos y dividir",
-      "body": "Definir los estados, la incidencia persistida y el destino de Slack, y abrir cuatro subtareas implementables.",
+      "title": "Definir contrato y dividir el trabajo",
+      "body": "Aprobar las reglas de estado, persistencia y destinatarios de Slack antes de abrir cuatro subissues implementables.",
       "recommended": true
     },
     {
       "title": "Limitar la primera entrega",
-      "body": "Entregar solo búsqueda y detalle visual, manteniendo incidencias, productividad y Slack fuera de la primera fase.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el panel actual",
-      "body": "Posponer la V2 si el equipo no puede cerrar todavía las reglas operativas y de datos.",
+      "body": "Aprobar sólo búsqueda, detalle visual y métricas de lectura, dejando incidencias y Slack para una fase posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar contratos y dividir",
-    "body": "Definir los estados, la incidencia persistida y el destino de Slack, y abrir cuatro subtareas implementables.",
+    "title": "Definir contrato y dividir el trabajo",
+    "body": "Aprobar las reglas de estado, persistencia y destinatarios de Slack antes de abrir cuatro subissues implementables.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Es la persona con actividad más reciente en la API de recepción donde se aplicarán las reglas acordadas.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Introdujo y mantiene recientemente el flujo de recepción afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8138.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8138#issuecomment-5131666813",
-    "reviewedAt": "2026-07-30T13:45:22.028Z",
-    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
+    "reviewedAt": "2026-07-31T06:31:29.991Z",
+    "mainSha": "066346b468e785a6b227d94002d45fa0f3c00240"
   }
 }
