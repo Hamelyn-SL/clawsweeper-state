@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T19:37:13.064Z",
+  "updatedAt": "2026-07-31T12:29:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8154,
+    "title": "feat: stop forcing urgent priority on the free-shipping promo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8154",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-07-31T10:43:46Z",
+    "updatedAt": "2026-07-31T12:29:45Z",
+    "headSha": "d94af15aadd304cc6248a37332154db8099dc292"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe el despliegue bloquear temporalmente sesiones abiertas con precio urgente anterior, o incorporar una transición compatible antes de fusionar?",
+  "rationale": "La dirección comercial futura está aclarada, pero aceptar el precio prometido por un bundle ya cargado frente a forzar una recarga es una decisión de despliegue con impacto directo en pagos.",
+  "options": [
+    {
+      "title": "Añadir transición compatible",
+      "body": "Evitar el `amount-mismatch` para sesiones abiertas mediante una invalidación visible o una compatibilidad temporal y demostrar ambos caminos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la ventana de rechazo",
+      "body": "Fusionar con el riesgo explícito de que sesiones ya cargadas deban recargar antes de completar el pago.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Añadir transición compatible",
+    "body": "Evitar el `amount-mismatch` para sesiones abiertas mediante una invalidación visible o una compatibilidad temporal y demostrar ambos caminos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Está asignado para revisar precisamente checkout, pricing y shipping.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8154.md",
+    "reviewedAt": "2026-07-31T19:37:13.064Z",
+    "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
+  }
+}
