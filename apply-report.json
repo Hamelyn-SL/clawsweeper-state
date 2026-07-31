@@ -1,12 +1,27 @@
 [
   {
+    "number": 8134,
+    "action": "review_comment_synced",
+    "reason": "updated durable Codex review comment"
+  },
+  {
+    "number": 8151,
+    "action": "review_comment_synced",
+    "reason": "updated durable Codex review comment"
+  },
+  {
     "number": 8154,
-    "action": "skipped_stale_review_comment_sync",
-    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-31T19:38:37.703Z, report reviewed_at=2026-07-31T19:37:13.064Z"
+    "action": "review_comment_synced",
+    "reason": "updated durable Codex review comment"
+  },
+  {
+    "number": 8158,
+    "action": "review_comment_synced",
+    "reason": "updated durable Codex review comment"
   },
   {
     "number": 8160,
     "action": "skipped_stale_review_comment_sync",
-    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-31T19:43:58.128Z, report reviewed_at=2026-07-31T19:38:46.223Z"
+    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-07-31T19:43:58.128Z, report reviewed_at=2026-07-31T19:37:36.265Z"
   }
 ]
