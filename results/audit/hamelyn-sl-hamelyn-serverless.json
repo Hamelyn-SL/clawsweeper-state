@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T19:00:25.031Z",
+  "generatedAt": "2026-08-01T01:07:59.098Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 118
   },
   "counts": {
-    "itemRecords": 111,
+    "itemRecords": 116,
     "closedRecords": 767,
-    "missingOpen": 7,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 6,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,64 +37,6 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-21T12:18:31Z",
         "missingReason": "protected_label"
-      },
-      {
-        "number": 8147,
-        "kind": "pull_request",
-        "title": "fix: drain stale todocoleccion price candidates",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T08:24:34Z",
-        "updatedAt": "2026-07-31T08:27:18Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8151,
-        "kind": "pull_request",
-        "title": "docs: sync hamelyn-knowledge for #8150",
-        "labels": [],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-31T08:55:36Z",
-        "updatedAt": "2026-07-31T08:56:14Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8154,
-        "kind": "pull_request",
-        "title": "feat: stop forcing urgent priority on the free-shipping promo",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T10:43:46Z",
-        "updatedAt": "2026-07-31T12:29:45Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8158,
-        "kind": "pull_request",
-        "title": "fix: classify ebay price updates without offer id as permanent",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T10:53:13Z",
-        "updatedAt": "2026-07-31T11:00:26Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8160,
-        "kind": "pull_request",
-        "title": "fix: prevent empty Exotec containers after item filtering",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T12:08:04Z",
-        "updatedAt": "2026-07-31T12:37:01Z",
-        "missingReason": "recently_created"
       },
       {
         "number": 8161,
@@ -130,64 +72,6 @@
       }
     ],
     "missingRecentOpen": [
-      {
-        "number": 8147,
-        "kind": "pull_request",
-        "title": "fix: drain stale todocoleccion price candidates",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T08:24:34Z",
-        "updatedAt": "2026-07-31T08:27:18Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8151,
-        "kind": "pull_request",
-        "title": "docs: sync hamelyn-knowledge for #8150",
-        "labels": [],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-07-31T08:55:36Z",
-        "updatedAt": "2026-07-31T08:56:14Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8154,
-        "kind": "pull_request",
-        "title": "feat: stop forcing urgent priority on the free-shipping promo",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T10:43:46Z",
-        "updatedAt": "2026-07-31T12:29:45Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8158,
-        "kind": "pull_request",
-        "title": "fix: classify ebay price updates without offer id as permanent",
-        "labels": [
-          "size/S"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T10:53:13Z",
-        "updatedAt": "2026-07-31T11:00:26Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8160,
-        "kind": "pull_request",
-        "title": "fix: prevent empty Exotec containers after item filtering",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T12:08:04Z",
-        "updatedAt": "2026-07-31T12:37:01Z",
-        "missingReason": "recently_created"
-      },
       {
         "number": 8161,
         "kind": "pull_request",
