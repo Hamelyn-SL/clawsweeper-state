@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-01T23:44:41.700Z",
+  "updatedAt": "2026-08-01T23:36:30Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8162,
+    "title": "Amazon reutiliza un ASIN global entre catálogos regionales",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:queued",
+      "P1",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-08-01T23:33:29Z",
+    "updatedAt": "2026-08-01T23:36:30Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué contrato persistido y política operativa deben regir los estados `AMBIGUOUS` y `UNRESOLVED` antes de activar la identidad regional en producción?",
+  "rationale": "La corrección exige elegir la autoridad de la selección humana, su auditoría y el rollout de datos existentes; el código actual y la incidencia relacionada no fijan esas reglas.",
+  "options": [
+    {
+      "title": "Aprobar contrato regional gradual",
+      "body": "Definir repositorio por EAN-región, decisión humana versionada y shadow mode por región antes de habilitar escrituras de Listings.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el primer cambio al aislamiento de writes",
+      "body": "Evitar que Listings lea o escriba el ASIN global y mantener los ambiguos en error hasta decidir el modelo persistido.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el comportamiento actual",
+      "body": "Aceptar temporalmente la reutilización global y posponer la corrección, conservando el riesgo de contribuciones regionales inconsistentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar contrato regional gradual",
+    "body": "Definir repositorio por EAN-región, decisión humana versionada y shadow mode por región antes de habilitar escrituras de Listings.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona con trazabilidad más directa y reciente en los módulos Catalog/Listings donde debe materializarse el contrato acordado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
+    "reviewedAt": "2026-08-01T23:44:41.700Z",
+    "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
+  }
+}
