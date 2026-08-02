@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-01T23:44:41.700Z",
-  "updatedAt": "2026-08-01T23:36:30Z",
+  "generatedAt": "2026-08-02T01:05:51.767Z",
+  "updatedAt": "2026-08-01T23:48:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:running",
+      "triage:done",
       "P1",
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-08-01T23:36:30Z"
+    "updatedAt": "2026-08-01T23:48:04Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato persistido y política operativa deben regir los estados `AMBIGUOUS` y `UNRESOLVED` antes de activar la identidad regional en producción?",
-  "rationale": "La corrección exige elegir la autoridad de la selección humana, su auditoría y el rollout de datos existentes; el código actual y la incidencia relacionada no fijan esas reglas.",
+  "question": "¿Qué política permanente debe regir las identidades regionales ambiguas y no resueltas antes de activar la lectura regional en Listings?",
+  "rationale": "El código puede separar el almacenamiento, pero decidir bloqueo, revisión humana, reintentos y rollout afecta operación, catálogo y compatibilidad de seis regiones.",
   "options": [
     {
-      "title": "Aprobar contrato regional gradual",
-      "body": "Definir repositorio por EAN-región, decisión humana versionada y shadow mode por región antes de habilitar escrituras de Listings.",
+      "title": "Aprobar contrato regional y bloqueo seguro",
+      "body": "Persistir candidatos por región y bloquear `AMBIGUOUS`, coordinando la política `UNRESOLVED` con la incidencia relacionada antes del rollout.",
       "recommended": true
     },
     {
-      "title": "Limitar el primer cambio al aislamiento de writes",
-      "body": "Evitar que Listings lea o escriba el ASIN global y mantener los ambiguos en error hasta decidir el modelo persistido.",
+      "title": "Mantener temporalmente el scalar global",
+      "body": "Posponer el cambio y asumir que seguirán existiendo errores regionales y reintentos con identidad potencialmente incorrecta.",
       "recommended": false
     },
     {
-      "title": "Mantener el comportamiento actual",
-      "body": "Aceptar temporalmente la reutilización global y posponer la corrección, conservando el riesgo de contribuciones regionales inconsistentes.",
+      "title": "Limitar el primer despliegue a observabilidad",
+      "body": "Implementar solo shadow mode y comparación regional para reunir evidencia antes de elegir la política de escritura y bloqueo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato regional gradual",
-    "body": "Definir repositorio por EAN-región, decisión humana versionada y shadow mode por región antes de habilitar escrituras de Listings.",
+    "title": "Aprobar contrato regional y bloqueo seguro",
+    "body": "Persistir candidatos por región y bloquear `AMBIGUOUS`, coordinando la política `UNRESOLVED` con la incidencia relacionada antes del rollout.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la persona con trazabilidad más directa y reciente en los módulos Catalog/Listings donde debe materializarse el contrato acordado.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Ha aportado la trazabilidad de los write paths y el caso productivo, y figura entre los contribuidores recientes de las rutas afectadas.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-08-01T23:44:41.700Z",
+    "reviewedAt": "2026-08-02T01:05:51.767Z",
     "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
   }
 }
