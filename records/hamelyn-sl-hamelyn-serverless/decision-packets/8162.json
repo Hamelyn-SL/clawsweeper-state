@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-02T14:44:27.758Z",
-  "updatedAt": "2026-08-02T14:37:01Z",
+  "generatedAt": "2026-08-02T16:09:25.181Z",
+  "updatedAt": "2026-08-02T14:47:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,7 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:running",
+      "triage:done",
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -24,38 +24,42 @@
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-08-02T14:37:01Z"
+    "updatedAt": "2026-08-02T14:47:13Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política permanente debe aplicar Listings cuando el catálogo regional deja varios candidatos compatibles o ninguno?",
-  "rationale": "La selección humana, el bloqueo de writes y el tratamiento de `UNRESOLVED` afectan a inventario y requieren una regla de producto explícita.",
+  "question": "¿Qué política persistida deben seguir los pares regionales `UNRESOLVED` y `AMBIGUOUS`, y qué compatibilidad legacy debe conservarse durante el rollout?",
+  "rationale": "El código puede separar la identidad por región, pero decidir reintentos, bloqueo de Listings y transición de consumidores legacy cambia el comportamiento operativo de inventario.",
   "options": [
     {
-      "title": "Adoptar estados regionales",
-      "body": "Persistir `RESOLVED`, `AMBIGUOUS` y `UNRESOLVED`, bloqueando writes para los dos últimos hasta una decisión auditable.",
+      "title": "Aprobar contrato regional gradual",
+      "body": "Persistir identidades por región, bloquear solo los casos ambiguos y activar por fases tras shadow mode; conservar los escalares legacy mientras existan consumidores.",
       "recommended": true
     },
     {
-      "title": "Mantener el fallback global",
-      "body": "Conservar el ASIN escalar reduce el cambio inmediato, pero mantiene la contaminación entre catálogos.",
+      "title": "Mantener solo observabilidad",
+      "body": "Añadir shadow mode y telemetría sin cambiar todavía la creación de listings hasta decidir la política de estados.",
+      "recommended": false
+    },
+    {
+      "title": "Definir primero la política de no-resolubles",
+      "body": "Resolver la dirección de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599 antes de implementar el contrato regional completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar estados regionales",
-    "body": "Persistir `RESOLVED`, `AMBIGUOUS` y `UNRESOLVED`, bloqueando writes para los dos últimos hasta una decisión auditable.",
+    "title": "Aprobar contrato regional gradual",
+    "body": "Persistir identidades por región, bloquear solo los casos ambiguos y activar por fases tras shadow mode; conservar los escalares legacy mientras existan consumidores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está trabajando el contrato local y tiene historial reciente en el módulo de Listings afectado.",
-    "confidence": "high"
+    "reason": "Está asignado y ha reunido la evidencia de producción, el preflight y la propuesta de rollout.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-08-02T14:44:27.758Z",
+    "reviewedAt": "2026-08-02T16:09:25.181Z",
     "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
   }
 }
