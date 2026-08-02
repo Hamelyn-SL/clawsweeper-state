@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-02T01:05:51.767Z",
-  "updatedAt": "2026-08-01T23:48:04Z",
+  "generatedAt": "2026-08-02T12:08:52.714Z",
+  "updatedAt": "2026-08-02T11:27:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:done",
-      "reporter:JavierHamelyn",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-08-01T23:48:04Z"
+    "updatedAt": "2026-08-02T11:27:22Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política permanente debe regir las identidades regionales ambiguas y no resueltas antes de activar la lectura regional en Listings?",
-  "rationale": "El código puede separar el almacenamiento, pero decidir bloqueo, revisión humana, reintentos y rollout afecta operación, catálogo y compatibilidad de seis regiones.",
+  "question": "¿Qué contrato persistido, política para `AMBIGUOUS`/`UNRESOLVED` y secuencia de rollout regional debe aprobarse antes de modificar Listings Amazon?",
+  "rationale": "El código confirma el defecto, pero los estados terminales, la selección humana, la compatibilidad legacy y cualquier backfill cambian política operativa y datos persistidos.",
   "options": [
     {
-      "title": "Aprobar contrato regional y bloqueo seguro",
-      "body": "Persistir candidatos por región y bloquear `AMBIGUOUS`, coordinando la política `UNRESOLVED` con la incidencia relacionada antes del rollout.",
+      "title": "Aprobar contrato regional escalonado",
+      "body": "Definir identidad por región, bloqueo de ambiguos, shadow mode y activación inicial en FR antes de extenderlo.",
       "recommended": true
     },
     {
-      "title": "Mantener temporalmente el scalar global",
-      "body": "Posponer el cambio y asumir que seguirán existiendo errores regionales y reintentos con identidad potencialmente incorrecta.",
+      "title": "Limitarse a desacoplar escrituras",
+      "body": "Retirar el write path regional de los escalares legacy y mantener la decisión de candidatos en el comportamiento actual temporalmente.",
       "recommended": false
     },
     {
-      "title": "Limitar el primer despliegue a observabilidad",
-      "body": "Implementar solo shadow mode y comparación regional para reunir evidencia antes de elegir la política de escritura y bloqueo.",
+      "title": "Posponer hasta cerrar la política común",
+      "body": "Resolver primero la política de pares sin ASIN de la incidencia relacionada y diseñar ambos estados regionales conjuntamente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato regional y bloqueo seguro",
-    "body": "Persistir candidatos por región y bloquear `AMBIGUOUS`, coordinando la política `UNRESOLVED` con la incidencia relacionada antes del rollout.",
+    "title": "Aprobar contrato regional escalonado",
+    "body": "Definir identidad por región, bloqueo de ambiguos, shadow mode y activación inicial en FR antes de extenderlo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Ha aportado la trazabilidad de los write paths y el caso productivo, y figura entre los contribuidores recientes de las rutas afectadas.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Su historial incorpora varios mercados regionales y está ligado a la expansión que necesita un contrato común.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-08-02T01:05:51.767Z",
+    "reviewedAt": "2026-08-02T12:08:52.714Z",
     "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
   }
 }
