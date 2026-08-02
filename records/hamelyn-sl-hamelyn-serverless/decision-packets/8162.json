@@ -13,7 +13,7 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:queued",
+      "triage:running",
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -54,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
     "reviewedAt": "2026-08-02T14:44:27.758Z",
     "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
   }
