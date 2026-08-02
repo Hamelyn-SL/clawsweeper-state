@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-02T13:20:57.880Z",
-  "updatedAt": "2026-08-02T13:16:14Z",
+  "generatedAt": "2026-08-02T14:44:27.758Z",
+  "updatedAt": "2026-08-02T14:37:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,48 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:no-change",
-      "reporter:JavierHamelyn",
+      "triage:queued",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-08-02T13:16:14Z"
+    "updatedAt": "2026-08-02T14:37:01Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato persistido y política operativa deben aplicarse a identidades Amazon ambiguas o no resueltas antes de habilitar la lectura regional?",
-  "rationale": "El código puede aislar la identidad por región, pero no debe decidir solo cuándo bloquear listings, cómo registrar la selección humana ni el orden de rollout y compatibilidad legacy.",
+  "question": "¿Qué política permanente debe aplicar Listings cuando el catálogo regional deja varios candidatos compatibles o ninguno?",
+  "rationale": "La selección humana, el bloqueo de writes y el tratamiento de `UNRESOLVED` afectan a inventario y requieren una regla de producto explícita.",
   "options": [
     {
-      "title": "Contrato regional con shadow mode",
-      "body": "Persistir candidatos y estados por región, bloquear ambiguos y activar por fases después de validar schemas y un canario reversible.",
+      "title": "Adoptar estados regionales",
+      "body": "Persistir `RESOLVED`, `AMBIGUOUS` y `UNRESOLVED`, bloqueando writes para los dos últimos hasta una decisión auditable.",
       "recommended": true
     },
     {
-      "title": "Mantener el scalar global",
-      "body": "Conservar el flujo actual mientras se acepta que un ASIN regional puede contaminar las demás ejecuciones.",
-      "recommended": false
-    },
-    {
-      "title": "Aislar solo libros inicialmente",
-      "body": "Aplicar la nueva identidad únicamente a `ABIS_BOOK` y posponer las demás familias hasta completar su matriz de schemas.",
+      "title": "Mantener el fallback global",
+      "body": "Conservar el ASIN escalar reduce el cambio inmediato, pero mantiene la contaminación entre catálogos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato regional con shadow mode",
-    "body": "Persistir candidatos y estados por región, bloquear ambiguos y activar por fases después de validar schemas y un canario reversible.",
+    "title": "Adoptar estados regionales",
+    "body": "Persistir `RESOLVED`, `AMBIGUOUS` y `UNRESOLVED`, bloqueando writes para los dos últimos hasta una decisión auditable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado y su trabajo reciente conecta los flujos de Listings con la validación productiva descrita.",
+    "reason": "Está trabajando el contrato local y tiene historial reciente en el módulo de Listings afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-08-02T13:20:57.880Z",
+    "reviewedAt": "2026-08-02T14:44:27.758Z",
     "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
   }
 }
