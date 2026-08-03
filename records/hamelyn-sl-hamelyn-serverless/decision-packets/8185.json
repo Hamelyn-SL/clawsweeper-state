@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T12:06:19.430Z",
+  "updatedAt": "2026-08-03T12:01:41Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8185,
+    "title": "Conexión de Mercadolibre con eDesk ",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:marketplace",
+      "feature",
+      "triage:queued",
+      "reporter:irenegarcia",
+      "P0"
+    ],
+    "createdAt": "2026-08-03T12:01:21Z",
+    "updatedAt": "2026-08-03T12:01:41Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué operación concreta debe cubrir la conexión MercadoLibre-eDesk y cuál será el sistema autoritativo para pedidos, mensajes y estados?",
+  "rationale": "El código actual integra MercadoLibre para operación de marketplace y eDesk para incidencias; la petición no delimita el flujo ni autoriza un modelo de sincronización.",
+  "options": [
+    {
+      "title": "Definir integración de soporte",
+      "body": "Limitar el alcance a crear y actualizar tickets eDesk desde eventos de pedidos o clientes de MercadoLibre.",
+      "recommended": true
+    },
+    {
+      "title": "Usar conector de eDesk",
+      "body": "Validar si eDesk puede conectar MercadoLibre directamente y documentar la configuración externa sin duplicar sincronización interna.",
+      "recommended": false
+    },
+    {
+      "title": "Diseñar sincronización completa",
+      "body": "Abrir una iniciativa separada para pedidos, estados y mensajería con contratos de idempotencia y conciliación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir integración de soporte",
+    "body": "Limitar el alcance a crear y actualizar tickets eDesk desde eventos de pedidos o clientes de MercadoLibre.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Ha trabajado recientemente tanto en el cron de MercadoLibre como en la integración asíncrona de eDesk.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
+    "reviewedAt": "2026-08-03T12:06:19.430Z",
+    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+  }
+}
