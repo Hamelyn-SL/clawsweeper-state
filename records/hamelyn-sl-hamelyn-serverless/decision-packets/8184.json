@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T12:08:48.062Z",
+  "updatedAt": "2026-08-03T11:16:29Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8184,
+    "title": "feat: add per-product drawer assignment in revision v3",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8184",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-08-03T11:09:01Z",
+    "updatedAt": "2026-08-03T11:16:29Z",
+    "headSha": "2eab39674741409205480e5dff2823f6faafb7e8"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se autoriza `EPIC/revision-v3` como vehículo temporal de integración para esta funcionalidad, o debe esperarse a aterrizar V3 en `dev`?",
+  "rationale": "La política exige base `dev`, pero esa rama no contiene la superficie V3; solo el equipo puede decidir el vehículo de integración y la excepción, si procede.",
+  "options": [
+    {
+      "title": "Aterrizar V3 y retargetear",
+      "body": "Integrad la superficie V3 en `dev` y actualizad esta PR contra esa rama antes de fusionarla.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar la excepción épica",
+      "body": "Documentad que `EPIC/revision-v3` es una vía temporal aprobada y definid cómo se trasladará después a `dev`.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aterrizar V3 y retargetear",
+    "body": "Integrad la superficie V3 en `dev` y actualizad esta PR contra esa rama antes de fusionarla.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente y la rama base le conectan con el vehículo de integración de Revisión V3.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8184.md",
+    "reviewedAt": "2026-08-03T12:08:48.062Z",
+    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T12:06:19.430Z",
+  "generatedAt": "2026-08-03T12:07:39.052Z",
   "updatedAt": "2026-08-03T12:01:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,51 +15,45 @@
       "feature",
       "triage:queued",
       "reporter:irenegarcia",
-      "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P0"
     ],
     "createdAt": "2026-08-03T12:01:21Z",
     "updatedAt": "2026-08-03T12:01:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué operación concreta debe cubrir la conexión MercadoLibre-eDesk y cuál será el sistema autoritativo para pedidos, mensajes y estados?",
-  "rationale": "El código actual integra MercadoLibre para operación de marketplace y eDesk para incidencias; la petición no delimita el flujo ni autoriza un modelo de sincronización.",
+  "question": "¿Qué flujo concreto debe cubrir eDesk para Mercado Libre: incidencias internas, mensajes de compradores, estados de pedidos o una combinación priorizada?",
+  "rationale": "La infraestructura actual de eDesk está orientada a incidencias de ecommerce y Supply; elegir otra semántica determinaría el modelo, permisos, datos sincronizados y tratamiento de duplicados.",
   "options": [
     {
-      "title": "Definir integración de soporte",
-      "body": "Limitar el alcance a crear y actualizar tickets eDesk desde eventos de pedidos o clientes de MercadoLibre.",
+      "title": "Definir un MVP de incidencias",
+      "body": "Crear tickets eDesk solo para incidencias operativas de pedidos de Mercado Libre, reutilizando la cola existente con un canal dedicado.",
       "recommended": true
     },
     {
-      "title": "Usar conector de eDesk",
-      "body": "Validar si eDesk puede conectar MercadoLibre directamente y documentar la configuración externa sin duplicar sincronización interna.",
+      "title": "Sincronizar mensajes de compradores",
+      "body": "Diseñar un flujo bidireccional de mensajes con webhooks, trazabilidad y reglas de respuesta antes de comenzar la implementación.",
       "recommended": false
     },
     {
-      "title": "Diseñar sincronización completa",
-      "body": "Abrir una iniciativa separada para pedidos, estados y mensajería con contratos de idempotencia y conciliación.",
+      "title": "Cubrir varios flujos desde el inicio",
+      "body": "Planificar pedidos, incidencias y mensajes como programa multiárea con una especificación operativa y fases explícitas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir integración de soporte",
-    "body": "Limitar el alcance a crear y actualizar tickets eDesk desde eventos de pedidos o clientes de MercadoLibre.",
+    "title": "Definir un MVP de incidencias",
+    "body": "Crear tickets eDesk solo para incidencias operativas de pedidos de Mercado Libre, reutilizando la cola existente con un canal dedicado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Ha trabajado recientemente tanto en el cron de MercadoLibre como en la integración asíncrona de eDesk.",
+    "reason": "Su historial reciente conecta directamente las dos superficies técnicas que habría que extender.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185#issuecomment-5166101052",
-    "reviewedAt": "2026-08-03T12:06:19.430Z",
+    "reviewedAt": "2026-08-03T12:07:39.052Z",
     "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
   }
 }
