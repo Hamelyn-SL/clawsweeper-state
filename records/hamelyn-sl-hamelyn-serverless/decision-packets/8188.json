@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T13:52:42.243Z",
-  "updatedAt": "2026-08-03T13:48:20Z",
+  "generatedAt": "2026-08-03T16:37:28.992Z",
+  "updatedAt": "2026-08-03T16:30:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,54 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:done",
-      "reporter:JavierHamelyn",
+      "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-08-03T13:48:20Z"
+    "updatedAt": "2026-08-03T16:30:54Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba separar la protección inmediata de recovery del posterior programa de auditoría y remediación de condiciones entre regiones?",
-  "rationale": "La exclusión del retry es acotada, pero definir condición canónica, traducciones regionales y reglas de escritura exige evidencia viva y decisión de negocio.",
+  "question": "¿Debe aprobarse el resolver cross-marketplace y su eventual backfill como programa separado después del guard inmediato?",
+  "rationale": "La regla protectora es mecánica, pero elegir condición canónica, tratar evidencia incompleta y autorizar escrituras masivas altera datos remotos y no se deduce con seguridad del clasificador.",
   "options": [
     {
-      "title": "Separar la mitigación",
-      "body": "Priorizar una regla explícita `101078 → UNKNOWN` y planificar después el resolver regional y el backfill.",
+      "title": "Separar mitigación y remediación",
+      "body": "Publicar ahora el guard `101078 → UNKNOWN` y preparar el resolver/backfill como trabajo aprobado con preflight y preview.",
       "recommended": true
     },
     {
-      "title": "Bloque único",
-      "body": "No modificar el clasificador hasta acordar e implementar el resolver regional completo.",
+      "title": "Limitarse al guard",
+      "body": "Mantener los casos `101078` en `UNKNOWN` hasta contar con datos regionales suficientes para definir el resolver.",
+      "recommended": false
+    },
+    {
+      "title": "Autorizar el programa completo",
+      "body": "Patrocinar el diseño del grafo regional y un backfill posterior con controles de pausa, rollback y aprobación humana.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la mitigación",
-    "body": "Priorizar una regla explícita `101078 → UNKNOWN` y planificar después el resolver regional y el backfill.",
+    "title": "Separar mitigación y remediación",
+    "body": "Publicar ahora el guard `101078 → UNKNOWN` y preparar el resolver/backfill como trabajo aprobado con preflight y preview.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial le conecta con la política de retry y el reporte contiene el análisis inicial de la incidencia.",
-    "confidence": "medium"
+    "reason": "Está asignado a la incidencia y su historial reciente cubre las reglas de recovery Amazon afectadas.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-08-03T13:52:42.243Z",
+    "reviewedAt": "2026-08-03T16:37:28.992Z",
     "mainSha": "091475819513b5557a5646a3973089f2b1699054"
   }
 }
