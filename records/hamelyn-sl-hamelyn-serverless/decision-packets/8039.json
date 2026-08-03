@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T09:01:51.689Z",
-  "updatedAt": "2026-07-30T08:42:49Z",
+  "generatedAt": "2026-08-03T10:08:44.172Z",
+  "updatedAt": "2026-08-03T08:57:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,48 +16,47 @@
       "reporter:miguel",
       "triage:done",
       "area:marketplace-sync",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-07-28T20:54:32Z",
-    "updatedAt": "2026-07-30T08:42:49Z"
+    "updatedAt": "2026-08-03T08:57:49Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un listing presente pero no vendible quedar en un estado terminal `REPORT_INACTIVE`, o conservar una ruta recuperable y de retirada hasta confirmar su evolución en Amazon?",
-  "rationale": "La elección determina la semántica persistida, las políticas de reintento y la exposición a sobreventa; no se resuelve de forma segura solo con una clasificación técnica.",
+  "question": "¿Debe una respuesta PUT/PATCH aceptada quedar en un estado intermedio hasta confirmar que el seller la considera `BUYABLE`?",
+  "rationale": "La reconciliación diaria puede corregir estados posteriores, pero no define el contrato de creación, recuperación y retirada del estado inicial.",
   "options": [
     {
-      "title": "Contrato recuperable con retirada",
-      "body": "Añadir una transición específica que no represente conversión, pero siga siendo elegible para retirada y pueda reactivarse cuando el report confirme venta.",
+      "title": "Confirmación asíncrona obligatoria",
+      "body": "Persistir aceptación pendiente y promover a `ACTIVE` tras confirmar disponibilidad remota y `BUYABLE`.",
       "recommended": true
     },
     {
-      "title": "Estado permanente excluido",
-      "body": "Mantener `REPORT_INACTIVE` como terminal y aceptar explícitamente que la retirada requiera otro mecanismo operativo.",
+      "title": "Mantener optimismo reconciliado",
+      "body": "Conservar `ACTIVE` inmediato y aceptar la degradación posterior basada en reportes Amazon.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato recuperable con retirada",
-    "body": "Añadir una transición específica que no represente conversión, pero siga siendo elegible para retirada y pueda reactivarse cuando el report confirme venta.",
+    "title": "Confirmación asíncrona obligatoria",
+    "body": "Persistir aceptación pendiente y promover a `ACTIVE` tras confirmar disponibilidad remota y `BUYABLE`.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre el reconciliador y la recuperación de huérfanos que condicionan esta decisión.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado y ya mantiene la propuesta parcial que debe alinearse con la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8039.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8039#issuecomment-5110017260",
-    "reviewedAt": "2026-07-30T09:01:51.689Z",
-    "mainSha": "fb9450466a1ba11cb30e92b0a59e5db27bd82a78"
+    "reviewedAt": "2026-08-03T10:08:44.172Z",
+    "mainSha": "16f2f3b0a88eb376ea65e34e8978d39810c32bd0"
   }
 }
