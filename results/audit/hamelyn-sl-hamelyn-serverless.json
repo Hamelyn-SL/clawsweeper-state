@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-03T01:08:48.770Z",
+  "generatedAt": "2026-08-03T07:47:25.233Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 119
+    "openItemsSeen": 121
   },
   "counts": {
-    "itemRecords": 117,
-    "closedRecords": 767,
-    "missingOpen": 2,
+    "itemRecords": 115,
+    "closedRecords": 774,
+    "missingOpen": 6,
     "missingEligibleOpen": 1,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 4,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -43,12 +43,69 @@
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/L"
+          "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-31T17:41:40Z",
-        "updatedAt": "2026-07-31T17:45:08Z",
+        "updatedAt": "2026-08-03T07:15:15Z",
         "missingReason": "eligible"
+      },
+      {
+        "number": 8171,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en chore/dependency-major-other",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-08-03T06:53:18Z",
+        "updatedAt": "2026-08-03T07:40:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8172,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en chore/grouped-dependency-updates",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "P2"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-08-03T07:17:29Z",
+        "updatedAt": "2026-08-03T07:17:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8173,
+        "kind": "issue",
+        "title": "Reactivar a Pablo, Marcos y Javier en el pool de reviewers de Lyno",
+        "labels": [
+          "source:admin-panel",
+          "app:infrastructure",
+          "feature",
+          "triage:no-change",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-03T07:25:37Z",
+        "updatedAt": "2026-08-03T07:46:13Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8174,
+        "kind": "pull_request",
+        "title": "chore: reactivate vacationed reviewers in lyno pool",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-03T07:28:43Z",
+        "updatedAt": "2026-08-03T07:30:48Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [
@@ -57,11 +114,11 @@
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/L"
+          "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-07-31T17:41:40Z",
-        "updatedAt": "2026-07-31T17:45:08Z",
+        "updatedAt": "2026-08-03T07:15:15Z",
         "missingReason": "eligible"
       }
     ],
@@ -84,7 +141,65 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 8171,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en chore/dependency-major-other",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "triage:pr-opened",
+          "P2"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-08-03T06:53:18Z",
+        "updatedAt": "2026-08-03T07:40:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8172,
+        "kind": "issue",
+        "title": "🐞 Dependency update: el autofix de CI falló en chore/grouped-dependency-updates",
+        "labels": [
+          "bug",
+          "app:infrastructure",
+          "P2"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-08-03T07:17:29Z",
+        "updatedAt": "2026-08-03T07:17:29Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8173,
+        "kind": "issue",
+        "title": "Reactivar a Pablo, Marcos y Javier en el pool de reviewers de Lyno",
+        "labels": [
+          "source:admin-panel",
+          "app:infrastructure",
+          "feature",
+          "triage:no-change",
+          "P2"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-03T07:25:37Z",
+        "updatedAt": "2026-08-03T07:46:13Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8174,
+        "kind": "pull_request",
+        "title": "chore: reactivate vacationed reviewers in lyno pool",
+        "labels": [
+          "size/XS"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-03T07:28:43Z",
+        "updatedAt": "2026-08-03T07:30:48Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
