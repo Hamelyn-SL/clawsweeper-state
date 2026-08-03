@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-02T16:09:25.181Z",
-  "updatedAt": "2026-08-02T14:47:13Z",
+  "generatedAt": "2026-08-03T16:28:22.908Z",
+  "updatedAt": "2026-08-03T16:15:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,47 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:done",
-      "reporter:JavierHamelyn",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-08-02T14:47:13Z"
+    "updatedAt": "2026-08-03T16:15:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué política persistida deben seguir los pares regionales `UNRESOLVED` y `AMBIGUOUS`, y qué compatibilidad legacy debe conservarse durante el rollout?",
-  "rationale": "El código puede separar la identidad por región, pero decidir reintentos, bloqueo de Listings y transición de consumidores legacy cambia el comportamiento operativo de inventario.",
+  "question": "¿Se aprueba publicar la corrección con `legacy` por defecto y limitar el primer despliegue a `shadow` en Amazon FR?",
+  "rationale": "El contrato cambia almacenamiento, selección de identidad y comportamiento operativo; la evidencia valida previews, pero no decide el rollout ni la compatibilidad legacy.",
   "options": [
     {
-      "title": "Aprobar contrato regional gradual",
-      "body": "Persistir identidades por región, bloquear solo los casos ambiguos y activar por fases tras shadow mode; conservar los escalares legacy mientras existan consumidores.",
+      "title": "Publicar con rollout conservador",
+      "body": "Abrir la PR con `legacy` por defecto y permitir únicamente observación `shadow` en FR tras revisión.",
       "recommended": true
     },
     {
-      "title": "Mantener solo observabilidad",
-      "body": "Añadir shadow mode y telemetría sin cambiar todavía la creación de listings hasta decidir la política de estados.",
-      "recommended": false
-    },
-    {
-      "title": "Definir primero la política de no-resolubles",
-      "body": "Resolver la dirección de https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599 antes de implementar el contrato regional completo.",
+      "title": "Aplazar el cambio operativo",
+      "body": "Conservar la investigación y exigir una definición adicional de la política regional antes de publicar la PR.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato regional gradual",
-    "body": "Persistir identidades por región, bloquear solo los casos ambiguos y activar por fases tras shadow mode; conservar los escalares legacy mientras existan consumidores.",
+    "title": "Publicar con rollout conservador",
+    "body": "Abrir la PR con `legacy` por defecto y permitir únicamente observación `shadow` en FR tras revisión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Está asignado y ha reunido la evidencia de producción, el preflight y la propuesta de rollout.",
+    "person": "MiguelHamelyn",
+    "reason": "Sus cambios recientes mantienen el resolver de catálogo y puede orientar el límite técnico del contrato regional.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-08-02T16:09:25.181Z",
-    "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
+    "reviewedAt": "2026-08-03T16:28:22.908Z",
+    "mainSha": "091475819513b5557a5646a3973089f2b1699054"
   }
 }
