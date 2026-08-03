@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T13:51:29.782Z",
+  "updatedAt": "2026-08-03T13:42:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8188,
+    "title": "Amazon acumula 101078 por condición inconsistente entre marketplaces",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:marketplace",
+      "triage:running",
+      "P1",
+      "reporter:JavierHamelyn"
+    ],
+    "createdAt": "2026-08-03T13:36:22Z",
+    "updatedAt": "2026-08-03T13:42:06Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿La condición regional debe persistirse como estado canónico por EAN y marketplace, o calcularse en un preflight antes de cada write?",
+  "rationale": "La elección determina el modelo de datos, el alcance de migración, la auditoría y la forma segura de reanudar el backfill.",
+  "options": [
+    {
+      "title": "Preflight regional sin migración inicial",
+      "body": "Leer todos los marketplaces activos y permitir únicamente correcciones deterministas, manteniendo los casos ambiguos en revisión humana.",
+      "recommended": true
+    },
+    {
+      "title": "Registro regional persistido",
+      "body": "Crear una fuente de verdad por EAN y marketplace con migración, historial de decisiones y rollout progresivo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preflight regional sin migración inicial",
+    "body": "Leer todos los marketplaces activos y permitir únicamente correcciones deterministas, manteniendo los casos ambiguos en revisión humana.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Ha reunido la evidencia operativa más directa y participa en el historial reciente de las políticas de recuperación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
+    "reviewedAt": "2026-08-03T13:51:29.782Z",
+    "mainSha": "091475819513b5557a5646a3973089f2b1699054"
+  }
+}
