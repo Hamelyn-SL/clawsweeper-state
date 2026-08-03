@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-31T19:38:37.703Z",
-  "updatedAt": "2026-07-31T12:29:45Z",
+  "generatedAt": "2026-08-03T05:29:14.468Z",
+  "updatedAt": "2026-08-03T05:15:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-07-31T10:43:46Z",
-    "updatedAt": "2026-07-31T12:29:45Z",
+    "updatedAt": "2026-08-03T05:15:47Z",
     "headSha": "d94af15aadd304cc6248a37332154db8099dc292"
   },
-  "lane": "merge_risk",
-  "priority": "P2",
-  "question": "¿Debe el despliegue aceptar rechazos transitorios de sesiones antiguas o incorporar compatibilidad temporal para esos importes urgentes?",
-  "rationale": "El PR documenta una incompatibilidad conocida entre cliente anterior y servidor nuevo; el coste operativo aceptable requiere criterio del área.",
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Debe esta entrega aceptar temporalmente el importe de los checkouts urgentes iniciados con el bundle anterior, o bloquearlos hasta que recarguen?",
+  "rationale": "Ambas opciones cambian el tratamiento comercial de pedidos reales durante el despliegue; el código no puede decidir por sí solo si se honra la promoción antigua.",
   "options": [
     {
       "title": "Añadir compatibilidad temporal",
-      "body": "Permitir durante una ventana limitada los importes urgentes generados por el bundle anterior para evitar rechazos al pagar.",
+      "body": "Aceptar de forma acotada los importes urgentes antiguos y retirarlo tras una ventana de despliegue definida.",
       "recommended": true
     },
     {
-      "title": "Aceptar la ventana de despliegue",
-      "body": "Desplegar con coordinación operativa y asumir que las sesiones antiguas deberán recargar antes de reintentar el pago.",
+      "title": "Aceptar el corte transitorio",
+      "body": "Mantener la validación estricta y comunicar que las sesiones abiertas deben recargar antes de pagar.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Añadir compatibilidad temporal",
-    "body": "Permitir durante una ventana limitada los importes urgentes generados por el bundle anterior para evitar rechazos al pagar.",
+    "body": "Aceptar de forma acotada los importes urgentes antiguos y retirarlo tras una ventana de despliegue definida.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor solicitado y tiene historial directo en el recálculo de envío del checkout.",
+    "reason": "Es el revisor asignado y está ligado al cálculo servidor que decide el rechazo de importes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8154.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8154#issuecomment-5146844447",
-    "reviewedAt": "2026-07-31T19:38:37.703Z",
+    "reviewedAt": "2026-08-03T05:29:14.468Z",
     "mainSha": "81bcf5289f60bffbc3c83ef3784aa65e463ea2da"
   }
 }
