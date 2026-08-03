@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:59:32.000Z",
-  "updatedAt": "2026-07-28T08:31:45Z",
+  "generatedAt": "2026-08-03T10:43:28.084Z",
+  "updatedAt": "2026-08-03T10:29:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,52 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:45Z",
-    "updatedAt": "2026-07-28T08:31:45Z"
+    "updatedAt": "2026-08-03T10:29:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse primero `EPIC/revision-v3` en `dev` antes de desarrollar esta mejora, o se autoriza un vehículo de integración alternativo?",
-  "rationale": "La política del repositorio fija `dev` como base, mientras que la UI y API V3 necesarias no existen en esa rama.",
+  "question": "¿Qué vehículo de integración se aprueba para que Revisión V3 y esta mejora lleguen a `dev`?",
+  "rationale": "La interfaz y la API necesarias viven fuera de la rama predeterminada, de modo que la elección de integración determina dónde y cómo puede entregarse el cambio.",
   "options": [
     {
-      "title": "Integrar el epic en `dev`",
-      "body": "Aterrizar Revisión V3 en `dev` y reencolar después esta mejora como cambio acotado.",
+      "title": "Integrar primero el epic",
+      "body": "Aterrizar `EPIC/revision-v3` en `dev` y realizar después esta mejora como una PR focalizada.",
       "recommended": true
     },
     {
-      "title": "Autorizar integración alternativa",
-      "body": "Definir una rama o PR de integración respaldado por el equipo antes de aplicar cambios sobre la superficie V3.",
+      "title": "Autorizar una integración alternativa",
+      "body": "Definir una rama o PR de integración explícitamente respaldada antes de modificar la interfaz V3.",
       "recommended": false
     },
     {
-      "title": "Posponer la mejora",
-      "body": "Mantenerla bloqueada hasta que exista una ruta de aterrizaje estable para V3.",
+      "title": "Posponer el cambio",
+      "body": "Mantener esta mejora bloqueada hasta que exista una ruta estable para publicar Revisión V3.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar el epic en `dev`",
-    "body": "Aterrizar Revisión V3 en `dev` y reencolar después esta mejora como cambio acotado.",
+    "title": "Integrar primero el epic",
+    "body": "Aterrizar `EPIC/revision-v3` en `dev` y realizar después esta mejora como una PR focalizada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su triage reciente documenta el bloqueo de integración y el siguiente paso necesario.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Figura asignado y mantiene los cambios recientes de la superficie V3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8013.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8013#issuecomment-5101534729",
-    "reviewedAt": "2026-07-28T09:59:32.000Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-08-03T10:43:28.084Z",
+    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
   }
 }
