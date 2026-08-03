@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T10:25:16.929Z",
+  "updatedAt": "2026-08-03T10:14:46Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8009,
+    "title": "MercadoLibre withdrawal skips sold listings when mk productType is missing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8009",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:queued",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-07-28T06:03:52Z",
+    "updatedAt": "2026-08-03T10:14:46Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Debe la ruta de `MARK_SYNC_ERROR` sembrar una fila válida cuando falta el documento `mk_*`, o se acepta que el nuevo contrato update-only omita ese diagnóstico?",
+  "rationale": "La PR vinculada elimina un upsert que podía persistir errores, pero no define de forma concluyente cómo conservar el diagnóstico sin recrear documentos incompletos.",
+  "options": [
+    {
+      "title": "Sembrar antes de marcar",
+      "body": "Crear una fila validada desde el stock maestro en los flujos sin documento `mk_*` y conservar el diagnóstico de sincronización.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la omisión",
+      "body": "Mantener update-only y documentar que los errores sobre filas ausentes no se persistirán ni reintentará desde ese estado.",
+      "recommended": false
+    },
+    {
+      "title": "Separar el cambio",
+      "body": "Integrar únicamente los guards de `productType` y aplazar la retirada del upsert hasta acordar el contrato.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Sembrar antes de marcar",
+    "body": "Crear una fila validada desde el stock maestro en los flujos sin documento `mk_*` y conservar el diagnóstico de sincronización.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La revisión de la PR vinculada lo relaciona con la fábrica de mutaciones, el repositorio y las rutas de sincronización afectadas.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8009.md",
+    "reviewedAt": "2026-08-03T10:25:16.929Z",
+    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+  }
+}
