@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T12:08:48.062Z",
-  "updatedAt": "2026-08-03T11:16:29Z",
+  "generatedAt": "2026-08-03T12:12:57.732Z",
+  "updatedAt": "2026-08-03T12:08:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,47 +10,41 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8184",
     "state": "open",
     "labels": [
-      "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 other"
+      "size/XL"
     ],
     "createdAt": "2026-08-03T11:09:01Z",
-    "updatedAt": "2026-08-03T11:16:29Z",
+    "updatedAt": "2026-08-03T12:08:45Z",
     "headSha": "2eab39674741409205480e5dff2823f6faafb7e8"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza `EPIC/revision-v3` como vehículo temporal de integración para esta funcionalidad, o debe esperarse a aterrizar V3 en `dev`?",
-  "rationale": "La política exige base `dev`, pero esa rama no contiene la superficie V3; solo el equipo puede decidir el vehículo de integración y la excepción, si procede.",
+  "question": "¿Debe este cambio integrarse temporalmente en `EPIC/revision-v3` como excepción, o prepararse para entrar únicamente mediante un PR con base `dev` cuando V3 esté listo?",
+  "rationale": "La política del repositorio exige `dev`, pero la funcionalidad pertenece a un epic que aún no existe en la rama por defecto.",
   "options": [
     {
-      "title": "Aterrizar V3 y retargetear",
-      "body": "Integrad la superficie V3 en `dev` y actualizad esta PR contra esa rama antes de fusionarla.",
+      "title": "Preparar la integración en `dev`",
+      "body": "Mantener el trabajo del epic y abrir o retargetear el PR final contra `dev` cuando las dependencias de Revisión V3 estén integradas.",
       "recommended": true
     },
     {
-      "title": "Autorizar la excepción épica",
-      "body": "Documentad que `EPIC/revision-v3` es una vía temporal aprobada y definid cómo se trasladará después a `dev`.",
+      "title": "Autorizar la excepción del epic",
+      "body": "Aceptar explícitamente la base `EPIC/revision-v3` y definir el PR posterior que promocionará el epic completo a `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar V3 y retargetear",
-    "body": "Integrad la superficie V3 en `dev` y actualizad esta PR contra esa rama antes de fusionarla.",
+    "title": "Preparar la integración en `dev`",
+    "body": "Mantener el trabajo del epic y abrir o retargetear el PR final contra `dev` cuando las dependencias de Revisión V3 estén integradas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente y la rama base le conectan con el vehículo de integración de Revisión V3.",
+    "person": "alexcanHamelyn",
+    "reason": "Su experiencia registrada en Revisión V3 le sitúa mejor para validar la integración del flujo dentro del epic.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8184#issuecomment-5166142298",
-    "reviewedAt": "2026-08-03T12:08:48.062Z",
+    "reviewedAt": "2026-08-03T12:12:57.732Z",
     "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
   }
 }
