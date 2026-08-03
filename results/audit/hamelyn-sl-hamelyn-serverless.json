@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-03T07:47:25.233Z",
+  "generatedAt": "2026-08-03T13:31:09.478Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 121
+    "openItemsSeen": 112
   },
   "counts": {
-    "itemRecords": 115,
-    "closedRecords": 774,
-    "missingOpen": 6,
-    "missingEligibleOpen": 1,
+    "itemRecords": 109,
+    "closedRecords": 795,
+    "missingOpen": 3,
+    "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 4,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -39,89 +39,35 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8161,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T17:41:40Z",
-        "updatedAt": "2026-08-03T07:15:15Z",
-        "missingReason": "eligible"
-      },
-      {
-        "number": 8171,
+        "number": 8186,
         "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en chore/dependency-major-other",
+        "title": "PR reminder Slack agrupa por autor en vez de por quien debe actuar",
         "labels": [
           "bug",
-          "app:infrastructure",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-08-03T06:53:18Z",
-        "updatedAt": "2026-08-03T07:40:38Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8172,
-        "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en chore/grouped-dependency-updates",
-        "labels": [
-          "bug",
-          "app:infrastructure",
-          "P2"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-08-03T07:17:29Z",
-        "updatedAt": "2026-08-03T07:17:29Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8173,
-        "kind": "issue",
-        "title": "Reactivar a Pablo, Marcos y Javier en el pool de reviewers de Lyno",
-        "labels": [
           "source:admin-panel",
           "app:infrastructure",
-          "feature",
-          "triage:no-change",
-          "P2"
+          "triage:done",
+          "P1"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-03T07:25:37Z",
-        "updatedAt": "2026-08-03T07:46:13Z",
+        "createdAt": "2026-08-03T13:23:25Z",
+        "updatedAt": "2026-08-03T13:31:01Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 8174,
+        "number": 8187,
         "kind": "pull_request",
-        "title": "chore: reactivate vacationed reviewers in lyno pool",
+        "title": "Deploy to Prod",
         "labels": [
           "size/XS"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-03T07:28:43Z",
-        "updatedAt": "2026-08-03T07:30:48Z",
+        "createdAt": "2026-08-03T13:24:22Z",
+        "updatedAt": "2026-08-03T13:25:39Z",
         "missingReason": "recently_created"
       }
     ],
-    "missingEligibleOpen": [
-      {
-        "number": 8161,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-07-31T17:41:40Z",
-        "updatedAt": "2026-08-03T07:15:15Z",
-        "missingReason": "eligible"
-      }
-    ],
+    "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [
       {
@@ -143,60 +89,31 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8171,
+        "number": 8186,
         "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en chore/dependency-major-other",
+        "title": "PR reminder Slack agrupa por autor en vez de por quien debe actuar",
         "labels": [
           "bug",
-          "app:infrastructure",
-          "triage:pr-opened",
-          "P2"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-08-03T06:53:18Z",
-        "updatedAt": "2026-08-03T07:40:38Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8172,
-        "kind": "issue",
-        "title": "🐞 Dependency update: el autofix de CI falló en chore/grouped-dependency-updates",
-        "labels": [
-          "bug",
-          "app:infrastructure",
-          "P2"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-08-03T07:17:29Z",
-        "updatedAt": "2026-08-03T07:17:29Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8173,
-        "kind": "issue",
-        "title": "Reactivar a Pablo, Marcos y Javier en el pool de reviewers de Lyno",
-        "labels": [
           "source:admin-panel",
           "app:infrastructure",
-          "feature",
-          "triage:no-change",
-          "P2"
+          "triage:done",
+          "P1"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-03T07:25:37Z",
-        "updatedAt": "2026-08-03T07:46:13Z",
+        "createdAt": "2026-08-03T13:23:25Z",
+        "updatedAt": "2026-08-03T13:31:01Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 8174,
+        "number": 8187,
         "kind": "pull_request",
-        "title": "chore: reactivate vacationed reviewers in lyno pool",
+        "title": "Deploy to Prod",
         "labels": [
           "size/XS"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-03T07:28:43Z",
-        "updatedAt": "2026-08-03T07:30:48Z",
+        "createdAt": "2026-08-03T13:24:22Z",
+        "updatedAt": "2026-08-03T13:25:39Z",
         "missingReason": "recently_created"
       }
     ],
