@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T12:07:39.052Z",
-  "updatedAt": "2026-08-03T12:01:41Z",
+  "generatedAt": "2026-08-03T13:52:27.618Z",
+  "updatedAt": "2026-08-03T12:31:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,7 @@
       "source:admin-panel",
       "app:marketplace",
       "feature",
-      "triage:running",
+      "triage:done",
       "reporter:irenegarcia",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
@@ -22,43 +22,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-03T12:01:21Z",
-    "updatedAt": "2026-08-03T12:01:41Z"
+    "updatedAt": "2026-08-03T12:31:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué flujo concreto debe cubrir eDesk para Mercado Libre: incidencias internas, mensajes de compradores, estados de pedidos o una combinación priorizada?",
-  "rationale": "La infraestructura actual de eDesk está orientada a incidencias de ecommerce y Supply; elegir otra semántica determinaría el modelo, permisos, datos sincronizados y tratamiento de duplicados.",
+  "question": "¿Se aprueba una primera fase de preguntas preventa y mensajes postventa, y qué canal, webhook saliente y credenciales de eDesk se usarán?",
+  "rationale": "La decisión define permisos externos, modelo persistente y comportamiento de respuesta; el repositorio no tiene configuración de eDesk para MercadoLibre.",
   "options": [
     {
-      "title": "Definir un MVP de incidencias",
-      "body": "Crear tickets eDesk solo para incidencias operativas de pedidos de Mercado Libre, reutilizando la cola existente con un canal dedicado.",
+      "title": "Primera fase acotada",
+      "body": "Implementar preguntas y mensajes bidireccionales, dejando reclamos, adjuntos y moderación para una fase posterior.",
       "recommended": true
     },
     {
-      "title": "Sincronizar mensajes de compradores",
-      "body": "Diseñar un flujo bidireccional de mensajes con webhooks, trazabilidad y reglas de respuesta antes de comenzar la implementación.",
-      "recommended": false
-    },
-    {
-      "title": "Cubrir varios flujos desde el inicio",
-      "body": "Planificar pedidos, incidencias y mensajes como programa multiárea con una especificación operativa y fases explícitas.",
+      "title": "Incluir reclamos desde el inicio",
+      "body": "Construir las tres categorías juntas, aceptando un alcance mayor de permisos, moderación y reconciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir un MVP de incidencias",
-    "body": "Crear tickets eDesk solo para incidencias operativas de pedidos de Mercado Libre, reutilizando la cola existente con un canal dedicado.",
+    "title": "Primera fase acotada",
+    "body": "Implementar preguntas y mensajes bidireccionales, dejando reclamos, adjuntos y moderación para una fase posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Miguel Angel Hernández Perdomo",
-    "reason": "Su historial reciente conecta directamente las dos superficies técnicas que habría que extender.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre el webhook de MercadoLibre que debe evolucionar para soportar el flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185#issuecomment-5166101052",
-    "reviewedAt": "2026-08-03T12:07:39.052Z",
-    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+    "reviewedAt": "2026-08-03T13:52:27.618Z",
+    "mainSha": "091475819513b5557a5646a3973089f2b1699054"
   }
 }

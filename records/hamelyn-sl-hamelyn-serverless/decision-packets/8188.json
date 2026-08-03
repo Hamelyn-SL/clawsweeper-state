@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T13:51:29.782Z",
-  "updatedAt": "2026-08-03T13:42:06Z",
+  "generatedAt": "2026-08-03T13:52:42.243Z",
+  "updatedAt": "2026-08-03T13:48:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,43 +13,42 @@
       "bug",
       "source:admin-panel",
       "app:marketplace",
-      "triage:done",
+      "triage:running",
       "P1",
       "reporter:JavierHamelyn"
     ],
     "createdAt": "2026-08-03T13:36:22Z",
-    "updatedAt": "2026-08-03T13:42:06Z"
+    "updatedAt": "2026-08-03T13:48:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿La condición regional debe persistirse como estado canónico por EAN y marketplace, o calcularse en un preflight antes de cada write?",
-  "rationale": "La elección determina el modelo de datos, el alcance de migración, la auditoría y la forma segura de reanudar el backfill.",
+  "question": "¿Se aprueba separar la protección inmediata de recovery del posterior programa de auditoría y remediación de condiciones entre regiones?",
+  "rationale": "La exclusión del retry es acotada, pero definir condición canónica, traducciones regionales y reglas de escritura exige evidencia viva y decisión de negocio.",
   "options": [
     {
-      "title": "Preflight regional sin migración inicial",
-      "body": "Leer todos los marketplaces activos y permitir únicamente correcciones deterministas, manteniendo los casos ambiguos en revisión humana.",
+      "title": "Separar la mitigación",
+      "body": "Priorizar una regla explícita `101078 → UNKNOWN` y planificar después el resolver regional y el backfill.",
       "recommended": true
     },
     {
-      "title": "Registro regional persistido",
-      "body": "Crear una fuente de verdad por EAN y marketplace con migración, historial de decisiones y rollout progresivo.",
+      "title": "Bloque único",
+      "body": "No modificar el clasificador hasta acordar e implementar el resolver regional completo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preflight regional sin migración inicial",
-    "body": "Leer todos los marketplaces activos y permitir únicamente correcciones deterministas, manteniendo los casos ambiguos en revisión humana.",
+    "title": "Separar la mitigación",
+    "body": "Priorizar una regla explícita `101078 → UNKNOWN` y planificar después el resolver regional y el backfill.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Ha reunido la evidencia operativa más directa y participa en el historial reciente de las políticas de recuperación.",
-    "confidence": "high"
+    "reason": "El historial le conecta con la política de retry y el reporte contiene el análisis inicial de la incidencia.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8188.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8188#issuecomment-5167219624",
-    "reviewedAt": "2026-08-03T13:51:29.782Z",
+    "reviewedAt": "2026-08-03T13:52:42.243Z",
     "mainSha": "091475819513b5557a5646a3973089f2b1699054"
   }
 }
