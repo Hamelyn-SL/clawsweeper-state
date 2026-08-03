@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T13:52:27.618Z",
+  "generatedAt": "2026-08-03T13:58:55.512Z",
   "updatedAt": "2026-08-03T12:31:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,46 +15,49 @@
       "feature",
       "triage:done",
       "reporter:irenegarcia",
-      "P2",
-      "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-03T12:01:21Z",
     "updatedAt": "2026-08-03T12:31:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una primera fase de preguntas preventa y mensajes postventa, y qué canal, webhook saliente y credenciales de eDesk se usarán?",
-  "rationale": "La decisión define permisos externos, modelo persistente y comportamiento de respuesta; el repositorio no tiene configuración de eDesk para MercadoLibre.",
+  "question": "¿Se aprueba el despliegue por fases, empezando por preguntas y mensajes bidireccionales, y dejando reclamaciones para una segunda fase con sus contratos específicos?",
+  "rationale": "El código actual no define el canal de eDesk, el contrato de respuesta ni las reglas de cada tipo de conversación; esas decisiones determinan el modelo persistente y los workers necesarios.",
   "options": [
     {
-      "title": "Primera fase acotada",
-      "body": "Implementar preguntas y mensajes bidireccionales, dejando reclamos, adjuntos y moderación para una fase posterior.",
+      "title": "Aprobar fases separadas",
+      "body": "Implementar primero preguntas y mensajes con mapeos persistentes e idempotencia, y planificar reclamaciones después de validar sus permisos y eventos.",
       "recommended": true
     },
     {
-      "title": "Incluir reclamos desde el inicio",
-      "body": "Construir las tres categorías juntas, aceptando un alcance mayor de permisos, moderación y reconciliación.",
+      "title": "Incluir reclamaciones desde el inicio",
+      "body": "Diseñar un programa único que cubra los tres flujos, asumiendo mayor alcance, configuración externa y tiempo de validación.",
+      "recommended": false
+    },
+    {
+      "title": "Limitarse a tickets internos",
+      "body": "Crear tickets sin respuesta de vuelta al marketplace, descartando el objetivo bidireccional confirmado por la persona reportante.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Primera fase acotada",
-    "body": "Implementar preguntas y mensajes bidireccionales, dejando reclamos, adjuntos y moderación para una fase posterior.",
+    "title": "Aprobar fases separadas",
+    "body": "Implementar primero preguntas y mensajes con mapeos persistentes e idempotencia, y planificar reclamaciones después de validar sus permisos y eventos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre el webhook de MercadoLibre que debe evolucionar para soportar el flujo.",
-    "confidence": "high"
+    "reason": "Es la persona con procedencia más directa sobre el endpoint de MercadoLibre que debe evolucionar para recibir el flujo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185#issuecomment-5166101052",
-    "reviewedAt": "2026-08-03T13:52:27.618Z",
+    "reviewedAt": "2026-08-03T13:58:55.512Z",
     "mainSha": "091475819513b5557a5646a3973089f2b1699054"
   }
 }
