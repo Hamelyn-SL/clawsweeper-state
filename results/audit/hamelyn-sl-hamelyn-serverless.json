@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-04T07:28:20.164Z",
+  "generatedAt": "2026-08-04T13:14:00.496Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 120
+    "openItemsSeen": 111
   },
   "counts": {
-    "itemRecords": 117,
-    "closedRecords": 804,
+    "itemRecords": 108,
+    "closedRecords": 819,
     "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
@@ -39,29 +39,30 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8191,
+        "number": 8214,
+        "kind": "issue",
+        "title": "mercadolibre-report: la guarda sheet-id se calibra sobre la población patológica y desarma el cierre de zombis",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:running",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-04T13:00:09Z",
+        "updatedAt": "2026-08-04T13:12:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8215,
         "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "title": "feat: turn the reception panel v2 prototype into a working panel",
         "labels": [
           "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-04T05:40:58Z",
-        "updatedAt": "2026-08-04T07:20:24Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8205,
-        "kind": "pull_request",
-        "title": "chore: bump the npm-security-auxiliary group across 2 directories with 1 update",
-        "labels": [
-          "size/S",
-          "dependencies",
-          "javascript"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-08-04T07:25:13Z",
-        "updatedAt": "2026-08-04T07:26:56Z",
+        "createdAt": "2026-08-04T13:06:12Z",
+        "updatedAt": "2026-08-04T13:06:26Z",
         "missingReason": "recently_created"
       }
     ],
@@ -87,29 +88,30 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8191,
+        "number": 8214,
+        "kind": "issue",
+        "title": "mercadolibre-report: la guarda sheet-id se calibra sobre la población patológica y desarma el cierre de zombis",
+        "labels": [
+          "bug",
+          "app:marketplace",
+          "triage:running",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-04T13:00:09Z",
+        "updatedAt": "2026-08-04T13:12:41Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8215,
         "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "title": "feat: turn the reception panel v2 prototype into a working panel",
         "labels": [
           "size/XXL"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-04T05:40:58Z",
-        "updatedAt": "2026-08-04T07:20:24Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8205,
-        "kind": "pull_request",
-        "title": "chore: bump the npm-security-auxiliary group across 2 directories with 1 update",
-        "labels": [
-          "size/S",
-          "dependencies",
-          "javascript"
-        ],
-        "authorAssociation": "NONE",
-        "createdAt": "2026-08-04T07:25:13Z",
-        "updatedAt": "2026-08-04T07:26:56Z",
+        "createdAt": "2026-08-04T13:06:12Z",
+        "updatedAt": "2026-08-04T13:06:26Z",
         "missingReason": "recently_created"
       }
     ],
