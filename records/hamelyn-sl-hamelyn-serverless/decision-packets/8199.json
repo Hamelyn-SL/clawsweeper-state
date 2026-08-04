@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T06:45:57.818Z",
-  "updatedAt": "2026-08-04T06:42:45Z",
+  "generatedAt": "2026-08-04T07:53:29.454Z",
+  "updatedAt": "2026-08-04T06:52:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "app:infrastructure",
-      "triage:running",
-      "P3",
-      "impact:security",
-      "issue-rating: ➖ n/a",
+      "triage:blocked",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "impact:security",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-04T06:38:56Z",
-    "updatedAt": "2026-08-04T06:42:45Z"
+    "updatedAt": "2026-08-04T06:52:59Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe el repositorio limitarse a un recordatorio periódico manual o incorporar un detector de versiones de SheetJS al workflow privilegiado de dependencias?",
-  "rationale": "La elección determina la fiabilidad aceptable, el canal de aviso y si el workflow con permisos de escritura puede actuar automáticamente ante un proveedor externo.",
+  "question": "¿Debe el equipo incorporar la comprobación oficial de SheetJS al flujo semanal `[Deps] Grouped` o gestionar el tarball mediante una revisión manual periódica?",
+  "rationale": "Ambas opciones son viables, pero determinan la política operativa, el alcance del workflow compartido y quién asume la autorización de la credencial.",
   "options": [
     {
-      "title": "Detector de sólo lectura",
-      "body": "Añadir una comprobación programada que consulte una fuente de versiones verificable y abra una issue, sin modificar manifests ni lockfile automáticamente.",
+      "title": "Automatizar con `xlsx.lst`",
+      "body": "Añadir una comprobación del listado oficial de SheetJS y abrir una PR cuando la versión del tarball supere la declarada.",
       "recommended": true
     },
     {
-      "title": "Recordatorio manual trimestral",
-      "body": "Crear una revisión recurrente documentada y conservar el bump manual mientras no haya una API o índice del CDN suficientemente estable.",
+      "title": "Programar revisión manual",
+      "body": "Mantener el workflow actual y crear un recordatorio recurrente para revisar el CDN y preparar el bump manualmente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Detector de sólo lectura",
-    "body": "Añadir una comprobación programada que consulte una fuente de versiones verificable y abra una issue, sin modificar manifests ni lockfile automáticamente.",
+    "title": "Automatizar con `xlsx.lst`",
+    "body": "Añadir una comprobación del listado oficial de SheetJS y abrir una PR cuando la versión del tarball supere la declarada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "Introdujo la automatización agrupada y sus validadores, que serían la base de cualquiera de las dos opciones.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial conecta directamente con el diseño y mantenimiento reciente de la automatización agrupada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8199.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8199#issuecomment-5175570287",
-    "reviewedAt": "2026-08-04T06:45:57.818Z",
-    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+    "reviewedAt": "2026-08-04T07:53:29.454Z",
+    "mainSha": "cb25aecd83ebbdc2dbaf1dfff7acbb1030d76b82"
   }
 }
