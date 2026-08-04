@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:56:54.760Z",
-  "updatedAt": "2026-07-28T08:49:05Z",
+  "generatedAt": "2026-08-04T09:40:14.915Z",
+  "updatedAt": "2026-08-04T09:01:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,52 +15,51 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:55Z",
-    "updatedAt": "2026-07-28T08:49:05Z"
+    "updatedAt": "2026-08-04T09:01:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El dashboard del operario debe mostrar un ranking nominal del resto del equipo o sólo su posición y métricas agregadas anónimas?",
-  "rationale": "La implementación no puede resolver por sí sola el equilibrio entre utilidad operativa, privacidad y percepción de evaluación entre compañeros.",
+  "question": "¿El dashboard del operario debe mostrar nombres y posiciones del resto del equipo, o solo la posición propia y métricas agregadas anónimas?",
+  "rationale": "La maqueta propone un ranking nominal, pero la discusión de triage lo identifica como una decisión de privacidad que el código no puede resolver por sí solo.",
   "options": [
     {
-      "title": "Ranking anónimo para operario",
-      "body": "Mostrar su posición y comparativas agregadas, reservando los nombres y rankings completos para el panel de supervisor.",
+      "title": "Ranking anónimo",
+      "body": "Mostrar la posición propia y agregados del equipo sin identificar a otros operarios.",
       "recommended": true
     },
     {
-      "title": "Ranking nominal visible",
-      "body": "Mantener los nombres en la tablet con una política operativa explícita de acceso, comunicación y uso del dato.",
+      "title": "Ranking nominal",
+      "body": "Mostrar nombres y posiciones del equipo, dejando explícita la política operativa que lo autoriza.",
       "recommended": false
     },
     {
-      "title": "Sin ranking de equipo",
-      "body": "Limitar la tablet a las métricas personales y la media del equipo, sin posiciones relativas.",
+      "title": "Visibilidad configurable",
+      "body": "Permitir el ranking nominal solo en la vista de supervisor y mantener el dashboard de puesto anónimo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Ranking anónimo para operario",
-    "body": "Mostrar su posición y comparativas agregadas, reservando los nombres y rankings completos para el panel de supervisor.",
+    "title": "Ranking anónimo",
+    "body": "Mostrar la posición propia y agregados del equipo sin identificar a otros operarios.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "daniellopez",
-    "reason": "Es el referente del flujo operativo y de las maquetas que introducen el ranking visible.",
-    "confidence": "medium"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Es la mejor señal histórica disponible en la superficie de productividad, aunque la decisión corresponde a Producto y Operaciones.",
+    "confidence": "low"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8017.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8017#issuecomment-5101539679",
-    "reviewedAt": "2026-07-28T09:56:54.760Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-08-04T09:40:14.915Z",
+    "mainSha": "977c183505f6e42a56a48043a75747fce3b1edc1"
   }
 }
