@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T06:47:29.118Z",
-  "updatedAt": "2026-08-04T06:27:22Z",
+  "generatedAt": "2026-08-04T08:51:20.529Z",
+  "updatedAt": "2026-08-04T08:05:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 security-boundary"
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-04T06:24:00Z",
-    "updatedAt": "2026-08-04T06:27:22Z",
+    "updatedAt": "2026-08-04T08:05:31Z",
     "headSha": "4bc0117413b4716793c051e288086feb4915a55f"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se aprueba `cdn.sheetjs.com` como origen de runtime para el tarball inmutable de SheetJS 0.20.3 en este monorepo?",
-  "rationale": "La remediación sustituye npm por una fuente externa; el checksum reduce el riesgo técnico, pero aceptar su procedencia y operación es una decisión de cadena de suministro.",
+  "question": "¿Se aprueba `cdn.sheetjs.com` como origen de suministro para la dependencia parcheada, con el SHA-512 fijado en el lockfile?",
+  "rationale": "La corrección elimina vulnerabilidades alcanzables, pero cambia el origen de distribución de todas las instalaciones del monorepo y requiere una decisión explícita sobre esa cadena de suministro.",
   "options": [
     {
-      "title": "Aprobar el tarball oficial",
-      "body": "Aceptar el CDN de SheetJS tras una instalación limpia y una prueba dirigida de los flujos XLSX con el checksum del lockfile.",
+      "title": "Aprobar el CDN oficial con prueba",
+      "body": "Aceptar el tarball oficial fijado por checksum después de adjuntar una instalación limpia y una ejecución real del parser.",
       "recommended": true
     },
     {
-      "title": "Elegir otra fuente aprobada",
-      "body": "Mantener esta PR en pausa mientras se define una alternativa de suministro o una migración de librería equivalente.",
+      "title": "Elegir otra distribución",
+      "body": "Pausar esta PR y definir una fuente aprobada alternativa que ofrezca una versión no vulnerable de SheetJS.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el tarball oficial",
-    "body": "Aceptar el CDN de SheetJS tras una instalación limpia y una prueba dirigida de los flujos XLSX con el checksum del lockfile.",
+    "title": "Aprobar el CDN oficial con prueba",
+    "body": "Aceptar el tarball oficial fijado por checksum después de adjuntar una instalación limpia y una ejecución real del parser.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Introdujo el helper y las rutas de carga que constituyen la superficie central afectada.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente mantiene los manifiestos y el lockfile afectados, y ya revisó la propuesta anterior.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8198.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8198#issuecomment-5175568642",
-    "reviewedAt": "2026-08-04T06:47:29.118Z",
-    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+    "reviewedAt": "2026-08-04T08:51:20.529Z",
+    "mainSha": "24dc2085c43a7e52aca9cb61514d75963320c217"
   }
 }
