@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-04T01:04:55.045Z",
+  "generatedAt": "2026-08-04T07:28:20.164Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 111
+    "openItemsSeen": 120
   },
   "counts": {
-    "itemRecords": 110,
-    "closedRecords": 797,
-    "missingOpen": 1,
+    "itemRecords": 117,
+    "closedRecords": 804,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -37,6 +37,32 @@
         "createdAt": "2026-07-12T11:43:07Z",
         "updatedAt": "2026-07-21T12:18:31Z",
         "missingReason": "protected_label"
+      },
+      {
+        "number": 8191,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-04T05:40:58Z",
+        "updatedAt": "2026-08-04T07:20:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8205,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security-auxiliary group across 2 directories with 1 update",
+        "labels": [
+          "size/S",
+          "dependencies",
+          "javascript"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-08-04T07:25:13Z",
+        "updatedAt": "2026-08-04T07:26:56Z",
+        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -59,7 +85,34 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 8191,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-04T05:40:58Z",
+        "updatedAt": "2026-08-04T07:20:24Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8205,
+        "kind": "pull_request",
+        "title": "chore: bump the npm-security-auxiliary group across 2 directories with 1 update",
+        "labels": [
+          "size/S",
+          "dependencies",
+          "javascript"
+        ],
+        "authorAssociation": "NONE",
+        "createdAt": "2026-08-04T07:25:13Z",
+        "updatedAt": "2026-08-04T07:26:56Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
