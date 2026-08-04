@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-04T13:38:21.563Z",
+  "generated_at": "2026-08-04T14:33:31.257Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-04T10:38:20.025Z",
+  "since": "2026-08-04T11:33:28.050Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 25,
-  "commands_seen": 0,
+  "scanned_comments": 23,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8215:5179898457:2026-08-04T13:43:02Z:automerge",
+      "comment_id": "5179898457",
+      "comment_version_key": "5179898457:2026-08-04T13:43:02Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8215#issuecomment-5179898457",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8215,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-04T13:43:02Z",
+      "comment_updated_at": "2026-08-04T13:43:02Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR añade un panel de recepción V2 con búsqueda por tracking e ISBN, recepción por bultos, productividad e incidencias persistidas de bultos faltantes.\n\nReproducibility: Sí, en código: una petición sin credenciales al `GET` de pickup alcanza el nuevo payload porque la ruta no llama a `getAuthorizedUserAppRouter`. La prueba completa de almacén sigue pendiente.",
+      "review_followup": "- [P1] Hay correcciones mecánicas y acotadas en rutas y componente, aunque la prueba real posterior debe aportarla quien conoce el entorno de almacén.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8215 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 1537,
+    "total_ms": 3207,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1534
+        "ms": 1782
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1
+        "ms": 1420
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
