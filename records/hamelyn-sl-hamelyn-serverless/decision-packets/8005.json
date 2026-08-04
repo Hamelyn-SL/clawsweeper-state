@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-31T09:43:59.233Z",
-  "updatedAt": "2026-07-31T08:18:06Z",
+  "generatedAt": "2026-08-04T09:21:28.720Z",
+  "updatedAt": "2026-08-04T09:01:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,47 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-07-31T08:18:06Z"
+    "updatedAt": "2026-08-04T09:01:27Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué decisiones operativas deben aprobarse antes de secuenciar auditoría, objetivo de ritmo y vídeos del puesto V3?",
-  "rationale": "Las sub-issues describen alternativas funcionales que el código no puede decidir de forma segura, especialmente la cuota de auditoría y la métrica de calidad.",
+  "question": "¿Qué rama y plan de integración llevarán las sub-issues de Revisión V3 a `dev`, y quién confirma las cuatro decisiones operativas compartidas?",
+  "rationale": "Las decisiones cambian contratos de auditoría, configuración y métricas; no se pueden inferir con seguridad desde el código actual.",
   "options": [
     {
-      "title": "Aprobar decisiones y mantener el epic",
-      "body": "Definir cuota, criterio de coincidencia, objetivo de ritmo y orden de vídeos; después continuar cada sub-issue según sus dependencias.",
+      "title": "Patrocinar la integración por fases",
+      "body": "Confirmar la rama de destino y resolver las decisiones pendientes antes de promover las sub-issues en el orden de dependencias.",
       "recommended": true
     },
     {
-      "title": "Reducir el alcance inicial",
-      "body": "Posponer auditoría, paneles y avisos motivacionales para integrar primero productividad y cambio individual de gaveta.",
+      "title": "Pausar el programa V3",
+      "body": "Mantener las sub-issues bloqueadas hasta que Operaciones confirme requisitos y fecha de activación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar decisiones y mantener el epic",
-    "body": "Definir cuota, criterio de coincidencia, objetivo de ritmo y orden de vídeos; después continuar cada sub-issue según sus dependencias.",
+    "title": "Patrocinar la integración por fases",
+    "body": "Confirmar la rama de destino y resolver las decisiones pendientes antes de promover las sub-issues en el orden de dependencias.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Ha estructurado el paquete en sub-issues y conectó sus dependencias y bloqueos operativos.",
+    "reason": "Es la persona que estructuró las entregas, dependencias y preguntas abiertas de este paquete.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-07-31T09:43:59.233Z",
-    "mainSha": "cd21cc4f963350e0545c4432168c983436d361ed"
+    "reviewedAt": "2026-08-04T09:21:28.720Z",
+    "mainSha": "ec89b82f3ed893534ad88062d0fe89edb92eaa37"
   }
 }
