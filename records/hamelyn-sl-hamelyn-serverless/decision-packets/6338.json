@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:29:02.303Z",
-  "updatedAt": "2026-07-21T12:18:41Z",
+  "generatedAt": "2026-08-04T23:19:40.192Z",
+  "updatedAt": "2026-08-04T23:07:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,45 +16,46 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:watcher",
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-06-10T09:34:30Z",
-    "updatedAt": "2026-07-21T12:18:41Z"
+    "updatedAt": "2026-08-04T23:07:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la firma `shipping.default.error` de MercadoLibre considerarse recuperable por reintento de create o requerir corrección manual de configuración?",
-  "rationale": "La evidencia de producción identifica el texto de la firma, pero no aporta su estado HTTP ni una semántica estable que permita distinguir un fallo transitorio de uno permanente.",
+  "question": "¿Debe `shipping.default.error` reintentarse como fallo transitorio de MercadoLibre, y bajo qué código o estado HTTP verificable?",
+  "rationale": "La firma observada no incluye en la incidencia una prueba suficiente de que todos sus casos sean recuperables; ampliar la política cambia qué publicaciones se reintentan automáticamente.",
   "options": [
     {
-      "title": "Confirmar la semántica antes de ampliar",
-      "body": "Capturar una respuesta completa y redactada del proveedor, y clasificarla con una regla específica y una prueba de regresión.",
+      "title": "Clasificar solo la variante demostrada",
+      "body": "Solicitar una muestra redactada con código, estado y resultado de reintento, y añadir una regla limitada con prueba de regresión.",
       "recommended": true
     },
     {
-      "title": "Aplicar un reintento temporal",
-      "body": "Tratar la firma como transitoria durante un periodo limitado y vigilar si los SKUs terminan publicándose o vuelven a fallar.",
+      "title": "Mantenerla fuera de recovery",
+      "body": "Conservar la clasificación actual hasta que MercadoLibre o la telemetría demuestren que esta firma es transitoria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la semántica antes de ampliar",
-    "body": "Capturar una respuesta completa y redactada del proveedor, y clasificarla con una regla específica y una prueba de regresión.",
+    "title": "Clasificar solo la variante demostrada",
+    "body": "Solicitar una muestra redactada con código, estado y resultado de reintento, y añadir una regla limitada con prueba de regresión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "El PR relacionado delimitó la recuperación actual de create y es el mejor punto de continuidad técnica.",
+    "reason": "Implementó el recovery original y conoce el límite entre errores recuperables y permanentes de create.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6338.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6338#issuecomment-4909866101",
-    "reviewedAt": "2026-07-21T14:29:02.303Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:19:40.192Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

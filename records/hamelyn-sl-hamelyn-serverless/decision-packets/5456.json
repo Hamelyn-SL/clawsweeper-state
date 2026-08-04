@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T23:40:27.156Z",
-  "updatedAt": "2026-07-28T23:31:42Z",
+  "generatedAt": "2026-08-04T23:20:44.501Z",
+  "updatedAt": "2026-08-04T22:56:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,51 +16,47 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
-      "impact:other",
-      "issue-rating: 🥈 silver"
+      "issue-rating: 🥈 silver",
+      "origin:watcher",
+      "mk:todocoleccion"
     ],
     "createdAt": "2026-04-24T08:37:28Z",
-    "updatedAt": "2026-07-28T23:31:42Z"
+    "updatedAt": "2026-08-04T22:56:55Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `create` mantener el corte del lote tras un rate limit, o debe adoptar una política documentada de espera y reanudación?",
-  "rationale": "La mitigación fusionada resolvió el bloqueo entre familias, pero elegir reintentos o reanudación sin cuota real cambia la presión sobre un proveedor externo.",
+  "question": "¿Debe `create` mantener el corte del lote de `products` ante rate limit, o adoptar una reanudación con backoff y límites definidos por TodoColeccion?",
+  "rationale": "El código actual evita la cascada entre familias, pero la política restante depende de la tolerancia del proveedor y no existe una incidencia reciente para calibrarla.",
   "options": [
     {
-      "title": "Conservar la política actual",
-      "body": "Mantener el corte del lote de productos y reabrir solo con una nueva evidencia causal de rate limit.",
+      "title": "Conservar el corte protector",
+      "body": "Mantener el comportamiento actual y cerrar la incidencia como mitigada mientras no reaparezca una señal causal de rate limit.",
       "recommended": true
     },
     {
-      "title": "Definir reanudación controlada",
-      "body": "Acordar cuota, backoff máximo y observabilidad antes de reintentar los chunks restantes.",
-      "recommended": false
-    },
-    {
-      "title": "Separar aún más los productos",
-      "body": "Valorar scopes independientes para create y precio si la telemetría demuestra que comparten indebidamente el límite remoto.",
+      "title": "Definir reanudación limitada",
+      "body": "Acordar cuota, espera, máximo de reintentos y señal de recuperación antes de implementar una reanudación del lote `products`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar la política actual",
-    "body": "Mantener el corte del lote de productos y reabrir solo con una nueva evidencia causal de rate limit.",
+    "title": "Conservar el corte protector",
+    "body": "Mantener el comportamiento actual y cerrar la incidencia como mitigada mientras no reaparezca una señal causal de rate limit.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Fusionó la mitigación vigente y mantiene cambios recientes en el cliente y recovery de TodoColeccion.",
+    "person": "HamelynDev",
+    "reason": "Está asignado a la incidencia y su historial incluye la mitigación fusionada del breaker.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5456.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5456#issuecomment-4909522195",
-    "reviewedAt": "2026-07-28T23:40:27.156Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-08-04T23:20:44.501Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

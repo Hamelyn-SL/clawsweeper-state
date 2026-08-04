@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:31:21.006Z",
-  "updatedAt": "2026-07-21T12:18:54Z",
+  "generatedAt": "2026-08-04T23:24:25.954Z",
+  "updatedAt": "2026-08-04T23:09:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,46 @@
       "feature",
       "reporter:javier",
       "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
       "impact:security",
       "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:panel"
     ],
     "createdAt": "2026-06-16T21:39:40Z",
-    "updatedAt": "2026-07-21T12:18:54Z"
+    "updatedAt": "2026-08-04T23:09:09Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué modelo de acceso, anonimización, retención y aprobación debe regir cualquier `Hamelyn_DEV_BASE` derivada de producción antes de automatizar sandboxes?",
-  "rationale": "El código actual demuestra un patrón local útil, pero no puede resolver por sí solo quién puede leer, generar, conservar o destruir datos derivados de producción.",
+  "question": "¿Debe el primer hito usar cohorts reales anonimizados en Atlas o limitarse a fixtures sintéticas hasta aprobar el modelo de acceso y anonimización?",
+  "rationale": "La elección decide exposición de PII, permisos de base de datos, operaciones destructivas y responsabilidad operativa; no puede resolverse de forma segura solo desde el código actual.",
   "options": [
     {
-      "title": "Base anonimizada con permisos segregados",
-      "body": "Aprobar una base curada con transformaciones versionadas, acceso mínimo y sandboxes creadas solo desde esa base.",
+      "title": "Atlas con cohorts anonimizados",
+      "body": "Aprobar un contrato de anonimización, cuentas con privilegios mínimos y refresh controlado antes de implementar los comandos.",
       "recommended": true
     },
     {
-      "title": "Solo fixtures sintéticas inicialmente",
-      "body": "Evitar datos derivados de producción y crear el tooling de sandbox sobre fixtures hasta aprobar la gobernanza de datos.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener sandboxes puntuales locales",
-      "body": "Conservar la utilidad de fulfillment y posponer una plataforma compartida hasta disponer de capacidad operativa y de seguridad.",
+      "title": "Fixtures sintéticas primero",
+      "body": "Entregar sandboxes aisladas sin datos reales y posponer la fidelidad basada en cohorts hasta completar la revisión de seguridad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Base anonimizada con permisos segregados",
-    "body": "Aprobar una base curada con transformaciones versionadas, acceso mínimo y sandboxes creadas solo desde esa base.",
+    "title": "Atlas con cohorts anonimizados",
+    "body": "Aprobar un contrato de anonimización, cuentas con privilegios mínimos y refresh controlado antes de implementar los comandos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es la persona con el antecedente técnico más cercano en la creación y protección de sandboxes MongoDB.",
+    "person": "JavierHamelyn",
+    "reason": "Ha definido el objetivo y también introdujo el único patrón de sandbox comparable en el repositorio.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6462.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6462#issuecomment-4909962993",
-    "reviewedAt": "2026-07-21T13:31:21.006Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:24:25.954Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

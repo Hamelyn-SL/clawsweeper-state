@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:08:08.526Z",
-  "updatedAt": "2026-07-21T12:18:36Z",
+  "generatedAt": "2026-08-04T23:26:01.465Z",
+  "updatedAt": "2026-08-04T23:12:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,47 @@
       "app:ecommerce",
       "triage:done",
       "reporter:victor",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-07-01T10:05:41Z",
-    "updatedAt": "2026-07-21T12:18:36Z"
+    "updatedAt": "2026-08-04T23:12:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `SearchPage` emitir `hreflang` exclusivamente cuando la petición procede de un alias público de categoría/subcategoría indexable, manteniendo las búsquedas arbitrarias sin alternates?",
-  "rationale": "La corrección de Brasil es mecánica, pero la misma vista sirve búsquedas genéricas y categorías canónicas; la frontera indexable debe quedar decidida para evitar clústeres SEO no deseados.",
+  "question": "¿Debe `SearchPage` generar hreflang únicamente para aliases públicos de categoría/subcategoría, o deben migrarse esas rutas a una superficie SEO dedicada?",
+  "rationale": "El mismo componente atiende búsquedas libres y rutas SEO; la decisión define qué URLs pueden declararse equivalentes internacionalmente sin crear alternates inválidos.",
   "options": [
     {
-      "title": "Limitar alternates a aliases públicos",
-      "body": "Emitir `hreflang` solo cuando la ruta de origen identifica una categoría o subcategoría pública validada, y añadir `pt-BR` al helper compartido.",
+      "title": "Limitar por ruta de origen",
+      "body": "Usar el pathname de origen del proxy para generar alternates solo en aliases de categoría y subcategoría; es la opción recomendada.",
       "recommended": true
     },
     {
-      "title": "Mantener búsqueda sin hreflang",
-      "body": "Conservar `SearchPage` sin alternates y resolver las categorías con una ruta o metadata separada antes de ampliar el clúster.",
+      "title": "Separar las rutas SEO",
+      "body": "Crear una superficie dedicada para categorías y subcategorías y dejar `SearchPage` sin idiomas para consultas genéricas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar alternates a aliases públicos",
-    "body": "Emitir `hreflang` solo cuando la ruta de origen identifica una categoría o subcategoría pública validada, y añadir `pt-BR` al helper compartido.",
+    "title": "Limitar por ruta de origen",
+    "body": "Usar el pathname de origen del proxy para generar alternates solo en aliases de categoría y subcategoría; es la opción recomendada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La decisión afecta directamente a la metadata de `SearchPage` y al enrutamiento de aliases públicos.",
+    "reason": "Su historial cubre el flujo de búsqueda, los aliases de categoría y la metadata SEO que requiere esta delimitación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763#issuecomment-4910174262",
-    "reviewedAt": "2026-07-21T14:08:08.526Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:26:01.465Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

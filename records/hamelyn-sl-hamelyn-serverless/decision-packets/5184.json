@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T23:50:21.166Z",
-  "updatedAt": "2026-07-28T23:42:52Z",
+  "generatedAt": "2026-08-04T23:21:15.203Z",
+  "updatedAt": "2026-08-04T22:53:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -22,41 +22,42 @@
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond"
+      "issue-rating: 💎 diamond",
+      "origin:watcher",
+      "mk:ebay"
     ],
     "createdAt": "2026-04-13T00:24:51Z",
-    "updatedAt": "2026-07-28T23:42:52Z"
+    "updatedAt": "2026-08-04T22:53:28Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué límite de volumen y criterio de parada debe tener la reactivación temporal de `ebay.create()` tras integrar la observabilidad?",
-  "rationale": "La implementación puede mejorar los datos, pero el coste operativo de volver a enviar ofertas rechazadas exige una decisión humana y coordinación externa.",
+  "question": "Tras integrar la observabilidad, ¿debe reactivarse create mediante una sonda limitada o mantenerse pausado hasta resolver el rechazo de política con eBay?",
+  "rationale": "El código puede capturar la causa remota, pero no permite decidir por sí solo qué volumen es seguro reintentar ni si el rechazo sigue vigente.",
   "options": [
     {
-      "title": "Sonda limitada y reversible",
-      "body": "Reactivar una muestra pequeña tras fusionar la PR, guardar `errorId` por oferta y parar ante un rechazo dominante.",
+      "title": "Ejecutar una sonda limitada",
+      "body": "Reactivar temporalmente un lote fijo y pequeño para capturar `errorId`, resultados por oferta y causas recuperables antes de cualquier backfill.",
       "recommended": true
     },
     {
       "title": "Mantener create pausado",
-      "body": "Esperar confirmación de eBay o una política de catálogo antes de volver a enviar publicaciones.",
+      "body": "Conservar la pausa hasta recibir confirmación de eBay o corregir el catálogo que dispara el rechazo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sonda limitada y reversible",
-    "body": "Reactivar una muestra pequeña tras fusionar la PR, guardar `errorId` por oferta y parar ante un rechazo dominante.",
+    "title": "Ejecutar una sonda limitada",
+    "body": "Reactivar temporalmente un lote fijo y pequeño para capturar `errorId`, resultados por oferta y causas recuperables antes de cualquier backfill.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha reunido la evidencia de producción y es el responsable asignado de la PR vinculada.",
+    "reason": "Ha investigado la causa, propuso la sonda y conduce la PR de observabilidad relacionada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5184#issuecomment-4909401385",
-    "reviewedAt": "2026-07-28T23:50:21.166Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-08-04T23:21:15.203Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

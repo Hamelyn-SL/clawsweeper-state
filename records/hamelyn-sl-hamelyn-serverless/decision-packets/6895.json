@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:08:05.369Z",
-  "updatedAt": "2026-07-21T12:18:21Z",
+  "generatedAt": "2026-08-04T23:26:52.120Z",
+  "updatedAt": "2026-08-04T23:14:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,50 +15,50 @@
       "triage:done",
       "business-logic",
       "hackathon",
-      "P3",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "issue-rating: ➖ n/a",
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T06:47:16Z",
-    "updatedAt": "2026-07-21T12:18:21Z"
+    "updatedAt": "2026-08-04T23:14:38Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Qué bloques deben seguir oficialmente en Supply tras la extracción de ciclo, inbound y PUDO hacia `buying` y `shipping`?",
-  "rationale": "El código y los artefactos BL actuales ya cambiaron las fronteras del checklist inicial; solo quien conoce el dominio puede fijar la propiedad definitiva antes de crear nuevas specs.",
+  "question": "¿Debe esta issue conservarse como épica de coordinación tras la redistribución a `buying`, `inbound`, `shipping` y `warehouse`, o debe sustituirse por issues residuales con ownership explícito?",
+  "rationale": "El código y las specs ya trasladan partes significativas fuera de Supply, pero no existe una fuente canónica que decida el destino de B2B y del tramo posterior a la recogida.",
   "options": [
     {
-      "title": "Reacotar la épica a incidencias y B2B",
-      "body": "Mantener esta issue como coordinación de los dos bloques sin artefactos BL y enlazar explícitamente las coberturas ya movidas.",
+      "title": "Reencuadrar la épica",
+      "body": "Actualizar el checklist con los bloques ya integrados y abrir o enlazar issues residuales por dominio, manteniendo esta issue como coordinación temporal.",
       "recommended": true
     },
     {
-      "title": "Restaurar el dominio Supply completo",
-      "body": "Crear specs propias de Supply para todos los bloques, definiendo cómo evitar duplicar los artefactos actuales de `buying` e `shipping`.",
+      "title": "Mantener Supply como dominio paraguas",
+      "body": "Conservar el checklist original y continuar extrayendo bajo IDs `BL-supply-*`, aceptando duplicidad de fronteras con la taxonomía ya integrada.",
       "recommended": false
     },
     {
-      "title": "Cerrar y dividir por owners",
-      "body": "Sustituir esta épica por issues acotadas con owner y reviewer explícitos para cada bloque que permanezca pendiente.",
+      "title": "Cerrar tras crear sucesoras",
+      "body": "Crear primero las issues canónicas de B2B y warehouse y cerrar esta épica cuando todas las referencias queden trasladadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reacotar la épica a incidencias y B2B",
-    "body": "Mantener esta issue como coordinación de los dos bloques sin artefactos BL y enlazar explícitamente las coberturas ya movidas.",
+    "title": "Reencuadrar la épica",
+    "body": "Actualizar el checklist con los bloques ya integrados y abrir o enlazar issues residuales por dominio, manteniendo esta issue como coordinación temporal.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "La frontera actual de ciclo de pedidos y reprogramación está documentada y mantenida principalmente en el área `buying`.",
+    "person": "JavierHamelyn",
+    "reason": "La cartografía BL vigente y la issue madre proceden de su trabajo; puede confirmar las fronteras F2 pendientes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6895.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6895#issuecomment-4911147057",
-    "reviewedAt": "2026-07-21T14:08:05.369Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:26:52.120Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

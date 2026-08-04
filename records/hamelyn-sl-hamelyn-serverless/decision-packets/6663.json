@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:02:28.702Z",
-  "updatedAt": "2026-07-21T12:18:49Z",
+  "generatedAt": "2026-08-04T23:26:56.188Z",
+  "updatedAt": "2026-08-04T23:11:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,50 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663",
     "state": "open",
     "labels": [
-      "app:infrastructure",
       "reporter:pablo",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-06-25T07:29:25Z",
-    "updatedAt": "2026-07-21T12:18:49Z"
+    "updatedAt": "2026-08-04T23:11:50Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba una migración en dos fases, manteniendo los cron de GitHub Actions, o se quiere trasladar también su runtime a `apps/data-platform`?",
-  "rationale": "La fuente BigQuery es viable para parte del alcance, pero la secuencia y el runtime determinan la propiedad operativa, las credenciales y el criterio de paridad.",
+  "question": "¿Debe aprobarse la fase de feeds usados con gates de frescura antes de planificar la materialización de `newData.logista` y la migración de `new-books`?",
+  "rationale": "La migración encaja con la arquitectura, pero la edad admisible del catálogo publicado y la secuencia operativa afectan al negocio y no se deducen solo del código.",
   "options": [
     {
-      "title": "Migración en dos fases",
-      "body": "Mover primero los feeds de usado a BigQuery y ampliar después la materialización para incluir `newData.logista` antes de migrar libros nuevos.",
+      "title": "Aprobar por fases con frescura",
+      "body": "Exigir gates para productos y stocks en la primera fase, medir la paridad publicada y después ampliar la materialización para `new-books`.",
       "recommended": true
     },
     {
-      "title": "Trasladar el runtime",
-      "body": "Diseñar primero un job en `apps/data-platform` que sustituya los cron y el upload actuales, asumiendo más cambio operativo.",
+      "title": "Aceptar el snapshot diario",
+      "body": "Permitir el desfase de productos en la primera fase, manteniendo MongoDB como rollback documentado antes de abordar libros nuevos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración en dos fases",
-    "body": "Mover primero los feeds de usado a BigQuery y ampliar después la materialización para incluir `newData.logista` antes de migrar libros nuevos.",
+    "title": "Aprobar por fases con frescura",
+    "body": "Exigir gates para productos y stocks en la primera fase, medir la paridad publicada y después ampliar la materialización para `new-books`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente concentra el workflow actual y el análisis de la iniciativa paraguas.",
-    "confidence": "high"
+    "reason": "Concentró el análisis de la iniciativa de reducción de carga y aparece en el historial del flujo vigente.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663#issuecomment-4971283237",
-    "reviewedAt": "2026-07-21T14:02:28.702Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:26:56.188Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

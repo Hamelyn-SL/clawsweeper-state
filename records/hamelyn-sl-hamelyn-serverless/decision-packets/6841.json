@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:06:41.269Z",
-  "updatedAt": "2026-07-21T12:18:22Z",
+  "generatedAt": "2026-08-04T23:26:59.178Z",
+  "updatedAt": "2026-08-04T23:13:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,48 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "P3",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "P3",
+      "issue-rating: 💎 diamond",
+      "origin:bl",
+      "mk:discogs"
     ],
     "createdAt": "2026-07-03T15:41:03Z",
-    "updatedAt": "2026-07-21T12:18:22Z"
+    "updatedAt": "2026-08-04T23:13:48Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Debe conservarse el patrón legacy `No confident Discogs release variant found for EAN` para errores históricos o retirarse de la política canónica?",
-  "rationale": "El código actual ya no emite esa cadena, pero no hay evidencia local suficiente sobre documentos históricos que puedan volver a clasificarse.",
+  "question": "¿Debe mantenerse `No confident Discogs release variant found for EAN` para registros históricos o retirarse de la política canónica?",
+  "rationale": "El código actual no emite esa cadena, pero el efecto sobre errores ya persistidos depende de la política de recuperación que el equipo quiera conservar.",
   "options": [
     {
-      "title": "Conservar compatibilidad",
-      "body": "Mantener temporalmente el patrón legacy y añadir sólo las tres reglas para mensajes actualmente emitidos.",
+      "title": "Conservar compatibilidad histórica",
+      "body": "Mantener el patrón legado como `PERMANENT` y documentar que sólo cubre registros ya existentes.",
       "recommended": true
     },
     {
-      "title": "Retirar patrón legacy",
-      "body": "Eliminarlo tras verificar que ningún flujo de recuperación procesa errores históricos con esa cadena.",
+      "title": "Retirar el patrón legado",
+      "body": "Eliminarlo tras confirmar que no hay registros operativos que dependan de su reclasificación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar compatibilidad",
-    "body": "Mantener temporalmente el patrón legacy y añadir sólo las tres reglas para mensajes actualmente emitidos.",
+    "title": "Conservar compatibilidad histórica",
+    "body": "Mantener el patrón legado como `PERMANENT` y documentar que sólo cubre registros ya existentes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente cubre el adaptador Discogs y la recuperación de errores que determinan esta compatibilidad.",
+    "reason": "Su historial conecta el adaptador Discogs actual y la ruta compartida de clasificación por SKU.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6841.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6841#issuecomment-4910271557",
-    "reviewedAt": "2026-07-21T14:06:41.269Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:26:59.178Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

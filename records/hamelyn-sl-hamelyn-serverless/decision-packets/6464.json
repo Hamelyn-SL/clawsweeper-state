@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:25:45.919Z",
+  "generatedAt": "2026-08-04T23:22:05.586Z",
   "updatedAt": "2026-08-04T23:09:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,47 +15,46 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "origin:panel",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-06-16T21:54:00Z",
     "updatedAt": "2026-08-04T23:09:14Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse la automatización de Milanuncios como integración experimental mientras se solicita un contrato o API partner confirmados?",
-  "rationale": "El código usa rutas privadas, pero la autorización contractual y el nivel de soporte aceptable no pueden deducirse del repositorio.",
+  "question": "¿Quién debe validar con Buscalibre y Milanuncios los contratos vigentes y autorizar qué referencia segura de acceso puede quedar documentada?",
+  "rationale": "La evidencia requerida depende de acuerdos, contactos y gestores de secretos externos; el repositorio no puede resolver ni inferir esos datos con seguridad.",
   "options": [
     {
-      "title": "Confirmar contrato y documentarlo",
-      "body": "Solicitar a Milanuncios y Buscalibre la confirmación operativa y actualizar los runbooks solo con referencias verificadas.",
+      "title": "Confirmar con los partners",
+      "body": "Designar responsable operativo para verificar contrato, límites y referencia segura, y completar después la documentación.",
       "recommended": true
     },
     {
-      "title": "Mantener Milanuncios como experimental",
-      "body": "Conservar la advertencia actual y definir monitorización o retirada hasta disponer de un contrato partner.",
+      "title": "Mantener la advertencia actual",
+      "body": "Conservar ambos huecos como no confirmados hasta que exista una fuente partner o contractual verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contrato y documentarlo",
-    "body": "Solicitar a Milanuncios y Buscalibre la confirmación operativa y actualizar los runbooks solo con referencias verificadas.",
+    "title": "Confirmar con los partners",
+    "body": "Designar responsable operativo para verificar contrato, límites y referencia segura, y completar después la documentación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra la creación y actualización reciente de los runbooks afectados.",
+    "reason": "El historial le vincula directamente con el runbook y la documentación que delimita los datos pendientes.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6464.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6464#issuecomment-4909965108",
-    "reviewedAt": "2026-08-04T23:25:45.919Z",
+    "reviewedAt": "2026-08-04T23:22:05.586Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

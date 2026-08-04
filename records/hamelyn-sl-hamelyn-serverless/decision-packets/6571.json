@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:23:46.633Z",
-  "updatedAt": "2026-07-21T14:18:26Z",
+  "generatedAt": "2026-08-04T23:22:58.310Z",
+  "updatedAt": "2026-08-04T23:10:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,46 @@
       "app:admin",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:dev"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-07-21T14:18:26Z"
+    "updatedAt": "2026-08-04T23:10:37Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La productividad de Skypod debe contar solo confirmaciones correctas o toda transición final de un producto, incluidas incidencias?",
-  "rationale": "La elección cambia la comparabilidad de `itemsProcessed` con Picking y determina cómo migrar el rastreo actual de incidencias.",
+  "question": "¿La productividad de Skypod debe contar toda transición de `PENDING` a un estado terminal, como Picking, o solo las confirmaciones satisfactorias mediante ACK?",
+  "rationale": "La decisión cambia el significado operacional de `itemsProcessed`; el código actual de Estación ejecuta acciones de excepciones distintas además del ACK normal.",
   "options": [
     {
-      "title": "Contar solo confirmaciones correctas",
-      "body": "Registrar las incidencias en metadatos sin sumarlas a `itemsProcessed`, preservando una métrica de preparación efectiva.",
+      "title": "Mantener la semántica de Picking",
+      "body": "Contar una vez cada transición terminal desde `PENDING` y guardar el conteo bajo metadatos propios de Skypod.",
       "recommended": true
     },
     {
-      "title": "Contar toda salida final",
-      "body": "Sumar cada producto resuelto, incluidos no encontrados e incidencias, como medida de trabajo operativo total.",
+      "title": "Contar solo confirmaciones OK",
+      "body": "Incrementar únicamente tras ACK satisfactorio y excluir urgentes y resultados no encontrados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contar solo confirmaciones correctas",
-    "body": "Registrar las incidencias en metadatos sin sumarlas a `itemsProcessed`, preservando una métrica de preparación efectiva.",
+    "title": "Mantener la semántica de Picking",
+    "body": "Contar una vez cada transición terminal desde `PENDING` y guardar el conteo bajo metadatos propios de Skypod.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente está directamente ligado al flujo de Estación que define estas transiciones.",
+    "reason": "El historial reciente del flujo de Estación le conecta directamente con la semántica de sus acciones y transiciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-07-21T14:23:46.633Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:22:58.310Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:30:32.670Z",
-  "updatedAt": "2026-07-21T12:18:40Z",
+  "generatedAt": "2026-08-04T23:21:48.173Z",
+  "updatedAt": "2026-08-04T23:10:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,45 +17,50 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-07-21T12:18:40Z"
+    "updatedAt": "2026-08-04T23:10:10Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debemos ejecutar primero el piloto MX y corregir el mapper sobre el flujo actual, o incorporar ambas cosas directamente en la migración a BigQuery?",
-  "rationale": "Ambas rutas son viables, pero cambian el tiempo de entrega, la duplicación temporal de trabajo y el riesgo operativo de la primera carga.",
+  "question": "¿Se aprueba ejecutar primero el piloto MX sobre el generador actual corregido, o se exige que el piloto espere a la migración de Merchant a BigQuery?",
+  "rationale": "Ambas rutas son técnicamente viables, pero cambian el orden de entrega, la comparación de paridad y el riesgo operativo de las cargas comerciales.",
   "options": [
     {
-      "title": "Piloto MX antes de migrar",
-      "body": "Corregir el mapper y el orden de MX en el flujo actual, validarlo con Jesús y reutilizar después el contrato de salida en BigQuery.",
+      "title": "Piloto MX antes de BigQuery",
+      "body": "Corregir el mapper y validar los ficheros de MX con Jesús, manteniendo la migración de fuente como una fase posterior.",
       "recommended": true
     },
     {
       "title": "Unificar con BigQuery",
-      "body": "Esperar a que la migración de fuente incorpore el mapper y el piloto, reduciendo duplicación pero retrasando la corrección comercial.",
+      "body": "Esperar a la paridad de datos de la iniciativa BigQuery y validar metadata, fuentes y carga multi-país en una única migración.",
+      "recommended": false
+    },
+    {
+      "title": "Acotar la petición",
+      "body": "Limitar la primera entrega a los países y tipologías confirmados, dejando Brasil y los feeds nuevos para una especificación posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Piloto MX antes de migrar",
-    "body": "Corregir el mapper y el orden de MX en el flujo actual, validarlo con Jesús y reutilizar después el contrato de salida en BigQuery.",
+    "title": "Piloto MX antes de BigQuery",
+    "body": "Corregir el mapper y validar los ficheros de MX con Jesús, manteniendo la migración de fuente como una fase posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y ya llevó el corte integrado que separó México del cron histórico.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente del flujo y el triage previo lo sitúan mejor para coordinar la decisión comercial y técnica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-07-21T13:30:32.670Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:21:48.173Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

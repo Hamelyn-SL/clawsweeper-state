@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:31:21.232Z",
-  "updatedAt": "2026-07-21T12:18:42Z",
+  "generatedAt": "2026-08-04T23:26:12.422Z",
+  "updatedAt": "2026-08-04T23:06:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,47 +16,48 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ⚪ platinum",
+      "origin:watcher",
+      "mk:feltrinelli"
     ],
     "createdAt": "2026-06-02T15:35:06Z",
-    "updatedAt": "2026-07-21T12:18:42Z"
+    "updatedAt": "2026-08-04T23:06:15Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué campos de diagnóstico puede publicar el `catch` global de withdraw batch sin exponer bodies o datos sensibles de proveedores?",
-  "rationale": "La causa histórica ya se conserva en Mongo y los errores individuales se serializan; falta decidir el contrato seguro para el único camino que continúa dejando un evento genérico.",
+  "question": "¿Qué campos de diagnóstico puede publicar el `catch` global de withdraw batch sin exponer payloads sensibles ni romper los límites de logs?",
+  "rationale": "La ruta individual ya limita y serializa errores, pero la política del evento agregado determina la implementación segura y estable.",
   "options": [
     {
-      "title": "Evento redactado y estructurado",
-      "body": "Registrar marketplace, recuento, errorType y un resumen de error limitado, sin body crudo ni credenciales.",
+      "title": "Log estructurado redactado",
+      "body": "Registrar marketplace, `errorType`, una lista acotada de SKUs y una causa serializada con límite de tamaño.",
       "recommended": true
     },
     {
-      "title": "Conservar solo el detalle persistido",
-      "body": "Mantener el contador genérico en logs y usar `errorDetails` de Mongo para las investigaciones operativas.",
+      "title": "Mantener solo persistencia",
+      "body": "Conservar `errorDetails` únicamente en `mk_feltrinelli` y documentar la consulta operativa de correlación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Evento redactado y estructurado",
-    "body": "Registrar marketplace, recuento, errorType y un resumen de error limitado, sin body crudo ni credenciales.",
+    "title": "Log estructurado redactado",
+    "body": "Registrar marketplace, `errorType`, una lista acotada de SKUs y una causa serializada con límite de tamaño.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su cambio reciente introdujo la serialización actual y es el mejor contexto para acotar el formato seguro.",
-    "confidence": "high"
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado y está vinculado al mantenimiento reciente de las mutaciones de marketplace.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6209.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6209#issuecomment-4909862960",
-    "reviewedAt": "2026-07-21T13:31:21.232Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:26:12.422Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

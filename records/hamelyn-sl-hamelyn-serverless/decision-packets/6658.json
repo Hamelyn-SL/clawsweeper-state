@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:13:14.864Z",
-  "updatedAt": "2026-07-21T12:18:37Z",
+  "generatedAt": "2026-08-04T23:29:21.579Z",
+  "updatedAt": "2026-08-04T23:11:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,49 +12,55 @@
     "labels": [
       "codex",
       "bug",
+      "app:marketplace",
       "triage:done",
-      "app:crons",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:agent",
+      "mk:amazon"
     ],
     "createdAt": "2026-06-24T22:50:08Z",
-    "updatedAt": "2026-07-21T12:18:37Z"
+    "updatedAt": "2026-08-04T23:11:48Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe un `ORDER_CHANGE` `Unshipped` sin stock local persistirse como `TO_CANCEL` o consumirse con una alerta operativa?",
-  "rationale": "Ambas opciones eliminan el bucle, pero difieren en la trazabilidad y el tratamiento de una venta Amazon que no tiene inventario local.",
+  "question": "¿Qué destino operativo debe tener un `ORDER_CHANGE` `Unshipped` cuyo SKU no existe y que tampoco tiene un `OrderSell` local: consumo terminal auditado, cola de revisión o creación/degradación controlada?",
+  "rationale": "La reparación evita el bucle, pero el destino elegido afecta a conciliación, inventario y recuperación de pedidos reales; el código no define ese contrato.",
   "options": [
     {
-      "title": "Persistir como `TO_CANCEL`",
-      "body": "Conserva un pedido terminal trazable y permite eliminar la notificación de la cola.",
+      "title": "Consumir con auditoría y alerta única",
+      "body": "Eliminar el mensaje tras registrar el pedido huérfano y emitir una señal operativa deduplicada para revisión.",
       "recommended": true
     },
     {
-      "title": "Consumir y alertar",
-      "body": "Elimina el mensaje sin crear pedido y delega la investigación en una alerta operativa única.",
+      "title": "Retener para revisión controlada",
+      "body": "Mover el caso a una cola o estado observable con límite de reintentos, sin reprocesarlo en cada ejecución del cron.",
+      "recommended": false
+    },
+    {
+      "title": "Crear una venta degradada",
+      "body": "Persistir un `OrderSell` especial o `TO_CANCEL` solo tras definir las reglas de inventario y reconciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir como `TO_CANCEL`",
-    "body": "Conserva un pedido terminal trazable y permite eliminar la notificación de la cola.",
+    "title": "Consumir con auditoría y alerta única",
+    "body": "Eliminar el mensaje tras registrar el pedido huérfano y emitir una señal operativa deduplicada para revisión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado actual y el contribuidor reciente del procesador de notificaciones Amazon.",
+    "reason": "El historial sitúa el diseño del consumo SQS y de `ORDER_CHANGE` en esta área de trabajo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658#issuecomment-4971281004",
-    "reviewedAt": "2026-07-21T14:13:14.864Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:29:21.579Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

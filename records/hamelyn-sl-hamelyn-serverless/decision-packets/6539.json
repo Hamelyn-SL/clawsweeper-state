@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T09:39:31.361Z",
-  "updatedAt": "2026-07-30T09:35:31Z",
+  "generatedAt": "2026-08-04T23:19:28.182Z",
+  "updatedAt": "2026-08-04T23:10:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,46 @@
       "app:supply",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:dev"
     ],
     "createdAt": "2026-06-18T12:52:26Z",
-    "updatedAt": "2026-07-30T09:35:31Z"
+    "updatedAt": "2026-08-04T23:10:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe mantenerse una automatización EAS para la Supply actual durante la transición a Next.js + Capacitor, o se descarta este alcance hasta definir el nuevo pipeline?",
-  "rationale": "La propuesta directa se cerró por un cambio de plataforma, mientras el proceso de release previo aún contemplaba EAS; el repositorio no contiene una decisión que resuelva esa contradicción.",
+  "question": "¿Debe descartarse formalmente el despliegue EAS por la migración a Next.js + Capacitor, o se necesita automatizar releases de Expo durante la transición?",
+  "rationale": "La respuesta determina la plataforma, credenciales, workflow y estrategia de versionado; el checkout no puede resolver esa decisión de producto y operación.",
   "options": [
     {
-      "title": "Confirmar transición y cerrar el alcance EAS",
-      "body": "Confirmar que no se invertirá en el workflow EAS y cerrar esta petición como sustituida por el plan de plataforma de Supply.",
+      "title": "Confirmar la migración y sustituir la iniciativa",
+      "body": "Cerrar esta dirección de EAS y crear una iniciativa de release para Next.js + Capacitor cuando la arquitectura esté definida.",
       "recommended": true
     },
     {
-      "title": "Mantener EAS durante la transición",
-      "body": "Patrocinar una nueva propuesta limitada al proceso temporal de release, con permisos y versionado definidos por el equipo.",
-      "recommended": false
-    },
-    {
-      "title": "Definir primero el pipeline de Capacitor",
-      "body": "Mantener la petición abierta hasta enlazar un plan canónico que especifique cómo se construirán y enviarán releases tras la migración.",
+      "title": "Mantener Expo durante la transición",
+      "body": "Definir un alcance temporal y seguro para automatizar EAS, incluidos permisos, versionado y responsables de publicación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar transición y cerrar el alcance EAS",
-    "body": "Confirmar que no se invertirá en el workflow EAS y cerrar esta petición como sustituida por el plan de plataforma de Supply.",
+    "title": "Confirmar la migración y sustituir la iniciativa",
+    "body": "Cerrar esta dirección de EAS y crear una iniciativa de release para Next.js + Capacitor cuando la arquitectura esté definida.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su discusión de release fijó la secuencia de publicación y es la señal más concreta sobre la política operativa de Supply.",
+    "person": "Daniel",
+    "reason": "Cerró la propuesta EAS explicando el cambio de plataforma y mantiene historial reciente en la configuración de Expo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6539.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6539#issuecomment-4969105904",
-    "reviewedAt": "2026-07-30T09:39:31.361Z",
-    "mainSha": "490a2b735bcce5343873e35c955b0a15a3557fd8"
+    "reviewedAt": "2026-08-04T23:19:28.182Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

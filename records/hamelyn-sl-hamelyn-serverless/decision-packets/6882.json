@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T20:52:46.579Z",
-  "updatedAt": "2026-07-21T20:31:35Z",
+  "generatedAt": "2026-08-04T23:28:07.887Z",
+  "updatedAt": "2026-08-04T23:14:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,53 +11,54 @@
     "state": "open",
     "labels": [
       "bug",
-      "app:infrastructure",
+      "app:marketplace",
       "reporter:javier",
       "triage:done",
-      "clawsweeper:source-repro",
-      "impact:data-loss",
-      "impact:message-loss",
-      "issue-rating: 💎 diamond",
       "P1",
-      "impact:security",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "clawsweeper:source-repro",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "impact:data-loss",
+      "impact:message-loss",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:amazon"
     ],
     "createdAt": "2026-07-05T01:57:06Z",
-    "updatedAt": "2026-07-21T20:31:35Z"
+    "updatedAt": "2026-08-04T23:14:24Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Debe eDesk disponer de una cola durable con reintento automático, o aceptarse un dead-letter de recuperación manual para los 429 sostenidos?",
-  "rationale": "La PR cerrada proponía persistencia sin worker, mientras la canónica solicita una entrega diferida; elegir el contrato de recuperación afecta la fiabilidad visible al cliente.",
+  "priority": "P2",
+  "question": "¿Debe el historial conservar como válidas las transiciones sin `supplyTrackingNumber`, y cómo deben consultarse esos registros?",
+  "rationale": "La solución modifica el contrato semántico de una colección de auditoría y su índice actual; el código vigente pierde esos eventos silenciosamente.",
   "options": [
     {
-      "title": "Cola durable con reintento",
-      "body": "Persistir antes de responder `202` y reprocesar con cron, estados y alerta para no perder tickets durante caídas sostenidas.",
+      "title": "Permitir tracking ausente",
+      "body": "Hacer opcional el campo y adaptar las consultas para conservar toda transición válida aunque el pedido no tenga tracking.",
       "recommended": true
     },
     {
-      "title": "Dead-letter manual",
-      "body": "Persistir el payload para recuperación puntual por operador, aceptando que no habrá reintento automático ni garantía de entrega rápida.",
+      "title": "Mantener el requisito",
+      "body": "Bloquear la transición hasta disponer de un tracking válido para no introducir registros de auditoría incompletos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cola durable con reintento",
-    "body": "Persistir antes de responder `202` y reprocesar con cron, estados y alerta para no perder tickets durante caídas sostenidas.",
+    "title": "Permitir tracking ausente",
+    "body": "Hacer opcional el campo y adaptar las consultas para conservar toda transición válida aunque el pedido no tenga tracking.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Está asignado a la canónica eDesk y a la propuesta previa de outbox.",
+    "person": "JavierHamelyn",
+    "reason": "Introdujo la ruta actual y es el candidato con más contexto sobre su semántica de negocio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6882.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6882#issuecomment-4911141701",
-    "reviewedAt": "2026-07-21T20:52:46.579Z",
-    "mainSha": "f38f8a74d679ae88596e46562cdd0757f7250e9e"
+    "reviewedAt": "2026-08-04T23:28:07.887Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
