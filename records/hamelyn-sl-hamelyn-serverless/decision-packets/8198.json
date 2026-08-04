@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T06:47:29.118Z",
+  "updatedAt": "2026-08-04T06:27:22Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8198,
+    "title": "fix: migrate xlsx to SheetJS CDN tarball 0.20.3 (security)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8198",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-04T06:24:00Z",
+    "updatedAt": "2026-08-04T06:27:22Z",
+    "headSha": "4bc0117413b4716793c051e288086feb4915a55f"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se aprueba `cdn.sheetjs.com` como origen de runtime para el tarball inmutable de SheetJS 0.20.3 en este monorepo?",
+  "rationale": "La remediación sustituye npm por una fuente externa; el checksum reduce el riesgo técnico, pero aceptar su procedencia y operación es una decisión de cadena de suministro.",
+  "options": [
+    {
+      "title": "Aprobar el tarball oficial",
+      "body": "Aceptar el CDN de SheetJS tras una instalación limpia y una prueba dirigida de los flujos XLSX con el checksum del lockfile.",
+      "recommended": true
+    },
+    {
+      "title": "Elegir otra fuente aprobada",
+      "body": "Mantener esta PR en pausa mientras se define una alternativa de suministro o una migración de librería equivalente.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar el tarball oficial",
+    "body": "Aceptar el CDN de SheetJS tras una instalación limpia y una prueba dirigida de los flujos XLSX con el checksum del lockfile.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Introdujo el helper y las rutas de carga que constituyen la superficie central afectada.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8198.md",
+    "reviewedAt": "2026-08-04T06:47:29.118Z",
+    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+  }
+}

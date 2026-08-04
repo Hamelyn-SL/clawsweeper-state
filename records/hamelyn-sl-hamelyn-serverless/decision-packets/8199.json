@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T06:45:57.818Z",
+  "updatedAt": "2026-08-04T06:42:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8199,
+    "title": "chore: revisar periódicamente la versión de xlsx (tarball CDN SheetJS, fuera del alcance del bot de deps)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8199",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "triage:running"
+    ],
+    "createdAt": "2026-08-04T06:38:56Z",
+    "updatedAt": "2026-08-04T06:42:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe el repositorio limitarse a un recordatorio periódico manual o incorporar un detector de versiones de SheetJS al workflow privilegiado de dependencias?",
+  "rationale": "La elección determina la fiabilidad aceptable, el canal de aviso y si el workflow con permisos de escritura puede actuar automáticamente ante un proveedor externo.",
+  "options": [
+    {
+      "title": "Detector de sólo lectura",
+      "body": "Añadir una comprobación programada que consulte una fuente de versiones verificable y abra una issue, sin modificar manifests ni lockfile automáticamente.",
+      "recommended": true
+    },
+    {
+      "title": "Recordatorio manual trimestral",
+      "body": "Crear una revisión recurrente documentada y conservar el bump manual mientras no haya una API o índice del CDN suficientemente estable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Detector de sólo lectura",
+    "body": "Añadir una comprobación programada que consulte una fuente de versiones verificable y abra una issue, sin modificar manifests ni lockfile automáticamente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Introdujo la automatización agrupada y sus validadores, que serían la base de cualquiera de las dos opciones.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8199.md",
+    "reviewedAt": "2026-08-04T06:45:57.818Z",
+    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+  }
+}
