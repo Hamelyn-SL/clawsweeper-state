@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:10:12.402Z",
-  "updatedAt": "2026-07-21T12:18:33Z",
+  "generatedAt": "2026-08-04T23:55:00.194Z",
+  "updatedAt": "2026-08-04T23:22:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,51 +14,46 @@
       "feature",
       "triage:pr-opened",
       "epic:revision-v3",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "P2",
       "impact:ux-friction",
       "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:dev"
     ],
     "createdAt": "2026-07-09T11:44:40Z",
-    "updatedAt": "2026-07-21T12:18:33Z"
+    "updatedAt": "2026-08-04T23:22:55Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Revisión V3 incorporarse a `dev` mediante una integración planificada de la rama épica o mediante ports acotados de sus entregables?",
-  "rationale": "La funcionalidad está implementada, pero la rama que la contiene diverge ampliamente de la rama de entrega; elegir la estrategia requiere criterio de release y alcance.",
+  "question": "¿Debe promoverse ahora a `dev` el flujo operativo de Revisión V3 con estas imágenes, dejando la agregación de productividad para una entrega posterior?",
+  "rationale": "El cambio visual ya existe, pero la rama que lo contiene no está integrada y el único seguimiento funcional abierto aún condiciona el corte de producto.",
   "options": [
     {
-      "title": "Planificar integración de la épica",
-      "body": "Preparar una incorporación revisada de Revisión V3 a `dev`, resolviendo explícitamente la divergencia y validando el flujo completo.",
+      "title": "Integrar el flujo operativo",
+      "body": "Abrir una integración acotada hacia `dev` con el puesto V3 y sus imágenes, manteniendo la analítica avanzada fuera de este corte.",
       "recommended": true
     },
     {
-      "title": "Portar entregables aprobados",
-      "body": "Trasladar a `dev` cambios V3 seleccionados y autocontenidos, empezando por los que tengan dependencias ya disponibles.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la entrega V3",
-      "body": "Mantener la rama épica aislada hasta que exista una ventana de release y una estrategia de integración acordada.",
+      "title": "Esperar al alcance completo",
+      "body": "Mantener la rama épica separada hasta acordar el modelo de productividad y el paquete de despliegue definitivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificar integración de la épica",
-    "body": "Preparar una incorporación revisada de Revisión V3 a `dev`, resolviendo explícitamente la divergencia y validando el flujo completo.",
+    "title": "Integrar el flujo operativo",
+    "body": "Abrir una integración acotada hacia `dev` con el puesto V3 y sus imágenes, manteniendo la analítica avanzada fuera de este corte.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial conecta el flujo kiosk y las pantallas afectadas con la decisión de cómo llevarlas a la rama de entrega.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su autoría de la épica y del cambio concreto le da la señal más directa sobre el alcance que debe promoverse.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7297.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7297#issuecomment-4924752273",
-    "reviewedAt": "2026-07-21T14:10:12.402Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-04T23:55:00.194Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

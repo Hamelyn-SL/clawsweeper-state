@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:37:59.189Z",
-  "updatedAt": "2026-07-21T12:18:20Z",
+  "generatedAt": "2026-08-04T23:54:04.783Z",
+  "updatedAt": "2026-08-04T23:43:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,50 @@
       "reporter:miguel",
       "triage:done",
       "P1",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-security-review"
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a",
+      "origin:dev"
     ],
     "createdAt": "2026-07-21T08:04:50Z",
-    "updatedAt": "2026-07-21T12:18:20Z"
+    "updatedAt": "2026-08-04T23:43:45Z"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Confirma Plataforma, tras el cruce completo de 24 horas, que la configuración en los 14 ecommerce no introduce falsos positivos antes de cerrar esta incidencia?",
-  "rationale": "La aceptación depende de datos operativos de Vercel y BigQuery que no quedan demostrados por el código ni por la observación inicial.",
+  "question": "¿Confirma MiguelHamelyn o Plataforma, con el cruce completo de 24 horas, que los 14 proyectos no muestran falsos positivos antes de aceptar y cerrar esta fase?",
+  "rationale": "La fuente de verdad es una configuración remota y telemetría temporal; el código solo demuestra que el endpoint y el drain soportan la validación.",
   "options": [
     {
       "title": "Validar y cerrar",
-      "body": "Completar el cruce de aceptación y cerrar si Stripe queda sin marcas y no aparecen patrones reales afectados.",
+      "body": "Publicar el cruce de 24 horas sin falsos positivos relevantes y cerrar esta fase en modo `log`.",
       "recommended": true
     },
     {
+      "title": "Ajustar y repetir",
+      "body": "Si aparecen patrones legítimos marcados, ajustar la configuración remota y repetir la ventana de observación antes de decidir.",
+      "recommended": false
+    },
+    {
       "title": "Mantener observación",
-      "body": "Si aparecen falsos positivos, conservar `log` y abrir un seguimiento acotado antes de plantear `challenge`.",
+      "body": "Conservar `log` si la muestra sigue siendo ambigua y posponer cualquier endurecimiento hasta reunir más evidencia.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Validar y cerrar",
-    "body": "Completar el cruce de aceptación y cerrar si Stripe queda sin marcas y no aparecen patrones reales afectados.",
+    "body": "Publicar el cruce de 24 horas sin falsos positivos relevantes y cerrar esta fase en modo `log`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado y aportó la evidencia de la configuración aplicada y de su seguimiento operativo.",
+    "reason": "Es el assignee y aportó la evidencia de aplicación y el plan de validación operativo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7811.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7811#issuecomment-5032389801",
-    "reviewedAt": "2026-07-21T13:37:59.189Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:54:04.783Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
