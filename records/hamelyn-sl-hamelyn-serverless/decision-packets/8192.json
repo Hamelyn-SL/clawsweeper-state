@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-04T07:14:24.923Z",
+  "updatedAt": "2026-08-04T06:03:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8192,
+    "title": "fix: requeue fnac transient batching errors for withdrawal",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8192",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-08-04T05:56:05Z",
+    "updatedAt": "2026-08-04T06:03:45Z",
+    "headSha": "9ce9cba59221da4e733d19bfd5fae21f46329fd1"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe el selector ordinario de Fnac reencolar automáticamente esta subcohorte histórica `SYNC_ERROR/BATCHING/TRANSIENT`, o debe mantenerse la reconciliación remota por SKU definida para la incidencia canónica?",
+  "rationale": "El código corrige una omisión concreta, pero la evidencia de la incidencia canónica advierte que los batches históricos no forman una población homogénea para una recuperación automática.",
+  "options": [
+    {
+      "title": "Exigir reconciliación por SKU",
+      "body": "Mantener la recuperación como operación controlada con comprobación remota y cohortes congeladas antes de reintentar retiradas.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar el reintento automático acotado",
+      "body": "Aceptar el criterio actual solo tras confirmar que la subcohorte `TRANSIENT` no incluye filas históricas con intención remota ambigua.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir reconciliación por SKU",
+    "body": "Mantener la recuperación como operación controlada con comprobación remota y cohortes congeladas antes de reintentar retiradas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial en el selector y la incidencia canónica lo conectan directamente con la decisión de recuperación.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8192.md",
+    "reviewedAt": "2026-08-04T07:14:24.923Z",
+    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+  }
+}
