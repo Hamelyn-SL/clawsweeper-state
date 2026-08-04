@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T07:55:28.669Z",
-  "updatedAt": "2026-08-04T06:57:45Z",
+  "generatedAt": "2026-08-04T09:47:42.711Z",
+  "updatedAt": "2026-08-04T08:12:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,44 +17,48 @@
       "epic:revision-v3",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
+      "P2",
       "impact:ux-friction",
       "reporter:daniellopez",
-      "issue-rating: ➖ n/a",
-      "P2"
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:45Z",
-    "updatedAt": "2026-08-04T06:57:45Z"
+    "updatedAt": "2026-08-04T08:12:44Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba integrar Revisión V3 en `dev` y adaptar la PR candidata a esa base, o se mantiene el puesto aislado hasta definir otro vehículo de entrega?",
-  "rationale": "La política del repositorio exige `dev` como base de PR, mientras que la única solución candidata depende de una rama épica que no está integrada; elegir el vehículo de entrega excede un arreglo mecánico.",
+  "question": "¿Debe aterrizarse primero `EPIC/revision-v3` en `dev`, o se aprueba un vehículo alternativo para integrar esta PR sin convertirla en una migración amplia?",
+  "rationale": "La funcionalidad está definida y tiene una PR candidata, pero la superficie completa no existe en la rama de integración exigida por la política del repositorio.",
   "options": [
     {
-      "title": "Aterrizar V3 en dev y revisar la candidata",
-      "body": "Integrar primero la superficie V3 mediante una ruta aprobada y actualizar la PR para que complete la prueba autenticada sobre la base soportada.",
+      "title": "Aterrizar la épica y después integrar",
+      "body": "Definir la integración de Revisión V3 en `dev` y conservar la PR candidata como el cambio funcional específico posterior.",
       "recommended": true
     },
     {
-      "title": "Mantener V3 aislado temporalmente",
-      "body": "Conservar la PR como candidata en la rama épica y posponer esta mejora hasta que exista una decisión de integración para el puesto.",
+      "title": "Aprobar un vehículo alternativo acotado",
+      "body": "Autorizar explícitamente una estrategia que lleve solo la superficie necesaria a `dev`, con revisión de compatibilidad y pruebas reales.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la mejora",
+      "body": "Mantener la issue bloqueada hasta que exista una decisión y calendario para la integración de Revisión V3.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar V3 en dev y revisar la candidata",
-    "body": "Integrar primero la superficie V3 mediante una ruta aprobada y actualizar la PR para que complete la prueba autenticada sobre la base soportada.",
+    "title": "Aterrizar la épica y después integrar",
+    "body": "Definir la integración de Revisión V3 en `dev` y conservar la PR candidata como el cambio funcional específico posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado de la incidencia y ha llevado la implementación candidata de la superficie afectada.",
+    "reason": "Es el asignado de la issue y autor de la única implementación candidata enlazada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8013.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8013#issuecomment-5101534729",
-    "reviewedAt": "2026-08-04T07:55:28.669Z",
-    "mainSha": "cb25aecd83ebbdc2dbaf1dfff7acbb1030d76b82"
+    "reviewedAt": "2026-08-04T09:47:42.711Z",
+    "mainSha": "977c183505f6e42a56a48043a75747fce3b1edc1"
   }
 }

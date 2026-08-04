@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T06:38:12.972Z",
-  "updatedAt": "2026-08-04T05:53:39Z",
+  "generatedAt": "2026-08-04T09:47:51.435Z",
+  "updatedAt": "2026-08-04T09:01:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P3",
-      "impact:ux-friction",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P3",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:57Z",
-    "updatedAt": "2026-08-04T05:53:39Z"
+    "updatedAt": "2026-08-04T09:01:25Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Cuál es la secuencia canónica, fase por fase, de los clips del canal de revisión, o se confirma que la configuración existente es definitiva?",
-  "rationale": "El código y la PR relacionada identifican los activos y el mecanismo técnico, pero no aportan una fuente operativa que permita validar el orden solicitado.",
+  "question": "¿Qué orden exacto deben reproducir los clips de cada fase del puesto de Revisión V3 según el canal de revisión?",
+  "rationale": "El repositorio conserva una asignación técnica, pero no contiene evidencia que permita deducir o validar el orden operativo correcto.",
   "options": [
     {
       "title": "Publicar la secuencia canónica",
-      "body": "Producto u Operaciones aporta los clips por fase en el orden definitivo para realizar un cambio mínimo y verificable.",
+      "body": "Producto u Operaciones aporta los clips por fase y en orden, permitiendo un cambio localizado y verificable.",
       "recommended": true
     },
     {
-      "title": "Confirmar la configuración existente",
-      "body": "Producto u Operaciones declara que la secuencia ya configurada coincide con el canal y permite cerrar el trabajo sin cambio técnico.",
+      "title": "Confirmar el orden actual",
+      "body": "Producto u Operaciones confirma expresamente que la asignación actual de `PHASE_VIDEOS` ya es la secuencia canónica.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Publicar la secuencia canónica",
-    "body": "Producto u Operaciones aporta los clips por fase en el orden definitivo para realizar un cambio mínimo y verificable.",
+    "body": "Producto u Operaciones aporta los clips por fase y en orden, permitiendo un cambio localizado y verificable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado actual y un punto de contacto reciente del área Admin para coordinar la confirmación operativa.",
+    "reason": "Es la persona actualmente asignada y puede coordinar la confirmación con Producto u Operaciones.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8018.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8018#issuecomment-5101541717",
-    "reviewedAt": "2026-08-04T06:38:12.972Z",
-    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+    "reviewedAt": "2026-08-04T09:47:51.435Z",
+    "mainSha": "977c183505f6e42a56a48043a75747fce3b1edc1"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T12:09:14.914Z",
-  "updatedAt": "2026-08-03T11:54:49Z",
+  "generatedAt": "2026-08-04T09:47:43.746Z",
+  "updatedAt": "2026-08-04T09:01:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-07-28T07:19:52Z",
-    "updatedAt": "2026-08-03T11:54:49Z"
+    "updatedAt": "2026-08-04T09:01:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La auditoría debe usar la gaveta física cerrada por el operario y medir el 85 % por producto completamente coincidente, o por desperfectos individuales?",
-  "rationale": "La elección determina la unidad persistida, el cálculo de la cuota semanal y el significado del veredicto de calidad.",
+  "question": "¿La auditoría debe tomar como unidad la gaveta física cerrada por el operario y calcular el 85 % por producto completamente coincidente, o por desperfectos individuales?",
+  "rationale": "La elección cambia la identidad persistida, la selección semanal y el significado operativo del resultado de calidad.",
   "options": [
     {
-      "title": "Gaveta y producto completo",
-      "body": "Persistir una auditoría por gaveta cerrada y considerar correcto un producto solo cuando todos sus estados coinciden.",
+      "title": "Gaveta física y coincidencia completa",
+      "body": "Usar la gaveta cerrada por el operario y contar un producto como correcto solo si todos sus estados coinciden.",
       "recommended": true
     },
     {
-      "title": "Desperfectos individuales",
-      "body": "Calcular el porcentaje a partir de cada desperfecto validado dentro de la gaveta.",
+      "title": "Gaveta física y desperfectos individuales",
+      "body": "Usar la misma gaveta, pero calcular el porcentaje a partir de cada desperfecto o sección evaluada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Gaveta y producto completo",
-    "body": "Persistir una auditoría por gaveta cerrada y considerar correcto un producto solo cuando todos sus estados coinciden.",
+    "title": "Gaveta física y coincidencia completa",
+    "body": "Usar la gaveta cerrada por el operario y contar un producto como correcto solo si todos sus estados coinciden.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "El contexto registra su asignación reciente y su historial muestra trabajo próximo sobre Revisión V3.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada y tiene historial reciente en la superficie administrativa que albergaría el panel.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
-    "reviewedAt": "2026-08-03T12:09:14.914Z",
-    "mainSha": "fca62647712a88d5fb10cf80d0ced1d3fb0ebc2b"
+    "reviewedAt": "2026-08-04T09:47:43.746Z",
+    "mainSha": "977c183505f6e42a56a48043a75747fce3b1edc1"
   }
 }
