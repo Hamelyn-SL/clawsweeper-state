@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:19:33.170Z",
+  "generatedAt": "2026-08-04T23:32:55.789Z",
   "updatedAt": "2026-08-04T23:09:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,48 +15,47 @@
       "question",
       "reporter:javier",
       "triage:needs-info",
-      "origin:panel",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-06-16T21:53:49Z",
     "updatedAt": "2026-08-04T23:09:12Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué contrato y contacto de Celeritas están vigentes y qué gestor de secretos aprobado debe referenciarse antes de documentar creación de etiquetas o credenciales?",
-  "rationale": "El código acredita el flujo técnico de tracking, pero no puede establecer la validez contractual externa ni autorizar la custodia de material sensible.",
+  "question": "¿Qué contrato y referencia segura de credenciales debe declararse como vigente para Celeritas, y quién asume su propiedad operativa?",
+  "rationale": "El código solo permite inferir flujos internos; no puede validar documentación de proveedor, contactos externos ni la política aprobada para secretos.",
   "options": [
     {
-      "title": "Confirmar contrato y custodia",
-      "body": "Operaciones valida manual, alcance, contacto y referencia segura antes de completar las tres fichas.",
+      "title": "Validar y documentar el contrato vigente",
+      "body": "Confirmar con Operaciones y Celeritas el manual, el propietario y la referencia segura, y actualizar los tres documentos sin incluir valores sensibles.",
       "recommended": true
     },
     {
-      "title": "Limitar el runbook a tracking",
-      "body": "Se declara explícitamente tracking-only y se pospone cualquier referencia de creación o etiquetas hasta recibir confirmación del proveedor.",
+      "title": "Mantener el estado como pendiente",
+      "body": "Conservar las advertencias actuales hasta disponer de una fuente oficial y una referencia aprobada para la configuración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contrato y custodia",
-    "body": "Operaciones valida manual, alcance, contacto y referencia segura antes de completar las tres fichas.",
+    "title": "Validar y documentar el contrato vigente",
+    "body": "Confirmar con Operaciones y Celeritas el manual, el propietario y la referencia segura, y actualizar los tres documentos sin incluir valores sensibles.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta el runbook, la migración REST y la coordinación actual de esta issue.",
-    "confidence": "high"
+    "reason": "Es la persona con mayor continuidad visible en los runbooks y la migración de tracking relacionada.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6463#issuecomment-4909963944",
-    "reviewedAt": "2026-08-04T23:19:33.170Z",
+    "reviewedAt": "2026-08-04T23:32:55.789Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
