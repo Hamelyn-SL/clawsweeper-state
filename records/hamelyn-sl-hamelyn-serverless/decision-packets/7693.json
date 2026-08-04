@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T23:23:28.788Z",
-  "updatedAt": "2026-07-28T22:48:09Z",
+  "generatedAt": "2026-08-04T05:43:32.264Z",
+  "updatedAt": "2026-08-04T05:34:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,46 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "P2",
       "impact:other",
-      "issue-rating: 🥈 silver",
-      "clawsweeper:not-repro-on-main",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:not-repro-on-main",
+      "issue-rating: 🥈 silver"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-07-28T22:48:09Z"
+    "updatedAt": "2026-08-04T05:34:18Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Qué predicados exactos se autorizan para el dry-run y qué subconjuntos, tras contrastarlos con Fnac, pueden recibir una mutación productiva?",
-  "rationale": "La decisión combina estado remoto, semántica comercial de retiradas y una escritura masiva irreversible; el código no puede inferir esa autorización.",
+  "question": "¿Qué cohortes exactas se autorizan para un dry-run y, tras revisar sus muestras Fnac, para una reconciliación productiva limitada?",
+  "rationale": "La corrección de código ya está en `dev`; decidir qué documentos productivos modificar y bajo qué evidencia remota requiere responsabilidad operativa humana.",
   "options": [
     {
-      "title": "Autorizar primero un dry-run acotado",
-      "body": "Congelar SQL, recuentos y tres muestras por cohorte antes de decidir ninguna escritura productiva.",
+      "title": "Autorizar dry-run por cohortes",
+      "body": "Congelar el SQL y los filtros literales, validar recuentos y tres muestras por cohorte antes de aprobar cualquier escritura.",
       "recommended": true
     },
     {
-      "title": "Autorizar ejecución escalonada",
-      "body": "Tras validar el dry-run, aplicar solo transiciones verificadas por batch y SKU con registro de resultados.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la recuperación",
-      "body": "Mantener la cohorte monitorizada hasta disponer de predicado y acceso operativo suficientes.",
+      "title": "Mantener observación",
+      "body": "No modificar la cohorte hasta disponer de una clasificación remota más completa por batch y SKU.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar primero un dry-run acotado",
-    "body": "Congelar SQL, recuentos y tres muestras por cohorte antes de decidir ninguna escritura productiva.",
+    "title": "Autorizar dry-run por cohortes",
+    "body": "Congelar el SQL y los filtros literales, validar recuentos y tres muestras por cohorte antes de aprobar cualquier escritura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su análisis más reciente define las cohortes, las incompatibilidades de estado y las precondiciones operativas pendientes.",
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado más reciente y la decisión es operativa, no un cambio de código.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-07-28T23:23:28.788Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-08-04T05:43:32.264Z",
+    "mainSha": "022a912c2c5685c3ee66bba1ab8b3394e01cd0fd"
   }
 }
