@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:30:41.178Z",
-  "updatedAt": "2026-07-21T12:18:42Z",
+  "generatedAt": "2026-08-04T23:40:39.971Z",
+  "updatedAt": "2026-08-04T23:17:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,51 +10,51 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978",
     "state": "open",
     "labels": [
-      "app:infrastructure",
+      "app:admin",
       "feature",
       "triage:done",
       "business-logic",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T10:16:53Z",
-    "updatedAt": "2026-07-21T12:18:42Z"
+    "updatedAt": "2026-08-04T23:17:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La migración debe preservar literalmente `X` y las filas inactivas, o corregir sus divergencias al convertir los datos?",
-  "rationale": "La elección altera el matching futuro de datos persistidos y no puede resolverse con una sustitución mecánica del compilador.",
+  "question": "¿Debe la migración conservar literalmente la semántica histórica de `X` y de las filas con prioridad no positiva, o normalizar esos casos al convertirlos a regex estándar?",
+  "rationale": "La elección determina los datos persistidos y puede modificar el matching de reglas reactivadas; el código no puede inferir de forma segura cuál es el contrato de negocio deseado.",
   "options": [
     {
-      "title": "Preservar equivalencia",
-      "body": "Convertir cada patrón a una regex equivalente y dejar las correcciones de reglas para una issue separada.",
+      "title": "Preservar compatibilidad exacta",
+      "body": "Definir regex equivalentes al compilador actual, incluidos los usos históricos de `X`, y corregir solo casos aprobados explícitamente.",
       "recommended": true
     },
     {
-      "title": "Corregir al migrar",
-      "body": "Actualizar la fila inactiva y documentar los cambios intencionados de matching antes del despliegue.",
+      "title": "Normalizar la semántica",
+      "body": "Convertir los patrones a la intención humana esperada y documentar las diferencias controladas para filas hoy desactivadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar equivalencia",
-    "body": "Convertir cada patrón a una regex equivalente y dejar las correcciones de reglas para una issue separada.",
+    "title": "Preservar compatibilidad exacta",
+    "body": "Definir regex equivalentes al compilador actual, incluidos los usos históricos de `X`, y corregir solo casos aprobados explícitamente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Figura como owner del bloque y ha mantenido el matching de la matriz.",
+    "reason": "Figura como owner del bloque y concentró los cambios de matching y validación de la matriz.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6978.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6978#issuecomment-4911160747",
-    "reviewedAt": "2026-07-21T13:30:41.178Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:40:39.971Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

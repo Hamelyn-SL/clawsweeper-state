@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:32:45.227Z",
-  "updatedAt": "2026-07-21T12:18:36Z",
+  "generatedAt": "2026-08-04T23:40:28.650Z",
+  "updatedAt": "2026-08-04T23:24:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,54 +10,54 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401",
     "state": "open",
     "labels": [
-      "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-12T13:55:52Z",
-    "updatedAt": "2026-07-21T12:18:36Z"
+    "updatedAt": "2026-08-04T23:24:20Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato de retención debe aprobarse para productos sin actividad antes de ejecutar cambios persistentes en producción?",
-  "rationale": "Los umbrales de conservación, las referencias históricas y la recuperabilidad determinan qué datos pueden eliminarse; el código no puede inferir esa política de negocio con seguridad.",
+  "question": "¿Qué contrato de retención debe regir los productos sin actividad antes de modificar o eliminar datos persistentes de producción?",
+  "rationale": "Los umbrales, las referencias históricas y la recuperabilidad son reglas de negocio; el código actual no permite inferirlas de forma segura.",
   "options": [
     {
       "title": "Retención por fases",
-      "body": "Aprobar corte de nuevas altas sin señal, poda reversible medida y una purga posterior tras anti-joins y recuperación probada.",
+      "body": "Condicionar nuevas altas, ejecutar primero una poda reversible medida y aplazar la purga hasta completar anti-joins y recuperación.",
       "recommended": true
     },
     {
       "title": "Solo poda reversible",
-      "body": "Eliminar campos pesados de candidatos seguros y aplazar la eliminación de documentos hasta definir la conservación histórica.",
+      "body": "Eliminar campos pesados en candidatos seguros y mantener todos los documentos hasta aprobar la conservación histórica.",
       "recommended": false
     },
     {
-      "title": "Conservar el catálogo completo",
-      "body": "Mantener los documentos y centrar el trabajo en exports y consultas, aceptando el coste de almacenamiento y operación.",
+      "title": "Conservar el catálogo",
+      "body": "Mantener los documentos y limitar el alcance a optimizar exportaciones y consultas, asumiendo el coste operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Retención por fases",
-    "body": "Aprobar corte de nuevas altas sin señal, poda reversible medida y una purga posterior tras anti-joins y recuperación probada.",
+    "body": "Condicionar nuevas altas, ejecutar primero una poda reversible medida y aplazar la purga hasta completar anti-joins y recuperación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Su historial reciente cubre las rutas de creación y materialización que condicionan una retención segura.",
-    "confidence": "medium"
+    "reason": "Su cambio reciente en la materialización de productos es central para definir una eliminación consistente entre MongoDB y BigQuery.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7401#issuecomment-4951680394",
-    "reviewedAt": "2026-07-21T13:32:45.227Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:40:28.650Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
