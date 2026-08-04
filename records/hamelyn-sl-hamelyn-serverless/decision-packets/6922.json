@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T13:34:01.994Z",
-  "updatedAt": "2026-07-21T12:18:44Z",
+  "generatedAt": "2026-08-04T23:46:28.812Z",
+  "updatedAt": "2026-08-04T23:15:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,47 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-07-21T12:18:44Z"
+    "updatedAt": "2026-08-04T23:15:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué códigos o métodos de envío deben considerarse urgentes en eBay, Fnac, Casa del Libro y el resto de marketplaces, y dónde debe conservarse el fallback por importe?",
-  "rationale": "El código expone señales, pero el repositorio no contiene el contrato comercial por marketplace; inferirlo automáticamente podría cambiar SLA válidos.",
+  "question": "¿Qué códigos o métodos de envío deben mapearse a `URGENT`, `NORMAL` o fallback en eBay, Fnac, CDL, Amazon y los marketplaces sin señal fiable?",
+  "rationale": "El código muestra campos disponibles, pero su semántica contractual y el fallback correcto cambian el SLA operativo; no se pueden inferir con seguridad desde los nombres de los campos.",
   "options": [
     {
-      "title": "Aprobar mapeos por marketplace",
-      "body": "Definir y versionar los códigos urgentes y normales por proveedor, conservando fallback solo cuando falte una señal fiable.",
+      "title": "Validar tabla de mapeos",
+      "body": "Aprobar una tabla por marketplace y país, con fallback por importe únicamente cuando no exista señal contractual.",
       "recommended": true
     },
     {
       "title": "Mantener umbrales temporalmente",
-      "body": "Conservar la conducta actual hasta disponer de los contratos de nivel de servicio y de ejemplos representativos por marketplace.",
+      "body": "Conservar el comportamiento actual hasta disponer de documentación o muestras de pedidos suficientes para validar cada mapeo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar mapeos por marketplace",
-    "body": "Definir y versionar los códigos urgentes y normales por proveedor, conservando fallback solo cuando falte una señal fiable.",
+    "title": "Validar tabla de mapeos",
+    "body": "Aprobar una tabla por marketplace y país, con fallback por importe únicamente cuando no exista señal contractual.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "La trazabilidad de la regla y de su validación de negocio le sitúa como la mejor persona para concretar el contrato.",
+    "reason": "La documentación del bloque lo identifica como owner de la validación F2 que fijó la divergencia de negocio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
-    "reviewedAt": "2026-07-21T13:34:01.994Z",
-    "mainSha": "1c9b8717c11135abed5e4be14479cf2b23da5671"
+    "reviewedAt": "2026-08-04T23:46:28.812Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
