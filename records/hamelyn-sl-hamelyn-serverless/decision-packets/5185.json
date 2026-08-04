@@ -16,16 +16,16 @@
       "triage:done",
       "triage:confirmed-live",
       "area:marketplace-sync",
+      "no-stale",
+      "origin:watcher",
+      "mk:mercadolibre",
       "P1",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "no-stale",
-      "issue-rating: 💎 diamond",
-      "origin:watcher",
-      "mk:mercadolibre"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-04-13T01:26:56Z",
     "updatedAt": "2026-08-04T22:53:31Z"
@@ -63,6 +63,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5185.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5185#issuecomment-4909402137",
     "reviewedAt": "2026-08-04T23:19:32.752Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }

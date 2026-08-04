@@ -15,14 +15,14 @@
       "app:ecommerce",
       "triage:done",
       "reporter:victor",
+      "origin:panel",
+      "P2",
       "impact:other",
+      "issue-rating: 💎 diamond",
+      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "origin:panel"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-01T10:05:41Z",
     "updatedAt": "2026-08-04T23:12:46Z"
@@ -55,6 +55,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6763.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6763#issuecomment-4910174262",
     "reviewedAt": "2026-08-04T23:26:01.465Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
