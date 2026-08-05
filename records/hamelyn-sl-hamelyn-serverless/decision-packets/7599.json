@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T23:09:49.490Z",
-  "updatedAt": "2026-07-28T22:59:59Z",
+  "generatedAt": "2026-08-05T00:27:41.916Z",
+  "updatedAt": "2026-08-04T23:50:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,51 +13,52 @@
       "app:marketplace",
       "question",
       "triage:no-change",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:dev",
+      "mk:amazon"
     ],
     "createdAt": "2026-07-15T12:06:25Z",
-    "updatedAt": "2026-07-28T22:59:59Z"
+    "updatedAt": "2026-08-04T23:50:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué política permanente debe aplicarse a un par `(EAN, región)` sin ASIN regional: reintento limitado, estado no listable y revalidación, o retry indefinido?",
-  "rationale": "El código puede materializar cualquiera de las alternativas, pero no puede decidir por sí solo el coste de catálogo, la recuperabilidad esperada ni la visibilidad operativa del inventario.",
+  "question": "¿Qué política aprobamos para un par `(EAN, región)` que sigue sin ASIN regional: duración de reintentos, estado persistido, cadencia de revalidación y superficie de visibilidad?",
+  "rationale": "El código ya ejecuta el comportamiento actual; elegir umbrales y el significado de un nuevo estado cambia el contrato operativo y el modelo persistido.",
   "options": [
     {
-      "title": "Limitar y revalidar",
-      "body": "Reintentar durante siete días, marcar después el par como no listable y revalidarlo cada 30 días con visibilidad separada.",
+      "title": "Ventana limitada y revalidación",
+      "body": "Reintentar a diario durante 7 días, marcar después el par como no listable y volver a comprobarlo cada 30 días con visibilidad operativa.",
       "recommended": true
     },
     {
-      "title": "Mantener el comportamiento actual",
-      "body": "Conservar el retry con cooldown de 24 horas sin un estado adicional ni reducción de consultas.",
+      "title": "Mantener el retry actual",
+      "body": "Conservar los reintentos diarios indefinidos y asumir el coste de ruido y consultas hasta que Amazon incorpore el EAN.",
       "recommended": false
     },
     {
-      "title": "Retirar de la región",
-      "body": "Desactivar el stock regional y exponer una cola operativa para revisión humana antes de cualquier futura reactivación.",
+      "title": "Retirar por región",
+      "body": "Excluir el stock de la región tras el umbral y reportarlo en una superficie operativa sin revalidación automática.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar y revalidar",
-    "body": "Reintentar durante siete días, marcar después el par como no listable y revalidarlo cada 30 días con visibilidad separada.",
+    "title": "Ventana limitada y revalidación",
+    "body": "Reintentar a diario durante 7 días, marcar después el par como no listable y volver a comprobarlo cada 30 días con visibilidad operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta el recovery Amazon con la doctrina de watcher que ya reconoce la firma como estructural.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial conecta el onboarding regional y la consolidación del seguimiento de esta firma; la decisión requiere coordinación con Marketplace.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7599.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7599#issuecomment-4980638639",
-    "reviewedAt": "2026-07-28T23:09:49.490Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-08-05T00:27:41.916Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

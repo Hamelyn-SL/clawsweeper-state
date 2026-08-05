@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T21:37:56.561Z",
-  "updatedAt": "2026-07-28T21:31:27Z",
+  "generatedAt": "2026-08-05T00:27:28.094Z",
+  "updatedAt": "2026-08-04T23:45:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,46 @@
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:ebay"
     ],
     "createdAt": "2026-07-27T05:58:02Z",
-    "updatedAt": "2026-07-28T21:31:27Z"
+    "updatedAt": "2026-08-04T23:45:45Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Marketplace reactivar `ebay.create()` tras una cohorte mínima instrumentada, con umbrales explícitos de éxito y rollback?",
-  "rationale": "La decisión transforma un consumidor deliberadamente apagado en tráfico de publicación de producción y requiere aceptar el alcance operativo de la cohorte.",
+  "question": "¿Qué cohorte inicial, umbral de éxito y criterio de rollback autoriza el equipo para volver a habilitar `ebay.create()` en producción?",
+  "rationale": "El código demuestra que el consumidor está apagado, pero no puede determinar por sí solo el volumen operativo seguro ni la tolerancia aceptable a rechazos remotos.",
   "options": [
     {
-      "title": "Sonda antes de reactivar",
-      "body": "Fusionar la observabilidad, publicar una cohorte mínima y decidir la reactivación masiva solo con outcomes remotos clasificados.",
+      "title": "Reactivación graduada con sonda",
+      "body": "Completar la observabilidad, publicar una cohorte mínima y ampliar solo si las publicaciones remotas confirmadas y los errores clasificados cumplen el umbral.",
       "recommended": true
     },
     {
-      "title": "Mantener la pausa",
-      "body": "Conservar `create` desactivado hasta que la incidencia canónica identifique y delimite los rechazos remotos.",
+      "title": "Mantener create desactivado",
+      "body": "Conservar el freno hasta que eBay o la incidencia de publicación remota tenga una corrección operativa validada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Sonda antes de reactivar",
-    "body": "Fusionar la observabilidad, publicar una cohorte mínima y decidir la reactivación masiva solo con outcomes remotos clasificados.",
+    "title": "Reactivación graduada con sonda",
+    "body": "Completar la observabilidad, publicar una cohorte mínima y ampliar solo si las publicaciones remotas confirmadas y los errores clasificados cumplen el umbral.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El historial del controlador vigente y el arreglo previo de create lo conectan directamente con la decisión de reactivación.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Su historial reciente cubre la API de eBay y la recuperación de outcomes de publicación.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7961.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961#issuecomment-5087934598",
-    "reviewedAt": "2026-07-28T21:37:56.561Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-08-05T00:27:28.094Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

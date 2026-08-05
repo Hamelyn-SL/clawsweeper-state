@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T23:22:31.263Z",
-  "updatedAt": "2026-07-28T23:17:10Z",
+  "generatedAt": "2026-08-05T00:27:46.923Z",
+  "updatedAt": "2026-08-04T23:23:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,53 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
-    "updatedAt": "2026-07-28T23:17:10Z"
+    "updatedAt": "2026-08-04T23:23:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué contrato debe aplicar Fnac cuando `offers_update` devuelve `Product not found` para un EAN sin ficha remota: comprobar catálogo y persistir estados, o declarar la ausencia definitivamente no publicable?",
-  "rationale": "El código actual puede reintentar, pero no existe integración de catálogo ni una semántica aprobada que distinga ausencia temporal, recuperable y no publicable.",
+  "question": "¿Debe una ausencia `Product not found` confirmada por EAN pasar a estado no publicable, o conservar una política de reevaluación remota para posibles altas posteriores de catálogo?",
+  "rationale": "La fuente demuestra el bucle, pero no puede decidir si una ficha ausente es terminal ni cuándo volver a comprobarla sin asumir una política comercial de Fnac.",
   "options": [
     {
-      "title": "Verificar por EAN y persistir estados",
-      "body": "Añadir una comprobación remota agrupada por EAN y definir transiciones para recuperable, ausente y no publicable, incluida su reevaluación.",
+      "title": "Contrato por EAN con reevaluación",
+      "body": "Comprobar catálogo por EAN, persistir el resultado y reintentar solo los casos recuperables o sujetos a una cadencia aprobada.",
       "recommended": true
     },
     {
-      "title": "Marcar como no publicable",
-      "body": "Clasificar directamente la firma como permanente, aceptando que los EAN recuperables requerirán una ruta posterior de revisión.",
+      "title": "Ausencia terminal inmediata",
+      "body": "Clasificar `Product not found` como `PERMANENT` y tratar cualquier recuperación futura mediante una intervención explícita.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el comportamiento actual",
+      "body": "Conservar `STALE` y los reintentos periódicos, aceptando su coste mientras no exista una política de catálogo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar por EAN y persistir estados",
-    "body": "Añadir una comprobación remota agrupada por EAN y definir transiciones para recuperable, ausente y no publicable, incluida su reevaluación.",
+    "title": "Contrato por EAN con reevaluación",
+    "body": "Comprobar catálogo por EAN, persistir el resultado y reintentar solo los casos recuperables o sujetos a una cadencia aprobada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Ha delimitado la diferencia entre esta cohorte y la reconciliación Fnac ya integrada, y conoce la ruta de recuperación actual.",
+    "reason": "Es el contribuidor más reciente del controlador y de los recoveries Fnac que materializarían la política elegida.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
-    "reviewedAt": "2026-07-28T23:22:31.263Z",
-    "mainSha": "de70ead7c6486659f479623aa4b7547c13881346"
+    "reviewedAt": "2026-08-05T00:27:46.923Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
