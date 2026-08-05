@@ -13,17 +13,16 @@
       "app:marketplace",
       "feature",
       "triage:done",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "P2",
-      "clawsweeper:fix-shape-clear",
       "issue-rating: ➖ n/a",
       "origin:dev",
       "mk:mercadolibre",
       "mk:ebay",
-      "mk:abebooks"
+      "mk:abebooks",
+      "P2",
+      "impact:other"
     ],
     "createdAt": "2026-07-22T10:34:30Z",
     "updatedAt": "2026-08-04T23:44:43Z"
@@ -56,6 +55,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7880.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7880#issuecomment-5044956206",
     "reviewedAt": "2026-08-05T00:11:29.636Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
