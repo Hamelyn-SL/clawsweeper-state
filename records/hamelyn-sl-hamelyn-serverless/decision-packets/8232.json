@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T07:13:35.967Z",
+  "generatedAt": "2026-08-05T07:14:01.024Z",
   "updatedAt": "2026-08-05T07:06:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -19,35 +19,35 @@
     "createdAt": "2026-08-05T06:54:09Z",
     "updatedAt": "2026-08-05T07:06:24Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Confirma el owner SEO, regla por regla, qué specs deben actualizarse frente a v2 y cuáles deben pasar a `deprecated` por no tener implementación vigente?",
-  "rationale": "El código permite demostrar el desfase, pero la política BL exige validación del owner antes de considerar alineada cada regla publicada.",
+  "question": "¿Qué BL-IDs deben deprecarse definitivamente y cuáles deben conservarse como reglas reescritas del comportamiento v2?",
+  "rationale": "La política de business logic exige validación del owner para las reglas publicadas, y el código solo permite demostrar la divergencia técnica, no decidir la semántica documental final de cada ID.",
   "options": [
     {
-      "title": "Validar y alinear el bloque completo",
-      "body": "Revisar las specs señaladas contra v2, deprecar las reglas sin código y actualizar las referencias, tests y Log de las reglas vivas.",
+      "title": "Validar y actualizar por ID",
+      "body": "Aprobar una matriz por spec y abrir una PR documental que depreque las reglas eliminadas y reescriba las que siguen teniendo equivalente v2.",
       "recommended": true
     },
     {
-      "title": "Separar cualquier cambio de negocio",
-      "body": "Si la revisión descubre una conducta actual que deba cambiarse, abrir una incidencia distinta y limitar esta a documentar el comportamiento existente.",
+      "title": "Reescribir todas las specs",
+      "body": "Conservar todos los IDs y adaptar cada documento al v2, aunque algunos describan comportamientos ya inexistentes.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y alinear el bloque completo",
-    "body": "Revisar las specs señaladas contra v2, deprecar las reglas sin código y actualizar las referencias, tests y Log de las reglas vivas.",
+    "title": "Validar y actualizar por ID",
+    "body": "Aprobar una matriz por spec y abrir una PR documental que depreque las reglas eliminadas y reescriba las que siguen teniendo equivalente v2.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "El historial muestra que introdujo el diseño v2 que debe ser la referencia principal de esta alineación.",
+    "reason": "Lideró la PR fusionada que introdujo el subsistema v2 y sus rutas públicas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8232.md",
-    "reviewedAt": "2026-08-05T07:13:35.967Z",
+    "reviewedAt": "2026-08-05T07:14:01.024Z",
     "mainSha": "6ab790aa893bc602d8e4ccb3cbd427949ac9063c"
   }
 }
