@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T08:55:39.441Z",
-  "updatedAt": "2026-08-05T07:06:08Z",
+  "generatedAt": "2026-08-05T10:06:27.141Z",
+  "updatedAt": "2026-08-05T09:23:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 session-state"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 session-state",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-05T06:40:52Z",
-    "updatedAt": "2026-08-05T07:06:08Z",
-    "headSha": "53c58d2c58fd877211d9abfbe3a0f120c029a65d"
+    "updatedAt": "2026-08-05T09:23:52Z",
+    "headSha": "870f2b21e979c22f53b0af90197d744757ed776a"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que las confirmaciones se atribuyan a la sesión activa por estación cuando un relevo puede dejar abierta la sesión del operario anterior?",
-  "rationale": "El webhook conoce la estación, no al operario; la política de atribución afecta a la fiabilidad de métricas de personal y no se resuelve solo con el arreglo mecánico de la carrera.",
+  "question": "¿Se acepta que toda la productividad de una estación abierta se atribuya al operario que inició la sesión hasta que alguien la cierre?",
+  "rationale": "El webhook conoce la estación pero no la identidad física del operario, y la solicitud vinculada busca métricas comparables por operario; esa compensación operativa no puede resolverse solo desde el código.",
   "options": [
     {
-      "title": "Exigir entrega explícita de estación",
-      "body": "Cerrar o transferir la sesión al cambiar de operario para que cada confirmación conserve una atribución verificable.",
+      "title": "Aceptar la atribución por estación",
+      "body": "Documentar el relevo obligatorio con cierre de sesión y validar en almacén que el procedimiento refleja el uso real de la estación.",
       "recommended": true
     },
     {
-      "title": "Aceptar la atribución por última sesión",
-      "body": "Mantener el supuesto operativo actual y documentar que un relevo sin cierre puede imputar confirmaciones al operario anterior.",
+      "title": "Exigir atribución individual",
+      "body": "Pausar este enfoque y diseñar una fuente fiable de identidad por confirmación o por relevo antes de publicar la métrica.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir entrega explícita de estación",
-    "body": "Cerrar o transferir la sesión al cambiar de operario para que cada confirmación conserve una atribución verificable.",
+    "title": "Aceptar la atribución por estación",
+    "body": "Documentar el relevo obligatorio con cierre de sesión y validar en almacén que el procedimiento refleja el uso real de la estación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial cubre la identidad por estación y el flujo Skypod donde se define esta atribución.",
+    "reason": "Redactó la solicitud funcional y llevó los cambios recientes de identidad de estación que definen esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8227.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8227#issuecomment-5188592355",
-    "reviewedAt": "2026-08-05T08:55:39.441Z",
-    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
+    "reviewedAt": "2026-08-05T10:06:27.141Z",
+    "mainSha": "51159adb4a14c06c241c85de71f19899bb3a6af8"
   }
 }

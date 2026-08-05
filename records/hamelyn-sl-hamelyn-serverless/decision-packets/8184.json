@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T08:41:15.310Z",
-  "updatedAt": "2026-08-04T08:20:25Z",
+  "generatedAt": "2026-08-05T10:07:04.993Z",
+  "updatedAt": "2026-08-05T09:55:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-03T11:09:01Z",
-    "updatedAt": "2026-08-04T08:20:25Z",
+    "updatedAt": "2026-08-05T09:55:30Z",
     "headSha": "3cc23de63f011f181662a89ad12657c24b1fd54e"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe integrarse primero `EPIC/revision-v3` en `dev` y adaptar esta PR a esa base, o mantenerse el flujo aislado hasta una decisión de entrega distinta?",
-  "rationale": "La política del repositorio fija `dev` como base, mientras que el código afectado solo vive en una rama épica divergente; no es una decisión que pueda resolverse con un cambio mecánico.",
+  "question": "¿Debe Revisión V3 aterrizarse en `dev` antes de aceptar esta mejora, o se autoriza explícitamente `EPIC/revision-v3` como vehículo temporal de integración?",
+  "rationale": "La política del repositorio fija `dev` como base y la rama épica continúa divergente; elegir una excepción o un plan de aterrizaje requiere intención del equipo responsable.",
   "options": [
     {
-      "title": "Aterrizar V3 en `dev`",
-      "body": "Aprobar una ruta de integración de Revisión V3 y actualizar esta PR sobre la base soportada antes de fusionarla.",
+      "title": "Aterrizar V3 en `dev` primero",
+      "body": "Integrar el epic mediante una ruta revisable hacia `dev` y retargetear o recrear esta mejora sobre esa base.",
       "recommended": true
     },
     {
-      "title": "Mantener el puesto aislado",
-      "body": "Conservar la PR como candidata de la rama épica y aplazar la entrega hasta decidir otro vehículo de integración.",
+      "title": "Autorizar una excepción temporal",
+      "body": "Aceptar explícitamente esta PR contra la rama épica y definir cómo se validará su posterior integración con `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar V3 en `dev`",
-    "body": "Aprobar una ruta de integración de Revisión V3 y actualizar esta PR sobre la base soportada antes de fusionarla.",
+    "title": "Aterrizar V3 en `dev` primero",
+    "body": "Integrar el epic mediante una ruta revisable hacia `dev` y retargetear o recrear esta mejora sobre esa base.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el revisor de área con contexto explícito sobre la máquina de estados y el patrón de gaveta individual.",
-    "confidence": "high"
+    "person": "Alex Cantón",
+    "reason": "Su historial del flujo V3 y su revisión reciente del área le sitúan bien para orientar el vehículo de integración.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8184.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8184#issuecomment-5166142298",
-    "reviewedAt": "2026-08-04T08:41:15.310Z",
-    "mainSha": "c229f27acd380463f1864471b0c2e9992ff6a21b"
+    "reviewedAt": "2026-08-05T10:07:04.993Z",
+    "mainSha": "51159adb4a14c06c241c85de71f19899bb3a6af8"
   }
 }
