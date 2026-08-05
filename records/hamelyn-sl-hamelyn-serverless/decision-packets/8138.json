@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-31T06:31:29.991Z",
-  "updatedAt": "2026-07-31T06:04:12Z",
+  "generatedAt": "2026-08-05T00:49:52.772Z",
+  "updatedAt": "2026-08-04T23:48:25Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,47 @@
       "app:supply",
       "feature",
       "triage:done",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-30T13:15:00Z",
-    "updatedAt": "2026-07-31T06:04:12Z"
+    "updatedAt": "2026-08-04T23:48:25Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué operación y estado persistente deben representar «Nueva entrada», «faltan bultos» y la cancelación total antes de ampliar el panel?",
-  "rationale": "El flujo solicitado atraviesa el grafo de pedidos, métricas de operario y alertas; el código actual no define una semántica única para esas acciones.",
+  "question": "¿Debe aprobarse el panel V2 como flujo separado y dejar la cancelación en muelle y el resumen Slack como trabajos posteriores con contratos propios?",
+  "rationale": "La recepción cambia estados, notificaciones y métricas operativas; el comportamiento de cancelación y el destinatario/contenido del resumen diario no se deducen con seguridad del código actual.",
   "options": [
     {
-      "title": "Definir contrato y dividir el trabajo",
-      "body": "Aprobar las reglas de estado, persistencia y destinatarios de Slack antes de abrir cuatro subissues implementables.",
+      "title": "Fijar el alcance inicial",
+      "body": "Aprobar búsqueda, recepción, productividad e incidencias como V2, y planificar cancelación y Slack en tareas posteriores.",
       "recommended": true
     },
     {
-      "title": "Limitar la primera entrega",
-      "body": "Aprobar sólo búsqueda, detalle visual y métricas de lectura, dejando incidencias y Slack para una fase posterior.",
+      "title": "Exigir el alcance completo",
+      "body": "No aceptar el panel hasta definir e implementar también cancelación total y el resumen diario por Slack.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir contrato y dividir el trabajo",
-    "body": "Aprobar las reglas de estado, persistencia y destinatarios de Slack antes de abrir cuatro subissues implementables.",
+    "title": "Fijar el alcance inicial",
+    "body": "Aprobar búsqueda, recepción, productividad e incidencias como V2, y planificar cancelación y Slack en tareas posteriores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Introdujo y mantiene recientemente el flujo de recepción afectado.",
+    "reason": "Concentra la historia del panel de pickup y la PR candidata, por lo que puede concretar los límites técnicos con Operaciones.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8138.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8138#issuecomment-5131666813",
-    "reviewedAt": "2026-07-31T06:31:29.991Z",
-    "mainSha": "066346b468e785a6b227d94002d45fa0f3c00240"
+    "reviewedAt": "2026-08-05T00:49:52.772Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

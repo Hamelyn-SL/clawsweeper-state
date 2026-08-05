@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-31T10:43:32.563Z",
-  "updatedAt": "2026-07-31T08:17:40Z",
+  "generatedAt": "2026-08-05T00:48:44.649Z",
+  "updatedAt": "2026-08-04T23:46:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,47 @@
       "reporter:beltran",
       "feature",
       "triage:no-change",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T13:36:47Z",
-    "updatedAt": "2026-07-31T08:17:40Z"
+    "updatedAt": "2026-08-04T23:46:56Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se patrocina el alcance completo que conecta Admin, persistencia Postlibri y el agente local de cámara, manteniendo MercadoLibre fuera de la primera versión?",
-  "rationale": "El comportamiento funcional está definido en el hilo, pero la coordinación con el agente físico y la política de despliegue no se resuelven con una reparación autónoma acotada.",
+  "question": "¿Se patrocina esta primera versión amplia de verificación física para las cubetas compatibles, coordinando Admin y el agente Windows de cámara?",
+  "rationale": "El comportamiento de recuperación está definido, pero el trabajo cruza dos repositorios, hardware de almacén y persistencia; necesita una persona responsable de priorizar y validar la estación real.",
   "options": [
     {
-      "title": "Patrocinar la primera versión",
-      "body": "Coordinar los cambios de Admin y cámara para validar Cainiao, Spring y Postlibri con prueba física antes de desplegar.",
+      "title": "Patrocinar la V1 acordada",
+      "body": "Coordinar Admin y el agente de cámara para validar Cainiao, Spring y Postlibri, dejando MercadoLibre fuera explícitamente.",
       "recommended": true
     },
     {
-      "title": "Reducir el primer corte",
-      "body": "Limitar el despliegue inicial a transportistas con `shipTrackingNumber` persistido y planificar Postlibri después.",
+      "title": "Aplazar hasta disponer de estación",
+      "body": "Mantener el alcance documentado y reactivar la implementación cuando la cámara física y su agente puedan probarse en AutoPacking.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la primera versión",
-    "body": "Coordinar los cambios de Admin y cámara para validar Cainiao, Spring y Postlibri con prueba física antes de desplegar.",
+    "title": "Patrocinar la V1 acordada",
+    "body": "Coordinar Admin y el agente de cámara para validar Cainiao, Spring y Postlibri, dejando MercadoLibre fuera explícitamente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la issue y mantiene el flujo reciente de impresión de AutoPacking.",
+    "reason": "Es el asignado actual y el historial reciente le conecta directamente con la ruta de AutoPacking afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8031.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8031#issuecomment-5104971844",
-    "reviewedAt": "2026-07-31T10:43:32.563Z",
-    "mainSha": "cd21cc4f963350e0545c4432168c983436d361ed"
+    "reviewedAt": "2026-08-05T00:48:44.649Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
