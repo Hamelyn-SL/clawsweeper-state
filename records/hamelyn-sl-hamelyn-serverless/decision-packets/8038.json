@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T04:06:53.481Z",
-  "updatedAt": "2026-07-29T02:52:44Z",
+  "generatedAt": "2026-08-05T00:33:30.408Z",
+  "updatedAt": "2026-08-04T23:47:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,45 +16,51 @@
       "reporter:miguel",
       "triage:needs-info",
       "area:marketplace-sync",
-      "P0",
       "impact:other",
-      "issue-rating: 🥈 silver",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P0",
+      "issue-rating: 🥈 silver",
+      "origin:panel",
+      "mk:amazon"
     ],
     "createdAt": "2026-07-28T20:53:55Z",
-    "updatedAt": "2026-07-29T02:52:44Z"
+    "updatedAt": "2026-08-04T23:47:05Z"
   },
   "lane": "product_direction",
   "priority": "P0",
-  "question": "¿Qué intervención Amazon-side debe liderarse para Amazon IT y qué umbral de recuperación seller-side autoriza cualquier resincronización posterior?",
-  "rationale": "El repositorio puede preservar diagnóstico y evitar mutaciones dañinas, pero la causa y la autorización operativa dependen de Seller Central, Seller Support y la política de cuenta.",
+  "question": "¿Debe el equipo esperar confirmación Amazon-side de recuperación antes de autorizar una resincronización trazable de los listings italianos?",
+  "rationale": "El repositorio ya evita convertir la caída en reintentos genéricos, pero decidir cuándo y qué cohorte mutar exige asumir riesgo comercial y validar la causa externa.",
   "options": [
     {
-      "title": "Escalar y vigilar sin resincronizar",
-      "body": "Solicitar la notificación o caso de Amazon, seguir `BUYABLE`, snapshots y pedidos, y conservar separados los manifests de backlog y supresión.",
+      "title": "Esperar confirmación de Amazon",
+      "body": "Mantener la observación y abrir o seguir el caso de Seller Support hasta contar con evidencia de listings `BUYABLE`.",
       "recommended": true
     },
     {
-      "title": "Autorizar resincronización anticipada",
-      "body": "Reintentar solo tras aceptar explícitamente el riesgo de mantener la supresión y de alterar la traza local de la cohorte.",
+      "title": "Autorizar recuperación acotada",
+      "body": "Tras evidencia Amazon-side, ejecutar lotes con manifest, exclusiones y validación seller/API posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Reintentar masivamente ahora",
+      "body": "Reenviar la cohorte sin confirmación, aceptando consumo de cuota y posible ocultación del estado remoto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Escalar y vigilar sin resincronizar",
-    "body": "Solicitar la notificación o caso de Amazon, seguir `BUYABLE`, snapshots y pedidos, y conservar separados los manifests de backlog y supresión.",
+    "title": "Esperar confirmación de Amazon",
+    "body": "Mantener la observación y abrir o seguir el caso de Seller Support hasta contar con evidencia de listings `BUYABLE`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado en el contexto y su historial reciente cubre la reconciliación afectada.",
-    "confidence": "high"
+    "reason": "Está asignado a la incidencia y fue señalado como principal punto de coordinación del área marketplace.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8038.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8038#issuecomment-5109943437",
-    "reviewedAt": "2026-07-29T04:06:53.481Z",
-    "mainSha": "b3f48ada4c58ede7dde46b70646fb15465375dd0"
+    "reviewedAt": "2026-08-05T00:33:30.408Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

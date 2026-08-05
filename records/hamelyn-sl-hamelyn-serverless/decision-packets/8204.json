@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T08:51:13.126Z",
-  "updatedAt": "2026-08-04T07:20:17Z",
+  "generatedAt": "2026-08-05T00:32:47.375Z",
+  "updatedAt": "2026-08-04T23:49:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,49 +11,49 @@
     "state": "open",
     "labels": [
       "source:admin-panel",
-      "app:infrastructure",
       "feature",
       "triage:done",
-      "reporter:JavierHamelyn",
-      "P2",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "reporter:JavierHamelyn",
+      "app:agents",
+      "origin:panel"
     ],
     "createdAt": "2026-08-04T06:52:29Z",
-    "updatedAt": "2026-08-04T07:20:17Z"
+    "updatedAt": "2026-08-04T23:49:18Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe plataforma aprobar un canario opt-in de TypeScript 7 con API 6, o mantener TypeScript 6 hasta disponer de compatibilidad completa sin overrides de Next.js?",
-  "rationale": "La decisión define el contrato de CI y la compatibilidad de varias apps Next.js; el código actual no establece cuál es el comportamiento aceptado durante la transición.",
+  "question": "¿Debe la plataforma invertir ahora en un canario TypeScript 7 con coexistencia API 6/CLI 7, o mantener TypeScript 6 hasta que Next y ESLint soporten una actualización directa?",
+  "rationale": "La implementación define una política de compatibilidad, gates de CI y condiciones de retirada que no pueden inferirse de forma segura solo desde el código actual.",
   "options": [
     {
-      "title": "Aprobar un canario aislado",
-      "body": "Implementar aliases, aislar caché y estado incremental, y fijar temporalmente la CLI de Next para comparar ambos majors.",
+      "title": "Crear canario aislado",
+      "body": "Implementar aliases, `tsbuildinfo` y cachés por major, manteniendo TypeScript 6 como gate bloqueante inicial.",
       "recommended": true
     },
     {
-      "title": "Esperar compatibilidad completa",
-      "body": "Conservar TypeScript 6 como API y CLI hasta poder retirar el bridge sin introducir una configuración transitoria.",
+      "title": "Posponer la adopción",
+      "body": "Mantener TypeScript 6 sin cambios hasta que el ecosistema permita retirar el bridge de coexistencia con menor coste.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un canario aislado",
-    "body": "Implementar aliases, aislar caché y estado incremental, y fijar temporalmente la CLI de Next para comparar ambos majors.",
+    "title": "Crear canario aislado",
+    "body": "Implementar aliases, `tsbuildinfo` y cachés por major, manteniendo TypeScript 6 como gate bloqueante inicial.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Aportó el benchmark y el cambio de Next.js que condicionan el diseño técnico de esta fase.",
+    "reason": "Su trabajo reciente delimita la transición de Next 16.3 y el camino actual de CI afectado.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8204.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8204#issuecomment-5175710792",
-    "reviewedAt": "2026-08-04T08:51:13.126Z",
-    "mainSha": "24dc2085c43a7e52aca9cb61514d75963320c217"
+    "reviewedAt": "2026-08-05T00:32:47.375Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
