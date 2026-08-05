@@ -13,14 +13,14 @@
       "app:admin",
       "feature",
       "triage:queued",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
       "origin:dev",
       "P2",
       "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
     "updatedAt": "2026-08-05T12:30:17Z"
