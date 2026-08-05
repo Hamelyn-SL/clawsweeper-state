@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:33:30.408Z",
-  "updatedAt": "2026-08-04T23:47:05Z",
+  "generatedAt": "2026-08-05T09:14:12.412Z",
+  "updatedAt": "2026-08-05T08:59:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,54 +16,48 @@
       "reporter:miguel",
       "triage:needs-info",
       "area:marketplace-sync",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "origin:panel",
-      "mk:amazon",
-      "P0",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P0",
+      "issue-rating: ⚪ platinum",
+      "origin:panel",
+      "mk:amazon"
     ],
     "createdAt": "2026-07-28T20:53:55Z",
-    "updatedAt": "2026-08-04T23:47:05Z"
+    "updatedAt": "2026-08-05T08:59:52Z"
   },
   "lane": "product_direction",
   "priority": "P0",
-  "question": "¿Debe el equipo esperar confirmación Amazon-side de recuperación antes de autorizar una resincronización trazable de los listings italianos?",
-  "rationale": "El repositorio ya evita convertir la caída en reintentos genéricos, pero decidir cuándo y qué cohorte mutar exige asumir riesgo comercial y validar la causa externa.",
+  "question": "¿Debe el equipo mantener la monitorización sin mutaciones hasta recibir la causa de Amazon, o aprobar una recuperación limitada a listings que hayan vuelto a `BUYABLE`?",
+  "rationale": "La implementación actual puede reconciliar y observar estados, pero no puede determinar la causa externa ni la política segura de reenvío de cohortes.",
   "options": [
     {
-      "title": "Esperar confirmación de Amazon",
-      "body": "Mantener la observación y abrir o seguir el caso de Seller Support hasta contar con evidencia de listings `BUYABLE`.",
+      "title": "Esperar confirmación Amazon",
+      "body": "Mantener los monitores y no mutar listings hasta obtener el enforcement y la acción correctiva desde Seller Central o Seller Support.",
       "recommended": true
     },
     {
-      "title": "Autorizar recuperación acotada",
-      "body": "Tras evidencia Amazon-side, ejecutar lotes con manifest, exclusiones y validación seller/API posterior.",
-      "recommended": false
-    },
-    {
-      "title": "Reintentar masivamente ahora",
-      "body": "Reenviar la cohorte sin confirmación, aceptando consumo de cuota y posible ocultación del estado remoto.",
+      "title": "Aprobar recuperación controlada",
+      "body": "Definir una política auditable que procese solo lotes con `BUYABLE` confirmado y valide el resultado seller-side.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Esperar confirmación de Amazon",
-    "body": "Mantener la observación y abrir o seguir el caso de Seller Support hasta contar con evidencia de listings `BUYABLE`.",
+    "title": "Esperar confirmación Amazon",
+    "body": "Mantener los monitores y no mutar listings hasta obtener el enforcement y la acción correctiva desde Seller Central o Seller Support.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la incidencia y fue señalado como principal punto de coordinación del área marketplace.",
-    "confidence": "medium"
+    "reason": "Está asignado en la discusión, planteó la hipótesis de Account Health y figura en la historia reciente de watchers y reconciliación.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8038.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8038#issuecomment-5109943437",
-    "reviewedAt": "2026-08-05T00:33:30.408Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-05T09:14:12.412Z",
+    "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
   }
 }

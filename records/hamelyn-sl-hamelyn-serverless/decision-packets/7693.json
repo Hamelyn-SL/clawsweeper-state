@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T01:12:43.541Z",
-  "updatedAt": "2026-08-04T23:41:54Z",
+  "generatedAt": "2026-08-05T09:14:44.234Z",
+  "updatedAt": "2026-08-05T08:59:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "mk:fnac",
       "P2",
-      "impact:other",
       "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-08-04T23:41:54Z"
+    "updatedAt": "2026-08-05T08:59:54Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se autoriza recuperar la cohorte retirada de Fnac convirtiendo únicamente los objetivos verificados de `UNKNOWN` a `TRANSIENT` para que entren en el flujo normal de retirada?",
-  "rationale": "La transición supone una escritura masiva y una política de reintento sobre datos productivos; el código no puede decidir qué cohortes históricas son seguras sin una autorización operativa.",
+  "question": "¿Qué subcohortes históricas Fnac quedan autorizadas para el dry-run y la posterior escritura productiva?",
+  "rationale": "La corrección de código ya limita los reintentos transitorios; resolver la parte restante requiere decidir filtros y transiciones sobre datos productivos heterogéneos.",
   "options": [
     {
-      "title": "Recuperación acotada por cohortes",
-      "body": "Integrar la PR abierta y ejecutar el predicado validado en lotes pequeños, con comprobación remota Fnac y snapshot posterior.",
+      "title": "Autorizar cohortes verificadas",
+      "body": "Aprobar un dry-run con predicado literal y aplicar sólo las transiciones contrastadas por SKU y estado remoto.",
       "recommended": true
     },
     {
-      "title": "Sólo prevención futura",
-      "body": "Mantener la readmisión para errores ya `TRANSIENT` y posponer la conversión de la cohorte histórica hasta revisar más muestras.",
+      "title": "Mantener la deuda en observación",
+      "body": "No mutar la cohorte hasta disponer de un censo remoto suficiente para separar estados incompatibles.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recuperación acotada por cohortes",
-    "body": "Integrar la PR abierta y ejecutar el predicado validado en lotes pequeños, con comprobación remota Fnac y snapshot posterior.",
+    "title": "Autorizar cohortes verificadas",
+    "body": "Aprobar un dry-run con predicado literal y aplicar sólo las transiciones contrastadas por SKU y estado remoto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Ha aportado el predicado, el canario productivo y la propuesta de transición ligada a la recuperación.",
+    "reason": "Su corrección fusionada define el límite entre la recuperación automática transitoria y la operación histórica pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-05T01:12:43.541Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-05T09:14:44.234Z",
+    "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:57:58.251Z",
-  "updatedAt": "2026-08-04T23:47:39Z",
+  "generatedAt": "2026-08-05T09:14:11.534Z",
+  "updatedAt": "2026-08-05T08:59:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,53 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
+      "impact:other",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "mk:alibris",
-      "P1",
-      "impact:other",
       "issue-rating: ⚪ platinum",
-      "clawsweeper:needs-live-repro"
+      "origin:dev",
+      "mk:alibris"
     ],
     "createdAt": "2026-07-29T08:24:22Z",
-    "updatedAt": "2026-08-04T23:47:39Z"
+    "updatedAt": "2026-08-05T08:59:51Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el flujo depender de una confirmación remota de Seller Hub/AUS y cuál es la acción segura si el fichero no se procesa como `PURGE`?",
-  "rationale": "El repositorio no dispone de API ni de una semántica remota verificable; elegir entre observabilidad, reenvío o cambio de formato afecta a un catálogo completo.",
+  "question": "¿Qué fuente operativa aprobada debe usar el sistema para confirmar que Alibris aplicó cada fichero como `PURGE`?",
+  "rationale": "El repositorio demuestra la generación y subida, pero no tiene acceso ni contrato documentado para interpretar el estado remoto; elegir una estrategia sin esa señal podría alterar el catálogo completo.",
   "options": [
     {
-      "title": "Confirmar el procesamiento remoto primero",
-      "body": "Solicitar Inventory History/Seller Hub para el fichero del 28 de julio y decidir el cambio a partir de la acción y error realmente aplicados.",
+      "title": "Validar primero en Seller Hub",
+      "body": "Recopilar la acción y el resultado del fichero de 28 de julio antes de modificar generación, nombres o estrategia de retirada.",
       "recommended": true
     },
     {
-      "title": "Mantener solo la señal FTPS",
-      "body": "Aceptar que el audit mide transferencia y tratar las cancelaciones posteriores mediante seguimiento operativo externo.",
+      "title": "Definir una integración de confirmación",
+      "body": "Si Alibris ofrece un historial o API utilizable, incorporar una comprobación posterior con alerta al no obtener confirmación.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la trazabilidad actual",
+      "body": "Mantener el audit FTP actual y tratar los pedidos posteriores como riesgo operativo conocido sin nueva automatización.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el procesamiento remoto primero",
-    "body": "Solicitar Inventory History/Seller Hub para el fichero del 28 de julio y decidir el cambio a partir de la acción y error realmente aplicados.",
+    "title": "Validar primero en Seller Hub",
+    "body": "Recopilar la acción y el resultado del fichero de 28 de julio antes de modificar generación, nombres o estrategia de retirada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta el diseño original del purge con los cambios recientes de robustez del flujo.",
+    "reason": "Su historial conecta la integración original y los mecanismos actuales de subida y reintento.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073#issuecomment-5115369962",
-    "reviewedAt": "2026-08-05T00:57:58.251Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-05T09:14:11.534Z",
+    "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
   }
 }
