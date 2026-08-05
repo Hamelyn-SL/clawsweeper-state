@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T13:30:06.128Z",
+  "generatedAt": "2026-08-05T13:30:04.180Z",
   "updatedAt": "2026-08-05T13:07:09Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,33 +18,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe un autor sin señal enlazada por `canonicalNormalized` rechazar el producto como si su sell-through fuese inferior al 50%?",
-  "rationale": "La elección decide entre rechazar por ausencia de datos o exigir una medición real; el backtest y la cobertura actual no resuelven por sí solos ese coste de falsos rechazos.",
+  "question": "¿Debe la ausencia de enlace `canonicalNormalized` para un autor bloquear una compra como si su sell-through fuera inferior al 50%?",
+  "rationale": "La cobertura medida no permite equiparar ausencia de señal con bajo rendimiento, y elegir una semántica cambia la política de aceptación y el resultado operativo del backtest.",
   "options": [
     {
-      "title": "Exigir señal medida",
-      "body": "Rechazar por autor solo cuando exista un sell-through calculado por debajo del umbral, manteniendo la editorial y Amazon como señales independientes.",
+      "title": "No rechazar sin señal de autor",
+      "body": "Tratar el autor no encontrado como señal desconocida y exigir una métrica observada para que el autor contribuya al rechazo.",
       "recommended": true
     },
     {
-      "title": "Mantener fail-closed",
-      "body": "Tratar las ausencias como demanda insuficiente y aceptar explícitamente el rechazo adicional derivado de la cobertura parcial.",
+      "title": "Completar la cobertura de autores",
+      "body": "Ampliar el enlace o almacenamiento de señales hasta representar la población usada en el backtest antes de habilitar el filtro.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar el rechazo conservador",
+      "body": "Mantener la ausencia como cero, documentar el aumento esperado de rechazos y aprobar expresamente esa política.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir señal medida",
-    "body": "Rechazar por autor solo cuando exista un sell-through calculado por debajo del umbral, manteniendo la editorial y Amazon como señales independientes.",
+    "title": "No rechazar sin señal de autor",
+    "body": "Tratar el autor no encontrado como señal desconocida y exigir una métrica observada para que el autor contribuya al rechazo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el revisor asignado para el área y está relacionado con la cobertura de datos canónicos de autor.",
-    "confidence": "medium"
+    "person": "PabloMoran34",
+    "reason": "Su historial conecta directamente el gate de compra actual y la resolución canónica de autores que determina la cobertura de la nueva señal.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8266.md",
-    "reviewedAt": "2026-08-05T13:30:06.128Z",
+    "reviewedAt": "2026-08-05T13:30:04.180Z",
     "mainSha": "bfe1b66a19fbde783adc16e066f4d1d9fef99281"
   }
 }
