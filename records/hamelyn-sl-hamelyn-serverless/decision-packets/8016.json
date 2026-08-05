@@ -13,7 +13,7 @@
       "source:admin-panel",
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:needs-info",
       "epic:revision-v3",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -60,6 +60,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
     "reviewedAt": "2026-08-05T09:13:47.871Z",
     "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
   }
