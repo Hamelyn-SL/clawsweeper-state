@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T09:47:42.711Z",
-  "updatedAt": "2026-08-04T08:12:44Z",
+  "generatedAt": "2026-08-05T01:05:09.343Z",
+  "updatedAt": "2026-08-04T23:46:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,46 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "P2",
       "impact:ux-friction",
+      "reporter:daniellopez",
       "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:45Z",
-    "updatedAt": "2026-08-04T08:12:44Z"
+    "updatedAt": "2026-08-04T23:46:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aterrizarse primero `EPIC/revision-v3` en `dev`, o se aprueba un vehículo alternativo para integrar esta PR sin convertirla en una migración amplia?",
-  "rationale": "La funcionalidad está definida y tiene una PR candidata, pero la superficie completa no existe en la rama de integración exigida por la política del repositorio.",
+  "question": "¿Qué vía aprobada debe llevar `EPIC/revision-v3` a `dev` para que la PR de reasignación por unidad pueda revisarse e integrarse sin mantener otra base divergente?",
+  "rationale": "La mejora está implementada en una PR contra una rama épica ausente de `dev`; elegir el vehículo de integración determina si el cambio puede aterrizar de forma segura.",
   "options": [
     {
-      "title": "Aterrizar la épica y después integrar",
-      "body": "Definir la integración de Revisión V3 en `dev` y conservar la PR candidata como el cambio funcional específico posterior.",
+      "title": "Integrar primero la base V3",
+      "body": "Definir y ejecutar el aterrizaje de la rama épica en `dev`, y después revisar la PR actual contra esa base.",
       "recommended": true
     },
     {
-      "title": "Aprobar un vehículo alternativo acotado",
-      "body": "Autorizar explícitamente una estrategia que lleve solo la superficie necesaria a `dev`, con revisión de compatibilidad y pruebas reales.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la mejora",
-      "body": "Mantener la issue bloqueada hasta que exista una decisión y calendario para la integración de Revisión V3.",
+      "title": "Aprobar una vía alternativa",
+      "body": "Mantener otra rama de integración explícita y adaptar la PR candidata a esa ruta antes de considerarla para entrega.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aterrizar la épica y después integrar",
-    "body": "Definir la integración de Revisión V3 en `dev` y conservar la PR candidata como el cambio funcional específico posterior.",
+    "title": "Integrar primero la base V3",
+    "body": "Definir y ejecutar el aterrizaje de la rama épica en `dev`, y después revisar la PR actual contra esa base.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el asignado de la issue y autor de la única implementación candidata enlazada.",
+    "reason": "Es el asignado de la issue y su historial reciente cubre el flujo V3 y la implementación candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8013.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8013#issuecomment-5101534729",
-    "reviewedAt": "2026-08-04T09:47:42.711Z",
-    "mainSha": "977c183505f6e42a56a48043a75747fce3b1edc1"
+    "reviewedAt": "2026-08-05T01:05:09.343Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
