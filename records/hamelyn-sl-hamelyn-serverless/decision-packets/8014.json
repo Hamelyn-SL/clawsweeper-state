@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:57:58.807Z",
-  "updatedAt": "2026-07-28T08:41:17Z",
+  "generatedAt": "2026-08-05T00:21:03.229Z",
+  "updatedAt": "2026-08-04T23:46:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,52 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:47Z",
-    "updatedAt": "2026-07-28T08:41:17Z"
+    "updatedAt": "2026-08-04T23:46:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el agregado diario calculado al vuelo en Mongo como contrato operativo inicial, dejando BigQuery para las series históricas?",
-  "rationale": "La elección fija la consulta, los índices y el límite de responsabilidades antes de implementar el enganche V3 y los paneles dependientes.",
+  "question": "¿Debe el ritmo diario operativo salir de `opProductivity` en Mongo y reservarse BigQuery para el histórico por fases de Revisión V3?",
+  "rationale": "Los comentarios técnicos proponen límites distintos para Mongo y BigQuery; la elección define el contrato que consumirán el kiosco y los paneles.",
   "options": [
     {
-      "title": "Aprobar Mongo operativo",
-      "body": "Exponer totales y minutos activos ponderados desde `opProductivity` para refrescos de cinco minutos, con BigQuery como consumidor histórico.",
+      "title": "Separar operación e histórico",
+      "body": "Usar Mongo para total, minutos activos y ritmo ponderado del día, y BigQuery para series y desglose histórico por fases.",
       "recommended": true
     },
     {
-      "title": "Exigir rollup persistido",
-      "body": "Crear una colección diaria si se prefiere pagar complejidad de consistencia a cambio de lecturas agregadas precomputadas.",
+      "title": "Centralizar la analítica en BigQuery",
+      "body": "Mantener `opProductivity` solo como compatibilidad y retrasar los consumidores que requieren datos operativos recientes.",
+      "recommended": false
+    },
+    {
+      "title": "Introducir un rollup diario en Mongo",
+      "body": "Persistir agregados diarios para consultas rápidas, asumiendo la complejidad de actualización y reconciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar Mongo operativo",
-    "body": "Exponer totales y minutos activos ponderados desde `opProductivity` para refrescos de cinco minutos, con BigQuery como consumidor histórico.",
+    "title": "Separar operación e histórico",
+    "body": "Usar Mongo para total, minutos activos y ritmo ponderado del día, y BigQuery para series y desglose histórico por fases.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Ya dejó una propuesta técnica concreta y el reparto entre las superficies afectadas.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial en el contrato de productividad y su participación en la discusión de agregación lo conectan con la decisión de arquitectura.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8014.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014#issuecomment-5101484628",
-    "reviewedAt": "2026-07-28T09:57:58.807Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-08-05T00:21:03.229Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

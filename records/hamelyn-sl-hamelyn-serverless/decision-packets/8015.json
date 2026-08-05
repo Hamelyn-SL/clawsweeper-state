@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T09:57:03.710Z",
-  "updatedAt": "2026-07-28T08:32:05Z",
+  "generatedAt": "2026-08-05T00:20:23.042Z",
+  "updatedAt": "2026-08-04T23:46:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,47 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:49Z",
-    "updatedAt": "2026-07-28T08:32:05Z"
+    "updatedAt": "2026-08-04T23:46:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué roles pueden editar el objetivo de ritmo y qué campos mínimos debe conservar su historial de cambios?",
-  "rationale": "La decisión determina autorización, almacenamiento y auditoría; no puede inferirse de la infraestructura de productividad existente.",
+  "question": "¿Qué roles pueden modificar el objetivo de ritmo y qué datos mínimos debe guardar el historial de cada cambio?",
+  "rationale": "La solicitud exige un objetivo compartido y auditable, pero no fija la autorización ni el alcance del registro histórico.",
   "options": [
     {
-      "title": "Configurar con auditoría completa",
-      "body": "Permitir edición a los roles operativos confirmados y registrar autor, valor anterior, valor nuevo y fecha.",
+      "title": "Restringir y auditar",
+      "body": "Autorizar solo roles logísticos definidos y guardar autor, valor anterior, valor nuevo y fecha.",
       "recommended": true
     },
     {
-      "title": "Aplazar la edición configurable",
-      "body": "Mantener el objetivo fuera de la entrega hasta que Operaciones defina permisos e histórico exigidos.",
+      "title": "Guardar solo el valor actual",
+      "body": "Reducir el primer alcance sin histórico, aceptando menor trazabilidad operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Configurar con auditoría completa",
-    "body": "Permitir edición a los roles operativos confirmados y registrar autor, valor anterior, valor nuevo y fecha.",
+    "title": "Restringir y auditar",
+    "body": "Autorizar solo roles logísticos definidos y guardar autor, valor anterior, valor nuevo y fecha.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "La decisión afecta directamente al contrato de productividad y a su persistencia actual.",
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado a la dependencia técnica que debe fijar el contrato de productividad antes de integrar los avisos.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8015.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8015#issuecomment-5101537349",
-    "reviewedAt": "2026-07-28T09:57:03.710Z",
-    "mainSha": "1a31ab714322a908a1b413bab44e2e22afa6950c"
+    "reviewedAt": "2026-08-05T00:20:23.042Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
