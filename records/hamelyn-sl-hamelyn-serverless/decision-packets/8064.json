@@ -19,12 +19,12 @@
       "area:coupons",
       "clawsweeper:source-repro",
       "clawsweeper:fix-shape-clear",
-      "no-stale",
-      "clawsweeper:queueable-fix",
+      "issue-rating: 💎 diamond",
+      "origin:panel",
       "P0",
       "impact:ux-release-blocker",
-      "issue-rating: 💎 diamond",
-      "origin:panel"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
     ],
     "createdAt": "2026-07-29T07:10:01Z",
     "updatedAt": "2026-08-04T23:47:30Z"
@@ -57,6 +57,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8064.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8064#issuecomment-5114464444",
     "reviewedAt": "2026-08-05T01:04:58.725Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
