@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T09:58:33.392Z",
-  "updatedAt": "2026-08-05T09:23:27Z",
+  "generatedAt": "2026-08-05T11:08:01.915Z",
+  "updatedAt": "2026-08-05T10:25:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 compatibility",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 availability"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T05:47:43Z",
-    "updatedAt": "2026-08-05T09:23:27Z",
-    "headSha": "54267742bfd4b4cbc6a532f47946bc161fde7d11"
+    "updatedAt": "2026-08-05T10:25:46Z",
+    "headSha": "f30fb9578a16cac23e2a93d339736bb8c389d809"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta funcionalidad de QA aterrizar primero en `EPIC/revision-v3` como excepción operativa, o rehacerse contra la base `dev` exigida por la política del repositorio?",
-  "rationale": "La elección determina la compatibilidad de la rama y el orden de rollout de un flujo que modifica el cierre de lotes y la validación de órdenes.",
+  "question": "¿Debe esta funcionalidad QA integrarse temporalmente en `EPIC/revision-v3` con el switch hard-coded desactivado, o prepararse para la rama `dev` conforme a la política del repositorio?",
+  "rationale": "La elección determina la ruta de integración, el gate de CI aplicable y cuándo podrá activarse un cambio persistente del flujo de almacén.",
   "options": [
     {
-      "title": "Alinear con `dev`",
-      "body": "Reorientar el trabajo a `dev` o integrar primero los prerrequisitos de Revision V3 para mantener la política y revisar el upgrade completo.",
+      "title": "Retargetear a `dev`",
+      "body": "Adaptar e integrar el cambio mediante la rama base obligatoria, manteniendo el rollout desactivado hasta la aprobación operativa.",
       "recommended": true
     },
     {
-      "title": "Autorizar la excepción temporal",
-      "body": "Mantener `EPIC/revision-v3` como base solo con aprobación explícita y un plan de integración posterior a `dev`.",
+      "title": "Autorizar la integración en el epic",
+      "body": "Documentar una excepción explícita para `EPIC/revision-v3` y revisar después su promoción a `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Alinear con `dev`",
-    "body": "Reorientar el trabajo a `dev` o integrar primero los prerrequisitos de Revision V3 para mantener la política y revisar el upgrade completo.",
+    "title": "Retargetear a `dev`",
+    "body": "Adaptar e integrar el cambio mediante la rama base obligatoria, manteniendo el rollout desactivado hasta la aprobación operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es el revisor de área asignado con experiencia declarada en Revision V3/QA.",
-    "confidence": "medium"
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial contiene la implementación QA original y el epic de Revision V3.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8218.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8218#issuecomment-5188583506",
-    "reviewedAt": "2026-08-05T09:58:33.392Z",
-    "mainSha": "e30f1f84a2a4fcee09ef848f0ca24772c5ec5f1d"
+    "reviewedAt": "2026-08-05T11:08:01.915Z",
+    "mainSha": "1e35c3ad5828923a73f643ac6608b5cee541f182"
   }
 }
