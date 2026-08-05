@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:48:57.912Z",
-  "updatedAt": "2026-08-04T23:48:41Z",
+  "generatedAt": "2026-08-05T00:55:55.745Z",
+  "updatedAt": "2026-08-05T00:51:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,55 +14,54 @@
       "source:admin-panel",
       "app:marketplace",
       "triage:done",
-      "reporter:JavierHamelyn",
-      "origin:panel",
-      "mk:amazon",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "reporter:JavierHamelyn",
+      "origin:panel",
+      "mk:amazon"
     ],
     "createdAt": "2026-08-01T23:33:29Z",
-    "updatedAt": "2026-08-04T23:48:41Z"
+    "updatedAt": "2026-08-05T00:51:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba publicar la corrección con `legacy` por defecto y limitar el primer rollout a `shadow` en Amazon FR?",
-  "rationale": "El problema está demostrado, pero el modo de activación, la política de casos ambiguos y la convivencia con consumidores legacy determinan el riesgo operativo.",
+  "question": "¿Se aprueba publicar la corrección con `legacy` como modo predeterminado y limitar el primer rollout a `shadow` en Amazon FR?",
+  "rationale": "El cambio altera el contrato de identidad de Listings y debe preservar consumidores legacy; la evidencia local no sustituye la decisión sobre el modo inicial ni la exposición regional.",
   "options": [
     {
       "title": "PR con legacy y shadow en FR",
-      "body": "Publicar la rama para revisión, mantener el comportamiento existente por defecto y habilitar observación regional solo en FR tras el despliegue.",
+      "body": "Publicar el diff auditable con `legacy` por defecto y habilitar únicamente observación regional en FR tras revisión.",
       "recommended": true
     },
     {
-      "title": "Aprobar enforce regional",
-      "body": "Autorizar una activación regional estricta tras incluir la telemetría, pruebas de upgrade y un plan de rollback verificable.",
+      "title": "Aplazar hasta definir la política completa",
+      "body": "Mantener el trabajo local sin PR hasta cerrar la política de no-resuelto y el plan de remediación legacy con las incidencias relacionadas.",
       "recommended": false
     },
     {
-      "title": "Posponer el cambio",
-      "body": "Mantener el flujo actual hasta definir conjuntamente la política de identidades ambiguas y la remediación legacy.",
+      "title": "Aprobar enforce inicial",
+      "body": "Permitir `enforce` en una región solo tras añadir pruebas de upgrade y evidencia revisada de telemetría y reversión.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "PR con legacy y shadow en FR",
-    "body": "Publicar la rama para revisión, mantener el comportamiento existente por defecto y habilitar observación regional solo en FR tras el despliegue.",
+    "body": "Publicar el diff auditable con `legacy` por defecto y habilitar únicamente observación regional en FR tras revisión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el responsable asignado y quien ha preparado la evidencia y la rama local descritas en la discusión.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada y ha aportado la validación productiva y la implementación local descrita.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8162.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8162#issuecomment-5154039596",
-    "reviewedAt": "2026-08-05T00:48:57.912Z",
+    "reviewedAt": "2026-08-05T00:55:55.745Z",
     "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
