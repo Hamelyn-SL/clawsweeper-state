@@ -12,14 +12,14 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:done",
-      "impact:other",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
+      "triage:queued",
+      "origin:dev",
       "P2",
-      "clawsweeper:linked-pr-open",
+      "impact:other",
       "issue-rating: ➖ n/a",
-      "origin:dev"
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
     "updatedAt": "2026-08-05T06:42:43Z"
