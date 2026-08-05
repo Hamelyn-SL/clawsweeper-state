@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T07:02:51.863Z",
+  "updatedAt": "2026-08-05T06:55:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8234,
+    "title": "BL specs: stale code references and resolved-divergence notes found while adding entry logs",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8234",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:infrastructure",
+      "triage:queued",
+      "business-logic",
+      "P3"
+    ],
+    "createdAt": "2026-08-05T06:55:07Z",
+    "updatedAt": "2026-08-05T06:55:18Z"
+  },
+  "lane": "product_direction",
+  "priority": "P3",
+  "question": "¿Debe `countCouponUsage` y el resto de reglas compartidas tener una única spec canónica con referencias cruzadas, o mantenerse documentadas en más de un subdominio?",
+  "rationale": "La corrección de rutas y notas es mecánica, pero la titularidad BL determina el grafo, la validación F2 y la futura cobertura por regla.",
+  "options": [
+    {
+      "title": "Una spec canónica por regla",
+      "body": "Conservar `BL-ecommerce-coupons-13` como titular y convertir las referencias de checkout en enlaces explícitos a la regla canónica.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener documentación en ambos bloques",
+      "body": "Conservar dos specs solo si el owner confirma que representan afirmaciones de negocio independientes sobre el mismo helper.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Una spec canónica por regla",
+    "body": "Conservar `BL-ecommerce-coupons-13` como titular y convertir las referencias de checkout en enlaces explícitos a la regla canónica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El historial lo vincula directamente con la consolidación del bloque de coupons que actualmente posee el JSDoc de `countCouponUsage`.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8234.md",
+    "reviewedAt": "2026-08-05T07:02:51.863Z",
+    "mainSha": "77078f2e2804724ba1bb6b3709ec514090b10c4f"
+  }
+}
