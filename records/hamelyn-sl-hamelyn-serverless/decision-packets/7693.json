@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T05:43:32.264Z",
-  "updatedAt": "2026-08-04T05:34:18Z",
+  "generatedAt": "2026-08-05T01:12:43.541Z",
+  "updatedAt": "2026-08-04T23:41:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,48 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "P2",
       "impact:other",
-      "issue-rating: 🥈 silver",
-      "clawsweeper:not-repro-on-main",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:not-repro-on-main",
+      "issue-rating: 🥈 silver",
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-08-04T05:34:18Z"
+    "updatedAt": "2026-08-04T23:41:54Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué cohortes exactas se autorizan para un dry-run y, tras revisar sus muestras Fnac, para una reconciliación productiva limitada?",
-  "rationale": "La corrección de código ya está en `dev`; decidir qué documentos productivos modificar y bajo qué evidencia remota requiere responsabilidad operativa humana.",
+  "question": "¿Se autoriza recuperar la cohorte retirada de Fnac convirtiendo únicamente los objetivos verificados de `UNKNOWN` a `TRANSIENT` para que entren en el flujo normal de retirada?",
+  "rationale": "La transición supone una escritura masiva y una política de reintento sobre datos productivos; el código no puede decidir qué cohortes históricas son seguras sin una autorización operativa.",
   "options": [
     {
-      "title": "Autorizar dry-run por cohortes",
-      "body": "Congelar el SQL y los filtros literales, validar recuentos y tres muestras por cohorte antes de aprobar cualquier escritura.",
+      "title": "Recuperación acotada por cohortes",
+      "body": "Integrar la PR abierta y ejecutar el predicado validado en lotes pequeños, con comprobación remota Fnac y snapshot posterior.",
       "recommended": true
     },
     {
-      "title": "Mantener observación",
-      "body": "No modificar la cohorte hasta disponer de una clasificación remota más completa por batch y SKU.",
+      "title": "Sólo prevención futura",
+      "body": "Mantener la readmisión para errores ya `TRANSIENT` y posponer la conversión de la cohorte histórica hasta revisar más muestras.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar dry-run por cohortes",
-    "body": "Congelar el SQL y los filtros literales, validar recuentos y tres muestras por cohorte antes de aprobar cualquier escritura.",
+    "title": "Recuperación acotada por cohortes",
+    "body": "Integrar la PR abierta y ejecutar el predicado validado en lotes pequeños, con comprobación remota Fnac y snapshot posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el responsable asignado más reciente y la decisión es operativa, no un cambio de código.",
+    "reason": "Ha aportado el predicado, el canario productivo y la propuesta de transición ligada a la recuperación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-04T05:43:32.264Z",
-    "mainSha": "022a912c2c5685c3ee66bba1ab8b3394e01cd0fd"
+    "reviewedAt": "2026-08-05T01:12:43.541Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

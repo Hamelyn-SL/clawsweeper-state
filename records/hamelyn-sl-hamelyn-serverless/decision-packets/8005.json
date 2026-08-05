@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T09:21:28.720Z",
-  "updatedAt": "2026-08-04T09:01:27Z",
+  "generatedAt": "2026-08-05T01:13:24.438Z",
+  "updatedAt": "2026-08-04T23:46:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,48 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-08-04T09:01:27Z"
+    "updatedAt": "2026-08-04T23:46:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué rama y plan de integración llevarán las sub-issues de Revisión V3 a `dev`, y quién confirma las cuatro decisiones operativas compartidas?",
-  "rationale": "Las decisiones cambian contratos de auditoría, configuración y métricas; no se pueden inferir con seguridad desde el código actual.",
+  "question": "¿Qué corte de Revisión V3 debe integrarse primero en `dev` y qué capacidades deben seguir como entregas posteriores?",
+  "rationale": "El epic combina flujo operativo ya construido con métricas, configuración y auditoría aún abiertas; el código y las sub-issues no determinan por sí solos qué alcance debe liberarse.",
   "options": [
     {
-      "title": "Patrocinar la integración por fases",
-      "body": "Confirmar la rama de destino y resolver las decisiones pendientes antes de promover las sub-issues en el orden de dependencias.",
+      "title": "Integrar un corte operativo acotado",
+      "body": "Preparar una integración hacia `dev` del puesto estable y dejar productividad avanzada, auditoría y paneles en sus sub-issues.",
       "recommended": true
     },
     {
-      "title": "Pausar el programa V3",
-      "body": "Mantener las sub-issues bloqueadas hasta que Operaciones confirme requisitos y fecha de activación.",
+      "title": "Completar primero el paquete en la rama épica",
+      "body": "Mantener el trabajo en `EPIC/revision-v3` hasta cerrar las decisiones de datos y producto antes de preparar la integración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la integración por fases",
-    "body": "Confirmar la rama de destino y resolver las decisiones pendientes antes de promover las sub-issues en el orden de dependencias.",
+    "title": "Integrar un corte operativo acotado",
+    "body": "Preparar una integración hacia `dev` del puesto estable y dejar productividad avanzada, auditoría y paneles en sus sub-issues.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Es la persona que estructuró las entregas, dependencias y preguntas abiertas de este paquete.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Es el autor del epic base y el mejor enlace histórico visible para decidir el alcance de producto.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-08-04T09:21:28.720Z",
-    "mainSha": "ec89b82f3ed893534ad88062d0fe89edb92eaa37"
+    "reviewedAt": "2026-08-05T01:13:24.438Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
