@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:22:58.310Z",
-  "updatedAt": "2026-08-04T23:10:37Z",
+  "generatedAt": "2026-08-05T06:52:56.590Z",
+  "updatedAt": "2026-08-05T06:49:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:done",
-      "origin:dev",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:dev"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-08-04T23:10:37Z"
+    "updatedAt": "2026-08-05T06:49:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La productividad de Skypod debe contar toda transición de `PENDING` a un estado terminal, como Picking, o solo las confirmaciones satisfactorias mediante ACK?",
-  "rationale": "La decisión cambia el significado operacional de `itemsProcessed`; el código actual de Estación ejecuta acciones de excepciones distintas además del ACK normal.",
+  "question": "¿Debe aprobarse que toda transición `PENDING` a estado terminal, incluidos los casos no encontrados, cuente para la sesión Skypod asociada a la estación?",
+  "rationale": "La PR concreta una regla de negocio y una atribución por estación que afectan a la comparabilidad de la métrica y no se derivan por completo del contrato actual.",
   "options": [
     {
-      "title": "Mantener la semántica de Picking",
-      "body": "Contar una vez cada transición terminal desde `PENDING` y guardar el conteo bajo metadatos propios de Skypod.",
+      "title": "Aprobar la regla propuesta",
+      "body": "Contar cada transición terminal y atribuirla a la sesión activa de la estación, validándolo primero en un turno real.",
       "recommended": true
     },
     {
-      "title": "Contar solo confirmaciones OK",
-      "body": "Incrementar únicamente tras ACK satisfactorio y excluir urgentes y resultados no encontrados.",
+      "title": "Limitar el conteo a confirmaciones OK",
+      "body": "Excluir resultados no encontrados y ajustar el tracker antes de revisar la PR como candidata de merge.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la semántica de Picking",
-    "body": "Contar una vez cada transición terminal desde `PENDING` y guardar el conteo bajo metadatos propios de Skypod.",
+    "title": "Aprobar la regla propuesta",
+    "body": "Contar cada transición terminal y atribuirla a la sesión activa de la estación, validándolo primero en un turno real.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "El historial reciente del flujo de Estación le conecta directamente con la semántica de sus acciones y transiciones.",
+    "reason": "Su historial reciente concentra el comportamiento operativo de Estación que define el significado de esta métrica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-08-04T23:22:58.310Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-05T06:52:56.590Z",
+    "mainSha": "77078f2e2804724ba1bb6b3709ec514090b10c4f"
   }
 }
