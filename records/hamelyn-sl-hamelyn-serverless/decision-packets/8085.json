@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-29T11:48:39.675Z",
-  "updatedAt": "2026-07-29T10:31:36Z",
+  "generatedAt": "2026-08-05T00:57:33.833Z",
+  "updatedAt": "2026-08-04T23:47:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,52 +10,57 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085",
     "state": "open",
     "labels": [
-      "app:infrastructure",
       "feature",
       "reporter:javier",
       "triage:needs-info",
       "impact:other",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-29T10:14:09Z",
-    "updatedAt": "2026-07-29T10:31:36Z"
+    "updatedAt": "2026-08-04T23:47:44Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué campos de eventos Mandrill pueden conservarse, con qué retención, y debe el endpoint confirmar únicamente tras persistir el lote en una cola durable?",
-  "rationale": "Esta decisión fija la frontera de privacidad y la garantía de entrega; el código actual no establece ninguna de las dos políticas.",
+  "question": "¿Qué datos de webhook pueden almacenarse, durante cuánto tiempo y qué garantía duradera debe existir antes de confirmar 2xx a Mandrill?",
+  "rationale": "La elección determina la exposición de PII y si la traza puede perderse durante incidencias; no es una decisión mecánica que una PR de Core pueda resolver sola.",
   "options": [
     {
-      "title": "Minimizar datos y usar cola durable",
-      "body": "Guardar solo los campos necesarios con retención explícita y responder 2xx después de publicar el lote autenticado en una cola durable.",
+      "title": "Contrato minimizado con cola duradera",
+      "body": "Guardar solo los campos necesarios, fijar retención y enrutar el lote validado a Pub/Sub o equivalente antes de devolver 2xx.",
       "recommended": true
     },
     {
-      "title": "Insertar directamente en BigQuery",
-      "body": "Aceptar el riesgo operativo de una persistencia directa y documentar qué fallos pueden producir pérdida o bloqueo de eventos.",
+      "title": "Ingesta directa con retención corta",
+      "body": "Aceptar el riesgo operativo de inserción directa y documentar una retención estricta para los datos personales.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la ingesta",
+      "body": "Mantener los logs síncronos actuales hasta que privacidad y Data Platform aprueben el contrato y la operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Minimizar datos y usar cola durable",
-    "body": "Guardar solo los campos necesarios con retención explícita y responder 2xx después de publicar el lote autenticado en una cola durable.",
+    "title": "Contrato minimizado con cola duradera",
+    "body": "Guardar solo los campos necesarios, fijar retención y enrutar el lote validado a Pub/Sub o equivalente antes de devolver 2xx.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta los dos patrones de código implicados y es el mejor candidato visible para encauzar la decisión técnica.",
-    "confidence": "high"
+    "reason": "Conecta el flujo actual de envío y el planteamiento funcional, por lo que puede coordinar la decisión con Data Platform.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
-    "reviewedAt": "2026-07-29T11:48:39.675Z",
-    "mainSha": "5923ef4817c38f4dce478a7c2727104c5962c895"
+    "reviewedAt": "2026-08-05T00:57:33.833Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

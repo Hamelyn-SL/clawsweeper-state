@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-30T19:41:36.182Z",
-  "updatedAt": "2026-07-30T11:10:33Z",
+  "generatedAt": "2026-08-05T00:56:24.219Z",
+  "updatedAt": "2026-08-04T23:48:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,46 +15,46 @@
       "reporter:marta",
       "feature",
       "triage:blocked",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-30T09:23:51Z",
-    "updatedAt": "2026-07-30T11:10:33Z"
+    "updatedAt": "2026-08-04T23:48:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mecanismo o fecha separará los correos de Supply V2 de los envíos actuales de Supply V1?",
-  "rationale": "La sustitución inmediata de slugs cambia producción; el código no aporta una condición de V2 que resuelva por sí sola la convivencia.",
+  "question": "¿Qué señal de activación separará los correos de Supply V2 de los de V1 y cuál es el contrato definitivo de variables y plantillas?",
+  "rationale": "El código no ofrece hoy un límite de versión seguro, y el PDF no resuelve las discrepancias de variables ni el caso de modificación de dirección.",
   "options": [
     {
-      "title": "Definir un corte versionado",
-      "body": "Acordar una señal de V2 y aplicar entonces la migración completa de slugs, idiomas y variables.",
+      "title": "Aprobar corte y contrato V2",
+      "body": "Fijar fecha o señal de activación, matriz de slugs y variables canónicas para preparar una migración versionada.",
       "recommended": true
     },
     {
-      "title": "Mantener el contrato actual",
-      "body": "Posponer el rediseño hasta que la activación de V2 y las variables finales estén confirmadas.",
+      "title": "Mantener V1 hasta una especificación cerrada",
+      "body": "Conservar los correos actuales y reabrir la implementación cuando Supply V2 disponga de una activación coordinada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir un corte versionado",
-    "body": "Acordar una señal de V2 y aplicar entonces la migración completa de slugs, idiomas y variables.",
+    "title": "Aprobar corte y contrato V2",
+    "body": "Fijar fecha o señal de activación, matriz de slugs y variables canónicas para preparar una migración versionada.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente con el registro que debe versionarse o sustituirse.",
+    "person": "alexcanHamelyn",
+    "reason": "Conoce el flujo integrado de Celeritas y los handlers de correo que deben compatibilizarse durante el corte.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8127.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8127#issuecomment-5129139177",
-    "reviewedAt": "2026-07-30T19:41:36.182Z",
-    "mainSha": "866567d3c9c4c61afa385bce35f238c770e8bc2e"
+    "reviewedAt": "2026-08-05T00:56:24.219Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
