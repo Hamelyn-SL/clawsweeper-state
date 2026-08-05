@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T13:30:06.128Z",
+  "updatedAt": "2026-08-05T13:07:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8266,
+    "title": "feat: add unproven demand filter for new products",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8266",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-05T13:02:51Z",
+    "updatedAt": "2026-08-05T13:07:09Z",
+    "headSha": "b053cfaee3cc5e9ea2d44cf97cd9da811c411f6d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe un autor sin señal enlazada por `canonicalNormalized` rechazar el producto como si su sell-through fuese inferior al 50%?",
+  "rationale": "La elección decide entre rechazar por ausencia de datos o exigir una medición real; el backtest y la cobertura actual no resuelven por sí solos ese coste de falsos rechazos.",
+  "options": [
+    {
+      "title": "Exigir señal medida",
+      "body": "Rechazar por autor solo cuando exista un sell-through calculado por debajo del umbral, manteniendo la editorial y Amazon como señales independientes.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener fail-closed",
+      "body": "Tratar las ausencias como demanda insuficiente y aceptar explícitamente el rechazo adicional derivado de la cobertura parcial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir señal medida",
+    "body": "Rechazar por autor solo cuando exista un sell-through calculado por debajo del umbral, manteniendo la editorial y Amazon como señales independientes.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Es el revisor asignado para el área y está relacionado con la cobertura de datos canónicos de autor.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8266.md",
+    "reviewedAt": "2026-08-05T13:30:06.128Z",
+    "mainSha": "bfe1b66a19fbde783adc16e066f4d1d9fef99281"
+  }
+}
