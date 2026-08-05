@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T13:30:04.180Z",
-  "updatedAt": "2026-08-05T13:07:09Z",
+  "generatedAt": "2026-08-05T14:46:12.021Z",
+  "updatedAt": "2026-08-05T13:31:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,44 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T13:02:51Z",
-    "updatedAt": "2026-08-05T13:07:09Z",
+    "updatedAt": "2026-08-05T13:31:43Z",
     "headSha": "b053cfaee3cc5e9ea2d44cf97cd9da811c411f6d"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la ausencia de enlace `canonicalNormalized` para un autor bloquear una compra como si su sell-through fuera inferior al 50%?",
-  "rationale": "La cobertura medida no permite equiparar ausencia de señal con bajo rendimiento, y elegir una semántica cambia la política de aceptación y el resultado operativo del backtest.",
+  "question": "¿La ausencia de señal de editorial o autor debe bloquear una compra nueva al activar el filtro?",
+  "rationale": "La solicitud habla de ratios bajos, pero el código equipara datos inexistentes a cero; esa elección determina cuántos EAN nuevos se rechazan.",
   "options": [
     {
-      "title": "No rechazar sin señal de autor",
-      "body": "Tratar el autor no encontrado como señal desconocida y exigir una métrica observada para que el autor contribuya al rechazo.",
+      "title": "Exigir señales observadas",
+      "body": "Rechazar solo con ratios disponibles bajo el umbral y tratar la falta de datos como evidencia insuficiente.",
       "recommended": true
     },
     {
-      "title": "Completar la cobertura de autores",
-      "body": "Ampliar el enlace o almacenamiento de señales hasta representar la población usada en el backtest antes de habilitar el filtro.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el rechazo conservador",
-      "body": "Mantener la ausencia como cero, documentar el aumento esperado de rechazos y aprobar expresamente esa política.",
+      "title": "Mantener fail-closed",
+      "body": "Conservar el rechazo ante señales ausentes y aceptar explícitamente su impacto de cobertura.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "No rechazar sin señal de autor",
-    "body": "Tratar el autor no encontrado como señal desconocida y exigir una métrica observada para que el autor contribuya al rechazo.",
+    "title": "Exigir señales observadas",
+    "body": "Rechazar solo con ratios disponibles bajo el umbral y tratar la falta de datos como evidencia insuficiente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Su historial conecta directamente el gate de compra actual y la resolución canónica de autores que determina la cobertura de la nueva señal.",
-    "confidence": "high"
+    "person": "alexcanHamelyn",
+    "reason": "Está solicitado para revisar el flujo de compra y las señales de demanda.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8266.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8266#issuecomment-5192382898",
-    "reviewedAt": "2026-08-05T13:30:06.128Z",
-    "mainSha": "bfe1b66a19fbde783adc16e066f4d1d9fef99281"
+    "reviewedAt": "2026-08-05T14:46:12.021Z",
+    "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
   }
 }
