@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T08:51:57.892Z",
-  "updatedAt": "2026-08-05T08:21:45Z",
+  "generatedAt": "2026-08-05T09:58:33.392Z",
+  "updatedAt": "2026-08-05T09:23:27Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T05:47:43Z",
-    "updatedAt": "2026-08-05T08:21:45Z",
-    "headSha": "434b9256a52ba09fbae549b4b2833836888385fb"
+    "updatedAt": "2026-08-05T09:23:27Z",
+    "headSha": "54267742bfd4b4cbc6a532f47946bc161fde7d11"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba para Revision V3 el contrato de auditoría propuesto: gaveta física multiorden, cuota del operario que cierra, descarte manual sin caducidad y métrica por desperfecto individual al 85 %?",
-  "rationale": "La incidencia canónica dejó esas decisiones abiertas y la PR las convierte en persistencia, límites de selección y comportamiento operativo duradero.",
+  "question": "¿Debe esta funcionalidad de QA aterrizar primero en `EPIC/revision-v3` como excepción operativa, o rehacerse contra la base `dev` exigida por la política del repositorio?",
+  "rationale": "La elección determina la compatibilidad de la rama y el orden de rollout de un flujo que modifica el cierre de lotes y la validación de órdenes.",
   "options": [
     {
-      "title": "Confirmar el contrato y continuar",
-      "body": "Validar expresamente estas reglas, corregir los bloqueos mecánicos y exigir prueba completa antes de integrar.",
+      "title": "Alinear con `dev`",
+      "body": "Reorientar el trabajo a `dev` o integrar primero los prerrequisitos de Revision V3 para mantener la política y revisar el upgrade completo.",
       "recommended": true
     },
     {
-      "title": "Replantear el contrato",
-      "body": "Definir otra atribución, caducidad o métrica antes de mantener un modelo de datos y flujo de cierre distintos.",
+      "title": "Autorizar la excepción temporal",
+      "body": "Mantener `EPIC/revision-v3` como base solo con aprobación explícita y un plan de integración posterior a `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el contrato y continuar",
-    "body": "Validar expresamente estas reglas, corregir los bloqueos mecánicos y exigir prueba completa antes de integrar.",
+    "title": "Alinear con `dev`",
+    "body": "Reorientar el trabajo a `dev` o integrar primero los prerrequisitos de Revision V3 para mantener la política y revisar el upgrade completo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está solicitado como revisor por experiencia específica en Revision V3 y QA.",
-    "confidence": "high"
+    "reason": "Es el revisor de área asignado con experiencia declarada en Revision V3/QA.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8218.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8218#issuecomment-5188583506",
-    "reviewedAt": "2026-08-05T08:51:57.892Z",
-    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
+    "reviewedAt": "2026-08-05T09:58:33.392Z",
+    "mainSha": "e30f1f84a2a4fcee09ef848f0ca24772c5ec5f1d"
   }
 }
