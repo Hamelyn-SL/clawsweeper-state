@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T07:27:54.417Z",
-  "updatedAt": "2026-08-05T07:07:01Z",
+  "generatedAt": "2026-08-05T08:55:52.373Z",
+  "updatedAt": "2026-08-05T08:01:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,51 +12,45 @@
     "labels": [
       "size/L",
       "business-logic",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: 👀 ready for maintainer look",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 👀 ready for maintainer look",
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-05T07:04:30Z",
-    "updatedAt": "2026-08-05T07:07:01Z",
+    "updatedAt": "2026-08-05T08:01:15Z",
     "headSha": "94a670cbcb1917546c2c40361201c357485d6f3c"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se acepta el volumen adicional de `bl_invocations` de esta cobertura completa, incluidos los flujos ecommerce y pricing de alta frecuencia?",
-  "rationale": "Las pruebas confirman que se emiten trazas, pero no establecen el coste ni el volumen sostenido de los nuevos emisores en producción.",
+  "question": "¿Aceptamos el volumen y coste operativo de emitir trazas de entrada para buying, ecommerce y pricing con la cobertura propuesta?",
+  "rationale": "La utilidad de la cobertura está probada, pero la relación entre observabilidad, coste de logs e ingestión requiere una decisión operativa explícita.",
   "options": [
     {
-      "title": "Aprobar con límite operativo",
-      "body": "Validar una estimación o muestra de volumen de las rutas calientes y mantener los emisores solo donde representen una decisión de negocio.",
+      "title": "Aprobar con presupuesto",
+      "body": "Aceptar la instrumentación tras fijar estimación de volumen, retención y alertas para las rutas de mayor tráfico.",
       "recommended": true
     },
     {
-      "title": "Reducir cobertura de hot paths",
-      "body": "Dejar `entryLog: no` con justificación en helpers demasiado frecuentes y conservar los emisores de orquestación equivalentes.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la expansión",
-      "body": "Mantener shipping como cobertura actual hasta definir retención, coste y objetivo de consumo de `bl_invocations`.",
+      "title": "Acotar emisores",
+      "body": "Mantener decisiones explícitas en specs, pero excluir o muestrear rutas que excedan el presupuesto acordado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con límite operativo",
-    "body": "Validar una estimación o muestra de volumen de las rutas calientes y mantener los emisores solo donde representen una decisión de negocio.",
+    "title": "Aprobar con presupuesto",
+    "body": "Aceptar la instrumentación tras fijar estimación de volumen, retención y alertas para las rutas de mayor tráfico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Daniel",
-    "reason": "El historial le vincula directamente con el helper y la arquitectura actual de telemetría.",
+    "person": "danielmenchen-hamelyn",
+    "reason": "Diseñó la infraestructura de telemetría existente y concentra el historial más directo del cambio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8235.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8235#issuecomment-5188888202",
-    "reviewedAt": "2026-08-05T07:27:54.417Z",
-    "mainSha": "6ab790aa893bc602d8e4ccb3cbd427949ac9063c"
+    "reviewedAt": "2026-08-05T08:55:52.373Z",
+    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T06:53:23.009Z",
-  "updatedAt": "2026-08-05T05:47:51Z",
+  "generatedAt": "2026-08-05T08:51:57.892Z",
+  "updatedAt": "2026-08-05T08:21:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T05:47:43Z",
-    "updatedAt": "2026-08-05T05:47:51Z",
-    "headSha": "087637ab9b69e0e8b7dc016ad70591cc634100e8"
+    "updatedAt": "2026-08-05T08:21:45Z",
+    "headSha": "434b9256a52ba09fbae549b4b2833836888385fb"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba como contrato operativo que la auditoría use una cuota semanal por operario, máximo tres gavetas diarias y coincidencia por desperfecto con umbral del 85 %?",
-  "rationale": "La petición original dejaba abiertas la semántica de coincidencia y el manejo operativo de gavetas; esta PR fija ambas decisiones sin una confirmación visible de producto.",
+  "question": "¿Se aprueba para Revision V3 el contrato de auditoría propuesto: gaveta física multiorden, cuota del operario que cierra, descarte manual sin caducidad y métrica por desperfecto individual al 85 %?",
+  "rationale": "La incidencia canónica dejó esas decisiones abiertas y la PR las convierte en persistencia, límites de selección y comportamiento operativo duradero.",
   "options": [
     {
-      "title": "Confirmar el contrato propuesto",
-      "body": "Aceptar las reglas documentadas y pedir la reparación de compatibilidad antes de revisar la integración final.",
+      "title": "Confirmar el contrato y continuar",
+      "body": "Validar expresamente estas reglas, corregir los bloqueos mecánicos y exigir prueba completa antes de integrar.",
       "recommended": true
     },
     {
-      "title": "Revisar el criterio de auditoría",
-      "body": "Definir primero otra política de muestreo, comparación o reapertura antes de continuar con esta implementación.",
+      "title": "Replantear el contrato",
+      "body": "Definir otra atribución, caducidad o métrica antes de mantener un modelo de datos y flujo de cierre distintos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el contrato propuesto",
-    "body": "Aceptar las reglas documentadas y pedir la reparación de compatibilidad antes de revisar la integración final.",
+    "title": "Confirmar el contrato y continuar",
+    "body": "Validar expresamente estas reglas, corregir los bloqueos mecánicos y exigir prueba completa antes de integrar.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial muestra propiedad técnica directa sobre el flujo QA previo y sus reglas de Revision V3.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Está solicitado como revisor por experiencia específica en Revision V3 y QA.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8218.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8218#issuecomment-5188583506",
-    "reviewedAt": "2026-08-05T06:53:23.009Z",
-    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+    "reviewedAt": "2026-08-05T08:51:57.892Z",
+    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
   }
 }
