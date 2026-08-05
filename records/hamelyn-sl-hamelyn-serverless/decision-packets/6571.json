@@ -12,9 +12,10 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:done",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
       "clawsweeper:linked-pr-open",
@@ -52,6 +53,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
     "reviewedAt": "2026-08-05T12:41:13.469Z",
     "mainSha": "a6c93c25f718347cbc223b44cff70cffb4b26651"
   }
