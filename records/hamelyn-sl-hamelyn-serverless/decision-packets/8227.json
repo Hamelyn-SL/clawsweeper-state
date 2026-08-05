@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T12:43:34.493Z",
-  "updatedAt": "2026-08-05T12:30:07Z",
+  "generatedAt": "2026-08-05T14:53:37.799Z",
+  "updatedAt": "2026-08-05T14:49:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 session-state"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 session-state",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T06:40:52Z",
-    "updatedAt": "2026-08-05T12:30:07Z",
-    "headSha": "2ee5ea266a41e5ccc992d141fe4cfe0cc4a43139"
+    "updatedAt": "2026-08-05T14:49:20Z",
+    "headSha": "f04aba4343ce23a09e83fc96768d5421b87cca15"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse como contrato que una sesión SKYPOD atribuya todas las confirmaciones de una estación al operario que la abrió hasta que se cierre?",
-  "rationale": "El webhook conoce la estación pero no al operario; el PR reconoce que los relevos sin cierre cambian la autoría de la métrica.",
+  "question": "¿Debe aceptarse que un relevo en la misma estación sin cerrar la sesión atribuya todas las confirmaciones al operario que abrió la sesión?",
+  "rationale": "La petición busca métricas por operario, pero el webhook solo aporta estación y el PR documenta esta pérdida de atribución en relevos; es una decisión operativa, no un arreglo mecánico.",
   "options": [
     {
-      "title": "Confirmar atribución por estación",
-      "body": "Aceptar este contrato operativo y exigir un cierre de sesión en cada relevo antes de fusionar.",
+      "title": "Aceptar atribución por estación",
+      "body": "Mantener el diseño actual y exigir operativamente cerrar o pausar la sesión antes de cualquier relevo.",
       "recommended": true
     },
     {
-      "title": "Diseñar una atribución más estricta",
-      "body": "Pausar la fusión hasta disponer de una señal fiable de operario o de una recuperación explícita de relevo.",
+      "title": "Exigir identidad de operario",
+      "body": "Pausar esta dirección hasta disponer de una señal fiable de operario en el flujo que recibe las confirmaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar atribución por estación",
-    "body": "Aceptar este contrato operativo y exigir un cierre de sesión en cada relevo antes de fusionar.",
+    "title": "Aceptar atribución por estación",
+    "body": "Mantener el diseño actual y exigir operativamente cerrar o pausar la sesión antes de cualquier relevo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre la identidad de estación y el flujo Skypod que define esta decisión.",
+    "reason": "Su historial cubre la identidad de estación y los flujos Skypod que determinan si puede obtenerse una atribución más precisa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8227.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8227#issuecomment-5188592355",
-    "reviewedAt": "2026-08-05T12:43:34.493Z",
-    "mainSha": "b9b2ef806d69d0253d9de6ea4e71f827ef17ac5d"
+    "reviewedAt": "2026-08-05T14:53:37.799Z",
+    "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
   }
 }

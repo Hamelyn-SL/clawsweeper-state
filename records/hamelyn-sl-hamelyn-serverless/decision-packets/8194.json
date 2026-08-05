@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T14:46:31.776Z",
-  "updatedAt": "2026-08-05T13:10:31Z",
+  "generatedAt": "2026-08-05T14:53:17.519Z",
+  "updatedAt": "2026-08-05T14:49:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-05T13:10:31Z",
+    "updatedAt": "2026-08-05T14:49:13Z",
     "headSha": "2ceb48b841f2dfd6650d28bfd16889c769da4196"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta que los feeds de usado publiquen metadatos de `mongodata.products` con hasta 24 horas de retraso, o debe bloquearse/cambiarse el valor por defecto?",
-  "rationale": "La rama cambia el origen por defecto y la elección afecta directamente a qué productos, textos e imágenes llegan a Google Merchant; no es una corrección mecánica sin una política de frescura.",
+  "question": "¿Se acepta publicar por defecto los feeds de usado desde un snapshot diario de productos mientras solo se garantiza la frescura horaria de stocks?",
+  "rationale": "El cambio altera la actualidad de metadata visible en Google Merchant; el código no puede decidir si ese retraso es aceptable para negocio ni qué compatibilidad debe prevalecer.",
   "options": [
     {
-      "title": "Exigir productos frescos",
-      "body": "Añadir un gate `table` para `mongodata.products` antes de ejecutar BigQuery por defecto y demostrar la paridad tras el refresh.",
+      "title": "Mantener compatibilidad por defecto",
+      "body": "Conservar Mongo como fuente predeterminada hasta disponer de un contrato y gate de frescura para productos.",
       "recommended": true
     },
     {
-      "title": "Aceptar el desfase diario",
-      "body": "Mantener el gate de stocks y documentar que metadatos de producto pueden retrasarse hasta el siguiente materializado diario.",
+      "title": "Aceptar el snapshot diario",
+      "body": "Aprobar expresamente BigQuery por defecto con el retraso documentado y monitorizar sus primeras publicaciones.",
       "recommended": false
     },
     {
-      "title": "Mantener Mongo por defecto",
-      "body": "Dejar BigQuery como opción explícita hasta disponer de un contrato de frescura de productos aceptado.",
+      "title": "Separar la activación",
+      "body": "Mergear la infraestructura, pero activar `source=bigquery` solo en dispatches con una ventana de productos validada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir productos frescos",
-    "body": "Añadir un gate `table` para `mongodata.products` antes de ejecutar BigQuery por defecto y demostrar la paridad tras el refresh.",
+    "title": "Mantener compatibilidad por defecto",
+    "body": "Conservar Mongo como fuente predeterminada hasta disponer de un contrato y gate de frescura para productos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra el diseño y mantenimiento del workflow afectado.",
+    "reason": "Es el principal responsable histórico del workflow y de los scripts de Merchant que cambian de contrato operativo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-05T14:46:31.776Z",
+    "reviewedAt": "2026-08-05T14:53:17.519Z",
     "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
   }
 }
