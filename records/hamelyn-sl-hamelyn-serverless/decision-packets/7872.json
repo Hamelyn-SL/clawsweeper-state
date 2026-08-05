@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T09:49:41.091Z",
-  "updatedAt": "2026-07-22T09:42:17Z",
+  "generatedAt": "2026-08-05T00:11:09.904Z",
+  "updatedAt": "2026-08-04T23:44:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -11,49 +11,54 @@
     "state": "open",
     "labels": [
       "source:admin-panel",
-      "app:infrastructure",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "app:agents",
+      "origin:panel"
     ],
     "createdAt": "2026-07-22T09:41:56Z",
-    "updatedAt": "2026-07-22T09:42:17Z"
+    "updatedAt": "2026-08-04T23:44:36Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Eve incorporar observabilidad de Atlas, MongoDB y BigQuery, y qué límites de acceso, retención y escalado a Slack/GitHub se aceptan?",
-  "rationale": "La propuesta añade una responsabilidad operativa y permisos sensibles que los watchers actuales no determinan por sí solos.",
+  "question": "¿Se aprueba que Eve incorpore esta monitorización de infraestructura con credenciales Atlas y Mongo separadas, y qué señales justifican crear una incidencia o avisar por Slack?",
+  "rationale": "El código actual aporta la infraestructura de ejecución, pero no puede decidir el acceso operativo, los umbrales ni la política de ruido sin mandato explícito.",
   "options": [
     {
-      "title": "Aprobar un diseño mínimo",
-      "body": "Acordar señales, secretos, almacenamiento y umbrales antes de dividir la implementación en entregas acotadas.",
+      "title": "Aprobar alcance mínimo",
+      "body": "Definir collectors de solo lectura para Atlas y Mongo, correlación con BigQuery y una política conservadora de avisos.",
       "recommended": true
     },
     {
-      "title": "Mantener el alcance actual",
-      "body": "No incorporar esta responsabilidad a Eve y gestionar la observabilidad desde la plataforma correspondiente.",
+      "title": "Limitar a telemetría existente",
+      "body": "Mantener el alcance en BigQuery y Vercel hasta disponer de credenciales y señales Atlas aprobadas.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la iniciativa",
+      "body": "No añadir integración de infraestructura a Eve mientras no haya una necesidad operativa priorizada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un diseño mínimo",
-    "body": "Acordar señales, secretos, almacenamiento y umbrales antes de dividir la implementación en entregas acotadas.",
+    "title": "Aprobar alcance mínimo",
+    "body": "Definir collectors de solo lectura para Atlas y Mongo, correlación con BigQuery y una política conservadora de avisos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente en Eve y su asignación actual lo sitúan como el mejor punto de entrada para la decisión.",
+    "reason": "Está asignado a la solicitud y su historial introdujo el framework de watchers de Eve.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7872.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7872#issuecomment-5044367604",
-    "reviewedAt": "2026-07-22T09:49:41.091Z",
-    "mainSha": "51574df0884842bc6f64caa65bbca884f76c59c9"
+    "reviewedAt": "2026-08-05T00:11:09.904Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

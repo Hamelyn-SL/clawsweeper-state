@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T10:54:48.911Z",
-  "updatedAt": "2026-07-22T10:41:13Z",
+  "generatedAt": "2026-08-05T00:11:29.636Z",
+  "updatedAt": "2026-08-04T23:44:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,50 @@
       "app:marketplace",
       "feature",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: ➖ n/a",
+      "origin:dev",
+      "mk:mercadolibre",
+      "mk:ebay",
+      "mk:abebooks"
     ],
     "createdAt": "2026-07-22T10:34:30Z",
-    "updatedAt": "2026-07-22T10:41:13Z"
+    "updatedAt": "2026-08-04T23:44:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba dividir esta ampliación en tres entregas canario con dry-run operativo independiente antes de activar escrituras?",
-  "rationale": "La fuente e identidad remota difieren por proveedor y un fallo puede retirar listings válidos; el código común no decide los umbrales ni la activación operativa.",
+  "question": "¿Se aprueba completar los dos adaptadores pendientes como canarios operativos separados, manteniendo MercadoLibre fuera del nuevo alcance por estar ya cubierto?",
+  "rationale": "Los umbrales de integridad, el volumen aceptable y la activación de escrituras remotas requieren validación operativa que el código actual no puede decidir de forma segura.",
   "options": [
     {
-      "title": "Aprobar tres canarios",
-      "body": "Implementar y validar eBay, MercadoLibre y AbeBooks por separado, activando escrituras solo tras cada dry-run satisfactorio.",
+      "title": "Aprobar dos canarios separados",
+      "body": "Implementar eBay y AbeBooks por separado, cada uno con dry-run real, umbral explícito y activación posterior revisada.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance inicial",
-      "body": "Priorizar eBay o MercadoLibre y mantener los otros proveedores sin siembra hasta disponer de más evidencia operativa.",
+      "title": "Mantener solo la detección",
+      "body": "Conservar los informes sin siembra automática hasta disponer de una política operativa común para snapshots semanales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar tres canarios",
-    "body": "Implementar y validar eBay, MercadoLibre y AbeBooks por separado, activando escrituras solo tras cada dry-run satisfactorio.",
+    "title": "Aprobar dos canarios separados",
+    "body": "Implementar eBay y AbeBooks por separado, cada uno con dry-run real, umbral explícito y activación posterior revisada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Definió el alcance y llevó la generalización previa que dejó estos adaptadores fuera.",
+    "reason": "El historial le vincula tanto al helper común como al endurecimiento reciente del snapshot de AbeBooks.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7880.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7880#issuecomment-5044956206",
-    "reviewedAt": "2026-07-22T10:54:48.911Z",
-    "mainSha": "00352b6ac84cadb225e9d68f8a8260ae555966f3"
+    "reviewedAt": "2026-08-05T00:11:29.636Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }

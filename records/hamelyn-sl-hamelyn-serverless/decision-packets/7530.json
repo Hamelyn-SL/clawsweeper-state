@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-27T12:16:47.352Z",
-  "updatedAt": "2026-07-27T10:32:43Z",
+  "generatedAt": "2026-08-05T00:11:17.458Z",
+  "updatedAt": "2026-08-04T23:26:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,50 +10,50 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530",
     "state": "open",
     "labels": [
-      "app:infrastructure",
+      "app:ecommerce",
       "question",
       "triage:done",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev"
     ],
     "createdAt": "2026-07-14T09:49:10Z",
-    "updatedAt": "2026-07-27T10:32:43Z"
+    "updatedAt": "2026-08-04T23:26:23Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato HTTP y política de reintento debe aplicar Supply cuando Celeritas responde 2xx sin una URL de etiqueta?",
-  "rationale": "El código ya identifica y conserva evidencia del fallo, pero decidir entre error controlado, reintento o tratamiento funcional depende del efecto de una posible creación parcial de etiqueta.",
+  "question": "¿Qué respuesta HTTP y política de reintento debe aplicar Supply cuando Celeritas devuelve 2xx sin `results[0].label.url`?",
+  "rationale": "El código evita el `TypeError` y conserva evidencia, pero no permite saber si el proveedor creó una etiqueta parcial; esa semántica no puede deducirse de forma segura del repositorio.",
   "options": [
     {
-      "title": "Decidir con un payload correlacionado",
-      "body": "Mantener el comportamiento actual hasta capturar una respuesta saneada y abrir una canónica que fije status y reintentos por contrato.",
+      "title": "Decidir con payload correlacionado",
+      "body": "Mantener el guard actual, capturar una respuesta saneada de Celeritas y abrir una canónica estrecha que fije status e idempotencia.",
       "recommended": true
     },
     {
-      "title": "Definir un fallo de integración inmediato",
-      "body": "Cambiar ya a una respuesta controlada sin reintento, aceptando que aún no se conoce si Celeritas pudo crear una etiqueta parcialmente.",
+      "title": "Fallo controlado sin reintento",
+      "body": "Mapear ya el contrato inválido a un error de integración explícito, asumiendo que no se intentará recuperar una posible etiqueta parcial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Decidir con un payload correlacionado",
-    "body": "Mantener el comportamiento actual hasta capturar una respuesta saneada y abrir una canónica que fije status y reintentos por contrato.",
+    "title": "Decidir con payload correlacionado",
+    "body": "Mantener el guard actual, capturar una respuesta saneada de Celeritas y abrir una canónica estrecha que fije status e idempotencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Ha llevado la observabilidad y el guardado del contrato que habilitan esta decisión.",
+    "reason": "Ha llevado los cambios que exponen el contrato anómalo y está asignado a la coordinación de esta investigación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7530.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7530#issuecomment-4968442778",
-    "reviewedAt": "2026-07-27T12:16:47.352Z",
-    "mainSha": "e6b81a368263f75b679db21a1b01d522fcf69561"
+    "reviewedAt": "2026-08-05T00:11:17.458Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
