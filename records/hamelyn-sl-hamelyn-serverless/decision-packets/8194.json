@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T12:26:57.743Z",
-  "updatedAt": "2026-08-05T11:53:58Z",
+  "generatedAt": "2026-08-05T14:46:31.776Z",
+  "updatedAt": "2026-08-05T13:10:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
-      "merge-risk: 🚨 compatibility"
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-05T11:53:58Z",
-    "headSha": "4cd0c3f2fa06ee894484ce8fb92ea0ec63110508"
+    "updatedAt": "2026-08-05T13:10:31Z",
+    "headSha": "2ceb48b841f2dfd6650d28bfd16889c769da4196"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta que los feeds de Google Merchant publiquen metadatos de producto con hasta 24 horas de retraso, o debe preservarse una garantía de frescura antes de activar BigQuery por defecto?",
-  "rationale": "La cuestión afecta directamente a la actualidad del catálogo publicado; el precedente de `bq-freshness-gate` no decide si este feed puede degradar a datos diarios.",
+  "question": "¿Se acepta que los feeds de usado publiquen metadatos de `mongodata.products` con hasta 24 horas de retraso, o debe bloquearse/cambiarse el valor por defecto?",
+  "rationale": "La rama cambia el origen por defecto y la elección afecta directamente a qué productos, textos e imágenes llegan a Google Merchant; no es una corrección mecánica sin una política de frescura.",
   "options": [
     {
-      "title": "Exigir frescura antes del cambio",
-      "body": "Conservar MongoDB por defecto o bloquear BigQuery hasta que `mongodata.products` alcance el bucket esperado y cubrir ambos modos.",
+      "title": "Exigir productos frescos",
+      "body": "Añadir un gate `table` para `mongodata.products` antes de ejecutar BigQuery por defecto y demostrar la paridad tras el refresh.",
       "recommended": true
     },
     {
       "title": "Aceptar el desfase diario",
-      "body": "Aprobar explícitamente el retraso de hasta 24 horas, documentar el impacto comercial y mantener el rollback manual a MongoDB.",
+      "body": "Mantener el gate de stocks y documentar que metadatos de producto pueden retrasarse hasta el siguiente materializado diario.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener Mongo por defecto",
+      "body": "Dejar BigQuery como opción explícita hasta disponer de un contrato de frescura de productos aceptado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir frescura antes del cambio",
-    "body": "Conservar MongoDB por defecto o bloquear BigQuery hasta que `mongodata.products` alcance el bucket esperado y cubrir ambos modos.",
+    "title": "Exigir productos frescos",
+    "body": "Añadir un gate `table` para `mongodata.products` antes de ejecutar BigQuery por defecto y demostrar la paridad tras el refresh.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal contribuidor reciente del workflow y ya conoce sus restricciones operativas.",
+    "reason": "Su historial concentra el diseño y mantenimiento del workflow afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-05T12:26:57.743Z",
-    "mainSha": "8e359381538cf737cc7d7c1dba065e7c09354f7a"
+    "reviewedAt": "2026-08-05T14:46:31.776Z",
+    "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
   }
 }

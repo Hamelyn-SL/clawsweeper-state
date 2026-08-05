@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T12:41:13.469Z",
-  "updatedAt": "2026-08-05T12:30:17Z",
+  "generatedAt": "2026-08-05T14:46:03.515Z",
+  "updatedAt": "2026-08-05T12:57:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,38 +23,37 @@
       "origin:dev"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-08-05T12:30:17Z"
+    "updatedAt": "2026-08-05T12:57:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse la atribución por sesión activa de estación, incluyendo el caso de relevo sin cierre explícito, como contrato permanente de productividad Skypod?",
-  "rationale": "El webhook conoce la estación pero no identifica al operario presente, así que la política de relevo no puede resolverse de forma segura solo mediante implementación.",
+  "question": "¿Debe aceptarse la atribución por estación al operario que abrió la sesión cuando puede haber relevos sin cierre explícito?",
+  "rationale": "El webhook conoce la estación, no la persona que confirma; la elección define qué operario recibe productividad y no puede resolverse sólo mediante código.",
   "options": [
     {
-      "title": "Aprobar atribución por estación",
-      "body": "Mantener la sesión activa como responsable hasta que se cierre y documentar el relevo obligatorio al pausar.",
+      "title": "Aceptar sesión por estación",
+      "body": "Mantener la atribución actual y exigir que cada relevo cierre o pause la sesión antes de que entre el siguiente operario.",
       "recommended": true
     },
     {
-      "title": "Exigir cierre explícito reforzado",
-      "body": "Añadir una recuperación o señal operativa que impida mantener métricas bajo un operario ausente.",
+      "title": "Exigir identificación por confirmación",
+      "body": "Rediseñar el flujo para disponer de identidad de operario en cada transición antes de registrar productividad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar atribución por estación",
-    "body": "Mantener la sesión activa como responsable hasta que se cierre y documentar el relevo obligatorio al pausar.",
+    "title": "Aceptar sesión por estación",
+    "body": "Mantener la atribución actual y exigir que cada relevo cierre o pause la sesión antes de que entre el siguiente operario.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su trabajo reciente define la identidad de estación que condiciona la política de atribución.",
+    "person": "JavierHamelyn",
+    "reason": "El código vigente de productividad y la ruta de estación aparecen atribuidos a su historial reciente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-08-05T12:41:13.469Z",
-    "mainSha": "a6c93c25f718347cbc223b44cff70cffb4b26651"
+    "reviewedAt": "2026-08-05T14:46:03.515Z",
+    "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
   }
 }
