@@ -13,7 +13,12 @@
       "app:supply",
       "feature",
       "triage:done",
-      "P2"
+      "P2",
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-05T13:02:06Z",
     "updatedAt": "2026-08-05T13:17:45Z"
@@ -51,6 +56,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8265.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8265#issuecomment-5192287822",
     "reviewedAt": "2026-08-05T13:21:52.671Z",
     "mainSha": "b9b2ef806d69d0253d9de6ea4e71f827ef17ac5d"
   }
