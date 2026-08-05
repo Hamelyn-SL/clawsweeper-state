@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T07:13:14.436Z",
-  "updatedAt": "2026-08-04T05:59:51Z",
+  "generatedAt": "2026-08-05T12:26:57.743Z",
+  "updatedAt": "2026-08-05T11:53:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
-      "merge-risk: 🚨 compatibility"
+      "merge-risk: 🚨 compatibility",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-04T05:59:51Z",
+    "updatedAt": "2026-08-05T11:53:58Z",
     "headSha": "4cd0c3f2fa06ee894484ce8fb92ea0ec63110508"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta publicar los feeds con la materialización diaria de `products`, o deben esperar explícitamente a productos y stocks frescos antes de activar BigQuery por defecto?",
-  "rationale": "La iniciativa abierta y la rama reconocen una divergencia de hasta 24 horas; decidir si ese desfase es aceptable para catálogo publicado requiere intención operativa.",
+  "question": "¿Se acepta que los feeds de Google Merchant publiquen metadatos de producto con hasta 24 horas de retraso, o debe preservarse una garantía de frescura antes de activar BigQuery por defecto?",
+  "rationale": "La cuestión afecta directamente a la actualidad del catálogo publicado; el precedente de `bq-freshness-gate` no decide si este feed puede degradar a datos diarios.",
   "options": [
     {
       "title": "Exigir frescura antes del cambio",
-      "body": "Añadir el gate y alinear la programación antes de seleccionar BigQuery como fuente normal de los feeds.",
+      "body": "Conservar MongoDB por defecto o bloquear BigQuery hasta que `mongodata.products` alcance el bucket esperado y cubrir ambos modos.",
       "recommended": true
     },
     {
-      "title": "Aceptar el snapshot diario",
-      "body": "Mantener el cron actual y documentar que títulos, descripciones y altas de producto pueden ir retrasados hasta la siguiente materialización.",
+      "title": "Aceptar el desfase diario",
+      "body": "Aprobar explícitamente el retraso de hasta 24 horas, documentar el impacto comercial y mantener el rollback manual a MongoDB.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Exigir frescura antes del cambio",
-    "body": "Añadir el gate y alinear la programación antes de seleccionar BigQuery como fuente normal de los feeds.",
+    "body": "Conservar MongoDB por defecto o bloquear BigQuery hasta que `mongodata.products` alcance el bucket esperado y cubrir ambos modos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial concentra la configuración y evolución del workflow afectado.",
+    "reason": "Es el principal contribuidor reciente del workflow y ya conoce sus restricciones operativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-04T07:13:14.436Z",
-    "mainSha": "e2cddbf2cf3ed99478a04c4d96893f9e08d9c23b"
+    "reviewedAt": "2026-08-05T12:26:57.743Z",
+    "mainSha": "8e359381538cf737cc7d7c1dba065e7c09354f7a"
   }
 }
