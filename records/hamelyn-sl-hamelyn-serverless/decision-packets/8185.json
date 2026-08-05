@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-03T13:58:55.512Z",
-  "updatedAt": "2026-08-03T12:31:30Z",
+  "generatedAt": "2026-08-05T00:40:22.153Z",
+  "updatedAt": "2026-08-04T23:49:01Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,51 +15,52 @@
       "feature",
       "triage:done",
       "reporter:irenegarcia",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a",
+      "origin:panel",
+      "mk:mercadolibre"
     ],
     "createdAt": "2026-08-03T12:01:21Z",
-    "updatedAt": "2026-08-03T12:31:30Z"
+    "updatedAt": "2026-08-04T23:49:01Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el despliegue por fases, empezando por preguntas y mensajes bidireccionales, y dejando reclamaciones para una segunda fase con sus contratos específicos?",
-  "rationale": "El código actual no define el canal de eDesk, el contrato de respuesta ni las reglas de cada tipo de conversación; esas decisiones determinan el modelo persistente y los workers necesarios.",
+  "question": "¿Qué categorías deben entrar en la primera fase y qué contrato bidireccional debe conservarse entre MercadoLibre y eDesk?",
+  "rationale": "La implementación introduce canales, estado persistente y respuestas salientes; ni el webhook ni el cliente actual definen esas reglas de negocio.",
   "options": [
     {
-      "title": "Aprobar fases separadas",
-      "body": "Implementar primero preguntas y mensajes con mapeos persistentes e idempotencia, y planificar reclamaciones después de validar sus permisos y eventos.",
+      "title": "Primera fase de conversaciones",
+      "body": "Implementar preguntas preventa y mensajes postventa, con mapeo conversación↔ticket, deduplicación y reenvío de respuestas salientes.",
       "recommended": true
     },
     {
-      "title": "Incluir reclamaciones desde el inicio",
-      "body": "Diseñar un programa único que cubra los tres flujos, asumiendo mayor alcance, configuración externa y tiempo de validación.",
+      "title": "Incluir reclamos desde el inicio",
+      "body": "Extender la primera entrega a reclamos y adjuntos, asumiendo mayor alcance operativo y validación externa.",
       "recommended": false
     },
     {
-      "title": "Limitarse a tickets internos",
-      "body": "Crear tickets sin respuesta de vuelta al marketplace, descartando el objetivo bidireccional confirmado por la persona reportante.",
+      "title": "Solo tickets internos",
+      "body": "Crear tickets sin responder a MercadoLibre, reduciendo alcance pero sin cumplir el objetivo bidireccional confirmado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar fases separadas",
-    "body": "Implementar primero preguntas y mensajes con mapeos persistentes e idempotencia, y planificar reclamaciones después de validar sus permisos y eventos.",
+    "title": "Primera fase de conversaciones",
+    "body": "Implementar preguntas preventa y mensajes postventa, con mapeo conversación↔ticket, deduplicación y reenvío de respuestas salientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con procedencia más directa sobre el endpoint de MercadoLibre que debe evolucionar para recibir el flujo.",
+    "reason": "Es la persona con la procedencia más directa sobre el webhook actual de MercadoLibre y la documentación del flujo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8185.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8185#issuecomment-5166101052",
-    "reviewedAt": "2026-08-03T13:58:55.512Z",
-    "mainSha": "091475819513b5557a5646a3973089f2b1699054"
+    "reviewedAt": "2026-08-05T00:40:22.153Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
