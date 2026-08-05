@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T06:50:53.651Z",
+  "updatedAt": "2026-08-05T06:42:27Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8227,
+    "title": "feat: add skypod station productivity operation type",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8227",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-05T06:40:52Z",
+    "updatedAt": "2026-08-05T06:42:27Z",
+    "headSha": "49e06939c9dadad5482dbaccc3d9c67f22231a9e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse que una sesión SKYPOD abierta atribuya todas las confirmaciones de una estación al operario que la inició hasta que se cierre?",
+  "rationale": "El webhook conoce la estación, no a la persona que confirma, y el propio PR reconoce que un relevo sin cierre asignará toda la producción al primer operario.",
+  "options": [
+    {
+      "title": "Aceptar atribución por estación",
+      "body": "Mantener este modelo, documentar el requisito operativo de cerrar la sesión en cada relevo y corregir primero las carreras detectadas.",
+      "recommended": true
+    },
+    {
+      "title": "Exigir identidad verificable",
+      "body": "Pausar la integración hasta disponer de una señal fiable de operario en el flujo de confirmación o de relevo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar atribución por estación",
+    "body": "Mantener este modelo, documentar el requisito operativo de cerrar la sesión en cada relevo y corregir primero las carreras detectadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial conecta la identidad de estación y el flujo de preparación que define esta semántica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8227.md",
+    "reviewedAt": "2026-08-05T06:50:53.651Z",
+    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+  }
+}

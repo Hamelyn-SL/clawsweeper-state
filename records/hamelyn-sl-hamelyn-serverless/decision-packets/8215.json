@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T06:47:53.956Z",
+  "updatedAt": "2026-08-05T06:28:26Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8215,
+    "title": "feat: turn the reception panel v2 prototype into a working panel",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8215",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥉 bronze"
+    ],
+    "createdAt": "2026-08-04T13:06:12Z",
+    "updatedAt": "2026-08-05T06:28:26Z",
+    "headSha": "e37b56b5799447adc9fd4296dafa318dbf008904"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se aprueba rediseñar la recepción como una transición cercada por propietario, o se pausa este PR hasta acordar una garantía equivalente de exactamente una notificación?",
+  "rationale": "El lease recuperable actual no define qué petición sigue autorizada tras caducar, y el efecto observable incluye transiciones y avisos a vendedores.",
+  "options": [
+    {
+      "title": "Corregir el cercado antes del merge",
+      "body": "Vincular transición, liberación y notificación al token de reclamación ganador y validar carreras que atraviesen la expiración del lease.",
+      "recommended": true
+    },
+    {
+      "title": "Pausar para rediseño",
+      "body": "Separar el contrato de transición y de notificación si la garantía de exactamente una vez requiere una arquitectura distinta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Corregir el cercado antes del merge",
+    "body": "Vincular transición, liberación y notificación al token de reclamación ganador y validar carreras que atraviesen la expiración del lease.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su historial integrado concentra el panel y la ruta de recepción afectados.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8215.md",
+    "reviewedAt": "2026-08-05T06:47:53.956Z",
+    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+  }
+}

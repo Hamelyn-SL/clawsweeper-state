@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T06:52:56.590Z",
-  "updatedAt": "2026-08-05T06:49:30Z",
+  "generatedAt": "2026-08-05T06:47:29.120Z",
+  "updatedAt": "2026-08-05T06:42:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,7 +12,7 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:queued",
+      "triage:done",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
@@ -22,37 +22,37 @@
       "origin:dev"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-08-05T06:49:30Z"
+    "updatedAt": "2026-08-05T06:42:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse que toda transición `PENDING` a estado terminal, incluidos los casos no encontrados, cuente para la sesión Skypod asociada a la estación?",
-  "rationale": "La PR concreta una regla de negocio y una atribución por estación que afectan a la comparabilidad de la métrica y no se derivan por completo del contrato actual.",
+  "question": "¿Se acepta que las confirmaciones de Skypod se atribuyan a la sesión activa de la estación, con la disciplina operativa de cerrar sesión en cada relevo?",
+  "rationale": "El webhook conoce la estación pero no identifica al operario, de modo que la precisión individual no puede resolverse solo con una corrección mecánica.",
   "options": [
     {
-      "title": "Aprobar la regla propuesta",
-      "body": "Contar cada transición terminal y atribuirla a la sesión activa de la estación, validándolo primero en un turno real.",
+      "title": "Aceptar atribución por estación",
+      "body": "Fusionar tras una prueba de turno y documentar que cada relevo debe cerrar o reiniciar su sesión.",
       "recommended": true
     },
     {
-      "title": "Limitar el conteo a confirmaciones OK",
-      "body": "Excluir resultados no encontrados y ajustar el tracker antes de revisar la PR como candidata de merge.",
+      "title": "Exigir identidad por confirmación",
+      "body": "Pausar la PR y diseñar una señal adicional que permita atribuir cada transición al operario real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la regla propuesta",
-    "body": "Contar cada transición terminal y atribuirla a la sesión activa de la estación, validándolo primero en un turno real.",
+    "title": "Aceptar atribución por estación",
+    "body": "Fusionar tras una prueba de turno y documentar que cada relevo debe cerrar o reiniciar su sesión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente concentra el comportamiento operativo de Estación que define el significado de esta métrica.",
-    "confidence": "high"
+    "reason": "Su trabajo reciente sobre identidad de estación es el antecedente más directo para decidir el contrato operativo.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewedAt": "2026-08-05T06:52:56.590Z",
-    "mainSha": "77078f2e2804724ba1bb6b3709ec514090b10c4f"
+    "reviewedAt": "2026-08-05T06:47:29.120Z",
+    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
   }
 }

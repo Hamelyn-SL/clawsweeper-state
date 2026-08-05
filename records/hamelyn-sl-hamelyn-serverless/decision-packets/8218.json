@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T06:53:23.009Z",
+  "updatedAt": "2026-08-05T05:47:51Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8218,
+    "title": "Feature/issue 8016 supervisor quality audit",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8218",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-05T05:47:43Z",
+    "updatedAt": "2026-08-05T05:47:51Z",
+    "headSha": "087637ab9b69e0e8b7dc016ad70591cc634100e8"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba como contrato operativo que la auditoría use una cuota semanal por operario, máximo tres gavetas diarias y coincidencia por desperfecto con umbral del 85 %?",
+  "rationale": "La petición original dejaba abiertas la semántica de coincidencia y el manejo operativo de gavetas; esta PR fija ambas decisiones sin una confirmación visible de producto.",
+  "options": [
+    {
+      "title": "Confirmar el contrato propuesto",
+      "body": "Aceptar las reglas documentadas y pedir la reparación de compatibilidad antes de revisar la integración final.",
+      "recommended": true
+    },
+    {
+      "title": "Revisar el criterio de auditoría",
+      "body": "Definir primero otra política de muestreo, comparación o reapertura antes de continuar con esta implementación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el contrato propuesto",
+    "body": "Aceptar las reglas documentadas y pedir la reparación de compatibilidad antes de revisar la integración final.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial muestra propiedad técnica directa sobre el flujo QA previo y sus reglas de Revision V3.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8218.md",
+    "reviewedAt": "2026-08-05T06:53:23.009Z",
+    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+  }
+}

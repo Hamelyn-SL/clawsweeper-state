@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-05T06:49:08.525Z",
+  "updatedAt": "2026-08-05T06:00:57Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8219,
+    "title": "Instrumentar entryLog en las BLs de buying, ecommerce y pricing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8219",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "business-logic",
+      "P2"
+    ],
+    "createdAt": "2026-08-05T05:52:16Z",
+    "updatedAt": "2026-08-05T06:00:57Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el trabajo masivo mantener el contrato actual `entryLog: yes | no` o adoptar formalmente también `entryLog: error` antes de clasificar las 286 decisiones?",
+  "rationale": "La issue define dos valores, pero una PR draft relacionada propone un tercero para reglas solo-error; la elección determina cómo documentar e interpretar la cobertura futura.",
+  "options": [
+    {
+      "title": "Mantener `yes | no` en esta issue",
+      "body": "Ejecutar el inventario con el contrato vigente y tratar cualquier semántica adicional en una propuesta separada.",
+      "recommended": true
+    },
+    {
+      "title": "Adoptar `error` antes del inventario",
+      "body": "Esperar a que se apruebe y fusione una definición común del tercer estado antes de instrumentar los dominios pendientes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener `yes | no` en esta issue",
+    "body": "Ejecutar el inventario con el contrato vigente y tratar cualquier semántica adicional en una propuesta separada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es el responsable asignado y autor tanto de la infraestructura base como de la propuesta de clasificación relacionada.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8219.md",
+    "reviewedAt": "2026-08-05T06:49:08.525Z",
+    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+  }
+}
