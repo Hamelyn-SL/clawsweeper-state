@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T08:50:34.642Z",
-  "updatedAt": "2026-08-05T07:12:44Z",
+  "generatedAt": "2026-08-05T12:36:39.493Z",
+  "updatedAt": "2026-08-05T12:30:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,47 @@
     "labels": [
       "app:admin",
       "feature",
-      "triage:done",
-      "origin:dev",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a",
+      "origin:dev"
     ],
     "createdAt": "2026-06-22T09:10:10Z",
-    "updatedAt": "2026-08-05T07:12:44Z"
+    "updatedAt": "2026-08-05T12:30:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta que la productividad `SKYPOD` se atribuya a la sesión activa de cada estación, incluyendo el supuesto de que el operario cierre sesión al relevarse?",
-  "rationale": "El webhook conoce la estación pero no identifica de forma fiable al operario; la regla de atribución afecta a la interpretación de las métricas, no solo a un detalle técnico.",
+  "question": "¿Se acepta que la productividad de Skypod se atribuya a la sesión activa de la estación, con cierre obligatorio al relevo de operario?",
+  "rationale": "El webhook conoce la estación pero no identifica al operario; esta regla determina a quién se asignan métricas reales y no puede resolverse solo con código.",
   "options": [
     {
       "title": "Aceptar atribución por estación",
-      "body": "Mantener el diseño de la PR y exigir una validación de turno real con cierre de sesión en cada relevo.",
+      "body": "Mantener la sesión por estación, exigir cierre en los relevos y validar el comportamiento con un turno real antes de mergear.",
       "recommended": true
     },
     {
-      "title": "Definir una identidad de operario adicional",
-      "body": "Posponer el merge hasta disponer de una señal fiable que relacione cada confirmación con el operario físico.",
+      "title": "Exigir identidad de operario en eventos",
+      "body": "Posponer el aterrizaje hasta disponer de una fuente fiable de operario en el flujo de confirmación de Skypod.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aceptar atribución por estación",
-    "body": "Mantener el diseño de la PR y exigir una validación de turno real con cierre de sesión en cada relevo.",
+    "body": "Mantener la sesión por estación, exigir cierre en los relevos y validar el comportamiento con un turno real antes de mergear.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su historial reciente cubre la UI y la identidad operativa de las estaciones.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta tanto la infraestructura de productividad actual como el tracker que hoy recibe estas transiciones.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6571.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6571#issuecomment-4910068276",
-    "reviewedAt": "2026-08-05T08:50:34.642Z",
-    "mainSha": "dde44afb92e3731ca5aa0878f3d5e5a9be9a691d"
+    "reviewedAt": "2026-08-05T12:36:39.493Z",
+    "mainSha": "9ba6d4ba36b4ee02703552751e8f4f8568fef751"
   }
 }
