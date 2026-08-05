@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T10:50:28.390Z",
-  "updatedAt": "2026-08-05T10:27:21Z",
+  "generatedAt": "2026-08-05T11:00:34.678Z",
+  "updatedAt": "2026-08-05T10:57:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,43 +24,42 @@
       "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:52Z",
-    "updatedAt": "2026-08-05T10:27:21Z"
+    "updatedAt": "2026-08-05T10:57:04Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse que el 85 % se calcule por desperfectos individuales y que la cuota se atribuya al operario que cierra la gaveta física?",
-  "rationale": "Ambas reglas determinan el esquema persistido, la selección semanal y el resultado de calidad; no pueden deducirse con seguridad de la implementación actual.",
+  "question": "¿Debe aceptarse como contrato operativo que la auditoría sea por gaveta física cerrada por el operario y que el 85 % se calcule por desperfectos individuales?",
+  "rationale": "Esta elección determina la cuota, los datos persistidos, el resultado de calidad y la interpretación del panel; no puede deducirse con seguridad de la issue ni de la PR.",
   "options": [
     {
-      "title": "Aprobar la semántica de la PR",
-      "body": "Adoptar comparación por desperfectos individuales y atribuir la gaveta a quien la cierra, documentándolo como contrato operativo.",
+      "title": "Aprobar la semántica propuesta",
+      "body": "Adoptar gaveta física, atribución a quien la cierra y coincidencia por desperfectos individuales, dejando el contrato documentado antes de activar el rollout.",
       "recommended": true
     },
     {
       "title": "Medir por producto completo",
-      "body": "Definir coincidencia solo cuando todos los estados de un producto sean idénticos y ajustar comparación, persistencia y panel.",
+      "body": "Contar coincidencia solo cuando todos los estados del producto sean idénticos y ajustar comparador, persistencia y panel antes de integrar.",
       "recommended": false
     },
     {
-      "title": "Separar la definición antes de integrar",
-      "body": "Pausar la integración hasta que Operaciones deje por escrito la unidad, atribución y tratamiento de gavetas no localizadas.",
+      "title": "Pausar hasta concretar Operaciones",
+      "body": "Mantener la PR sin integrar hasta definir también el tratamiento de gavetas perdidas o no apartadas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la semántica de la PR",
-    "body": "Adoptar comparación por desperfectos individuales y atribuir la gaveta a quien la cierra, documentándolo como contrato operativo.",
+    "title": "Aprobar la semántica propuesta",
+    "body": "Adoptar gaveta física, atribución a quien la cierra y coincidencia por desperfectos individuales, dejando el contrato documentado antes de activar el rollout.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la issue y es la persona más próxima a la propuesta que materializa estas alternativas.",
+    "reason": "Es la persona asignada y está llevando la implementación candidata donde se materializan estas alternativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8016.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8016#issuecomment-5101537669",
-    "reviewedAt": "2026-08-05T10:50:28.390Z",
-    "mainSha": "51159adb4a14c06c241c85de71f19899bb3a6af8"
+    "reviewedAt": "2026-08-05T11:00:34.678Z",
+    "mainSha": "1e35c3ad5828923a73f643ac6608b5cee541f182"
   }
 }
