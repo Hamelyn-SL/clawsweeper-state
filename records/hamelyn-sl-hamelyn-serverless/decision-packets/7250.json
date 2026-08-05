@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T14:54:36.712Z",
-  "updatedAt": "2026-07-21T14:49:09Z",
+  "generatedAt": "2026-08-05T00:02:48.060Z",
+  "updatedAt": "2026-08-04T23:22:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -10,7 +10,6 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250",
     "state": "open",
     "labels": [
-      "app:infrastructure",
       "feature",
       "reporter:javier",
       "triage:no-change",
@@ -20,45 +19,47 @@
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond"
+      "issue-rating: 💎 diamond",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-07-21T14:49:09Z"
+    "updatedAt": "2026-08-04T23:22:08Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué orden de cortes y qué tolerancia de frescura/fallback deben aprobarse para Merchant, reportes marketplace y el exportador heredado tras aterrizar Flash Offers?",
-  "rationale": "El código confirma cargas pendientes, pero la aceptación depende de compromisos operativos distintos por feed, reporte y exportación que no puede fijar una revisión automática.",
+  "question": "¿Debe priorizarse la migración Merchant con un gate de frescura obligatorio antes de abrir los cortes de reportes y exportación restantes?",
+  "rationale": "El primer corte tiene una PR concreta pero aún presenta una decisión operativa sobre desfase de catálogo; el resto mezcla fuentes analíticas con reconciliaciones que requieren una secuencia acordada.",
   "options": [
     {
-      "title": "Priorizar Flash Offers y Merchant",
-      "body": "Aterrizar y observar primero la PR de Flash Offers, luego migrar Merchant con una comparación de filas y muestras por país.",
+      "title": "Cerrar Merchant de forma segura primero",
+      "body": "Exigir gate de frescura para `products` y `stocks`, integrar la fase usada y planificar `new-books` antes de promover los siguientes cortes.",
       "recommended": true
     },
     {
-      "title": "Migrar por coste de lectura",
-      "body": "Ordenar los siguientes cortes según métricas recientes de CPU, documentos examinados y frecuencia real de cada cron.",
+      "title": "Aceptar el snapshot diario",
+      "body": "Aprobar explícitamente hasta 24 horas de desfase de metadatos en Merchant y usar MongoDB solo como rollback manual.",
       "recommended": false
     },
     {
-      "title": "Limitar el alcance a los cortes ya creados",
-      "body": "Tratar reportes marketplace y el exportador heredado como iniciativas separadas cuando haya presupuesto y contrato de datos definidos.",
+      "title": "Repriorizar por impacto medido",
+      "body": "Medir los scans actuales y abrir primero el corte que aporte mayor reducción de CPU, manteniendo Merchant como trabajo paralelo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Priorizar Flash Offers y Merchant",
-    "body": "Aterrizar y observar primero la PR de Flash Offers, luego migrar Merchant con una comparación de filas y muestras por país.",
+    "title": "Cerrar Merchant de forma segura primero",
+    "body": "Exigir gate de frescura para `products` y `stocks`, integrar la fase usada y planificar `new-books` antes de promover los siguientes cortes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta la iniciativa, la optimización de rotación y la exportación basada en BigQuery.",
-    "confidence": "medium"
+    "reason": "El historial vincula su trabajo con los workflows y con la iniciativa paraguas, por lo que está mejor situado para decidir la secuencia operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewedAt": "2026-07-21T14:54:36.712Z",
-    "mainSha": "4b46404fe05de31d1c0af23f0ddfbfc603ca14b2"
+    "reviewedAt": "2026-08-05T00:02:48.060Z",
+    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
   }
 }
