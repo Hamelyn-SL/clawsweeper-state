@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T06:47:53.956Z",
-  "updatedAt": "2026-08-05T06:28:26Z",
+  "generatedAt": "2026-08-06T07:59:15.498Z",
+  "updatedAt": "2026-08-06T07:54:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 message-delivery"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-04T13:06:12Z",
-    "updatedAt": "2026-08-05T06:28:26Z",
-    "headSha": "e37b56b5799447adc9fd4296dafa318dbf008904"
+    "updatedAt": "2026-08-06T07:54:00Z",
+    "headSha": "a55cc7c091877dba4e433eec4a7a66c974096f95"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba rediseñar la recepción como una transición cercada por propietario, o se pausa este PR hasta acordar una garantía equivalente de exactamente una notificación?",
-  "rationale": "El lease recuperable actual no define qué petición sigue autorizada tras caducar, y el efecto observable incluye transiciones y avisos a vendedores.",
+  "question": "¿Debe incluirse la cancelación total desde el muelle en este PR, y para qué estados debe estar disponible?",
+  "rationale": "El PR introduce esa capacidad después de que su propia descripción la situara fuera de alcance, y el grafo actual rechaza al menos uno de los estados visibles del panel.",
   "options": [
     {
-      "title": "Corregir el cercado antes del merge",
-      "body": "Vincular transición, liberación y notificación al token de reclamación ganador y validar carreras que atraviesen la expiración del lease.",
+      "title": "Separar la cancelación total",
+      "body": "Retirar temporalmente la ruta y el control de cancelación para revisar su contrato de estados y comunicaciones en una PR acotada.",
       "recommended": true
     },
     {
-      "title": "Pausar para rediseño",
-      "body": "Separar el contrato de transición y de notificación si la garantía de exactamente una vez requiere una arquitectura distinta.",
+      "title": "Patrocinar el flujo completo",
+      "body": "Mantener la función definiendo los estados permitidos, el aviso al vendedor y la conducta para `SUSPICIOUS` antes de aprobarla.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir el cercado antes del merge",
-    "body": "Vincular transición, liberación y notificación al token de reclamación ganador y validar carreras que atraviesen la expiración del lease.",
+    "title": "Separar la cancelación total",
+    "body": "Retirar temporalmente la ruta y el control de cancelación para revisar su contrato de estados y comunicaciones en una PR acotada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su historial integrado concentra el panel y la ruta de recepción afectados.",
+    "reason": "Mantiene el flujo de pickup y conoce tanto la propuesta como las restricciones recientes de recepción.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8215.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8215#issuecomment-5179898457",
-    "reviewedAt": "2026-08-05T06:47:53.956Z",
-    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+    "reviewedAt": "2026-08-06T07:59:15.498Z",
+    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
   }
 }

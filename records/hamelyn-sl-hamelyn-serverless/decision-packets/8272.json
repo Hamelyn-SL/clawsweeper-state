@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T07:52:58.369Z",
+  "generatedAt": "2026-08-06T07:58:48.369Z",
   "updatedAt": "2026-08-06T06:39:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,13 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8272",
     "state": "open",
     "labels": [
-      "size/M",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
-      "P1",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "size/M"
     ],
     "createdAt": "2026-08-06T06:37:35Z",
     "updatedAt": "2026-08-06T06:39:37Z",
@@ -24,39 +18,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe el handler compartido devolver HTTP 500 para cualquier fallo total, o debe conservar 200 hasta que cada ruta o fase tenga una política de severidad aprobada?",
-  "rationale": "El handler atiende múltiples aplicaciones y la issue canónica documenta fallos parciales tolerables y críticos; el código no puede inferir esa distinción operacional.",
+  "question": "¿Debe cualquier cron compartido devolver HTTP 500 cuando todas sus tareas fallan, o debe esa severidad configurarse por ruta según su semántica de reintentos y errores tolerables?",
+  "rationale": "La incidencia canónica documenta consumidores con fallos permanentes tolerables y solicita una política por ruta; el helper no recibe ninguna señal para expresar esa decisión.",
   "options": [
     {
-      "title": "Señal compatible primero",
-      "body": "Fusionar solo un contrato estructurado que mantenga la compatibilidad HTTP y definir después las rutas que deban elevarse a 207 o 5xx.",
+      "title": "Separar señal y política",
+      "body": "Fusionar solo el resumen estructurado compatible y añadir una política explícita por cron antes de cambiar HTTP globalmente.",
       "recommended": true
     },
     {
-      "title": "Elevar rutas críticas",
-      "body": "Aprobar una lista limitada de rutas o fases críticas y devolver 5xx únicamente para esos casos mediante una política explícita.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el 500 global",
-      "body": "Adoptar el cambio para todos los fallos totales y asumir la actualización de alertas, reintentos y consumidores existentes.",
+      "title": "Adoptar fallo global",
+      "body": "Aceptar HTTP 500 para todo fallo total y documentar que todos los consumidores deben tolerar reintentos y alertas nuevas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Señal compatible primero",
-    "body": "Fusionar solo un contrato estructurado que mantenga la compatibilidad HTTP y definir después las rutas que deban elevarse a 207 o 5xx.",
+    "title": "Separar señal y política",
+    "body": "Fusionar solo el resumen estructurado compatible y añadir una política explícita por cron antes de cambiar HTTP globalmente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial del contrato actual y la investigación canónica de la severidad cron le conectan directamente con esta decisión.",
+    "reason": "El historial disponible lo vincula con el contrato compartido que esta decisión modificaría.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8272.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8272#issuecomment-5201950848",
-    "reviewedAt": "2026-08-06T07:52:58.369Z",
+    "reviewedAt": "2026-08-06T07:58:48.369Z",
     "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
   }
 }
