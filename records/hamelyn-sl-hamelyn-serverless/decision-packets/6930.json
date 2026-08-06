@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:01:16.321Z",
-  "updatedAt": "2026-08-04T23:15:51Z",
+  "generatedAt": "2026-08-06T12:36:47.531Z",
+  "updatedAt": "2026-08-06T11:59:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "bug",
       "app:admin",
-      "triage:needs-info",
+      "triage:blocked",
       "business-logic",
-      "origin:bl",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T08:59:04Z",
-    "updatedAt": "2026-08-04T23:15:51Z"
+    "updatedAt": "2026-08-06T11:59:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué dos activos oficiales, ES e ENG, deben firmar el pie de las facturas comerciales?",
-  "rationale": "El repositorio prueba dónde se insertan las imágenes, pero no puede determinar ni generar una firma corporativa o aduanera válida.",
+  "question": "¿Qué dos activos oficiales ES y ENG, o qué alternativa autorizada para la firma, debe incorporarse a las facturas comerciales?",
+  "rationale": "El código identifica un reemplazo pequeño, pero no puede elegir ni regenerar una firma corporativa o aduanera sin aprobación del área responsable.",
   "options": [
     {
-      "title": "Aportar los dos PNG aprobados",
-      "body": "Entregar los activos ES y ENG o una fuente corporativa verificable para aplicar un reemplazo mínimo y verificable.",
+      "title": "Esperar los activos aprobados",
+      "body": "Logística entrega los PNG ES y ENG oficiales y se aplica un reemplazo limitado de ambos footers.",
       "recommended": true
     },
     {
-      "title": "Retirar la firma del pie",
-      "body": "Autorizar explícitamente un footer sin firma si el área legal confirma que las declaraciones restantes son suficientes.",
+      "title": "Retirar la firma",
+      "body": "Se autoriza explícitamente eliminar la firma de ambos pies y se valida el cambio con las áreas comercial y aduanera.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aportar los dos PNG aprobados",
-    "body": "Entregar los activos ES y ENG o una fuente corporativa verificable para aplicar un reemplazo mínimo y verificable.",
+    "title": "Esperar los activos aprobados",
+    "body": "Logística entrega los PNG ES y ENG oficiales y se aplica un reemplazo limitado de ambos footers.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Es el enlace histórico más directo con la especificación validada y con la divergencia documentada.",
+    "person": "MiguelHamelyn",
+    "reason": "Aportó la confirmación más reciente de que la decisión y los activos dependen de Logística.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6930.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6930#issuecomment-4911156878",
-    "reviewedAt": "2026-08-05T00:01:16.321Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-06T12:36:47.531Z",
+    "mainSha": "6743d9f0670e0d99d93b27c8b6438b16e3a0ee19"
   }
 }
