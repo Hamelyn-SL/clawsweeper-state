@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T09:53:39.816Z",
+  "updatedAt": "2026-08-06T09:37:18Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8278,
+    "title": "Admin: Revision V3 puede cerrar lotes antes de persistir la revisión",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8278",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:queued",
+      "epic:revision-v3",
+      "P1",
+      "impact:session-state",
+      "reporter:danielmenchen-hamelyn"
+    ],
+    "createdAt": "2026-08-06T09:31:12Z",
+    "updatedAt": "2026-08-06T09:37:18Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe el cierre de Revision V3 consolidarse en un endpoint idempotente de servidor, manteniendo el cliente como coordinador visual y de reintento?",
+  "rationale": "El informe requiere decidir el límite permanente entre cola cliente, persistencia y efectos posteriores; esa elección afecta recuperación, reintentos y duplicados operativos.",
+  "options": [
+    {
+      "title": "Cierre confirmado por servidor",
+      "body": "Crear una operación idempotente que persista y valide el estado necesario antes de transicionar a `REVIEWED`, dejando al cliente solo la presentación y el reintento.",
+      "recommended": true
+    },
+    {
+      "title": "Barrera cliente ampliada",
+      "body": "Esperar y verificar todas las promesas locales antes de transicionar, aceptando que recargas y pérdida de red sigan requiriendo una recuperación adicional.",
+      "recommended": false
+    },
+    {
+      "title": "Modelo híbrido persistente",
+      "body": "Mantener una cola durable cliente-servidor con confirmación de cierre, a cambio de mayor complejidad de estado y observabilidad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cierre confirmado por servidor",
+    "body": "Crear una operación idempotente que persista y valide el estado necesario antes de transicionar a `REVIEWED`, dejando al cliente solo la presentación y el reintento.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el candidato más cercano por sus cambios recientes en el cierre, las gavetas y las colas de Revision V3.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8278.md",
+    "reviewedAt": "2026-08-06T09:53:39.816Z",
+    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
+  }
+}

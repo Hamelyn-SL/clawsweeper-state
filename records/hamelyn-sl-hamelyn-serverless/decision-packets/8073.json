@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T09:14:11.534Z",
-  "updatedAt": "2026-08-05T08:59:51Z",
+  "generatedAt": "2026-08-06T09:50:43.854Z",
+  "updatedAt": "2026-08-06T09:23:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,53 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "origin:dev",
-      "mk:alibris",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum",
+      "origin:dev",
+      "mk:alibris"
     ],
     "createdAt": "2026-07-29T08:24:22Z",
-    "updatedAt": "2026-08-05T08:59:51Z"
+    "updatedAt": "2026-08-06T09:23:31Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué fuente operativa aprobada debe usar el sistema para confirmar que Alibris aplicó cada fichero como `PURGE`?",
-  "rationale": "El repositorio demuestra la generación y subida, pero no tiene acceso ni contrato documentado para interpretar el estado remoto; elegir una estrategia sin esa señal podría alterar el catálogo completo.",
+  "question": "¿Qué fuente operativa aprobada debe confirmar que Alibris aplicó cada fichero como `PURGE` antes de automatizar una reparación?",
+  "rationale": "El repositorio no dispone de una API documentada ni de un snapshot remoto; elegir entre historial del Seller Hub, soporte de Alibris o reconciliación diferida cambia el contrato operativo y el riesgo de catálogo.",
   "options": [
     {
       "title": "Validar primero en Seller Hub",
-      "body": "Recopilar la acción y el resultado del fichero de 28 de julio antes de modificar generación, nombres o estrategia de retirada.",
+      "body": "Obtener acción y estado del fichero del 28 de julio y diseñar la mínima observabilidad compatible con esa señal.",
       "recommended": true
     },
     {
-      "title": "Definir una integración de confirmación",
-      "body": "Si Alibris ofrece un historial o API utilizable, incorporar una comprobación posterior con alerta al no obtener confirmación.",
+      "title": "Reconciliar mediante pedidos",
+      "body": "Aceptar una detección diferida basada en pedidos `SYNC_NO_RECENT`, con alertas pero sin afirmar procesamiento inmediato.",
       "recommended": false
     },
     {
-      "title": "Aceptar la trazabilidad actual",
-      "body": "Mantener el audit FTP actual y tratar los pedidos posteriores como riesgo operativo conocido sin nueva automatización.",
+      "title": "Escalar a Alibris",
+      "body": "Solicitar a soporte una confirmación de formato y un mecanismo de estado consumible antes de modificar el export.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Validar primero en Seller Hub",
-    "body": "Recopilar la acción y el resultado del fichero de 28 de julio antes de modificar generación, nombres o estrategia de retirada.",
+    "body": "Obtener acción y estado del fichero del 28 de julio y diseñar la mínima observabilidad compatible con esa señal.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial conecta la integración original y los mecanismos actuales de subida y reintento.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado actual y ha mantenido recientemente la integración de Alibris.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073#issuecomment-5115369962",
-    "reviewedAt": "2026-08-05T09:14:11.534Z",
-    "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
+    "reviewedAt": "2026-08-06T09:50:43.854Z",
+    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
   }
 }
