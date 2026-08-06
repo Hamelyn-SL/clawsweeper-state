@@ -15,9 +15,13 @@
       "app:admin",
       "triage:queued",
       "epic:revision-v3",
+      "reporter:danielmenchen-hamelyn",
       "P1",
       "impact:session-state",
-      "reporter:danielmenchen-hamelyn"
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review"
     ],
     "createdAt": "2026-08-06T09:31:12Z",
     "updatedAt": "2026-08-06T09:37:18Z"
@@ -55,6 +59,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8278.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8278#issuecomment-5203066406",
     "reviewedAt": "2026-08-06T09:53:39.816Z",
     "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
   }
