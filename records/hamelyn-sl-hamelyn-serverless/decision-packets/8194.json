@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T14:53:17.519Z",
-  "updatedAt": "2026-08-05T14:49:13Z",
+  "generatedAt": "2026-08-06T08:42:39.373Z",
+  "updatedAt": "2026-08-06T08:17:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-05T14:49:13Z",
-    "headSha": "2ceb48b841f2dfd6650d28bfd16889c769da4196"
+    "updatedAt": "2026-08-06T08:17:38Z",
+    "headSha": "7ed5060eab9a7e23f7fb77ae394b472382ba2b77"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta publicar por defecto los feeds de usado desde un snapshot diario de productos mientras solo se garantiza la frescura horaria de stocks?",
-  "rationale": "El cambio altera la actualidad de metadata visible en Google Merchant; el código no puede decidir si ese retraso es aceptable para negocio ni qué compatibilidad debe prevalecer.",
+  "question": "¿Se acepta que los feeds usados publiquen títulos, imágenes, idioma y tiers procedentes de un snapshot diario de productos mientras stock y precio son horarios?",
+  "rationale": "La elección cambia el contrato de frescura de un feed existente y no puede resolverse mecánicamente desde el código.",
   "options": [
     {
-      "title": "Mantener compatibilidad por defecto",
-      "body": "Conservar Mongo como fuente predeterminada hasta disponer de un contrato y gate de frescura para productos.",
+      "title": "Exigir paridad de frescura",
+      "body": "Mantener Mongo por defecto o rediseñar la cadencia y los gates para no publicar metadata de productos desfasada.",
       "recommended": true
     },
     {
       "title": "Aceptar el snapshot diario",
-      "body": "Aprobar expresamente BigQuery por defecto con el retraso documentado y monitorizar sus primeras publicaciones.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la activación",
-      "body": "Mergear la infraestructura, pero activar `source=bigquery` solo en dispatches con una ventana de productos validada.",
+      "body": "Aprobar expresamente el desfase, documentarlo y validar que Google Merchant tolera esa cadencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener compatibilidad por defecto",
-    "body": "Conservar Mongo como fuente predeterminada hasta disponer de un contrato y gate de frescura para productos.",
+    "title": "Exigir paridad de frescura",
+    "body": "Mantener Mongo por defecto o rediseñar la cadencia y los gates para no publicar metadata de productos desfasada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal responsable histórico del workflow y de los scripts de Merchant que cambian de contrato operativo.",
+    "reason": "Su historial conecta directamente el workflow actual y la iniciativa operativa de migrar lecturas pesadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-05T14:53:17.519Z",
-    "mainSha": "fae8baa08cb0b7e5090b37e37129022a75f84e6b"
+    "reviewedAt": "2026-08-06T08:42:39.373Z",
+    "mainSha": "628d002cc84c38d03b13f28a4502662a0430af0d"
   }
 }
