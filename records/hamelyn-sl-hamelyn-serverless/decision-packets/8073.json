@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T09:50:43.854Z",
-  "updatedAt": "2026-08-06T09:23:31Z",
+  "generatedAt": "2026-08-06T11:36:08.254Z",
+  "updatedAt": "2026-08-06T09:56:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,53 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "mk:alibris",
-      "P1",
-      "impact:other",
+      "clawsweeper:source-repro",
       "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "origin:dev",
+      "mk:alibris"
     ],
     "createdAt": "2026-07-29T08:24:22Z",
-    "updatedAt": "2026-08-06T09:23:31Z"
+    "updatedAt": "2026-08-06T09:56:12Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué fuente operativa aprobada debe confirmar que Alibris aplicó cada fichero como `PURGE` antes de automatizar una reparación?",
-  "rationale": "El repositorio no dispone de una API documentada ni de un snapshot remoto; elegir entre historial del Seller Hub, soporte de Alibris o reconciliación diferida cambia el contrato operativo y el riesgo de catálogo.",
+  "question": "¿Qué fuente operativa debe considerarse autoritativa para confirmar que Alibris aplicó un fichero como `PURGE`, y se puede consultar de forma repetible?",
+  "rationale": "El repositorio sólo observa la transferencia FTPS; elegir entre consulta remota, reconciliación diferida o cambio de formato requiere acceso y criterio operativo del canal.",
   "options": [
     {
-      "title": "Validar primero en Seller Hub",
-      "body": "Obtener acción y estado del fichero del 28 de julio y diseñar la mínima observabilidad compatible con esa señal.",
+      "title": "Confirmar el historial remoto",
+      "body": "Recopilar el resultado de Seller Hub/AUS del fichero del 28 de julio, incluida la acción aplicada y cualquier error de procesamiento.",
       "recommended": true
     },
     {
-      "title": "Reconciliar mediante pedidos",
-      "body": "Aceptar una detección diferida basada en pedidos `SYNC_NO_RECENT`, con alertas pero sin afirmar procesamiento inmediato.",
+      "title": "Definir una reconciliación diferida",
+      "body": "Si no existe un acuse consultable, acordar una métrica externa y su ventana de confirmación antes de cambiar el export.",
       "recommended": false
     },
     {
-      "title": "Escalar a Alibris",
-      "body": "Solicitar a soporte una confirmación de formato y un mecanismo de estado consumible antes de modificar el export.",
+      "title": "Aceptar el límite actual",
+      "body": "Mantener la observabilidad de transporte y documentar que el canal no ofrece confirmación remota verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar primero en Seller Hub",
-    "body": "Obtener acción y estado del fichero del 28 de julio y diseñar la mínima observabilidad compatible con esa señal.",
+    "title": "Confirmar el historial remoto",
+    "body": "Recopilar el resultado de Seller Hub/AUS del fichero del 28 de julio, incluida la acción aplicada y cualquier error de procesamiento.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y ha mantenido recientemente la integración de Alibris.",
+    "reason": "Es el asignado actual y la decisión depende de acceso y operación del canal Alibris.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073#issuecomment-5115369962",
-    "reviewedAt": "2026-08-06T09:50:43.854Z",
+    "reviewedAt": "2026-08-06T11:36:08.254Z",
     "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
   }
 }
