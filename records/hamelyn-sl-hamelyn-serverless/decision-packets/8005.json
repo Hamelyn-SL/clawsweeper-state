@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T01:13:24.438Z",
-  "updatedAt": "2026-08-04T23:46:21Z",
+  "generatedAt": "2026-08-06T05:53:08.089Z",
+  "updatedAt": "2026-08-06T05:23:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,49 +15,48 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-08-04T23:46:21Z"
+    "updatedAt": "2026-08-06T05:23:40Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué corte de Revisión V3 debe integrarse primero en `dev` y qué capacidades deben seguir como entregas posteriores?",
-  "rationale": "El epic combina flujo operativo ya construido con métricas, configuración y auditoría aún abiertas; el código y las sub-issues no determinan por sí solos qué alcance debe liberarse.",
+  "question": "¿Se integra `EPIC/revision-v3` en `dev` como siguiente entrega y se mantienen los cuatro sub-bloques abiertos bajo este epic?",
+  "rationale": "Las PRs ya fusionadas tuvieron como base `EPIC/revision-v3`, mientras que la rama canónica `dev` no contiene ese árbol y varias dependencias siguen abiertas.",
   "options": [
     {
-      "title": "Integrar un corte operativo acotado",
-      "body": "Preparar una integración hacia `dev` del puesto estable y dejar productividad avanzada, auditoría y paneles en sus sub-issues.",
+      "title": "Planificar la integración en `dev`",
+      "body": "Confirmar el corte de integración y continuar los sub-bloques abiertos siguiendo sus dependencias declaradas.",
       "recommended": true
     },
     {
-      "title": "Completar primero el paquete en la rama épica",
-      "body": "Mantener el trabajo en `EPIC/revision-v3` hasta cerrar las decisiones de datos y producto antes de preparar la integración.",
+      "title": "Mantenerlo fuera de `dev`",
+      "body": "Posponer la integración y documentar qué condición operativa o técnica debe cumplirse antes de retomar las sub-issues.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar un corte operativo acotado",
-    "body": "Preparar una integración hacia `dev` del puesto estable y dejar productividad avanzada, auditoría y paneles en sus sub-issues.",
+    "title": "Planificar la integración en `dev`",
+    "body": "Confirmar el corte de integración y continuar los sub-bloques abiertos siguiendo sus dependencias declaradas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el autor del epic base y el mejor enlace histórico visible para decidir el alcance de producto.",
+    "person": "banosdavidhamelyn",
+    "reason": "Está asignado al bloque de productividad que desbloquea los avisos y paneles del paquete.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-08-05T01:13:24.438Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-06T05:53:08.089Z",
+    "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
   }
 }
