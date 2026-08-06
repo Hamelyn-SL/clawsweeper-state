@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:54:40.449Z",
-  "updatedAt": "2026-08-04T23:24:02Z",
+  "generatedAt": "2026-08-06T08:12:00.811Z",
+  "updatedAt": "2026-08-06T08:06:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "origin:dev",
-      "mk:casadellibro",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "issue-rating: ⚪ platinum",
+      "origin:dev",
+      "mk:casadellibro"
     ],
     "createdAt": "2026-07-12T07:26:25Z",
-    "updatedAt": "2026-08-04T23:24:02Z"
+    "updatedAt": "2026-08-06T08:06:53Z"
   },
   "lane": "manual_review",
   "priority": "P2",
-  "question": "¿Se autoriza un dry-run y posterior reconciliación idempotente de las filas históricas de Casa del Libro desde Mongo vivo?",
-  "rationale": "La corrección requiere escritura sobre datos analíticos productivos y debe validar primero si la pérdida procede del CDC o de un backlog histórico.",
+  "question": "¿Se aprueba un dry-run y posterior backfill limitado de las filas históricas de Casa del Libro, o se investiga primero la causa de la pérdida CDC?",
+  "rationale": "La corrección restante modifica datos productivos analíticos y exige escoger el predicado, la fuente de verdad y la tolerancia al riesgo operacional.",
   "options": [
     {
-      "title": "Aprobar dry-run y backfill acotado",
-      "body": "Comparar Mongo vivo con `mongodb.mk_casaDelLibro`, aplicar sólo filas divergentes y conservar un informe de antes y después.",
+      "title": "Aprobar dry-run acotado",
+      "body": "Comparar primero el conjunto literal contra Mongo vivo, revisar recuentos y muestras, y autorizar después solo las escrituras concordantes.",
       "recommended": true
     },
     {
-      "title": "Investigar primero el CDC desplegado",
-      "body": "Revisar eventos, despliegue y scheduler antes de modificar BigQuery si se prioriza evitar que la discrepancia reaparezca.",
+      "title": "Investigar CDC antes del backfill",
+      "body": "Posponer la reconciliación hasta identificar por qué los cambios posteriores no llegaron a `change_events`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar dry-run y backfill acotado",
-    "body": "Comparar Mongo vivo con `mongodb.mk_casaDelLibro`, aplicar sólo filas divergentes y conservar un informe de antes y después.",
+    "title": "Aprobar dry-run acotado",
+    "body": "Comparar primero el conjunto literal contra Mongo vivo, revisar recuentos y muestras, y autorizar después solo las escrituras concordantes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo reciente conecta la frescura y materialización de BigQuery con el flujo que debe verificarse.",
-    "confidence": "medium"
+    "person": "MarcosTerroso",
+    "reason": "Es el responsable asignado y contribuidor reciente del repositorio marketplace implicado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7380.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7380#issuecomment-4950403658",
-    "reviewedAt": "2026-08-04T23:54:40.449Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-06T08:12:00.811Z",
+    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
   }
 }
