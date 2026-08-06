@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:27:46.923Z",
-  "updatedAt": "2026-08-04T23:23:30Z",
+  "generatedAt": "2026-08-06T06:03:50.334Z",
+  "updatedAt": "2026-08-06T05:53:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,48 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
-      "origin:dev",
-      "mk:fnac",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-10T07:44:41Z",
-    "updatedAt": "2026-08-04T23:23:30Z"
+    "updatedAt": "2026-08-06T05:53:29Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una ausencia `Product not found` confirmada por EAN pasar a estado no publicable, o conservar una política de reevaluación remota para posibles altas posteriores de catálogo?",
-  "rationale": "La fuente demuestra el bucle, pero no puede decidir si una ficha ausente es terminal ni cuándo volver a comprobarla sin asumir una política comercial de Fnac.",
+  "question": "¿Debe `Product not found` ser `PERMANENT` en cualquier fase Fnac o únicamente en creación y batching, que es el alcance acreditado por esta incidencia?",
+  "rationale": "La regla compartida no discrimina por fase y la PR propuesta también terminaliza errores de precio; esa semántica requiere intención explícita antes de aterrizarla.",
   "options": [
     {
-      "title": "Contrato por EAN con reevaluación",
-      "body": "Comprobar catálogo por EAN, persistir el resultado y reintentar solo los casos recuperables o sujetos a una cadencia aprobada.",
+      "title": "Acotar la regla a creación y batching",
+      "body": "Mantener el cambio terminal solo donde la ausencia de ficha Fnac está demostrada y conservar la semántica de precio hasta contar con evidencia específica.",
       "recommended": true
     },
     {
-      "title": "Ausencia terminal inmediata",
-      "body": "Clasificar `Product not found` como `PERMANENT` y tratar cualquier recuperación futura mediante una intervención explícita.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el comportamiento actual",
-      "body": "Conservar `STALE` y los reintentos periódicos, aceptando su coste mientras no exista una política de catálogo.",
+      "title": "Aprobar permanencia global",
+      "body": "Confirmar que la misma firma nunca es recuperable en precio y aceptar `PERMANENT` para todas las fases que usan el clasificador.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Contrato por EAN con reevaluación",
-    "body": "Comprobar catálogo por EAN, persistir el resultado y reintentar solo los casos recuperables o sujetos a una cadencia aprobada.",
+    "title": "Acotar la regla a creación y batching",
+    "body": "Mantener el cambio terminal solo donde la ausencia de ficha Fnac está demostrada y conservar la semántica de precio hasta contar con evidencia específica.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es el contribuidor más reciente del controlador y de los recoveries Fnac que materializarían la política elegida.",
+    "person": "MarcosTerroso",
+    "reason": "Tiene asignada la incidencia y su PR abierta es la candidata directa para materializar la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7328.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7328#issuecomment-4933398860",
-    "reviewedAt": "2026-08-05T00:27:46.923Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-06T06:03:50.334Z",
+    "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
   }
 }

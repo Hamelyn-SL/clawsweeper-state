@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T06:04:50.828Z",
+  "updatedAt": "2026-08-06T05:58:39Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8271,
+    "title": "fix: classify fnac product not found as permanent",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8271",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-08-06T05:58:30Z",
+    "updatedAt": "2026-08-06T05:58:39Z",
+    "headSha": "66589d38bcfe86248c8c05d921e64b6806870eb2"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe una respuesta `Product not found` de Fnac dejar una oferta permanentemente no publicable, o debe conservar una comprobación por EAN y una política explícita de reevaluación?",
+  "rationale": "El código demuestra el bucle actual, pero no determina si una ficha ausente puede aparecer posteriormente ni cuándo debe volver a comprobarse.",
+  "options": [
+    {
+      "title": "Pausar hasta definir el contrato",
+      "body": "Mantener el PR en borrador y concretar primero los estados y la cadencia por EAN antes de codificar la clasificación.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar ausencia terminal",
+      "body": "Aprobar `PERMANENT` como política comercial y planificar aparte la mutación controlada de la cohorte histórica.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener reevaluación",
+      "body": "Conservar una ruta de comprobación remota o una cadencia explícita para EAN sin ficha antes de terminar la oferta.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Pausar hasta definir el contrato",
+    "body": "Mantener el PR en borrador y concretar primero los estados y la cadencia por EAN antes de codificar la clasificación.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Su cambio reciente de recuperación Fnac y su análisis en la incidencia cubren directamente el contrato de estados remotos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8271.md",
+    "reviewedAt": "2026-08-06T06:04:50.828Z",
+    "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
+  }
+}
