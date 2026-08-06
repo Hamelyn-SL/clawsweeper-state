@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-06T07:29:12.241Z",
+  "generatedAt": "2026-08-06T13:10:47.227Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 102
+    "openItemsSeen": 108
   },
   "counts": {
-    "itemRecords": 98,
-    "closedRecords": 872,
-    "missingOpen": 4,
+    "itemRecords": 105,
+    "closedRecords": 883,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 3,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,44 +40,31 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8270,
+        "number": 8285,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T05:24:02Z",
-        "updatedAt": "2026-08-06T06:46:20Z",
+        "createdAt": "2026-08-06T11:36:24Z",
+        "updatedAt": "2026-08-06T13:06:12Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 8272,
-        "kind": "pull_request",
-        "title": "fix: return 500 on total cron failure and emit structured run summary",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T06:37:35Z",
-        "updatedAt": "2026-08-06T06:39:37Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8273,
+        "number": 8292,
         "kind": "issue",
-        "title": "No aparecen ni en Stripe ni en eDesk enlaces de pago mercadopago ",
+        "title": "BL-buying-account-10: ecommerce and Supply profile clients show success toast when picture upload fails",
         "labels": [
           "bug",
-          "source:admin-panel",
           "app:ecommerce",
-          "triage:running",
-          "reporter:irenegarcia",
-          "P0"
+          "triage:queued",
+          "business-logic",
+          "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T07:24:45Z",
-        "updatedAt": "2026-08-06T07:27:21Z",
+        "createdAt": "2026-08-06T13:07:35Z",
+        "updatedAt": "2026-08-06T13:07:49Z",
         "missingReason": "recently_created"
       }
     ],
@@ -104,44 +91,31 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8270,
+        "number": 8285,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T05:24:02Z",
-        "updatedAt": "2026-08-06T06:46:20Z",
+        "createdAt": "2026-08-06T11:36:24Z",
+        "updatedAt": "2026-08-06T13:06:12Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 8272,
-        "kind": "pull_request",
-        "title": "fix: return 500 on total cron failure and emit structured run summary",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T06:37:35Z",
-        "updatedAt": "2026-08-06T06:39:37Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8273,
+        "number": 8292,
         "kind": "issue",
-        "title": "No aparecen ni en Stripe ni en eDesk enlaces de pago mercadopago ",
+        "title": "BL-buying-account-10: ecommerce and Supply profile clients show success toast when picture upload fails",
         "labels": [
           "bug",
-          "source:admin-panel",
           "app:ecommerce",
-          "triage:running",
-          "reporter:irenegarcia",
-          "P0"
+          "triage:queued",
+          "business-logic",
+          "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T07:24:45Z",
-        "updatedAt": "2026-08-06T07:27:21Z",
+        "createdAt": "2026-08-06T13:07:35Z",
+        "updatedAt": "2026-08-06T13:07:49Z",
         "missingReason": "recently_created"
       }
     ],
