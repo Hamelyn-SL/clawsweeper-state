@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T11:45:33.107Z",
+  "generatedAt": "2026-08-06T11:48:51.717Z",
   "updatedAt": "2026-08-06T10:05:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,48 +15,51 @@
       "app:admin",
       "triage:done",
       "epic:revision-v3",
+      "P1",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "issue-rating: ⚪ platinum",
-      "reporter:danielmenchen-hamelyn",
-      "P1",
       "impact:session-state",
-      "clawsweeper:needs-product-decision"
+      "reporter:danielmenchen-hamelyn"
     ],
     "createdAt": "2026-08-06T09:31:12Z",
     "updatedAt": "2026-08-06T10:05:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba que el límite de idempotencia del cierre de Revision V3 sea una operación de servidor, dejando la barrera cliente como protección adicional de UX?",
-  "rationale": "La elección determina cómo se coordinan persistencias, transición y encolado ante reintentos o pérdida de conexión; el código actual no fija ese contrato.",
+  "question": "¿Debe Revision V3 adoptar un cierre autoritativo e idempotente en servidor, manteniendo una barrera cliente solo como ayuda de UX?",
+  "rationale": "El arreglo cruza estado local, cola offline, persistencia de productos, transición de pedido y efectos posteriores; elegir solo una espera cliente dejaría rutas de recuperación sin contrato autoritativo.",
   "options": [
     {
-      "title": "Orquestar el cierre en servidor",
-      "body": "Añadir una operación idempotente que compruebe el estado persistido y solo complete transición y cola cuando las invariantes se cumplan.",
+      "title": "Cierre confirmado por servidor",
+      "body": "Crear una operación idempotente que valide todas las invariantes, transicione a `REVIEWED` y devuelva un resultado recuperable; el cliente espera sus mutaciones antes de invocarla.",
       "recommended": true
     },
     {
-      "title": "Mantener coordinación en cliente",
-      "body": "Esperar todas las promesas desde la UI, aceptando que los fallos de navegación y red necesiten una recuperación separada.",
+      "title": "Barrera únicamente en cliente",
+      "body": "Esperar las promesas locales antes de transicionar, aceptando que recargas y pérdida de red queden fuera de la garantía.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar hasta definir la integración de la épica",
+      "body": "No cambiar el flujo hasta acordar cómo se integrará Revision V3 desde la rama de la épica hacia `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Orquestar el cierre en servidor",
-    "body": "Añadir una operación idempotente que compruebe el estado persistido y solo complete transición y cola cuando las invariantes se cumplan.",
+    "title": "Cierre confirmado por servidor",
+    "body": "Crear una operación idempotente que valide todas las invariantes, transicione a `REVIEWED` y devuelva un resultado recuperable; el cliente espera sus mutaciones antes de invocarla.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Es el contribuidor reciente con mayor cobertura de los puntos de entrada de Revision V3 implicados.",
+    "reason": "Combina la asignación actual de la incidencia con contribuciones recientes en los flujos de persistencia de Revision V3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8278.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8278#issuecomment-5203066406",
-    "reviewedAt": "2026-08-06T11:45:33.107Z",
+    "reviewedAt": "2026-08-06T11:48:51.717Z",
     "mainSha": "4761f3592a88703faae3814d832155e390995221"
   }
 }
