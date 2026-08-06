@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T07:51:13.720Z",
-  "updatedAt": "2026-08-06T05:56:51Z",
+  "generatedAt": "2026-08-06T13:32:16.650Z",
+  "updatedAt": "2026-08-06T13:05:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,49 +15,48 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-08-06T05:56:51Z"
+    "updatedAt": "2026-08-06T13:05:43Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué alcance de Revisión V3 debe integrarse primero en `dev`: el flujo operativo ya construido o una entrega conjunta tras definir productividad y métricas?",
-  "rationale": "La rama por defecto no contiene el módulo V3, mientras que las subentregas restantes dependen de decisiones de agregación, objetivo de ritmo y contenido operativo.",
+  "question": "¿Debe el equipo integrar `EPIC/revision-v3` en `dev` como hito previo y mantener las cuatro mejoras restantes como entregas separadas?",
+  "rationale": "La rama por defecto no contiene el puesto, mientras que los cambios parciales viven en una rama de epic; elegir la secuencia de integración y el alcance de cada entrega requiere intención de producto y de despliegue.",
   "options": [
     {
-      "title": "Integrar primero el flujo operativo",
-      "body": "Promover el puesto V3 y las mejoras ya fusionadas en la rama épica, dejando las cuatro entregas abiertas como seguimiento independiente.",
+      "title": "Integrar V3 primero",
+      "body": "Preparar una integración controlada de `EPIC/revision-v3` en `dev` y conservar productividad, avisos, métricas y vídeos como entregas independientes.",
       "recommended": true
     },
     {
-      "title": "Esperar al diseño analítico completo",
-      "body": "Mantener el epic fuera de `dev` hasta cerrar el modelo de productividad, objetivo configurable, métricas y orden de vídeos.",
+      "title": "Mantener V3 aislado",
+      "body": "Seguir desarrollando y validando todos los bloques en la rama del epic antes de abrir una integración conjunta a `dev`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar primero el flujo operativo",
-    "body": "Promover el puesto V3 y las mejoras ya fusionadas en la rama épica, dejando las cuatro entregas abiertas como seguimiento independiente.",
+    "title": "Integrar V3 primero",
+    "body": "Preparar una integración controlada de `EPIC/revision-v3` en `dev` y conservar productividad, avisos, métricas y vídeos como entregas independientes.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La épica base y el contrato de productividad le sitúan como el mejor punto de decisión disponible.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado al epic y concentra el historial reciente de las PR fusionadas sobre la rama V3.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-08-06T07:51:13.720Z",
-    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
+    "reviewedAt": "2026-08-06T13:32:16.650Z",
+    "mainSha": "2da5eca513fce38e0ca604fbe23e078ba4b52981"
   }
 }

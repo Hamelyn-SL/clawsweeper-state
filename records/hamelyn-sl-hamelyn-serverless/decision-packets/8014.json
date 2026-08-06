@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T13:31:13.123Z",
+  "generatedAt": "2026-08-06T13:31:17.977Z",
   "updatedAt": "2026-08-06T13:22:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,53 +15,47 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:47Z",
     "updatedAt": "2026-08-06T13:22:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se ratifica que el ritmo operativo de Revisión V3 se sirva desde Mongo con totales ponderados, mientras BigQuery queda para análisis histórico por fase?",
-  "rationale": "La issue anterior fue sustituida por esta especificación, pero el puesto V3 aún no está en `dev` y la frontera entre datos operativos e históricos condiciona API, índices y consumidores.",
+  "question": "¿Se confirma implementar ahora el contrato de agregado diario ponderado en la rama `EPIC/revision-v3` antes de construir los paneles dependientes?",
+  "rationale": "La triage propone una dirección técnica, pero la superficie V3 aún no está en `dev` y esta entrega condiciona las interfaces de los avisos y dashboards relacionados.",
   "options": [
     {
-      "title": "Mongo operativo y BigQuery histórico",
-      "body": "Implementar el agregado diario ponderado en el repositorio/API de productividad y derivar el análisis por fases en BigQuery cuando V3 esté integrado.",
+      "title": "Confirmar contrato y secuencia",
+      "body": "Implementar primero la integración V3 y el endpoint Mongo ponderado, dejando BigQuery para consumo histórico.",
       "recommended": true
     },
     {
-      "title": "Centralizar todo en BigQuery",
-      "body": "Posponer el endpoint operativo y aceptar latencia de ingesta para los paneles y avisos de ritmo.",
-      "recommended": false
-    },
-    {
-      "title": "Esperar al aterrizaje de V3",
-      "body": "No modificar productividad hasta que la rama del puesto tenga un plan de integración en `dev`.",
+      "title": "Separar agregación general",
+      "body": "Trasladar el contrato diario a https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623 y mantener aquí solo el enganche del kiosko V3.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mongo operativo y BigQuery histórico",
-    "body": "Implementar el agregado diario ponderado en el repositorio/API de productividad y derivar el análisis por fases en BigQuery cuando V3 esté integrado.",
+    "title": "Confirmar contrato y secuencia",
+    "body": "Implementar primero la integración V3 y el endpoint Mongo ponderado, dejando BigQuery para consumo histórico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su historial reciente cubre el contrato compartido de sesiones y la ruta API que deberá soportar el agregado operativo.",
-    "confidence": "high"
+    "person": "Alex Cantón",
+    "reason": "Su historial visible cubre la recuperación del contador de sesiones `REVIEW`, que condiciona la integración propuesta.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8014.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014#issuecomment-5101484628",
-    "reviewedAt": "2026-08-06T13:31:13.123Z",
+    "reviewedAt": "2026-08-06T13:31:17.977Z",
     "mainSha": "2da5eca513fce38e0ca604fbe23e078ba4b52981"
   }
 }
