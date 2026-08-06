@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-06T12:53:31.625Z",
+  "updatedAt": "2026-08-06T12:46:58Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8291,
+    "title": "Amazon crons never run errorRecoveryWithdraw and withdrawn-master sync errors pile up",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8291",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-06T12:35:20Z",
+    "updatedAt": "2026-08-06T12:46:58Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Qué límite inicial de `errorRecoveryWithdraw` debe aplicarse por región en PROD y qué umbrales de 429/errores obligarán a pausar el drenaje?",
+  "rationale": "La corrección de código es mecánica, pero elegir el ritmo de llamadas externas para un backlog de decenas de miles requiere criterio operativo y observación posterior al despliegue.",
+  "options": [
+    {
+      "title": "Despliegue gradual con límite conservador",
+      "body": "Añadir la fase en las seis regiones y fijar un lote inicial bajo, revisando telemetría antes de incrementarlo.",
+      "recommended": true
+    },
+    {
+      "title": "Activar primero regiones piloto",
+      "body": "Habilitar inicialmente una o dos regiones para calibrar rate-limits y extender después el mismo patrón al resto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Despliegue gradual con límite conservador",
+    "body": "Añadir la fase en las seis regiones y fijar un lote inicial bajo, revisando telemetría antes de incrementarlo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la incidencia y figura como contribuidor reciente de las regiones y el controlador Amazon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8291.md",
+    "reviewedAt": "2026-08-06T12:53:31.625Z",
+    "mainSha": "6743d9f0670e0d99d93b27c8b6438b16e3a0ee19"
+  }
+}
