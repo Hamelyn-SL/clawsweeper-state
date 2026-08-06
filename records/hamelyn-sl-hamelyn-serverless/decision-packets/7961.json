@@ -1,61 +1,65 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:27:28.094Z",
-  "updatedAt": "2026-08-04T23:45:45Z",
+  "generatedAt": "2026-08-06T12:28:00.588Z",
+  "updatedAt": "2026-08-06T12:17:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
     "number": 7961,
     "title": "eBay ES creation queue drains far below configured throughput",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961",
-    "state": "closed",
+    "state": "open",
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
-      "origin:dev",
-      "mk:ebay",
+      "triage:blocked",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:ebay"
     ],
     "createdAt": "2026-07-27T05:58:02Z",
-    "updatedAt": "2026-08-04T23:45:45Z"
+    "updatedAt": "2026-08-06T12:17:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué cohorte inicial, umbral de éxito y criterio de rollback autoriza el equipo para volver a habilitar `ebay.create()` en producción?",
-  "rationale": "El código demuestra que el consumidor está apagado, pero no puede determinar por sí solo el volumen operativo seguro ni la tolerancia aceptable a rechazos remotos.",
+  "question": "¿Quién autoriza la sonda posterior al desbloqueo y qué umbral de éxito, cohorte inicial y rollback regirán la reactivación de `ebay.create()`?",
+  "rationale": "El código actual contiene la protección, pero decidir cuándo volver a publicar y con qué exposición afecta directamente a producción y depende de la cuenta externa.",
   "options": [
     {
-      "title": "Reactivación graduada con sonda",
-      "body": "Completar la observabilidad, publicar una cohorte mínima y ampliar solo si las publicaciones remotas confirmadas y los errores clasificados cumplen el umbral.",
+      "title": "Mantener la pausa hasta desbloqueo verificado",
+      "body": "Esperar confirmación de Seller Hub o soporte eBay y exigir una sonda positiva de diez publicaciones antes de cualquier cohorte.",
       "recommended": true
     },
     {
-      "title": "Mantener create desactivado",
-      "body": "Conservar el freno hasta que eBay o la incidencia de publicación remota tenga una corrección operativa validada.",
+      "title": "Reactivar con cohorte limitada",
+      "body": "Autorizar una cohorte mínima con observabilidad, límite temporal y rollback inmediato si reaparece `25019`.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el tracker solo operativo",
+      "body": "No modificar el cron y actualizar esta incidencia hasta que Operaciones aporte una resolución verificable del bloqueo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reactivación graduada con sonda",
-    "body": "Completar la observabilidad, publicar una cohorte mínima y ampliar solo si las publicaciones remotas confirmadas y los errores clasificados cumplen el umbral.",
+    "title": "Mantener la pausa hasta desbloqueo verificado",
+    "body": "Esperar confirmación de Seller Hub o soporte eBay y exigir una sonda positiva de diez publicaciones antes de cualquier cohorte.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su historial reciente cubre la API de eBay y la recuperación de outcomes de publicación.",
-    "confidence": "medium"
+    "person": "MiguelHamelyn",
+    "reason": "Su historial combina la observabilidad integrada y la evidencia reciente de la sonda que condiciona la decisión.",
+    "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/7961.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7961#issuecomment-5087934598",
-    "reviewedAt": "2026-08-05T00:27:28.094Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7961.md",
+    "reviewedAt": "2026-08-06T12:28:00.588Z",
+    "mainSha": "6743d9f0670e0d99d93b27c8b6438b16e3a0ee19"
   }
 }
