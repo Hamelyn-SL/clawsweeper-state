@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T07:59:15.498Z",
-  "updatedAt": "2026-08-06T07:54:00Z",
+  "generatedAt": "2026-08-06T09:41:46.201Z",
+  "updatedAt": "2026-08-06T08:50:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 message-delivery"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-04T13:06:12Z",
-    "updatedAt": "2026-08-06T07:54:00Z",
-    "headSha": "a55cc7c091877dba4e433eec4a7a66c974096f95"
+    "updatedAt": "2026-08-06T08:50:49Z",
+    "headSha": "767937669de14cdcd7a1f3559e669a6406e16725"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe incluirse la cancelación total desde el muelle en este PR, y para qué estados debe estar disponible?",
-  "rationale": "El PR introduce esa capacidad después de que su propia descripción la situara fuera de alcance, y el grafo actual rechaza al menos uno de los estados visibles del panel.",
+  "question": "¿Qué estados debe poder cancelar un operario desde el muelle y qué comunicación posterior debe asumir ese flujo?",
+  "rationale": "El propio PR deja pendiente el caso `SUSPICIOUS`; esa elección modifica el contrato del grafo y la operación de almacén, no solo una implementación mecánica.",
   "options": [
     {
-      "title": "Separar la cancelación total",
-      "body": "Retirar temporalmente la ruta y el control de cancelación para revisar su contrato de estados y comunicaciones en una PR acotada.",
+      "title": "Limitar la cancelación al grafo actual",
+      "body": "Mantener el botón únicamente para transiciones ya permitidas y documentar que `SUSPICIOUS` se resuelve fuera del muelle.",
       "recommended": true
     },
     {
-      "title": "Patrocinar el flujo completo",
-      "body": "Mantener la función definiendo los estados permitidos, el aviso al vendedor y la conducta para `SUSPICIOUS` antes de aprobarla.",
+      "title": "Ampliar el flujo para sospechosos",
+      "body": "Definir y revisar primero la transición de `SUSPICIOUS` y sus efectos antes de exponerla en el panel.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la cancelación total",
-    "body": "Retirar temporalmente la ruta y el control de cancelación para revisar su contrato de estados y comunicaciones en una PR acotada.",
+    "title": "Limitar la cancelación al grafo actual",
+    "body": "Mantener el botón únicamente para transiciones ya permitidas y documentar que `SUSPICIOUS` se resuelve fuera del muelle.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Mantiene el flujo de pickup y conoce tanto la propuesta como las restricciones recientes de recepción.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial conecta el flujo de pedidos y la cancelación con las reglas de transición que condicionan esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8215.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8215#issuecomment-5179898457",
-    "reviewedAt": "2026-08-06T07:59:15.498Z",
-    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
+    "reviewedAt": "2026-08-06T09:41:46.201Z",
+    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
   }
 }
