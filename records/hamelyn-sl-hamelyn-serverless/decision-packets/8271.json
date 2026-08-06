@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T06:04:50.828Z",
-  "updatedAt": "2026-08-06T05:58:39Z",
+  "generatedAt": "2026-08-06T06:08:42.593Z",
+  "updatedAt": "2026-08-06T06:04:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,44 +13,38 @@
       "size/M"
     ],
     "createdAt": "2026-08-06T05:58:30Z",
-    "updatedAt": "2026-08-06T05:58:39Z",
-    "headSha": "66589d38bcfe86248c8c05d921e64b6806870eb2"
+    "updatedAt": "2026-08-06T06:04:54Z",
+    "headSha": "9e7492b35820b3adc0f77611ef318f8220d469a5"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una respuesta `Product not found` de Fnac dejar una oferta permanentemente no publicable, o debe conservar una comprobación por EAN y una política explícita de reevaluación?",
-  "rationale": "El código demuestra el bucle actual, pero no determina si una ficha ausente puede aparecer posteriormente ni cuándo debe volver a comprobarse.",
+  "question": "¿Debe `Product not found` ser `PERMANENT` para todas las fases de Fnac, incluido `UPDATING_PRICE`, o solo para creación y batching?",
+  "rationale": "La incidencia aporta evidencia de una cohorte de batching, mientras que el clasificador compartido y la prueba modificada cambian también el contrato de recuperación de precio.",
   "options": [
     {
-      "title": "Pausar hasta definir el contrato",
-      "body": "Mantener el PR en borrador y concretar primero los estados y la cadencia por EAN antes de codificar la clasificación.",
+      "title": "Acotar por fase",
+      "body": "Mantener `PERMANENT` solo en creación y batching, conservando la recuperación de precio hasta disponer de evidencia específica.",
       "recommended": true
     },
     {
-      "title": "Aceptar ausencia terminal",
-      "body": "Aprobar `PERMANENT` como política comercial y planificar aparte la mutación controlada de la cohorte histórica.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener reevaluación",
-      "body": "Conservar una ruta de comprobación remota o una cadencia explícita para EAN sin ficha antes de terminar la oferta.",
+      "title": "Aprobar permanencia global",
+      "body": "Aceptar que la ficha ausente nunca es recuperable en precio y documentar la decisión operativa antes de fusionar.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pausar hasta definir el contrato",
-    "body": "Mantener el PR en borrador y concretar primero los estados y la cadencia por EAN antes de codificar la clasificación.",
+    "title": "Acotar por fase",
+    "body": "Mantener `PERMANENT` solo en creación y batching, conservando la recuperación de precio hasta disponer de evidencia específica.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Su cambio reciente de recuperación Fnac y su análisis en la incidencia cubren directamente el contrato de estados remotos.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su cambio anterior delimitó la recuperación de precio Fnac y es el antecedente técnico más directo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8271.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8271#issuecomment-5201004007",
-    "reviewedAt": "2026-08-06T06:04:50.828Z",
+    "reviewedAt": "2026-08-06T06:08:42.593Z",
     "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
   }
 }
