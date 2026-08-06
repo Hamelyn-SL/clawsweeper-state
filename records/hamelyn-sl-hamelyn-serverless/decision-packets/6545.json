@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:33:52.833Z",
-  "updatedAt": "2026-08-04T23:10:10Z",
+  "generatedAt": "2026-08-06T07:52:19.589Z",
+  "updatedAt": "2026-08-06T07:14:55Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,48 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:done",
-      "origin:panel",
+      "triage:no-change",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-08-04T23:10:10Z"
+    "updatedAt": "2026-08-06T07:14:55Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Se debe priorizar un piloto de MX sobre el generador actual corregido o exigir primero la migración de los feeds a BigQuery?",
-  "rationale": "La elección condiciona las consultas, la prueba de paridad, el rollback y la secuencia segura de publicación comercial.",
+  "priority": "P2",
+  "question": "¿Se aprueba primero el contrato de fichero y el piloto de MX como entrega separada de la migración a BigQuery?",
+  "rationale": "El código permite localizar los cambios, pero las columnas exactas, nomenclaturas y secuencia de carga siguen pendientes de confirmación operativa.",
   "options": [
     {
-      "title": "Pilotar MX primero",
-      "body": "Corregir el contrato de salida y validar CSV más carga controlada en MX antes de extender el cambio al resto de países.",
+      "title": "Validar MX y separar la fuente",
+      "body": "Confirmar el contrato de MX, corregir mapper y cobertura de feeds, y coordinar la migración BigQuery en su iniciativa propia.",
       "recommended": true
     },
     {
-      "title": "Migrar primero a BigQuery",
-      "body": "Completar la fuente BigQuery antes de modificar mapeos y ejecutar el piloto de Merchant Center.",
+      "title": "Unificarlo con BigQuery",
+      "body": "Esperar y ampliar la migración de fuente para incluir el nuevo contrato, aceptando un alcance y una validación operativa mayores.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Pilotar MX primero",
-    "body": "Corregir el contrato de salida y validar CSV más carga controlada en MX antes de extender el cambio al resto de países.",
+    "title": "Validar MX y separar la fuente",
+    "body": "Confirmar el contrato de MX, corregir mapper y cobertura de feeds, y coordinar la migración BigQuery en su iniciativa propia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Está asignado a la issue y participó en el corte operativo de México.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y ya realizó el ajuste operativo que separó MX del cron heredado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-08-04T23:33:52.833Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-06T07:52:19.589Z",
+    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
   }
 }

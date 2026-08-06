@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T05:53:08.089Z",
-  "updatedAt": "2026-08-06T05:23:40Z",
+  "generatedAt": "2026-08-06T07:51:13.720Z",
+  "updatedAt": "2026-08-06T05:56:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,49 +15,48 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
-      "impact:ux-friction",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-27T14:16:14Z",
-    "updatedAt": "2026-08-06T05:23:40Z"
+    "updatedAt": "2026-08-06T05:56:51Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se integra `EPIC/revision-v3` en `dev` como siguiente entrega y se mantienen los cuatro sub-bloques abiertos bajo este epic?",
-  "rationale": "Las PRs ya fusionadas tuvieron como base `EPIC/revision-v3`, mientras que la rama canónica `dev` no contiene ese árbol y varias dependencias siguen abiertas.",
+  "question": "¿Qué alcance de Revisión V3 debe integrarse primero en `dev`: el flujo operativo ya construido o una entrega conjunta tras definir productividad y métricas?",
+  "rationale": "La rama por defecto no contiene el módulo V3, mientras que las subentregas restantes dependen de decisiones de agregación, objetivo de ritmo y contenido operativo.",
   "options": [
     {
-      "title": "Planificar la integración en `dev`",
-      "body": "Confirmar el corte de integración y continuar los sub-bloques abiertos siguiendo sus dependencias declaradas.",
+      "title": "Integrar primero el flujo operativo",
+      "body": "Promover el puesto V3 y las mejoras ya fusionadas en la rama épica, dejando las cuatro entregas abiertas como seguimiento independiente.",
       "recommended": true
     },
     {
-      "title": "Mantenerlo fuera de `dev`",
-      "body": "Posponer la integración y documentar qué condición operativa o técnica debe cumplirse antes de retomar las sub-issues.",
+      "title": "Esperar al diseño analítico completo",
+      "body": "Mantener el epic fuera de `dev` hasta cerrar el modelo de productividad, objetivo configurable, métricas y orden de vídeos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Planificar la integración en `dev`",
-    "body": "Confirmar el corte de integración y continuar los sub-bloques abiertos siguiendo sus dependencias declaradas.",
+    "title": "Integrar primero el flujo operativo",
+    "body": "Promover el puesto V3 y las mejoras ya fusionadas en la rama épica, dejando las cuatro entregas abiertas como seguimiento independiente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Está asignado al bloque de productividad que desbloquea los avisos y paneles del paquete.",
+    "person": "JavierHamelyn",
+    "reason": "La épica base y el contrato de productividad le sitúan como el mejor punto de decisión disponible.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8005.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8005#issuecomment-5092763492",
-    "reviewedAt": "2026-08-06T05:53:08.089Z",
-    "mainSha": "31659c2f069896afd6fec6aa7203e5d1a88413a1"
+    "reviewedAt": "2026-08-06T07:51:13.720Z",
+    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
   }
 }
