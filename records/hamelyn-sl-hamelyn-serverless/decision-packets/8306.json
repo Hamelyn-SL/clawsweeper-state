@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-07T10:14:27.311Z",
-  "updatedAt": "2026-08-07T10:11:06Z",
+  "generatedAt": "2026-08-07T12:11:53.176Z",
+  "updatedAt": "2026-08-07T12:04:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,45 +11,44 @@
     "state": "open",
     "labels": [
       "size/M",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 other"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 other",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-07T09:45:50Z",
-    "updatedAt": "2026-08-07T10:11:06Z",
+    "updatedAt": "2026-08-07T12:04:29Z",
     "headSha": "28d67d559c1956a950ea6e4b04efae6c4a46f1f1"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La conversión SEUR → FEDEX debe cancelar obligatoriamente la expedición SEUR remota antes de sustituir el estado local, o está aprobada la excepción de dejarla caducar?",
-  "rationale": "La incidencia canónica pide cancelación segura, mientras que el cuerpo del PR describe una excepción comercial sin evidencia verificable; esa política afecta a expediciones reales y no puede deducirse del código.",
+  "question": "¿La transición SEUR → FedEx debe cancelar obligatoriamente el envío SEUR remoto, o está aprobada una expiración sin cancelación bajo condiciones concretas?",
+  "rationale": "El código dispone de cancelación remota, pero el PR opta por no usarla basándose en una confirmación no verificable en la discusión pública; la elección afecta a costes y a expediciones activas.",
   "options": [
     {
-      "title": "Cancelar antes del cambio",
-      "body": "Cancelar SEUR y abortar sin tocar el estado local si la cancelación falla; es la opción recomendada por el análisis existente.",
+      "title": "Cancelar SEUR antes del cambio",
+      "body": "Cancelar remotamente el envío SEUR y detener el cambio si la cancelación falla para evitar dos expediciones activas.",
       "recommended": true
     },
     {
-      "title": "Aprobar la excepción SEUR",
-      "body": "Permitir que la expedición previa caduque solo con una decisión visible que cubra duplicados operativos, coste y recuperación ante fallos.",
+      "title": "Ratificar la expiración controlada",
+      "body": "Mantener el envío SEUR sin cancelar solo con una decisión pública del responsable, límites operativos y prueba de que no genera coste ni entrega duplicada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cancelar antes del cambio",
-    "body": "Cancelar SEUR y abortar sin tocar el estado local si la cancelación falla; es la opción recomendada por el análisis existente.",
+    "title": "Cancelar SEUR antes del cambio",
+    "body": "Cancelar remotamente el envío SEUR y detener el cambio si la cancelación falla para evitar dos expediciones activas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Introdujo el mecanismo compartido y es la mejor ruta disponible para decidir el contrato de cambio y su recuperación.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Su historial conecta tanto la política de cambio como el servicio de SEUR afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8306.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8306#issuecomment-5215700869",
-    "reviewedAt": "2026-08-07T10:14:27.311Z",
-    "mainSha": "bce63937305efc525677d7a687f9e7a231cb3ac1"
+    "reviewedAt": "2026-08-07T12:11:53.176Z",
+    "mainSha": "67cdf9ac43ba0afc130d11ca698d71b023d06c67"
   }
 }
