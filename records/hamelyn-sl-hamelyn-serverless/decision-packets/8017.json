@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T01:05:40.514Z",
-  "updatedAt": "2026-08-04T23:46:41Z",
+  "generatedAt": "2026-08-07T13:20:34.174Z",
+  "updatedAt": "2026-08-07T13:06:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,49 +15,48 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:fix-shape-clear",
       "reporter:daniellopez",
       "issue-rating: ➖ n/a",
-      "origin:panel",
-      "P2",
-      "impact:other",
-      "clawsweeper:fix-shape-clear"
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:55Z",
-    "updatedAt": "2026-08-04T23:46:41Z"
+    "updatedAt": "2026-08-07T13:06:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el operario ver nombres y posiciones del resto del equipo, o sólo su posición con métricas agregadas anónimas?",
-  "rationale": "La maqueta propone ranking nominal, pero la discusión abierta no establece el límite de visibilidad de datos individuales en una pantalla de puesto.",
+  "question": "¿Debe la pantalla del operario mostrar nombres y posiciones del resto del equipo, o solo su posición con métricas agregadas anónimas?",
+  "rationale": "La maqueta incluye un ranking nominal, pero la discusión y el código no establecen una política de privacidad para una pantalla compartida en el puesto.",
   "options": [
     {
       "title": "Ranking anónimo para operario",
-      "body": "Mostrar la posición propia y estadísticas agregadas del equipo, reservando nombres y comparativas individuales para supervisores.",
+      "body": "Mostrar la posición propia y métricas agregadas del equipo, reservando identidades y comparativas individuales para supervisores.",
       "recommended": true
     },
     {
       "title": "Ranking nominal compartido",
-      "body": "Autorizar nombres y posiciones para todos los operarios, documentando la política de acceso y la finalidad operativa.",
+      "body": "Autorizar nombres y posiciones para todo el equipo y documentar el propósito operativo y los permisos de acceso.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Ranking anónimo para operario",
-    "body": "Mostrar la posición propia y estadísticas agregadas del equipo, reservando nombres y comparativas individuales para supervisores.",
+    "body": "Mostrar la posición propia y métricas agregadas del equipo, reservando identidades y comparativas individuales para supervisores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su triage anterior identificó explícitamente esta decisión y la dependencia técnica asociada.",
+    "reason": "El epic y el triage previo sitúan esta decisión de producto dentro de su superficie de coordinación.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8017.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8017#issuecomment-5101539679",
-    "reviewedAt": "2026-08-05T01:05:40.514Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-07T13:20:34.174Z",
+    "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
   }
 }
