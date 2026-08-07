@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-07T10:09:24.198Z",
+  "updatedAt": "2026-08-07T09:46:02Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8306,
+    "title": "feat: allow seur to fedex multi-box carrier switch in packing",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8306",
+    "state": "open",
+    "labels": [
+      "size/M"
+    ],
+    "createdAt": "2026-08-07T09:45:50Z",
+    "updatedAt": "2026-08-07T09:46:02Z",
+    "headSha": "28d67d559c1956a950ea6e4b04efae6c4a46f1f1"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿La política operativa aprobada permite abandonar una expedición SEUR ya creada, o debe cancelarse remotamente antes de generar la FedEx?",
+  "rationale": "El código ofrece cancelación remota y la incidencia enlazada la requería, mientras que el PR afirma una excepción comercial sin evidencia pública verificable.",
+  "options": [
+    {
+      "title": "Cancelar antes del cambio",
+      "body": "Añadir cancelación SEUR previa y abortar el switch si falla, manteniendo una única expedición activa por venta.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la caducidad sin cancelación",
+      "body": "Mantener el flujo actual únicamente con confirmación visible del responsable y una prueba de que SEUR no cobra ni despacha el envío abandonado.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la ampliación",
+      "body": "Mantener SEUR fuera de la allowlist hasta decidir y documentar la política de compensación remota.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Cancelar antes del cambio",
+    "body": "Añadir cancelación SEUR previa y abortar el switch si falla, manteniendo una única expedición activa por venta.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Introdujo el flujo común de cambio de carrier y es la mejor ruta histórica para decidir su invariancia operativa.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8306.md",
+    "reviewedAt": "2026-08-07T10:09:24.198Z",
+    "mainSha": "bce63937305efc525677d7a687f9e7a231cb3ac1"
+  }
+}
