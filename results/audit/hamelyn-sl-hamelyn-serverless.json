@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-06T13:10:47.227Z",
+  "generatedAt": "2026-08-07T01:38:06.229Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 108
+    "openItemsSeen": 106
   },
   "counts": {
-    "itemRecords": 105,
-    "closedRecords": 883,
-    "missingOpen": 3,
+    "itemRecords": 104,
+    "closedRecords": 887,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,31 +40,15 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8285,
+        "number": 8295,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T11:36:24Z",
-        "updatedAt": "2026-08-06T13:06:12Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8292,
-        "kind": "issue",
-        "title": "BL-buying-account-10: ecommerce and Supply profile clients show success toast when picture upload fails",
-        "labels": [
-          "bug",
-          "app:ecommerce",
-          "triage:queued",
-          "business-logic",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T13:07:35Z",
-        "updatedAt": "2026-08-06T13:07:49Z",
+        "createdAt": "2026-08-06T13:23:15Z",
+        "updatedAt": "2026-08-06T13:31:13Z",
         "missingReason": "recently_created"
       }
     ],
@@ -91,31 +75,15 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8285,
+        "number": 8295,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T11:36:24Z",
-        "updatedAt": "2026-08-06T13:06:12Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8292,
-        "kind": "issue",
-        "title": "BL-buying-account-10: ecommerce and Supply profile clients show success toast when picture upload fails",
-        "labels": [
-          "bug",
-          "app:ecommerce",
-          "triage:queued",
-          "business-logic",
-          "P2"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T13:07:35Z",
-        "updatedAt": "2026-08-06T13:07:49Z",
+        "createdAt": "2026-08-06T13:23:15Z",
+        "updatedAt": "2026-08-06T13:31:13Z",
         "missingReason": "recently_created"
       }
     ],
