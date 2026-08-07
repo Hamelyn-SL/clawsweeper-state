@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T12:55:57.255Z",
+  "generatedAt": "2026-08-07T18:55:36.410Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 102
   },
   "counts": {
-    "itemRecords": 99,
+    "itemRecords": 100,
     "closedRecords": 906,
-    "missingOpen": 3,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -50,18 +50,6 @@
         "createdAt": "2026-08-07T10:27:25Z",
         "updatedAt": "2026-08-07T12:27:51Z",
         "missingReason": "recently_created"
-      },
-      {
-        "number": 8314,
-        "kind": "pull_request",
-        "title": "feat: add productivity tracking, pace notices and daily summary to revision v3",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-07T12:55:43Z",
-        "updatedAt": "2026-08-07T12:55:53Z",
-        "missingReason": "recently_created"
       }
     ],
     "missingEligibleOpen": [],
@@ -96,18 +84,6 @@
         "authorAssociation": "CONTRIBUTOR",
         "createdAt": "2026-08-07T10:27:25Z",
         "updatedAt": "2026-08-07T12:27:51Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8314,
-        "kind": "pull_request",
-        "title": "feat: add productivity tracking, pace notices and daily summary to revision v3",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-07T12:55:43Z",
-        "updatedAt": "2026-08-07T12:55:53Z",
         "missingReason": "recently_created"
       }
     ],
