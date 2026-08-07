@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T06:48:11.292Z",
-  "updatedAt": "2026-08-05T05:42:50Z",
+  "generatedAt": "2026-08-07T08:21:55.262Z",
+  "updatedAt": "2026-08-07T07:58:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,53 +15,47 @@
       "feature",
       "triage:blocked",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:49Z",
-    "updatedAt": "2026-08-05T05:42:50Z"
+    "updatedAt": "2026-08-07T07:58:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué roles pueden editar el objetivo de ritmo y qué datos debe conservar obligatoriamente su historial de cambios?",
-  "rationale": "La petición exige configuración compartida y auditable, pero no fija la política de autorización ni el mínimo de trazabilidad.",
+  "question": "¿Qué roles pueden modificar el objetivo de ritmo y debe el historial guardar obligatoriamente autor, valor anterior, valor nuevo y fecha?",
+  "rationale": "La issue exige configuración desde Admin e histórico opcional, pero no fija los permisos ni el contrato mínimo de auditoría que debe compartir con los paneles.",
   "options": [
     {
-      "title": "Restringir y auditar",
-      "body": "Permitir edición a `ADMIN_LOGISTIC` y `ADMIN_USER`, guardando autor, valor anterior, valor nuevo y fecha.",
+      "title": "Configurar con auditoría completa",
+      "body": "Autorizar los roles operativos acordados y persistir autor, valores anterior y nuevo, y fecha para cada cambio.",
       "recommended": true
     },
     {
-      "title": "Solo supervisores",
-      "body": "Limitar la edición a un rol supervisor específico y mantener el mismo histórico auditable.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la configuración",
-      "body": "Aprobar primero el modelo diario y decidir la administración del objetivo antes de exponer avisos visuales.",
+      "title": "Aprobar un valor temporal",
+      "body": "Usar un objetivo operativo aprobado sin pantalla editable hasta que Producto concrete permisos e histórico.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Restringir y auditar",
-    "body": "Permitir edición a `ADMIN_LOGISTIC` y `ADMIN_USER`, guardando autor, valor anterior, valor nuevo y fecha.",
+    "title": "Configurar con auditoría completa",
+    "body": "Autorizar los roles operativos acordados y persistir autor, valores anterior y nuevo, y fecha para cada cambio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es la persona actualmente asignada a esta entrega y puede coordinar la decisión con Operaciones.",
+    "reason": "Está asignado a la entrega y su historial reciente conecta directamente con el puesto V3 donde se consumirá la configuración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8015.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8015#issuecomment-5101537349",
-    "reviewedAt": "2026-08-05T06:48:11.292Z",
-    "mainSha": "88e3af66875492d24bc8a5e1f579edf75acd6a2e"
+    "reviewedAt": "2026-08-07T08:21:55.262Z",
+    "mainSha": "4f882a4f8358d32cc03823405e14ed0da948fe4d"
   }
 }
