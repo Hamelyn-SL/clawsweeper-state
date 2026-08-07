@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T13:31:17.977Z",
-  "updatedAt": "2026-08-06T13:22:15Z",
+  "generatedAt": "2026-08-07T09:27:58.197Z",
+  "updatedAt": "2026-08-07T09:23:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,46 @@
       "feature",
       "triage:done",
       "epic:revision-v3",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:47Z",
-    "updatedAt": "2026-08-06T13:22:15Z"
+    "updatedAt": "2026-08-07T09:23:14Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se confirma implementar ahora el contrato de agregado diario ponderado en la rama `EPIC/revision-v3` antes de construir los paneles dependientes?",
-  "rationale": "La triage propone una dirección técnica, pero la superficie V3 aún no está en `dev` y esta entrega condiciona las interfaces de los avisos y dashboards relacionados.",
+  "question": "¿Debe esta entrega coordinarse primero con la integración de Revisión V3 antes de publicar el endpoint diario en `dev`?",
+  "rationale": "La superficie consumidora no está en `dev`; el orden de integración determina si se puede validar el flujo completo sin dejar un contrato operativo aislado.",
   "options": [
     {
-      "title": "Confirmar contrato y secuencia",
-      "body": "Implementar primero la integración V3 y el endpoint Mongo ponderado, dejando BigQuery para consumo histórico.",
+      "title": "Entrega coordinada de V3",
+      "body": "Integrar el puesto V3 y el contrato diario en una secuencia conjunta de Admin y Core, validando recuperación, contador y agregado.",
       "recommended": true
     },
     {
-      "title": "Separar agregación general",
-      "body": "Trasladar el contrato diario a https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6623 y mantener aquí solo el enganche del kiosko V3.",
+      "title": "API por adelantado",
+      "body": "Publicar primero el agregado de `opProductivity`, aceptando que el consumidor V3 y la validación de kiosko lleguen después.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar contrato y secuencia",
-    "body": "Implementar primero la integración V3 y el endpoint Mongo ponderado, dejando BigQuery para consumo histórico.",
+    "title": "Entrega coordinada de V3",
+    "body": "Integrar el puesto V3 y el contrato diario en una secuencia conjunta de Admin y Core, validando recuperación, contador y agregado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "Su historial visible cubre la recuperación del contador de sesiones `REVIEW`, que condiciona la integración propuesta.",
-    "confidence": "medium"
+    "reason": "Su trabajo reciente conecta el repositorio y la API de productividad que condicionan el contrato diario.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8014.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8014#issuecomment-5101484628",
-    "reviewedAt": "2026-08-06T13:31:17.977Z",
-    "mainSha": "2da5eca513fce38e0ca604fbe23e078ba4b52981"
+    "reviewedAt": "2026-08-07T09:27:58.197Z",
+    "mainSha": "b5ea1d0184d0229ee70a01d28d9e22607dd029be"
   }
 }

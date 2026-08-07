@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-07T08:21:55.262Z",
-  "updatedAt": "2026-08-07T07:58:19Z",
+  "generatedAt": "2026-08-07T09:27:46.301Z",
+  "updatedAt": "2026-08-07T08:23:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -25,37 +25,42 @@
       "origin:panel"
     ],
     "createdAt": "2026-07-28T07:19:49Z",
-    "updatedAt": "2026-08-07T07:58:19Z"
+    "updatedAt": "2026-08-07T08:23:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué roles pueden modificar el objetivo de ritmo y debe el historial guardar obligatoriamente autor, valor anterior, valor nuevo y fecha?",
-  "rationale": "La issue exige configuración desde Admin e histórico opcional, pero no fija los permisos ni el contrato mínimo de auditoría que debe compartir con los paneles.",
+  "question": "¿El objetivo debe ser un único valor de equipo editable por `ADMIN_USER` y `ADMIN_LOGISTIC`, con historial de autor, valor anterior, valor nuevo y fecha?",
+  "rationale": "La solicitud exige una configuración operativa y auditoría, pero no define de forma cerrada el propietario, los permisos ni el alcance del valor compartido.",
   "options": [
     {
-      "title": "Configurar con auditoría completa",
-      "body": "Autorizar los roles operativos acordados y persistir autor, valores anterior y nuevo, y fecha para cada cambio.",
+      "title": "Objetivo único auditable",
+      "body": "Definir un objetivo común de equipo, editable por los dos roles administrativos y con historial completo de cambios.",
       "recommended": true
     },
     {
-      "title": "Aprobar un valor temporal",
-      "body": "Usar un objetivo operativo aprobado sin pantalla editable hasta que Producto concrete permisos e histórico.",
+      "title": "Objetivos por centro o turno",
+      "body": "Modelar valores separados si Operaciones necesita metas distintas por centro, turno o equipo.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la configuración",
+      "body": "Entregar primero el agregado diario y decidir el modelo de objetivo antes de exponer avisos al operario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Configurar con auditoría completa",
-    "body": "Autorizar los roles operativos acordados y persistir autor, valores anterior y nuevo, y fecha para cada cambio.",
+    "title": "Objetivo único auditable",
+    "body": "Definir un objetivo común de equipo, editable por los dos roles administrativos y con historial completo de cambios.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Está asignado a la entrega y su historial reciente conecta directamente con el puesto V3 donde se consumirá la configuración.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la dependencia que determina la disponibilidad y el contrato de productividad diaria.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8015.md",
-    "reviewedAt": "2026-08-07T08:21:55.262Z",
-    "mainSha": "4f882a4f8358d32cc03823405e14ed0da948fe4d"
+    "reviewedAt": "2026-08-07T09:27:46.301Z",
+    "mainSha": "b5ea1d0184d0229ee70a01d28d9e22607dd029be"
   }
 }
