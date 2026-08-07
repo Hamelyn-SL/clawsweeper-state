@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T12:53:31.625Z",
-  "updatedAt": "2026-08-06T12:46:58Z",
+  "generatedAt": "2026-08-07T10:42:28.935Z",
+  "updatedAt": "2026-08-07T10:31:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,47 +12,46 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:needs-maintainer-review",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-06T12:35:20Z",
-    "updatedAt": "2026-08-06T12:46:58Z"
+    "updatedAt": "2026-08-07T10:31:05Z"
   },
   "lane": "manual_review",
-  "priority": "P2",
-  "question": "¿Qué límite inicial de `errorRecoveryWithdraw` debe aplicarse por región en PROD y qué umbrales de 429/errores obligarán a pausar el drenaje?",
-  "rationale": "La corrección de código es mecánica, pero elegir el ritmo de llamadas externas para un backlog de decenas de miles requiere criterio operativo y observación posterior al despliegue.",
+  "priority": "P1",
+  "question": "¿Qué límite inicial de `errorRecoveryWithdraw` se aprueba por región tras incorporar la revalidación del maestro?",
+  "rationale": "El valor vive en configuración operativa de producción y debe equilibrar el drenaje del backlog con la capacidad real de Amazon.",
   "options": [
     {
-      "title": "Despliegue gradual con límite conservador",
-      "body": "Añadir la fase en las seis regiones y fijar un lote inicial bajo, revisando telemetría antes de incrementarlo.",
+      "title": "Despliegue gradual",
+      "body": "Corregir el guard, fijar un batch conservador explícito por región y aumentarlo solo con telemetría estable.",
       "recommended": true
     },
     {
-      "title": "Activar primero regiones piloto",
-      "body": "Habilitar inicialmente una o dos regiones para calibrar rate-limits y extender después el mismo patrón al resto.",
+      "title": "Mantener el mínimo actual",
+      "body": "Dejar el default de 1 hasta obtener datos de rate limit, aceptando un drenaje mucho más lento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Despliegue gradual con límite conservador",
-    "body": "Añadir la fase en las seis regiones y fijar un lote inicial bajo, revisando telemetría antes de incrementarlo.",
+    "title": "Despliegue gradual",
+    "body": "Corregir el guard, fijar un batch conservador explícito por región y aumentarlo solo con telemetría estable.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado a la incidencia y figura como contribuidor reciente de las regiones y el controlador Amazon.",
+    "reason": "Es la persona asignada y el contribuidor más reciente del controlador Amazon y de la PR candidata.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8291.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8291#issuecomment-5204893160",
-    "reviewedAt": "2026-08-06T12:53:31.625Z",
-    "mainSha": "6743d9f0670e0d99d93b27c8b6438b16e3a0ee19"
+    "reviewedAt": "2026-08-07T10:42:28.935Z",
+    "mainSha": "d61a6efd2550ead883c4b8c93469be811580c61a"
   }
 }
