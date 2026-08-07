@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T01:38:06.229Z",
+  "generatedAt": "2026-08-07T06:57:51.945Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 106
   },
   "counts": {
-    "itemRecords": 104,
-    "closedRecords": 887,
-    "missingOpen": 2,
+    "itemRecords": 103,
+    "closedRecords": 889,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,15 +40,32 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8295,
+        "number": 8299,
+        "kind": "issue",
+        "title": "Añadir panel de regalos de auto packing en packing múltiple",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "reporter:sandra",
+          "triage:pr-opened",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-07T06:29:04Z",
+        "updatedAt": "2026-08-07T06:51:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8300,
         "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "title": "feat: show gift panel in multiple packing",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T13:23:15Z",
-        "updatedAt": "2026-08-06T13:31:13Z",
+        "createdAt": "2026-08-07T06:50:59Z",
+        "updatedAt": "2026-08-07T06:51:33Z",
         "missingReason": "recently_created"
       }
     ],
@@ -75,15 +92,32 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8295,
+        "number": 8299,
+        "kind": "issue",
+        "title": "Añadir panel de regalos de auto packing en packing múltiple",
+        "labels": [
+          "source:admin-panel",
+          "app:admin",
+          "feature",
+          "reporter:sandra",
+          "triage:pr-opened",
+          "P1"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-07T06:29:04Z",
+        "updatedAt": "2026-08-07T06:51:48Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8300,
         "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "title": "feat: show gift panel in multiple packing",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-06T13:23:15Z",
-        "updatedAt": "2026-08-06T13:31:13Z",
+        "createdAt": "2026-08-07T06:50:59Z",
+        "updatedAt": "2026-08-07T06:51:33Z",
         "missingReason": "recently_created"
       }
     ],
