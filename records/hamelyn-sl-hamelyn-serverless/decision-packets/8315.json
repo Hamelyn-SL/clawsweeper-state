@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-08T17:51:03.279Z",
+  "updatedAt": "2026-08-08T17:43:01Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8315,
+    "title": "Ecommerce: migrar a Cache Components (Next 16.3) con navegaciones instantáneas en todas las rutas",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315",
+    "state": "open",
+    "labels": [
+      "app:ecommerce",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-08T17:42:39Z",
+    "updatedAt": "2026-08-08T17:43:01Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Ecommerce adoptar Cache Components como programa transversal ahora, o limitarse primero a un piloto de rutas públicas de mayor tráfico?",
+  "rationale": "La migración cambia la estrategia de renderizado de toda la tienda y requiere decidir qué rendimiento objetivo compensa el riesgo de cachear datos regionales, promocionales o personalizados.",
+  "options": [
+    {
+      "title": "Aprobar piloto acotado",
+      "body": "Migrar primero home, categorías y una PDP representativa tras inventariar todos los datos dependientes de request.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar programa completo",
+      "body": "Planificar la migración de todas las rutas no API con una matriz de cacheabilidad y validación progresiva por dominio.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el modelo actual",
+      "body": "Conservar las cachés de datos actuales y priorizar optimizaciones puntuales de TTFB sin cambiar el modelo de renderizado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar piloto acotado",
+    "body": "Migrar primero home, categorías y una PDP representativa tras inventariar todos los datos dependientes de request.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "El historial reciente le vincula directamente con las cachés e integraciones dinámicas que habría que preservar.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
+    "reviewedAt": "2026-08-08T17:51:03.279Z",
+    "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
+  }
+}
