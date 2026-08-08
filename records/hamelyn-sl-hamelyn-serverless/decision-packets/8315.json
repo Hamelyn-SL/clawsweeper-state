@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-08T18:58:22.062Z",
+  "generatedAt": "2026-08-08T19:01:49.683Z",
   "updatedAt": "2026-08-08T18:02:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,52 +13,51 @@
       "app:ecommerce",
       "feature",
       "triage:done",
+      "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
       "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
     "updatedAt": "2026-08-08T18:02:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué primera fase debe aprobarse para Cache Components: shell+i18n público o una migración transversal ya planificada por rutas?",
-  "rationale": "La decisión fija el orden de entrega y el nivel de riesgo aceptable al separar datos cacheables de locale, promoción, stock y personalización dependientes de petición.",
+  "question": "¿Se aprueba esta migración como programa de rendimiento por fases y qué rutas públicas entran en la primera entrega?",
+  "rationale": "El código confirma el problema técnico, pero decidir el orden, las rutas inicialmente cubiertas y el presupuesto de benchmark exige priorización de producto y riesgo operativo.",
   "options": [
     {
-      "title": "Aprobar shell+i18n primero",
-      "body": "Aislar locale y traducciones del shell, manteniendo promo, stock y experimentos dinámicos antes de extender la migración.",
+      "title": "Aprobar migración por fases",
+      "body": "Empezar por shell, locale e i18n, dejando explícitamente dinámicos stock, precios, promociones y experimentos antes de ampliar cobertura.",
       "recommended": true
     },
     {
-      "title": "Aprobar programa transversal",
-      "body": "Planificar todas las rutas no API con una matriz de cacheabilidad y validación progresiva por host antes de enviar cambios.",
+      "title": "Limitarla a rutas críticas",
+      "body": "Medir primero home, categorías y PDP en los storefronts prioritarios y posponer rutas secundarias y autenticadas.",
       "recommended": false
     },
     {
-      "title": "Mantener el modelo actual",
-      "body": "Conservar la estrategia vigente y priorizar optimizaciones puntuales de TTFB sin adoptar Cache Components ahora.",
+      "title": "Posponer la migración",
+      "body": "Mantener la caché actual de datos hasta que haya capacidad para validar previews y una matriz completa de hosts.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar shell+i18n primero",
-    "body": "Aislar locale y traducciones del shell, manteniendo promo, stock y experimentos dinámicos antes de extender la migración.",
+    "title": "Aprobar migración por fases",
+    "body": "Empezar por shell, locale e i18n, dejando explícitamente dinámicos stock, precios, promociones y experimentos antes de ampliar cobertura.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el assignee actual y el triage existente le señala junto al equipo Ecommerce para dividir el programa.",
-    "confidence": "high"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial conecta directamente con la promo dinámica y el layout afectado, los límites más sensibles para la estrategia de caché.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-08T18:58:22.062Z",
+    "reviewedAt": "2026-08-08T19:01:49.683Z",
     "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
   }
 }
