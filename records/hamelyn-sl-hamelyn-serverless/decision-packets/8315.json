@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-08T17:51:03.279Z",
-  "updatedAt": "2026-08-08T17:43:01Z",
+  "generatedAt": "2026-08-08T18:58:22.062Z",
+  "updatedAt": "2026-08-08T18:02:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,53 +12,52 @@
     "labels": [
       "app:ecommerce",
       "feature",
-      "triage:queued",
-      "P2",
-      "impact:ux-friction",
-      "issue-rating: ⚪ platinum",
+      "triage:done",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:ux-friction",
+      "issue-rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
-    "updatedAt": "2026-08-08T17:43:01Z"
+    "updatedAt": "2026-08-08T18:02:31Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Ecommerce adoptar Cache Components como programa transversal ahora, o limitarse primero a un piloto de rutas públicas de mayor tráfico?",
-  "rationale": "La migración cambia la estrategia de renderizado de toda la tienda y requiere decidir qué rendimiento objetivo compensa el riesgo de cachear datos regionales, promocionales o personalizados.",
+  "question": "¿Qué primera fase debe aprobarse para Cache Components: shell+i18n público o una migración transversal ya planificada por rutas?",
+  "rationale": "La decisión fija el orden de entrega y el nivel de riesgo aceptable al separar datos cacheables de locale, promoción, stock y personalización dependientes de petición.",
   "options": [
     {
-      "title": "Aprobar piloto acotado",
-      "body": "Migrar primero home, categorías y una PDP representativa tras inventariar todos los datos dependientes de request.",
+      "title": "Aprobar shell+i18n primero",
+      "body": "Aislar locale y traducciones del shell, manteniendo promo, stock y experimentos dinámicos antes de extender la migración.",
       "recommended": true
     },
     {
-      "title": "Aprobar programa completo",
-      "body": "Planificar la migración de todas las rutas no API con una matriz de cacheabilidad y validación progresiva por dominio.",
+      "title": "Aprobar programa transversal",
+      "body": "Planificar todas las rutas no API con una matriz de cacheabilidad y validación progresiva por host antes de enviar cambios.",
       "recommended": false
     },
     {
       "title": "Mantener el modelo actual",
-      "body": "Conservar las cachés de datos actuales y priorizar optimizaciones puntuales de TTFB sin cambiar el modelo de renderizado.",
+      "body": "Conservar la estrategia vigente y priorizar optimizaciones puntuales de TTFB sin adoptar Cache Components ahora.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar piloto acotado",
-    "body": "Migrar primero home, categorías y una PDP representativa tras inventariar todos los datos dependientes de request.",
+    "title": "Aprobar shell+i18n primero",
+    "body": "Aislar locale y traducciones del shell, manteniendo promo, stock y experimentos dinámicos antes de extender la migración.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "El historial reciente le vincula directamente con las cachés e integraciones dinámicas que habría que preservar.",
+    "person": "JavierHamelyn",
+    "reason": "Es el assignee actual y el triage existente le señala junto al equipo Ecommerce para dividir el programa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-08T17:51:03.279Z",
+    "reviewedAt": "2026-08-08T18:58:22.062Z",
     "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
   }
 }
