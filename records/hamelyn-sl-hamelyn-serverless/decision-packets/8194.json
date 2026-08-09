@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T23:07:49.805Z",
-  "updatedAt": "2026-08-09T21:19:24Z",
+  "generatedAt": "2026-08-09T23:16:33.931Z",
+  "updatedAt": "2026-08-09T23:10:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,48 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 availability"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-09T21:19:24Z",
+    "updatedAt": "2026-08-09T23:10:00Z",
     "headSha": "7ed5060eab9a7e23f7fb77ae394b472382ba2b77"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta publicar los feeds con metadata de `mongodata.products` de hasta 24 horas, o debe bloquearse cada ejecución cuando la materialización diaria no sea la esperada?",
-  "rationale": "La rama hace que BigQuery sea la fuente predeterminada y ya reconoce esa divergencia; elegir entre tolerarla o exigir frescura cambia el contrato visible de los feeds.",
+  "question": "¿Se acepta que los feeds usados publiquen metadata de productos de hasta 24 horas, o debe preservarse Mongo por defecto hasta disponer de products con frescura compatible?",
+  "rationale": "El gate actual no puede convertir una materialización diaria en datos recientes para ejecuciones cada tres horas; elegir entre degradación aceptada, nueva materialización o compatibilidad requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Exigir frescura de products",
-      "body": "Añadir un gate de tabla o una cadencia que compruebe `mongodata.products` y documentar el límite de antigüedad antes de publicar.",
+      "title": "Mantener Mongo como default",
+      "body": "Despachar `source=mongo` hasta que la materialización de products tenga una SLA compatible, dejando BigQuery como canary o rollback explícito.",
       "recommended": true
     },
     {
+      "title": "Aumentar la frescura de products",
+      "body": "Materializar o consultar una fuente de products con cadencia suficiente y demostrar paridad antes de volver a activar BigQuery por defecto.",
+      "recommended": false
+    },
+    {
       "title": "Aceptar el desfase diario",
-      "body": "Mantener el gate de stocks y aprobar explícitamente que los metadatos de products puedan tener hasta 24 horas de retraso.",
+      "body": "Aprobar explícitamente el desfase de metadata y documentar el impacto operacional en los feeds publicados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir frescura de products",
-    "body": "Añadir un gate de tabla o una cadencia que compruebe `mongodata.products` y documentar el límite de antigüedad antes de publicar.",
+    "title": "Mantener Mongo como default",
+    "body": "Despachar `source=mongo` hasta que la materialización de products tenga una SLA compatible, dejando BigQuery como canary o rollback explícito.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con mayor historial directo en el workflow unificado y los cambios operativos de estos feeds.",
+    "reason": "Su historial reciente cubre directamente el workflow consolidado y sus garantías operativas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-09T23:07:49.805Z",
+    "reviewedAt": "2026-08-09T23:16:33.931Z",
     "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
