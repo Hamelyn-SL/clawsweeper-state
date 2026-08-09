@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T23:22:27.018Z",
-  "updatedAt": "2026-08-09T23:13:35Z",
+  "generatedAt": "2026-08-09T23:26:20.208Z",
+  "updatedAt": "2026-08-09T23:18:57Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,51 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-09T23:13:35Z",
+    "updatedAt": "2026-08-09T23:18:57Z",
     "headSha": "7ed5060eab9a7e23f7fb77ae394b472382ba2b77"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Google Merchant aceptar hasta casi 24 horas de retraso en metadatos de producto al pasar a BigQuery, o debe conservarse una fuente/materialización con frescura de una hora?",
-  "rationale": "La rama declara esa divergencia como aceptada, pero el objetivo relacionado describe una réplica de hasta una hora y el cambio afecta feeds públicos.",
+  "question": "¿Debe Google Merchant aceptar hasta 24 horas de retraso en productos, o debe exigirse frescura horaria antes de activar BigQuery por defecto?",
+  "rationale": "La rama reconoce el desfase diario, pero el objetivo relacionado describe una tolerancia de hasta una hora y este cambio publica datos de catálogo hacia Google Merchant.",
   "options": [
     {
-      "title": "Exigir frescura de una hora",
-      "body": "Usar una tabla o materialización de productos con esa cadencia y un gate que cubra productos y stocks antes de activar BigQuery por defecto.",
+      "title": "Exigir frescura horaria",
+      "body": "Materializar productos cada hora, añadir un gate de tabla y mantener BigQuery como fuente predeterminada.",
       "recommended": true
     },
     {
       "title": "Aceptar el snapshot diario",
-      "body": "Aprobar explícitamente la degradación de frescura, documentarla como cambio de producto y conservar un rollback operativo probado.",
+      "body": "Fusionar con una aceptación explícita de que los cambios de producto pueden aparecer hasta un día después en Merchant.",
+      "recommended": false
+    },
+    {
+      "title": "Conservar Mongo por defecto",
+      "body": "Mantener BigQuery como opción manual hasta que productos disponga de la cadencia y garantía necesarias.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir frescura de una hora",
-    "body": "Usar una tabla o materialización de productos con esa cadencia y un gate que cubra productos y stocks antes de activar BigQuery por defecto.",
+    "title": "Exigir frescura horaria",
+    "body": "Materializar productos cada hora, añadir un gate de tabla y mantener BigQuery como fuente predeterminada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona con historial más directo sobre el workflow de Google Merchant y está asignada a su revisión.",
+    "reason": "Es el principal autor histórico del workflow de Merchant y puede coordinar el contrato de frescura con Data Platform.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-09T23:22:27.018Z",
+    "reviewedAt": "2026-08-09T23:26:20.208Z",
     "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
