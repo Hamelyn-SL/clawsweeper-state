@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:09:36.457Z",
+  "generatedAt": "2026-08-09T21:10:17.512Z",
   "updatedAt": "2026-08-09T21:03:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,34 +26,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba mantener esta migración global como una sola entrega de alto alcance, condicionada a corregir los bloqueos de la PR abierta, o debe dividirse en fases de menor riesgo?",
-  "rationale": "La propuesta altera la estrategia de renderizado de gran parte de Ecommerce y afecta límites de datos por petición, por lo que la división y aceptación del alcance requieren criterio humano.",
+  "question": "¿Debe la migración global avanzar como una única entrega revisada o dividirse en PRs secuenciales antes de aprobar cambios de caché en producción?",
+  "rationale": "El cambio afecta 42 rutas, 13 storefronts y datos sensibles por visitante; la elección de corte de entrega y riesgo aceptable requiere intención humana.",
   "options": [
     {
-      "title": "Patrocinar la PR con correcciones",
-      "body": "Mantener la migración global y exigir que la PR resuelva serialización, cobertura E2E, invariantes y filtros de automatización antes del merge.",
+      "title": "Dividir la entrega por fases",
+      "body": "Separar shell e i18n, catálogo/PDP y rutas autenticadas para aislar regresiones de caché y simplificar la validación.",
       "recommended": true
     },
     {
-      "title": "Dividir por superficies",
-      "body": "Separar shell e i18n, catálogo/PDP y automatización en entregas que conserven las mismas garantías de compatibilidad.",
+      "title": "Revisar la PR como entrega única",
+      "body": "Mantener el alcance actual si los revisores aceptan revisar conjuntamente las invariantes, los cambios de workflow y la evidencia de canary.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar la PR con correcciones",
-    "body": "Mantener la migración global y exigir que la PR resuelva serialización, cobertura E2E, invariantes y filtros de automatización antes del merge.",
+    "title": "Dividir la entrega por fases",
+    "body": "Separar shell e i18n, catálogo/PDP y rutas autenticadas para aislar regresiones de caché y simplificar la validación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial en promociones y caché, junto con su revisión solicitada, le sitúa cerca de los invariantes más sensibles.",
+    "person": "JavierHamelyn",
+    "reason": "La issue está asignada a esta persona y su historial incluye la actualización de Next 16.3 que habilita la propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-09T21:09:36.457Z",
+    "reviewedAt": "2026-08-09T21:10:17.512Z",
     "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
   }
 }
