@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:19:07.961Z",
+  "generatedAt": "2026-08-09T21:23:05.043Z",
   "updatedAt": "2026-08-09T21:13:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,49 +15,44 @@
       "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
       "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
-      "issue-rating: ➖ n/a"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
     "updatedAt": "2026-08-09T21:13:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se patrocina la migración completa a Cache Components para las rutas públicas o se limita inicialmente a una matriz de rutas de mayor tráfico?",
-  "rationale": "La propuesta altera el modelo de renderizado y caché de todo Ecommerce; la corrección técnica no decide por sí sola el alcance de producto aceptable.",
+  "question": "¿Se aprueba Cache Components como dirección de plataforma para Ecommerce, con una entrega por fases y criterios explícitos para las rutas que deben permanecer dinámicas?",
+  "rationale": "La propuesta modifica de forma transversal cacheo, streaming y comportamiento regional; decidir qué garantías de rollout y qué excepciones dinámicas se aceptan requiere intención de producto y operación.",
   "options": [
     {
-      "title": "Patrocinar migración por fases",
-      "body": "Mantener el objetivo global, pero exigir una matriz de rutas e integración secuenciada con pruebas de actualización por dominio.",
+      "title": "Aprobar migración por fases",
+      "body": "Revisar la PR enlazada y exigir una matriz de rutas, invariantes regionales y pruebas de preview antes de fusionar.",
       "recommended": true
     },
     {
-      "title": "Acotar el primer despliegue",
-      "body": "Aplicar Cache Components solo a home, listados y contenido estático antes de abordar PDP, checkout y rutas personalizadas.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la migración",
-      "body": "Conservar el modelo actual hasta disponer de capacidad para validar los 13 storefronts y las invariantes de datos en preview.",
+      "title": "Acotar un primer piloto",
+      "body": "Limitar la primera entrega a rutas públicas estáticas y posponer PDP, perfil y superficies sensibles hasta obtener métricas de producción.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar migración por fases",
-    "body": "Mantener el objetivo global, pero exigir una matriz de rutas e integración secuenciada con pruebas de actualización por dominio.",
+    "title": "Aprobar migración por fases",
+    "body": "Revisar la PR enlazada y exigir una matriz de rutas, invariantes regionales y pruebas de preview antes de fusionar.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y está llevando la PR que materializa el alcance propuesto.",
+    "reason": "Está asignado a la issue y ya impulsa la implementación candidata enlazada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-09T21:19:07.961Z",
+    "reviewedAt": "2026-08-09T21:23:05.043Z",
     "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
