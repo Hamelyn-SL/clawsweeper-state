@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T23:16:33.931Z",
+  "generatedAt": "2026-08-09T23:16:50.198Z",
   "updatedAt": "2026-08-09T23:10:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -21,38 +21,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta que los feeds usados publiquen metadata de productos de hasta 24 horas, o debe preservarse Mongo por defecto hasta disponer de products con frescura compatible?",
-  "rationale": "El gate actual no puede convertir una materialización diaria en datos recientes para ejecuciones cada tres horas; elegir entre degradación aceptada, nueva materialización o compatibilidad requiere intención de producto y operación.",
+  "question": "¿Debe Google Merchant aceptar hasta 24 horas de retraso en datos de producto, o debe exigirse una materialización y un gate horarios antes de activar BigQuery por defecto?",
+  "rationale": "La rama documenta la divergencia diaria, pero el objetivo relacionado describe una tolerancia de frescura de hasta una hora y el cambio altera feeds publicados.",
   "options": [
     {
-      "title": "Mantener Mongo como default",
-      "body": "Despachar `source=mongo` hasta que la materialización de products tenga una SLA compatible, dejando BigQuery como canary o rollback explícito.",
+      "title": "Exigir frescura horaria",
+      "body": "Materializar `mongodata.products` cada hora, añadir un gate de tabla y mantener BigQuery como fuente por defecto.",
       "recommended": true
     },
     {
-      "title": "Aumentar la frescura de products",
-      "body": "Materializar o consultar una fuente de products con cadencia suficiente y demostrar paridad antes de volver a activar BigQuery por defecto.",
+      "title": "Aceptar snapshot diario",
+      "body": "Mantener el diseño actual con una aceptación explícita del retraso de hasta 24 horas en los feeds publicados.",
       "recommended": false
     },
     {
-      "title": "Aceptar el desfase diario",
-      "body": "Aprobar explícitamente el desfase de metadata y documentar el impacto operacional en los feeds publicados.",
+      "title": "Conservar Mongo por defecto",
+      "body": "Usar BigQuery solo como opción manual hasta que la materialización de productos tenga la frescura necesaria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener Mongo como default",
-    "body": "Despachar `source=mongo` hasta que la materialización de products tenga una SLA compatible, dejando BigQuery como canary o rollback explícito.",
+    "title": "Exigir frescura horaria",
+    "body": "Materializar `mongodata.products` cada hora, añadir un gate de tabla y mantener BigQuery como fuente por defecto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre directamente el workflow consolidado y sus garantías operativas.",
-    "confidence": "high"
+    "reason": "Es el principal responsable histórico del workflow de Merchant y puede coordinar la decisión con la plataforma de datos.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewedAt": "2026-08-09T23:16:33.931Z",
+    "reviewedAt": "2026-08-09T23:16:50.198Z",
     "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
