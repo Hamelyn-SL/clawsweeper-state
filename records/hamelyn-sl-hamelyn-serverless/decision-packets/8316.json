@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:11:25.236Z",
+  "generatedAt": "2026-08-09T21:18:10.818Z",
   "updatedAt": "2026-08-09T21:03:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,11 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: 🥈 silver",
-      "status: ⏳ waiting on author",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-08T22:14:54Z",
     "updatedAt": "2026-08-09T21:03:04Z",
@@ -24,39 +23,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta Cache Components como arquitectura predeterminada de todas las rutas no API de Ecommerce una vez resueltos los defectos de implementación?",
-  "rationale": "El PR cambia el comportamiento de caché, navegación y observabilidad de toda la tienda; los arreglos mecánicos no sustituyen la decisión sobre ese contrato de producto.",
+  "question": "¿Se aprueba como dirección de producto que la identidad de cada storefront se resuelva estáticamente por deployment y que el resto quede como fallback dinámico bajo Cache Components?",
+  "rationale": "La migración modifica el modelo de renderizado, caché y recuperación de configuraciones existentes; las reparaciones mecánicas no determinan por sí solas ese contrato permanente.",
   "options": [
     {
-      "title": "Aceptar tras los arreglos",
-      "body": "Mantener Cache Components, exigir las cinco correcciones indicadas y revisar de nuevo la compatibilidad de cacheado por dominio y visitante.",
+      "title": "Aprobar la migración con compatibilidad explícita",
+      "body": "Mantener el fallback sin variable de entorno y exigir las correcciones y pruebas de upgrade antes del merge.",
       "recommended": true
     },
     {
-      "title": "Acotar el despliegue",
-      "body": "Aplicar inicialmente la arquitectura solo a rutas públicas estáticas y conservar el resto dinámico hasta contar con métricas operativas adicionales.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer la adopción global",
-      "body": "Cerrar esta dirección y pedir una propuesta más pequeña que cubra una familia de rutas con un plan de reversión claro.",
+      "title": "Conservar el renderizado dinámico actual",
+      "body": "Pausar esta migración hasta definir otra estrategia que no cambie el contrato de renderizado por deployment.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar tras los arreglos",
-    "body": "Mantener Cache Components, exigir las cinco correcciones indicadas y revisar de nuevo la compatibilidad de cacheado por dominio y visitante.",
+    "title": "Aprobar la migración con compatibilidad explícita",
+    "body": "Mantener el fallback sin variable de entorno y exigir las correcciones y pruebas de upgrade antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reciente cubre la caché, invalidación y asignación por visitante más sensibles de esta migración.",
-    "confidence": "high"
+    "reason": "Su historial reciente cubre la caché dinámica de promo y fue solicitado para revisar esta migración de Ecommerce.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8316.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8316#issuecomment-5228528612",
-    "reviewedAt": "2026-08-09T21:11:25.236Z",
-    "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
+    "reviewedAt": "2026-08-09T21:18:10.818Z",
+    "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:11:48.645Z",
+  "generatedAt": "2026-08-09T21:16:12.898Z",
   "updatedAt": "2026-08-09T20:54:12Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,11 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
     "updatedAt": "2026-08-09T20:54:12Z",
@@ -24,39 +23,38 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta que los feeds usados publiquen metadatos de productos con hasta un ciclo diario de desfase, o deben esperar una materialización de productos fresca antes de cada ejecución BigQuery?",
-  "rationale": "El PR cambia por defecto la fuente de metadatos desde una lectura viva a una tabla diaria; el rollback no resuelve qué garantía de frescura debe tener el feed publicado.",
+  "question": "¿Se acepta publicar metadatos de producto con hasta un ciclo diario de desfase, o debe exigirse que `mongodata.products` esté fresco antes de cada ejecución BigQuery?",
+  "rationale": "La rama cambia por defecto una lectura viva de Mongo por una materialización diaria; el rollback técnico no define qué garantía de frescura debe tener el feed publicado.",
   "options": [
     {
-      "title": "Exigir frescura diaria verificada",
-      "body": "Añadir el gate estándar `table` de `mongodata.products`, mantener el gate de stocks y aceptar solo el desfase documentado después de una materialización correcta.",
+      "title": "Exigir frescura de productos",
+      "body": "Añadir el gate estándar de tabla para `mongodata.products`, conservar el gate horario de stocks y validar los feeds completos antes del merge.",
       "recommended": true
     },
     {
-      "title": "Aceptar explícitamente el desfase",
-      "body": "Mantener el comportamiento actual y documentar que un feed puede publicar metadatos previos cuando falle o se retrase la materialización diaria.",
+      "title": "Aceptar el desfase diario",
+      "body": "Mantener solo el gate de stocks y documentar explícitamente que los metadatos pueden proceder del snapshot diario anterior.",
       "recommended": false
     },
     {
       "title": "Mantener Mongo por defecto",
-      "body": "Conservar Mongo como fuente predeterminada hasta que exista una política de frescura de productos aprobada para Merchant.",
+      "body": "Conservar la fuente actual hasta disponer de una materialización de productos compatible con la frescura requerida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir frescura diaria verificada",
-    "body": "Añadir el gate estándar `table` de `mongodata.products`, mantener el gate de stocks y aceptar solo el desfase documentado después de una materialización correcta.",
+    "title": "Exigir frescura de productos",
+    "body": "Añadir el gate estándar de tabla para `mongodata.products`, conservar el gate horario de stocks y validar los feeds completos antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el contribuidor más directo del workflow consolidado y ya está solicitado como revisor del cambio.",
+    "reason": "Su historial en scheduler y gates, además de su solicitud de revisión, lo conecta con la decisión operativa.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-09T21:11:48.645Z",
-    "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
+    "reviewedAt": "2026-08-09T21:16:12.898Z",
+    "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
