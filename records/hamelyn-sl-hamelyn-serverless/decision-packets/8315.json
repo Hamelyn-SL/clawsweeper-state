@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:10:17.512Z",
-  "updatedAt": "2026-08-09T21:03:23Z",
+  "generatedAt": "2026-08-09T21:19:07.961Z",
+  "updatedAt": "2026-08-09T21:13:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,52 @@
     "labels": [
       "app:ecommerce",
       "feature",
-      "triage:queued",
+      "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
-    "updatedAt": "2026-08-09T21:03:23Z"
+    "updatedAt": "2026-08-09T21:13:21Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la migración global avanzar como una única entrega revisada o dividirse en PRs secuenciales antes de aprobar cambios de caché en producción?",
-  "rationale": "El cambio afecta 42 rutas, 13 storefronts y datos sensibles por visitante; la elección de corte de entrega y riesgo aceptable requiere intención humana.",
+  "question": "¿Se patrocina la migración completa a Cache Components para las rutas públicas o se limita inicialmente a una matriz de rutas de mayor tráfico?",
+  "rationale": "La propuesta altera el modelo de renderizado y caché de todo Ecommerce; la corrección técnica no decide por sí sola el alcance de producto aceptable.",
   "options": [
     {
-      "title": "Dividir la entrega por fases",
-      "body": "Separar shell e i18n, catálogo/PDP y rutas autenticadas para aislar regresiones de caché y simplificar la validación.",
+      "title": "Patrocinar migración por fases",
+      "body": "Mantener el objetivo global, pero exigir una matriz de rutas e integración secuenciada con pruebas de actualización por dominio.",
       "recommended": true
     },
     {
-      "title": "Revisar la PR como entrega única",
-      "body": "Mantener el alcance actual si los revisores aceptan revisar conjuntamente las invariantes, los cambios de workflow y la evidencia de canary.",
+      "title": "Acotar el primer despliegue",
+      "body": "Aplicar Cache Components solo a home, listados y contenido estático antes de abordar PDP, checkout y rutas personalizadas.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la migración",
+      "body": "Conservar el modelo actual hasta disponer de capacidad para validar los 13 storefronts y las invariantes de datos en preview.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir la entrega por fases",
-    "body": "Separar shell e i18n, catálogo/PDP y rutas autenticadas para aislar regresiones de caché y simplificar la validación.",
+    "title": "Patrocinar migración por fases",
+    "body": "Mantener el objetivo global, pero exigir una matriz de rutas e integración secuenciada con pruebas de actualización por dominio.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "La issue está asignada a esta persona y su historial incluye la actualización de Next 16.3 que habilita la propuesta.",
+    "reason": "Es la persona asignada y está llevando la PR que materializa el alcance propuesto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-09T21:10:17.512Z",
-    "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
+    "reviewedAt": "2026-08-09T21:19:07.961Z",
+    "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
