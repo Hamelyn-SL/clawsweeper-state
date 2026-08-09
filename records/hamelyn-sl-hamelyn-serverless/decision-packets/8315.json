@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:23:05.043Z",
-  "updatedAt": "2026-08-09T21:13:21Z",
+  "generatedAt": "2026-08-09T22:34:28.344Z",
+  "updatedAt": "2026-08-09T21:42:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,45 +15,49 @@
       "triage:done",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
       "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
-    "updatedAt": "2026-08-09T21:13:21Z"
+    "updatedAt": "2026-08-09T21:42:34Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba Cache Components como dirección de plataforma para Ecommerce, con una entrega por fases y criterios explícitos para las rutas que deben permanecer dinámicas?",
-  "rationale": "La propuesta modifica de forma transversal cacheo, streaming y comportamiento regional; decidir qué garantías de rollout y qué excepciones dinámicas se aceptan requiere intención de producto y operación.",
+  "question": "¿Aprueba el equipo Ecommerce adoptar Cache Components como arquitectura global de navegación para los storefronts regionales, con fallback dinámico por host en entornos sin identidad de despliegue?",
+  "rationale": "La propuesta modifica el comportamiento de renderizado, caché e internacionalización en una superficie amplia; la corrección técnica no decide por sí sola la política de despliegue y compatibilidad.",
   "options": [
     {
-      "title": "Aprobar migración por fases",
-      "body": "Revisar la PR enlazada y exigir una matriz de rutas, invariantes regionales y pruebas de preview antes de fusionar.",
+      "title": "Aprobar la arquitectura propuesta",
+      "body": "Revisar la PR enlazada contra los invariantes regionales y permitir su aterrizaje por la vía normal de revisión.",
       "recommended": true
     },
     {
-      "title": "Acotar un primer piloto",
-      "body": "Limitar la primera entrega a rutas públicas estáticas y posponer PDP, perfil y superficies sensibles hasta obtener métricas de producción.",
+      "title": "Acotar una primera fase",
+      "body": "Limitar la PR a shells públicos cacheables y dejar rutas con host o sesión para una fase posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el renderizado actual",
+      "body": "Rechazar la migración global si el riesgo operativo de los storefronts supera el beneficio de navegación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración por fases",
-    "body": "Revisar la PR enlazada y exigir una matriz de rutas, invariantes regionales y pruebas de preview antes de fusionar.",
+    "title": "Aprobar la arquitectura propuesta",
+    "body": "Revisar la PR enlazada contra los invariantes regionales y permitir su aterrizaje por la vía normal de revisión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y ya impulsa la implementación candidata enlazada.",
-    "confidence": "high"
+    "reason": "Es la persona asignada y ha presentado la implementación concreta que requiere validación de dirección.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-09T21:23:05.043Z",
+    "reviewedAt": "2026-08-09T22:34:28.344Z",
     "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
   }
 }
