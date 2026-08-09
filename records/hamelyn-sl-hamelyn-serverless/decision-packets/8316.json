@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-08T22:36:17.361Z",
-  "updatedAt": "2026-08-08T22:24:28Z",
+  "generatedAt": "2026-08-09T21:11:25.236Z",
+  "updatedAt": "2026-08-09T21:03:04Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-08T22:14:54Z",
-    "updatedAt": "2026-08-08T22:24:28Z",
+    "updatedAt": "2026-08-09T21:03:04Z",
     "headSha": "77c07fc70e7aad764a4dbd3edc76a2e8c08a15fe"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta migración global de caché para todas las rutas de Ecommerce aterrizar como un único cambio, o dividirse tras corregir los bloqueos de compatibilidad y prueba?",
-  "rationale": "Afecta renderizado, precio, locale, experimentos por visitante y rutas autenticadas; elegir entre despliegue global o fases exige una decisión de riesgo y producto.",
+  "question": "¿Se acepta Cache Components como arquitectura predeterminada de todas las rutas no API de Ecommerce una vez resueltos los defectos de implementación?",
+  "rationale": "El PR cambia el comportamiento de caché, navegación y observabilidad de toda la tienda; los arreglos mecánicos no sustituyen la decisión sobre ese contrato de producto.",
   "options": [
     {
-      "title": "Corregir y dividir por fases",
-      "body": "Reparar las salidas cacheadas y las pruebas, y aterrizar primero una superficie pública con prueba real de upgrade.",
+      "title": "Aceptar tras los arreglos",
+      "body": "Mantener Cache Components, exigir las cinco correcciones indicadas y revisar de nuevo la compatibilidad de cacheado por dominio y visitante.",
       "recommended": true
     },
     {
-      "title": "Mantener la migración global",
-      "body": "Aceptar el alcance actual únicamente tras evidencia real en el head exacto y revisión explícita de los riesgos de caché por dominio.",
+      "title": "Acotar el despliegue",
+      "body": "Aplicar inicialmente la arquitectura solo a rutas públicas estáticas y conservar el resto dinámico hasta contar con métricas operativas adicionales.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer la adopción global",
+      "body": "Cerrar esta dirección y pedir una propuesta más pequeña que cubra una familia de rutas con un plan de reversión claro.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir y dividir por fases",
-    "body": "Reparar las salidas cacheadas y las pruebas, y aterrizar primero una superficie pública con prueba real de upgrade.",
+    "title": "Aceptar tras los arreglos",
+    "body": "Mantener Cache Components, exigir las cinco correcciones indicadas y revisar de nuevo la compatibilidad de cacheado por dominio y visitante.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el revisor solicitado con contexto reciente sobre promo dinámica, caché y navegación de Ecommerce.",
-    "confidence": "medium"
+    "reason": "Su historial reciente cubre la caché, invalidación y asignación por visitante más sensibles de esta migración.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8316.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8316#issuecomment-5228528612",
-    "reviewedAt": "2026-08-08T22:36:17.361Z",
-    "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
+    "reviewedAt": "2026-08-09T21:11:25.236Z",
+    "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
   }
 }
