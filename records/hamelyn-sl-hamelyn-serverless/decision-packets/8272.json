@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T15:21:49.628Z",
+  "generatedAt": "2026-08-10T15:24:46.616Z",
   "updatedAt": "2026-08-10T13:37:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,12 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: 📸 screenshot",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-06T06:37:35Z",
     "updatedAt": "2026-08-10T13:37:16Z",
@@ -24,34 +24,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué rutas cron deben conservar HTTP 200 cuando todos sus métodos fallan por una causa tolerada por negocio?",
-  "rationale": "La rama permite excepciones por ruta, pero no hay usos declarados; escogerlas depende de los reintentos y alertas operativas de cada cron.",
+  "question": "¿Qué rutas cron existentes deben conservar HTTP 200 cuando todas sus operaciones fallen?",
+  "rationale": "El PR añade una excepción por ruta, pero no identifica ningún consumidor que deba mantener el contrato anterior ni existe una política aprobada para esa clasificación.",
   "options": [
     {
-      "title": "Inventariar excepciones antes del merge",
-      "body": "Añadir `failurePolicy` únicamente a rutas con fallo total realmente tolerado y mantener HTTP 500 como norma.",
+      "title": "Auditar y declarar excepciones",
+      "body": "Revisar los consumidores y añadir `failurePolicy` únicamente en las rutas cuyo proceso tolere explícitamente un fallo total.",
       "recommended": true
     },
     {
-      "title": "Adoptar HTTP 500 global",
-      "body": "Aceptar que toda ruta sin política explícita debe alertar o reintentarse cuando falle por completo.",
+      "title": "Adoptar 500 universal",
+      "body": "Aceptar HTTP 500 para todos los fallos totales y asumir los cambios de alertas y reintentos que produzca.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Inventariar excepciones antes del merge",
-    "body": "Añadir `failurePolicy` únicamente a rutas con fallo total realmente tolerado y mantener HTTP 500 como norma.",
+    "title": "Auditar y declarar excepciones",
+    "body": "Revisar los consumidores y añadir `failurePolicy` únicamente en las rutas cuyo proceso tolere explícitamente un fallo total.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Está asignado por experiencia declarada en los handlers cron y puede validar las rutas afectadas.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Introdujo los handlers compartidos cuyo contrato HTTP cambia.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8272.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8272#issuecomment-5201950848",
-    "reviewedAt": "2026-08-10T15:21:49.628Z",
+    "reviewedAt": "2026-08-10T15:24:46.616Z",
     "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
   }
 }
