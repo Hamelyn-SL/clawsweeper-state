@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:18:20.367Z",
+  "updatedAt": "2026-08-10T11:10:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8357,
+    "title": "feat: migrate shipMatrix pattern notation to standard regex",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8357",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-10T11:08:46Z",
+    "updatedAt": "2026-08-10T11:10:45Z",
+    "headSha": "591db6fcf680e5f8d3bc5e4bee074825ce1deeed"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se acepta una ventana planificada sin reglas `shipMatrix` legacy, o debe conservarse compatibilidad de lectura hasta completar y verificar la migración?",
+  "rationale": "La decisión afecta directamente a picking y requiere valorar si una parada operativa coordinada es aceptable frente a una fase adicional de compatibilidad.",
+  "options": [
+    {
+      "title": "Migración compatible por fases",
+      "body": "Mantener temporalmente la lectura legacy y regex, migrar todas las filas con evidencia redactada y eliminar el traductor en un cambio posterior.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar ventana operativa",
+      "body": "Autorizar el despliegue actual solo con una ventana de picking detenida, ejecución verificada del script, reinicios de caché y un plan de restauración validado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Migración compatible por fases",
+    "body": "Mantener temporalmente la lectura legacy y regex, migrar todas las filas con evidencia redactada y eliminar el traductor en un cambio posterior.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reúne la definición del contrato de patrones y las reglas de validación que determinan la compatibilidad de la migración.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8357.md",
+    "reviewedAt": "2026-08-10T11:18:20.367Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}

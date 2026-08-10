@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:17:32.614Z",
+  "updatedAt": "2026-08-10T11:12:37Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8352,
+    "title": "Bifrost · AnyDesk desatendido en cada puesto",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8352",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-08-10T10:38:50Z",
+    "updatedAt": "2026-08-10T11:12:37Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se limita AnyDesk desatendido al Bifrost o se autoriza también el acceso gráfico directo a cada puesto del almacén?",
+  "rationale": "Ambas opciones cambian de forma material el perímetro de acceso remoto, la custodia de credenciales y el procedimiento de revocación; la elección necesita intención humana.",
+  "options": [
+    {
+      "title": "Centralizar en Bifrost",
+      "body": "Instalar AnyDesk y Tailscale únicamente en el PC puente, conservando SSH y WoL para alcanzar los puestos por LAN.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar acceso por puesto",
+      "body": "Permitir AnyDesk directo en cada puesto tras aprobar propietarios, credenciales únicas, inventario de IDs y lista blanca.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Centralizar en Bifrost",
+    "body": "Instalar AnyDesk y Tailscale únicamente en el PC puente, conservando SSH y WoL para alcanzar los puestos por LAN.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El epic recoge una decisión técnica atribuida a Javier sobre el acceso remoto y Tailscale.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8352.md",
+    "reviewedAt": "2026-08-10T11:17:32.614Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}
