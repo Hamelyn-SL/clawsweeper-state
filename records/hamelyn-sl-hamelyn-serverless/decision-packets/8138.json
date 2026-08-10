@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T00:49:52.772Z",
-  "updatedAt": "2026-08-04T23:48:25Z",
+  "generatedAt": "2026-08-10T20:22:34.982Z",
+  "updatedAt": "2026-08-10T20:18:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,49 +13,45 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:done",
-      "reporter:daniellopez",
-      "origin:panel",
-      "P2",
+      "triage:queued",
       "impact:other",
+      "P2",
+      "reporter:daniellopez",
       "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "origin:panel"
     ],
     "createdAt": "2026-07-30T13:15:00Z",
-    "updatedAt": "2026-08-04T23:48:25Z"
+    "updatedAt": "2026-08-10T20:18:11Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse el panel V2 como flujo separado y dejar la cancelación en muelle y el resumen Slack como trabajos posteriores con contratos propios?",
-  "rationale": "La recepción cambia estados, notificaciones y métricas operativas; el comportamiento de cancelación y el destinatario/contenido del resumen diario no se deducen con seguridad del código actual.",
+  "question": "¿Qué estados puede cancelar un operario desde el muelle y qué notificaciones o recuperación operativa debe producir cada cancelación?",
+  "rationale": "La decisión altera el grafo de pedidos y la comunicación posterior; el código actual y la PR candidata no fijan un contrato único para los casos sospechosos.",
   "options": [
     {
-      "title": "Fijar el alcance inicial",
-      "body": "Aprobar búsqueda, recepción, productividad e incidencias como V2, y planificar cancelación y Slack en tareas posteriores.",
+      "title": "Limitar la cancelación al grafo actual",
+      "body": "Permitir solo transiciones ya válidas y mantener los lotes `SUSPICIOUS` fuera del flujo del muelle.",
       "recommended": true
     },
     {
-      "title": "Exigir el alcance completo",
-      "body": "No aceptar el panel hasta definir e implementar también cancelación total y el resumen diario por Slack.",
+      "title": "Ampliar el flujo de muelle",
+      "body": "Definir primero las transiciones, notificaciones y recuperación para lotes sospechosos antes de exponer la cancelación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fijar el alcance inicial",
-    "body": "Aprobar búsqueda, recepción, productividad e incidencias como V2, y planificar cancelación y Slack en tareas posteriores.",
+    "title": "Limitar la cancelación al grafo actual",
+    "body": "Permitir solo transiciones ya válidas y mantener los lotes `SUSPICIOUS` fuera del flujo del muelle.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Concentra la historia del panel de pickup y la PR candidata, por lo que puede concretar los límites técnicos con Operaciones.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Su trabajo reciente sobre tracking y ciclo de vida de pedidos es el más próximo a la frontera de estados afectada.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8138.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8138#issuecomment-5131666813",
-    "reviewedAt": "2026-08-05T00:49:52.772Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-10T20:22:34.982Z",
+    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
   }
 }

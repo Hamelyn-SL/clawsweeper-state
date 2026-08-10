@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T19:18:04.778Z",
-  "updatedAt": "2026-08-10T19:12:19Z",
+  "generatedAt": "2026-08-10T20:24:17.442Z",
+  "updatedAt": "2026-08-10T19:27:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,44 +13,38 @@
       "size/XL"
     ],
     "createdAt": "2026-08-10T18:50:09Z",
-    "updatedAt": "2026-08-10T19:12:19Z",
-    "headSha": "e8543bcc987b36d7753c7609db6e6e7e6023829f"
+    "updatedAt": "2026-08-10T19:27:52Z",
+    "headSha": "f3c3bf3d567a190dc9ca5785778eef71890613d6"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la skill imponer una ruta exclusiva de Javier o definir una ubicación portátil y aprobada para cualquier entorno que procese pedidos B2B?",
-  "rationale": "El issue vinculado pidió una raíz fija, pero no confirmó una ruta dependiente de una persona; convertirla en comportamiento obligatorio cambia la compatibilidad de la skill compartida.",
+  "question": "¿La ruta de entrega B2B debe quedar restringida al Mac de Javier o debe ser un contrato portable para cualquier entorno que use esta skill?",
+  "rationale": "La issue pide una raíz fija, pero el PR convierte una skill compartida en un flujo dependiente de una ruta personal sin alternativa documentada.",
   "options": [
     {
-      "title": "Definir una raíz portable",
-      "body": "Aprobar una ubicación por proyecto o equipo, con una forma documentada de configurarla sin depender del Mac de una persona.",
+      "title": "Hacer la raíz portable",
+      "body": "Resolver la raíz mediante configuración o un directorio de trabajo declarado, conservando la exclusión de repositorios y worktrees.",
       "recommended": true
     },
     {
-      "title": "Mantener la ruta personal",
-      "body": "Aceptar explícitamente que esta skill sólo opere en el entorno de Javier y documentar ese límite para el resto de usuarios.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la estandarización",
-      "body": "Conservar el flujo actual hasta disponer de un contrato operativo firmado por las personas responsables.",
+      "title": "Acotar la skill al Mac de Javier",
+      "body": "Mantener la ruta actual, pero declarar claramente que solo aplica a ese equipo y definir el procedimiento para otros entornos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Definir una raíz portable",
-    "body": "Aprobar una ubicación por proyecto o equipo, con una forma documentada de configurarla sin depender del Mac de una persona.",
+    "title": "Hacer la raíz portable",
+    "body": "Resolver la raíz mediante configuración o un directorio de trabajo declarado, conservando la exclusión de repositorios y worktrees.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Creó la skill existente y planteó el contrato operativo en el issue vinculado.",
+    "reason": "Ha introducido la skill y concreta el contrato operativo propuesto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8361.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8361#issuecomment-5244780981",
-    "reviewedAt": "2026-08-10T19:18:04.778Z",
-    "mainSha": "7a0724e4c801c5744b8b6fccba4ac59abe37ead4"
+    "reviewedAt": "2026-08-10T20:24:17.442Z",
+    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
   }
 }
