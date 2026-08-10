@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T20:22:34.982Z",
-  "updatedAt": "2026-08-10T20:18:11Z",
+  "generatedAt": "2026-08-10T22:11:04.907Z",
+  "updatedAt": "2026-08-10T20:59:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "source:admin-panel",
       "app:supply",
       "feature",
-      "triage:queued",
-      "reporter:daniellopez",
-      "issue-rating: ➖ n/a",
-      "origin:panel",
-      "P2",
+      "triage:no-change",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "reporter:daniellopez",
+      "issue-rating: ➖ n/a",
+      "origin:panel"
     ],
     "createdAt": "2026-07-30T13:15:00Z",
-    "updatedAt": "2026-08-10T20:18:11Z"
+    "updatedAt": "2026-08-10T20:59:18Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué estados puede cancelar un operario desde el muelle y qué notificaciones o recuperación operativa debe producir cada cancelación?",
-  "rationale": "La decisión altera el grafo de pedidos y la comunicación posterior; el código actual y la PR candidata no fijan un contrato único para los casos sospechosos.",
+  "question": "¿El primer lanzamiento del panel V2 puede excluir la cancelación total y el resumen diario de Slack, o ambos son requisitos de salida?",
+  "rationale": "La issue los pide, mientras que la PR activa los declara fuera de alcance y la cancelación de `SUSPICIOUS` requiere una decisión sobre el grafo de estados.",
   "options": [
     {
-      "title": "Limitar la cancelación al grafo actual",
-      "body": "Permitir solo transiciones ya válidas y mantener los lotes `SUSPICIOUS` fuera del flujo del muelle.",
+      "title": "Entregar por fases",
+      "body": "Integrar el panel validado y crear seguimiento explícito para cancelación total y Slack diario.",
       "recommended": true
     },
     {
-      "title": "Ampliar el flujo de muelle",
-      "body": "Definir primero las transiciones, notificaciones y recuperación para lotes sospechosos antes de exponer la cancelación.",
+      "title": "Exigir alcance completo",
+      "body": "Mantener la entrega bloqueada hasta implementar y validar también cancelación y resumen diario.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Limitar la cancelación al grafo actual",
-    "body": "Permitir solo transiciones ya válidas y mantener los lotes `SUSPICIOUS` fuera del flujo del muelle.",
+    "title": "Entregar por fases",
+    "body": "Integrar el panel validado y crear seguimiento explícito para cancelación total y Slack diario.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "Su trabajo reciente sobre tracking y ciclo de vida de pedidos es el más próximo a la frontera de estados afectada.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Mantiene la única implementación candidata y conoce los límites técnicos de los flujos de recepción.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8138.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8138#issuecomment-5131666813",
-    "reviewedAt": "2026-08-10T20:22:34.982Z",
-    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
+    "reviewedAt": "2026-08-10T22:11:04.907Z",
+    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
   }
 }
