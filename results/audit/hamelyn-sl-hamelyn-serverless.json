@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-10T12:56:22.782Z",
+  "generatedAt": "2026-08-10T18:55:56.809Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 110
+    "openItemsSeen": 104
   },
   "counts": {
-    "itemRecords": 108,
-    "closedRecords": 934,
-    "missingOpen": 2,
+    "itemRecords": 101,
+    "closedRecords": 944,
+    "missingOpen": 3,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 1,
+    "missingRecentOpen": 2,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,15 +40,27 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8347,
+        "number": 8361,
+        "kind": "pull_request",
+        "title": "feat: standardize B2B order deliveries",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T18:50:09Z",
+        "updatedAt": "2026-08-10T18:51:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8362,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T09:36:09Z",
-        "updatedAt": "2026-08-10T12:13:28Z",
+        "createdAt": "2026-08-10T18:50:31Z",
+        "updatedAt": "2026-08-10T18:54:58Z",
         "missingReason": "recently_created"
       }
     ],
@@ -75,15 +87,27 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8347,
+        "number": 8361,
+        "kind": "pull_request",
+        "title": "feat: standardize B2B order deliveries",
+        "labels": [
+          "size/XL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T18:50:09Z",
+        "updatedAt": "2026-08-10T18:51:59Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8362,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T09:36:09Z",
-        "updatedAt": "2026-08-10T12:13:28Z",
+        "createdAt": "2026-08-10T18:50:31Z",
+        "updatedAt": "2026-08-10T18:54:58Z",
         "missingReason": "recently_created"
       }
     ],
