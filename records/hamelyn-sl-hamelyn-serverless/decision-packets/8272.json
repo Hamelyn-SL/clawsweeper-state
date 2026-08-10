@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T07:58:48.369Z",
-  "updatedAt": "2026-08-06T06:39:37Z",
+  "generatedAt": "2026-08-10T10:24:28.060Z",
+  "updatedAt": "2026-08-10T10:06:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,51 @@
     "state": "open",
     "labels": [
       "size/M",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-06T06:37:35Z",
-    "updatedAt": "2026-08-06T06:39:37Z",
+    "updatedAt": "2026-08-10T10:06:33Z",
     "headSha": "62399346a64437e35b19407e44c2e743572a5c42"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe cualquier cron compartido devolver HTTP 500 cuando todas sus tareas fallan, o debe esa severidad configurarse por ruta según su semántica de reintentos y errores tolerables?",
-  "rationale": "La incidencia canónica documenta consumidores con fallos permanentes tolerables y solicita una política por ruta; el helper no recibe ninguna señal para expresar esa decisión.",
+  "question": "¿Qué rutas cron deben devolver HTTP 500 ante un fallo total y cuáles necesitan conservar una respuesta compatible o una severidad distinta?",
+  "rationale": "El helper es compartido y el cambio afecta rutas con tareas únicas y procesos que pueden tolerar errores permanentes; el código no puede deducir esa política de negocio.",
   "options": [
     {
-      "title": "Separar señal y política",
-      "body": "Fusionar solo el resumen estructurado compatible y añadir una política explícita por cron antes de cambiar HTTP globalmente.",
+      "title": "Política explícita por ruta",
+      "body": "Añadir una política de severidad o de `failedHttpStatus` por cron, inventariar las rutas afectadas y mantener el resumen común.",
       "recommended": true
     },
     {
-      "title": "Adoptar fallo global",
-      "body": "Aceptar HTTP 500 para todo fallo total y documentar que todos los consumidores deben tolerar reintentos y alertas nuevas.",
+      "title": "Aceptar 500 global",
+      "body": "Mantener HTTP 500 para todo fallo total, documentando los crons que pueden quedar señalados como fallidos de forma esperada.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar esta fase a observabilidad",
+      "body": "Conservar HTTP 200 y aterrizar primero el resumen estructurado hasta que se acuerde la política de rutas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar señal y política",
-    "body": "Fusionar solo el resumen estructurado compatible y añadir una política explícita por cron antes de cambiar HTTP globalmente.",
+    "title": "Política explícita por ruta",
+    "body": "Añadir una política de severidad o de `failedHttpStatus` por cron, inventariar las rutas afectadas y mantener el resumen común.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El historial disponible lo vincula con el contrato compartido que esta decisión modificaría.",
+    "person": "alexcanHamelyn",
+    "reason": "Ya revisó la cabeza actual y formuló la decisión operativa concreta que bloquea el merge.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8272.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8272#issuecomment-5201950848",
-    "reviewedAt": "2026-08-06T07:58:48.369Z",
-    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
+    "reviewedAt": "2026-08-10T10:24:28.060Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
   }
 }

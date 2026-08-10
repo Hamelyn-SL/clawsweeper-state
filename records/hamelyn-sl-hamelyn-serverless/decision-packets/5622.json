@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:18:37.299Z",
-  "updatedAt": "2026-08-04T22:59:17Z",
+  "generatedAt": "2026-08-10T10:22:22.592Z",
+  "updatedAt": "2026-08-10T10:12:40Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,54 +15,53 @@
       "triage:needs-info",
       "triage:confirmed-live",
       "area:cron-reliability",
-      "origin:dev",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:fix-shape-clear",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "issue-rating: 💎 diamond",
+      "origin:dev"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
-    "updatedAt": "2026-08-04T22:59:17Z"
+    "updatedAt": "2026-08-10T10:12:40Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿La primera fase debe conservar HTTP 200 con señal estructurada, o qué rutas y severidades deben pasar ya a HTTP 207 o 5xx?",
-  "rationale": "El handler cubre decenas de rutas y los rechazos parciales pueden ser tolerables o críticos según la fase de negocio; el código no puede inferir esa política con seguridad.",
+  "question": "¿Se aprueba como contrato inicial mantener HTTP 200 en fallos parciales y reservar HTTP 500 para fallos totales, antes de definir excepciones por ruta?",
+  "rationale": "La evidencia confirma el defecto de observabilidad, pero decidir qué parciales deben degradar HTTP afecta a crons con lotes deliberadamente tolerantes.",
   "options": [
     {
-      "title": "Señal compatible primero",
-      "body": "Añadir `status`, `rejectedCount`, motivos y severidad manteniendo temporalmente HTTP 200, para basar después la política por ruta en datos reales.",
+      "title": "Aprobar la fase compatible",
+      "body": "Integrar el resumen estructurado y HTTP 500 solo para fallo total; las políticas por ruta se definen después con datos operativos.",
       "recommended": true
     },
     {
-      "title": "Elevar rutas críticas",
-      "body": "Definir ahora una lista pequeña de fases críticas que devuelvan 207 o 5xx cuando fallen parcialmente.",
+      "title": "Exigir severidad por ruta ahora",
+      "body": "Ampliar la propuesta con una clasificación explícita de rutas o fases antes de cambiar el contrato compartido.",
       "recommended": false
     },
     {
-      "title": "Mantener contrato actual",
-      "body": "Conservar HTTP 200 y depender de logs por integración, aceptando que la degradación seguirá sin una señal común.",
+      "title": "Mantener solo observabilidad",
+      "body": "Emitir el resumen estructurado sin cambiar ningún estado HTTP hasta que exista una política de alertado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Señal compatible primero",
-    "body": "Añadir `status`, `rejectedCount`, motivos y severidad manteniendo temporalmente HTTP 200, para basar después la política por ruta en datos reales.",
+    "title": "Aprobar la fase compatible",
+    "body": "Integrar el resumen estructurado y HTTP 500 solo para fallo total; las políticas por ruta se definen después con datos operativos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El historial del handler vigente y la investigación de esta incidencia le conectan directamente con la decisión del contrato común.",
+    "reason": "Introdujo la versión actual del contrato compartido y su historial conecta directamente con la compatibilidad que debe preservarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
-    "reviewedAt": "2026-08-04T23:18:37.299Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-10T10:22:22.592Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
   }
 }

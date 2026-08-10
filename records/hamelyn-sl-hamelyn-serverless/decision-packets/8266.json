@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T10:11:37.720Z",
+  "generatedAt": "2026-08-10T10:29:01.194Z",
   "updatedAt": "2026-08-10T10:00:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,10 +11,10 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T13:02:51Z",
     "updatedAt": "2026-08-10T10:00:36Z",
@@ -22,34 +22,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La ausencia de rango Amazon o de señales de editorial/autor debe rechazar compras, o solo deben rechazar valores calculados por debajo de los umbrales?",
-  "rationale": "La implementación actual trata los datos no disponibles como demanda negativa, y el comportamiento al activar el switch depende de esta política de negocio.",
+  "question": "¿La ausencia de señal de editorial o autor debe rechazar una compra o tratarse como desconocida hasta disponer de una medición fiable?",
+  "rationale": "La cobertura documentada de autores no representa toda la población del backtest; elegir entre rechazo preventivo y aceptación conserva una política comercial distinta.",
   "options": [
     {
-      "title": "Conservar aceptación ante señal desconocida",
-      "body": "Rechazar solo cuando existan señales calculadas por debajo de umbral y dejar los datos ausentes fuera del gate.",
+      "title": "Tratar ausencia como desconocida",
+      "body": "No rechazar por una señal `null`; mantener el interruptor apagado hasta tener cobertura y prueba de rollout suficientes.",
       "recommended": true
     },
     {
-      "title": "Adoptar política fail-closed",
-      "body": "Mantener el rechazo por ausencia, pero exigir backfill, primera sincronización y evidencia de rollout antes de activar el switch.",
+      "title": "Tratar ausencia como baja demanda",
+      "body": "Mantener el rechazo actual y aceptar explícitamente que la falta de enlace o sincronización clasifique productos sin ratio medido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar aceptación ante señal desconocida",
-    "body": "Rechazar solo cuando existan señales calculadas por debajo de umbral y dejar los datos ausentes fuera del gate.",
+    "title": "Tratar ausencia como desconocida",
+    "body": "No rechazar por una señal `null`; mantener el interruptor apagado hasta tener cobertura y prueba de rollout suficientes.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el revisor asignado con experiencia declarada en este gate y ha señalado la decisión pendiente.",
+    "reason": "Es el revisor activo que ya documentó los riesgos concretos de esta política en el HEAD actual.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8266.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8266#issuecomment-5192382898",
-    "reviewedAt": "2026-08-10T10:11:37.720Z",
+    "reviewedAt": "2026-08-10T10:29:01.194Z",
     "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
   }
 }
