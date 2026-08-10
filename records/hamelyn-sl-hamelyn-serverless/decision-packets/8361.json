@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T19:10:09.081Z",
+  "updatedAt": "2026-08-10T19:05:20Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8361,
+    "title": "feat: standardize B2B order deliveries",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8361",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-08-10T18:50:09Z",
+    "updatedAt": "2026-08-10T19:05:20Z",
+    "headSha": "e8543bcc987b36d7753c7609db6e6e7e6023829f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe la skill B2B imponer globalmente el contrato de dos CSV y el orden prospectivo de BPs manuales para todos los futuros pedidos?",
+  "rationale": "La rama convierte una convención operativa en una obligación para agentes y operaciones futuras; ese alcance no se decide de forma segura solo con validadores locales.",
+  "options": [
+    {
+      "title": "Confirmar y acotar el contrato",
+      "body": "Aprobar el flujo para order intake, exigir validación Zod y aportar una prueba completa posterior al head antes de fusionar.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el flujo anterior",
+      "body": "No imponer todavía el contrato global y cerrar o reducir la propuesta hasta que exista una decisión operativa separada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar y acotar el contrato",
+    "body": "Aprobar el flujo para order intake, exigir validación Zod y aportar una prueba completa posterior al head antes de fusionar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "banosdavidhamelyn",
+    "reason": "El historial disponible lo conecta tanto con la skill B2B vigente como con el índice de recorrido que usa la propuesta.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8361.md",
+    "reviewedAt": "2026-08-10T19:10:09.081Z",
+    "mainSha": "7a0724e4c801c5744b8b6fccba4ac59abe37ead4"
+  }
+}
