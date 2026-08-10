@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:33:39.672Z",
+  "updatedAt": "2026-08-10T10:39:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8355,
+    "title": "Bifrost · Panel de puestos del almacén en admin",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-10T10:38:58Z",
+    "updatedAt": "2026-08-10T10:39:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el panel de admin incluir controles remotos antes de acordar el contrato de autenticación, permisos e inventario entre admin y Bifrost?",
+  "rationale": "La solicitud une observabilidad con control de equipos físicos; el límite seguro de esas acciones requiere una decisión explícita antes de implementar la interfaz.",
+  "options": [
+    {
+      "title": "Definir el contrato primero",
+      "body": "Acordar la API de Bifrost, el inventario y los permisos de acción antes de iniciar los controles remotos del panel.",
+      "recommended": true
+    },
+    {
+      "title": "Entregar sólo observabilidad",
+      "body": "Limitar la primera entrega a estado y presencia hasta que Bifrost publique acciones remotas estables.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Definir el contrato primero",
+    "body": "Acordar la API de Bifrost, el inventario y los permisos de acción antes de iniciar los controles remotos del panel.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El epic le atribuye una decisión de arquitectura de acceso remoto que condiciona el contrato del panel.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8355.md",
+    "reviewedAt": "2026-08-10T11:33:39.672Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}

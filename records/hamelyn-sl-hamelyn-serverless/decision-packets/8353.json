@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T11:27:09.669Z",
+  "generatedAt": "2026-08-10T11:26:42.725Z",
   "updatedAt": "2026-08-10T11:20:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,52 +14,40 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:queued",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2"
     ],
     "createdAt": "2026-08-10T10:38:52Z",
     "updatedAt": "2026-08-10T11:20:42Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se autoriza al equipo de infraestructura a desplegar Bifrost como único punto de acceso externo con la cuenta Tailscale indicada, incluyendo el modelo de custodia y recuperación de credenciales?",
-  "rationale": "La issue fija una frontera de acceso remoto y requiere acciones sobre hardware, red y cuentas que no pueden validarse ni revertirse mediante un PR del monorepo.",
+  "question": "¿Se confirma que AnyDesk y Tailscale quedan exclusivamente en Bifrost, con los puestos accesibles sólo desde él por SSH y WoL?",
+  "rationale": "La tarea define un único puente exterior, pero la subtarea de AnyDesk por puesto plantea accesos gráficos adicionales; esa frontera y sus controles no pueden decidirse mediante un parche de repositorio.",
   "options": [
     {
-      "title": "Confirmar el perímetro centralizado",
-      "body": "Autorizar Bifrost como único equipo accesible desde fuera y registrar fuera del repositorio el inventario, los responsables y la recuperación de credenciales.",
+      "title": "Centralizar en Bifrost",
+      "body": "Instalar AnyDesk y Tailscale sólo en el puente, manteniendo los puestos detrás de la LAN con SSH y WoL.",
       "recommended": true
     },
     {
-      "title": "Permitir acceso directo por puesto",
-      "body": "Ampliar explícitamente el epic y aprobar credenciales, inventario y controles separados para cada puesto antes de habilitar esa superficie adicional.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el despliegue",
-      "body": "Mantener la issue abierta hasta disponer de hardware, responsables y un procedimiento de acceso revisado.",
+      "title": "Autorizar accesos por puesto",
+      "body": "Permitir AnyDesk directo en puestos concretos con inventario de IDs, controles de autorización y política de revocación documentada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el perímetro centralizado",
-    "body": "Autorizar Bifrost como único equipo accesible desde fuera y registrar fuera del repositorio el inventario, los responsables y la recuperación de credenciales.",
+    "title": "Centralizar en Bifrost",
+    "body": "Instalar AnyDesk y Tailscale sólo en el puente, manteniendo los puestos detrás de la LAN con SSH y WoL.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La issue atribuye a Javier la decisión del plan y la cuenta de Tailscale, que determina el perímetro de acceso.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ya está asignado a la subtarea y mantiene la infraestructura cercana de estaciones que puede integrarse después con el epic.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8353.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8353#issuecomment-5239446852",
-    "reviewedAt": "2026-08-10T11:27:09.669Z",
+    "reviewedAt": "2026-08-10T11:26:42.725Z",
     "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
   }
 }
