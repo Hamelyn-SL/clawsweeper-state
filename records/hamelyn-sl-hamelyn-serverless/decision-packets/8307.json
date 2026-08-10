@@ -16,12 +16,12 @@
       "triage:no-change",
       "reporter:irenegarcia",
       "P1",
-      "clawsweeper:needs-live-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
       "impact:ux-friction",
-      "issue-rating: ⚪ platinum"
+      "issue-rating: ⚪ platinum",
+      "clawsweeper:needs-live-repro",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-07T10:12:51Z",
     "updatedAt": "2026-08-10T11:20:31Z"
@@ -54,6 +54,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8307.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8307#issuecomment-5215785636",
     "reviewedAt": "2026-08-10T11:46:33.409Z",
     "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
   }
