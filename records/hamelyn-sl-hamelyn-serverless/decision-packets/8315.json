@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T22:34:28.344Z",
-  "updatedAt": "2026-08-09T21:42:34Z",
+  "generatedAt": "2026-08-10T06:10:47.015Z",
+  "updatedAt": "2026-08-10T05:57:26Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,46 @@
       "app:ecommerce",
       "feature",
       "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
-    "updatedAt": "2026-08-09T21:42:34Z"
+    "updatedAt": "2026-08-10T05:57:26Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Aprueba el equipo Ecommerce adoptar Cache Components como arquitectura global de navegación para los storefronts regionales, con fallback dinámico por host en entornos sin identidad de despliegue?",
-  "rationale": "La propuesta modifica el comportamiento de renderizado, caché e internacionalización en una superficie amplia; la corrección técnica no decide por sí sola la política de despliegue y compatibilidad.",
+  "question": "¿Se aprueba que la identidad estática por deployment sea la dirección de producto para los 13 storefronts, manteniendo un fallback dinámico por host fuera de ese entorno?",
+  "rationale": "La decisión condiciona el contrato de locale, moneda y despliegue; el código por sí solo no determina qué entornos deben conservar el comportamiento dinámico.",
   "options": [
     {
-      "title": "Aprobar la arquitectura propuesta",
-      "body": "Revisar la PR enlazada contra los invariantes regionales y permitir su aterrizaje por la vía normal de revisión.",
+      "title": "Aprobar migración por deployment",
+      "body": "Aceptar el shell estático por deployment y exigir cobertura de los 13 hosts más fallback dinámico probado.",
       "recommended": true
     },
     {
-      "title": "Acotar una primera fase",
-      "body": "Limitar la PR a shells públicos cacheables y dejar rutas con host o sesión para una fase posterior.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el renderizado actual",
-      "body": "Rechazar la migración global si el riesgo operativo de los storefronts supera el beneficio de navegación.",
+      "title": "Mantener resolución dinámica",
+      "body": "Conservar la resolución por host en todos los entornos y limitar Cache Components a superficies que no dependan de ella.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la arquitectura propuesta",
-    "body": "Revisar la PR enlazada contra los invariantes regionales y permitir su aterrizaje por la vía normal de revisión.",
+    "title": "Aprobar migración por deployment",
+    "body": "Aceptar el shell estático por deployment y exigir cobertura de los 13 hosts más fallback dinámico probado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es la persona asignada y ha presentado la implementación concreta que requiere validación de dirección.",
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre la caché e invalidación que hacen crítica esta decisión de compatibilidad.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-09T22:34:28.344Z",
-    "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
+    "reviewedAt": "2026-08-10T06:10:47.015Z",
+    "mainSha": "4e021bfed18dc4d7e93e41248e81596ec4f72df2"
   }
 }
