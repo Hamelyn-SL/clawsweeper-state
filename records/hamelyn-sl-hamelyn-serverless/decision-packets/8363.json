@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T21:56:05.083Z",
+  "updatedAt": "2026-08-10T20:41:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8363,
+    "title": "El aviso de envío gratis de la ficha muestra el umbral en euros en las tiendas no euro",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8363",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:ecommerce",
+      "reporter:miguel",
+      "triage:queued",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:fix-shape-clear",
+      "no-stale",
+      "clawsweeper:queueable-fix",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-10T20:00:17Z",
+    "updatedAt": "2026-08-10T20:41:50Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Los productos en estado Nuevo deben tener envío gratis sin umbral en todas las tiendas, o debe comunicarse el recargo que el checkout aún calcula bajo 15 unidades por proveedor?",
+  "rationale": "El comentario propone ocultar el texto, mientras `checkout-server-pricing.ts` mantiene una condición económica para esos productos; elegir entre ambas lecturas altera la promesa de precio al comprador.",
+  "options": [
+    {
+      "title": "Envío siempre incluido",
+      "body": "Eliminar el aviso de ambas fichas y retirar o absorber coherentemente el recargo de productos Nuevos en el flujo de checkout.",
+      "recommended": false
+    },
+    {
+      "title": "Comunicar la condición real",
+      "body": "Mantener un aviso dinámico, con el umbral y la moneda obtenidos del mismo cálculo que usa el checkout.",
+      "recommended": false
+    },
+    {
+      "title": "Confirmar la política antes de cambiar copy",
+      "body": "Pausar la corrección visual hasta que ecommerce confirme cuál de los dos comportamientos es la oferta vigente.",
+      "recommended": true
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar la política antes de cambiar copy",
+    "body": "Pausar la corrección visual hasta que ecommerce confirme cuál de los dos comportamientos es la oferta vigente.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente conecta la promoción de envío y las variantes de ficha que renderizan el aviso.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8363.md",
+    "reviewedAt": "2026-08-10T21:56:05.083Z",
+    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
+  }
+}
