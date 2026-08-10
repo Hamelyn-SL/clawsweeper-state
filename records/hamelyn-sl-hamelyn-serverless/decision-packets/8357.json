@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T11:18:20.367Z",
-  "updatedAt": "2026-08-10T11:10:45Z",
+  "generatedAt": "2026-08-10T17:10:01.199Z",
+  "updatedAt": "2026-08-10T17:00:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,46 +10,45 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8357",
     "state": "open",
     "labels": [
-      "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
+      "size/XL",
       "P1",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-10T11:08:46Z",
-    "updatedAt": "2026-08-10T11:10:45Z",
-    "headSha": "591db6fcf680e5f8d3bc5e4bee074825ce1deeed"
+    "updatedAt": "2026-08-10T17:00:36Z",
+    "headSha": "718d8d41625166e6d4a0dae143b41eafd1274ec6"
   },
-  "lane": "merge_risk",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta una ventana planificada sin reglas `shipMatrix` legacy, o debe conservarse compatibilidad de lectura hasta completar y verificar la migración?",
-  "rationale": "La decisión afecta directamente a picking y requiere valorar si una parada operativa coordinada es aceptable frente a una fase adicional de compatibilidad.",
+  "question": "¿Debe aceptarse la ventana deploy→migración que puede dejar temporalmente la matriz de transportistas incompleta, o se exige una transición sin esa interrupción?",
+  "rationale": "La rama declara una decisión de owner, pero la evidencia disponible no muestra confirmación del responsable de shipping ni una ejecución aplicada y recuperable sobre los datos persistidos.",
   "options": [
     {
-      "title": "Migración compatible por fases",
-      "body": "Mantener temporalmente la lectura legacy y regex, migrar todas las filas con evidencia redactada y eliminar el traductor en un cambio posterior.",
+      "title": "Exigir transición sin matriz parcial",
+      "body": "Migrar antes del runtime nuevo o conservar lectura compatible hasta comprobar la conversión y el recargo completo de caché.",
       "recommended": true
     },
     {
-      "title": "Aceptar ventana operativa",
-      "body": "Autorizar el despliegue actual solo con una ventana de picking detenida, ejecución verificada del script, reinicios de caché y un plan de restauración validado.",
+      "title": "Aceptar la ventana nocturna",
+      "body": "Registrar la aprobación del responsable de shipping y aportar salida redaccionada de `--apply`, verificación persistida y recuperación antes de considerar el PR listo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migración compatible por fases",
-    "body": "Mantener temporalmente la lectura legacy y regex, migrar todas las filas con evidencia redactada y eliminar el traductor en un cambio posterior.",
+    "title": "Exigir transición sin matriz parcial",
+    "body": "Migrar antes del runtime nuevo o conservar lectura compatible hasta comprobar la conversión y el recargo completo de caché.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reúne la definición del contrato de patrones y las reglas de validación que determinan la compatibilidad de la migración.",
+    "reason": "Originó el bloque de negocio y la issue canónica que define esta migración.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8357.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8357#issuecomment-5239449156",
-    "reviewedAt": "2026-08-10T11:18:20.367Z",
-    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+    "reviewedAt": "2026-08-10T17:10:01.199Z",
+    "mainSha": "a0d9558917d6831bfb9b76e368738c46b86d6cce"
   }
 }
