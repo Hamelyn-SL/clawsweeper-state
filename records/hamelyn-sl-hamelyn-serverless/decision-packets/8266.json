@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T21:01:34.765Z",
-  "updatedAt": "2026-08-09T20:54:38Z",
+  "generatedAt": "2026-08-10T10:11:37.720Z",
+  "updatedAt": "2026-08-10T10:00:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,50 +11,44 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 compatibility"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-05T13:02:51Z",
-    "updatedAt": "2026-08-09T20:54:38Z",
+    "updatedAt": "2026-08-10T10:00:36Z",
     "headSha": "b053cfaee3cc5e9ea2d44cf97cd9da811c411f6d"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la ausencia de señal de autor o editorial bloquear la compra, o debe considerarse insuficiente para rechazar el producto?",
-  "rationale": "La cobertura real de autores enlazados no representa toda la población del backtest, por lo que elegir una semántica cambia la política de compra.",
+  "question": "¿La ausencia de rango Amazon o de señales de editorial/autor debe rechazar compras, o solo deben rechazar valores calculados por debajo de los umbrales?",
+  "rationale": "La implementación actual trata los datos no disponibles como demanda negativa, y el comportamiento al activar el switch depende de esta política de negocio.",
   "options": [
     {
-      "title": "No rechazar sin señal",
-      "body": "Aplicar el filtro solo cuando las métricas de editorial y autor se hayan calculado realmente, preservando la aceptación ante datos insuficientes.",
+      "title": "Conservar aceptación ante señal desconocida",
+      "body": "Rechazar solo cuando existan señales calculadas por debajo de umbral y dejar los datos ausentes fuera del gate.",
       "recommended": true
     },
     {
-      "title": "Ampliar cobertura antes",
-      "body": "Completar el enlace o almacenamiento de autores hasta cubrir la población del backtest antes de habilitar el filtro.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el rechazo conservador",
-      "body": "Mantener la ausencia como señal baja, documentar el aumento intencional de rechazos y aprobarlo como cambio de política.",
+      "title": "Adoptar política fail-closed",
+      "body": "Mantener el rechazo por ausencia, pero exigir backfill, primera sincronización y evidencia de rollout antes de activar el switch.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "No rechazar sin señal",
-    "body": "Aplicar el filtro solo cuando las métricas de editorial y autor se hayan calculado realmente, preservando la aceptación ante datos insuficientes.",
+    "title": "Conservar aceptación ante señal desconocida",
+    "body": "Rechazar solo cuando existan señales calculadas por debajo de umbral y dejar los datos ausentes fuera del gate.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el revisor solicitado específicamente por experiencia en compra y señales de demanda.",
-    "confidence": "medium"
+    "reason": "Es el revisor asignado con experiencia declarada en este gate y ha señalado la decisión pendiente.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8266.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8266#issuecomment-5192382898",
-    "reviewedAt": "2026-08-09T21:01:34.765Z",
-    "mainSha": "73d5a8224e83db604a611699fd035bacaa9ff683"
+    "reviewedAt": "2026-08-10T10:11:37.720Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
   }
 }
