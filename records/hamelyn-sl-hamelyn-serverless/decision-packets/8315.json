@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T06:10:47.015Z",
-  "updatedAt": "2026-08-10T05:57:26Z",
+  "generatedAt": "2026-08-10T08:55:34.375Z",
+  "updatedAt": "2026-08-10T07:40:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "app:ecommerce",
       "feature",
       "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
       "P2",
-      "impact:ux-friction",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-08T17:42:39Z",
-    "updatedAt": "2026-08-10T05:57:26Z"
+    "updatedAt": "2026-08-10T07:40:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba que la identidad estática por deployment sea la dirección de producto para los 13 storefronts, manteniendo un fallback dinámico por host fuera de ese entorno?",
-  "rationale": "La decisión condiciona el contrato de locale, moneda y despliegue; el código por sí solo no determina qué entornos deben conservar el comportamiento dinámico.",
+  "question": "¿Se acepta revisar la migración integral de Cache Components como una única entrega, o se exige dividirla por shell/i18n, catálogo-PDP y superficies autenticadas?",
+  "rationale": "El objetivo está definido, pero la PR abierta cubre 108 archivos y todavía tiene cambios solicitados en garantías de caché, pruebas y observabilidad.",
   "options": [
     {
-      "title": "Aprobar migración por deployment",
-      "body": "Aceptar el shell estático por deployment y exigir cobertura de los 13 hosts más fallback dinámico probado.",
+      "title": "Dividir por fases",
+      "body": "Separar shell e i18n, catálogo y PDP, y rutas autenticadas para limitar regresiones y permitir pruebas verificables por etapa.",
       "recommended": true
     },
     {
-      "title": "Mantener resolución dinámica",
-      "body": "Conservar la resolución por host en todos los entornos y limitar Cache Components a superficies que no dependan de ella.",
+      "title": "Mantener una entrega integral",
+      "body": "Revisar la PR completa si se asume explícitamente el coste de validar sus rutas, cachés e invariantes transversales en conjunto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar migración por deployment",
-    "body": "Aceptar el shell estático por deployment y exigir cobertura de los 13 hosts más fallback dinámico probado.",
+    "title": "Dividir por fases",
+    "body": "Separar shell e i18n, catálogo y PDP, y rutas autenticadas para limitar regresiones y permitir pruebas verificables por etapa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial reciente cubre la caché e invalidación que hacen crítica esta decisión de compatibilidad.",
+    "reason": "Su historial conecta el layout, locale y promo strip, las superficies más sensibles de la migración.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-10T06:10:47.015Z",
-    "mainSha": "4e021bfed18dc4d7e93e41248e81596ec4f72df2"
+    "reviewedAt": "2026-08-10T08:55:34.375Z",
+    "mainSha": "e919e1c04445b0e73e426092d7ddad739c7fc6e3"
   }
 }
