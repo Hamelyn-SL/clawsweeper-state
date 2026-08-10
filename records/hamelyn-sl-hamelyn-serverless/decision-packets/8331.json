@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T07:47:47.145Z",
+  "updatedAt": "2026-08-10T07:40:53Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8331,
+    "title": "[BL] chore: log per-item BL entries once per server instance",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331",
+    "state": "open",
+    "labels": [
+      "size/L",
+      "business-logic",
+      "P1",
+      "merge-risk: 🚨 other"
+    ],
+    "createdAt": "2026-08-10T06:54:57Z",
+    "updatedAt": "2026-08-10T07:40:53Z",
+    "headSha": "9ea4244d25a5d690e6572d6a17c4a57aa525e714"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe `bl_invocations.count` seguir siendo una métrica de invocaciones, o se acepta que las reglas migradas representen únicamente presencia por instancia?",
+  "rationale": "El código, el dashboard y la guía actual prometen invocaciones; adoptar una semántica mixta exige decidir qué debe medir la telemetría antes de escoger una reparación.",
+  "options": [
+    {
+      "title": "Preservar invocaciones",
+      "body": "Mantener `logBlEntry` en un límite por request o flujo y evitar emisores por elemento, conservando el significado actual del dashboard.",
+      "recommended": true
+    },
+    {
+      "title": "Versionar la telemetría",
+      "body": "Añadir una cardinalidad explícita al evento, migrar la tabla y adaptar API, UI y documentación para no mezclar conteos de invocaciones e instancias.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preservar invocaciones",
+    "body": "Mantener `logBlEntry` en un límite por request o flujo y evitar emisores por elemento, conservando el significado actual del dashboard.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Conoce el objetivo de instrumentación BL y el cambio de cardinalidad propuesto.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8331.md",
+    "reviewedAt": "2026-08-10T07:47:47.145Z",
+    "mainSha": "e919e1c04445b0e73e426092d7ddad739c7fc6e3"
+  }
+}
