@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T09:28:30.455Z",
-  "updatedAt": "2026-08-10T09:15:44Z",
+  "generatedAt": "2026-08-10T11:48:27.685Z",
+  "updatedAt": "2026-08-10T11:41:16Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,42 +11,46 @@
     "state": "open",
     "labels": [
       "size/L",
-      "P2"
+      "P2",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-08T22:14:54Z",
-    "updatedAt": "2026-08-10T09:15:44Z",
-    "headSha": "74d54f16d050ce4a07f859a7696ee81bd99b0107"
+    "updatedAt": "2026-08-10T11:41:16Z",
+    "headSha": "2487c60739058ff80f5d8adf11e1cb9f9389e565"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se mantiene el TTL de 240 segundos reactivado para home y categorías como paridad con el ISR declarado anteriormente?",
-  "rationale": "La migración vuelve efectivo un valor que antes quedaba anulado por el layout dinámico; elegir otra frescura es una decisión de producto y SEO, no una reparación mecánica.",
+  "question": "¿Debe Ecommerce seguir admitiendo arranques sin `NEXT_PUBLIC_AUTH0_BASE_URL_ECOMMERCE`, o pasa a requerirla antes de compilar rutas Cache Components?",
+  "rationale": "La rama convierte un fallback existente de host en un fallo de build para páginas cacheadas; elegir compatibilidad u obligatoriedad es una política de despliegue, no una reparación mecánica aislada.",
   "options": [
     {
-      "title": "Mantener 240 segundos",
-      "body": "Conserva la paridad con el `revalidate` histórico y limita este PR a hacer efectiva la estrategia ya declarada.",
+      "title": "Preservar el fallback",
+      "body": "Sacar la lectura por cabeceras de las funciones cacheadas y validar tanto el modo por variable como el modo por host.",
       "recommended": true
     },
     {
-      "title": "Ajustar la frescura ahora",
-      "body": "Define un TTL distinto con la justificación de producto y SEO correspondiente antes de revisar el rendimiento final.",
+      "title": "Hacer obligatoria la variable",
+      "body": "Declarar la variable como requisito de build, añadir validación temprana y un plan de migración para despliegues sin ella.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener 240 segundos",
-    "body": "Conserva la paridad con el `revalidate` histórico y limita este PR a hacer efectiva la estrategia ya declarada.",
+    "title": "Preservar el fallback",
+    "body": "Sacar la lectura por cabeceras de las funciones cacheadas y validar tanto el modo por variable como el modo por host.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Planteó expresamente la duda sobre el tiempo de revalidación durante la revisión.",
+    "reason": "Su revisión previa cuestionó los límites de caché y puede calibrar el contrato de despliegue con el área de Ecommerce.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8316.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8316#issuecomment-5228528612",
-    "reviewedAt": "2026-08-10T09:28:30.455Z",
-    "mainSha": "6ac937c2e7470419afb86e8da484e561cfec333e"
+    "reviewedAt": "2026-08-10T11:48:27.685Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
   }
 }
