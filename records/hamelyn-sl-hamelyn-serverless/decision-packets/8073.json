@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T11:36:08.254Z",
-  "updatedAt": "2026-08-06T09:56:12Z",
+  "generatedAt": "2026-08-10T11:55:06.452Z",
+  "updatedAt": "2026-08-10T11:27:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,54 +13,48 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "origin:dev",
-      "mk:alibris",
       "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ⚪ platinum",
+      "origin:dev",
+      "mk:alibris"
     ],
     "createdAt": "2026-07-29T08:24:22Z",
-    "updatedAt": "2026-08-06T09:56:12Z"
+    "updatedAt": "2026-08-10T11:27:38Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué fuente operativa debe considerarse autoritativa para confirmar que Alibris aplicó un fichero como `PURGE`, y se puede consultar de forma repetible?",
-  "rationale": "El repositorio sólo observa la transferencia FTPS; elegir entre consulta remota, reconciliación diferida o cambio de formato requiere acceso y criterio operativo del canal.",
+  "question": "¿Debe adoptarse el feed incremental de bajas como mitigación operativa mientras se conserva el purge diario, o debe exigirse primero una confirmación remota autoritativa del purge?",
+  "rationale": "El repositorio no puede observar hoy cómo Alibris interpreta el fichero remoto, y la alternativa incrementa la cadencia y el comportamiento operativo del canal.",
   "options": [
     {
-      "title": "Confirmar el historial remoto",
-      "body": "Recopilar el resultado de Seller Hub/AUS del fichero del 28 de julio, incluida la acción aplicada y cualquier error de procesamiento.",
+      "title": "Validar y reparar el feed incremental",
+      "body": "Resolver el conflicto del PR, probar una baja real en Seller Hub y conservar el purge diario como reconciliación.",
       "recommended": true
     },
     {
-      "title": "Definir una reconciliación diferida",
-      "body": "Si no existe un acuse consultable, acordar una métrica externa y su ventana de confirmación antes de cambiar el export.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar el límite actual",
-      "body": "Mantener la observabilidad de transporte y documentar que el canal no ofrece confirmación remota verificable.",
+      "title": "Investigar primero el purge remoto",
+      "body": "Obtener el historial autoritativo de Alibris para el fichero original antes de cambiar la estrategia de retirada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar el historial remoto",
-    "body": "Recopilar el resultado de Seller Hub/AUS del fichero del 28 de julio, incluida la acción aplicada y cualquier error de procesamiento.",
+    "title": "Validar y reparar el feed incremental",
+    "body": "Resolver el conflicto del PR, probar una baja real en Seller Hub y conservar el purge diario como reconciliación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y la decisión depende de acceso y operación del canal Alibris.",
-    "confidence": "medium"
+    "reason": "Es el asignado actual y ha reunido la implementación candidata y la evidencia operativa del canal.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8073.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8073#issuecomment-5115369962",
-    "reviewedAt": "2026-08-06T11:36:08.254Z",
-    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
+    "reviewedAt": "2026-08-10T11:55:06.452Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
   }
 }
