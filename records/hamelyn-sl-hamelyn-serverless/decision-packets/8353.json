@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T11:27:09.669Z",
+  "updatedAt": "2026-08-10T11:20:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8353,
+    "title": "Bifrost · Montar el PC puente en sala de servidores (Tailscale Standard)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8353",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:queued",
+      "P2"
+    ],
+    "createdAt": "2026-08-10T10:38:52Z",
+    "updatedAt": "2026-08-10T11:20:42Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿Se autoriza al equipo de infraestructura a desplegar Bifrost como único punto de acceso externo con la cuenta Tailscale indicada, incluyendo el modelo de custodia y recuperación de credenciales?",
+  "rationale": "La issue fija una frontera de acceso remoto y requiere acciones sobre hardware, red y cuentas que no pueden validarse ni revertirse mediante un PR del monorepo.",
+  "options": [
+    {
+      "title": "Confirmar el perímetro centralizado",
+      "body": "Autorizar Bifrost como único equipo accesible desde fuera y registrar fuera del repositorio el inventario, los responsables y la recuperación de credenciales.",
+      "recommended": true
+    },
+    {
+      "title": "Permitir acceso directo por puesto",
+      "body": "Ampliar explícitamente el epic y aprobar credenciales, inventario y controles separados para cada puesto antes de habilitar esa superficie adicional.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el despliegue",
+      "body": "Mantener la issue abierta hasta disponer de hardware, responsables y un procedimiento de acceso revisado.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Confirmar el perímetro centralizado",
+    "body": "Autorizar Bifrost como único equipo accesible desde fuera y registrar fuera del repositorio el inventario, los responsables y la recuperación de credenciales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La issue atribuye a Javier la decisión del plan y la cuenta de Tailscale, que determina el perímetro de acceso.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8353.md",
+    "reviewedAt": "2026-08-10T11:27:09.669Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+  }
+}
