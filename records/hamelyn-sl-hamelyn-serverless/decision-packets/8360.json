@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T18:40:01.348Z",
-  "updatedAt": "2026-08-10T18:29:29Z",
+  "generatedAt": "2026-08-10T19:46:19.470Z",
+  "updatedAt": "2026-08-10T19:27:19Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:queued",
-      "P2",
+      "triage:needs-info",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T18:29:06Z",
-    "updatedAt": "2026-08-10T18:29:29Z"
+    "updatedAt": "2026-08-10T19:27:19Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cuál es la ruta persistente oficial y cuáles son las columnas y el resumen exactos que deben ser estables para todas las entregas B2B?",
-  "rationale": "La solicitud fija el resultado, pero deja sin concretar decisiones operativas que no se pueden inferir con seguridad de la skill actual ni del repositorio.",
+  "question": "¿Debe aprobarse el contrato completo propuesto, incluidas las reglas prospectivas de orden de picking y el límite de 350 unidades, o limitar esta entrega a los CSV y el resumen de Slack?",
+  "rationale": "La documentación actual no establece estas decisiones y el PR mezcla el contrato de entrega solicitado con nuevas restricciones operativas de picking.",
   "options": [
     {
-      "title": "Aprobar un contrato cerrado",
-      "body": "Acordar ruta, columnas permitidas y plantilla de Slack; después el cambio queda acotado a la skill existente.",
+      "title": "Acotar al contrato de entrega",
+      "body": "Aprobar ruta, CSV, cabeceras y resumen de Slack, y mover las restricciones de picking a una propuesta separada.",
       "recommended": true
     },
     {
-      "title": "Mantener flexibilidad por pedido",
-      "body": "Conservar directorios y formatos variables, documentando sólo recomendaciones generales para los agentes.",
+      "title": "Aprobar el alcance completo",
+      "body": "Aceptar también el orden por `drawerPositionIndex` y el límite de 350 como política operativa permanente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar un contrato cerrado",
-    "body": "Acordar ruta, columnas permitidas y plantilla de Slack; después el cambio queda acotado a la skill existente.",
+    "title": "Acotar al contrato de entrega",
+    "body": "Aprobar ruta, CSV, cabeceras y resumen de Slack, y mover las restricciones de picking a una propuesta separada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el autor de la skill existente y del requisito operativo planteado.",
+    "reason": "Es quien ha concretado el contrato en la issue y en el PR vinculado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8360.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8360#issuecomment-5244459104",
-    "reviewedAt": "2026-08-10T18:40:01.348Z",
-    "mainSha": "a0d9558917d6831bfb9b76e368738c46b86d6cce"
+    "reviewedAt": "2026-08-10T19:46:19.470Z",
+    "mainSha": "5f758c5086f3c4d2d6f8b3127342c65743759231"
   }
 }
