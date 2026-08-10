@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T21:56:05.083Z",
-  "updatedAt": "2026-08-10T20:41:50Z",
+  "generatedAt": "2026-08-10T22:01:42.563Z",
+  "updatedAt": "2026-08-10T21:57:22Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,43 +23,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-10T20:00:17Z",
-    "updatedAt": "2026-08-10T20:41:50Z"
+    "updatedAt": "2026-08-10T21:57:22Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Los productos en estado Nuevo deben tener envío gratis sin umbral en todas las tiendas, o debe comunicarse el recargo que el checkout aún calcula bajo 15 unidades por proveedor?",
-  "rationale": "El comentario propone ocultar el texto, mientras `checkout-server-pricing.ts` mantiene una condición económica para esos productos; elegir entre ambas lecturas altera la promesa de precio al comprador.",
+  "question": "¿Debe mantenerse y explicarse el recargo de productos Nuevos, o debe retirarse junto con el aviso de la ficha?",
+  "rationale": "El comentario pide eliminar el mensaje, pero código, pruebas y especificación siguen aplicando un recargo bajo el umbral; no es una decisión que pueda inferirse solo desde la interfaz.",
   "options": [
     {
-      "title": "Envío siempre incluido",
-      "body": "Eliminar el aviso de ambas fichas y retirar o absorber coherentemente el recargo de productos Nuevos en el flujo de checkout.",
-      "recommended": false
-    },
-    {
-      "title": "Comunicar la condición real",
-      "body": "Mantener un aviso dinámico, con el umbral y la moneda obtenidos del mismo cálculo que usa el checkout.",
-      "recommended": false
-    },
-    {
-      "title": "Confirmar la política antes de cambiar copy",
-      "body": "Pausar la corrección visual hasta que ecommerce confirme cuál de los dos comportamientos es la oferta vigente.",
+      "title": "Confirmar el recargo y reformular el aviso",
+      "body": "Mantener una comunicación localizada y veraz sobre el coste por proveedor, sin fijar un importe o moneda incorrectos.",
       "recommended": true
+    },
+    {
+      "title": "Eliminar la regla y el aviso",
+      "body": "Retirar el recargo por proveedor de carrito, checkout y servidor, y después eliminar las traducciones y el bloque visual.",
+      "recommended": false
+    },
+    {
+      "title": "Ocultar solo el aviso temporalmente",
+      "body": "Eliminar el texto de la ficha mientras se decide la política, asumiendo que el checkout seguirá mostrando el coste aplicable.",
+      "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar la política antes de cambiar copy",
-    "body": "Pausar la corrección visual hasta que ecommerce confirme cuál de los dos comportamientos es la oferta vigente.",
+    "title": "Confirmar el recargo y reformular el aviso",
+    "body": "Mantener una comunicación localizada y veraz sobre el coste por proveedor, sin fijar un importe o moneda incorrectos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente conecta la promoción de envío y las variantes de ficha que renderizan el aviso.",
+    "reason": "Es la persona con mayor historial reciente en la interacción entre la promoción y las superficies de ecommerce afectadas.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8363.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8363#issuecomment-5245478033",
-    "reviewedAt": "2026-08-10T21:56:05.083Z",
+    "reviewedAt": "2026-08-10T22:01:42.563Z",
     "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
   }
 }
