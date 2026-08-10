@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T22:10:57.915Z",
+  "generatedAt": "2026-08-10T22:17:32.288Z",
   "updatedAt": "2026-08-10T21:13:50Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,48 +15,47 @@
       "reporter:jesus",
       "feature",
       "triage:blocked",
-      "origin:panel",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
     "updatedAt": "2026-08-10T21:13:50Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué nomenclaturas, columnas —incluidos nombre y orden— y secuencia de carga aprueba Jesús para el piloto de MX?",
-  "rationale": "El código puede ampliarse, pero esos datos definen el contrato externo y los límites de carga; no deben inferirse desde el repositorio.",
+  "question": "¿Aprueba Jesús el diseño de fichero para el piloto MX —nomenclaturas, columnas con su orden y secuencia de carga— antes de programar la regeneración?",
+  "rationale": "El código puede extraer los datos, pero la aceptación del formato y del orden de subida pertenece al contrato operativo de Merchant Center y no puede deducirse de forma segura.",
   "options": [
     {
-      "title": "Aprobar el diseño actual para MX",
-      "body": "Confirmar el Excel y ejecutar el piloto con ese contrato antes de extenderlo a otros países.",
+      "title": "Aprobar el diseño de MX",
+      "body": "Validar los tres puntos del fichero y permitir que Miguel ejecute el piloto controlado antes de ampliar países.",
       "recommended": true
     },
     {
       "title": "Revisar el diseño antes del piloto",
-      "body": "Devolver un contrato actualizado de nombres, columnas y orden para implementarlo y validarlo primero en MX.",
+      "body": "Devolver cambios concretos sobre nombres, columnas u orden para que la implementación se ajuste al contrato definitivo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el diseño actual para MX",
-    "body": "Confirmar el Excel y ejecutar el piloto con ese contrato antes de extenderlo a otros países.",
+    "title": "Aprobar el diseño de MX",
+    "body": "Validar los tres puntos del fichero y permitir que Miguel ejecute el piloto controlado antes de ampliar países.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JesusRamosLopez",
-    "reason": "La discusión le identifica como quien debe validar el diseño operativo pendiente.",
+    "reason": "La discusión reciente le asigna explícitamente la validación pendiente del diseño de fichero.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-08-10T22:10:57.915Z",
+    "reviewedAt": "2026-08-10T22:17:32.288Z",
     "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
   }
 }

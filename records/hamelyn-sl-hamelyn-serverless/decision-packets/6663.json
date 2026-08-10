@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:26:56.188Z",
-  "updatedAt": "2026-08-04T23:11:50Z",
+  "generatedAt": "2026-08-10T22:17:25.625Z",
+  "updatedAt": "2026-08-10T21:44:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,48 +12,50 @@
     "labels": [
       "reporter:pablo",
       "feature",
-      "triage:done",
-      "app:data",
-      "origin:dev",
-      "P2",
+      "triage:no-change",
       "impact:other",
+      "P2",
       "issue-rating: ➖ n/a",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-06-25T07:29:25Z",
-    "updatedAt": "2026-08-04T23:11:50Z"
+    "updatedAt": "2026-08-10T21:44:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse la fase de feeds usados con gates de frescura antes de planificar la materialización de `newData.logista` y la migración de `new-books`?",
-  "rationale": "La migración encaja con la arquitectura, pero la edad admisible del catálogo publicado y la secuencia operativa afectan al negocio y no se deducen solo del código.",
+  "question": "¿Qué garantía de frescura se exige para `mongodata.products` antes de activar BigQuery como fuente predeterminada de los feeds usados?",
+  "rationale": "La PR vinculada declara hasta 24 horas de retraso de metadatos, mientras la iniciativa de reducción de carga establece una tolerancia de hasta una hora para estas migraciones.",
   "options": [
     {
-      "title": "Aprobar por fases con frescura",
-      "body": "Exigir gates para productos y stocks en la primera fase, medir la paridad publicada y después ampliar la materialización para `new-books`.",
+      "title": "Exigir productos frescos",
+      "body": "Añadir un gate o marcador de frescura para productos y repetir la comparación completa antes de activar BigQuery por defecto.",
       "recommended": true
     },
     {
-      "title": "Aceptar el snapshot diario",
-      "body": "Permitir el desfase de productos en la primera fase, manteniendo MongoDB como rollback documentado antes de abordar libros nuevos.",
+      "title": "Aceptar el retraso diario",
+      "body": "Aprobar explícitamente el retraso de hasta 24 horas y documentar sus efectos sobre elegibilidad, idioma, títulos e imágenes.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener Mongo para metadatos",
+      "body": "Usar BigQuery solo para disponibilidad hasta disponer de una materialización de productos con la frescura requerida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar por fases con frescura",
-    "body": "Exigir gates para productos y stocks en la primera fase, medir la paridad publicada y después ampliar la materialización para `new-books`.",
+    "title": "Exigir productos frescos",
+    "body": "Añadir un gate o marcador de frescura para productos y repetir la comparación completa antes de activar BigQuery por defecto.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Concentró el análisis de la iniciativa de reducción de carga y aparece en el historial del flujo vigente.",
-    "confidence": "medium"
+    "reason": "Ha definido el enfoque por fases y el seguimiento técnico de la migración y de la PR abierta.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6663.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6663#issuecomment-4971283237",
-    "reviewedAt": "2026-08-04T23:26:56.188Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-10T22:17:25.625Z",
+    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
   }
 }
