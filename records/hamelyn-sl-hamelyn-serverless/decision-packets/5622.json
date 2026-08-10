@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T13:20:26.877Z",
+  "generatedAt": "2026-08-10T13:37:09.159Z",
   "updatedAt": "2026-08-10T13:12:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -15,53 +15,48 @@
       "triage:needs-info",
       "triage:confirmed-live",
       "area:cron-reliability",
-      "origin:dev",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond",
+      "origin:dev"
     ],
     "createdAt": "2026-05-01T08:13:47Z",
     "updatedAt": "2026-08-10T13:12:42Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se acepta como contrato base HTTP 500 para fallo total y HTTP 200 con `partial_failure` para rechazos parciales, dejando las excepciones únicamente como política explícita por ruta?",
-  "rationale": "El código actual no define esta semántica y afecta a numerosas rutas; la decisión determina qué alertas, integraciones y tolerancias de negocio se mantienen tras el cambio.",
+  "question": "¿Se acepta HTTP 500 como comportamiento por defecto para cualquier cron sin métodos cumplidos, dejando `failurePolicy` solo para excepciones explícitas por ruta?",
+  "rationale": "El cambio afecta a numerosas rutas compartidas y puede transformar fallos antes tolerados en alertas y reintentos operativos.",
   "options": [
     {
-      "title": "Adoptar la fase compatible",
-      "body": "Aceptar el contrato de la PR: señal estructurada siempre, 500 sólo cuando ninguna fase se completa y excepciones declaradas por ruta.",
+      "title": "Aceptar el default 500",
+      "body": "Fusionar la política propuesta y añadir `failurePolicy: { failedHttpStatus: 200 }` únicamente donde el negocio tolere el fallo total.",
       "recommended": true
     },
     {
-      "title": "Endurecer parciales seleccionados",
-      "body": "Definir ahora rutas o fases concretas cuyos rechazos parciales deban responder 207 o 5xx y exigir su cobertura antes de fusionar.",
-      "recommended": false
-    },
-    {
-      "title": "Separar política y telemetría",
-      "body": "Fusionar sólo la telemetría estructurada y posponer cualquier cambio HTTP hasta acordar una matriz completa por ruta.",
+      "title": "Mantener 200 temporalmente",
+      "body": "Conservar HTTP 200 para fallo total mientras se inventarían rutas, usando primero la señal estructurada para decidir la política definitiva.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar la fase compatible",
-    "body": "Aceptar el contrato de la PR: señal estructurada siempre, 500 sólo cuando ninguna fase se completa y excepciones declaradas por ruta.",
+    "title": "Aceptar el default 500",
+    "body": "Fusionar la política propuesta y añadir `failurePolicy: { failedHttpStatus: 200 }` únicamente donde el negocio tolere el fallo total.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Es el asignado actual y el autor de la implementación candidata que materializa las alternativas de contrato.",
+    "reason": "Es la persona asignada y responsable de la implementación abierta que materializa esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/5622.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/5622#issuecomment-4909652118",
-    "reviewedAt": "2026-08-10T13:20:26.877Z",
+    "reviewedAt": "2026-08-10T13:37:09.159Z",
     "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
   }
 }
