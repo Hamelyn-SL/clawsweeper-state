@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-10T06:59:45.996Z",
+  "generatedAt": "2026-08-10T12:56:22.782Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 2,
-    "openItemsSeen": 102
+    "openItemsSeen": 110
   },
   "counts": {
-    "itemRecords": 97,
-    "closedRecords": 919,
-    "missingOpen": 5,
+    "itemRecords": 108,
+    "closedRecords": 934,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 4,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,52 +40,15 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8328,
+        "number": 8347,
         "kind": "pull_request",
         "title": "Deploy to Prod",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:30:20Z",
-        "updatedAt": "2026-08-10T06:35:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8329,
-        "kind": "pull_request",
-        "title": "ci: solo majors en las PRs de deps por familia",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:44:57Z",
-        "updatedAt": "2026-08-10T06:50:38Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8330,
-        "kind": "pull_request",
-        "title": "chore: deps semanales combinadas (minors + majors ui/service-sdks)",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:52:00Z",
-        "updatedAt": "2026-08-10T06:56:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8331,
-        "kind": "pull_request",
-        "title": "[BL] chore: log per-item BL entries once per server instance",
-        "labels": [
-          "size/L",
-          "business-logic"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:54:57Z",
-        "updatedAt": "2026-08-10T06:58:43Z",
+        "createdAt": "2026-08-10T09:36:09Z",
+        "updatedAt": "2026-08-10T12:13:28Z",
         "missingReason": "recently_created"
       }
     ],
@@ -112,52 +75,15 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8328,
+        "number": 8347,
         "kind": "pull_request",
         "title": "Deploy to Prod",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:30:20Z",
-        "updatedAt": "2026-08-10T06:35:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8329,
-        "kind": "pull_request",
-        "title": "ci: solo majors en las PRs de deps por familia",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:44:57Z",
-        "updatedAt": "2026-08-10T06:50:38Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8330,
-        "kind": "pull_request",
-        "title": "chore: deps semanales combinadas (minors + majors ui/service-sdks)",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:52:00Z",
-        "updatedAt": "2026-08-10T06:56:20Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8331,
-        "kind": "pull_request",
-        "title": "[BL] chore: log per-item BL entries once per server instance",
-        "labels": [
-          "size/L",
-          "business-logic"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-10T06:54:57Z",
-        "updatedAt": "2026-08-10T06:58:43Z",
+        "createdAt": "2026-08-10T09:36:09Z",
+        "updatedAt": "2026-08-10T12:13:28Z",
         "missingReason": "recently_created"
       }
     ],
