@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-10T04:37:32.726Z",
+  "generated_at": "2026-08-10T05:10:17.374Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-10T01:37:31.395Z",
+  "since": "2026-08-10T02:10:14.726Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 0,
-  "commands_seen": 0,
+  "scanned_comments": 12,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8324:5236067837:2026-08-10T05:00:10Z:automerge",
+      "comment_id": "5236067837",
+      "comment_version_key": "5236067837:2026-08-10T05:00:10Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8324#issuecomment-5236067837",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8324,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-10T05:00:10Z",
+      "comment_updated_at": "2026-08-10T05:00:10Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR actualiza ocho manifiestos de dependencias y regenera `pnpm-lock.yaml`, incluyendo actualizaciones de autenticación, pagos, renderizado y enrutado.\n\nReproducibility: Sí, por código: cambiar la resolución de Admin a `react-router` v8 junto a `react-router-dom` v7 reproduce la desalineación que el commit `3d7337d` corrigió tras un bloqueo observable.",
+      "review_followup": "- [P1] Hay una reparación mecánica y acotada para conservar el contrato de routing; la prueba de comportamiento real debe completarse después antes de fusionar.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8324 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 1331,
+    "total_ms": 2648,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1330
+        "ms": 1434
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 1210
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
