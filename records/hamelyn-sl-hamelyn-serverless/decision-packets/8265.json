@@ -13,12 +13,13 @@
       "app:supply",
       "feature",
       "triage:done",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "P2",
       "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a"
+      "issue-rating: ➖ n/a",
+      "P2",
+      "impact:other",
+      "clawsweeper:needs-maintainer-review"
     ],
     "createdAt": "2026-08-05T13:02:06Z",
     "updatedAt": "2026-08-10T10:00:49Z"
