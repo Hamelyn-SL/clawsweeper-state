@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-09T23:26:20.208Z",
-  "updatedAt": "2026-08-09T23:18:57Z",
+  "generatedAt": "2026-08-10T20:32:28.509Z",
+  "updatedAt": "2026-08-10T20:22:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P1",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-04T05:59:29Z",
-    "updatedAt": "2026-08-09T23:18:57Z",
+    "updatedAt": "2026-08-10T20:22:35Z",
     "headSha": "7ed5060eab9a7e23f7fb77ae394b472382ba2b77"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Google Merchant aceptar hasta 24 horas de retraso en productos, o debe exigirse frescura horaria antes de activar BigQuery por defecto?",
-  "rationale": "La rama reconoce el desfase diario, pero el objetivo relacionado describe una tolerancia de hasta una hora y este cambio publica datos de catálogo hacia Google Merchant.",
+  "question": "¿Se acepta que los feeds usados publiquen metadatos de `mongodata.products` con hasta 24 horas de retraso, o deben esperar una materialización diaria fresca antes de activar BigQuery por defecto?",
+  "rationale": "La rama declara esta divergencia como aceptada, pero la iniciativa relacionada establece una tolerancia de frescura de hasta una hora; resolverlo cambia el contrato operativo del feed.",
   "options": [
     {
-      "title": "Exigir frescura horaria",
-      "body": "Materializar productos cada hora, añadir un gate de tabla y mantener BigQuery como fuente predeterminada.",
+      "title": "Exigir productos frescos",
+      "body": "Añadir un gate de tabla o marcador para `mongodata.products`, definir su cadencia y repetir la comparación completa antes de predeterminar BigQuery.",
       "recommended": true
     },
     {
-      "title": "Aceptar el snapshot diario",
-      "body": "Fusionar con una aceptación explícita de que los cambios de producto pueden aparecer hasta un día después en Merchant.",
+      "title": "Aceptar el retraso diario",
+      "body": "Documentar la excepción de 24 horas, sus campos afectados y la aprobación explícita del responsable del feed antes del merge.",
       "recommended": false
     },
     {
-      "title": "Conservar Mongo por defecto",
-      "body": "Mantener BigQuery como opción manual hasta que productos disponga de la cadencia y garantía necesarias.",
+      "title": "Mantener Mongo para metadatos",
+      "body": "Usar BigQuery solo para disponibilidad pesada hasta que exista una materialización de productos compatible con la frescura requerida.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir frescura horaria",
-    "body": "Materializar productos cada hora, añadir un gate de tabla y mantener BigQuery como fuente predeterminada.",
+    "title": "Exigir productos frescos",
+    "body": "Añadir un gate de tabla o marcador para `mongodata.products`, definir su cadencia y repetir la comparación completa antes de predeterminar BigQuery.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es el principal autor histórico del workflow de Merchant y puede coordinar el contrato de frescura con Data Platform.",
+    "reason": "Está conectado con la iniciativa de reducción de carga y fue asignado como revisor con experiencia directa en este flujo.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8194.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8194#issuecomment-5175801557",
-    "reviewedAt": "2026-08-09T23:26:20.208Z",
-    "mainSha": "6f3f72f208e4199fd32535584b56a8089170335d"
+    "reviewedAt": "2026-08-10T20:32:28.509Z",
+    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T09:58:29.466Z",
-  "updatedAt": "2026-08-06T09:25:28Z",
+  "generatedAt": "2026-08-10T20:31:02.191Z",
+  "updatedAt": "2026-08-10T20:22:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,51 @@
     "labels": [
       "feature",
       "reporter:javier",
-      "triage:no-change",
-      "app:data",
-      "origin:dev",
+      "triage:queued",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-08T15:18:34Z",
-    "updatedAt": "2026-08-06T09:25:28Z"
+    "updatedAt": "2026-08-10T20:22:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe priorizarse cerrar Google Merchant mediante la PR abierta antes de planificar el corte independiente del catálogo activo de distribuidores y las conciliaciones marketplace?",
-  "rationale": "La issue es paraguas, las rutas pendientes tienen tolerancias de frescura distintas y ya existe una implementación parcial abierta que no conviene duplicar.",
+  "question": "¿Debe Merchant exigir frescura horaria para `mongodata.products`, o se acepta explícitamente el desfase diario antes de fusionar la PR de cierre?",
+  "rationale": "La candidatura usa productos materializados diariamente, pero la aceptación inicial del programa sitúa la tolerancia en una hora; no es seguro escoger ese contrato sin confirmación humana.",
   "options": [
     {
-      "title": "Completar Merchant primero",
-      "body": "Revisar e integrar la fase abierta y definir explícitamente la fase `new-books` antes de abrir otro corte grande.",
+      "title": "Exigir frescura horaria",
+      "body": "Materializar productos con la cadencia acordada y añadir un gate antes de usar BigQuery por defecto.",
       "recommended": true
     },
     {
-      "title": "Abrir catálogo en paralelo",
-      "body": "Asignar un owner y un corte separado para el export de distribuidores con comparación BigQuery-Mongo y rollback.",
+      "title": "Aceptar snapshot diario",
+      "body": "Fusionar tras documentar que altas, bajas y metadatos de producto pueden retrasarse hasta 24 horas.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener Mongo por defecto",
+      "body": "Conservar BigQuery como rollback manual hasta que la plataforma garantice la frescura necesaria.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Completar Merchant primero",
-    "body": "Revisar e integrar la fase abierta y definir explícitamente la fase `new-books` antes de abrir otro corte grande.",
+    "title": "Exigir frescura horaria",
+    "body": "Materializar productos con la cadencia acordada y añadir un gate antes de usar BigQuery por defecto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial concentra la infraestructura común de frescura, dispatch y migraciones BigQuery ya aterrizadas.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial en Merchant y su comentario del 10 de agosto conectan directamente con el contrato de cierre.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7250.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7250#issuecomment-4916447326",
-    "reviewedAt": "2026-08-06T09:58:29.466Z",
-    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
+    "reviewedAt": "2026-08-10T20:31:02.191Z",
+    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
   }
 }

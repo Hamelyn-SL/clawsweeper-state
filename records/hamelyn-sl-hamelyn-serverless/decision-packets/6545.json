@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T07:58:16.624Z",
-  "updatedAt": "2026-08-06T07:54:23Z",
+  "generatedAt": "2026-08-10T20:31:40.529Z",
+  "updatedAt": "2026-08-10T20:24:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,49 +14,45 @@
       "app:ecommerce",
       "reporter:jesus",
       "feature",
-      "triage:no-change",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "origin:panel",
+      "triage:queued",
       "P1",
       "impact:other",
+      "clawsweeper:source-repro",
       "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "origin:panel"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-08-06T07:54:23Z"
+    "updatedAt": "2026-08-10T20:24:15Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué contrato exacto de columnas, nombres y orden de carga valida Jesús para el piloto de MX, y cuándo puede extenderse al resto de países?",
-  "rationale": "El código permite localizar los huecos, pero el orden por país, la nomenclatura adjunta y la aceptación comercial del nuevo feed requieren confirmación humana antes de publicar datos.",
+  "question": "¿Qué nomenclaturas, columnas y orden de carga debe usar de forma definitiva el piloto de MX antes de aplicar el mismo contrato al resto de países?",
+  "rationale": "El código puede proyectar más datos, pero no puede inferir de forma segura el formato operativo y los límites por país que negocio debe aceptar.",
   "options": [
     {
-      "title": "Validar MX y desplegar por fases",
-      "body": "Jesús aprueba el fichero de MX y sus recuentos de muestra; después se extiende país a país respetando el orden validado.",
+      "title": "Validar el contrato de MX",
+      "body": "Jesús confirma nomenclaturas, columnas y orden; Miguel implementa y verifica primero la carga controlada de MX.",
       "recommended": true
     },
     {
-      "title": "Definir primero el contrato global",
-      "body": "Se cierra un único contrato para todos los países antes de implementar el piloto y la regeneración completa.",
+      "title": "Reducir el alcance inicial",
+      "body": "Se aprueba solo una tipología o idioma de MX para validar el mapper antes de definir el resto de archivos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar MX y desplegar por fases",
-    "body": "Jesús aprueba el fichero de MX y sus recuentos de muestra; después se extiende país a país respetando el orden validado.",
+    "title": "Validar el contrato de MX",
+    "body": "Jesús confirma nomenclaturas, columnas y orden; Miguel implementa y verifica primero la carga controlada de MX.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "jesus",
-    "reason": "El reporte y los comentarios recientes le sitúan como la persona que debe confirmar el nuevo diseño de fichero.",
+    "person": "MiguelHamelyn",
+    "reason": "Figura asignado y ya condujo la separación técnica de MX; puede coordinar la implementación tras la validación de negocio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-08-06T07:58:16.624Z",
-    "mainSha": "5012636b26b7d10c3aa3ae779d947b74e38d6bb5"
+    "reviewedAt": "2026-08-10T20:31:40.529Z",
+    "mainSha": "dccdc27e3972f7571ec54f323d2183dbfdc2f74b"
   }
 }
