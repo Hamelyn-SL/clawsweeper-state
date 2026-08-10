@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-10T00:57:08.503Z",
+  "generatedAt": "2026-08-10T06:59:45.996Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
-    "pagesScanned": 1,
-    "openItemsSeen": 97
+    "pagesScanned": 2,
+    "openItemsSeen": 102
   },
   "counts": {
-    "itemRecords": 95,
-    "closedRecords": 915,
-    "missingOpen": 2,
-    "missingEligibleOpen": 1,
+    "itemRecords": 97,
+    "closedRecords": 919,
+    "missingOpen": 5,
+    "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 0,
+    "missingRecentOpen": 4,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,32 +40,56 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8308,
+        "number": 8328,
         "kind": "pull_request",
         "title": "Deploy to Prod",
         "labels": [
-          "size/XL"
+          "size/M"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-07T10:27:25Z",
-        "updatedAt": "2026-08-09T21:08:19Z",
-        "missingReason": "eligible"
-      }
-    ],
-    "missingEligibleOpen": [
+        "createdAt": "2026-08-10T06:30:20Z",
+        "updatedAt": "2026-08-10T06:35:20Z",
+        "missingReason": "recently_created"
+      },
       {
-        "number": 8308,
+        "number": 8329,
         "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "title": "ci: solo majors en las PRs de deps por familia",
         "labels": [
-          "size/XL"
+          "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-07T10:27:25Z",
-        "updatedAt": "2026-08-09T21:08:19Z",
-        "missingReason": "eligible"
+        "createdAt": "2026-08-10T06:44:57Z",
+        "updatedAt": "2026-08-10T06:50:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8330,
+        "kind": "pull_request",
+        "title": "chore: deps semanales combinadas (minors + majors ui/service-sdks)",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T06:52:00Z",
+        "updatedAt": "2026-08-10T06:56:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8331,
+        "kind": "pull_request",
+        "title": "[BL] chore: log per-item BL entries once per server instance",
+        "labels": [
+          "size/L",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T06:54:57Z",
+        "updatedAt": "2026-08-10T06:58:43Z",
+        "missingReason": "recently_created"
       }
     ],
+    "missingEligibleOpen": [],
     "missingMaintainerOpen": [],
     "missingProtectedOpen": [
       {
@@ -86,7 +110,57 @@
         "missingReason": "protected_label"
       }
     ],
-    "missingRecentOpen": [],
+    "missingRecentOpen": [
+      {
+        "number": 8328,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T06:30:20Z",
+        "updatedAt": "2026-08-10T06:35:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8329,
+        "kind": "pull_request",
+        "title": "ci: solo majors en las PRs de deps por familia",
+        "labels": [
+          "size/L"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T06:44:57Z",
+        "updatedAt": "2026-08-10T06:50:38Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8330,
+        "kind": "pull_request",
+        "title": "chore: deps semanales combinadas (minors + majors ui/service-sdks)",
+        "labels": [
+          "size/XXL"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T06:52:00Z",
+        "updatedAt": "2026-08-10T06:56:20Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8331,
+        "kind": "pull_request",
+        "title": "[BL] chore: log per-item BL entries once per server instance",
+        "labels": [
+          "size/L",
+          "business-logic"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-10T06:54:57Z",
+        "updatedAt": "2026-08-10T06:58:43Z",
+        "missingReason": "recently_created"
+      }
+    ],
     "openArchived": [],
     "staleItemRecords": [],
     "duplicateRecords": [],
