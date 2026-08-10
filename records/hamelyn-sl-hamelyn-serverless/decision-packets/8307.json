@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-10T09:52:17.493Z",
+  "updatedAt": "2026-08-10T09:30:19Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8307,
+    "title": "Error ADMIN",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8307",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:admin",
+      "triage:no-change",
+      "reporter:irenegarcia",
+      "P1",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "impact:ux-friction",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-07T10:12:51Z",
+    "updatedAt": "2026-08-10T09:30:19Z"
+  },
+  "lane": "merge_risk",
+  "priority": "P1",
+  "question": "¿Se acepta la sustitución del router interno por `HashRouter useTransitions={false}` tras una validación operativa amplia de Admin?",
+  "rationale": "La solución candidata cambia la propiedad del router en toda la aplicación y su prueba autenticada pendiente determina si el compromiso de compatibilidad es aceptable.",
+  "options": [
+    {
+      "title": "Validar e integrar la corrección global",
+      "body": "Probar Atrás, filtros, pestañas y edición sobre Next 16.3.0 y fusionar la PR si no aparecen regresiones.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la mitigación actual",
+      "body": "Conservar la redirección de cancelación y solicitar una alternativa que preserve el router interno de React Admin.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar e integrar la corrección global",
+    "body": "Probar Atrás, filtros, pestañas y edición sobre Next 16.3.0 y fusionar la PR si no aparecen regresiones.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su cambio reciente consolidó el stack de React Router y el punto de entrada que evalúa la corrección candidata.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8307.md",
+    "reviewedAt": "2026-08-10T09:52:17.493Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
+  }
+}
