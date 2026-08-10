@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T13:21:52.671Z",
-  "updatedAt": "2026-08-05T13:17:45Z",
+  "generatedAt": "2026-08-10T10:12:40.436Z",
+  "updatedAt": "2026-08-10T10:00:49Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,52 +12,46 @@
     "labels": [
       "app:supply",
       "feature",
-      "triage:done",
-      "P2",
+      "triage:queued",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-05T13:02:06Z",
-    "updatedAt": "2026-08-05T13:17:45Z"
+    "updatedAt": "2026-08-10T10:00:49Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una señal de autor ausente bloquear la compra o debe considerarse insuficiente para rechazar el producto?",
-  "rationale": "La cobertura observada no permite equiparar ausencia de enlace con bajo sell-through; decidirlo cambia la política de compra y el resultado del backtest.",
+  "question": "¿La ausencia de señal de autor o editorial debe contar como baja demanda o excluirse del criterio hasta que exista una medición fiable?",
+  "rationale": "La evidencia de triage muestra que la cobertura del cron no representa todavía la población del backtest; elegir el sesgo de rechazo es una política comercial.",
   "options": [
     {
-      "title": "No rechazar sin señal de autor",
-      "body": "Conservar la aceptación cuando falte una señal y aplicar el filtro solo con métricas realmente calculadas.",
+      "title": "Tratar señal ausente como desconocida",
+      "body": "No rechazar por autor o editorial sin ratio calculado, mientras se mantienen las señales disponibles y el interruptor apagado por defecto.",
       "recommended": true
     },
     {
-      "title": "Ampliar la cobertura primero",
-      "body": "Completar el enlace o el almacenamiento de autores para igualar la población del backtest antes de habilitar el filtro.",
-      "recommended": false
-    },
-    {
-      "title": "Aceptar la semántica conservadora",
-      "body": "Mantener la ausencia como señal de bajo sell-through y documentar el aumento deliberado de rechazos.",
+      "title": "Tratar señal ausente como baja demanda",
+      "body": "Aplicar el rechazo máximo aceptando que productos sin enlace o sincronización puedan clasificarse sin medición directa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "No rechazar sin señal de autor",
-    "body": "Conservar la aceptación cuando falte una señal y aplicar el filtro solo con métricas realmente calculadas.",
+    "title": "Tratar señal ausente como desconocida",
+    "body": "No rechazar por autor o editorial sin ratio calculado, mientras se mantienen las señales disponibles y el interruptor apagado por defecto.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es la persona con trabajo reciente tanto en el gate actual como en la implementación candidata.",
+    "person": "HamelynDev",
+    "reason": "El triage previo identificó la discrepancia de cobertura y está ligado al flujo actual de baja demanda.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8265.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8265#issuecomment-5192287822",
-    "reviewedAt": "2026-08-05T13:21:52.671Z",
-    "mainSha": "b9b2ef806d69d0253d9de6ea4e71f827ef17ac5d"
+    "reviewedAt": "2026-08-10T10:12:40.436Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
   }
 }
