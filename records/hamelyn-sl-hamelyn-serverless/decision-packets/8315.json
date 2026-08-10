@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T11:40:09.216Z",
+  "generatedAt": "2026-08-10T11:40:34.408Z",
   "updatedAt": "2026-08-10T11:34:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,34 +26,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse la migración global de Cache Components como una única entrega de gran alcance o dividirse en PRs por shell, catálogo/PDP y rutas autenticadas?",
-  "rationale": "El cambio modifica 112 archivos según la PR enlazada y combina caché, localización, navegación y disponibilidad; el corte de entrega afecta al riesgo operativo y de revisión.",
+  "question": "¿Se acepta la migración global como una única entrega, o se exige dividirla en PRs por shell/i18n, catálogo-PDP y rutas autenticadas?",
+  "rationale": "El alcance cubre rutas públicas, datos comerciales en vivo y trece storefronts; la frontera entre cacheado y dinámico requiere una decisión explícita de riesgo y entrega.",
   "options": [
     {
-      "title": "Dividir la entrega",
-      "body": "Separar shell e i18n, catálogo/PDP y rutas autenticadas para aislar regresiones de caché y localización.",
+      "title": "Dividir por fronteras de caché",
+      "body": "Aprobar entregas secuenciales con invariantes de dominio y preview real antes de ampliar la cobertura.",
       "recommended": true
     },
     {
-      "title": "Aceptar una única migración",
-      "body": "Mantener la PR completa si se exige una matriz de compatibilidad y prueba de preview para todos los dominios afectados.",
+      "title": "Aceptar una entrega única",
+      "body": "Mantener la PR actual como migración integral si se acepta su tamaño y se completa la validación de todos los storefronts.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Dividir la entrega",
-    "body": "Separar shell e i18n, catálogo/PDP y rutas autenticadas para aislar regresiones de caché y localización.",
+    "title": "Dividir por fronteras de caché",
+    "body": "Aprobar entregas secuenciales con invariantes de dominio y preview real antes de ampliar la cobertura.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "Su historial y revisión reciente cubren las rutas de promo, caché y navegación más sensibles.",
-    "confidence": "high"
+    "reason": "Su historial reciente en la promo dinámica y su revisión aprobatoria lo sitúan cerca de los límites de caché implicados.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8315.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8315#issuecomment-5227367831",
-    "reviewedAt": "2026-08-10T11:40:09.216Z",
+    "reviewedAt": "2026-08-10T11:40:34.408Z",
     "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
   }
 }
