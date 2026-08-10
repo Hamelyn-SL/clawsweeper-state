@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-10T22:21:22.592Z",
+  "generated_at": "2026-08-10T22:38:19.852Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-10T19:21:18.698Z",
+  "since": "2026-08-10T19:38:17.222Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -13,7 +13,7 @@
   "status_comment_id": null,
   "max_autoclose_targets": 8,
   "scanned_comments": 100,
-  "commands_seen": 5,
+  "commands_seen": 4,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -189,58 +189,18 @@
       "status": "skipped",
       "actions": [],
       "reason": "newer re-review command supersedes this request"
-    },
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8293:5245362320:2026-08-10T20:06:12Z:re_review",
-      "comment_id": "5245362320",
-      "comment_version_key": "5245362320:2026-08-10T20:06:12Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8293#issuecomment-5245362320",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8293,
-      "author": "JavierHamelyn",
-      "author_id": 142499539,
-      "author_association": "CONTRIBUTOR",
-      "comment_created_at": "2026-08-10T20:06:12Z",
-      "comment_updated_at": "2026-08-10T20:06:12Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "review",
-      "intent": "re_review",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": null,
-      "review_followup": null,
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "skipped",
-      "actions": [],
-      "reason": "newer re-review command supersedes this request"
     }
   ],
   "timings": {
-    "total_ms": 3894,
+    "total_ms": 2630,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2563
+        "ms": 1483
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1322
+        "ms": 1138
       },
       {
         "name": "classify_comment_commands",
