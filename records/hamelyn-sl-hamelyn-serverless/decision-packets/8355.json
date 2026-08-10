@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T13:18:43.229Z",
+  "generatedAt": "2026-08-10T13:20:50.311Z",
   "updatedAt": "2026-08-10T12:16:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,53 +14,52 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
-      "P2",
-      "impact:security",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T10:38:58Z",
     "updatedAt": "2026-08-10T12:16:51Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Admin controlar cada puesto sólo mediante el puente Bifrost, eliminando los enlaces AnyDesk individuales y aprobando un contrato autenticado para consulta y WoL?",
-  "rationale": "La respuesta determina el límite de acceso remoto, las autorizaciones del backend y qué acciones puede presentar el panel.",
+  "question": "¿Debe la primera entrega limitarse a observabilidad o incluir controles remotos una vez se apruebe el contrato Admin↔Bifrost?",
+  "rationale": "La solicitud combina información de presencia con acciones sobre equipos físicos, y el código actual no establece sus permisos, alcance ni trazabilidad.",
   "options": [
     {
-      "title": "Bifrost como único puente",
-      "body": "Mantener AnyDesk y Tailscale sólo en Bifrost y exponer desde Admin acciones autorizadas y auditadas contra su contrato.",
+      "title": "Aprobar contrato y fase de observabilidad",
+      "body": "Versionar el contrato Bifrost y construir primero el mapa de estado y presencia sin ejecutar acciones remotas.",
       "recommended": true
     },
     {
-      "title": "Acceso directo excepcional",
-      "body": "Permitir controles directos por puesto con una excepción documentada, permisos específicos y una revisión de seguridad adicional.",
+      "title": "Autorizar controles remotos en la primera fase",
+      "body": "Definir explícitamente permisos, auditoría y límites de SSH, AnyDesk y Wake-on-LAN antes de incorporarlos al panel.",
       "recommended": false
     },
     {
-      "title": "Sólo observabilidad inicial",
-      "body": "Entregar primero presencia y estado sin controles remotos hasta cerrar el contrato del puente.",
+      "title": "Mantener la gestión remota fuera de Admin",
+      "body": "Dejar Admin como superficie de observabilidad y conservar las acciones en el puente Bifrost.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Bifrost como único puente",
-    "body": "Mantener AnyDesk y Tailscale sólo en Bifrost y exponer desde Admin acciones autorizadas y auditadas contra su contrato.",
+    "title": "Aprobar contrato y fase de observabilidad",
+    "body": "Versionar el contrato Bifrost y construir primero el mapa de estado y presencia sin ejecutar acciones remotas.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "banosdavidhamelyn",
-    "reason": "El epic relacionado define la arquitectura Bifrost y sus decisiones de acceso remoto.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "La arquitectura de acceso remoto del epic condiciona el contrato y el perímetro de control del panel.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355#issuecomment-5239578669",
-    "reviewedAt": "2026-08-10T13:18:43.229Z",
+    "reviewedAt": "2026-08-10T13:20:50.311Z",
     "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
   }
 }
