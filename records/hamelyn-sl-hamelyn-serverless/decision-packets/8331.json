@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T07:47:47.145Z",
-  "updatedAt": "2026-08-10T07:40:53Z",
+  "generatedAt": "2026-08-10T10:43:17.737Z",
+  "updatedAt": "2026-08-10T09:57:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -13,41 +13,49 @@
       "size/L",
       "business-logic",
       "P1",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-10T06:54:57Z",
-    "updatedAt": "2026-08-10T07:40:53Z",
-    "headSha": "9ea4244d25a5d690e6572d6a17c4a57aa525e714"
+    "updatedAt": "2026-08-10T09:57:38Z",
+    "headSha": "341529ccc1c9f3e71869fc55b7cc21338c06abaf"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe `bl_invocations.count` seguir siendo una métrica de invocaciones, o se acepta que las reglas migradas representen únicamente presencia por instancia?",
-  "rationale": "El código, el dashboard y la guía actual prometen invocaciones; adoptar una semántica mixta exige decidir qué debe medir la telemetría antes de escoger una reparación.",
+  "question": "¿Debe el dashboard sustituir el histórico de invocaciones por liveness por instancia o conservar ambas métricas con series separadas?",
+  "rationale": "La rama declara que `bl_invocations` deja de medir ejecuciones, pero el consumidor actual conserva ese significado y no puede reconciliar datos antiguos sin una decisión de producto y retención.",
   "options": [
     {
-      "title": "Preservar invocaciones",
-      "body": "Mantener `logBlEntry` en un límite por request o flujo y evitar emisores por elemento, conservando el significado actual del dashboard.",
+      "title": "Separar liveness e histórico",
+      "body": "Añadir una versión o serie explícita para liveness por instancia y conservar el histórico de invocaciones como métrica no comparable.",
       "recommended": true
     },
     {
-      "title": "Versionar la telemetría",
-      "body": "Añadir una cardinalidad explícita al evento, migrar la tabla y adaptar API, UI y documentación para no mezclar conteos de invocaciones e instancias.",
+      "title": "Reiniciar la métrica visible",
+      "body": "Ocultar o reiniciar los acumulados previos y renombrar el dashboard para mostrar solo actividad observada por instancia.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el contador actual",
+      "body": "Aceptar que el contador mezcla dos cardinalidades y documentarlo como señal aproximada no comparable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar invocaciones",
-    "body": "Mantener `logBlEntry` en un límite por request o flujo y evitar emisores por elemento, conservando el significado actual del dashboard.",
+    "title": "Separar liveness e histórico",
+    "body": "Añadir una versión o serie explícita para liveness por instancia y conservar el histórico de invocaciones como métrica no comparable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Conoce el objetivo de instrumentación BL y el cambio de cardinalidad propuesto.",
+    "person": "JavierHamelyn",
+    "reason": "Su historial conecta directamente la consulta, la ingesta y los textos visibles que definen el contrato de la métrica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8331.md",
-    "reviewedAt": "2026-08-10T07:47:47.145Z",
-    "mainSha": "e919e1c04445b0e73e426092d7ddad739c7fc6e3"
+    "reviewedAt": "2026-08-10T10:43:17.737Z",
+    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
   }
 }
