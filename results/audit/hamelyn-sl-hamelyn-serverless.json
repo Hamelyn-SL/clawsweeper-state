@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-11T12:55:41.061Z",
+  "generatedAt": "2026-08-11T18:55:59.914Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 1,
-    "openItemsSeen": 75
+    "openItemsSeen": 62
   },
   "counts": {
-    "itemRecords": 72,
-    "closedRecords": 995,
-    "missingOpen": 3,
+    "itemRecords": 60,
+    "closedRecords": 1009,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 2,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,27 +40,15 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8392,
+        "number": 8400,
         "kind": "pull_request",
         "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-11T12:24:32Z",
-        "updatedAt": "2026-08-11T12:55:24Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8393,
-        "kind": "pull_request",
-        "title": "fix: always resolve station label from picking op counter",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-11T12:28:51Z",
-        "updatedAt": "2026-08-11T12:55:15Z",
+        "createdAt": "2026-08-11T16:12:03Z",
+        "updatedAt": "2026-08-11T16:16:47Z",
         "missingReason": "recently_created"
       }
     ],
@@ -87,27 +75,15 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8392,
+        "number": 8400,
         "kind": "pull_request",
         "title": "Deploy to Prod",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-11T12:24:32Z",
-        "updatedAt": "2026-08-11T12:55:24Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8393,
-        "kind": "pull_request",
-        "title": "fix: always resolve station label from picking op counter",
         "labels": [
           "size/L"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-11T12:28:51Z",
-        "updatedAt": "2026-08-11T12:55:15Z",
+        "createdAt": "2026-08-11T16:12:03Z",
+        "updatedAt": "2026-08-11T16:16:47Z",
         "missingReason": "recently_created"
       }
     ],
