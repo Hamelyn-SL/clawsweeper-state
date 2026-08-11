@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T13:35:19.243Z",
+  "updatedAt": "2026-08-11T13:28:06Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8395,
+    "title": "feat: add review supervisor dashboard and kiosk incident events",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8395",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-11T13:17:40Z",
+    "updatedAt": "2026-08-11T13:28:06Z",
+    "headSha": "f7494ad2cdfb94f880cd8f343083e75ff3e38041"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que el panel de supervisor de Revisión V3 se aloje en `apps/data-dashboards` en lugar de una vista de Admin?",
+  "rationale": "La issue canónica conserva esta decisión abierta; resolverla evita consolidar una segunda superficie interna antes de que exista una dirección explícita.",
+  "options": [
+    {
+      "title": "Aprobar `data-dashboards`",
+      "body": "Mantener esta superficie y corregir la autorización y la evidencia antes de fusionar.",
+      "recommended": true
+    },
+    {
+      "title": "Mover a Admin",
+      "body": "Replantear el panel como una vista de `apps/admin` y conservar únicamente el contrato de datos reutilizable.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar `data-dashboards`",
+    "body": "Mantener esta superficie y corregir la autorización y la evidencia antes de fusionar.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente conecta con los dashboards internos y puede encauzar la decisión de superficie.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8395.md",
+    "reviewedAt": "2026-08-11T13:35:19.243Z",
+    "mainSha": "da681b803354e9b93ba9495e61935fd541446237"
+  }
+}
