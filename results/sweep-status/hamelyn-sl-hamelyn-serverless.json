@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review publish complete",
-  "detail": "Merged 0 review artifacts for run 31468530459. Captured 1 shard metrics; 0 shards reported non-success review status. Folder reconciliation moved tracked files to match current GitHub open/closed state.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/31468530459",
-  "planned_count": 1,
-  "planned_capacity": 1,
-  "planned_shards": 1,
-  "active_codex": 0,
-  "due_backlog": 1,
+  "state": "Apply comments synced",
+  "detail": "Comment-only apply checkpoint 1 finished. Synced durable review comments: 5. Result records: 5. Item numbers: 8286,8322,8331,8334,8379. Next cursor: none.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/31468496145",
+  "planned_count": null,
+  "planned_capacity": null,
+  "planned_shards": null,
+  "active_codex": null,
+  "due_backlog": null,
   "oldest_unreviewed_at": null,
-  "capacity_reason": "exact: requested item selection",
+  "capacity_reason": null,
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,16 +21,16 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-08-11T07:09:52.962Z",
-    "target_repo": "hamelyn-sl/hamelyn-serverless",
+    "generated_at": "2026-08-11T07:23:54.835Z",
+    "target_repo": "Hamelyn-SL/hamelyn-serverless",
     "mode": "comment_sync",
     "status": "ok",
-    "summary": "1/1000 processed; 0 closed, 1 comments synced, 0 skipped; no cursor recorded.",
-    "processed": 1,
+    "summary": "5/1000 processed; 0 closed, 5 comments synced, 0 skipped; no cursor recorded.",
+    "processed": 5,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 1,
+    "comment_synced": 5,
     "skipped": 0,
     "skip_reasons": {},
     "lanes": {
@@ -42,9 +42,9 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 1,
+        "processed": 5,
         "closed": 0,
-        "comment_synced": 1,
+        "comment_synced": 5,
         "skipped": 0,
         "skip_reasons": {}
       }
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-08-11T07:23:09.685Z"
+  "updated_at": "2026-08-11T07:23:55.337Z"
 }
