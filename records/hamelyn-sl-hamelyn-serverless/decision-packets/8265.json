@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T10:25:09.488Z",
-  "updatedAt": "2026-08-10T10:00:49Z",
+  "generatedAt": "2026-08-11T11:17:44.154Z",
+  "updatedAt": "2026-08-11T11:05:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,46 +13,45 @@
       "app:supply",
       "feature",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-05T13:02:06Z",
-    "updatedAt": "2026-08-10T10:00:49Z"
+    "updatedAt": "2026-08-11T11:05:32Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe una señal ausente de autor o editorial contar como baja demanda, o excluirse del rechazo hasta que exista una medición fiable?",
-  "rationale": "La elección determina el sesgo comercial del filtro: la cobertura actual no representa toda la población usada en el backtest.",
+  "question": "¿Una señal de Amazon, editorial o autor ausente debe impedir el rechazo, o debe contar como evidencia de demanda insuficiente?",
+  "rationale": "El backtest y la seguridad comercial del filtro dependen de esta semántica; el código no puede inferirla sin una decisión explícita.",
   "options": [
     {
-      "title": "Tratar la ausencia como desconocida",
-      "body": "No rechazar por una señal sin ratio calculado, conservar las señales disponibles y mantener el interruptor apagado hasta completar la cobertura.",
+      "title": "Tratar ausencia como desconocida",
+      "body": "Rechazar solo cuando las tres señales disponibles demuestren baja demanda y conservar la aceptación ante cobertura insuficiente.",
       "recommended": true
     },
     {
-      "title": "Tratar la ausencia como baja demanda",
-      "body": "Maximizar el rechazo aceptando que productos sin enlace o sincronización puedan clasificarse sin una medición directa.",
+      "title": "Tratar ausencia como baja demanda",
+      "body": "Mantener el enfoque estricto, documentar el backtest correspondiente y exigir backfill y cron completados antes de activar el flag.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Tratar la ausencia como desconocida",
-    "body": "No rechazar por una señal sin ratio calculado, conservar las señales disponibles y mantener el interruptor apagado hasta completar la cobertura.",
+    "title": "Tratar ausencia como desconocida",
+    "body": "Rechazar solo cuando las tres señales disponibles demuestren baja demanda y conservar la aceptación ante cobertura insuficiente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "El triage anterior y la restauración reciente de la propiedad del gate lo vinculan directamente a esta decisión.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado actual y la decisión afecta la política de compra, no solo la implementación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8265.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8265#issuecomment-5192287822",
-    "reviewedAt": "2026-08-10T10:25:09.488Z",
-    "mainSha": "a4bf504140750180abfb664053ddbfb787cf429f"
+    "reviewedAt": "2026-08-11T11:17:44.154Z",
+    "mainSha": "55bb1fe4ac6d4b790ed677dd433c72a0245a55b4"
   }
 }
