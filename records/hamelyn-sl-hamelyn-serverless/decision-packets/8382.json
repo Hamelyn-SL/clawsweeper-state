@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-11T07:53:24.817Z",
+  "updatedAt": "2026-08-11T07:44:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8382,
+    "title": "El snapshot LMS de eBay ES cuenta ofertas UNPUBLISHED como activas y descarta los avisos LISTING_ON_HOLD",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8382",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P2",
+      "mk:ebay"
+    ],
+    "createdAt": "2026-08-11T07:23:35Z",
+    "updatedAt": "2026-08-11T07:44:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué umbral de `LISTING_ON_HOLD` debe impedir mutaciones y marcar el snapshot de eBay ES como degradado?",
+  "rationale": "El código actual solo aborta con cero filas y la issue demuestra degradación parcial masiva, pero no define la tolerancia operativa aceptable.",
+  "options": [
+    {
+      "title": "Guard porcentual fail-closed",
+      "body": "Bloquear reactivaciones y acciones derivadas cuando los avisos superen un umbral porcentual acordado, registrando el motivo.",
+      "recommended": true
+    },
+    {
+      "title": "Solo observabilidad",
+      "body": "Registrar el recuento y alertar sin alterar las mutaciones actuales, aceptando que el snapshot siga influyendo en la reconciliación.",
+      "recommended": false
+    },
+    {
+      "title": "Abortar ante cualquier aviso",
+      "body": "Tratar cualquier `LISTING_ON_HOLD` como reporte no apto, con máxima cautela pero posibles interrupciones frecuentes.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Guard porcentual fail-closed",
+    "body": "Bloquear reactivaciones y acciones derivadas cuando los avisos superen un umbral porcentual acordado, registrando el motivo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la persona conectada al live-check y a la lógica actual de reconciliación eBay.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8382.md",
+    "reviewedAt": "2026-08-11T07:53:24.817Z",
+    "mainSha": "b510790cfb53a80e063b40d5dda8d57a42eb518f"
+  }
+}
