@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T19:46:19.470Z",
-  "updatedAt": "2026-08-10T19:27:19Z",
+  "generatedAt": "2026-08-11T11:39:24.782Z",
+  "updatedAt": "2026-08-11T11:33:59Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,52 @@
       "app:infrastructure",
       "feature",
       "reporter:javier",
-      "triage:needs-info",
+      "triage:queued",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "issue-rating: ➖ n/a",
       "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T18:29:06Z",
-    "updatedAt": "2026-08-10T19:27:19Z"
+    "updatedAt": "2026-08-11T11:33:59Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse el contrato completo propuesto, incluidas las reglas prospectivas de orden de picking y el límite de 350 unidades, o limitar esta entrega a los CSV y el resumen de Slack?",
-  "rationale": "La documentación actual no establece estas decisiones y el PR mezcla el contrato de entrega solicitado con nuevas restricciones operativas de picking.",
+  "question": "¿Debe aprobarse como contrato permanente la ruta externa, las cabeceras CSV, el resumen de Slack y la regla adicional de orden de BPs planteados en el PR enlazado?",
+  "rationale": "La issue define el resultado deseado, pero no concreta esos valores operativos y el PR amplía el alcance a persistencia de picking.",
   "options": [
     {
-      "title": "Acotar al contrato de entrega",
-      "body": "Aprobar ruta, CSV, cabeceras y resumen de Slack, y mover las restricciones de picking a una propuesta separada.",
+      "title": "Aprobar el contrato del PR",
+      "body": "Confirmar que la ruta, los esquemas CSV y la regla prospectiva de BPs son el estándar operativo para B2B.",
       "recommended": true
     },
     {
-      "title": "Aprobar el alcance completo",
-      "body": "Aceptar también el orden por `drawerPositionIndex` y el límite de 350 como política operativa permanente.",
+      "title": "Acotar a la entrega CSV",
+      "body": "Mantener el estándar de CSV y Slack, pero separar la regla de BPs en una decisión o issue específica.",
+      "recommended": false
+    },
+    {
+      "title": "Definir otro contrato",
+      "body": "Aportar ruta, cabeceras y plantilla de Slack alternativas antes de continuar la revisión.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar al contrato de entrega",
-    "body": "Aprobar ruta, CSV, cabeceras y resumen de Slack, y mover las restricciones de picking a una propuesta separada.",
+    "title": "Aprobar el contrato del PR",
+    "body": "Confirmar que la ruta, los esquemas CSV y la regla prospectiva de BPs son el estándar operativo para B2B.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Es quien ha concretado el contrato en la issue y en el PR vinculado.",
+    "reason": "Es quien reportó la necesidad, está asignado y ha propuesto el contrato concreto en el PR enlazado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8360.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8360#issuecomment-5244459104",
-    "reviewedAt": "2026-08-10T19:46:19.470Z",
-    "mainSha": "5f758c5086f3c4d2d6f8b3127342c65743759231"
+    "reviewedAt": "2026-08-11T11:39:24.782Z",
+    "mainSha": "55bb1fe4ac6d4b790ed677dd433c72a0245a55b4"
   }
 }
