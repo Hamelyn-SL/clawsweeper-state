@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T06:23:43.708Z",
-  "updatedAt": "2026-08-12T06:08:00Z",
+  "generatedAt": "2026-08-12T06:31:07.483Z",
+  "updatedAt": "2026-08-12T06:24:00Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,44 +18,38 @@
       "merge-risk: 🚨 compatibility"
     ],
     "createdAt": "2026-08-12T06:04:02Z",
-    "updatedAt": "2026-08-12T06:08:00Z",
+    "updatedAt": "2026-08-12T06:24:00Z",
     "headSha": "97b3f5bfe504dd3a8a42d83a061450c999e8c29d"
   },
   "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Debe prevalecer la lista literal del seller cuando contiene palabras inglesas comunes que bloquearían títulos legítimos, o debe limitarse a expresiones inequívocas?",
-  "rationale": "La fuente de requisitos es externa y el diff reconoce el riesgo; decidir entre cumplimiento literal y reducción de falsos positivos requiere aceptar una política operativa.",
+  "priority": "P1",
+  "question": "¿Debe el gate aplicar literalmente las traducciones inglesas genéricas del seller aunque puedan bloquear títulos legítimos, o limitarse a términos inequívocos hasta obtener ejemplos concretos?",
+  "rationale": "El patrón no puede distinguir de forma fiable entre usos prohibidos y usos normales de varias palabras; aceptar ese coste comercial requiere una decisión explícita.",
   "options": [
     {
-      "title": "Acotar los términos ambiguos",
-      "body": "Conservar insultos, expresiones y marcas inequívocas, pero retirar o contextualizar las palabras inglesas comunes antes del merge.",
+      "title": "Acotar a vetos inequívocos",
+      "body": "Retirar o contextualizar las palabras ambiguas y solicitar ejemplos del seller antes de incorporarlas.",
       "recommended": true
     },
     {
-      "title": "Mantener la lista literal",
-      "body": "Aceptar explícitamente que el filtro preventivo puede bloquear títulos válidos para cumplir sin interpretación el listado recibido.",
-      "recommended": false
-    },
-    {
-      "title": "Pedir aclaración al seller",
-      "body": "Pausar las traducciones genéricas hasta confirmar qué expresiones exactas motivan el veto.",
+      "title": "Aceptar el bloqueo literal",
+      "body": "Mantener la lista completa y asumir falsos positivos medidos sobre el catálogo válido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acotar los términos ambiguos",
-    "body": "Conservar insultos, expresiones y marcas inequívocas, pero retirar o contextualizar las palabras inglesas comunes antes del merge.",
+    "title": "Acotar a vetos inequívocos",
+    "body": "Retirar o contextualizar las palabras ambiguas y solicitar ejemplos del seller antes de incorporarlas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado para revisar este ámbito y puede contrastar el cambio con los criterios operativos de Decathlon.",
+    "reason": "Está asignado a la revisión por experiencia directa en el gate de Decathlon.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8402.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8402#issuecomment-5263096630",
-    "reviewedAt": "2026-08-12T06:23:43.708Z",
+    "reviewedAt": "2026-08-12T06:31:07.483Z",
     "mainSha": "8187dea1a4558d9f5937e63f77edf956c899e77f"
   }
 }
