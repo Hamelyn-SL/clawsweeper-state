@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T06:23:43.708Z",
+  "updatedAt": "2026-08-12T06:08:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8402,
+    "title": "fix: extend decathlon blocked-content regex with seller-reported words",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8402",
+    "state": "open",
+    "labels": [
+      "size/S"
+    ],
+    "createdAt": "2026-08-12T06:04:02Z",
+    "updatedAt": "2026-08-12T06:08:00Z",
+    "headSha": "97b3f5bfe504dd3a8a42d83a061450c999e8c29d"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe prevalecer la lista literal del seller cuando contiene palabras inglesas comunes que bloquearían títulos legítimos, o debe limitarse a expresiones inequívocas?",
+  "rationale": "La fuente de requisitos es externa y el diff reconoce el riesgo; decidir entre cumplimiento literal y reducción de falsos positivos requiere aceptar una política operativa.",
+  "options": [
+    {
+      "title": "Acotar los términos ambiguos",
+      "body": "Conservar insultos, expresiones y marcas inequívocas, pero retirar o contextualizar las palabras inglesas comunes antes del merge.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la lista literal",
+      "body": "Aceptar explícitamente que el filtro preventivo puede bloquear títulos válidos para cumplir sin interpretación el listado recibido.",
+      "recommended": false
+    },
+    {
+      "title": "Pedir aclaración al seller",
+      "body": "Pausar las traducciones genéricas hasta confirmar qué expresiones exactas motivan el veto.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acotar los términos ambiguos",
+    "body": "Conservar insultos, expresiones y marcas inequívocas, pero retirar o contextualizar las palabras inglesas comunes antes del merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Está asignado para revisar este ámbito y puede contrastar el cambio con los criterios operativos de Decathlon.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8402.md",
+    "reviewedAt": "2026-08-12T06:23:43.708Z",
+    "mainSha": "8187dea1a4558d9f5937e63f77edf956c899e77f"
+  }
+}
