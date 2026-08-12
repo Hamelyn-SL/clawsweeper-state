@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T09:14:44.234Z",
-  "updatedAt": "2026-08-05T08:59:54Z",
+  "generatedAt": "2026-08-12T09:01:39.270Z",
+  "updatedAt": "2026-08-12T08:55:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,48 +13,47 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "mk:fnac",
-      "P2",
       "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
       "issue-rating: 🥈 silver",
-      "clawsweeper:needs-maintainer-review"
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-08-05T08:59:54Z"
+    "updatedAt": "2026-08-12T08:55:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué subcohortes históricas Fnac quedan autorizadas para el dry-run y la posterior escritura productiva?",
-  "rationale": "La corrección de código ya limita los reintentos transitorios; resolver la parte restante requiere decidir filtros y transiciones sobre datos productivos heterogéneos.",
+  "question": "¿Qué cohortes históricas Fnac `SYNC_ERROR/BATCHING` se autorizan para remediación one-time y qué transición corresponde a cada resultado remoto?",
+  "rationale": "El código limita la reentrada automática a `TRANSIENT`; tratar registros `UNKNOWN` requiere evidencia Fnac/Mongo y autorización sobre una escritura masiva.",
   "options": [
     {
-      "title": "Autorizar cohortes verificadas",
-      "body": "Aprobar un dry-run con predicado literal y aplicar sólo las transiciones contrastadas por SKU y estado remoto.",
+      "title": "Autorizar dry-run segmentado",
+      "body": "Congelar predicados y muestras por `batchId`, contrastarlos con Fnac y aplicar solo transiciones verificadas.",
       "recommended": true
     },
     {
-      "title": "Mantener la deuda en observación",
-      "body": "No mutar la cohorte hasta disponer de un censo remoto suficiente para separar estados incompatibles.",
+      "title": "Conservar el residuo",
+      "body": "Mantener las filas `UNKNOWN` sin mutarlas hasta disponer de evidencia remota y una política de recuperación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar cohortes verificadas",
-    "body": "Aprobar un dry-run con predicado literal y aplicar sólo las transiciones contrastadas por SKU y estado remoto.",
+    "title": "Autorizar dry-run segmentado",
+    "body": "Congelar predicados y muestras por `batchId`, contrastarlos con Fnac y aplicar solo transiciones verificadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su corrección fusionada define el límite entre la recuperación automática transitoria y la operación histórica pendiente.",
+    "reason": "Su cambio integrado delimita el camino automático `TRANSIENT` y la incidencia ya está asignada a esta persona.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-05T09:14:44.234Z",
-    "mainSha": "ee46b80b8ededa9eb3fd36b55bb15b743f7c1f64"
+    "reviewedAt": "2026-08-12T09:01:39.270Z",
+    "mainSha": "67d8dcbb2ef1c8bc372a243488551593294c3730"
   }
 }
