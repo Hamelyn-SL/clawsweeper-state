@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T11:15:44.035Z",
+  "generatedAt": "2026-08-12T11:19:46.472Z",
   "updatedAt": "2026-08-12T10:57:38Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,45 @@
       "app:ecommerce",
       "feature",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other",
-      "clawsweeper:needs-product-decision"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-12T08:28:24Z",
     "updatedAt": "2026-08-12T10:57:38Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse la aproximación parcial basada en el timestamp del producto o mantenerse el alcance exacto de precio, disponibilidad y contenido?",
-  "rationale": "La PR abierta reconoce que elimina gran parte del ruido, pero no cumple todos los criterios de aceptación de esta incidencia.",
+  "question": "¿Aceptamos como solución inicial la fecha genérica del documento, aunque no respeta todos los disparadores SEO definidos en esta incidencia?",
+  "rationale": "La PR abierta mejora materialmente la señal, pero reconoce que no distingue todos los cambios relevantes ni captura algunos precios de `stocks`.",
   "options": [
     {
-      "title": "Mantener el alcance exacto",
-      "body": "Persistir el estado necesario y actualizar `lastmod` solo ante los cambios SEO definidos.",
+      "title": "Aceptar la aproximación inicial",
+      "body": "Integrar la reducción de ruido y conservar los criterios finos para un seguimiento posterior.",
       "recommended": true
     },
     {
-      "title": "Aceptar mejora parcial",
-      "body": "Integrar la fecha del documento como reducción acotada del ruido y crear seguimiento para los disparadores exactos.",
+      "title": "Exigir los disparadores exactos",
+      "body": "Mantener la incidencia abierta hasta comparar de forma persistente precio, disponibilidad y contenido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el alcance exacto",
-    "body": "Persistir el estado necesario y actualizar `lastmod` solo ante los cambios SEO definidos.",
+    "title": "Aceptar la aproximación inicial",
+    "body": "Integrar la reducción de ruido y conservar los criterios finos para un seguimiento posterior.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Introdujo la semántica vigente de `lastmod` y su historial le vincula directamente con la decisión de sustituirla.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "Es el autor del comportamiento original y de la PR candidata que ya documenta esta elección de alcance.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8406.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8406#issuecomment-5264555207",
-    "reviewedAt": "2026-08-12T11:15:44.035Z",
+    "reviewedAt": "2026-08-12T11:19:46.472Z",
     "mainSha": "4a340c538ced99f682e386d9b0700ad0c277066b"
   }
 }
