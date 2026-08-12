@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T13:13:06.817Z",
+  "updatedAt": "2026-08-12T12:25:36Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8419,
+    "title": "feat: add abebooks v2 api integration",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8419",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-12T12:25:24Z",
+    "updatedAt": "2026-08-12T12:25:36Z",
+    "headSha": "8cafa679cf1c60eddd13a5c61536d2026a45201f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse esta V2 como la base operativa de AbeBooks y autorizarse después un switchover manual desde la V1?",
+  "rationale": "El diff evita programar la V2 automáticamente, pero decidir cuándo sustituye a una integración que confirma y envía pedidos exige criterio operativo del equipo.",
+  "options": [
+    {
+      "title": "Validar y preparar el switchover",
+      "body": "Mantener la V1 activa hasta revisar evidencia redactada de la V2 y aprobar explícitamente el plan de cambio y rollback.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener la V1",
+      "body": "Conservar la integración actual y cerrar o reconducir la V2 si no compensa el riesgo operativo de reemplazarla.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Validar y preparar el switchover",
+    "body": "Mantener la V1 activa hasta revisar evidencia redactada de la V2 y aprobar explícitamente el plan de cambio y rollback.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es la señal histórica más reciente en el transporte y manejo de errores de AbeBooks.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8419.md",
+    "reviewedAt": "2026-08-12T13:13:06.817Z",
+    "mainSha": "29303c54f26c0344c67948b5811048d49c201bdc"
+  }
+}
