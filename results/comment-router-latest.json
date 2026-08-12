@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-12T11:03:01.981Z",
+  "generated_at": "2026-08-12T11:24:46.294Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-12T08:02:58.402Z",
+  "since": "2026-08-12T08:24:43.096Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -13,7 +13,7 @@
   "status_comment_id": null,
   "max_autoclose_targets": 8,
   "scanned_comments": 66,
-  "commands_seen": 1,
+  "commands_seen": 2,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,47 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8416:5266057216:2026-08-12T11:23:41Z:automerge",
+      "comment_id": "5266057216",
+      "comment_version_key": "5266057216:2026-08-12T11:23:41Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8416#issuecomment-5266057216",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8416,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-12T11:23:41Z",
+      "comment_updated_at": "2026-08-12T11:23:41Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR incorpora un endpoint de resumen agregado y sincroniza filtros, zona horaria, validación y datos visibles del panel de productividad.\n\nReproducibility: Sí: cambiar rápidamente de filtro y resolver primero la respuesta antigua reproduce desde código métricas desincronizadas; un fallo de la petición nueva también conserva el estado previo.",
+      "review_followup": "- [P1] El bloqueo es un defecto localizado en el estado asíncrono del dashboard y admite una reparación mecánica en la rama.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8416 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8404:5264250383:2026-08-12T08:33:58Z:automerge",
       "comment_id": "5264250383",
@@ -71,19 +112,19 @@
     }
   ],
   "timings": {
-    "total_ms": 3578,
+    "total_ms": 3198,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 2714
+        "ms": 1744
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 858
+        "ms": 1447
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
