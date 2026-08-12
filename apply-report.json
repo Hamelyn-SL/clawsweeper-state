@@ -1,11 +1,6 @@
 [
   {
     "number": 8395,
-    "action": "skipped_stale_review_comment_sync",
-    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-08-12T06:29:53.018Z, report reviewed_at=2026-08-12T06:26:01.801Z"
-  },
-  {
-    "number": 8402,
     "action": "review_comment_synced",
     "reason": "updated durable Codex review comment"
   }
