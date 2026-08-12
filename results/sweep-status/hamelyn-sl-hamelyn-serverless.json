@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Apply finished",
-  "detail": "Apply/comment-sync run finished with 0 fresh closes out of requested limit 0. See apply-report.json for per-item results.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/31595714549",
-  "planned_count": null,
-  "planned_capacity": null,
-  "planned_shards": null,
-  "active_codex": null,
-  "due_backlog": null,
-  "oldest_unreviewed_at": null,
-  "capacity_reason": null,
+  "state": "Review comments checked",
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 1. Item numbers: 8417.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/31594999247",
+  "planned_count": 1,
+  "planned_capacity": 33,
+  "planned_shards": 1,
+  "active_codex": 0,
+  "due_backlog": 1,
+  "oldest_unreviewed_at": "2026-08-12T11:58:41Z",
+  "capacity_reason": "under capacity: due backlog below planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -21,20 +21,18 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-08-12T12:18:57.999Z",
-    "target_repo": "Hamelyn-SL/hamelyn-serverless",
+    "generated_at": "2026-08-12T12:06:52.344Z",
+    "target_repo": "hamelyn-sl/hamelyn-serverless",
     "mode": "comment_sync",
     "status": "ok",
-    "summary": "1/1000 processed; 0 closed, 0 comments synced, 1 skipped; no cursor recorded.",
+    "summary": "1/1000 processed; 0 closed, 1 comments synced, 0 skipped; no cursor recorded.",
     "processed": 1,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 0,
-    "skipped": 1,
-    "skip_reasons": {
-      "skipped_already_closed": 1
-    },
+    "comment_synced": 1,
+    "skipped": 0,
+    "skip_reasons": {},
     "lanes": {
       "closure": {
         "processed": 0,
@@ -46,28 +44,13 @@
       "comment_sync": {
         "processed": 1,
         "closed": 0,
-        "comment_synced": 0,
-        "skipped": 1,
-        "skip_reasons": {
-          "skipped_already_closed": 1
-        }
+        "comment_synced": 1,
+        "skipped": 0,
+        "skip_reasons": {}
       }
     },
-    "next_actions": [
-      {
-        "reason": "skipped_already_closed",
-        "count": 1,
-        "bucket": "already_resolved",
-        "owner": "none",
-        "retryable": false,
-        "label": "Already resolved",
-        "summary": "The item was not open by the time apply checked it.",
-        "next_step": "No action is needed unless this bucket dominates repeated runs."
-      }
-    ],
-    "next_action_buckets": {
-      "already_resolved": 1
-    },
+    "next_actions": [],
+    "next_action_buckets": {},
     "cycle": {
       "basis": "not_close_cursor",
       "apply_ready_count": null,
@@ -82,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-08-12T12:18:58.525Z"
+  "updated_at": "2026-08-12T12:17:29.647Z"
 }
