@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T09:21:02.144Z",
+  "generatedAt": "2026-08-12T09:22:38.282Z",
   "updatedAt": "2026-08-12T08:33:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,46 @@
       "app:infrastructure",
       "triage:needs-info",
       "business-logic",
-      "P3",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "P3",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-05T06:55:07Z",
     "updatedAt": "2026-08-12T08:33:20Z"
   },
   "lane": "product_direction",
   "priority": "P3",
-  "question": "¿Las reglas BL compartidas deben tener una única spec canónica con referencias cruzadas, o mantenerse como specs independientes por subdominio?",
-  "rationale": "La elección determina la propiedad del grafo BL y de su cobertura futura; la guía de business logic reserva esa validación al owner mediante F2.",
+  "question": "¿Debe `countCouponUsage` y el resto de reglas compartidas tener una única spec canónica con referencias cruzadas, o una spec independiente por subdominio?",
+  "rationale": "La guía `hamelyn-business-logic` exige validación F2 del owner antes de alterar la titularidad de una regla y su cobertura asociada.",
   "options": [
     {
-      "title": "Spec canónica y referencias cruzadas",
-      "body": "Conservar una única titularidad por regla compartida y enlazarla desde checkout, catalog u otros subdominios.",
+      "title": "Una spec canónica",
+      "body": "Asignar cada regla compartida a un único BL-ID y dejar referencias cruzadas desde los subdominios consumidores.",
       "recommended": true
     },
     {
-      "title": "Specs independientes por subdominio",
-      "body": "Mantener la duplicación cuando cada subdominio necesite un contrato propio sobre la misma operación.",
+      "title": "Specs por subdominio",
+      "body": "Mantener especificaciones independientes si el contexto de negocio de cada dominio debe seguir siendo autónomo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Spec canónica y referencias cruzadas",
-    "body": "Conservar una única titularidad por regla compartida y enlazarla desde checkout, catalog u otros subdominios.",
+    "title": "Una spec canónica",
+    "body": "Asignar cada regla compartida a un único BL-ID y dejar referencias cruzadas desde los subdominios consumidores.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Es la persona con evidencia más directa en la instrumentación que detectó las discrepancias y en las specs afectadas.",
-    "confidence": "high"
+    "person": "HamelynDev",
+    "reason": "Su triaje previo formuló la pregunta F2 concreta y explica el efecto sobre el grafo BL.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8234.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8234#issuecomment-5188663433",
-    "reviewedAt": "2026-08-12T09:21:02.144Z",
+    "reviewedAt": "2026-08-12T09:22:38.282Z",
     "mainSha": "67d8dcbb2ef1c8bc372a243488551593294c3730"
   }
 }
