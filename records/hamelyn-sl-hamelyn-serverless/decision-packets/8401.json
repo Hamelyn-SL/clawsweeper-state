@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T06:10:37.997Z",
+  "generatedAt": "2026-08-12T06:12:08.618Z",
   "updatedAt": "2026-08-12T05:52:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,45 @@
       "app:admin",
       "reporter:davidgonzalez",
       "triage:done",
-      "P2",
-      "impact:ux-friction",
-      "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-08-12T05:40:54Z",
     "updatedAt": "2026-08-12T05:52:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Buscalibre medir OPs completadas o productos procesados en el panel de productividad?",
-  "rationale": "El emisor guarda `totalProducts`, pero el nombre de metadato y las etiquetas de Admin hablan de OPs; la decisión define el contrato de métricas.",
+  "question": "¿Debe el indicador de Buscalibre representar número de OPs o número de productos procesados, y cómo debe conservarse la lectura de los datos históricos?",
+  "rationale": "El frontend persiste productos por OP, mientras el panel los presenta como OPs; ninguna corrección técnica puede elegir esa semántica sin criterio operativo.",
   "options": [
     {
-      "title": "Medir OPs",
-      "body": "Enviar una unidad por orden de producción y conservar las etiquetas y el nombre de metadato actuales.",
+      "title": "Medir productos",
+      "body": "Conservar `totalProducts`, cambiar etiquetas y desgloses a productos, y documentar la nueva interpretación del indicador.",
       "recommended": true
     },
     {
-      "title": "Medir productos",
-      "body": "Mantener el valor actual y renombrar etiquetas, ayuda y agregados para representar productos procesados.",
+      "title": "Medir OPs",
+      "body": "Persistir `1` por cada OP completada y tratar los datos históricos de productos como una métrica distinta o migrada.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener ambas métricas",
+      "body": "Exponer OPs y productos como indicadores separados para evitar convertir unidades heterogéneas en un único total.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Medir OPs",
-    "body": "Enviar una unidad por orden de producción y conservar las etiquetas y el nombre de metadato actuales.",
+    "title": "Medir productos",
+    "body": "Conservar `totalProducts`, cambiar etiquetas y desgloses a productos, y documentar la nueva interpretación del indicador.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial reciente cubre las sesiones, el resumen diario y el panel que fijan este contrato.",
+    "reason": "Está asignado a esta issue y su historial reciente cubre el flujo de sesiones y resumen diario afectado.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401#issuecomment-5263046254",
-    "reviewedAt": "2026-08-12T06:10:37.997Z",
+    "reviewedAt": "2026-08-12T06:12:08.618Z",
     "mainSha": "8187dea1a4558d9f5937e63f77edf956c899e77f"
   }
 }
