@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T10:10:06.250Z",
-  "updatedAt": "2026-08-12T08:33:21Z",
+  "generatedAt": "2026-08-07T13:26:58.195Z",
+  "updatedAt": "2026-08-07T13:06:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,48 @@
       "feature",
       "triage:needs-info",
       "epic:revision-v3",
+      "reporter:daniellopez",
+      "origin:panel",
+      "P2",
       "impact:other",
+      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision",
-      "P2",
-      "reporter:daniellopez",
-      "issue-rating: ➖ n/a",
-      "origin:panel"
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-28T07:19:55Z",
-    "updatedAt": "2026-08-12T08:33:21Z"
+    "updatedAt": "2026-08-07T13:06:42Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Puede el dashboard de tablet mostrar nombres y posiciones del resto del equipo, o debe limitarse a la posición propia y métricas agregadas anónimas?",
-  "rationale": "La respuesta determina el contrato de datos, los permisos y la interfaz del operario; el código actual no establece esa política.",
+  "question": "¿El dashboard del operario debe mostrar nombres y posiciones del resto del equipo, o solo su puesto y métricas agregadas anónimas?",
+  "rationale": "La maqueta pide un ranking nominal, mientras que el triage dejó esta exposición de rendimiento individual como decisión explícita pendiente.",
   "options": [
     {
-      "title": "Rankings anónimos",
-      "body": "Mostrar posición propia y comparativas agregadas, sin revelar nombres de otros operarios.",
+      "title": "Ranking anónimo",
+      "body": "Mostrar el puesto propio y comparativas agregadas, sin identificar a otros operarios.",
       "recommended": true
     },
     {
-      "title": "Rankings nominales",
-      "body": "Permitir nombres y posiciones de todo el equipo en la tablet, con una decisión explícita de Operaciones sobre privacidad.",
+      "title": "Ranking nominal",
+      "body": "Mostrar nombres y posiciones del equipo tras acordar la política de acceso, comunicación y uso de esos datos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Rankings anónimos",
-    "body": "Mostrar posición propia y comparativas agregadas, sin revelar nombres de otros operarios.",
+    "title": "Ranking anónimo",
+    "body": "Mostrar el puesto propio y comparativas agregadas, sin identificar a otros operarios.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha entregado el panel de supervisor y conoce el contrato de métricas que alimentaría la vista de operario.",
+    "person": "JavierHamelyn",
+    "reason": "El epic de Revisión V3 recoge las decisiones funcionales y de alcance de esta superficie transversal.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8017.md",
-    "reviewedAt": "2026-08-12T10:10:06.250Z",
-    "mainSha": "67d8dcbb2ef1c8bc372a243488551593294c3730"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8017#issuecomment-5101539679",
+    "reviewedAt": "2026-08-07T13:26:58.195Z",
+    "mainSha": "84541979ae8c1736bebd7d1f5851897d2cc7e0ed"
   }
 }
