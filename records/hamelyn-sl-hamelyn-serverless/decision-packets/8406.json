@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T11:15:44.035Z",
+  "updatedAt": "2026-08-12T10:57:38Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8406,
+    "title": "Move sitemap lastmod on real product changes only",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8406",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:done",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-12T08:28:24Z",
+    "updatedAt": "2026-08-12T10:57:38Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse la aproximación parcial basada en el timestamp del producto o mantenerse el alcance exacto de precio, disponibilidad y contenido?",
+  "rationale": "La PR abierta reconoce que elimina gran parte del ruido, pero no cumple todos los criterios de aceptación de esta incidencia.",
+  "options": [
+    {
+      "title": "Mantener el alcance exacto",
+      "body": "Persistir el estado necesario y actualizar `lastmod` solo ante los cambios SEO definidos.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar mejora parcial",
+      "body": "Integrar la fecha del documento como reducción acotada del ruido y crear seguimiento para los disparadores exactos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Mantener el alcance exacto",
+    "body": "Persistir el estado necesario y actualizar `lastmod` solo ante los cambios SEO definidos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Introdujo la semántica vigente de `lastmod` y su historial le vincula directamente con la decisión de sustituirla.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8406.md",
+    "reviewedAt": "2026-08-12T11:15:44.035Z",
+    "mainSha": "4a340c538ced99f682e386d9b0700ad0c277066b"
+  }
+}
