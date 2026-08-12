@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T06:10:37.997Z",
+  "updatedAt": "2026-08-12T05:52:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8401,
+    "title": "Panel de productividad: filtros y métricas desincronizados (sort roto, chip estación, timezone, unidades Buscalibre) + robustez endpoints",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:admin",
+      "reporter:davidgonzalez",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-12T05:40:54Z",
+    "updatedAt": "2026-08-12T05:52:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Buscalibre medir OPs completadas o productos procesados en el panel de productividad?",
+  "rationale": "El emisor guarda `totalProducts`, pero el nombre de metadato y las etiquetas de Admin hablan de OPs; la decisión define el contrato de métricas.",
+  "options": [
+    {
+      "title": "Medir OPs",
+      "body": "Enviar una unidad por orden de producción y conservar las etiquetas y el nombre de metadato actuales.",
+      "recommended": true
+    },
+    {
+      "title": "Medir productos",
+      "body": "Mantener el valor actual y renombrar etiquetas, ayuda y agregados para representar productos procesados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Medir OPs",
+    "body": "Enviar una unidad por orden de producción y conservar las etiquetas y el nombre de metadato actuales.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial reciente cubre las sesiones, el resumen diario y el panel que fijan este contrato.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8401.md",
+    "reviewedAt": "2026-08-12T06:10:37.997Z",
+    "mainSha": "8187dea1a4558d9f5937e63f77edf956c899e77f"
+  }
+}
