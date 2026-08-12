@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-12T08:16:41.466Z",
+  "generated_at": "2026-08-12T08:47:08.190Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-12T05:16:36.503Z",
+  "since": "2026-08-12T05:47:05.170Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 14,
-  "commands_seen": 1,
+  "scanned_comments": 32,
+  "commands_seen": 2,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,47 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8404:5264250383:2026-08-12T08:33:58Z:automerge",
+      "comment_id": "5264250383",
+      "comment_version_key": "5264250383:2026-08-12T08:33:58Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8404#issuecomment-5264250383",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8404,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-12T08:25:19Z",
+      "comment_updated_at": "2026-08-12T08:33:58Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR cambia el mapeo de `Carrier.SPRING` de `SPRING` a `Spring` en el formatter compartido de confirmaciones de envío de Amazon.\n\nReproducibility: Sí, a nivel de código: `formatCarrier` abastece tanto la confirmación REST como `CarrierCode` y `CarrierName` del XML. La prueba publicada no ejecuta el segundo flujo.",
+      "review_followup": "- [P1] Hay un defecto mecánico y localizado: el PR debe separar las representaciones de Spring sin alterar otros carriers.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8404 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8402:5263096630:2026-08-12T06:32:44Z:automerge",
       "comment_id": "5263096630",
@@ -71,19 +112,19 @@
     }
   ],
   "timings": {
-    "total_ms": 4963,
+    "total_ms": 3019,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 3816
+        "ms": 1581
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1143
+        "ms": 1432
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
