@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-11T13:42:49.090Z",
-  "updatedAt": "2026-08-11T13:33:41Z",
+  "generatedAt": "2026-08-12T07:15:04.531Z",
+  "updatedAt": "2026-08-12T06:52:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,41 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 security-boundary",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
-      "P1",
-      "merge-risk: 🚨 compatibility"
+      "P2"
     ],
     "createdAt": "2026-08-11T13:17:40Z",
-    "updatedAt": "2026-08-11T13:33:41Z",
+    "updatedAt": "2026-08-12T06:52:42Z",
     "headSha": "f7494ad2cdfb94f880cd8f343083e75ff3e38041"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Se confirma `apps/data-dashboards` como la ubicación permanente del panel de supervisor pendiente en https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8017?",
-  "rationale": "La incidencia vinculada mantiene abierta esa decisión y el PR introduce una superficie nueva fuera de `apps/admin`; la corrección de seguridad no resuelve por sí sola la dirección de producto.",
+  "priority": "P2",
+  "question": "¿Se aprueba ubicar el panel de supervisor en `data-dashboards` y exponer los rankings nominales a los roles autorizados de esa aplicación?",
+  "rationale": "La incidencia canónica dejó abierta la ubicación del panel y la política de visibilidad; el diff adopta una alternativa que afecta al acceso y al mantenimiento futuro.",
   "options": [
     {
-      "title": "Patrocinar data-dashboards",
-      "body": "Mantener esta ubicación, tras añadir autorización de servidor y prueba autenticada completa.",
+      "title": "Aprobar `data-dashboards`",
+      "body": "Mantener la ruta nueva con el modelo de autorización existente y documentar el alcance de los roles que pueden consultar métricas nominales.",
       "recommended": true
     },
     {
-      "title": "Moverlo a Admin",
-      "body": "Pausar esta implementación y rediseñar la superficie dentro de `apps/admin` antes de integrar.",
+      "title": "Mantenerlo en Admin",
+      "body": "Mover la interfaz y la API al área administrativa si la supervisión debe compartir su perímetro de acceso y operación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar data-dashboards",
-    "body": "Mantener esta ubicación, tras añadir autorización de servidor y prueba autenticada completa.",
+    "title": "Aprobar `data-dashboards`",
+    "body": "Mantener la ruta nueva con el modelo de autorización existente y documentar el alcance de los roles que pueden consultar métricas nominales.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente en dashboards internos ofrece el mejor contexto disponible para decidir el patrón de esta aplicación.",
+    "person": "MiguelHamelyn",
+    "reason": "Ya revisa la combinación de dashboard, agregación MongoDB y telemetría, y puede encauzar la decisión con los responsables del área.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8395.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8395#issuecomment-5253805672",
-    "reviewedAt": "2026-08-11T13:42:49.090Z",
-    "mainSha": "6de191fdb2799f55c03bd7ea87b95b387c193cff"
+    "reviewedAt": "2026-08-12T07:15:04.531Z",
+    "mainSha": "8187dea1a4558d9f5937e63f77edf956c899e77f"
   }
 }
