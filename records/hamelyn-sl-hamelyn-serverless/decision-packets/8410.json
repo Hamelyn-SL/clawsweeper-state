@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-12T10:04:32.166Z",
+  "updatedAt": "2026-08-12T09:57:07Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8410,
+    "title": "Revisión V3: mejoras de agilidad del kiosko (avisos y tiempos de espera)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8410",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "feature",
+      "triage:needs-info",
+      "P2"
+    ],
+    "createdAt": "2026-08-12T09:35:21Z",
+    "updatedAt": "2026-08-12T09:57:07Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Identificación y estado deben pasar a 2 s tanto para estándar como para junior, o junior debe conservar un margen superior?",
+  "rationale": "La configuración actual distingue 3 s para estándar y 4 s para junior, mientras que la solicitud solo precisa el cambio desde 3 s.",
+  "options": [
+    {
+      "title": "Aplicar 2 s a ambos rangos",
+      "body": "Reducir identificación y estado a 2 s para estándar y junior, manteniendo foto en 8 s/10 s.",
+      "recommended": true
+    },
+    {
+      "title": "Conservar margen junior",
+      "body": "Reducir estándar a 2 s y definir expresamente un tiempo superior para junior.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aplicar 2 s a ambos rangos",
+    "body": "Reducir identificación y estado a 2 s para estándar y junior, manteniendo foto en 8 s/10 s.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el contribuidor reciente de este flujo y figura asignado a la mejora.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8410.md",
+    "reviewedAt": "2026-08-12T10:04:32.166Z",
+    "mainSha": "67d8dcbb2ef1c8bc372a243488551593294c3730"
+  }
+}
