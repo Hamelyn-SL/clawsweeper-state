@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T08:25:15.544Z",
-  "updatedAt": "2026-08-13T07:39:04Z",
+  "generatedAt": "2026-08-13T11:42:01.823Z",
+  "updatedAt": "2026-08-13T11:30:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,50 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-13T07:38:52Z",
-    "updatedAt": "2026-08-13T07:39:04Z",
-    "headSha": "4f6d9e315a8273814065fef9e6d0b54cfc5731b6"
+    "updatedAt": "2026-08-13T11:30:29Z",
+    "headSha": "b7b7012a1b9513ab002b60542de66d45262dea52"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe este PR convertir ya las fachadas `public/*` y el guardián de fronteras en el contrato arquitectónico de `@hamelyn/core`?",
-  "rationale": "El parche introduce una frontera de importación nueva y extensa que va más allá de un movimiento mecánico; la aceptación del contrato público requiere intención explícita.",
+  "question": "¿Debe `@hamelyn/core` adoptar ya las fachadas `public/*` y el guardián como contrato arquitectónico para sus consumidores?",
+  "rationale": "El cambio define una frontera de imports nueva y amplia; la compilación y los movimientos de ruta no determinan por sí solos que esa sea la dirección permanente.",
   "options": [
     {
-      "title": "Aprobar la dirección por fases",
-      "body": "Mantener la estrategia de fachadas y guardianes, corrigiendo primero los fallos funcionales y revisando cada fase por separado.",
+      "title": "Aprobar por fases",
+      "body": "Mantener fachadas y guardián, corrigiendo primero los fallos funcionales y revisando por separado cada migración de consumidores.",
       "recommended": true
     },
     {
-      "title": "Limitar el alcance",
-      "body": "Separar la inyección y las fachadas públicas del movimiento masivo de archivos para reducir el riesgo de revisión y reversión.",
+      "title": "Limitar el contrato",
+      "body": "Separar las fachadas públicas y la inyección de dependencias del movimiento masivo de archivos para reducir el riesgo de adopción.",
       "recommended": false
     },
     {
-      "title": "Pausar el contrato nuevo",
-      "body": "Conservar solo migraciones de ruta necesarias hasta que exista una decisión arquitectónica documentada.",
+      "title": "Pausar la dirección",
+      "body": "Conservar solo correcciones de rutas imprescindibles hasta documentar y aprobar el contrato público de core.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar la dirección por fases",
-    "body": "Mantener la estrategia de fachadas y guardianes, corrigiendo primero los fallos funcionales y revisando cada fase por separado.",
+    "title": "Aprobar por fases",
+    "body": "Mantener fachadas y guardián, corrigiendo primero los fallos funcionales y revisando por separado cada migración de consumidores.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "Alex Cantón",
-    "reason": "Su historial reciente concentra cambios de arquitectura práctica, carriers y flujos afectados dentro de core.",
+    "reason": "Su historial de limpieza arquitectónica de `core` es el mejor indicio disponible para encauzar la decisión de fronteras.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8430.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430#issuecomment-5277914081",
-    "reviewedAt": "2026-08-13T08:25:15.544Z",
-    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+    "reviewedAt": "2026-08-13T11:42:01.823Z",
+    "mainSha": "5cb450e1d017e0dd166399db832a73a8c830dc60"
   }
 }
