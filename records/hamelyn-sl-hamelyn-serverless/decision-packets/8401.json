@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T10:46:51.728Z",
-  "updatedAt": "2026-08-13T10:42:10Z",
+  "generatedAt": "2026-08-13T12:04:05.372Z",
+  "updatedAt": "2026-08-13T11:27:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,48 +14,47 @@
       "app:admin",
       "reporter:davidgonzalez",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
       "P2",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-12T05:40:54Z",
-    "updatedAt": "2026-08-13T10:42:10Z"
+    "updatedAt": "2026-08-13T11:27:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el dashboard conservar un total global de métricas heterogéneas o mostrar solo agregados etiquetados por tipo de operación?",
-  "rationale": "Los tipos de operación no representan unidades equivalentes y el código actual no contiene una conversión de negocio que permita sumar sus contadores con seguridad.",
+  "question": "¿El dashboard debe desglosar productos, gavetas y cubetas en lugar de publicarlos como un total único?",
+  "rationale": "Ambas opciones son implementables, pero solo el equipo puede decidir si esas unidades son comparables para la gestión operativa.",
   "options": [
     {
-      "title": "Mostrar métricas por operación",
-      "body": "Conservar subtotales y ritmos etiquetados por tipo, eliminando o relegando el total global heterogéneo.",
+      "title": "Desglosar por unidad",
+      "body": "Mostrar subtotales por métrica de operación y evitar que el total sugiera una equivalencia inexistente.",
       "recommended": true
     },
     {
-      "title": "Definir una unidad común",
-      "body": "Mantener un total global únicamente tras documentar una conversión funcional válida para cada operación.",
+      "title": "Mantener total común",
+      "body": "Conservar el agregado actual con una etiqueta que explique explícitamente la mezcla de unidades.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mostrar métricas por operación",
-    "body": "Conservar subtotales y ritmos etiquetados por tipo, eliminando o relegando el total global heterogéneo.",
+    "title": "Desglosar por unidad",
+    "body": "Mostrar subtotales por métrica de operación y evitar que el total sugiera una equivalencia inexistente.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha mantenido recientemente tanto el endpoint de resumen como la UI afectada.",
-    "confidence": "high"
+    "reason": "Ha realizado los cambios recientes en las rutas y métricas de productividad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401#issuecomment-5263046254",
-    "reviewedAt": "2026-08-13T10:46:51.728Z",
-    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+    "reviewedAt": "2026-08-13T12:04:05.372Z",
+    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
   }
 }
