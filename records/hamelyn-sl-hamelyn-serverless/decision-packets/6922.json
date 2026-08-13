@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-05T12:51:42.817Z",
-  "updatedAt": "2026-08-05T12:47:49Z",
+  "generatedAt": "2026-08-13T08:45:47.258Z",
+  "updatedAt": "2026-08-13T08:34:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,53 +13,52 @@
       "bug",
       "app:marketplace",
       "triage:needs-info",
-      "origin:bl",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:bl"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-08-05T12:47:49Z"
+    "updatedAt": "2026-08-13T08:34:41Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se confirma `Fnac 22 → URGENT`, `Fnac 20 → NORMAL` y que Amazon ES debe respetar solo `fulfillmentServiceLevel` sin el override por importe?",
-  "rationale": "El código demuestra el defecto y la cobertura de campos, pero esos valores determinan SLA operativos y no pueden inferirse con seguridad desde el repositorio.",
+  "question": "¿Se confirman `Fnac 20 → NORMAL`, `Fnac 22 → URGENT` y la retirada del override de Amazon ES para respetar solo `fulfillmentServiceLevel`?",
+  "rationale": "El censo de pedidos acredita cobertura de las señales, pero ni la semántica contractual de Fnac ni la intención operativa del override de Amazon son deducibles con seguridad desde el código.",
   "options": [
     {
-      "title": "Confirmar mapeos y eliminar el override",
-      "body": "Adoptar los mapeos propuestos para Fnac y hacer que Amazon use exclusivamente su nivel de servicio.",
+      "title": "Confirmar mapeos y retirar override",
+      "body": "Adoptar los mapeos propuestos y hacer que Amazon derive la prioridad exclusivamente de su nivel de servicio.",
       "recommended": true
     },
     {
       "title": "Conservar el override de Amazon",
-      "body": "Aplicar los mapeos de CDL, eBay y Fnac, manteniendo temporalmente el refuerzo español de Amazon documentado.",
+      "body": "Aplicar los mapeos de CDL, eBay y Fnac, pero mantener temporalmente el boost español por importe.",
       "recommended": false
     },
     {
-      "title": "Pausar hasta validar Fnac",
-      "body": "No cambiar prioridades hasta contrastar los códigos de Fnac con su contrato o portal operativo.",
+      "title": "Validar con operaciones primero",
+      "body": "Pausar el cambio hasta contrastar los códigos de Fnac y el SLA de Amazon con sus portales o contratos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar mapeos y eliminar el override",
-    "body": "Adoptar los mapeos propuestos para Fnac y hacer que Amazon use exclusivamente su nivel de servicio.",
+    "title": "Confirmar mapeos y retirar override",
+    "body": "Adoptar los mapeos propuestos y hacer que Amazon derive la prioridad exclusivamente de su nivel de servicio.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre los formatters afectados y ya pidió comprobar los mecanismos de envío.",
+    "person": "PabloMoran34",
+    "reason": "La documentación BL le sitúa como owner de la regla cuya semántica debe validarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6922#issuecomment-4911154024",
-    "reviewedAt": "2026-08-05T12:51:42.817Z",
-    "mainSha": "b9b2ef806d69d0253d9de6ea4e71f827ef17ac5d"
+    "reviewedAt": "2026-08-13T08:45:47.258Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
   }
 }
