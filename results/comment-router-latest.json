@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-13T14:49:11.760Z",
+  "generated_at": "2026-08-13T15:14:00.549Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-13T11:49:08.242Z",
+  "since": "2026-08-13T12:13:57.653Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 27,
+  "scanned_comments": 26,
   "commands_seen": 3,
   "actionable": 0,
   "trusted_bots": [
@@ -153,15 +153,15 @@
     }
   ],
   "timings": {
-    "total_ms": 3518,
+    "total_ms": 2896,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1779
+        "ms": 1363
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1733
+        "ms": 1528
       },
       {
         "name": "classify_comment_commands",
