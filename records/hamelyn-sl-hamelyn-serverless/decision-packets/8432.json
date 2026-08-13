@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T12:17:13.444Z",
-  "updatedAt": "2026-08-13T11:28:06Z",
+  "generatedAt": "2026-08-13T13:42:07.016Z",
+  "updatedAt": "2026-08-13T13:06:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,51 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P2",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 session-state"
+      "merge-risk: 🚨 session-state",
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-13T10:06:18Z",
-    "updatedAt": "2026-08-13T11:28:06Z",
-    "headSha": "b9052363dd69e80670d7348cfced86fc0a0566a2"
+    "updatedAt": "2026-08-13T13:06:06Z",
+    "headSha": "78443c428e1134202251e82b65ccdbd6b0190f81"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se exige una comprobación o migración de despliegue para `uniq_active_session`, o se acepta explícitamente su creación manual previa a la activación del flujo?",
-  "rationale": "La exclusividad que corrige la carrera no existe hasta que el índice persistido se haya creado y verificado en Atlas.",
+  "question": "¿Quién valida y ejecuta el saneado y la creación de `uniq_active_session` en Atlas inmediatamente después del despliegue de esta PR?",
+  "rationale": "El código declara el índice pero la conexión desactiva `autoIndex`; sin un responsable y una secuencia operativa confirmada, el arreglo de concurrencia queda incompleto en producción.",
   "options": [
     {
-      "title": "Verificar el índice antes de desplegar",
-      "body": "Usar un paso idempotente de despliegue o una comprobación registrada que asegure el índice antes de habilitar el nuevo START.",
+      "title": "Aprobar con runbook asignado",
+      "body": "Asignar un responsable que ejecute la limpieza, confirme ausencia de duplicados y cree el índice después del despliegue.",
       "recommended": true
     },
     {
-      "title": "Mantener la operación manual",
-      "body": "Aceptar la receta manual solo si se bloquea el despliegue hasta registrar su ejecución correcta en el entorno afectado.",
+      "title": "Automatizar antes de fusionar",
+      "body": "Añadir una vía de migración o despliegue versionada para que la creación del índice no dependa de una acción manual.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer el índice",
+      "body": "Mantener la PR en borrador hasta disponer de una ventana operativa segura para la migración de Atlas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Verificar el índice antes de desplegar",
-    "body": "Usar un paso idempotente de despliegue o una comprobación registrada que asegure el índice antes de habilitar el nuevo START.",
+    "title": "Aprobar con runbook asignado",
+    "body": "Asignar un responsable que ejecute la limpieza, confirme ausencia de duplicados y cree el índice después del despliegue.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha definido el procedimiento de Atlas y conoce el ciclo de vida de productividad afectado.",
+    "reason": "El cuerpo de la PR ya le asigna explícitamente la ejecución post-despliegue y su historial cubre los escritores afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432#issuecomment-5279070176",
-    "reviewedAt": "2026-08-13T12:17:13.444Z",
-    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
+    "reviewedAt": "2026-08-13T13:42:07.016Z",
+    "mainSha": "7b7e0bdac0568b2d2232fa5c669b7b7f0e2a2ff4"
   }
 }
