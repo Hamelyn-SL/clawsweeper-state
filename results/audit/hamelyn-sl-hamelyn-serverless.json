@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-13T07:03:15.753Z",
+  "generatedAt": "2026-08-13T12:56:25.879Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 1,
-    "openItemsSeen": 70
+    "openItemsSeen": 76
   },
   "counts": {
-    "itemRecords": 66,
-    "closedRecords": 1022,
+    "itemRecords": 72,
+    "closedRecords": 1027,
     "missingOpen": 4,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
@@ -40,44 +40,42 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8420,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-12T12:27:00Z",
-        "updatedAt": "2026-08-13T06:18:32Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8424,
+        "number": 8437,
         "kind": "issue",
-        "title": "Formulario contacto Supply",
+        "title": "[SPIKE] Sustituir ESLint + Prettier por Biome en todo el monorepo",
         "labels": [
-          "source:admin-panel",
-          "app:supply",
+          "app:infrastructure",
           "feature",
-          "reporter:arineligrigore",
-          "triage:running",
+          "triage:done",
           "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-13T06:49:32Z",
-        "updatedAt": "2026-08-13T07:03:13Z",
+        "createdAt": "2026-08-13T12:23:15Z",
+        "updatedAt": "2026-08-13T12:50:24Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 8425,
+        "number": 8438,
         "kind": "pull_request",
-        "title": "fix: remove misleading payout banner from incidents",
+        "title": "fix: restore compatible watcher sandbox runtime",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-13T12:34:44Z",
+        "updatedAt": "2026-08-13T12:37:45Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8439,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
         "labels": [
           "size/S"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-13T07:02:32Z",
-        "updatedAt": "2026-08-13T07:03:00Z",
+        "createdAt": "2026-08-13T12:48:44Z",
+        "updatedAt": "2026-08-13T12:51:56Z",
         "missingReason": "recently_created"
       }
     ],
@@ -104,44 +102,42 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8420,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
-        "labels": [
-          "size/XL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-12T12:27:00Z",
-        "updatedAt": "2026-08-13T06:18:32Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8424,
+        "number": 8437,
         "kind": "issue",
-        "title": "Formulario contacto Supply",
+        "title": "[SPIKE] Sustituir ESLint + Prettier por Biome en todo el monorepo",
         "labels": [
-          "source:admin-panel",
-          "app:supply",
+          "app:infrastructure",
           "feature",
-          "reporter:arineligrigore",
-          "triage:running",
+          "triage:done",
           "P2"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-13T06:49:32Z",
-        "updatedAt": "2026-08-13T07:03:13Z",
+        "createdAt": "2026-08-13T12:23:15Z",
+        "updatedAt": "2026-08-13T12:50:24Z",
         "missingReason": "recently_created"
       },
       {
-        "number": 8425,
+        "number": 8438,
         "kind": "pull_request",
-        "title": "fix: remove misleading payout banner from incidents",
+        "title": "fix: restore compatible watcher sandbox runtime",
+        "labels": [
+          "size/M"
+        ],
+        "authorAssociation": "CONTRIBUTOR",
+        "createdAt": "2026-08-13T12:34:44Z",
+        "updatedAt": "2026-08-13T12:37:45Z",
+        "missingReason": "recently_created"
+      },
+      {
+        "number": 8439,
+        "kind": "pull_request",
+        "title": "Deploy to Prod",
         "labels": [
           "size/S"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-13T07:02:32Z",
-        "updatedAt": "2026-08-13T07:03:00Z",
+        "createdAt": "2026-08-13T12:48:44Z",
+        "updatedAt": "2026-08-13T12:51:56Z",
         "missingReason": "recently_created"
       }
     ],
