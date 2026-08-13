@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T10:21:27.186Z",
+  "updatedAt": "2026-08-13T10:14:13Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8432,
+    "title": "fix: self-heal stale productivity sessions on start and back unique active index",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-13T10:06:18Z",
+    "updatedAt": "2026-08-13T10:14:13Z",
+    "headSha": "0ca30737cac931335bb9833a12787ccc8ee46328"
+  },
+  "lane": "release_inclusion",
+  "priority": "P2",
+  "question": "¿Se acepta el despliegue en dos fases con creación manual del índice Atlas, o debe existir una migración o verificación versionada antes de fusionar?",
+  "rationale": "El cambio altera estado persistido y su garantía central no la aplica el proceso de despliegue mostrado en el parche.",
+  "options": [
+    {
+      "title": "Versionar la transición",
+      "body": "Añadir una migración o verificación desplegable que prepare sesiones abiertas y confirme el índice antes de depender de la unicidad.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar runbook manual",
+      "body": "Fusionar con un responsable explícito que ejecute y registre el procedimiento Atlas inmediatamente tras el despliegue.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Versionar la transición",
+    "body": "Añadir una migración o verificación desplegable que prepare sesiones abiertas y confirme el índice antes de depender de la unicidad.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Ha documentado el procedimiento de Atlas y el comportamiento esperado de la transición.",
+    "confidence": "low"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8432.md",
+    "reviewedAt": "2026-08-13T10:21:27.186Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+  }
+}
