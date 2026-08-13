@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T13:10:58.750Z",
+  "updatedAt": "2026-08-13T12:50:24Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8437,
+    "title": "[SPIKE] Sustituir ESLint + Prettier por Biome en todo el monorepo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8437",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-13T12:23:15Z",
+    "updatedAt": "2026-08-13T12:50:24Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe priorizarse una migración completa a Biome aceptando una paridad distinta en las reglas de React Compiler y coordinando un reformat transversal?",
+  "rationale": "La elección cambia los controles de calidad de trece workspaces y exige aceptar explícitamente qué protecciones se conservan, sustituyen o retiran.",
+  "options": [
+    {
+      "title": "Aprobar spike de paridad",
+      "body": "Encargar una matriz de reglas, exclusiones, pruebas de plugins y medición de CI antes de calendarizar la migración completa.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el stack actual",
+      "body": "Conservar ESLint y Prettier y abordar de forma independiente los warnings de `admin` y los problemas de instalación parcial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar spike de paridad",
+    "body": "Encargar una matriz de reglas, exclusiones, pruebas de plugins y medición de CI antes de calendarizar la migración completa.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Ya investigó las reglas activas, los warnings y el alcance técnico real de esta iniciativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8437.md",
+    "reviewedAt": "2026-08-13T13:10:58.750Z",
+    "mainSha": "7873d5474c9c077a6980c1850d580cbc69a53c53"
+  }
+}
