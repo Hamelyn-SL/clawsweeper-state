@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T06:17:28.744Z",
-  "updatedAt": "2026-08-13T06:09:25Z",
+  "generatedAt": "2026-08-13T08:25:58.411Z",
+  "updatedAt": "2026-08-13T07:46:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,46 +12,50 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
-    "updatedAt": "2026-08-13T06:09:25Z",
-    "headSha": "20c928a490e152358be583e4f16a2e394246b8c7"
+    "updatedAt": "2026-08-13T07:46:41Z",
+    "headSha": "b04a9b4c8ba54f651c481d9c284c37d8afe76841"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe el contrato permanente de `logBlEntry` conservar un evento por invocación o alinearse con la liveness por instancia del PR relacionado?",
-  "rationale": "Esta rama y https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331 cambian el mismo helper para resolver el flood, pero sus datos tienen cardinalidad y consumidores diferentes.",
+  "question": "¿Debe este PR aterrizar con el cliente clásico `insert()` o cambiar primero a Storage Write API para cumplir el objetivo de contención de costes?",
+  "rationale": "El propio análisis final indica que el mínimo por fila del transporte clásico puede recrear el coste que el cambio pretende evitar; elegir el contrato de ingesta es una decisión operativa de data platform.",
   "options": [
     {
-      "title": "Conservar eventos por invocación",
-      "body": "Patrocinar esta ruta, completar el lifecycle de ecommerce y formalizar la migración de consumidores hacia `bl_telemetry.bl_events`.",
+      "title": "Cambiar a Storage Write API",
+      "body": "Adoptar la ruta de bytes reales y validar su cuota, permisos y comportamiento antes de habilitar telemetría.",
       "recommended": true
     },
     {
-      "title": "Unificar liveness por instancia",
-      "body": "Alinear la telemetría con https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331 y retirar el conteo por invocación.",
+      "title": "Aceptar `insert()` temporalmente",
+      "body": "Mantener el cliente clásico con una previsión de coste aprobada y un plan fechado para migrarlo.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la decisión de transporte",
+      "body": "Aterrizar sólo los guardarraíles tras extraer el writer a una propuesta específica de data platform.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Conservar eventos por invocación",
-    "body": "Patrocinar esta ruta, completar el lifecycle de ecommerce y formalizar la migración de consumidores hacia `bl_telemetry.bl_events`.",
+    "title": "Cambiar a Storage Write API",
+    "body": "Adoptar la ruta de bytes reales y validar su cuota, permisos y comportamiento antes de habilitar telemetría.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Ha introducido y mantenido la semántica actual de trazas BL y sus cadenas por request.",
-    "confidence": "high"
+    "reason": "Su historial introdujo la semántica actual de logs BL y el PR documenta explícitamente esta elección pendiente.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-13T06:17:28.744Z",
-    "mainSha": "9ba9278bd906838cfbb50a58553a24958f5b5b4d"
+    "reviewedAt": "2026-08-13T08:25:58.411Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
   }
 }
