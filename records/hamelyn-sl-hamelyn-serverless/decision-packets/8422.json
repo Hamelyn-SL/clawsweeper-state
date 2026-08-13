@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T12:16:52.727Z",
+  "generatedAt": "2026-08-13T12:19:17.985Z",
   "updatedAt": "2026-08-13T11:42:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,12 +12,12 @@
     "labels": [
       "size/XXL",
       "business-logic",
+      "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 automation"
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
     "updatedAt": "2026-08-13T11:42:10Z",
@@ -25,34 +25,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR migrar ahora el dashboard a `bl_invocations_v2`, o conservar `vercel_logs.bl_invocations` como contrato activo hasta un rollout posterior explícito?",
-  "rationale": "El productor nuevo y el consumidor actual apuntan a tablas distintas; la elección determina si el rollout preserva la utilidad del grafo BL.",
+  "question": "¿Debe el contrato permanente usar `bl_invocations_v2` y migrar el dashboard en esta entrega, o conservar el nombre y consumidor `bl_invocations` mediante una migración compatible?",
+  "rationale": "La rama introduce una tabla y agregado nuevos, pero el consumidor actual continúa en el contrato anterior; elegir el contrato de métricas no es una reparación mecánica.",
   "options": [
     {
-      "title": "Migrar el consumidor en este PR",
-      "body": "Actualizar el dashboard y demostrar que el grafo conserva sus métricas antes de activar la nueva emisión.",
+      "title": "Migrar a v2 en este PR",
+      "body": "Actualizar el dashboard y la documentación operativa para consumir `bl_invocations_v2` antes de activar la telemetría.",
       "recommended": true
     },
     {
-      "title": "Separar la migración",
-      "body": "Mantener el contrato histórico operativo hasta que otra PR cambie y valide el dashboard.",
+      "title": "Mantener el contrato existente",
+      "body": "Publicar el agregado nuevo bajo un camino compatible con `bl_invocations` y dejar la migración de nombres para otra propuesta.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Migrar el consumidor en este PR",
-    "body": "Actualizar el dashboard y demostrar que el grafo conserva sus métricas antes de activar la nueva emisión.",
+    "title": "Migrar a v2 en este PR",
+    "body": "Actualizar el dashboard y la documentación operativa para consumir `bl_invocations_v2` antes de activar la telemetría.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El historial vincula a esta persona con el contrato de consulta que debe preservarse o migrarse.",
-    "confidence": "high"
+    "person": "danielmenchen-hamelyn",
+    "reason": "La rama y el PR relacionado documentan y aplican las decisiones recientes de semántica de instrumentación BL.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-13T12:16:52.727Z",
+    "reviewedAt": "2026-08-13T12:19:17.985Z",
     "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T12:19:48.694Z",
+  "updatedAt": "2026-08-13T11:40:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8434,
+    "title": "fix: paginate todocoleccion orders and return per-item sync results",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-08-13T11:40:19Z",
+    "updatedAt": "2026-08-13T11:40:31Z",
+    "headSha": "7921bc37f776fe33e1a51d6e50f4b69bd1f5457f"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe el primer cron ingerir automáticamente los pedidos históricos detectados o requiere una revisión operativa previa?",
+  "rationale": "El PR declara nueve pedidos reales no ingeridos que pueden estar resueltos fuera del sistema; el código no puede decidir su estado operativo correcto.",
+  "options": [
+    {
+      "title": "Revisar antes del cron",
+      "body": "Verificar los nueve pedidos identificados y ejecutar la ingestión cuando se confirme que deben crear ordersells.",
+      "recommended": true
+    },
+    {
+      "title": "Ingerir automáticamente",
+      "body": "Aceptar la creación de ordersells históricos y gestionar después cualquier excepción desde operaciones.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Revisar antes del cron",
+    "body": "Verificar los nueve pedidos identificados y ejecutar la ingestión cuando se confirme que deben crear ordersells.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente cubre la recuperación operativa del adaptador de TodoColección.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
+    "reviewedAt": "2026-08-13T12:19:48.694Z",
+    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
+  }
+}

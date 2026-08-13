@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T10:21:27.186Z",
-  "updatedAt": "2026-08-13T10:14:13Z",
+  "generatedAt": "2026-08-13T12:17:13.444Z",
+  "updatedAt": "2026-08-13T11:28:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,44 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 session-state"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-13T10:06:18Z",
-    "updatedAt": "2026-08-13T10:14:13Z",
-    "headSha": "0ca30737cac931335bb9833a12787ccc8ee46328"
+    "updatedAt": "2026-08-13T11:28:06Z",
+    "headSha": "b9052363dd69e80670d7348cfced86fc0a0566a2"
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se acepta el despliegue en dos fases con creación manual del índice Atlas, o debe existir una migración o verificación versionada antes de fusionar?",
-  "rationale": "El cambio altera estado persistido y su garantía central no la aplica el proceso de despliegue mostrado en el parche.",
+  "question": "¿Se exige una comprobación o migración de despliegue para `uniq_active_session`, o se acepta explícitamente su creación manual previa a la activación del flujo?",
+  "rationale": "La exclusividad que corrige la carrera no existe hasta que el índice persistido se haya creado y verificado en Atlas.",
   "options": [
     {
-      "title": "Versionar la transición",
-      "body": "Añadir una migración o verificación desplegable que prepare sesiones abiertas y confirme el índice antes de depender de la unicidad.",
+      "title": "Verificar el índice antes de desplegar",
+      "body": "Usar un paso idempotente de despliegue o una comprobación registrada que asegure el índice antes de habilitar el nuevo START.",
       "recommended": true
     },
     {
-      "title": "Aceptar runbook manual",
-      "body": "Fusionar con un responsable explícito que ejecute y registre el procedimiento Atlas inmediatamente tras el despliegue.",
+      "title": "Mantener la operación manual",
+      "body": "Aceptar la receta manual solo si se bloquea el despliegue hasta registrar su ejecución correcta en el entorno afectado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Versionar la transición",
-    "body": "Añadir una migración o verificación desplegable que prepare sesiones abiertas y confirme el índice antes de depender de la unicidad.",
+    "title": "Verificar el índice antes de desplegar",
+    "body": "Usar un paso idempotente de despliegue o una comprobación registrada que asegure el índice antes de habilitar el nuevo START.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha documentado el procedimiento de Atlas y el comportamiento esperado de la transición.",
-    "confidence": "low"
+    "reason": "Ha definido el procedimiento de Atlas y conoce el ciclo de vida de productividad afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432#issuecomment-5279070176",
-    "reviewedAt": "2026-08-13T10:21:27.186Z",
-    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+    "reviewedAt": "2026-08-13T12:17:13.444Z",
+    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
   }
 }
