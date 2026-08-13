@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T10:21:27.186Z",
+  "generatedAt": "2026-08-13T10:24:49.666Z",
   "updatedAt": "2026-08-13T10:14:13Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -10,12 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432",
     "state": "open",
     "labels": [
-      "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "P2",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 session-state"
+      "size/L"
     ],
     "createdAt": "2026-08-13T10:06:18Z",
     "updatedAt": "2026-08-13T10:14:13Z",
@@ -23,34 +18,33 @@
   },
   "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Se acepta el despliegue en dos fases con creación manual del índice Atlas, o debe existir una migración o verificación versionada antes de fusionar?",
-  "rationale": "El cambio altera estado persistido y su garantía central no la aplica el proceso de despliegue mostrado en el parche.",
+  "question": "¿Quién asume y verifica la creación del índice `uniq_active_session` en Atlas como parte del despliegue de esta PR?",
+  "rationale": "El código declara el índice pero el repositorio tiene `autoIndex` deshabilitado; decidir el canal operativo y la ventana de aplicación requiere acceso y responsabilidad de despliegue.",
   "options": [
     {
-      "title": "Versionar la transición",
-      "body": "Añadir una migración o verificación desplegable que prepare sesiones abiertas y confirme el índice antes de depender de la unicidad.",
+      "title": "Añadir un paso operativo verificable",
+      "body": "Documentar o automatizar un paso de despliegue que compruebe duplicados, cree el índice y registre que existe antes de dar por cerrada la carrera.",
       "recommended": true
     },
     {
-      "title": "Aceptar runbook manual",
-      "body": "Fusionar con un responsable explícito que ejecute y registre el procedimiento Atlas inmediatamente tras el despliegue.",
+      "title": "Aceptar protección diferida",
+      "body": "Integrar el código y asumir que la carrera seguirá abierta hasta que una persona ejecute manualmente el comando en Atlas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Versionar la transición",
-    "body": "Añadir una migración o verificación desplegable que prepare sesiones abiertas y confirme el índice antes de depender de la unicidad.",
+    "title": "Añadir un paso operativo verificable",
+    "body": "Documentar o automatizar un paso de despliegue que compruebe duplicados, cree el índice y registre que existe antes de dar por cerrada la carrera.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha documentado el procedimiento de Atlas y el comportamiento esperado de la transición.",
-    "confidence": "low"
+    "reason": "Ha documentado el procedimiento de Atlas y trabaja en las rutas de sesión que deben coordinarse.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432#issuecomment-5279070176",
-    "reviewedAt": "2026-08-13T10:21:27.186Z",
+    "reviewedAt": "2026-08-13T10:24:49.666Z",
     "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
   }
 }
