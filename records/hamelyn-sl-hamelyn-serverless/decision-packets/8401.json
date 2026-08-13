@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T12:04:05.372Z",
+  "generatedAt": "2026-08-13T12:11:26.922Z",
   "updatedAt": "2026-08-13T11:27:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,48 +14,47 @@
       "app:admin",
       "reporter:davidgonzalez",
       "triage:done",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-12T05:40:54Z",
     "updatedAt": "2026-08-13T11:27:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El dashboard debe desglosar productos, gavetas y cubetas en lugar de publicarlos como un total único?",
-  "rationale": "Ambas opciones son implementables, pero solo el equipo puede decidir si esas unidades son comparables para la gestión operativa.",
+  "question": "¿El dashboard debe separar métricas por unidad operativa o conservar un total mixto etiquetado explícitamente?",
+  "rationale": "El código puede sumar contadores, pero el informe no establece que productos, gavetas y cubetas compartan una semántica de total válida.",
   "options": [
     {
-      "title": "Desglosar por unidad",
-      "body": "Mostrar subtotales por métrica de operación y evitar que el total sugiera una equivalencia inexistente.",
+      "title": "Separar por unidad",
+      "body": "Mostrar subtotales y ritmos por tipo o unidad para evitar comparaciones operativas engañosas.",
       "recommended": true
     },
     {
-      "title": "Mantener total común",
-      "body": "Conservar el agregado actual con una etiqueta que explique explícitamente la mezcla de unidades.",
+      "title": "Mantener total mixto",
+      "body": "Conservar un agregado global con una etiqueta visible que explique que combina unidades distintas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desglosar por unidad",
-    "body": "Mostrar subtotales por métrica de operación y evitar que el total sugiera una equivalencia inexistente.",
+    "title": "Separar por unidad",
+    "body": "Mostrar subtotales y ritmos por tipo o unidad para evitar comparaciones operativas engañosas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Ha realizado los cambios recientes en las rutas y métricas de productividad.",
-    "confidence": "medium"
+    "reason": "Sus cambios vinculados concentran el panel y el ciclo de sesiones donde se aplicará la decisión.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401#issuecomment-5263046254",
-    "reviewedAt": "2026-08-13T12:04:05.372Z",
+    "reviewedAt": "2026-08-13T12:11:26.922Z",
     "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
   }
 }
