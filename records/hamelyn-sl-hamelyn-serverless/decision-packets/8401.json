@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T12:11:26.922Z",
-  "updatedAt": "2026-08-13T11:27:10Z",
+  "generatedAt": "2026-08-13T13:20:13.828Z",
+  "updatedAt": "2026-08-13T13:12:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:admin",
       "reporter:davidgonzalez",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond",
-      "P2",
-      "impact:other"
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-12T05:40:54Z",
-    "updatedAt": "2026-08-13T11:27:10Z"
+    "updatedAt": "2026-08-13T13:12:10Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿El dashboard debe separar métricas por unidad operativa o conservar un total mixto etiquetado explícitamente?",
-  "rationale": "El código puede sumar contadores, pero el informe no establece que productos, gavetas y cubetas compartan una semántica de total válida.",
+  "question": "¿El dashboard debe conservar un total agregado de unidades o separarlo por la unidad propia de cada operación?",
+  "rationale": "Productos, cubetas y gavetas ya se modelan con unidades distintas, y el código no puede decidir una equivalencia de negocio.",
   "options": [
     {
       "title": "Separar por unidad",
-      "body": "Mostrar subtotales y ritmos por tipo o unidad para evitar comparaciones operativas engañosas.",
+      "body": "Mostrar subtotales por operación o unidad para no presentar una suma heterogénea como una métrica única.",
       "recommended": true
     },
     {
-      "title": "Mantener total mixto",
-      "body": "Conservar un agregado global con una etiqueta visible que explique que combina unidades distintas.",
+      "title": "Definir unidad canónica",
+      "body": "Mantener un total general solo tras acordar y documentar una conversión de negocio entre las unidades.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar por unidad",
-    "body": "Mostrar subtotales y ritmos por tipo o unidad para evitar comparaciones operativas engañosas.",
+    "body": "Mostrar subtotales por operación o unidad para no presentar una suma heterogénea como una métrica única.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Sus cambios vinculados concentran el panel y el ciclo de sesiones donde se aplicará la decisión.",
+    "reason": "Es el contribuidor reciente de la implementación y de la PR que continúa el arreglo técnico.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8401.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8401#issuecomment-5263046254",
-    "reviewedAt": "2026-08-13T12:11:26.922Z",
-    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
+    "reviewedAt": "2026-08-13T13:20:13.828Z",
+    "mainSha": "7873d5474c9c077a6980c1850d580cbc69a53c53"
   }
 }
