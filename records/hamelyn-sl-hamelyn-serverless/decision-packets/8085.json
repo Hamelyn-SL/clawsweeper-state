@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-06T09:51:30.928Z",
-  "updatedAt": "2026-08-06T09:00:19Z",
+  "generatedAt": "2026-08-13T09:11:44.373Z",
+  "updatedAt": "2026-08-13T08:34:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,50 +13,49 @@
       "feature",
       "reporter:javier",
       "triage:needs-info",
-      "app:data",
-      "origin:dev",
-      "P2",
-      "impact:security",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a",
+      "app:data",
+      "origin:dev"
     ],
     "createdAt": "2026-07-29T10:14:09Z",
-    "updatedAt": "2026-08-06T09:00:19Z"
+    "updatedAt": "2026-08-13T08:34:39Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Qué campos personales, plazo de retención y garantía de persistencia se aprueban para los eventos de Mandrill antes de exponer el webhook?",
-  "rationale": "El código puede seguir los patrones existentes, pero no puede decidir por sí solo qué PII conservar ni si se acepta pérdida silenciosa frente a una cola duradera.",
+  "question": "¿Qué campos personales, plazo de retención y garantía de persistencia se aprueban para los eventos de Mandrill antes de exponer el receptor?",
+  "rationale": "La elección define el límite de privacidad y si el sistema puede reconocer eventos antes de persistirlos de forma duradera.",
   "options": [
     {
-      "title": "Minimizar y encolar antes de BigQuery",
-      "body": "Guardar solo campos necesarios, definir TTL y publicar cada lote validado en una cola duradera antes de confirmar el webhook.",
+      "title": "Minimizar y encolar duraderamente",
+      "body": "Guardar solo campos aprobados con retención definida y devolver éxito únicamente tras persistir el lote en una cola durable.",
       "recommended": true
     },
     {
-      "title": "Ingesta directa con retención limitada",
-      "body": "Aceptar inserción directa en BigQuery y respuesta 200 ante fallo, documentando recuperación y la pérdida residual de eventos.",
+      "title": "Ingesta directa documentada",
+      "body": "Insertar directamente en BigQuery y aceptar explícitamente el riesgo de pérdida o bloqueo ante una incidencia del almacén.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Minimizar y encolar antes de BigQuery",
-    "body": "Guardar solo campos necesarios, definir TTL y publicar cada lote validado en una cola duradera antes de confirmar el webhook.",
+    "title": "Minimizar y encolar duraderamente",
+    "body": "Guardar solo campos aprobados con retención definida y devolver éxito únicamente tras persistir el lote en una cola durable.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Conoce el patrón actual de ingesta a BigQuery y propuso el diseño de esta trazabilidad.",
-    "confidence": "high"
+    "person": "banosdavidhamelyn",
+    "reason": "Su historial reciente cubre el payload de Mandrill que debe instrumentarse para esta trazabilidad.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8085.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8085#issuecomment-5116438979",
-    "reviewedAt": "2026-08-06T09:51:30.928Z",
-    "mainSha": "a1a00fd0c62fcbb61555e8ac573566f8dbc5aa7d"
+    "reviewedAt": "2026-08-13T09:11:44.373Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
   }
 }
