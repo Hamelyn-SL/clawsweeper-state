@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T08:25:15.544Z",
+  "updatedAt": "2026-08-13T07:39:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8430,
+    "title": "refactor(core): estructura nueva, fronteras vigiladas e inyección en el piloto de catálogo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-13T07:38:52Z",
+    "updatedAt": "2026-08-13T07:39:04Z",
+    "headSha": "4f6d9e315a8273814065fef9e6d0b54cfc5731b6"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe este PR convertir ya las fachadas `public/*` y el guardián de fronteras en el contrato arquitectónico de `@hamelyn/core`?",
+  "rationale": "El parche introduce una frontera de importación nueva y extensa que va más allá de un movimiento mecánico; la aceptación del contrato público requiere intención explícita.",
+  "options": [
+    {
+      "title": "Aprobar la dirección por fases",
+      "body": "Mantener la estrategia de fachadas y guardianes, corrigiendo primero los fallos funcionales y revisando cada fase por separado.",
+      "recommended": true
+    },
+    {
+      "title": "Limitar el alcance",
+      "body": "Separar la inyección y las fachadas públicas del movimiento masivo de archivos para reducir el riesgo de revisión y reversión.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el contrato nuevo",
+      "body": "Conservar solo migraciones de ruta necesarias hasta que exista una decisión arquitectónica documentada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar la dirección por fases",
+    "body": "Mantener la estrategia de fachadas y guardianes, corrigiendo primero los fallos funcionales y revisando cada fase por separado.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial reciente concentra cambios de arquitectura práctica, carriers y flujos afectados dentro de core.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8430.md",
+    "reviewedAt": "2026-08-13T08:25:15.544Z",
+    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+  }
+}

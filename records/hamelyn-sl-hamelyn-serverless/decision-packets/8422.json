@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T08:25:58.411Z",
+  "generatedAt": "2026-08-13T08:26:13.772Z",
   "updatedAt": "2026-08-13T07:46:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -12,12 +12,11 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "merge-risk: 🚨 compatibility",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
     "updatedAt": "2026-08-13T07:46:41Z",
@@ -25,39 +24,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe este PR aterrizar con el cliente clásico `insert()` o cambiar primero a Storage Write API para cumplir el objetivo de contención de costes?",
-  "rationale": "El propio análisis final indica que el mínimo por fila del transporte clásico puede recrear el coste que el cambio pretende evitar; elegir el contrato de ingesta es una decisión operativa de data platform.",
+  "question": "¿Debe `bl_invocations_v2` convertirse en la métrica canónica por invocación, manteniendo `vercel_logs.bl_invocations` solo como histórico, antes de conectar consumidores o renombrar tablas?",
+  "rationale": "El PR y el PR cerrado relacionado describen cardinalidades distintas para el mismo dominio BL; elegir el contrato permanente afecta dashboards, costes y la estrategia de migración.",
   "options": [
     {
-      "title": "Cambiar a Storage Write API",
-      "body": "Adoptar la ruta de bytes reales y validar su cuota, permisos y comportamiento antes de habilitar telemetría.",
+      "title": "Adoptar v2 como contrato canónico",
+      "body": "Mantener la métrica por invocación en `bl_invocations_v2`, documentar la migración de consumidores y congelar la tabla legacy como histórico.",
       "recommended": true
     },
     {
-      "title": "Aceptar `insert()` temporalmente",
-      "body": "Mantener el cliente clásico con una previsión de coste aprobada y un plan fechado para migrarlo.",
+      "title": "Mantener solo liveness legacy",
+      "body": "No activar el writer por invocación y conservar la semántica de una traza por instancia para limitar el coste.",
       "recommended": false
     },
     {
-      "title": "Separar la decisión de transporte",
-      "body": "Aterrizar sólo los guardarraíles tras extraer el writer a una propuesta específica de data platform.",
+      "title": "Separar la decisión de la entrega",
+      "body": "Fusionar únicamente el writer apagado y posponer tabla, agregado y consumidores hasta acordar la cardinalidad.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Cambiar a Storage Write API",
-    "body": "Adoptar la ruta de bytes reales y validar su cuota, permisos y comportamiento antes de habilitar telemetría.",
+    "title": "Adoptar v2 como contrato canónico",
+    "body": "Mantener la métrica por invocación en `bl_invocations_v2`, documentar la migración de consumidores y congelar la tabla legacy como histórico.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen-hamelyn",
-    "reason": "Su historial introdujo la semántica actual de logs BL y el PR documenta explícitamente esta elección pendiente.",
-    "confidence": "medium"
+    "reason": "El historial le vincula directamente con el helper y los contratos de instrumentación BL que entran en conflicto.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-13T08:25:58.411Z",
+    "reviewedAt": "2026-08-13T08:26:13.772Z",
     "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
   }
 }
