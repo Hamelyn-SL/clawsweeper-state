@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T06:17:28.744Z",
+  "updatedAt": "2026-08-13T06:09:25Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8422,
+    "title": "feat: BL telemetry straight to BigQuery + CI guardian against loop instrumentation",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "business-logic"
+    ],
+    "createdAt": "2026-08-13T06:07:34Z",
+    "updatedAt": "2026-08-13T06:09:25Z",
+    "headSha": "20c928a490e152358be583e4f16a2e394246b8c7"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el contrato permanente de `logBlEntry` conservar un evento por invocación o alinearse con la liveness por instancia del PR relacionado?",
+  "rationale": "Esta rama y https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331 cambian el mismo helper para resolver el flood, pero sus datos tienen cardinalidad y consumidores diferentes.",
+  "options": [
+    {
+      "title": "Conservar eventos por invocación",
+      "body": "Patrocinar esta ruta, completar el lifecycle de ecommerce y formalizar la migración de consumidores hacia `bl_telemetry.bl_events`.",
+      "recommended": true
+    },
+    {
+      "title": "Unificar liveness por instancia",
+      "body": "Alinear la telemetría con https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8331 y retirar el conteo por invocación.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Conservar eventos por invocación",
+    "body": "Patrocinar esta ruta, completar el lifecycle de ecommerce y formalizar la migración de consumidores hacia `bl_telemetry.bl_events`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Ha introducido y mantenido la semántica actual de trazas BL y sus cadenas por request.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
+    "reviewedAt": "2026-08-13T06:17:28.744Z",
+    "mainSha": "9ba9278bd906838cfbb50a58553a24958f5b5b4d"
+  }
+}
