@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T08:26:13.772Z",
-  "updatedAt": "2026-08-13T07:46:41Z",
+  "generatedAt": "2026-08-13T12:16:52.727Z",
+  "updatedAt": "2026-08-13T11:42:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,52 +12,46 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 other"
+      "merge-risk: 🚨 other",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
-    "updatedAt": "2026-08-13T07:46:41Z",
-    "headSha": "b04a9b4c8ba54f651c481d9c284c37d8afe76841"
+    "updatedAt": "2026-08-13T11:42:10Z",
+    "headSha": "2680165623281732bf6c52ad04e5c849d4ceda0f"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe `bl_invocations_v2` convertirse en la métrica canónica por invocación, manteniendo `vercel_logs.bl_invocations` solo como histórico, antes de conectar consumidores o renombrar tablas?",
-  "rationale": "El PR y el PR cerrado relacionado describen cardinalidades distintas para el mismo dominio BL; elegir el contrato permanente afecta dashboards, costes y la estrategia de migración.",
+  "question": "¿Debe este PR migrar ahora el dashboard a `bl_invocations_v2`, o conservar `vercel_logs.bl_invocations` como contrato activo hasta un rollout posterior explícito?",
+  "rationale": "El productor nuevo y el consumidor actual apuntan a tablas distintas; la elección determina si el rollout preserva la utilidad del grafo BL.",
   "options": [
     {
-      "title": "Adoptar v2 como contrato canónico",
-      "body": "Mantener la métrica por invocación en `bl_invocations_v2`, documentar la migración de consumidores y congelar la tabla legacy como histórico.",
+      "title": "Migrar el consumidor en este PR",
+      "body": "Actualizar el dashboard y demostrar que el grafo conserva sus métricas antes de activar la nueva emisión.",
       "recommended": true
     },
     {
-      "title": "Mantener solo liveness legacy",
-      "body": "No activar el writer por invocación y conservar la semántica de una traza por instancia para limitar el coste.",
-      "recommended": false
-    },
-    {
-      "title": "Separar la decisión de la entrega",
-      "body": "Fusionar únicamente el writer apagado y posponer tabla, agregado y consumidores hasta acordar la cardinalidad.",
+      "title": "Separar la migración",
+      "body": "Mantener el contrato histórico operativo hasta que otra PR cambie y valide el dashboard.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar v2 como contrato canónico",
-    "body": "Mantener la métrica por invocación en `bl_invocations_v2`, documentar la migración de consumidores y congelar la tabla legacy como histórico.",
+    "title": "Migrar el consumidor en este PR",
+    "body": "Actualizar el dashboard y demostrar que el grafo conserva sus métricas antes de activar la nueva emisión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "El historial le vincula directamente con el helper y los contratos de instrumentación BL que entran en conflicto.",
+    "person": "JavierHamelyn",
+    "reason": "El historial vincula a esta persona con el contrato de consulta que debe preservarse o migrarse.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-13T08:26:13.772Z",
-    "mainSha": "f6b32e417dfa693e426c6a80a3cc9bf49bb41738"
+    "reviewedAt": "2026-08-13T12:16:52.727Z",
+    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
   }
 }
