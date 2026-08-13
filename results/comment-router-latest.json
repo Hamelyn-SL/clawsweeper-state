@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-13T07:15:29.113Z",
+  "generated_at": "2026-08-13T07:52:46.036Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-13T04:15:26.368Z",
+  "since": "2026-08-13T04:52:42.642Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 22,
-  "commands_seen": 1,
+  "scanned_comments": 33,
+  "commands_seen": 2,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -28,6 +28,47 @@
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
   "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8426:5277288161:2026-08-13T07:23:46Z:automerge",
+      "comment_id": "5277288161",
+      "comment_version_key": "5277288161:2026-08-13T07:23:46Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8426#issuecomment-5277288161",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8426,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-13T07:20:38Z",
+      "comment_updated_at": "2026-08-13T07:23:46Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR replica las líneas del logger del bridge en archivos diarios sin ANSI, conservando la consola y permitiendo cambiar el directorio mediante `BRIDGE_LOG_DIR`.\n\nReproducibility: Sí: la prueba publicada reproduce el fallo con un reloj controlado al cruzar medianoche en un único proceso.",
+      "review_followup": "- [P1] Los bloqueos son mecánicos y están acotados al único archivo modificado.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8426 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    },
     {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8422:5276693528:2026-08-13T06:19:58Z:automerge",
       "comment_id": "5276693528",
@@ -71,15 +112,15 @@
     }
   ],
   "timings": {
-    "total_ms": 2744,
+    "total_ms": 3394,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1368
+        "ms": 1304
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1371
+        "ms": 2085
       },
       {
         "name": "classify_comment_commands",
