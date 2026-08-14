@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T09:11:14.628Z",
+  "updatedAt": "2026-08-14T09:02:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8449,
+    "title": "Corregir workid duplicados para piloto de capa de obra",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8449",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:queued",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-08-14T08:44:53Z",
+    "updatedAt": "2026-08-14T09:02:14Z"
+  },
+  "lane": "manual_review",
+  "priority": "P2",
+  "question": "¿Qué criterio editorial y de datos autoriza fusionar los pares ambiguos del XLSX antes de modificar identificadores persistidos?",
+  "rationale": "El adjunto distingue duplicados claros de dos filas donde falta autor y solicita inspección manual; el código no puede decidir con seguridad si representan la misma obra.",
+  "options": [
+    {
+      "title": "Fusionar solo pares verificados",
+      "body": "Aplicar la cohorte recomendada únicamente cuando título, identidad de autor y edición permitan confirmar la misma obra; dejar los ambiguos fuera del piloto.",
+      "recommended": true
+    },
+    {
+      "title": "Validar toda la cohorte editorialmente",
+      "body": "Revisar manualmente los pares sin autor antes de ejecutar una única consolidación completa.",
+      "recommended": false
+    },
+    {
+      "title": "Limitar el piloto a grupos ya consistentes",
+      "body": "Excluir temporalmente los pares dudosos y ampliar la cohorte tras disponer de metadatos canónicos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Fusionar solo pares verificados",
+    "body": "Aplicar la cohorte recomendada únicamente cuando título, identidad de autor y edición permitan confirmar la misma obra; dejar los ambiguos fuera del piloto.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Figura como persona asignada y el punto bloqueante es la validación de la cohorte antes de una migración persistente.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8449.md",
+    "reviewedAt": "2026-08-14T09:11:14.628Z",
+    "mainSha": "0fb8ba0450b3c0fe444b2f460441994772bf70dc"
+  }
+}
