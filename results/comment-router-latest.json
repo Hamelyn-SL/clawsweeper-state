@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-14T11:15:17.169Z",
+  "generated_at": "2026-08-14T11:33:24.818Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-14T08:15:15.989Z",
+  "since": "2026-08-14T08:33:21.938Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 42,
-  "commands_seen": 0,
+  "scanned_comments": 50,
+  "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -27,21 +27,63 @@
   "max_auto_repairs_per_head": 2,
   "max_auto_repairs_per_pr": 10,
   "lookup_concurrency": 8,
-  "commands": [],
+  "commands": [
+    {
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8459:5292807304:2026-08-14T11:32:11Z:automerge",
+      "comment_id": "5292807304",
+      "comment_version_key": "5292807304:2026-08-14T11:32:11Z",
+      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8459#issuecomment-5292807304",
+      "repo": "Hamelyn-SL/hamelyn-serverless",
+      "target_branch": null,
+      "issue_number": 8459,
+      "author": "clawsweeper-hamelyn[bot]",
+      "author_id": 301054459,
+      "author_association": "NONE",
+      "comment_created_at": "2026-08-14T11:32:11Z",
+      "comment_updated_at": "2026-08-14T11:32:11Z",
+      "status_comment_id": null,
+      "trigger": "mention",
+      "command": "automerge",
+      "intent": "automerge",
+      "autoclose_message": null,
+      "implementation_prompt": null,
+      "operator_override": null,
+      "trusted_bot": false,
+      "trusted_bot_author": null,
+      "automation_source": null,
+      "repair_reason": null,
+      "review_summary": "El PR activa la comprobación de cancelaciones de FNAC, ajusta reintentos de altas y añade una reconciliación para ofertas remotas inexistentes.\n\nReproducibility: no. hay una reproducción E2E inspeccionable. Sí hay una ruta reproducible por fuente: `UPDATING_PRICE` no coincide con la regla nueva.",
+      "review_followup": "- [P1] Hay una corrección mecánica y acotada para la ruta de precio; la prueba real seguirá siendo un requisito del contribuidor antes de merge.",
+      "freeform_prompt": null,
+      "visual_lens": null,
+      "expected_head_sha": null,
+      "close_reason": null,
+      "close_confidence": null,
+      "close_action_taken": null,
+      "reviewed_at": null,
+      "expected_item_updated_at": null,
+      "expected_source_revision": null,
+      "finding_id": null,
+      "status": "waiting",
+      "actions": [],
+      "author_repository_permission": "none",
+      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8459 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
+    }
+  ],
   "timings": {
-    "total_ms": 1180,
+    "total_ms": 2879,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1177
+        "ms": 1620
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 0
+        "ms": 1254
       },
       {
         "name": "classify_comment_commands",
-        "ms": 0
+        "ms": 1
       },
       {
         "name": "prehydrate_repair_loop_sweeps",
