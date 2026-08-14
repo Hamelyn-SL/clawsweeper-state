@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T06:25:29.554Z",
-  "updatedAt": "2026-08-14T06:03:39Z",
+  "generatedAt": "2026-08-14T15:57:49.238Z",
+  "updatedAt": "2026-08-14T15:52:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T07:38:52Z",
-    "updatedAt": "2026-08-14T06:03:39Z",
-    "headSha": "56d14af3f9f80df3908c2502770e7361c7a74644"
+    "updatedAt": "2026-08-14T15:52:33Z",
+    "headSha": "33ab2890527b1b6b6341ed12219f7c6dc93cb1e0"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se aprueba la estrategia de migrar masivamente las rutas internas y exponer las nuevas fachadas públicas como contrato de `@hamelyn/core`?",
-  "rationale": "El PR altera fronteras compartidas, consumidores externos y el contrato de imports en 654 ficheros; la decisión arquitectónica excede las correcciones mecánicas detectadas.",
+  "question": "¿Se acepta este refactor de 923 ficheros como una única migración arquitectónica con las nuevas fachadas públicas, o debe dividirse antes de aterrizarlo?",
+  "rationale": "La corrección mecánica no resuelve por sí sola el tamaño, el contrato de las fachadas ni la deuda aceptada en el baseline; son decisiones de mantenimiento y riesgo de actualización.",
   "options": [
     {
-      "title": "Validar la arquitectura y exigir prueba integrada",
-      "body": "Mantener el enfoque, corregir los hallazgos y pedir evidencia real redactada de catálogo, SEUR y despliegues antes de revisar el merge.",
+      "title": "Revisar el PR completo",
+      "body": "Conservar la migración unificada, pero exigir las pruebas funcionales y la limpieza de política antes de aprobarla.",
       "recommended": true
     },
     {
       "title": "Dividir la migración",
-      "body": "Separar las fachadas y el piloto de catálogo de los movimientos masivos para reducir el riesgo de integración.",
+      "body": "Separar las fachadas y los flujos funcionales sensibles en PRs más pequeños si la revisión no puede asegurar equivalencia extremo a extremo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar la arquitectura y exigir prueba integrada",
-    "body": "Mantener el enfoque, corregir los hallazgos y pedir evidencia real redactada de catálogo, SEUR y despliegues antes de revisar el merge.",
+    "title": "Revisar el PR completo",
+    "body": "Conservar la migración unificada, pero exigir las pruebas funcionales y la limpieza de política antes de aprobarla.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "PabloMoran34",
-    "reason": "Es el candidato con mayor historial reciente en el comportamiento de catálogo que cambia de cableado.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Fue solicitado para la revisión por su señal previa en los ficheros y flujos más afectados.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8430.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430#issuecomment-5277914081",
-    "reviewedAt": "2026-08-14T06:25:29.554Z",
-    "mainSha": "47eb34e34c0747d07851e21ca6ca182c57e0de32"
+    "reviewedAt": "2026-08-14T15:57:49.238Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
