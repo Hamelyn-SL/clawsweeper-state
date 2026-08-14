@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T12:30:03.926Z",
+  "updatedAt": "2026-08-14T12:24:35Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8462,
+    "title": "Minihomes: Rendimiento, pills y links desde catalogo",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8462",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:queued",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-08-14T12:24:24Z",
+    "updatedAt": "2026-08-14T12:24:35Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe dividirse esta issue entre una mejora acotada de píldora/copy y una investigación de rendimiento con presupuesto y métricas de aceptación propios?",
+  "rationale": "La navegación ya está resuelta, mientras que los mensajes comerciales y el coste de hidratación requieren prioridades y criterios de producto distintos.",
+  "options": [
+    {
+      "title": "Dividir el trabajo",
+      "body": "Cerrar el frente de enlaces como resuelto y crear una ruta pequeña para la píldora junto a una investigación de rendimiento medida.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener una única iniciativa",
+      "body": "Planificar una PR coordinada que defina mensajes, fuente de stock y objetivos de interactividad antes de implementar.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Dividir el trabajo",
+    "body": "Cerrar el frente de enlaces como resuelto y crear una ruta pequeña para la píldora junto a una investigación de rendimiento medida.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen-hamelyn",
+    "reason": "Es la persona más conectada al layout actual de las minihomes y sus componentes centrales.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8462.md",
+    "reviewedAt": "2026-08-14T12:30:03.926Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}
