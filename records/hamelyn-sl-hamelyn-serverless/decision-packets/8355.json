@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T14:09:42.965Z",
+  "generatedAt": "2026-08-14T14:11:58.393Z",
   "updatedAt": "2026-08-14T13:36:03Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -14,47 +14,47 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review",
-      "issue-rating: ➖ n/a",
       "P2",
       "impact:security",
-      "impact:other"
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T10:38:58Z",
     "updatedAt": "2026-08-14T13:36:03Z"
   },
-  "lane": "product_direction",
+  "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe esta entrega limitarse por ahora a observabilidad, dejando AnyDesk y Wake-on-LAN fuera del panel hasta que exista el contrato Bifrost autorizado?",
-  "rationale": "La issue mezcla visualización, identidad de puestos y acciones remotas; la decisión define el perímetro de seguridad y el alcance aceptable de la PR abierta.",
+  "question": "¿La v0 debe limitarse estrictamente a observabilidad, dejando AnyDesk y Wake-on-LAN fuera hasta que exista un contrato autenticado Admin↔Bifrost?",
+  "rationale": "La issue combina presencia de operarios con acciones de acceso remoto; el perímetro de AnyDesk y la autorización de acciones físicas no se resuelven únicamente con código de interfaz.",
   "options": [
     {
-      "title": "Aprobar v0 de observabilidad",
-      "body": "Mantener presencia y plano en Admin, y crear o conservar entregas separadas para inventario, sondeo LAN y controles remotos.",
+      "title": "Aprobar observabilidad acotada",
+      "body": "Aceptar una v0 sin controles remotos cuando la identidad, autorización y prueba del flujo completo estén corregidas.",
       "recommended": true
     },
     {
-      "title": "Exigir entrega completa",
-      "body": "Retener la PR hasta disponer del puente, inventario y contrato de control remoto verificable de extremo a extremo.",
+      "title": "Definir contrato completo primero",
+      "body": "Pausar la v0 hasta documentar autenticación, inventario y permisos de los comandos Bifrost.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar v0 de observabilidad",
-    "body": "Mantener presencia y plano en Admin, y crear o conservar entregas separadas para inventario, sondeo LAN y controles remotos.",
+    "title": "Aprobar observabilidad acotada",
+    "body": "Aceptar una v0 sin controles remotos cuando la identidad, autorización y prueba del flujo completo estén corregidas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado a la implementación enlazada y conoce la base actual de presencia de puestos.",
+    "reason": "Es la persona asignada y mantiene la base de presencia que la propuesta extiende.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355#issuecomment-5239578669",
-    "reviewedAt": "2026-08-14T14:09:42.965Z",
+    "reviewedAt": "2026-08-14T14:11:58.393Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
