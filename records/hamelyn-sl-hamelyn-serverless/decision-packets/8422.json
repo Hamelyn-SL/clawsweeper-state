@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T06:21:53.903Z",
-  "updatedAt": "2026-08-14T06:17:42Z",
+  "generatedAt": "2026-08-14T06:23:22.396Z",
+  "updatedAt": "2026-08-14T06:18:42Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -20,39 +20,38 @@
       "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
-    "updatedAt": "2026-08-14T06:17:42Z",
+    "updatedAt": "2026-08-14T06:18:42Z",
     "headSha": "0f7857914e378edd7caef6d2b7346abc1565feea"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el contrato operativo `bl_events`/`bl_invocations_v2` y su retención antes de activar el rollout, o se debe reducir esta PR al writer y guardianes inertes?",
-  "rationale": "La rama introduce una nueva fuente canónica, una tabla agregada y costes de retención; elegir nombres, consumidores y operación no es una corrección mecánica.",
+  "question": "¿Se aprueba `bl_telemetry.bl_events` como contrato nuevo y se exige migrar el dashboard en este rollout, o se mantiene temporalmente el contrato histórico antes de activar la emisión?",
+  "rationale": "La rama deja abiertas la retención, el nombre definitivo de tabla y el consumidor del dashboard; son decisiones de producto y operación que no se resuelven de forma segura con cambios mecánicos.",
   "options": [
     {
-      "title": "Aprobar el rollout por fases",
-      "body": "Corregir los bloqueadores, conservar `bl_events` y activar primero un preview con la retención y el consumidor `bl_invocations_v2` explícitamente aceptados.",
+      "title": "Aprobar el contrato nuevo con migración",
+      "body": "Mantener `bl_events` y `bl_invocations_v2`, actualizar el dashboard y fijar la retención antes de habilitar la emisión.",
       "recommended": true
     },
     {
-      "title": "Aislar el cambio de código",
-      "body": "Mergear únicamente el transporte desactivado y el guardián, dejando el contrato de datos, la scheduled query y la alerta para una PR operativa posterior.",
+      "title": "Conservar el contrato histórico temporalmente",
+      "body": "Aplazar la activación y diseñar una transición compatible para los consumidores actuales de `vercel_logs.bl_invocations`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el rollout por fases",
-    "body": "Corregir los bloqueadores, conservar `bl_events` y activar primero un preview con la retención y el consumidor `bl_invocations_v2` explícitamente aceptados.",
+    "title": "Aprobar el contrato nuevo con migración",
+    "body": "Mantener `bl_events` y `bl_invocations_v2`, actualizar el dashboard y fijar la retención antes de habilitar la emisión.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen-hamelyn",
-    "reason": "Su historial cubre el helper actual y la propuesta de transporte, por lo que puede aportar el contexto técnico para la decisión de contrato.",
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor solicitado y la decisión afecta directamente al consumidor actual del dashboard.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-14T06:21:53.903Z",
+    "reviewedAt": "2026-08-14T06:23:22.396Z",
     "mainSha": "47eb34e34c0747d07851e21ca6ca182c57e0de32"
   }
 }
