@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T13:42:07.016Z",
-  "updatedAt": "2026-08-13T13:06:06Z",
+  "generatedAt": "2026-08-14T08:19:30.832Z",
+  "updatedAt": "2026-08-14T08:06:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,46 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: ⚪ platinum",
-      "status: 👀 ready for maintainer look",
       "P2",
+      "status: 👀 ready for maintainer look",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 session-state"
+      "merge-risk: 🚨 session-state",
+      "proof: sufficient",
+      "rating: ⚪ platinum"
     ],
     "createdAt": "2026-08-13T10:06:18Z",
-    "updatedAt": "2026-08-13T13:06:06Z",
+    "updatedAt": "2026-08-14T08:06:28Z",
     "headSha": "78443c428e1134202251e82b65ccdbd6b0190f81"
   },
-  "lane": "release_inclusion",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Quién valida y ejecuta el saneado y la creación de `uniq_active_session` en Atlas inmediatamente después del despliegue de esta PR?",
-  "rationale": "El código declara el índice pero la conexión desactiva `autoIndex`; sin un responsable y una secuencia operativa confirmada, el arreglo de concurrencia queda incompleto en producción.",
+  "question": "¿Quién confirma la ventana de despliegue y la ejecución verificada del índice `uniq_active_session` en Atlas antes de fusionar?",
+  "rationale": "La protección contra carreras depende de una operación de datos de producción que el schema no aplica automáticamente.",
   "options": [
     {
-      "title": "Aprobar con runbook asignado",
-      "body": "Asignar un responsable que ejecute la limpieza, confirme ausencia de duplicados y cree el índice después del despliegue.",
+      "title": "Coordinar la migración antes del merge",
+      "body": "Ejecutar el saneamiento, comprobar duplicados y crear/verificar el índice en la ventana de despliegue antes de habilitar el cambio.",
       "recommended": true
     },
     {
-      "title": "Automatizar antes de fusionar",
-      "body": "Añadir una vía de migración o despliegue versionada para que la creación del índice no dependa de una acción manual.",
-      "recommended": false
-    },
-    {
-      "title": "Posponer el índice",
-      "body": "Mantener la PR en borrador hasta disponer de una ventana operativa segura para la migración de Atlas.",
+      "title": "Aceptar la cobertura parcial temporal",
+      "body": "Fusionar sin índice y asumir que el auto-heal funciona, pero que la unicidad concurrente no queda garantizada hasta completar Atlas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar con runbook asignado",
-    "body": "Asignar un responsable que ejecute la limpieza, confirme ausencia de duplicados y cree el índice después del despliegue.",
+    "title": "Coordinar la migración antes del merge",
+    "body": "Ejecutar el saneamiento, comprobar duplicados y crear/verificar el índice en la ventana de despliegue antes de habilitar el cambio.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "El cuerpo de la PR ya le asigna explícitamente la ejecución post-despliegue y su historial cubre los escritores afectados.",
+    "person": "alexcanHamelyn",
+    "reason": "Está asignado como revisor y su historial incluye la semántica de sesiones SKYPOD por estación afectada por el índice.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8432.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8432#issuecomment-5279070176",
-    "reviewedAt": "2026-08-13T13:42:07.016Z",
-    "mainSha": "7b7e0bdac0568b2d2232fa5c669b7b7f0e2a2ff4"
+    "reviewedAt": "2026-08-14T08:19:30.832Z",
+    "mainSha": "71ca94e3e614f7503d608f2d5c95cef9a700e603"
   }
 }
