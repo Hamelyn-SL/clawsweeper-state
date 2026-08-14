@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T13:20:19.918Z",
+  "updatedAt": "2026-08-14T13:11:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8463,
+    "title": "feat: add bifrost warehouse stations panel in admin",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8463",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-08-14T13:07:52Z",
+    "updatedAt": "2026-08-14T13:11:48Z",
+    "headSha": "783e45a62e699104b70430408d28502913557e94"
+  },
+  "lane": "security_boundary",
+  "priority": "P2",
+  "question": "¿La v0 puede aceptar que cualquier usuario autenticado reclame cualquier puesto, o debe exigir una vinculación de puesto verificable antes de integrar el panel?",
+  "rationale": "La autenticación actual identifica a la persona, pero no acredita el equipo; decidir si esa confianza es aceptable cambia el contrato operativo y de seguridad del panel.",
+  "options": [
+    {
+      "title": "Vincular la identidad del puesto",
+      "body": "Exigir una credencial o asociación verificable por puesto antes de aceptar la presencia.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar la limitación de v0",
+      "body": "Mantener el POST abierto a usuarios autenticados y documentar que el mapa es informativo y puede falsearse.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Vincular la identidad del puesto",
+    "body": "Exigir una credencial o asociación verificable por puesto antes de aceptar la presencia.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su trabajo previo mantiene el patrón de presencia en KV y puede concretar el límite técnico de la vinculación.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8463.md",
+    "reviewedAt": "2026-08-14T13:20:19.918Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}
