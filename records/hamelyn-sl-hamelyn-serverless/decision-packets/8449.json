@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T09:11:14.628Z",
-  "updatedAt": "2026-08-14T09:02:14Z",
+  "generatedAt": "2026-08-14T10:19:33.655Z",
+  "updatedAt": "2026-08-14T09:59:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,7 +13,7 @@
       "bug",
       "source:admin-panel",
       "app:ecommerce",
-      "triage:running",
+      "triage:done",
       "reporter:victor",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
@@ -24,43 +24,37 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-14T08:44:53Z",
-    "updatedAt": "2026-08-14T09:02:14Z"
+    "updatedAt": "2026-08-14T09:59:56Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué criterio editorial y de datos autoriza fusionar los pares ambiguos del XLSX antes de modificar identificadores persistidos?",
-  "rationale": "El adjunto distingue duplicados claros de dos filas donde falta autor y solicita inspección manual; el código no puede decidir con seguridad si representan la misma obra.",
+  "question": "¿La consolidación manual basta para cerrar el piloto, o se debe convertir la identidad canónica de autor/obra en la regla permanente de `workId`?",
+  "rationale": "La solución puntual fue validada para la cohorte, pero los comentarios y el código confirman que el pipeline vigente puede reintroducir la fragmentación.",
   "options": [
     {
-      "title": "Fusionar solo pares verificados",
-      "body": "Aplicar la cohorte recomendada únicamente cuando título, identidad de autor y edición permitan confirmar la misma obra; dejar los ambiguos fuera del piloto.",
+      "title": "Estabilizar la agrupación",
+      "body": "Definir la identidad canónica, migrar los datos afectados y actualizar la derivación para que altas y reprocesados mantengan el resultado.",
       "recommended": true
     },
     {
-      "title": "Validar toda la cohorte editorialmente",
-      "body": "Revisar manualmente los pares sin autor antes de ejecutar una única consolidación completa.",
-      "recommended": false
-    },
-    {
-      "title": "Limitar el piloto a grupos ya consistentes",
-      "body": "Excluir temporalmente los pares dudosos y ampliar la cohorte tras disponer de metadatos canónicos.",
+      "title": "Cerrar como corrección de piloto",
+      "body": "Aceptar la consolidación manual como alcance final y abrir una incidencia separada si la capa de obra pasa a producción general.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Fusionar solo pares verificados",
-    "body": "Aplicar la cohorte recomendada únicamente cuando título, identidad de autor y edición permitan confirmar la misma obra; dejar los ambiguos fuera del piloto.",
+    "title": "Estabilizar la agrupación",
+    "body": "Definir la identidad canónica, migrar los datos afectados y actualizar la derivación para que altas y reprocesados mantengan el resultado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Figura como persona asignada y el punto bloqueante es la validación de la cohorte antes de una migración persistente.",
+    "reason": "Conoce la derivación original y ejecutó la consolidación externa descrita en la discusión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8449.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8449#issuecomment-5291586902",
-    "reviewedAt": "2026-08-14T09:11:14.628Z",
-    "mainSha": "0fb8ba0450b3c0fe444b2f460441994772bf70dc"
+    "reviewedAt": "2026-08-14T10:19:33.655Z",
+    "mainSha": "03ac800f29cb53e1bfe8ca9077c9b25e4245c793"
   }
 }
