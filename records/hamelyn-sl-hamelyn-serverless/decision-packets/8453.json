@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T11:07:57.810Z",
+  "updatedAt": "2026-08-14T10:46:42Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8453,
+    "title": "Capa de obra layout (piloto)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8453",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:done",
+      "reporter:victor",
+      "P1"
+    ],
+    "createdAt": "2026-08-14T10:31:35Z",
+    "updatedAt": "2026-08-14T10:46:42Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué patrón de URL canónica y política de indexación debe usar la nueva página de obra durante el piloto MX, incluido el 301 desde ISBN eliminados?",
+  "rationale": "La decisión fija enlaces internos, metadatos, sitemaps y migración de URLs; el código actual no establece un patrón equivalente del que derivarla.",
+  "options": [
+    {
+      "title": "Acordar contrato SEO antes del piloto",
+      "body": "Definir URL, canonical, `hreflang`, sitemap y destino de redirección, y construir después el piloto sobre ese contrato.",
+      "recommended": true
+    },
+    {
+      "title": "Piloto no indexable temporal",
+      "body": "Publicar solo una ruta experimental MX sin indexación ni 301 mientras se valida el modelo de datos.",
+      "recommended": false
+    },
+    {
+      "title": "Posponer hasta cerrar la cohorte",
+      "body": "Cerrar primero la validación de `workId` y definir conjuntamente la URL durante la planificación SEO.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Acordar contrato SEO antes del piloto",
+    "body": "Definir URL, canonical, `hreflang`, sitemap y destino de redirección, y construir después el piloto sobre ese contrato.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Alex Cantón",
+    "reason": "Su historial reciente cubre la PDP, las recomendaciones por `workId` y los sitemaps de ecommerce afectados por la decisión.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8453.md",
+    "reviewedAt": "2026-08-14T11:07:57.810Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}
