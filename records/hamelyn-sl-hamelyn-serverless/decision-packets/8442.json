@@ -15,13 +15,13 @@
       "app:admin",
       "reporter:miguel",
       "triage:running",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
       "P1",
       "impact:other",
-      "clawsweeper:source-repro",
-      "clawsweeper:fix-shape-clear",
-      "no-stale",
-      "clawsweeper:queueable-fix",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-14T06:01:44Z",
     "updatedAt": "2026-08-14T06:01:57Z"
