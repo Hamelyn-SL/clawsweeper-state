@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T13:20:50.311Z",
-  "updatedAt": "2026-08-10T12:16:51Z",
+  "generatedAt": "2026-08-14T08:11:41.827Z",
+  "updatedAt": "2026-08-14T08:00:28Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
-      "P2",
-      "impact:security",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T10:38:58Z",
-    "updatedAt": "2026-08-10T12:16:51Z"
+    "updatedAt": "2026-08-14T08:00:28Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la primera entrega limitarse a observabilidad o incluir controles remotos una vez se apruebe el contrato Admin↔Bifrost?",
-  "rationale": "La solicitud combina información de presencia con acciones sobre equipos físicos, y el código actual no establece sus permisos, alcance ni trazabilidad.",
+  "question": "¿Debe la primera entrega limitarse a observabilidad o incluir controles remotos desde Admin una vez aprobado el contrato Bifrost?",
+  "rationale": "La petición combina presencia de usuarios con acciones sobre equipos físicos y el código actual no define permisos, trazabilidad ni el límite entre Admin y el puente.",
   "options": [
     {
-      "title": "Aprobar contrato y fase de observabilidad",
-      "body": "Versionar el contrato Bifrost y construir primero el mapa de estado y presencia sin ejecutar acciones remotas.",
+      "title": "Aprobar observabilidad por fases",
+      "body": "Versionar el contrato Bifrost y construir primero el mapa de energía y presencia, dejando las acciones remotas fuera de la primera entrega.",
       "recommended": true
     },
     {
-      "title": "Autorizar controles remotos en la primera fase",
-      "body": "Definir explícitamente permisos, auditoría y límites de SSH, AnyDesk y Wake-on-LAN antes de incorporarlos al panel.",
+      "title": "Incluir controles remotos",
+      "body": "Definir antes autorización por acción, auditoría, inventario y límites explícitos para SSH, AnyDesk y Wake-on-LAN.",
       "recommended": false
     },
     {
-      "title": "Mantener la gestión remota fuera de Admin",
-      "body": "Dejar Admin como superficie de observabilidad y conservar las acciones en el puente Bifrost.",
+      "title": "Mantener controles en Bifrost",
+      "body": "Usar Admin sólo para observabilidad y conservar las acciones operativas dentro del puente remoto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar contrato y fase de observabilidad",
-    "body": "Versionar el contrato Bifrost y construir primero el mapa de estado y presencia sin ejecutar acciones remotas.",
+    "title": "Aprobar observabilidad por fases",
+    "body": "Versionar el contrato Bifrost y construir primero el mapa de energía y presencia, dejando las acciones remotas fuera de la primera entrega.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "La arquitectura de acceso remoto del epic condiciona el contrato y el perímetro de control del panel.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Es el asignado actual y está conectado al comportamiento de presencia que condiciona la primera fase.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355#issuecomment-5239578669",
-    "reviewedAt": "2026-08-10T13:20:50.311Z",
-    "mainSha": "df8da352886a77d07fef0ccfd54f0687177453b0"
+    "reviewedAt": "2026-08-14T08:11:41.827Z",
+    "mainSha": "71ca94e3e614f7503d608f2d5c95cef9a700e603"
   }
 }
