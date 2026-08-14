@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-14T00:57:27.195Z",
+  "generatedAt": "2026-08-14T07:00:39.054Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
     "pagesScanned": 1,
-    "openItemsSeen": 73
+    "openItemsSeen": 75
   },
   "counts": {
-    "itemRecords": 71,
-    "closedRecords": 1029,
+    "itemRecords": 73,
+    "closedRecords": 1031,
     "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
@@ -40,15 +40,20 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8440,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "number": 8445,
+        "kind": "issue",
+        "title": "Eliminar categorías fantasma: 21 URLs duplicadas indexables en el sitemap + 90 enlaces internos a 404",
         "labels": [
-          "size/L"
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "triage:running",
+          "reporter:victor",
+          "P1"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-13T14:17:16Z",
-        "updatedAt": "2026-08-13T14:22:56Z",
+        "createdAt": "2026-08-14T06:55:07Z",
+        "updatedAt": "2026-08-14T06:57:49Z",
         "missingReason": "recently_created"
       }
     ],
@@ -75,15 +80,20 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8440,
-        "kind": "pull_request",
-        "title": "Deploy to Prod",
+        "number": 8445,
+        "kind": "issue",
+        "title": "Eliminar categorías fantasma: 21 URLs duplicadas indexables en el sitemap + 90 enlaces internos a 404",
         "labels": [
-          "size/L"
+          "bug",
+          "source:admin-panel",
+          "app:ecommerce",
+          "triage:running",
+          "reporter:victor",
+          "P1"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-13T14:17:16Z",
-        "updatedAt": "2026-08-13T14:22:56Z",
+        "createdAt": "2026-08-14T06:55:07Z",
+        "updatedAt": "2026-08-14T06:57:49Z",
         "missingReason": "recently_created"
       }
     ],
