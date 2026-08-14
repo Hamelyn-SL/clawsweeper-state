@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T13:20:19.918Z",
+  "generatedAt": "2026-08-14T13:21:21.228Z",
   "updatedAt": "2026-08-14T13:11:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,33 +18,33 @@
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿La v0 puede aceptar que cualquier usuario autenticado reclame cualquier puesto, o debe exigir una vinculación de puesto verificable antes de integrar el panel?",
-  "rationale": "La autenticación actual identifica a la persona, pero no acredita el equipo; decidir si esa confianza es aceptable cambia el contrato operativo y de seguridad del panel.",
+  "question": "¿Debe esta v0 aceptar presencia de puesto basada sólo en un identificador controlado por el navegador, o exigir una identidad de estación vinculada antes de mostrar datos operativos?",
+  "rationale": "Permitir usuarios autenticados de cualquier puesto conserva facilidad de despliegue, pero no preserva la integridad del mapa operativo; el contrato de confianza requiere una decisión explícita.",
   "options": [
     {
-      "title": "Vincular la identidad del puesto",
-      "body": "Exigir una credencial o asociación verificable por puesto antes de aceptar la presencia.",
+      "title": "Vincular identidad de estación",
+      "body": "Exigir una credencial o señal aprovisionada por puesto y conservar el beacon sólo para transmitir la presencia de esa estación.",
       "recommended": true
     },
     {
       "title": "Aceptar la limitación de v0",
-      "body": "Mantener el POST abierto a usuarios autenticados y documentar que el mapa es informativo y puede falsearse.",
+      "body": "Mantener el identificador actual y documentar explícitamente que el mapa es orientativo y puede ser falseado por usuarios autenticados.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vincular la identidad del puesto",
-    "body": "Exigir una credencial o asociación verificable por puesto antes de aceptar la presencia.",
+    "title": "Vincular identidad de estación",
+    "body": "Exigir una credencial o señal aprovisionada por puesto y conservar el beacon sólo para transmitir la presencia de esa estación.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su trabajo previo mantiene el patrón de presencia en KV y puede concretar el límite técnico de la vinculación.",
+    "person": "JavierHamelyn",
+    "reason": "Su cambio reciente mantiene el enrutado de admin que el beacon debe observar correctamente.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8463.md",
-    "reviewedAt": "2026-08-14T13:20:19.918Z",
+    "reviewedAt": "2026-08-14T13:21:21.228Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
