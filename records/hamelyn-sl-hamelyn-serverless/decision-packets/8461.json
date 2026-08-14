@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-14T11:20:58.790Z",
+  "updatedAt": "2026-08-14T11:15:00Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8461,
+    "title": "chore: replace eslint and prettier with biome and upgrade to typescript 7",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8461",
+    "state": "open",
+    "labels": [
+      "size/XL"
+    ],
+    "createdAt": "2026-08-14T11:14:49Z",
+    "updatedAt": "2026-08-14T11:15:00Z",
+    "headSha": "ab79b344607bacc74ff5fc4d9e3f252bb599a476"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aceptarse que `admin` siga sin bloquear warnings y que Biome sustituya garantías de React Compiler sin paridad completa?",
+  "rationale": "La rama fija políticas compartidas de calidad y cobertura futura; no es una elección mecánica de implementación.",
+  "options": [
+    {
+      "title": "Exigir paridad y gate estricto",
+      "body": "Eliminar la excepción de `admin` y cerrar la matriz de garantías antes de considerar el merge.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar una transición temporal",
+      "body": "Mantener la excepción solo con alcance aprobado, fecha de retirada y reglas no equivalentes documentadas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir paridad y gate estricto",
+    "body": "Eliminar la excepción de `admin` y cerrar la matriz de garantías antes de considerar el merge.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "Daniel",
+    "reason": "Su historial reciente cubre las actualizaciones de ESLint y TypeScript de la configuración compartida.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8461.md",
+    "reviewedAt": "2026-08-14T11:20:58.790Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}
