@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T15:57:49.238Z",
-  "updatedAt": "2026-08-14T15:52:33Z",
+  "generatedAt": "2026-08-14T22:36:20.440Z",
+  "updatedAt": "2026-08-14T22:09:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T07:38:52Z",
-    "updatedAt": "2026-08-14T15:52:33Z",
-    "headSha": "33ab2890527b1b6b6341ed12219f7c6dc93cb1e0"
+    "updatedAt": "2026-08-14T22:09:47Z",
+    "headSha": "bd313af425226ca9817ba59e0bb2d5c86079373c"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Se acepta este refactor de 923 ficheros como una única migración arquitectónica con las nuevas fachadas públicas, o debe dividirse antes de aterrizarlo?",
-  "rationale": "La corrección mecánica no resuelve por sí sola el tamaño, el contrato de las fachadas ni la deuda aceptada en el baseline; son decisiones de mantenimiento y riesgo de actualización.",
+  "question": "¿Se debe reconstruir esta rama extensa para eliminar las atribuciones de IA de los commits, o se prefiere descartar/sustituirla por una serie de PRs conformes y más acotados?",
+  "rationale": "La política prohíbe esas atribuciones en commits y PRs, pero corregir 39 commits modifica el historial de una propuesta transversal y no es una reparación mecánica segura.",
   "options": [
     {
-      "title": "Revisar el PR completo",
-      "body": "Conservar la migración unificada, pero exigir las pruebas funcionales y la limpieza de política antes de aprobarla.",
+      "title": "Reconstruir y probar la rama",
+      "body": "Recrear los commits sin atribuciones, traducir los comentarios nuevos y aportar pruebas funcionales redactadas de los flujos recableados.",
       "recommended": true
     },
     {
-      "title": "Dividir la migración",
-      "body": "Separar las fachadas y los flujos funcionales sensibles en PRs más pequeños si la revisión no puede asegurar equivalencia extremo a extremo.",
+      "title": "Dividir el refactor",
+      "body": "Cerrar esta rama y proponer cambios por capas con pruebas funcionales específicas y una historia de commits conforme.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar el PR completo",
-    "body": "Conservar la migración unificada, pero exigir las pruebas funcionales y la limpieza de política antes de aprobarla.",
+    "title": "Reconstruir y probar la rama",
+    "body": "Recrear los commits sin atribuciones, traducir los comentarios nuevos y aportar pruebas funcionales redactadas de los flujos recableados.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Fue solicitado para la revisión por su señal previa en los ficheros y flujos más afectados.",
+    "reason": "Está asignado para cubrir la revisión de las áreas de mayor riesgo y puede coordinar la decisión de aterrizaje.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8430.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430#issuecomment-5277914081",
-    "reviewedAt": "2026-08-14T15:57:49.238Z",
+    "reviewedAt": "2026-08-14T22:36:20.440Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
