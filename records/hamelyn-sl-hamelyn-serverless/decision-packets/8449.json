@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T10:19:33.655Z",
+  "generatedAt": "2026-08-14T10:20:54.271Z",
   "updatedAt": "2026-08-14T09:59:56Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -28,34 +28,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La consolidación manual basta para cerrar el piloto, o se debe convertir la identidad canónica de autor/obra en la regla permanente de `workId`?",
-  "rationale": "La solución puntual fue validada para la cohorte, pero los comentarios y el código confirman que el pipeline vigente puede reintroducir la fragmentación.",
+  "question": "¿Se considera cerrada la cohorte del piloto tras excluir los cuatro ISBN franceses, o debe revisarse también el resto de registros no estrictamente españoles y planificar una agrupación persistente?",
+  "rationale": "La discusión confirma la reparación puntual, pero no una validación completa de la cohorte ni el alcance deseado para futuros reprocesados.",
   "options": [
     {
-      "title": "Estabilizar la agrupación",
-      "body": "Definir la identidad canónica, migrar los datos afectados y actualizar la derivación para que altas y reprocesados mantengan el resultado.",
+      "title": "Validar y cerrar el piloto",
+      "body": "Confirmar que la cohorte española es suficiente para el lanzamiento y dejar la derivación actual fuera del alcance de esta incidencia.",
       "recommended": true
     },
     {
-      "title": "Cerrar como corrección de piloto",
-      "body": "Aceptar la consolidación manual como alcance final y abrir una incidencia separada si la capa de obra pasa a producción general.",
+      "title": "Completar la limpieza de cohorte",
+      "body": "Revisar los ocho registros restantes con idioma no puramente español antes de aceptar la cohorte del piloto.",
+      "recommended": false
+    },
+    {
+      "title": "Abrir seguimiento sistémico",
+      "body": "Crear una incidencia separada para una identidad de obra estable que sobreviva a variantes de título y autor.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Estabilizar la agrupación",
-    "body": "Definir la identidad canónica, migrar los datos afectados y actualizar la derivación para que altas y reprocesados mantengan el resultado.",
+    "title": "Validar y cerrar el piloto",
+    "body": "Confirmar que la cohorte española es suficiente para el lanzamiento y dejar la derivación actual fuera del alcance de esta incidencia.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Conoce la derivación original y ejecutó la consolidación externa descrita en la discusión.",
+    "reason": "Conoce la regla de derivación, la consolidación aplicada y los límites de los datos afectados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8449.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8449#issuecomment-5291586902",
-    "reviewedAt": "2026-08-14T10:19:33.655Z",
+    "reviewedAt": "2026-08-14T10:20:54.271Z",
     "mainSha": "03ac800f29cb53e1bfe8ca9077c9b25e4245c793"
   }
 }
