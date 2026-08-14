@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T06:23:22.396Z",
-  "updatedAt": "2026-08-14T06:18:42Z",
+  "generatedAt": "2026-08-14T11:29:02.581Z",
+  "updatedAt": "2026-08-14T11:03:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,42 +12,45 @@
     "labels": [
       "size/XXL",
       "business-logic",
-      "P2"
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
+      "merge-risk: 🚨 security-boundary",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T06:07:34Z",
-    "updatedAt": "2026-08-14T06:18:42Z",
-    "headSha": "0f7857914e378edd7caef6d2b7346abc1565feea"
+    "updatedAt": "2026-08-14T11:03:29Z",
+    "headSha": "9e699987edb168cc3871d503851383a2db777cb3"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba `bl_telemetry.bl_events` como contrato nuevo y se exige migrar el dashboard en este rollout, o se mantiene temporalmente el contrato histórico antes de activar la emisión?",
-  "rationale": "La rama deja abiertas la retención, el nombre definitivo de tabla y el consumidor del dashboard; son decisiones de producto y operación que no se resuelven de forma segura con cambios mecánicos.",
+  "question": "¿Qué retención y presupuesto operativo debe asumir `bl_telemetry.bl_events` antes de activar esta telemetría?",
+  "rationale": "La tabla se crea con expiración de 90 días, pero el propio PR describe 30 frente a 90 días como una decisión abierta con impacto mensual relevante.",
   "options": [
     {
-      "title": "Aprobar el contrato nuevo con migración",
-      "body": "Mantener `bl_events` y `bl_invocations_v2`, actualizar el dashboard y fijar la retención antes de habilitar la emisión.",
-      "recommended": true
+      "title": "Definir 90 días",
+      "body": "Mantener la expiración actual y aprobar explícitamente su coste y periodo de investigación disponible.",
+      "recommended": false
     },
     {
-      "title": "Conservar el contrato histórico temporalmente",
-      "body": "Aplazar la activación y diseñar una transición compatible para los consumidores actuales de `vercel_logs.bl_invocations`.",
-      "recommended": false
+      "title": "Reducir a 30 días",
+      "body": "Ajustar esquema, documentación y estimación para priorizar el coste, conservando el agregado diario como fuente del dashboard.",
+      "recommended": true
     }
   ],
   "recommendation": {
-    "title": "Aprobar el contrato nuevo con migración",
-    "body": "Mantener `bl_events` y `bl_invocations_v2`, actualizar el dashboard y fijar la retención antes de habilitar la emisión.",
+    "title": "Reducir a 30 días",
+    "body": "Ajustar esquema, documentación y estimación para priorizar el coste, conservando el agregado diario como fuente del dashboard.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Es el revisor solicitado y la decisión afecta directamente al consumidor actual del dashboard.",
-    "confidence": "medium"
+    "person": "danielmenchen-hamelyn",
+    "reason": "Su historial reciente cubre la semántica y el coste de la instrumentación BL.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8422.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8422#issuecomment-5276693528",
-    "reviewedAt": "2026-08-14T06:23:22.396Z",
-    "mainSha": "47eb34e34c0747d07851e21ca6ca182c57e0de32"
+    "reviewedAt": "2026-08-14T11:29:02.581Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
