@@ -1,56 +1,60 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T22:36:20.440Z",
-  "updatedAt": "2026-08-14T22:09:47Z",
+  "generatedAt": "2026-08-15T08:56:58.976Z",
+  "updatedAt": "2026-08-15T08:53:11Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 8430,
-    "title": "refactor(core): estructura nueva, fronteras vigiladas e inyección en el piloto de catálogo",
+    "title": "refactor(core): new structure, guarded boundaries and dependency-injection groundwork",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430",
     "state": "open",
     "labels": [
       "size/L",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-13T07:38:52Z",
-    "updatedAt": "2026-08-14T22:09:47Z",
-    "headSha": "bd313af425226ca9817ba59e0bb2d5c86079373c"
+    "updatedAt": "2026-08-15T08:53:11Z",
+    "headSha": "889ac9c193fc647e7195758a33a40b3278b770eb"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se debe reconstruir esta rama extensa para eliminar las atribuciones de IA de los commits, o se prefiere descartar/sustituirla por una serie de PRs conformes y más acotados?",
-  "rationale": "La política prohíbe esas atribuciones en commits y PRs, pero corregir 39 commits modifica el historial de una propuesta transversal y no es una reparación mecánica segura.",
+  "question": "¿Se aprueba como dirección permanente el nuevo modelo de capas y fachadas públicas para `@hamelyn/core` antes de integrar este refactor transversal?",
+  "rationale": "La rama sustituye la estructura que `dev` y `AGENTS.md` describen actualmente; la corrección mecánica no decide por sí sola el contrato arquitectónico duradero.",
   "options": [
     {
-      "title": "Reconstruir y probar la rama",
-      "body": "Recrear los commits sin atribuciones, traducir los comentarios nuevos y aportar pruebas funcionales redactadas de los flujos recableados.",
+      "title": "Adoptar el modelo por etapas",
+      "body": "Aceptar la dirección, pero exigir documentación completa, limpieza de metadatos y pruebas funcionales antes de mergear este tramo.",
       "recommended": true
     },
     {
-      "title": "Dividir el refactor",
-      "body": "Cerrar esta rama y proponer cambios por capas con pruebas funcionales específicas y una historia de commits conforme.",
+      "title": "Dividir por dominios",
+      "body": "Separar el guardián y cada dominio crítico en PRs más pequeños para reducir el riesgo de regresiones cruzadas.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la migración",
+      "body": "Mantener la arquitectura actual hasta acordar explícitamente el contrato de capas y las fachadas públicas.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Reconstruir y probar la rama",
-    "body": "Recrear los commits sin atribuciones, traducir los comentarios nuevos y aportar pruebas funcionales redactadas de los flujos recableados.",
+    "title": "Adoptar el modelo por etapas",
+    "body": "Aceptar la dirección, pero exigir documentación completa, limpieza de metadatos y pruebas funcionales antes de mergear este tramo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Está asignado para cubrir la revisión de las áreas de mayor riesgo y puede coordinar la decisión de aterrizaje.",
+    "reason": "Fue solicitado para revisar precisamente las áreas críticas que atraviesa el cambio.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8430.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430#issuecomment-5277914081",
-    "reviewedAt": "2026-08-14T22:36:20.440Z",
+    "reviewedAt": "2026-08-15T08:56:58.976Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
