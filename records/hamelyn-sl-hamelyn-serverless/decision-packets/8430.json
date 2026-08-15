@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-15T08:56:58.976Z",
-  "updatedAt": "2026-08-15T08:53:11Z",
+  "generatedAt": "2026-08-15T12:16:02.159Z",
+  "updatedAt": "2026-08-15T12:09:58Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,46 @@
     "state": "open",
     "labels": [
       "size/L",
-      "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P1",
-      "merge-risk: 🚨 availability"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-13T07:38:52Z",
-    "updatedAt": "2026-08-15T08:53:11Z",
+    "updatedAt": "2026-08-15T12:09:58Z",
     "headSha": "889ac9c193fc647e7195758a33a40b3278b770eb"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba como dirección permanente el nuevo modelo de capas y fachadas públicas para `@hamelyn/core` antes de integrar este refactor transversal?",
-  "rationale": "La rama sustituye la estructura que `dev` y `AGENTS.md` describen actualmente; la corrección mecánica no decide por sí sola el contrato arquitectónico duradero.",
+  "question": "¿Se acepta integrar ahora esta migración arquitectónica transversal de 938 ficheros, o se exige dividirla en tramos verificables antes de mergearla?",
+  "rationale": "La decisión combina dirección arquitectónica, tolerancia al riesgo operativo y el coste de exigir una separación de alcance; no se resuelve con un arreglo mecánico único.",
   "options": [
     {
-      "title": "Adoptar el modelo por etapas",
-      "body": "Aceptar la dirección, pero exigir documentación completa, limpieza de metadatos y pruebas funcionales antes de mergear este tramo.",
+      "title": "Exigir tramos verificables",
+      "body": "Separar o reducir la rama y requerir documentación completa, historial conforme a política y pruebas reales de los flujos críticos antes de cada merge.",
       "recommended": true
     },
     {
-      "title": "Dividir por dominios",
-      "body": "Separar el guardián y cada dominio crítico en PRs más pequeños para reducir el riesgo de regresiones cruzadas.",
-      "recommended": false
-    },
-    {
-      "title": "Pausar la migración",
-      "body": "Mantener la arquitectura actual hasta acordar explícitamente el contrato de capas y las fachadas públicas.",
+      "title": "Aceptar el riesgo concentrado",
+      "body": "Mantener el PR como una sola migración, tras completar los bloqueos documentales y de evidencia, asumiendo una revisión manual intensiva.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar el modelo por etapas",
-    "body": "Aceptar la dirección, pero exigir documentación completa, limpieza de metadatos y pruebas funcionales antes de mergear este tramo.",
+    "title": "Exigir tramos verificables",
+    "body": "Separar o reducir la rama y requerir documentación completa, historial conforme a política y pruebas reales de los flujos críticos antes de cada merge.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Fue solicitado para revisar precisamente las áreas críticas que atraviesa el cambio.",
-    "confidence": "medium"
+    "reason": "Es revisor solicitado para el área sensible afectada y tiene historial directo en documentación de core.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8430.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8430#issuecomment-5277914081",
-    "reviewedAt": "2026-08-15T08:56:58.976Z",
+    "reviewedAt": "2026-08-15T12:16:02.159Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
