@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-15T23:53:19.426Z",
+  "generated_at": "2026-08-16T00:01:25.378Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-15T20:53:18.187Z",
+  "since": "2026-08-15T21:01:23.917Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -29,11 +29,11 @@
   "lookup_concurrency": 8,
   "commands": [],
   "timings": {
-    "total_ms": 1239,
+    "total_ms": 1460,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1237
+        "ms": 1459
       },
       {
         "name": "prehydrate_comment_commands",
