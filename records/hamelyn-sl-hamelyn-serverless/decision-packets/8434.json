@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T06:15:45.412Z",
-  "updatedAt": "2026-08-17T06:04:54Z",
+  "generatedAt": "2026-08-17T06:31:42.048Z",
+  "updatedAt": "2026-08-17T06:24:53Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,48 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P2",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-17T06:04:54Z",
+    "updatedAt": "2026-08-17T06:24:53Z",
     "headSha": "4139175132d2f318f2a3e965c95363fb13aba97a"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Cómo deben tratarse de forma duradera las ventas de TodoColección con SKU manual: exclusión registrada, pedido manual visible o alerta única?",
-  "rationale": "La corrección no puede limitarse a reintentar silenciosamente: escoger el destino operativo de una venta externa cambia trazabilidad y gestión de fulfillment.",
+  "question": "¿Los pedidos de listings manuales deben persistirse como ignorados o excluirse mediante una fuente de estado distinta para que no vuelvan a ocupar el cupo?",
+  "rationale": "El código necesita una decisión duradera sobre cómo representar ventas ajenas al inventario sin crear ordersells operativos ni bloquear pedidos válidos.",
   "options": [
     {
-      "title": "Registrar exclusiones duraderas",
-      "body": "Guardar un marcador de pedido manual para que no reconsuma el cupo, conservando una traza consultable sin crear un ordersell inventariado.",
+      "title": "Persistir como ignorados",
+      "body": "Guardar un marcador durable por pedido manual permite excluirlo en cron posteriores y conservar trazabilidad operativa.",
       "recommended": true
     },
     {
-      "title": "Crear ruta manual visible",
-      "body": "Persistir estos pedidos para operación manual con un estado explícito, asumiendo el cambio de flujo y de datos asociado.",
+      "title": "Mantenerlos fuera del modelo",
+      "body": "Definir una fuente de exclusión separada evita crear ordersells, pero debe ser durable y consultarse antes del cupo.",
       "recommended": false
     },
     {
-      "title": "Mantener el reintento actual",
-      "body": "Aceptar que las ventas manuales vuelvan a ocupar capacidad de detalle en cada ejecución del cron.",
+      "title": "Aceptar el reintento actual",
+      "body": "Mantiene el cambio mínimo, pero deja que pedidos manuales puedan retrasar la ingesta normal.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Registrar exclusiones duraderas",
-    "body": "Guardar un marcador de pedido manual para que no reconsuma el cupo, conservando una traza consultable sin crear un ordersell inventariado.",
+    "title": "Persistir como ignorados",
+    "body": "Guardar un marcador durable por pedido manual permite excluirlo en cron posteriores y conservar trazabilidad operativa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "Su solicitud de revisión se basa en experiencia directa con los archivos de marketplace afectados.",
-    "confidence": "medium"
+    "person": "JavierHamelyn",
+    "reason": "Su historial reciente cubre recovery y retirada de TodoColección, las rutas más cercanas a esta decisión de estado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-17T06:15:45.412Z",
+    "reviewedAt": "2026-08-17T06:31:42.048Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
