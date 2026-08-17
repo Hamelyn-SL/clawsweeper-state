@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T06:12:24.740Z",
+  "updatedAt": "2026-08-17T05:57:48Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8455,
+    "title": "Mirakl engine: floating acceptOrder, broken WRONG_PRICE pattern and unclassified provider errors",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8455",
+    "state": "open",
+    "labels": [
+      "bug",
+      "app:marketplace",
+      "triage:done",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-14T10:43:55Z",
+    "updatedAt": "2026-08-17T05:57:48Z"
+  },
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Debe la resolución incluir y ejecutar una reclasificación controlada de los 15.165 `unknown_state` históricos, o dividir esa operación en un seguimiento separado?",
+  "rationale": "La decisión implica mutar una cohorte operativa amplia; el código para errores nuevos no determina por sí solo la seguridad ni el calendario del backfill.",
+  "options": [
+    {
+      "title": "Separar y aprobar el backfill controlado",
+      "body": "Mantener la corrección de código acotada y aprobar una operación independiente con dry-run, muestras, conteos y reversión.",
+      "recommended": true
+    },
+    {
+      "title": "Resolver sólo errores nuevos",
+      "body": "Integrar el hardening sin mutar históricos y abrir un seguimiento explícito que preserve la deuda de recovery.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar hasta estrechar la PR",
+      "body": "Exigir que se retiren los cambios ajenos de admin/auth antes de decidir el backfill y la integración.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar y aprobar el backfill controlado",
+    "body": "Mantener la corrección de código acotada y aprobar una operación independiente con dry-run, muestras, conteos y reversión.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado de esta incidencia y el contribuidor más reciente del flujo Mirakl afectado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8455.md",
+    "reviewedAt": "2026-08-17T06:12:24.740Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+  }
+}
