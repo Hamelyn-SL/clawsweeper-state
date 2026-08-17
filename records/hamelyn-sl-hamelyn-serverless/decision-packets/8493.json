@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T17:50:44.887Z",
-  "updatedAt": "2026-08-17T17:42:45Z",
+  "generatedAt": "2026-08-17T17:57:20.873Z",
+  "updatedAt": "2026-08-17T17:52:14Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,38 +17,42 @@
       "P1"
     ],
     "createdAt": "2026-08-17T17:04:55Z",
-    "updatedAt": "2026-08-17T17:42:45Z"
+    "updatedAt": "2026-08-17T17:52:14Z"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P1",
-  "question": "¿Se aprueba que los pedidos B2B estándar pasen de revisión manual a ejecución autónoma tras una reacción ✅ de la allowlist?",
-  "rationale": "La decisión cambia quién puede iniciar mutaciones de inventario y operaciones de picking desde Slack; el código no puede determinar por sí solo el nivel de delegación aceptable.",
+  "question": "¿Debe autorizarse la ejecución autónoma solo cuando la PR demuestre recuperación segura de cada estado parcial de B2B?",
+  "rationale": "La elección define la garantía operativa para mutaciones de pedidos, picking y stock; no puede deducirse de la intención funcional descrita.",
   "options": [
     {
-      "title": "Despliegue gradual con alcance acotado",
-      "body": "Aprobar la automatización solo para pedidos estándar sin Skypod y ampliar el alcance después de observar ejecuciones verificadas.",
+      "title": "Exigir saga reanudable",
+      "body": "Hacer que el ledger continúe de forma idempotente desde cada write confirmado y cubrir cada interrupción con pruebas inyectadas.",
       "recommended": true
     },
     {
-      "title": "Mantener aprobación humana para toda ejecución",
-      "body": "Conservar el watcher para intake y dry-run, pero requerir HITL para crear BPs hasta validar el modelo operativo.",
+      "title": "Añadir compensación explícita",
+      "body": "Revertir de forma segura las escrituras ya realizadas cuando falle un paso posterior antes de permitir otro intento.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener ejecución manual",
+      "body": "Dejar el watcher limitado a dry-run y escalado hasta acordar otra garantía transaccional.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Despliegue gradual con alcance acotado",
-    "body": "Aprobar la automatización solo para pedidos estándar sin Skypod y ampliar el alcance después de observar ejecuciones verificadas.",
+    "title": "Exigir saga reanudable",
+    "body": "Hacer que el ledger continúe de forma idempotente desde cada write confirmado y cubrir cada interrupción con pruebas inyectadas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Definió el contrato B2B y el objetivo operativo de la automatización.",
+    "reason": "Su historial conecta tanto el contrato operativo B2B como la infraestructura de agentes que implementa la propuesta.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8493.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8493#issuecomment-5318354153",
-    "reviewedAt": "2026-08-17T17:50:44.887Z",
+    "reviewedAt": "2026-08-17T17:57:20.873Z",
     "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
   }
 }
