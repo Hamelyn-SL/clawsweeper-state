@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T16:35:15.955Z",
-  "updatedAt": "2026-08-17T14:16:15Z",
+  "generatedAt": "2026-08-17T18:20:51.088Z",
+  "updatedAt": "2026-08-17T18:01:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,48 @@
       "app:ecommerce",
       "reporter:javier",
       "triage:pr-opened",
-      "origin:dev",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ⚪ platinum",
+      "origin:dev"
     ],
     "createdAt": "2026-08-17T13:47:06Z",
-    "updatedAt": "2026-08-17T14:16:15Z"
+    "updatedAt": "2026-08-17T18:01:51Z"
   },
-  "lane": "product_direction",
+  "lane": "proof_sufficiency",
   "priority": "P2",
-  "question": "¿Se acepta el fallback estático con resolución por streaming de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488 como comportamiento de la promo strip cacheada?",
-  "rationale": "La reparación evita renunciar a la caché, pero establece que la primera pintura del shell puede mostrar la promo estática antes de recibir la variante personalizada.",
+  "question": "¿Debe https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488 aceptarse como reparación de este `#418` tras obtener una traza que vincule el error con la frontera de caché de la promo?",
+  "rationale": "La PR corrige una frontera técnicamente sensible, pero el propio reporte rectificado indica que esa hipótesis no demuestra el mismatch observado.",
   "options": [
     {
-      "title": "Validar y conservar streaming",
-      "body": "Comprobar dos variantes de visitante en preview y mergear la PR si no hay `#418` ni cruce de HTML.",
+      "title": "Exigir reproducción diagnóstica",
+      "body": "Validar la PR con dos visitantes y una traza de React en desarrollo que identifique el subárbol antes de decidir su fusión.",
       "recommended": true
     },
     {
-      "title": "Priorizar cambio solo tras hidratar",
-      "body": "Cambiar a selección en cliente si se prefiere asumir un cambio visual breve sobre la complejidad de streaming.",
-      "recommended": false
-    },
-    {
-      "title": "Hacer dinámica la ruta",
-      "body": "Desactivar el shell compartido si se requiere que la variante personalizada esté presente en la respuesta HTML inicial.",
+      "title": "Fusionar como endurecimiento independiente",
+      "body": "Aceptar el aislamiento de caché aunque el `#418` permanezca abierto hasta localizar su causa real.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y conservar streaming",
-    "body": "Comprobar dos variantes de visitante en preview y mergear la PR si no hay `#418` ni cruce de HTML.",
+    "title": "Exigir reproducción diagnóstica",
+    "body": "Validar la PR con dos visitantes y una traza de React en desarrollo que identifique el subárbol antes de decidir su fusión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial conecta directamente la adopción y revisión de la frontera de caché afectada.",
+    "reason": "Su historial reciente cubre la introducción y el ajuste de los límites de caché de este layout.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8485#issuecomment-5316980051",
-    "reviewedAt": "2026-08-17T16:35:15.955Z",
-    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+    "reviewedAt": "2026-08-17T18:20:51.088Z",
+    "mainSha": "bc2eb426fb3873d6dd7276a812c1a210914846a4"
   }
 }
