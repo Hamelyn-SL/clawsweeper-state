@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T20:24:00.457Z",
+  "updatedAt": "2026-08-17T13:29:09Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8482,
+    "title": "feat: standalone bifrost warehouse panel app",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8482",
+    "state": "open",
+    "labels": [
+      "size/XXL",
+      "rating: 🥉 bronze",
+      "status: 📣 needs proof",
+      "P2",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 automation"
+    ],
+    "createdAt": "2026-08-17T13:20:53Z",
+    "updatedAt": "2026-08-17T13:29:09Z",
+    "headSha": "0b54b3adec624ea28e10e849f7524d0dc1bd3080"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe el panel limitarse inicialmente a `admin-user` y obtener el inventario desde `config`, como define la issue relacionada, o se aprueba el nuevo rol `developers` con un contrato de acceso propio?",
+  "rationale": "La elección cambia la frontera permanente de autorización y el lugar donde se conserva información operativa de los puestos; no es una corrección mecánica que pueda decidirse de forma segura.",
+  "options": [
+    {
+      "title": "Seguir el contrato de la issue",
+      "body": "Mantener acceso `admin-user` y mover AnyDesk/IP al documento `config` servido solo tras autorización.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar el rol developers",
+      "body": "Conservar `developers`, pero documentar su alcance y mover igualmente el inventario fuera del bundle cliente.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la ampliación de acceso",
+      "body": "Separar el panel de la decisión sobre el rol hasta que se defina quién debe administrar conexiones de puestos.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Seguir el contrato de la issue",
+    "body": "Mantener acceso `admin-user` y mover AnyDesk/IP al documento `config` servido solo tras autorización.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial cubre la autenticación y el enrutamiento de despliegues que determinan esta frontera.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8482.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8482#issuecomment-5319901810",
+    "reviewedAt": "2026-08-17T20:24:00.457Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+  }
+}
