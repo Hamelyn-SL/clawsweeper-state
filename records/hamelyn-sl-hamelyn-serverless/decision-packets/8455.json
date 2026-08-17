@@ -15,10 +15,10 @@
       "triage:done",
       "P1",
       "impact:other",
-      "clawsweeper:no-new-fix-pr",
+      "issue-rating: 💎 diamond",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond"
+      "clawsweeper:no-new-fix-pr"
     ],
     "createdAt": "2026-08-14T10:43:55Z",
     "updatedAt": "2026-08-17T05:57:48Z"
@@ -56,6 +56,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8455.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8455#issuecomment-5292667317",
     "reviewedAt": "2026-08-17T06:12:24.740Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
