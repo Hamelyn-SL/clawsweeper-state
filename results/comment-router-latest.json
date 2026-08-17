@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-17T23:05:43.812Z",
+  "generated_at": "2026-08-17T23:16:52.004Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-17T20:05:40.740Z",
+  "since": "2026-08-17T20:16:48.963Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,8 +12,8 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 13,
-  "commands_seen": 6,
+  "scanned_comments": 12,
+  "commands_seen": 5,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -232,59 +232,18 @@
       "actions": [],
       "author_repository_permission": "none",
       "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8458 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    },
-    {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8476:5319692276:2026-08-17T20:12:30Z:automerge",
-      "comment_id": "5319692276",
-      "comment_version_key": "5319692276:2026-08-17T20:12:30Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8476#issuecomment-5319692276",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8476,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-08-17T20:10:03Z",
-      "comment_updated_at": "2026-08-17T20:12:30Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "La rama endurece la integración de MercadoLibre en altas, retiradas, ingestión de pedidos, idioma y recuperación de errores.\n\nReproducibility: Sí, por fuente: un doble de `/orders/search` con más de 500 pedidos nuevos reproduce la cola inaccesible tras persistir las diez primeras páginas.",
-      "review_followup": "- [P1] Existe una reparación mecánica y localizada para impedir que el corte temprano haga inaccesible una cola pagada superior al tope.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8476 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
     }
   ],
   "timings": {
-    "total_ms": 3072,
+    "total_ms": 3041,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1052
+        "ms": 1371
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 2014
+        "ms": 1665
       },
       {
         "name": "classify_comment_commands",
