@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T08:44:02.277Z",
-  "updatedAt": "2026-08-17T08:31:36Z",
+  "generatedAt": "2026-08-17T10:21:20.276Z",
+  "updatedAt": "2026-08-17T09:58:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,41 +11,46 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "merge-risk: 🚨 automation",
-      "merge-risk: 🚨 compatibility",
       "rating: 🥈 silver",
       "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 availability",
+      "merge-risk: 🚨 automation"
     ],
     "createdAt": "2026-08-14T11:14:49Z",
-    "updatedAt": "2026-08-17T08:31:36Z",
+    "updatedAt": "2026-08-17T09:58:32Z",
     "headSha": "d859117f1d952c12962851f65115aad1e8dbb076"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta temporalmente que `admin` no bloquee warnings y que Markdown, YAML, SCSS y HTML queden fuera del formato pre-commit?",
-  "rationale": "La rama cambia garantías compartidas de calidad y experiencia de desarrollo; decidir qué deuda y qué pérdida de cobertura son aceptables requiere intención de plataforma.",
+  "question": "¿Se acepta de forma explícita que la migración reduzca temporalmente el gate de admin y deje sin formato automático los tipos de archivo no soportados por Biome?",
+  "rationale": "La rama cambia garantías de calidad y flujos de desarrollo previamente establecidos; esa degradación no debe quedar implícita en una migración técnica.",
   "options": [
     {
-      "title": "Preservar gates y cobertura",
-      "body": "Mantener el fallo por warnings en todos los workspaces y conservar un formatter para las extensiones que Biome no cubre.",
+      "title": "Mantener las garantías actuales",
+      "body": "Exigir que admin bloquee warnings y conservar un formatter alternativo para las extensiones que Biome no procesa.",
       "recommended": true
     },
     {
-      "title": "Aceptar la transición temporal",
-      "body": "Aprobar explícitamente la excepción de `admin` y la reducción de formato, con un propietario y fecha para retirarlas.",
+      "title": "Aceptar la relajación temporal",
+      "body": "Aprobar explícitamente el gate laxo y la ausencia de formato en esas extensiones, con alcance y fecha de retirada definidos.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la migración",
+      "body": "Aterrizar Biome y TypeScript por fases, dejando los cambios de garantías para una propuesta independiente.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar gates y cobertura",
-    "body": "Mantener el fallo por warnings en todos los workspaces y conservar un formatter para las extensiones que Biome no cubre.",
+    "title": "Mantener las garantías actuales",
+    "body": "Exigir que admin bloquee warnings y conservar un formatter alternativo para las extensiones que Biome no procesa.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial conecta con el hook pre-commit y el flujo de tooling compartido que esta decisión modifica.",
+    "person": "Daniel",
+    "reason": "Su historial conecta el gate de CI y la migración reciente de Supply a Expo SDK 57.",
     "confidence": "high"
   },
   "source": {
