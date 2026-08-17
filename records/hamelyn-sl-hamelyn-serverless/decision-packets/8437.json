@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T10:19:06.510Z",
+  "generatedAt": "2026-08-17T10:16:39.523Z",
   "updatedAt": "2026-08-17T10:12:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,51 +13,51 @@
       "app:infrastructure",
       "feature",
       "triage:done",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "issue-rating: ➖ n/a",
       "P2",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:linked-pr-open"
     ],
     "createdAt": "2026-08-13T12:23:15Z",
     "updatedAt": "2026-08-17T10:12:45Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la migración limitarse a Biome con paridad de calidad y formato, o aprobar también TypeScript 7 y un periodo de lint laxo en `admin`?",
-  "rationale": "La PR vinculada combina decisiones de plataforma con cambios de compatibilidad que la issue original no resuelve por sí sola.",
+  "question": "¿Se acepta una migración conjunta a Biome y TypeScript 7 que deje temporalmente `admin` sin gate estricto y retire el formateo automático de Markdown, YAML y SCSS?",
+  "rationale": "La elección determina garantías de calidad y experiencia de desarrollo para todos los workspaces; ni la implementación ni los benchmarks deciden qué regresiones operativas acepta el equipo.",
   "options": [
     {
-      "title": "Separar y mantener paridad",
-      "body": "Revisar una migración de Biome separada de TypeScript 7, preservando formato y un gate estricto antes de decidir el upgrade.",
+      "title": "Dividir y preservar gates",
+      "body": "Separar TypeScript 7 y migrar Biome solo tras mantener gates estrictos y cubrir el formato hoy automatizado.",
       "recommended": true
     },
     {
-      "title": "Aceptar el paquete completo",
-      "body": "Aprobar Biome, TypeScript 7 y la excepción temporal de `admin` con pruebas explícitas de `supply` y documentación de la degradación.",
+      "title": "Aceptar la transición temporal",
+      "body": "Aprobar explícitamente la relajación de `admin` y documentar el nuevo tratamiento de archivos no soportados por Biome.",
       "recommended": false
     },
     {
-      "title": "Posponer la migración",
-      "body": "Cerrar o pausar la candidata hasta que exista una matriz de reglas y compatibilidad que justifique el coste transversal.",
+      "title": "Pausar la migración",
+      "body": "Mantener ESLint y Prettier hasta disponer de paridad y cobertura suficiente para el flujo compartido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar y mantener paridad",
-    "body": "Revisar una migración de Biome separada de TypeScript 7, preservando formato y un gate estricto antes de decidir el upgrade.",
+    "title": "Dividir y preservar gates",
+    "body": "Separar TypeScript 7 y migrar Biome solo tras mantener gates estrictos y cubrir el formato hoy automatizado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Ya ha planteado las incertidumbres concretas de compatibilidad que requieren la decisión.",
-    "confidence": "medium"
+    "reason": "Su historial conecta directamente con el hook y el flujo de tooling compartido que la migración modificaría.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8437.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8437#issuecomment-5280888464",
-    "reviewedAt": "2026-08-17T10:20:52.848Z",
+    "reviewedAt": "2026-08-17T10:16:39.523Z",
     "mainSha": "6d5a599c409814a60bb88920a31aa82275a489c1"
   }
 }
