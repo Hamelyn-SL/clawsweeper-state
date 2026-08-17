@@ -1,56 +1,60 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T13:13:06.817Z",
-  "updatedAt": "2026-08-12T12:25:36Z",
+  "generatedAt": "2026-08-17T10:18:19.907Z",
+  "updatedAt": "2026-08-17T10:00:33Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 8419,
-    "title": "feat: add abebooks v2 api integration",
+    "title": "feat: rewrite abebooks integration with batched api client",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8419",
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-12T12:25:24Z",
-    "updatedAt": "2026-08-12T12:25:36Z",
-    "headSha": "8cafa679cf1c60eddd13a5c61536d2026a45201f"
+    "updatedAt": "2026-08-17T10:00:33Z",
+    "headSha": "5188c26cd8db0789efd015f742cc593bb2ee8d42"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P2",
-  "question": "¿Debe aceptarse esta V2 como la base operativa de AbeBooks y autorizarse después un switchover manual desde la V1?",
-  "rationale": "El diff evita programar la V2 automáticamente, pero decidir cuándo sustituye a una integración que confirma y envía pedidos exige criterio operativo del equipo.",
+  "question": "¿Se autoriza reemplazar directamente el cron de AbeBooks pese a que la confirmación y el envío nuevos solo se probarán después del despliegue?",
+  "rationale": "La rama conserva la misma identidad y cron, por lo que la primera ejecución en producción activa transiciones de pedido no demostradas públicamente.",
   "options": [
     {
-      "title": "Validar y preparar el switchover",
-      "body": "Mantener la V1 activa hasta revisar evidencia redactada de la V2 y aprobar explícitamente el plan de cambio y rollback.",
+      "title": "Exigir prueba antes del merge",
+      "body": "Solicitar salida, logs o capturas redactadas de inventario, confirmación y envío, más un plan de monitorización y reversión.",
       "recommended": true
     },
     {
-      "title": "Mantener la V1",
-      "body": "Conservar la integración actual y cerrar o reconducir la V2 si no compensa el riesgo operativo de reemplazarla.",
+      "title": "Autorizar despliegue supervisado",
+      "body": "Aceptar el riesgo operativo y programar una ventana con seguimiento explícito de pedidos, Slack y `SYNC_ERROR`.",
+      "recommended": false
+    },
+    {
+      "title": "Aplazar la sustitución",
+      "body": "Mantener la integración vigente hasta disponer de una vía segura para verificar las transiciones de pedido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y preparar el switchover",
-    "body": "Mantener la V1 activa hasta revisar evidencia redactada de la V2 y aprobar explícitamente el plan de cambio y rollback.",
+    "title": "Exigir prueba antes del merge",
+    "body": "Solicitar salida, logs o capturas redactadas de inventario, confirmación y envío, más un plan de monitorización y reversión.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Es la señal histórica más reciente en el transporte y manejo de errores de AbeBooks.",
+    "reason": "Su trabajo reciente cubre la ruta vigente de transporte y errores que la sustitución debe preservar.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8419#issuecomment-5267303526",
-    "reviewedAt": "2026-08-12T13:13:06.817Z",
-    "mainSha": "29303c54f26c0344c67948b5811048d49c201bdc"
+    "reviewedAt": "2026-08-17T10:18:19.907Z",
+    "mainSha": "6d5a599c409814a60bb88920a31aa82275a489c1"
   }
 }
