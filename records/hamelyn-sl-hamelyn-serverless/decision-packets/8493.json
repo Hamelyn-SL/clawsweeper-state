@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T17:50:44.887Z",
+  "updatedAt": "2026-08-17T17:42:45Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8493,
+    "title": "🤖 B2B orders agent (eve): autonomous intake and execution in #b2b-orders",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8493",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "reporter:javier",
+      "triage:running",
+      "P1"
+    ],
+    "createdAt": "2026-08-17T17:04:55Z",
+    "updatedAt": "2026-08-17T17:42:45Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Se aprueba que los pedidos B2B estándar pasen de revisión manual a ejecución autónoma tras una reacción ✅ de la allowlist?",
+  "rationale": "La decisión cambia quién puede iniciar mutaciones de inventario y operaciones de picking desde Slack; el código no puede determinar por sí solo el nivel de delegación aceptable.",
+  "options": [
+    {
+      "title": "Despliegue gradual con alcance acotado",
+      "body": "Aprobar la automatización solo para pedidos estándar sin Skypod y ampliar el alcance después de observar ejecuciones verificadas.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener aprobación humana para toda ejecución",
+      "body": "Conservar el watcher para intake y dry-run, pero requerir HITL para crear BPs hasta validar el modelo operativo.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Despliegue gradual con alcance acotado",
+    "body": "Aprobar la automatización solo para pedidos estándar sin Skypod y ampliar el alcance después de observar ejecuciones verificadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Definió el contrato B2B y el objetivo operativo de la automatización.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8493.md",
+    "reviewedAt": "2026-08-17T17:50:44.887Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}
