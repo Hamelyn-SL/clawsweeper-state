@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T14:14:40.025Z",
-  "updatedAt": "2026-08-17T13:57:47Z",
+  "generatedAt": "2026-08-17T16:35:15.955Z",
+  "updatedAt": "2026-08-17T14:16:15Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,53 @@
       "app:ecommerce",
       "reporter:javier",
       "triage:pr-opened",
-      "origin:dev",
-      "P2",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ⚪ platinum",
+      "origin:dev"
     ],
     "createdAt": "2026-08-17T13:47:06Z",
-    "updatedAt": "2026-08-17T13:57:47Z"
+    "updatedAt": "2026-08-17T14:16:15Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe preservarse el shell cacheado con una isla A/B realmente dinámica, o se acepta resolver la variante tras hidratar si Next no puede aislarla con fiabilidad?",
-  "rationale": "Las alternativas cambian el equilibrio entre consistencia visual, rendimiento y complejidad de Cache Components; el código no determina ese criterio de producto.",
+  "question": "¿Se acepta el fallback estático con resolución por streaming de https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488 como comportamiento de la promo strip cacheada?",
+  "rationale": "La reparación evita renunciar a la caché, pero establece que la primera pintura del shell puede mostrar la promo estática antes de recibir la variante personalizada.",
   "options": [
     {
-      "title": "Aislar la variante por streaming",
-      "body": "Conservar el shell cacheado, pero garantizar que el valor dependiente de cookie no entra en HTML ni Flight compartidos.",
+      "title": "Validar y conservar streaming",
+      "body": "Comprobar dos variantes de visitante en preview y mergear la PR si no hay `#418` ni cruce de HTML.",
       "recommended": true
     },
     {
-      "title": "Elegir tras hidratar",
-      "body": "Renderizar Main en SSR y seleccionar la variante en cliente, aceptando el posible cambio visual inicial.",
+      "title": "Priorizar cambio solo tras hidratar",
+      "body": "Cambiar a selección en cliente si se prefiere asumir un cambio visual breve sobre la complejidad de streaming.",
       "recommended": false
     },
     {
-      "title": "Volver dinámica la ruta",
-      "body": "Evitar la contaminación de caché haciendo dinámica la ruta mientras exista más de una variante.",
+      "title": "Hacer dinámica la ruta",
+      "body": "Desactivar el shell compartido si se requiere que la variante personalizada esté presente en la respuesta HTML inicial.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aislar la variante por streaming",
-    "body": "Conservar el shell cacheado, pero garantizar que el valor dependiente de cookie no entra en HTML ni Flight compartidos.",
+    "title": "Validar y conservar streaming",
+    "body": "Comprobar dos variantes de visitante en preview y mergear la PR si no hay `#418` ni cruce de HTML.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Introdujo la migración a Cache Components y el ajuste más reciente de sus límites en ecommerce.",
+    "reason": "Su historial conecta directamente la adopción y revisión de la frontera de caché afectada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8485.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8485#issuecomment-5316980051",
-    "reviewedAt": "2026-08-17T14:14:40.025Z",
-    "mainSha": "7c9b9a2dbf9540966750e6df6f8d9a0a0243841c"
+    "reviewedAt": "2026-08-17T16:35:15.955Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
   }
 }
