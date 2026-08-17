@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T22:10:18.832Z",
+  "generatedAt": "2026-08-17T22:14:59.743Z",
   "updatedAt": "2026-08-17T20:30:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,12 +11,12 @@
     "state": "open",
     "labels": [
       "size/L",
-      "proof: sufficient",
-      "rating: 🥇 gold",
-      "status: ⏳ waiting on author",
       "P2",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 automation"
+      "proof: sufficient",
+      "status: ⏳ waiting on author",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-14T11:14:49Z",
     "updatedAt": "2026-08-17T20:30:41Z",
@@ -24,34 +24,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe la migración mantener el formateo obligatorio de Markdown, YAML, SCSS y HTML mediante una herramienta complementaria, o se acepta retirar deliberadamente esa garantía?",
-  "rationale": "La rama cambia un contrato de tooling vigente y la decisión entre herramienta única y cobertura de formatos no puede deducirse solo del diff.",
+  "question": "¿La política del monorepo debe conservar formato automático para Markdown, YAML, SCSS y HTML mediante una herramienta complementaria, o se acepta retirarlo al adoptar Biome como única herramienta?",
+  "rationale": "Biome no cubre esas extensiones y el PR cambia una garantía actual de calidad y consistencia del repositorio.",
   "options": [
     {
-      "title": "Mantener la cobertura actual",
-      "body": "Añadir una ruta de formato compatible para las extensiones que Biome no procesa y conservar el gate de pre-commit.",
+      "title": "Conservar la cobertura de formato",
+      "body": "Mantener Biome para sus extensiones compatibles y una ruta complementaria para Markdown, YAML, SCSS y HTML.",
       "recommended": true
     },
     {
-      "title": "Aceptar el alcance reducido",
-      "body": "Aprobar explícitamente que esos formatos dejen de formatearse y actualizar la política y la documentación como cambio deliberado.",
+      "title": "Aceptar la reducción de cobertura",
+      "body": "Aprobar explícitamente que esas extensiones dejan de formatearse en el hook y actualizar la política operativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener la cobertura actual",
-    "body": "Añadir una ruta de formato compatible para las extensiones que Biome no procesa y conservar el gate de pre-commit.",
+    "title": "Conservar la cobertura de formato",
+    "body": "Mantener Biome para sus extensiones compatibles y una ruta complementaria para Markdown, YAML, SCSS y HTML.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente conecta directamente con el hook y la política de tooling afectados.",
+    "reason": "Su historial reciente conecta las convenciones del repositorio con la automatización afectada.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8461.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8461#issuecomment-5292731136",
-    "reviewedAt": "2026-08-17T22:10:18.832Z",
+    "reviewedAt": "2026-08-17T22:14:59.743Z",
     "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
   }
 }
