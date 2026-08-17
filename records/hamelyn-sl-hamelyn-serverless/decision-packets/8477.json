@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T12:35:59.285Z",
+  "updatedAt": "2026-08-17T12:33:04Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8477,
+    "title": "Auditar y corregir roles del admin: pasar usuarios de admin-user a admin-logistic y revisar paneles por rol",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8477",
+    "state": "open",
+    "labels": [
+      "app:admin",
+      "reporter:davidgonzalez",
+      "feature",
+      "triage:needs-info",
+      "P2",
+      "origin:dev"
+    ],
+    "createdAt": "2026-08-17T12:20:51Z",
+    "updatedAt": "2026-08-17T12:33:04Z"
+  },
+  "lane": "security_boundary",
+  "priority": "P1",
+  "question": "¿Debe `admin-logistic` conservar alguna capacidad de consulta o gestión de Usuarios, o toda lectura y modificación de usuarios y roles debe quedar limitada a `admin-user`?",
+  "rationale": "La respuesta define la frontera de privilegios y condiciona tanto la corrección de la API como qué cuentas pueden degradarse sin perder funciones necesarias.",
+  "options": [
+    {
+      "title": "Limitar Usuarios a administradores",
+      "body": "Restringir GET, POST y PUT de Usuarios a `admin-user` y conservar para logística solo las superficies operativas documentadas.",
+      "recommended": true
+    },
+    {
+      "title": "Separar lectura y edición",
+      "body": "Permitir una consulta mínima a logística, pero prohibir crear usuarios y asignar o retirar roles mediante una política diferenciada.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener la frontera actual",
+      "body": "Aceptar que `admin-logistic` administra usuarios y documentarlo como privilegio operativo explícito.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Limitar Usuarios a administradores",
+    "body": "Restringir GET, POST y PUT de Usuarios a `admin-user` y conservar para logística solo las superficies operativas documentadas.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "El guard de las rutas afectadas aparece ligado a su historial y es el mejor punto de partida para decidir la política técnica.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8477.md",
+    "reviewedAt": "2026-08-17T12:35:59.285Z",
+    "mainSha": "41ae4eb0db368f1d00112247188bd0fdc7f98e02"
+  }
+}
