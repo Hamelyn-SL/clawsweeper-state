@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T12:19:48.694Z",
-  "updatedAt": "2026-08-13T11:40:31Z",
+  "generatedAt": "2026-08-17T06:15:45.412Z",
+  "updatedAt": "2026-08-17T06:04:54Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥇 gold",
+      "P2",
       "status: 📣 needs proof",
-      "P1",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-13T11:40:31Z",
-    "headSha": "7921bc37f776fe33e1a51d6e50f4b69bd1f5457f"
+    "updatedAt": "2026-08-17T06:04:54Z",
+    "headSha": "4139175132d2f318f2a3e965c95363fb13aba97a"
   },
-  "lane": "manual_review",
-  "priority": "P1",
-  "question": "¿Debe el primer cron ingerir automáticamente los pedidos históricos detectados o requiere una revisión operativa previa?",
-  "rationale": "El PR declara nueve pedidos reales no ingeridos que pueden estar resueltos fuera del sistema; el código no puede decidir su estado operativo correcto.",
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Cómo deben tratarse de forma duradera las ventas de TodoColección con SKU manual: exclusión registrada, pedido manual visible o alerta única?",
+  "rationale": "La corrección no puede limitarse a reintentar silenciosamente: escoger el destino operativo de una venta externa cambia trazabilidad y gestión de fulfillment.",
   "options": [
     {
-      "title": "Revisar antes del cron",
-      "body": "Verificar los nueve pedidos identificados y ejecutar la ingestión cuando se confirme que deben crear ordersells.",
+      "title": "Registrar exclusiones duraderas",
+      "body": "Guardar un marcador de pedido manual para que no reconsuma el cupo, conservando una traza consultable sin crear un ordersell inventariado.",
       "recommended": true
     },
     {
-      "title": "Ingerir automáticamente",
-      "body": "Aceptar la creación de ordersells históricos y gestionar después cualquier excepción desde operaciones.",
+      "title": "Crear ruta manual visible",
+      "body": "Persistir estos pedidos para operación manual con un estado explícito, asumiendo el cambio de flujo y de datos asociado.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el reintento actual",
+      "body": "Aceptar que las ventas manuales vuelvan a ocupar capacidad de detalle en cada ejecución del cron.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar antes del cron",
-    "body": "Verificar los nueve pedidos identificados y ejecutar la ingestión cuando se confirme que deben crear ordersells.",
+    "title": "Registrar exclusiones duraderas",
+    "body": "Guardar un marcador de pedido manual para que no reconsuma el cupo, conservando una traza consultable sin crear un ordersell inventariado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su trabajo reciente cubre la recuperación operativa del adaptador de TodoColección.",
+    "person": "MarcosTerroso",
+    "reason": "Su solicitud de revisión se basa en experiencia directa con los archivos de marketplace afectados.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-13T12:19:48.694Z",
-    "mainSha": "6296d45653cda160724e45cded9271b43cba25ae"
+    "reviewedAt": "2026-08-17T06:15:45.412Z",
+    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }

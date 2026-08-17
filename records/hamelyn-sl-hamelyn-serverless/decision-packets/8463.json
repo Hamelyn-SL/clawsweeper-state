@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T13:21:21.228Z",
-  "updatedAt": "2026-08-14T13:11:48Z",
+  "generatedAt": "2026-08-17T06:13:58.389Z",
+  "updatedAt": "2026-08-17T05:48:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,50 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "proof: 📸 screenshot",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
-      "merge-risk: 🚨 security-boundary"
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 security-boundary",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-14T13:07:52Z",
-    "updatedAt": "2026-08-14T13:11:48Z",
+    "updatedAt": "2026-08-17T05:48:47Z",
     "headSha": "783e45a62e699104b70430408d28502913557e94"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Debe esta v0 aceptar presencia de puesto basada sólo en un identificador controlado por el navegador, o exigir una identidad de estación vinculada antes de mostrar datos operativos?",
-  "rationale": "Permitir usuarios autenticados de cualquier puesto conserva facilidad de despliegue, pero no preserva la integridad del mapa operativo; el contrato de confianza requiere una decisión explícita.",
+  "question": "¿Qué credencial o relación gestionada por servidor debe vincular cada puesto Bifrost con el navegador autorizado para impedir que otro usuario autenticado suplante su presencia?",
+  "rationale": "El parámetro de URL y `localStorage` identifican el puesto en el cliente, pero no constituyen una frontera de autorización suficiente para datos operativos mostrados a administradores.",
   "options": [
     {
-      "title": "Vincular identidad de estación",
-      "body": "Exigir una credencial o señal aprovisionada por puesto y conservar el beacon sólo para transmitir la presencia de esa estación.",
+      "title": "Vinculación verificable por servidor",
+      "body": "Exigir una credencial o asignación de puesto validada en backend y restringir el emisor al rol operativo correspondiente.",
       "recommended": true
     },
     {
-      "title": "Aceptar la limitación de v0",
-      "body": "Mantener el identificador actual y documentar explícitamente que el mapa es orientativo y puede ser falseado por usuarios autenticados.",
+      "title": "Aceptar observabilidad no fiable temporal",
+      "body": "Mantener el emisor para cualquier usuario autenticado, asumiendo explícitamente que el panel puede contener presencia falsificada.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la presencia hasta cerrar el contrato",
+      "body": "Dejar fuera el beacon y el panel de presencia hasta acordar el contrato Admin↔Bifrost.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Vincular identidad de estación",
-    "body": "Exigir una credencial o señal aprovisionada por puesto y conservar el beacon sólo para transmitir la presencia de esa estación.",
+    "title": "Vinculación verificable por servidor",
+    "body": "Exigir una credencial o asignación de puesto validada en backend y restringir el emisor al rol operativo correspondiente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su cambio reciente mantiene el enrutado de admin que el beacon debe observar correctamente.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Mantiene la base de heartbeats y está asignado a la issue canónica.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8463.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8463#issuecomment-5293792929",
-    "reviewedAt": "2026-08-14T13:21:21.228Z",
+    "reviewedAt": "2026-08-17T06:13:58.389Z",
     "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
   }
 }
