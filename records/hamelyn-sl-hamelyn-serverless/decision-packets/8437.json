@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T11:35:42.372Z",
-  "updatedAt": "2026-08-17T11:27:45Z",
+  "generatedAt": "2026-08-17T14:30:51.515Z",
+  "updatedAt": "2026-08-17T12:57:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,47 +13,46 @@
       "app:infrastructure",
       "feature",
       "triage:done",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision",
-      "clawsweeper:linked-pr-open",
-      "issue-rating: ➖ n/a",
-      "P2",
       "impact:other",
-      "clawsweeper:needs-maintainer-review"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-13T12:23:15Z",
-    "updatedAt": "2026-08-17T11:27:45Z"
+    "updatedAt": "2026-08-17T12:57:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta migración incluir TypeScript 7 y cualquier transición temporal de severidad, o limitarse a Biome con cambios separados?",
-  "rationale": "La única candidata abierta amplía el objetivo inicial y modifica controles comunes; esa política no se resuelve únicamente con la implementación técnica.",
+  "question": "¿Debe aprobarse una migración conjunta de Biome y TypeScript 7 que deja deuda de `admin` como `info`, o separar TypeScript y exigir la paridad/gate previstos antes de mergear?",
+  "rationale": "La issue define prerequisitos y garantías de lint, pero la PR abierta amplía el cambio a TypeScript 7 y plantea una política distinta para la deuda existente.",
   "options": [
     {
-      "title": "Separar decisiones de alcance",
-      "body": "Mantener la migración a Biome como objetivo y llevar TypeScript 7 o relajaciones temporales a PRs con validación específica.",
+      "title": "Separar el upgrade de TypeScript 7",
+      "body": "Mantener esta migración centrada en Biome y exigir una decisión explícita sobre la paridad de reglas y los avisos de `admin`.",
       "recommended": true
     },
     {
-      "title": "Aceptar el paquete coordinado",
-      "body": "Revisar Biome, TypeScript 7 y los cambios de severidad como una única migración transversal con pruebas completas.",
+      "title": "Aceptar el alcance conjunto",
+      "body": "Aprobar expresamente TypeScript 7 y los diagnósticos `info`, documentando el cambio de política de calidad y su seguimiento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar decisiones de alcance",
-    "body": "Mantener la migración a Biome como objetivo y llevar TypeScript 7 o relajaciones temporales a PRs con validación específica.",
+    "title": "Separar el upgrade de TypeScript 7",
+    "body": "Mantener esta migración centrada en Biome y exigir una decisión explícita sobre la paridad de reglas y los avisos de `admin`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre el flujo compartido de pre-commit y CI que determina la compatibilidad operativa.",
+    "reason": "Su historial conecta el hook y el gate de CI afectados por la decisión de plataforma.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8437.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8437#issuecomment-5280888464",
-    "reviewedAt": "2026-08-17T11:35:42.372Z",
-    "mainSha": "6d5a599c409814a60bb88920a31aa82275a489c1"
+    "reviewedAt": "2026-08-17T14:30:51.515Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
   }
 }
