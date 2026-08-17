@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T20:24:59.517Z",
-  "updatedAt": "2026-08-17T13:27:51Z",
+  "generatedAt": "2026-08-17T22:09:09.074Z",
+  "updatedAt": "2026-08-17T20:30:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,51 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-17T13:27:51Z",
+    "updatedAt": "2026-08-17T20:30:29Z",
     "headSha": "4bfe63a01a7ce7606dcbd0528c6adbc0d57f690e"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe el cron persistir los pedidos de listings manuales como ignorados para que no consuman indefinidamente el cupo de detalle?",
-  "rationale": "Identificar esos pedidos requiere consultar su detalle; evitar el starvation sin aumentar llamadas indefinidamente exige decidir dónde y cuánto tiempo guardar ese estado externo.",
+  "question": "¿Se acepta la ingesta automática de pedidos históricos detectados o debe revisarse/excluirse ese backlog antes del primer cron?",
+  "rationale": "El propio PR identifica nueve pedidos reales omitidos antes; decidir su tratamiento afecta a operaciones y a mensajes potencialmente ya resueltos fuera de la plataforma.",
   "options": [
     {
-      "title": "Persistir ignorados",
-      "body": "Registrar el identificador externo y el motivo de descarte para excluirlo de ejecuciones posteriores sin ocultar el diagnóstico.",
+      "title": "Reparar y hacer preflight del backlog",
+      "body": "Corregir los dos fallos, revisar los pedidos históricos antes del primer cron y adjuntar prueba real redactada del flujo de envío.",
       "recommended": true
     },
     {
-      "title": "Aceptar el seguimiento",
-      "body": "Mantener el descarte actual y asumir el riesgo acotado mientras no haya ejemplos vigentes de SKUs ausentes.",
-      "recommended": false
-    },
-    {
-      "title": "Cambiar el cupo",
-      "body": "Contar solo pedidos normalizados correctamente, aceptando más consultas de detalle cuando haya listings manuales.",
+      "title": "Aceptar la ingesta inmediata",
+      "body": "Mergear asumiendo que operaciones revisará después los pedidos históricos y cualquier efecto de sincronización o mensajería.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir ignorados",
-    "body": "Registrar el identificador externo y el motivo de descarte para excluirlo de ejecuciones posteriores sin ocultar el diagnóstico.",
+    "title": "Reparar y hacer preflight del backlog",
+    "body": "Corregir los dos fallos, revisar los pedidos históricos antes del primer cron y adjuntar prueba real redactada del flujo de envío.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Fue solicitado como revisor por conocimiento directo del área y puede validar el coste operativo de cada alternativa.",
+    "reason": "Fue asignado específicamente por experiencia en este cambio de marketplace y ya revisó el PR.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-17T20:24:59.517Z",
+    "reviewedAt": "2026-08-17T22:09:09.074Z",
     "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
   }
 }
