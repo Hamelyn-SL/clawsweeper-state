@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T08:44:02.277Z",
-  "updatedAt": "2026-08-17T08:31:36Z",
+  "generatedAt": "2026-08-17T20:24:19.843Z",
+  "updatedAt": "2026-08-17T12:49:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,48 +10,53 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8461",
     "state": "open",
     "labels": [
-      "size/XL",
-      "merge-risk: 🚨 automation",
-      "merge-risk: 🚨 compatibility",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
+      "size/L",
+      "proof: sufficient",
+      "rating: 🥇 gold",
+      "status: ⏳ waiting on author",
       "P2",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 automation"
     ],
     "createdAt": "2026-08-14T11:14:49Z",
-    "updatedAt": "2026-08-17T08:31:36Z",
-    "headSha": "d859117f1d952c12962851f65115aad1e8dbb076"
+    "updatedAt": "2026-08-17T12:49:20Z",
+    "headSha": "42dab4e89a7de7fcf5757a56d58ceb66606f4c28"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se acepta temporalmente que `admin` no bloquee warnings y que Markdown, YAML, SCSS y HTML queden fuera del formato pre-commit?",
-  "rationale": "La rama cambia garantías compartidas de calidad y experiencia de desarrollo; decidir qué deuda y qué pérdida de cobertura son aceptables requiere intención de plataforma.",
+  "question": "¿Debe la migración conservar el formato automático de `.md`, `.yml`, `.yaml`, `.scss` y `.html`, o se acepta retirarlo del flujo de contribución?",
+  "rationale": "Biome no cubre esas extensiones y la propuesta elimina el único formateador vigente; elegir entre conservar la garantía o cambiar la política requiere intención explícita.",
   "options": [
     {
-      "title": "Preservar gates y cobertura",
-      "body": "Mantener el fallo por warnings en todos los workspaces y conservar un formatter para las extensiones que Biome no cubre.",
+      "title": "Conservar cobertura de formato",
+      "body": "Mantener un formateador específico para las extensiones no cubiertas y documentar la convivencia mínima con Biome.",
       "recommended": true
     },
     {
-      "title": "Aceptar la transición temporal",
-      "body": "Aprobar explícitamente la excepción de `admin` y la reducción de formato, con un propietario y fecha para retirarlas.",
+      "title": "Aceptar la retirada",
+      "body": "Eliminar formalmente la garantía de formato para esas extensiones y actualizar la política y la documentación de contribución.",
+      "recommended": false
+    },
+    {
+      "title": "Separar la decisión",
+      "body": "Fusionar solo cuando exista una propuesta acotada y aprobada para el formato no soportado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Preservar gates y cobertura",
-    "body": "Mantener el fallo por warnings en todos los workspaces y conservar un formatter para las extensiones que Biome no cubre.",
+    "title": "Conservar cobertura de formato",
+    "body": "Mantener un formateador específico para las extensiones no cubiertas y documentar la convivencia mínima con Biome.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial conecta con el hook pre-commit y el flujo de tooling compartido que esta decisión modifica.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona más directamente vinculada al hook vigente cuya cobertura se elimina.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8461.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8461#issuecomment-5292731136",
-    "reviewedAt": "2026-08-17T10:21:20.276Z",
-    "mainSha": "6d5a599c409814a60bb88920a31aa82275a489c1"
+    "reviewedAt": "2026-08-17T20:24:19.843Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
   }
 }

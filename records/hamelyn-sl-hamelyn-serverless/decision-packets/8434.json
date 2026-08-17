@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T06:31:42.048Z",
-  "updatedAt": "2026-08-17T06:24:53Z",
+  "generatedAt": "2026-08-17T20:24:59.517Z",
+  "updatedAt": "2026-08-17T13:27:51Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,7 +10,7 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434",
     "state": "open",
     "labels": [
-      "size/XL",
+      "size/XXL",
       "rating: 🥈 silver",
       "status: 📣 needs proof",
       "P2",
@@ -18,44 +18,44 @@
       "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-17T06:24:53Z",
-    "headSha": "4139175132d2f318f2a3e965c95363fb13aba97a"
+    "updatedAt": "2026-08-17T13:27:51Z",
+    "headSha": "4bfe63a01a7ce7606dcbd0528c6adbc0d57f690e"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Los pedidos de listings manuales deben persistirse como ignorados o excluirse mediante una fuente de estado distinta para que no vuelvan a ocupar el cupo?",
-  "rationale": "El código necesita una decisión duradera sobre cómo representar ventas ajenas al inventario sin crear ordersells operativos ni bloquear pedidos válidos.",
+  "question": "¿Debe el cron persistir los pedidos de listings manuales como ignorados para que no consuman indefinidamente el cupo de detalle?",
+  "rationale": "Identificar esos pedidos requiere consultar su detalle; evitar el starvation sin aumentar llamadas indefinidamente exige decidir dónde y cuánto tiempo guardar ese estado externo.",
   "options": [
     {
-      "title": "Persistir como ignorados",
-      "body": "Guardar un marcador durable por pedido manual permite excluirlo en cron posteriores y conservar trazabilidad operativa.",
+      "title": "Persistir ignorados",
+      "body": "Registrar el identificador externo y el motivo de descarte para excluirlo de ejecuciones posteriores sin ocultar el diagnóstico.",
       "recommended": true
     },
     {
-      "title": "Mantenerlos fuera del modelo",
-      "body": "Definir una fuente de exclusión separada evita crear ordersells, pero debe ser durable y consultarse antes del cupo.",
+      "title": "Aceptar el seguimiento",
+      "body": "Mantener el descarte actual y asumir el riesgo acotado mientras no haya ejemplos vigentes de SKUs ausentes.",
       "recommended": false
     },
     {
-      "title": "Aceptar el reintento actual",
-      "body": "Mantiene el cambio mínimo, pero deja que pedidos manuales puedan retrasar la ingesta normal.",
+      "title": "Cambiar el cupo",
+      "body": "Contar solo pedidos normalizados correctamente, aceptando más consultas de detalle cuando haya listings manuales.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir como ignorados",
-    "body": "Guardar un marcador durable por pedido manual permite excluirlo en cron posteriores y conservar trazabilidad operativa.",
+    "title": "Persistir ignorados",
+    "body": "Registrar el identificador externo y el motivo de descarte para excluirlo de ejecuciones posteriores sin ocultar el diagnóstico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Su historial reciente cubre recovery y retirada de TodoColección, las rutas más cercanas a esta decisión de estado.",
-    "confidence": "high"
+    "person": "MarcosTerroso",
+    "reason": "Fue solicitado como revisor por conocimiento directo del área y puede validar el coste operativo de cada alternativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-17T06:31:42.048Z",
-    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+    "reviewedAt": "2026-08-17T20:24:59.517Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
   }
 }

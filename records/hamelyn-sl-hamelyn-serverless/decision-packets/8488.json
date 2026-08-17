@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T20:31:03.742Z",
+  "updatedAt": "2026-08-17T14:26:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8488,
+    "title": "fix: isolate promo strip assignment from cached shell",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8488",
+    "state": "open",
+    "labels": [],
+    "createdAt": "2026-08-17T14:10:17Z",
+    "updatedAt": "2026-08-17T14:26:23Z",
+    "headSha": "5600b24bef9dc643523241e341a56ecac769ec23"
+  },
+  "lane": "proof_sufficiency",
+  "priority": "P2",
+  "question": "¿Debe fusionarse el aislamiento de caché como endurecimiento independiente aunque no se haya demostrado que resuelve el `#418` enlazado?",
+  "rationale": "La incidencia corregida descarta la hipótesis causal de la promo strip, mientras que la PR no contiene una prueba posterior que vincule el cambio con la desaparición del error.",
+  "options": [
+    {
+      "title": "Exigir prueba diagnóstica",
+      "body": "Verificar en preview o desarrollo varias rutas, locales y dos visitantes, capturando el componente y el texto que originaban el `#418`.",
+      "recommended": true
+    },
+    {
+      "title": "Aceptar endurecimiento independiente",
+      "body": "Fusionar el cambio por la frontera de caché, manteniendo abierta la incidencia hasta identificar la causa real del hydration mismatch.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Exigir prueba diagnóstica",
+    "body": "Verificar en preview o desarrollo varias rutas, locales y dos visitantes, capturando el componente y el texto que originaban el `#418`.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "Su trabajo reciente introdujo y revisó la frontera de Cache Components en el layout implicado.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8488.md",
+    "reviewedAt": "2026-08-17T20:31:03.742Z",
+    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+  }
+}
