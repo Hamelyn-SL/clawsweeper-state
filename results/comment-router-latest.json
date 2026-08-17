@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-17T21:10:14.612Z",
+  "generated_at": "2026-08-17T21:22:41.886Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-17T18:10:11.239Z",
+  "since": "2026-08-17T18:22:38.359Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 33,
+  "scanned_comments": 32,
   "commands_seen": 6,
   "actionable": 0,
   "trusted_bots": [
@@ -29,9 +29,9 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8475:5319140518:2026-08-17T21:09:04Z:automerge",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8475:5319140518:2026-08-17T21:16:04Z:automerge",
       "comment_id": "5319140518",
-      "comment_version_key": "5319140518:2026-08-17T21:09:04Z",
+      "comment_version_key": "5319140518:2026-08-17T21:16:04Z",
       "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8475#issuecomment-5319140518",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
@@ -40,7 +40,7 @@
       "author_id": 301054459,
       "author_association": "NONE",
       "comment_created_at": "2026-08-17T19:16:55Z",
-      "comment_updated_at": "2026-08-17T21:09:04Z",
+      "comment_updated_at": "2026-08-17T21:16:04Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -52,8 +52,8 @@
       "trusted_bot_author": null,
       "automation_source": null,
       "repair_reason": null,
-      "review_summary": "El PR reemplaza el cliente HTTP de Discogs, adapta el ritmo a 60 solicitudes/minuto y amplía la recuperación de precios, pedidos, envíos y rotación.\n\nReproducibility: Sí, desde código: basta una respuesta sin `x-discogs-ratelimit-remaining`; `Number(null)` deja `remainingInWindow` en cero y la siguiente operación espera 15 segundos.",
-      "review_followup": "- [P1] Hay una reparación mecánica y acotada para el pacing; la prueba real seguirá siendo una acción requerida al contribuidor antes de integrar.",
+      "review_summary": "El PR sustituye el transporte de Discogs por `fetch`, limita las solicitudes a 60/minuto y amplía la recuperación, pedidos, cancelaciones, envíos y documentación operativa.\n\nReproducibility: Sí, por código: una respuesta sin `x-discogs-ratelimit-remaining` produce `Number(null) === 0` y activa el enfriamiento de 15 segundos en la siguiente solicitud.",
+      "review_followup": "- [P1] Hay una reparación mecánica acotada para el pacing y los ajustes de convención, pero la evidencia real del entorno del contribuidor sigue siendo obligatoria antes de integrar.",
       "freeform_prompt": null,
       "visual_lens": null,
       "expected_head_sha": null,
@@ -276,15 +276,15 @@
     }
   ],
   "timings": {
-    "total_ms": 3372,
+    "total_ms": 3527,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1706
+        "ms": 1559
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1659
+        "ms": 1959
       },
       {
         "name": "classify_comment_commands",
