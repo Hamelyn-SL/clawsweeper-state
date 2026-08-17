@@ -4,15 +4,15 @@
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
   "state": "Review comments checked",
-  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 3. Item numbers: 8429,8452,8459.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/32009589132",
-  "planned_count": 3,
-  "planned_capacity": 33,
-  "planned_shards": 3,
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 1. Item numbers: 8429.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/32009863677",
+  "planned_count": 1,
+  "planned_capacity": 1,
+  "planned_shards": 1,
   "active_codex": 0,
   "due_backlog": 3,
   "oldest_unreviewed_at": null,
-  "capacity_reason": "under capacity: due backlog below planned capacity",
+  "capacity_reason": "saturated: due backlog filled planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-08-17T08:28:38.725Z"
+  "updated_at": "2026-08-17T08:26:16.001Z"
 }
