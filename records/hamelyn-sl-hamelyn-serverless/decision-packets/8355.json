@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-14T14:11:58.393Z",
-  "updatedAt": "2026-08-14T13:36:03Z",
+  "generatedAt": "2026-08-17T14:49:03.400Z",
+  "updatedAt": "2026-08-17T13:42:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,51 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
-      "P2",
-      "impact:security",
       "impact:other",
-      "issue-rating: ➖ n/a",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T10:38:58Z",
-    "updatedAt": "2026-08-14T13:36:03Z"
+    "updatedAt": "2026-08-17T13:42:47Z"
   },
-  "lane": "security_boundary",
+  "lane": "product_direction",
   "priority": "P2",
-  "question": "¿La v0 debe limitarse estrictamente a observabilidad, dejando AnyDesk y Wake-on-LAN fuera hasta que exista un contrato autenticado Admin↔Bifrost?",
-  "rationale": "La issue combina presencia de operarios con acciones de acceso remoto; el perímetro de AnyDesk y la autorización de acciones físicas no se resuelven únicamente con código de interfaz.",
+  "question": "¿Debe aprobarse la aplicación Bifrost independiente y limitar las acciones remotas a un único puente, en lugar de exponer AnyDesk por cada puesto?",
+  "rationale": "La PR abierta cambia el destino de Admin a una aplicación nueva y propone acciones que afectan al perímetro remoto decidido para el epic.",
   "options": [
     {
-      "title": "Aprobar observabilidad acotada",
-      "body": "Aceptar una v0 sin controles remotos cuando la identidad, autorización y prueba del flujo completo estén corregidas.",
+      "title": "Un único acceso por Bifrost",
+      "body": "Mantener la aplicación independiente para observabilidad, pero dejar AnyDesk y las acciones remotas centradas en el PC puente.",
       "recommended": true
     },
     {
-      "title": "Definir contrato completo primero",
-      "body": "Pausar la v0 hasta documentar autenticación, inventario y permisos de los comandos Bifrost.",
+      "title": "Permitir acceso por puesto",
+      "body": "Aceptar IDs AnyDesk individuales sólo con una excepción explícita al perímetro y controles operativos documentados.",
+      "recommended": false
+    },
+    {
+      "title": "Volver a Admin",
+      "body": "Reencauzar la entrega al panel de Admin y conservar la aplicación nueva fuera de esta iniciativa.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar observabilidad acotada",
-    "body": "Aceptar una v0 sin controles remotos cuando la identidad, autorización y prueba del flujo completo estén corregidas.",
+    "title": "Un único acceso por Bifrost",
+    "body": "Mantener la aplicación independiente para observabilidad, pero dejar AnyDesk y las acciones remotas centradas en el PC puente.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Es la persona asignada y mantiene la base de presencia que la propuesta extiende.",
+    "person": "JavierHamelyn",
+    "reason": "El historial conecta su trabajo con la base actual y el epic atribuye a Javier decisiones de acceso remoto.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355#issuecomment-5239578669",
-    "reviewedAt": "2026-08-14T14:11:58.393Z",
-    "mainSha": "f3c860bc9305bae2d8015ef4eb1dec557d43f877"
+    "reviewedAt": "2026-08-17T14:49:03.400Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
   }
 }

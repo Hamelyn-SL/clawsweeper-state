@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-17T14:48:05.317Z",
+  "updatedAt": "2026-08-17T14:39:28Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8490,
+    "title": "Aumentar la prioridad de picking de los marketplaces con métricas de plazos",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8490",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:infrastructure",
+      "feature",
+      "triage:queued",
+      "P2",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-08-17T14:39:17Z",
+    "updatedAt": "2026-08-17T14:39:28Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué marketplaces con métricas de plazo deben tener prioridad y qué orden relativo debe aplicarse frente a ecommerce y canales sin métrica?",
+  "rationale": "El código ya admite prioridades, pero no determina por sí mismo qué compromisos comerciales deben prevalecer ni con qué peso.",
+  "options": [
+    {
+      "title": "Priorizar mercados con SLA",
+      "body": "Acordar una tabla explícita para Amazon, MercadoLibre y eBay, manteniendo los demás canales detrás salvo excepción documentada.",
+      "recommended": true
+    },
+    {
+      "title": "Corregir solo Amazon SE",
+      "body": "Elevar únicamente `AMAZON_SE` para responder al retraso observado y conservar temporalmente el resto de valores.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener política actual",
+      "body": "No cambiar la tabla hasta disponer de métricas comparables de plazo y riesgo para cada marketplace.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Priorizar mercados con SLA",
+    "body": "Acordar una tabla explícita para Amazon, MercadoLibre y eBay, manteniendo los demás canales detrás salvo excepción documentada.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "El registry central de prioridades procede de su trabajo reciente en marketplaces.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8490.md",
+    "reviewedAt": "2026-08-17T14:48:05.317Z",
+    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+  }
+}
