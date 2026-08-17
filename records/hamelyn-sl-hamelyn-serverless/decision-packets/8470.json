@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T20:26:43.686Z",
-  "updatedAt": "2026-08-17T12:21:59Z",
+  "generatedAt": "2026-08-17T20:36:22.790Z",
+  "updatedAt": "2026-08-17T20:30:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-17T10:21:30Z",
-    "updatedAt": "2026-08-17T12:21:59Z",
+    "updatedAt": "2026-08-17T20:30:47Z",
     "headSha": "077155b38d50122276277b49093d7c6794f949dc"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué transición de `OrderSell` debe aplicarse cuando Amazon comunica una cancelación ejecutada de un pedido ya importado?",
-  "rationale": "La rama convierte las actualizaciones remotas en parte del flujo, pero el contrato actual solo evita duplicados y no define cómo reconciliar stock, picking y estados ya persistidos.",
+  "question": "¿Qué transición debe aplicar el sistema cuando Amazon comunica una cancelación ejecutada de un pedido que ya tiene `OrderSell` persistido?",
+  "rationale": "El cambio hace visibles actualizaciones posteriores, pero el contrato actual solo evita duplicados y no define cómo actualizar stock, picking o expedición ya iniciados.",
   "options": [
     {
-      "title": "Añadir reconciliación antes de integrar",
-      "body": "Definir y probar una ruta Amazon que actualice de forma segura los pedidos ya importados y sus líneas canceladas.",
+      "title": "Añadir reconciliación explícita",
+      "body": "Definir y probar una ruta Amazon que actualice de forma segura pedidos y líneas canceladas ya persistidos.",
       "recommended": true
     },
     {
-      "title": "Mantener solo importación inicial",
-      "body": "Conservar el filtro de pedidos existentes y no cambiar a `lastUpdatedAfter` hasta disponer de la reconciliación.",
+      "title": "Limitar la ventana a altas iniciales",
+      "body": "Mantener la deduplicación actual y no adoptar `lastUpdatedAfter` hasta disponer de la reconciliación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Añadir reconciliación antes de integrar",
-    "body": "Definir y probar una ruta Amazon que actualice de forma segura los pedidos ya importados y sus líneas canceladas.",
+    "title": "Añadir reconciliación explícita",
+    "body": "Definir y probar una ruta Amazon que actualice de forma segura pedidos y líneas canceladas ya persistidos.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial está ligado al flujo de importación de pedidos que define el contrato existente.",
-    "confidence": "medium"
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su historial conecta el transporte y el filtro de pedidos existentes que definen el contrato afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8470.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8470#issuecomment-5314930018",
-    "reviewedAt": "2026-08-17T20:26:43.686Z",
+    "reviewedAt": "2026-08-17T20:36:22.790Z",
     "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
   }
 }
