@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T09:01:39.270Z",
-  "updatedAt": "2026-08-12T08:55:30Z",
+  "generatedAt": "2026-08-18T22:43:11.108Z",
+  "updatedAt": "2026-08-18T17:11:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -12,50 +12,49 @@
     "labels": [
       "bug",
       "app:marketplace",
-      "triage:needs-info",
+      "triage:done",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
-      "origin:dev",
-      "mk:fnac",
-      "P2",
-      "impact:other",
+      "clawsweeper:source-repro",
       "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro"
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-08-12T08:55:30Z"
+    "updatedAt": "2026-08-18T17:11:20Z"
   },
-  "lane": "product_direction",
-  "priority": "P2",
-  "question": "¿Qué cohortes históricas Fnac `SYNC_ERROR/BATCHING` se autorizan para remediación one-time y qué transición corresponde a cada resultado remoto?",
-  "rationale": "El código limita la reentrada automática a `TRANSIENT`; tratar registros `UNKNOWN` requiere evidencia Fnac/Mongo y autorización sobre una escritura masiva.",
+  "lane": "manual_review",
+  "priority": "P1",
+  "question": "¿Qué tratamiento debe aprobarse para las 133 filas `ACTIVE` ausentes en Fnac: recreación por el flujo normal o reclasificación manual?",
+  "rationale": "La ausencia remota no determina si la oferta debe volver a publicarse o cerrar su estado local; elegir mal modificaría inventario publicado.",
   "options": [
     {
-      "title": "Autorizar dry-run segmentado",
-      "body": "Congelar predicados y muestras por `batchId`, contrastarlos con Fnac y aplicar solo transiciones verificadas.",
+      "title": "Recrear por flujo normal",
+      "body": "Enviar las 133 filas por la ruta ordinaria de creación tras confirmar su elegibilidad comercial.",
       "recommended": true
     },
     {
-      "title": "Conservar el residuo",
-      "body": "Mantener las filas `UNKNOWN` sin mutarlas hasta disponer de evidencia remota y una política de recuperación.",
+      "title": "Reclasificar manualmente",
+      "body": "Excluirlas de la recreación y resolverlas tras revisar el estado comercial y remoto por lote.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Autorizar dry-run segmentado",
-    "body": "Congelar predicados y muestras por `batchId`, contrastarlos con Fnac y aplicar solo transiciones verificadas.",
+    "title": "Recrear por flujo normal",
+    "body": "Enviar las 133 filas por la ruta ordinaria de creación tras confirmar su elegibilidad comercial.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su cambio integrado delimita el camino automático `TRANSIENT` y la incidencia ya está asignada a esta persona.",
+    "reason": "Está asignado y definió las cohortes, el orden y la evidencia del dry-run.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-12T09:01:39.270Z",
-    "mainSha": "67d8dcbb2ef1c8bc372a243488551593294c3730"
+    "reviewedAt": "2026-08-18T22:43:11.108Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
