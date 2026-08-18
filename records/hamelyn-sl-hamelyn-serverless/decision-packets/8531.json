@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T13:51:32.086Z",
-  "updatedAt": "2026-08-18T13:35:12Z",
+  "generatedAt": "2026-08-18T15:52:16.639Z",
+  "updatedAt": "2026-08-18T14:03:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,37 +24,42 @@
       "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-18T12:55:12Z",
-    "updatedAt": "2026-08-18T13:35:12Z"
+    "updatedAt": "2026-08-18T14:03:20Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué umbral y reglas de cambio deben gobernar `seoLastModifiedAt` en todos los mercados antes de implementar la propagación transversal?",
-  "rationale": "El código actual no puede deducir esa política desde `timestamp`, y las propuestas previas difieren entre un umbral absoluto y uno porcentual.",
+  "question": "¿Qué política permanente debe avanzar `seoLastModifiedAt`: umbral absoluto de 1 €, porcentaje, ambos, y qué señales de contenido y disponibilidad cuentan como cambio indexable?",
+  "rationale": "La pull request fusionada eligió deliberadamente `timestamp` como aproximación y dejó fuera estos criterios; decidirlos ahora condiciona el esquema, las escrituras y el comportamiento de millones de URLs.",
   "options": [
     {
-      "title": "Aprobar semántica SEO explícita",
-      "body": "Definir contenido indexable, disponibilidad y umbral de precio por mercado, y aplicar esa política de extremo a extremo.",
+      "title": "Definir señal SEO persistida",
+      "body": "Aprobar los umbrales y transiciones antes de implementar el marcador, su estado de referencia y la propagación analítica.",
       "recommended": true
     },
     {
       "title": "Mantener la aproximación actual",
-      "body": "Conservar `timestamp` como aproximación temporal, aceptando que cambios no SEO y algunos cambios de stock sigan alterando la señal.",
+      "body": "Conservar `timestamp` y limitar el trabajo a ampliar caché y pre-warm, aceptando que no separa cambios SEO de actualizaciones técnicas.",
+      "recommended": false
+    },
+    {
+      "title": "Reformular la política SEO",
+      "body": "Cerrar esta formulación y abrir una especificación corta si los criterios de precio y disponibilidad aún no tienen consenso.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar semántica SEO explícita",
-    "body": "Definir contenido indexable, disponibilidad y umbral de precio por mercado, y aplicar esa política de extremo a extremo.",
+    "title": "Definir señal SEO persistida",
+    "body": "Aprobar los umbrales y transiciones antes de implementar el marcador, su estado de referencia y la propagación analítica.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "Alex Cantón",
-    "reason": "Documentó y entregó la aproximación anterior, incluida la diferencia entre ese enfoque y la política semántica pendiente.",
-    "confidence": "medium"
+    "person": "alexcanHamelyn",
+    "reason": "El enfoque actual y sus límites fueron definidos en la pull request fusionada relacionada.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
-    "reviewedAt": "2026-08-18T13:51:32.086Z",
+    "reviewedAt": "2026-08-18T15:52:16.639Z",
     "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
