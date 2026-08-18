@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T13:55:27.133Z",
+  "updatedAt": "2026-08-18T13:35:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8531,
+    "title": "Sitemap v2 - Modificar lastmod y servir estatico",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8531",
+    "state": "open",
+    "labels": [
+      "bug",
+      "source:admin-panel",
+      "app:ecommerce",
+      "triage:done",
+      "reporter:victor",
+      "P1",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
+    ],
+    "createdAt": "2026-08-18T12:55:12Z",
+    "updatedAt": "2026-08-18T13:35:12Z"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Qué reglas permanentes deben avanzar `seoLastModifiedAt`, incluido el umbral internacional de precio y la semántica de disponibilidad?",
+  "rationale": "La implementación afecta escrituras de producto, datos materializados y señales SEO de millones de URLs; el código no puede inferir una política comercial y de indexación estable.",
+  "options": [
+    {
+      "title": "Adoptar la política SEO propuesta",
+      "body": "Persistir el marcador solo para contenido indexable, cambios de disponibilidad/estado y variaciones superiores a 1 € o su equivalente internacional.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener el timestamp documental",
+      "body": "Conservar `timestamp` como aproximación y limitar el trabajo al contrato de caché, aceptando señales de recrawl menos precisas.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar la política SEO propuesta",
+    "body": "Persistir el marcador solo para contenido indexable, cambios de disponibilidad/estado y variaciones superiores a 1 € o su equivalente internacional.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Introdujo la implementación de `lastmod` vigente y documentó explícitamente sus límites semánticos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
+    "reviewedAt": "2026-08-18T13:55:27.133Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+  }
+}
