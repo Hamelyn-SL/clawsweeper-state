@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T16:48:28.048Z",
-  "updatedAt": "2026-08-18T16:43:21Z",
+  "generatedAt": "2026-08-18T06:58:10.609Z",
+  "updatedAt": "2026-08-18T06:12:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,45 +13,52 @@
       "bug",
       "app:marketplace",
       "triage:no-change",
-      "impact:other",
       "clawsweeper:no-new-fix-pr",
-      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
-      "issue-rating: 💎 diamond"
+      "issue-rating: 💎 diamond",
+      "P2",
+      "impact:other",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-14T10:44:03Z",
-    "updatedAt": "2026-08-18T16:43:21Z"
+    "updatedAt": "2026-08-18T06:12:44Z"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe el flujo P41 sin informe rescatar automáticamente líneas potencialmente correctas o mantener el rechazo global y abrir un seguimiento específico?",
-  "rationale": "Mirakl no identifica los SKU erróneos en ese caso; elegir una recuperación automática modifica la política de reintentos y puede republicar rechazos reales.",
+  "question": "¿Debe ampliarse el runner compartido para tratar un `OK` global como éxito de todas las filas retiradas, o debe separarse por ahora el arreglo P41?",
+  "rationale": "La elección modifica el contrato compartido de Decathlon, CDL y Feltrinelli; el código actual no permite inferir con seguridad la semántica deseada.",
   "options": [
     {
-      "title": "Integrar diagnóstico y abrir seguimiento",
-      "body": "Mantener el rechazo global actual, integrar la PR para recuperar `update` y distinguir el incidente, y diseñar después un rescate con límite de reintentos.",
+      "title": "Corregir el contrato compartido",
+      "body": "Definir explícitamente el `OK` global, añadir compatibilidad para los tres marketplaces Mirakl y demostrar retirada más recreación real.",
       "recommended": true
     },
     {
-      "title": "Rescatar de inmediato",
-      "body": "Avanzar las líneas del lote sin informe hacia oferta, aceptando el riesgo de volver a procesar rechazos reales sin una señal por SKU.",
+      "title": "Separar el diagnóstico P41",
+      "body": "Retirar temporalmente el cableado `update()` y fusionar solo los mensajes P41, que no dependen del contrato compartido.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar la PR",
+      "body": "Mantener la incidencia y la PR abiertas hasta acordar la semántica de éxito y su impacto operativo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar diagnóstico y abrir seguimiento",
-    "body": "Mantener el rechazo global actual, integrar la PR para recuperar `update` y distinguir el incidente, y diseñar después un rescate con límite de reintentos.",
+    "title": "Corregir el contrato compartido",
+    "body": "Definir explícitamente el `OK` global, añadir compatibilidad para los tres marketplaces Mirakl y demostrar retirada más recreación real.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MiguelHamelyn",
-    "reason": "La PR enlazada y su trabajo reciente en el flujo Mirakl le sitúan cerca de la decisión operativa.",
-    "confidence": "medium"
+    "reason": "Su trabajo reciente está directamente relacionado con el motor compartido y la PR candidata.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8456.md",
-    "reviewedAt": "2026-08-18T16:48:28.048Z",
-    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8456#issuecomment-5292727802",
+    "reviewedAt": "2026-08-18T06:58:10.609Z",
+    "mainSha": "1e92b1c282002f43e0ee8916cae95aa3bcd0e2e9"
   }
 }
