@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T06:15:02.674Z",
+  "generatedAt": "2026-08-18T06:13:27.780Z",
   "updatedAt": "2026-08-18T06:07:21Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -11,46 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
     "updatedAt": "2026-08-18T06:07:21Z",
     "headSha": "4b5337f13aa8deb697ade1a008904c4543a4b466"
   },
-  "lane": "product_direction",
+  "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe TodoColección persistir los IDs de pedidos manuales como ignorados para que no consuman el cupo, o se prefiere otra política de priorización antes de los 60 detalles?",
-  "rationale": "Evitar el starvation exige decidir qué estado durable y qué trazabilidad deben conservarse para ventas externas al inventario, no solo añadir una condición local.",
+  "question": "¿Debe esta PR persistir o excluir duraderamente los pedidos manuales antes del cupo de 60, o se acepta explícitamente el riesgo como seguimiento separado?",
+  "rationale": "El código demuestra el mecanismo de repetición, pero elegir entre una marca persistente, una cola específica o aceptar el seguimiento define la semántica operativa de pedidos externos al inventario.",
   "options": [
     {
-      "title": "Persistir pedidos manuales ignorados",
-      "body": "Registrar de forma trazable los IDs descartados y excluirlos de futuros cupos, con una prueba de regresión del backlog mixto.",
+      "title": "Corregir el cupo antes de mergear",
+      "body": "Registrar o excluir los pedidos manuales de forma duradera para que no vuelvan a consumir el presupuesto de detalles.",
       "recommended": true
     },
     {
-      "title": "Aceptar el riesgo acotado",
-      "body": "Mantener el comportamiento actual únicamente si operaciones confirma que no hay backlog ni listings manuales que puedan agotar el cupo.",
+      "title": "Aceptar un seguimiento acotado",
+      "body": "Mantener el comportamiento actual solo si se documenta el riesgo y se abre trabajo canónico con una señal operativa para detectar la primera instancia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir pedidos manuales ignorados",
-    "body": "Registrar de forma trazable los IDs descartados y excluirlos de futuros cupos, con una prueba de regresión del backlog mixto.",
+    "title": "Corregir el cupo antes de mergear",
+    "body": "Registrar o excluir los pedidos manuales de forma duradera para que no vuelvan a consumir el presupuesto de detalles.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Es el revisor solicitado que ya evaluó de forma independiente este flujo y tiene historial en el runner de retirada por lotes.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial y asignación de revisión cubren los runners y la semántica de sincronización que condicionan esta decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-18T06:15:02.674Z",
+    "reviewedAt": "2026-08-18T06:13:27.780Z",
     "mainSha": "ff2a92519de671e54521a9c8a34ab509c277fea6"
   }
 }
