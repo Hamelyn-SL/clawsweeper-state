@@ -1,20 +1,5 @@
 [
   {
-    "number": 7693,
-    "action": "review_comment_synced",
-    "reason": "updated durable Codex review comment"
-  },
-  {
-    "number": 8419,
-    "action": "review_comment_synced",
-    "reason": "recorded existing durable comment metadata"
-  },
-  {
-    "number": 8460,
-    "action": "skipped_stale_review_comment_sync",
-    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-08-18T22:47:03.868Z, report reviewed_at=2026-08-18T22:40:43.027Z"
-  },
-  {
     "number": 8522,
     "action": "review_comment_synced",
     "reason": "updated durable Codex review comment"
