@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T06:13:27.780Z",
-  "updatedAt": "2026-08-18T06:07:21Z",
+  "generatedAt": "2026-08-18T08:41:38.981Z",
+  "updatedAt": "2026-08-18T08:32:29Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,45 +12,42 @@
     "labels": [
       "size/XXL",
       "P2",
-      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery",
-      "rating: 🥈 silver"
+      "merge-risk: 🚨 message-delivery"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-18T06:07:21Z",
-    "headSha": "4b5337f13aa8deb697ade1a008904c4543a4b466"
+    "updatedAt": "2026-08-18T08:32:29Z",
+    "headSha": "18ee362ee400ee1d9f9da49d03727cf7a2b8af90"
   },
   "lane": "merge_risk",
   "priority": "P2",
-  "question": "¿Debe esta PR persistir o excluir duraderamente los pedidos manuales antes del cupo de 60, o se acepta explícitamente el riesgo como seguimiento separado?",
-  "rationale": "El código demuestra el mecanismo de repetición, pero elegir entre una marca persistente, una cola específica o aceptar el seguimiento define la semántica operativa de pedidos externos al inventario.",
+  "question": "¿Se debe exigir que los pedidos sin stock se excluyan o persistan antes del cap de 60, o se acepta explícitamente ese riesgo como seguimiento separado?",
+  "rationale": "El mecanismo de starvation está respaldado por el flujo de código, pero la discusión sostiene que no hay instancias activas conocidas y la elección afecta al comportamiento operativo de ingesta.",
   "options": [
     {
-      "title": "Corregir el cupo antes de mergear",
-      "body": "Registrar o excluir los pedidos manuales de forma duradera para que no vuelvan a consumir el presupuesto de detalles.",
+      "title": "Corregir antes de mergear",
+      "body": "Excluir o registrar como vistos los pedidos sin stock antes de limitar detalles, con una prueba de dos ejecuciones consecutivas.",
       "recommended": true
     },
     {
-      "title": "Aceptar un seguimiento acotado",
-      "body": "Mantener el comportamiento actual solo si se documenta el riesgo y se abre trabajo canónico con una señal operativa para detectar la primera instancia.",
+      "title": "Aceptar seguimiento separado",
+      "body": "Mergear el resto solo si operaciones confirma ausencia de pedidos manuales activos y se conserva un seguimiento verificable.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Corregir el cupo antes de mergear",
-    "body": "Registrar o excluir los pedidos manuales de forma duradera para que no vuelvan a consumir el presupuesto de detalles.",
+    "title": "Corregir antes de mergear",
+    "body": "Excluir o registrar como vistos los pedidos sin stock antes de limitar detalles, con una prueba de dos ejecuciones consecutivas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Su historial y asignación de revisión cubren los runners y la semántica de sincronización que condicionan esta decisión.",
+    "reason": "Fue asignado para revisar esta integración y cuenta con historial directo en runners de sincronización.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-18T06:13:27.780Z",
-    "mainSha": "ff2a92519de671e54521a9c8a34ab509c277fea6"
+    "reviewedAt": "2026-08-18T08:41:38.981Z",
+    "mainSha": "8b36b2185371a7482fa7dc98032eca80a97ae219"
   }
 }
