@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-18T07:12:46.399Z",
+  "generated_at": "2026-08-18T07:28:17.255Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-18T04:12:43.870Z",
+  "since": "2026-08-18T04:28:12.872Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -13,7 +13,7 @@
   "status_comment_id": null,
   "max_autoclose_targets": 8,
   "scanned_comments": 63,
-  "commands_seen": 3,
+  "commands_seen": 2,
   "actionable": 0,
   "trusted_bots": [
     "clawsweeper[bot]",
@@ -70,47 +70,6 @@
       "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8475 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
     },
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8460:5292730509:2026-08-18T06:17:38Z:automerge",
-      "comment_id": "5292730509",
-      "comment_version_key": "5292730509:2026-08-18T06:17:38Z",
-      "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8460#issuecomment-5292730509",
-      "repo": "Hamelyn-SL/hamelyn-serverless",
-      "target_branch": null,
-      "issue_number": 8460,
-      "author": "clawsweeper-hamelyn[bot]",
-      "author_id": 301054459,
-      "author_association": "NONE",
-      "comment_created_at": "2026-08-14T11:22:34Z",
-      "comment_updated_at": "2026-08-18T06:17:38Z",
-      "status_comment_id": null,
-      "trigger": "mention",
-      "command": "automerge",
-      "intent": "automerge",
-      "autoclose_message": null,
-      "implementation_prompt": null,
-      "operator_override": null,
-      "trusted_bot": false,
-      "trusted_bot_author": null,
-      "automation_source": null,
-      "repair_reason": null,
-      "review_summary": "El PR añade `update()` al ciclo de Decathlon, conserva `stage` durante retiradas por lote y diferencia los rechazos P41 globales de los rechazos por línea.\n\nReproducibility: Sí, por inspección de código: `batching()` produce un `OK` sin `sku`, el filtro devuelve cero SKUs y el runner omite `createProduct`.",
-      "review_followup": "- [P1] Hace falta decidir el contrato del `OK` global compartido antes de preparar una reparación segura.",
-      "freeform_prompt": null,
-      "visual_lens": null,
-      "expected_head_sha": null,
-      "close_reason": null,
-      "close_confidence": null,
-      "close_action_taken": null,
-      "reviewed_at": null,
-      "expected_item_updated_at": null,
-      "expected_source_revision": null,
-      "finding_id": null,
-      "status": "waiting",
-      "actions": [],
-      "author_repository_permission": "none",
-      "reason": "GitHub lookup failed; will retry later: GraphQL: Resource not accessible by integration (repository.pullRequest.statusCheckRollup.nodes.0.commit.statusCheckRollup) Command failed: gh pr view 8460 --repo Hamelyn-SL/hamelyn-serverless --json additions,headRefName,headRefOid,author,"
-    },
-    {
       "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8476:5324115811:2026-08-18T05:42:19Z:re_review",
       "comment_id": "5324115811",
       "comment_version_key": "5324115811:2026-08-18T05:42:19Z",
@@ -153,15 +112,15 @@
     }
   ],
   "timings": {
-    "total_ms": 2529,
+    "total_ms": 4383,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1083
+        "ms": 2854
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1436
+        "ms": 1519
       },
       {
         "name": "classify_comment_commands",
