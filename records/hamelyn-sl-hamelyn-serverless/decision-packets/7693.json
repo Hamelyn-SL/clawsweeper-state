@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T22:43:11.108Z",
+  "generatedAt": "2026-08-18T22:46:33.230Z",
   "updatedAt": "2026-08-18T17:11:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -13,49 +13,53 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "origin:dev",
-      "mk:fnac",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:dev",
+      "mk:fnac"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
     "updatedAt": "2026-08-18T17:11:20Z"
   },
   "lane": "manual_review",
   "priority": "P1",
-  "question": "¿Qué tratamiento debe aprobarse para las 133 filas `ACTIVE` ausentes en Fnac: recreación por el flujo normal o reclasificación manual?",
-  "rationale": "La ausencia remota no determina si la oferta debe volver a publicarse o cerrar su estado local; elegir mal modificaría inventario publicado.",
+  "question": "¿Qué transición autorizada deben seguir las 133 filas `ACTIVE` que están ausentes en Fnac: recreación por flujo normal, reclasificación, o exclusión manual?",
+  "rationale": "El código no puede inferir de forma segura si la ausencia remota requiere recrear una oferta, conservarla inactiva o investigar una condición comercial previa.",
   "options": [
     {
-      "title": "Recrear por flujo normal",
-      "body": "Enviar las 133 filas por la ruta ordinaria de creación tras confirmar su elegibilidad comercial.",
+      "title": "Clasificar y recrear selectivamente",
+      "body": "Validar las 133 filas por SKU y reenviar solo las que sigan siendo elegibles por el flujo normal.",
       "recommended": true
     },
     {
-      "title": "Reclasificar manualmente",
-      "body": "Excluirlas de la recreación y resolverlas tras revisar el estado comercial y remoto por lote.",
+      "title": "Reclasificar como inactivas",
+      "body": "Marcar las filas como inactivas únicamente si Operaciones confirma que no deben volver a publicarse.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar esta subcohorte",
+      "body": "Completar primero las cohortes no ambiguas y mantener estas 133 filas para revisión manual posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Recrear por flujo normal",
-    "body": "Enviar las 133 filas por la ruta ordinaria de creación tras confirmar su elegibilidad comercial.",
+    "title": "Clasificar y recrear selectivamente",
+    "body": "Validar las 133 filas por SKU y reenviar solo las que sigan siendo elegibles por el flujo normal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Está asignado y definió las cohortes, el orden y la evidencia del dry-run.",
+    "reason": "La discusión le atribuye la ejecución de la recuperación y el contraste con Marketplace/Data.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-18T22:43:11.108Z",
+    "reviewedAt": "2026-08-18T22:46:33.230Z",
     "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
