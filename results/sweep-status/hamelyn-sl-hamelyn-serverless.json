@@ -3,16 +3,16 @@
   "slug": "hamelyn-sl-hamelyn-serverless",
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
-  "state": "Review in progress",
-  "detail": "Planned 1 items across 1 shards. Capacity is 1 items; due backlog scanned is 9. Capacity reason: saturated: due backlog filled planned capacity. Review shards are starting; publish will merge artifacts when they finish.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/32123912356",
-  "planned_count": 1,
-  "planned_capacity": 1,
-  "planned_shards": 1,
-  "active_codex": 1,
-  "due_backlog": 9,
-  "oldest_unreviewed_at": "2026-08-18T09:48:45Z",
-  "capacity_reason": "saturated: due backlog filled planned capacity",
+  "state": "Review comments checked",
+  "detail": "Checked selected durable Codex review comments and synced missing or stale comments. Synced: 3. Item numbers: 8482,8509,8514.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/32122751207",
+  "planned_count": 3,
+  "planned_capacity": 5,
+  "planned_shards": 3,
+  "active_codex": 0,
+  "due_backlog": 3,
+  "oldest_unreviewed_at": "2026-08-18T08:37:22Z",
+  "capacity_reason": "under capacity: due backlog below planned capacity",
   "inherited_label_cleanups": null,
   "self_heal_conflict_repairs": null,
   "failed_review_retries": null,
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-08-18T09:54:08.576Z"
+  "updated_at": "2026-08-18T09:45:56.064Z"
 }
