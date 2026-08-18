@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T06:12:24.074Z",
+  "updatedAt": "2026-08-18T06:07:21Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8460,
+    "title": "feat: wire decathlon update phase and label p41 global rejections",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8460",
+    "state": "open",
+    "labels": [
+      "size/M",
+      "P1",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "proof: 📸 screenshot",
+      "rating: 🥇 gold"
+    ],
+    "createdAt": "2026-08-14T11:11:57Z",
+    "updatedAt": "2026-08-18T06:07:21Z",
+    "headSha": "2aa13c077d2aa3743fb4780763415438103fa632"
+  },
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "¿Debe este PR retirar temporalmente la fase `update()` y conservar solo P41, o ampliar el runner compartido para que un OK global recree todas las filas retiradas?",
+  "rationale": "Ambas rutas son viables, pero la segunda cambia la semántica de actualización de tres integraciones Mirakl y requiere aceptación explícita de su alcance.",
+  "options": [
+    {
+      "title": "Separar la fase update",
+      "body": "Retirar `update()` de este PR y fusionar únicamente el diagnóstico P41, dejando el ciclo global de retirada y recreación para una propuesta específica.",
+      "recommended": true
+    },
+    {
+      "title": "Completar el runner compartido",
+      "body": "Interpretar un OK global sin `sku` como éxito de todas las filas retiradas y añadir cobertura para CDL, Feltrinelli y Decathlon.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Separar la fase update",
+    "body": "Retirar `update()` de este PR y fusionar únicamente el diagnóstico P41, dejando el ciclo global de retirada y recreación para una propuesta específica.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "alexcanHamelyn",
+    "reason": "Su revisión detectó el fallo y está asignado por experiencia directa en sincronización de marketplaces y Decathlon.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8460.md",
+    "reviewedAt": "2026-08-18T06:12:24.074Z",
+    "mainSha": "ff2a92519de671e54521a9c8a34ab509c277fea6"
+  }
+}
