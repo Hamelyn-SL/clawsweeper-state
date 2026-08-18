@@ -1,10 +1,10 @@
 {
   "status": "dry_run",
-  "generated_at": "2026-08-18T21:11:18.125Z",
+  "generated_at": "2026-08-18T21:23:57.757Z",
   "repo": "Hamelyn-SL/hamelyn-serverless",
   "repair_repo": "Hamelyn-SL/clawsweeper",
   "review_repo": "Hamelyn-SL/clawsweeper",
-  "since": "2026-08-18T18:11:15.470Z",
+  "since": "2026-08-18T18:23:55.479Z",
   "execute": false,
   "force_reprocess": false,
   "max_comments": 100,
@@ -12,7 +12,7 @@
   "comment_ids": [],
   "status_comment_id": null,
   "max_autoclose_targets": 8,
-  "scanned_comments": 4,
+  "scanned_comments": 3,
   "commands_seen": 1,
   "actionable": 0,
   "trusted_bots": [
@@ -29,9 +29,9 @@
   "lookup_concurrency": 8,
   "commands": [
     {
-      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8530:5331415053:2026-08-18T19:11:33Z:automerge",
+      "idempotency_key": "comment-router:Hamelyn-SL/hamelyn-serverless:8530:5331415053:2026-08-18T21:19:30Z:automerge",
       "comment_id": "5331415053",
-      "comment_version_key": "5331415053:2026-08-18T19:11:33Z",
+      "comment_version_key": "5331415053:2026-08-18T21:19:30Z",
       "comment_url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8530#issuecomment-5331415053",
       "repo": "Hamelyn-SL/hamelyn-serverless",
       "target_branch": null,
@@ -40,7 +40,7 @@
       "author_id": 301054459,
       "author_association": "NONE",
       "comment_created_at": "2026-08-18T16:56:31Z",
-      "comment_updated_at": "2026-08-18T19:11:33Z",
+      "comment_updated_at": "2026-08-18T21:19:30Z",
       "status_comment_id": null,
       "trigger": "mention",
       "command": "automerge",
@@ -52,8 +52,8 @@
       "trusted_bot_author": null,
       "automation_source": null,
       "repair_reason": null,
-      "review_summary": "El PR añade un icono SVG a Bifrost, activa los despliegues Git de Vercel y actualiza la guía interna de despliegue.\n\nReproducibility: Sí, desde código: un push a `dev` o `master` ejecuta `deploy.yml` y envía `BIFROST_*`; con el booleano propuesto, Vercel añade su ruta Git en paralelo.",
-      "review_followup": "- El bloqueo es una reparación mecánica y localizada: preservar el icono y retirar la segunda vía de despliegue.",
+      "review_summary": "El PR añade un icono SVG para Bifrost, activa `git.deploymentEnabled` y actualiza la documentación interna de despliegue.\n\nReproducibility: Sí, desde código: un cambio en `apps/bifrost` se enruta al target `BIFROST` y el diff añade simultáneamente la integración Git de Vercel.",
+      "review_followup": "- Hay una reparación mecánica y localizada: conservar el icono, revertir la segunda vía de despliegue y sincronizar la guía.",
       "freeform_prompt": null,
       "visual_lens": null,
       "expected_head_sha": null,
@@ -71,15 +71,15 @@
     }
   ],
   "timings": {
-    "total_ms": 2654,
+    "total_ms": 2277,
     "phases": [
       {
         "name": "list_candidate_comments",
-        "ms": 1302
+        "ms": 1086
       },
       {
         "name": "prehydrate_comment_commands",
-        "ms": 1349
+        "ms": 1188
       },
       {
         "name": "classify_comment_commands",
