@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T18:52:37.629Z",
+  "generatedAt": "2026-08-18T00:56:00.981Z",
   "targetRepo": "hamelyn-sl/hamelyn-serverless",
   "scan": {
     "complete": true,
@@ -7,13 +7,13 @@
     "openItemsSeen": 91
   },
   "counts": {
-    "itemRecords": 83,
+    "itemRecords": 89,
     "closedRecords": 1060,
-    "missingOpen": 8,
+    "missingOpen": 2,
     "missingEligibleOpen": 0,
     "missingMaintainerOpen": 0,
     "missingProtectedOpen": 1,
-    "missingRecentOpen": 7,
+    "missingRecentOpen": 1,
     "openArchived": 0,
     "staleItemRecords": 0,
     "duplicateRecords": 0,
@@ -40,83 +40,15 @@
         "missingReason": "protected_label"
       },
       {
-        "number": 8475,
+        "number": 8501,
         "kind": "pull_request",
-        "title": "fix: align discogs client with the real rate limit and recover frozen prices",
+        "title": "Deploy to Prod",
         "labels": [
-          "size/XL"
+          "size/XS"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T12:05:40Z",
-        "updatedAt": "2026-08-17T12:09:56Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8476,
-        "kind": "pull_request",
-        "title": "fix: harden mercadolibre create, withdraw, orders and error triage",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T12:13:57Z",
-        "updatedAt": "2026-08-17T12:17:28Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8482,
-        "kind": "pull_request",
-        "title": "feat: standalone bifrost warehouse panel app",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T13:20:53Z",
-        "updatedAt": "2026-08-17T13:29:09Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8487,
-        "kind": "pull_request",
-        "title": "fix: keep the Supply loading phrase deterministic until hydration",
-        "labels": [],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T13:49:49Z",
-        "updatedAt": "2026-08-17T18:32:26Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8488,
-        "kind": "pull_request",
-        "title": "fix: isolate promo strip assignment from cached shell",
-        "labels": [],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T14:10:17Z",
-        "updatedAt": "2026-08-17T14:26:23Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8498,
-        "kind": "pull_request",
-        "title": "docs: require an adversarial review before committing",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T18:45:03Z",
-        "updatedAt": "2026-08-17T18:51:19Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8499,
-        "kind": "pull_request",
-        "title": "fix: move b2b subsystem into agent/lib so its cron survives Vercel builds",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T18:52:10Z",
-        "updatedAt": "2026-08-17T18:52:34Z",
+        "createdAt": "2026-08-17T19:01:58Z",
+        "updatedAt": "2026-08-17T19:02:51Z",
         "missingReason": "recently_created"
       }
     ],
@@ -143,83 +75,15 @@
     ],
     "missingRecentOpen": [
       {
-        "number": 8475,
+        "number": 8501,
         "kind": "pull_request",
-        "title": "fix: align discogs client with the real rate limit and recover frozen prices",
+        "title": "Deploy to Prod",
         "labels": [
-          "size/XL"
+          "size/XS"
         ],
         "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T12:05:40Z",
-        "updatedAt": "2026-08-17T12:09:56Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8476,
-        "kind": "pull_request",
-        "title": "fix: harden mercadolibre create, withdraw, orders and error triage",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T12:13:57Z",
-        "updatedAt": "2026-08-17T12:17:28Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8482,
-        "kind": "pull_request",
-        "title": "feat: standalone bifrost warehouse panel app",
-        "labels": [
-          "size/XXL"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T13:20:53Z",
-        "updatedAt": "2026-08-17T13:29:09Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8487,
-        "kind": "pull_request",
-        "title": "fix: keep the Supply loading phrase deterministic until hydration",
-        "labels": [],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T13:49:49Z",
-        "updatedAt": "2026-08-17T18:32:26Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8488,
-        "kind": "pull_request",
-        "title": "fix: isolate promo strip assignment from cached shell",
-        "labels": [],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T14:10:17Z",
-        "updatedAt": "2026-08-17T14:26:23Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8498,
-        "kind": "pull_request",
-        "title": "docs: require an adversarial review before committing",
-        "labels": [
-          "size/L"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T18:45:03Z",
-        "updatedAt": "2026-08-17T18:51:19Z",
-        "missingReason": "recently_created"
-      },
-      {
-        "number": 8499,
-        "kind": "pull_request",
-        "title": "fix: move b2b subsystem into agent/lib so its cron survives Vercel builds",
-        "labels": [
-          "size/M"
-        ],
-        "authorAssociation": "CONTRIBUTOR",
-        "createdAt": "2026-08-17T18:52:10Z",
-        "updatedAt": "2026-08-17T18:52:34Z",
+        "createdAt": "2026-08-17T19:01:58Z",
+        "updatedAt": "2026-08-17T19:02:51Z",
         "missingReason": "recently_created"
       }
     ],
