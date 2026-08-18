@@ -14,8 +14,13 @@
       "app:infrastructure",
       "feature",
       "triage:pr-opened",
+      "reporter:jorgecano",
       "P2",
-      "reporter:jorgecano"
+      "impact:other",
+      "issue-rating: ➖ n/a",
+      "clawsweeper:linked-pr-open",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-08-17T14:39:17Z",
     "updatedAt": "2026-08-18T06:12:39Z"
@@ -53,6 +58,7 @@
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8490.md",
+    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8490#issuecomment-5317171362",
     "reviewedAt": "2026-08-18T06:27:48.546Z",
     "mainSha": "f06b3958ba613cf707b6b2dccdc02d22e6229af2"
   }
