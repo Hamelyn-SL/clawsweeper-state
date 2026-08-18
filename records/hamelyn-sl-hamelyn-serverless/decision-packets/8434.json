@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T11:25:36.416Z",
-  "updatedAt": "2026-08-18T10:14:07Z",
+  "generatedAt": "2026-08-18T22:55:10.668Z",
+  "updatedAt": "2026-08-18T21:53:36Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,45 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥇 gold",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
-      "merge-risk: 🚨 message-delivery"
+      "merge-risk: 🚨 message-delivery",
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-18T10:14:07Z",
-    "headSha": "c06ce30cee88e352efee6ef21daeffee158efcdc"
+    "updatedAt": "2026-08-18T21:53:36Z",
+    "headSha": "e8eb5111072d7ccd7dc40b218d2cfa186c9bf7ee"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe esta rama introducir un registro de pedidos manuales ignorados para proteger el cupo de 60, o se acepta explícitamente ese límite como seguimiento posterior?",
-  "rationale": "Persistir descartes cambia el modelo operativo de pedidos externos; el código actual elimina alertas pero no evita que esos pedidos reaparezcan en cada ejecución.",
+  "question": "¿Los pedidos de listings manuales deben registrarse como excluidos de forma durable o procesarse por una cola separada para no bloquear la ingesta normal?",
+  "rationale": "La corrección exige decidir qué estado persistente representa un pedido remoto sin stock local y cómo debe recuperarse si posteriormente se incorpora al inventario.",
   "options": [
     {
-      "title": "Persistir o excluir los manuales",
-      "body": "Añadir una vía durable para que los pedidos sin stock local no vuelvan a ocupar detalles ni cupo en ejecuciones posteriores.",
+      "title": "Registrar exclusiones recuperables",
+      "body": "Persistir el pedido manual como excluido con motivo y mecanismo de revisión para que no vuelva a consumir el cupo normal.",
       "recommended": true
     },
     {
-      "title": "Aceptar el seguimiento operativo",
-      "body": "Mantener el comportamiento actual y documentar que operaciones debe vigilar si aparecen pedidos manuales que retrasen la ingesta.",
+      "title": "Mantener el descarte actual",
+      "body": "Aceptar que pedidos manuales desconocidos consuman detalle en cada ejecución mientras no exista una instancia operativa confirmada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Persistir o excluir los manuales",
-    "body": "Añadir una vía durable para que los pedidos sin stock local no vuelvan a ocupar detalles ni cupo en ejecuciones posteriores.",
+    "title": "Registrar exclusiones recuperables",
+    "body": "Persistir el pedido manual como excluido con motivo y mecanismo de revisión para que no vuelva a consumir el cupo normal.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial concentra las decisiones de manejo de errores y reconciliación de TodoColección.",
+    "reason": "Su historial cubre los contratos de error y reconciliación de TodoColección que determinan el estado correcto de estos pedidos.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
-    "reviewedAt": "2026-08-18T11:25:36.416Z",
-    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+    "reviewedAt": "2026-08-18T22:55:10.668Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
