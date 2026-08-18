@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-11T07:53:24.817Z",
-  "updatedAt": "2026-08-11T07:44:28Z",
+  "generatedAt": "2026-08-18T09:23:20.253Z",
+  "updatedAt": "2026-08-18T08:24:41Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -13,52 +13,51 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "mk:ebay",
       "P1",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "mk:ebay"
     ],
     "createdAt": "2026-08-11T07:23:35Z",
-    "updatedAt": "2026-08-11T07:44:28Z"
+    "updatedAt": "2026-08-18T08:24:41Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué umbral de `LISTING_ON_HOLD` debe impedir mutaciones y marcar el snapshot de eBay ES como degradado?",
-  "rationale": "El código actual solo aborta con cero filas y la issue demuestra degradación parcial masiva, pero no define la tolerancia operativa aceptable.",
+  "question": "¿Qué condición de `LISTING_ON_HOLD` debe impedir que el cron trate el snapshot LMS como apto para mutaciones?",
+  "rationale": "El código puede contar y persistir las exclusiones, pero el umbral o la política de bloqueo determina el equilibrio entre seguridad operativa y continuidad del cron.",
   "options": [
     {
-      "title": "Guard porcentual fail-closed",
-      "body": "Bloquear reactivaciones y acciones derivadas cuando los avisos superen un umbral porcentual acordado, registrando el motivo.",
+      "title": "Guard relativo y fail-closed",
+      "body": "Bloquear mutaciones cuando las exclusiones superen un porcentaje acordado del inventario esperado, conservando el snapshot para diagnóstico.",
       "recommended": true
     },
     {
-      "title": "Solo observabilidad",
-      "body": "Registrar el recuento y alertar sin alterar las mutaciones actuales, aceptando que el snapshot siga influyendo en la reconciliación.",
+      "title": "Solo observabilidad inicial",
+      "body": "Registrar y alertar durante un período acotado antes de activar un bloqueo automático con datos reales.",
       "recommended": false
     },
     {
-      "title": "Abortar ante cualquier aviso",
-      "body": "Tratar cualquier `LISTING_ON_HOLD` como reporte no apto, con máxima cautela pero posibles interrupciones frecuentes.",
+      "title": "Umbral absoluto",
+      "body": "Bloquear a partir de un número fijo de exclusiones, con revisión periódica cuando cambie el tamaño del catálogo.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Guard porcentual fail-closed",
-    "body": "Bloquear reactivaciones y acciones derivadas cuando los avisos superen un umbral porcentual acordado, registrando el motivo.",
+    "title": "Guard relativo y fail-closed",
+    "body": "Bloquear mutaciones cuando las exclusiones superen un porcentaje acordado del inventario esperado, conservando el snapshot para diagnóstico.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es la persona conectada al live-check y a la lógica actual de reconciliación eBay.",
+    "person": "MarcosTerroso",
+    "reason": "Está asignado a la issue, propuso la implementación y ya trabajó en los guards de reportes relacionados.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8382.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8382#issuecomment-5250282627",
-    "reviewedAt": "2026-08-11T07:53:24.817Z",
-    "mainSha": "b510790cfb53a80e063b40d5dda8d57a42eb518f"
+    "reviewedAt": "2026-08-18T09:23:20.253Z",
+    "mainSha": "d4b187272b7a496a1383733734cd9640566736a3"
   }
 }
