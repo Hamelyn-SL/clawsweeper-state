@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T11:25:03.365Z",
-  "updatedAt": "2026-08-18T10:54:50Z",
+  "generatedAt": "2026-08-18T16:49:40.905Z",
+  "updatedAt": "2026-08-18T12:07:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,52 +11,51 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P2",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 availability"
+      "merge-risk: 🚨 availability",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-18T10:25:54Z",
-    "updatedAt": "2026-08-18T10:54:50Z",
-    "headSha": "e7f1bf3f812987fa5db27381c29561c6fe15542f"
+    "updatedAt": "2026-08-18T12:07:18Z",
+    "headSha": "5c02a5f6fa043180b09ece417a525dd12ebd3867"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Supply cambiar su comportamiento de compra para rechazar automáticamente nuevos EAN según este experimento de cuatro arms?",
-  "rationale": "La corrección técnica no decide el umbral, la exposición del 75 % de nuevos escaneos ni el criterio para activar o revertir un rechazo de compra.",
+  "question": "¿Se patrocina este experimento como cambio de política de aceptación en Supply, incluyendo la infraestructura de modelo y la persistencia de decisiones durante 365 días?",
+  "rationale": "La rama modifica deliberadamente criterios de compra y añade un servicio de inferencia con un artefacto ejecutable; no es seguro decidir la política ni su excepción de seguridad solo desde el diff.",
   "options": [
     {
-      "title": "Patrocinar un piloto acotado",
-      "body": "Definir porcentaje, métricas, reversión y artefacto reproducible antes de habilitar los arms de rechazo.",
+      "title": "Patrocinar con controles previos",
+      "body": "Mantener el experimento, pero exigir un formato o cadena de generación verificable para el modelo, corregir la guía y demostrar el flujo desplegado antes de activarlo.",
       "recommended": true
     },
     {
-      "title": "Mantener sólo observabilidad",
-      "body": "Registrar predicciones sin modificar la aceptación de compras hasta que exista una decisión posterior.",
+      "title": "Limitar el experimento",
+      "body": "Aprobar únicamente los arms sin modelo remoto mientras se diseña y revisa por separado la entrega segura del modelo.",
       "recommended": false
     },
     {
-      "title": "No introducir el experimento",
-      "body": "Cerrar la dirección si el coste operativo y el riesgo de falsos rechazos no compensan la señal esperada.",
+      "title": "Pausar la propuesta",
+      "body": "No incorporar esta ruta de decisión hasta contar con una decisión explícita de negocio y seguridad sobre el experimento.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Patrocinar un piloto acotado",
-    "body": "Definir porcentaje, métricas, reversión y artefacto reproducible antes de habilitar los arms de rechazo.",
+    "title": "Patrocinar con controles previos",
+    "body": "Mantener el experimento, pero exigir un formato o cadena de generación verificable para el modelo, corregir la guía y demostrar el flujo desplegado antes de activarlo.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "PabloMoran34",
-    "reason": "Es el contribuidor más reciente del flujo de compra y autor de la propuesta técnica.",
-    "confidence": "high"
+    "reason": "Introdujo el filtro de demanda de productos nuevos en `dev` y conoce el cambio de política que esta rama amplía.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8517.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8517#issuecomment-5327618875",
-    "reviewedAt": "2026-08-18T11:25:03.365Z",
-    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+    "reviewedAt": "2026-08-18T16:49:40.905Z",
+    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
