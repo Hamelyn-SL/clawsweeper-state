@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T08:53:36.582Z",
-  "updatedAt": "2026-08-18T08:46:39Z",
+  "generatedAt": "2026-08-10T11:17:32.614Z",
+  "updatedAt": "2026-08-10T11:12:37Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,41 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:needs-info",
-      "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-security-review",
-      "issue-rating: ➖ n/a",
-      "P2",
-      "impact:security",
-      "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "P2"
     ],
     "createdAt": "2026-08-10T10:38:50Z",
-    "updatedAt": "2026-08-18T08:46:39Z"
+    "updatedAt": "2026-08-10T11:12:37Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se confirma que AnyDesk desatendido queda restringido a Bifrost y que no habrá acceso gráfico directo por puesto?",
-  "rationale": "El epic ya propone un único punto de entrada, mientras esta issue solicita diez accesos adicionales; la excepción altera el perímetro de seguridad y no puede decidirse desde código.",
+  "question": "¿Se limita AnyDesk desatendido al Bifrost o se autoriza también el acceso gráfico directo a cada puesto del almacén?",
+  "rationale": "Ambas opciones cambian de forma material el perímetro de acceso remoto, la custodia de credenciales y el procedimiento de revocación; la elección necesita intención humana.",
   "options": [
     {
       "title": "Centralizar en Bifrost",
-      "body": "Mantener AnyDesk y Tailscale sólo en Bifrost, y usar SSH por LAN para alcanzar los puestos.",
+      "body": "Instalar AnyDesk y Tailscale únicamente en el PC puente, conservando SSH y WoL para alcanzar los puestos por LAN.",
       "recommended": true
     },
     {
-      "title": "Autorizar accesos por puesto",
-      "body": "Aprobar explícitamente AnyDesk por puesto con ACL, credenciales únicas, inventario de IDs y un procedimiento de rotación.",
+      "title": "Autorizar acceso por puesto",
+      "body": "Permitir AnyDesk directo en cada puesto tras aprobar propietarios, credenciales únicas, inventario de IDs y lista blanca.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Centralizar en Bifrost",
-    "body": "Mantener AnyDesk y Tailscale sólo en Bifrost, y usar SSH por LAN para alcanzar los puestos.",
+    "body": "Instalar AnyDesk y Tailscale únicamente en el PC puente, conservando SSH y WoL para alcanzar los puestos por LAN.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "HamelynDev",
-    "reason": "Es quien dejó documentado el perímetro de acceso remoto y los controles pendientes en el triage relacionado.",
-    "confidence": "high"
+    "person": "JavierHamelyn",
+    "reason": "El epic recoge una decisión técnica atribuida a Javier sobre el acceso remoto y Tailscale.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8352.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8352#issuecomment-5239446616",
-    "reviewedAt": "2026-08-18T08:53:36.582Z",
-    "mainSha": "8b36b2185371a7482fa7dc98032eca80a97ae219"
+    "reviewedAt": "2026-08-10T11:17:32.614Z",
+    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
   }
 }

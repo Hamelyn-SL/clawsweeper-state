@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T22:17:32.288Z",
-  "updatedAt": "2026-08-10T21:13:50Z",
+  "generatedAt": "2026-08-18T09:01:14.059Z",
+  "updatedAt": "2026-08-18T08:57:18Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,48 +15,52 @@
       "reporter:jesus",
       "feature",
       "triage:blocked",
-      "origin:panel",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond",
+      "origin:panel"
     ],
     "createdAt": "2026-06-18T13:56:43Z",
-    "updatedAt": "2026-08-10T21:13:50Z"
+    "updatedAt": "2026-08-18T08:57:18Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Aprueba Jesús el diseño de fichero para el piloto MX —nomenclaturas, columnas con su orden y secuencia de carga— antes de programar la regeneración?",
-  "rationale": "El código puede extraer los datos, pero la aceptación del formato y del orden de subida pertenece al contrato operativo de Merchant Center y no puede deducirse de forma segura.",
+  "question": "¿Se aprueba el piloto de MX y el despliegue multipaís condicionado a completar o aceptar el backfill de metadata histórica?",
+  "rationale": "La elección afecta al orden contractual de Merchant Center y a la calidad de feeds existentes mientras el catálogo histórico no tenga las nuevas columnas rellenadas.",
   "options": [
     {
-      "title": "Aprobar el diseño de MX",
-      "body": "Validar los tres puntos del fichero y permitir que Miguel ejecute el piloto controlado antes de ampliar países.",
+      "title": "Pilotar MX y ejecutar backfill",
+      "body": "Validar nomenclaturas, columnas y orden con Jesús en MX, completar el backfill y después habilitar el resto de merchants.",
       "recommended": true
     },
     {
-      "title": "Revisar el diseño antes del piloto",
-      "body": "Devolver cambios concretos sobre nombres, columnas u orden para que la implementación se ajuste al contrato definitivo.",
+      "title": "Pilotar MX con metadata parcial",
+      "body": "Permitir el piloto antes del backfill aceptando que los productos históricos pueden publicar columnas nuevas vacías temporalmente.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el despliegue multipaís",
+      "body": "Mantener el feed actual hasta que se confirme el contrato de ficheros y exista ventana operativa para el backfill.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprobar el diseño de MX",
-    "body": "Validar los tres puntos del fichero y permitir que Miguel ejecute el piloto controlado antes de ampliar países.",
+    "title": "Pilotar MX y ejecutar backfill",
+    "body": "Validar nomenclaturas, columnas y orden con Jesús en MX, completar el backfill y después habilitar el resto de merchants.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JesusRamosLopez",
-    "reason": "La discusión reciente le asigna explícitamente la validación pendiente del diseño de fichero.",
+    "person": "MiguelHamelyn",
+    "reason": "Es el asignado de la implementación vinculada y concentra el historial reciente del flujo de Merchant.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6545.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6545#issuecomment-4910065638",
-    "reviewedAt": "2026-08-10T22:17:32.288Z",
-    "mainSha": "af062ab5ca208015cd59b1b4b7988882a3ba5dd4"
+    "reviewedAt": "2026-08-18T09:01:14.059Z",
+    "mainSha": "8b36b2185371a7482fa7dc98032eca80a97ae219"
   }
 }
