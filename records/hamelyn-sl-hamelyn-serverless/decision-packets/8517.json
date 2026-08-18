@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-18T11:25:03.365Z",
+  "updatedAt": "2026-08-18T10:54:50Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8517,
+    "title": "feat: add new product demand experiment",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8517",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-18T10:25:54Z",
+    "updatedAt": "2026-08-18T10:54:50Z",
+    "headSha": "e7f1bf3f812987fa5db27381c29561c6fe15542f"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe Supply cambiar su comportamiento de compra para rechazar automáticamente nuevos EAN según este experimento de cuatro arms?",
+  "rationale": "La corrección técnica no decide el umbral, la exposición del 75 % de nuevos escaneos ni el criterio para activar o revertir un rechazo de compra.",
+  "options": [
+    {
+      "title": "Patrocinar un piloto acotado",
+      "body": "Definir porcentaje, métricas, reversión y artefacto reproducible antes de habilitar los arms de rechazo.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener sólo observabilidad",
+      "body": "Registrar predicciones sin modificar la aceptación de compras hasta que exista una decisión posterior.",
+      "recommended": false
+    },
+    {
+      "title": "No introducir el experimento",
+      "body": "Cerrar la dirección si el coste operativo y el riesgo de falsos rechazos no compensan la señal esperada.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Patrocinar un piloto acotado",
+    "body": "Definir porcentaje, métricas, reversión y artefacto reproducible antes de habilitar los arms de rechazo.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "PabloMoran34",
+    "reason": "Es el contribuidor más reciente del flujo de compra y autor de la propuesta técnica.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8517.md",
+    "reviewedAt": "2026-08-18T11:25:03.365Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-10T11:17:32.614Z",
-  "updatedAt": "2026-08-10T11:12:37Z",
+  "generatedAt": "2026-08-18T11:24:34.918Z",
+  "updatedAt": "2026-08-18T09:07:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,41 +14,46 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:needs-info",
-      "P2"
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T10:38:50Z",
-    "updatedAt": "2026-08-10T11:12:37Z"
+    "updatedAt": "2026-08-18T09:07:52Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se limita AnyDesk desatendido al Bifrost o se autoriza también el acceso gráfico directo a cada puesto del almacén?",
-  "rationale": "Ambas opciones cambian de forma material el perímetro de acceso remoto, la custodia de credenciales y el procedimiento de revocación; la elección necesita intención humana.",
+  "question": "¿Debe mantenerse AnyDesk únicamente en Bifrost o se autoriza acceso desatendido directo en cada puesto?",
+  "rationale": "Ambas opciones cambian de forma material la superficie de acceso remoto y requieren controles operativos fuera del repositorio.",
   "options": [
     {
       "title": "Centralizar en Bifrost",
-      "body": "Instalar AnyDesk y Tailscale únicamente en el PC puente, conservando SSH y WoL para alcanzar los puestos por LAN.",
+      "body": "Conservar un único punto de acceso exterior y llegar a los puestos desde Bifrost por la LAN.",
       "recommended": true
     },
     {
       "title": "Autorizar acceso por puesto",
-      "body": "Permitir AnyDesk directo en cada puesto tras aprobar propietarios, credenciales únicas, inventario de IDs y lista blanca.",
+      "body": "Aprobar AnyDesk directo solo con contraseñas únicas, ACL, inventario de IDs y un proceso de rotación documentado.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Centralizar en Bifrost",
-    "body": "Instalar AnyDesk y Tailscale únicamente en el PC puente, conservando SSH y WoL para alcanzar los puestos por LAN.",
+    "body": "Conservar un único punto de acceso exterior y llegar a los puestos desde Bifrost por la LAN.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El epic recoge una decisión técnica atribuida a Javier sobre el acceso remoto y Tailscale.",
-    "confidence": "medium"
+    "person": "HamelynDev",
+    "reason": "Su triage existente establece el conflicto de perímetro que debe resolverse.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8352.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8352#issuecomment-5239446616",
-    "reviewedAt": "2026-08-10T11:17:32.614Z",
-    "mainSha": "d5e3a1b899d7bd7c2487d30e50a8e94275ea09fe"
+    "reviewedAt": "2026-08-18T11:24:34.918Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
   }
 }

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T09:32:58.444Z",
-  "updatedAt": "2026-08-18T09:12:18Z",
+  "generatedAt": "2026-08-18T11:24:37.117Z",
+  "updatedAt": "2026-08-18T11:12:17Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,53 +14,52 @@
       "reporter:davidgonzalez",
       "feature",
       "triage:done",
-      "P2",
-      "impact:security",
       "impact:other",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
-      "clawsweeper:needs-security-review"
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-10T10:38:58Z",
-    "updatedAt": "2026-08-18T09:12:18Z"
+    "updatedAt": "2026-08-18T11:12:17Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse una aplicación Bifrost independiente y limitar las acciones remotas al PC puente, en lugar de publicar AnyDesk por cada puesto?",
-  "rationale": "La elección define el perímetro de acceso remoto, la superficie de autenticación y el destino del panel; el código no puede resolver esa política por sí solo.",
+  "question": "¿Debe aceptarse que el panel Bifrost salga de Admin y se despliegue como aplicación independiente, aunque la solicitud original pide una superficie dentro de Admin?",
+  "rationale": "La implementación abierta cambia el destino del producto y combina visibilidad operativa con accesos remotos; esa dirección no se resuelve de forma segura sólo desde el código actual.",
   "options": [
     {
-      "title": "Centralizar el acceso en Bifrost",
-      "body": "Mantener la aplicación independiente para observabilidad, pero dirigir AnyDesk y controles remotos únicamente al PC puente.",
+      "title": "Aceptar la aplicación independiente",
+      "body": "Patrocinar la PR abierta si se confirma que su autenticación, despliegue y controles remotos forman parte del producto Bifrost.",
       "recommended": true
     },
     {
-      "title": "Autorizar acceso por puesto",
-      "body": "Aceptar IDs AnyDesk individuales sólo mediante una excepción explícita al perímetro y controles operativos documentados.",
+      "title": "Mantenerlo dentro de Admin",
+      "body": "Pedir una revisión de alcance que conserve el panel y sus permisos dentro de la aplicación Admin.",
       "recommended": false
     },
     {
-      "title": "Volver a integrar en Admin",
-      "body": "Descartar la app independiente y reencauzar el panel como una superficie autenticada dentro de Admin.",
+      "title": "Separar observabilidad y controles",
+      "body": "Aterrizar primero el mapa de estado y dejar AnyDesk, SSH y WoL en una entrega posterior con contrato de seguridad propio.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Centralizar el acceso en Bifrost",
-    "body": "Mantener la aplicación independiente para observabilidad, pero dirigir AnyDesk y controles remotos únicamente al PC puente.",
+    "title": "Aceptar la aplicación independiente",
+    "body": "Patrocinar la PR abierta si se confirma que su autenticación, despliegue y controles remotos forman parte del producto Bifrost.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "El historial de la base actual y las decisiones del epic lo sitúan como el mejor punto de enrutamiento para el contrato y el perímetro.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Está asignado a la solicitud y mantiene la superficie actual de presencia sobre la que se apoya la decisión.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8355.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8355#issuecomment-5239578669",
-    "reviewedAt": "2026-08-18T09:32:58.444Z",
-    "mainSha": "d4b187272b7a496a1383733734cd9640566736a3"
+    "reviewedAt": "2026-08-18T11:24:37.117Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
   }
 }

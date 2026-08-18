@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T10:18:19.907Z",
-  "updatedAt": "2026-08-17T10:00:33Z",
+  "generatedAt": "2026-08-18T11:26:09.187Z",
+  "updatedAt": "2026-08-18T10:16:43Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,47 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "P2"
+      "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "merge-risk: 🚨 security-boundary",
+      "merge-risk: 🚨 availability",
+      "proof: 📸 screenshot",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-12T12:25:24Z",
-    "updatedAt": "2026-08-17T10:00:33Z",
-    "headSha": "5188c26cd8db0789efd015f742cc593bb2ee8d42"
+    "updatedAt": "2026-08-18T10:16:43Z",
+    "headSha": "fb7ae04a5d7cb4e05cdbb09f32fa21d392bf40be"
   },
-  "lane": "release_inclusion",
-  "priority": "P2",
-  "question": "¿Se autoriza reemplazar directamente el cron de AbeBooks pese a que la confirmación y el envío nuevos solo se probarán después del despliegue?",
-  "rationale": "La rama conserva la misma identidad y cron, por lo que la primera ejecución en producción activa transiciones de pedido no demostradas públicamente.",
+  "lane": "product_direction",
+  "priority": "P1",
+  "question": "Cuando AbeBooks responde 504 y la relectura del pedido falla, ¿debe el cron diferir la ingesta o crear igualmente el pedido local?",
+  "rationale": "La elección intercambia el riesgo de perder temporalmente una ingesta contra reservar y preparar un pedido remoto que podría estar cancelado.",
   "options": [
     {
-      "title": "Exigir prueba antes del merge",
-      "body": "Solicitar salida, logs o capturas redactadas de inventario, confirmación y envío, más un plan de monitorización y reversión.",
+      "title": "Diferir hasta verificar",
+      "body": "Devolver el pedido como no procesado para que AbeBooks lo exponga en un ciclo posterior cuando se pueda confirmar su estado.",
       "recommended": true
     },
     {
-      "title": "Autorizar despliegue supervisado",
-      "body": "Aceptar el riesgo operativo y programar una ventana con seguimiento explícito de pedidos, Slack y `SYNC_ERROR`.",
-      "recommended": false
-    },
-    {
-      "title": "Aplazar la sustitución",
-      "body": "Mantener la integración vigente hasta disponer de una vía segura para verificar las transiciones de pedido.",
+      "title": "Mantener fail-open",
+      "body": "Aceptar el pedido local aunque no se pueda verificar y asumir corrección posterior por la comprobación de cancelaciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir prueba antes del merge",
-    "body": "Solicitar salida, logs o capturas redactadas de inventario, confirmación y envío, más un plan de monitorización y reversión.",
+    "title": "Diferir hasta verificar",
+    "body": "Devolver el pedido como no procesado para que AbeBooks lo exponga en un ciclo posterior cuando se pueda confirmar su estado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Su trabajo reciente cubre la ruta vigente de transporte y errores que la sustitución debe preservar.",
+    "reason": "Su historial incluye la recuperación transitoria y la redacción de fallos de transporte que condicionan esta política.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8419.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8419#issuecomment-5267303526",
-    "reviewedAt": "2026-08-17T10:18:19.907Z",
-    "mainSha": "6d5a599c409814a60bb88920a31aa82275a489c1"
+    "reviewedAt": "2026-08-18T11:26:09.187Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
   }
 }
