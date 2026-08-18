@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T14:48:05.317Z",
-  "updatedAt": "2026-08-17T14:39:28Z",
+  "generatedAt": "2026-08-18T06:27:48.546Z",
+  "updatedAt": "2026-08-18T06:12:39Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -18,43 +18,42 @@
       "reporter:jorgecano"
     ],
     "createdAt": "2026-08-17T14:39:17Z",
-    "updatedAt": "2026-08-17T14:39:28Z"
+    "updatedAt": "2026-08-18T06:12:39Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué marketplaces con métricas de plazo deben tener prioridad y qué orden relativo debe aplicarse frente a ecommerce y canales sin métrica?",
-  "rationale": "El código ya admite prioridades, pero no determina por sí mismo qué compromisos comerciales deben prevalecer ni con qué peso.",
+  "question": "¿La política de picking debe aplicarse también cuando no se indican límites de productos, manteniendo `AMAZON_SE` en el nivel 5 junto a Amazon MX, FR e IT?",
+  "rationale": "El código actual solo activa la priorización en rutas limitadas; decidir si el alcance debe cubrir toda generación cambia el comportamiento operativo de picking.",
   "options": [
     {
-      "title": "Priorizar mercados con SLA",
-      "body": "Acordar una tabla explícita para Amazon, MercadoLibre y eBay, manteniendo los demás canales detrás salvo excepción documentada.",
+      "title": "Aplicar la política en toda generación",
+      "body": "Completar la PR para ordenar siempre y confirmar `AMAZON_SE: 5` como parte de la política operativa.",
       "recommended": true
     },
     {
-      "title": "Corregir solo Amazon SE",
-      "body": "Elevar únicamente `AMAZON_SE` para responder al retraso observado y conservar temporalmente el resto de valores.",
+      "title": "Limitar el cambio a selecciones con límite",
+      "body": "Aceptar el ajuste de una línea, dejando explícito que las ejecuciones sin límites no usan prioridades.",
       "recommended": false
     },
     {
-      "title": "Mantener política actual",
-      "body": "No cambiar la tabla hasta disponer de métricas comparables de plazo y riesgo para cada marketplace.",
+      "title": "Redefinir la matriz completa",
+      "body": "Pausar la PR hasta documentar qué métricas y niveles corresponden a cada marketplace.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Priorizar mercados con SLA",
-    "body": "Acordar una tabla explícita para Amazon, MercadoLibre y eBay, manteniendo los demás canales detrás salvo excepción documentada.",
+    "title": "Aplicar la política en toda generación",
+    "body": "Completar la PR para ordenar siempre y confirmar `AMAZON_SE: 5` como parte de la política operativa.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "El registry central de prioridades procede de su trabajo reciente en marketplaces.",
+    "reason": "Mantiene el registro actual donde se define la prioridad y puede coordinar la decisión con el historial de Picking V3.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8490.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8490#issuecomment-5317171362",
-    "reviewedAt": "2026-08-17T14:48:05.317Z",
-    "mainSha": "b642104cd119deeb2f0c57e31ed21a54fc3d9a0b"
+    "reviewedAt": "2026-08-18T06:27:48.546Z",
+    "mainSha": "f06b3958ba613cf707b6b2dccdc02d22e6229af2"
   }
 }
