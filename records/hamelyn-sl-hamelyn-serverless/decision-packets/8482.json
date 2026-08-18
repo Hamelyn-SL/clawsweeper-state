@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T06:48:58.509Z",
-  "updatedAt": "2026-08-18T06:37:23Z",
+  "generatedAt": "2026-08-18T11:06:19.672Z",
+  "updatedAt": "2026-08-18T11:00:48Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,46 +11,41 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "merge-risk: 🚨 automation",
-      "merge-risk: 🚨 security-boundary",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
       "P1"
     ],
     "createdAt": "2026-08-17T13:20:53Z",
-    "updatedAt": "2026-08-18T06:37:23Z",
-    "headSha": "e25fd88ad767d4cb9105817ef3927a330cc0373d"
+    "updatedAt": "2026-08-18T11:00:48Z",
+    "headSha": "d68ad3b06a583d5ba8c8e180cd0f181fa8166fa1"
   },
-  "lane": "security_boundary",
-  "priority": "P1",
-  "question": "¿Debe Bifrost ofrecer enlaces directos de AnyDesk/SSH al navegador, o limitar esas acciones a un puente o endpoint autorizado conforme al contrato de inventario?",
-  "rationale": "La solicitud vinculada restringe el inventario y cuestiona el enlace directo, mientras que este PR lo publica en JavaScript cliente; elegir el límite permanente excede una corrección mecánica.",
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba que Bifrost deje de ser una superficie de `admin` y pase a ser una app Vercel independiente con su propio dominio, Auth0 y operación del ancla?",
+  "rationale": "La issue de origen pide el panel dentro de `admin`, mientras que este PR modifica deliberadamente esa frontera de producto y despliegue.",
   "options": [
     {
-      "title": "Mantener el inventario server-side",
-      "body": "Exponer detalles de conexión sólo tras autorización y conservar cualquier acción remota detrás de un contrato explícito.",
+      "title": "Aprobar Bifrost standalone",
+      "body": "Confirmar la app independiente y exigir la prueba operativa y documentación corregida antes del merge.",
       "recommended": true
     },
     {
-      "title": "Eliminar las acciones directas en esta entrega",
-      "body": "Dejar el panel como observabilidad y tratar AnyDesk, SSH y WoL en una propuesta posterior con el puente definido.",
+      "title": "Conservarlo en admin",
+      "body": "Pedir una implementación que mantenga la superficie y el despliegue dentro de `apps/admin`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el inventario server-side",
-    "body": "Exponer detalles de conexión sólo tras autorización y conservar cualquier acción remota detrás de un contrato explícito.",
+    "title": "Aprobar Bifrost standalone",
+    "body": "Confirmar la app independiente y exigir la prueba operativa y documentación corregida antes del merge.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su entrega previa y la discusión vinculada lo conectan con el alcance funcional y la decisión de superficie.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Su revisión ya cubre las áreas sensibles de Auth0, KV, endpoints y despliegue afectadas por esta decisión.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8482.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8482#issuecomment-5319901810",
-    "reviewedAt": "2026-08-18T06:48:58.509Z",
-    "mainSha": "f06b3958ba613cf707b6b2dccdc02d22e6229af2"
+    "reviewedAt": "2026-08-18T11:06:19.672Z",
+    "mainSha": "5306ae067c234979d9abf2167b48653d8640f167"
   }
 }
