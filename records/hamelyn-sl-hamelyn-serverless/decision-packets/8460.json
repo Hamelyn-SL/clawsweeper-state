@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T06:12:24.074Z",
-  "updatedAt": "2026-08-18T06:07:21Z",
+  "generatedAt": "2026-08-18T07:26:15.199Z",
+  "updatedAt": "2026-08-18T06:27:05Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -12,46 +12,44 @@
     "labels": [
       "size/M",
       "P1",
+      "status: 📣 needs proof",
       "merge-risk: 🚨 compatibility",
       "proof: 📸 screenshot",
-      "rating: 🥈 silver",
-      "status: 📣 needs proof",
-      "merge-risk: 🚨 availability"
+      "rating: 🥈 silver"
     ],
     "createdAt": "2026-08-14T11:11:57Z",
-    "updatedAt": "2026-08-18T06:07:21Z",
-    "headSha": "2aa13c077d2aa3743fb4780763415438103fa632"
+    "updatedAt": "2026-08-18T06:27:05Z",
+    "headSha": "dab2fd687a4f3f500b2c204367b10b8b5991a0f6"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe este PR retirar temporalmente la fase `update()` y conservar solo P41, o ampliar el runner compartido para que un OK global recree todas las filas retiradas?",
-  "rationale": "Ambas rutas son viables, pero la segunda cambia la semántica de actualización de tres integraciones Mirakl y requiere aceptación explícita de su alcance.",
+  "question": "¿Debe un OK global de Mirakl confirmar la recreación completa del lote para las integraciones compartidas?",
+  "rationale": "Cambiar esa semántica afecta al runner común de CDL, Feltrinelli y Decathlon; no es seguro elegirla solo desde este PR.",
   "options": [
     {
-      "title": "Separar la fase update",
-      "body": "Retirar `update()` de este PR y fusionar únicamente el diagnóstico P41, dejando el ciclo global de retirada y recreación para una propuesta específica.",
+      "title": "Separar el etiquetado P41",
+      "body": "Mantener el trabajo autónomo de P41 y retirar temporalmente la fase `update()` hasta acordar el contrato compartido.",
       "recommended": true
     },
     {
-      "title": "Completar el runner compartido",
-      "body": "Interpretar un OK global sin `sku` como éxito de todas las filas retiradas y añadir cobertura para CDL, Feltrinelli y Decathlon.",
+      "title": "Aceptar OK global como lote completo",
+      "body": "Cambiar el runner común para recrear todo `stockData`, con pruebas de regresión para las tres integraciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar la fase update",
-    "body": "Retirar `update()` de este PR y fusionar únicamente el diagnóstico P41, dejando el ciclo global de retirada y recreación para una propuesta específica.",
+    "title": "Separar el etiquetado P41",
+    "body": "Mantener el trabajo autónomo de P41 y retirar temporalmente la fase `update()` hasta acordar el contrato compartido.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Su revisión detectó el fallo y está asignado por experiencia directa en sincronización de marketplaces y Decathlon.",
+    "person": "Miguel Angel Hernández Perdomo",
+    "reason": "Su trabajo reciente mantiene el adaptador Mirakl que produce el resultado global que el runner debe interpretar.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8460.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8460#issuecomment-5292730509",
-    "reviewedAt": "2026-08-18T06:12:24.074Z",
-    "mainSha": "ff2a92519de671e54521a9c8a34ab509c277fea6"
+    "reviewedAt": "2026-08-18T07:26:15.199Z",
+    "mainSha": "1e92b1c282002f43e0ee8916cae95aa3bcd0e2e9"
   }
 }
