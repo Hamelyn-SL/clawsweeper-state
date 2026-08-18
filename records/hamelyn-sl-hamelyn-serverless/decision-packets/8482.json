@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-17T21:49:30.304Z",
-  "updatedAt": "2026-08-17T20:38:01Z",
+  "generatedAt": "2026-08-18T06:48:58.509Z",
+  "updatedAt": "2026-08-18T06:37:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -11,47 +11,46 @@
     "state": "open",
     "labels": [
       "size/XXL",
-      "rating: 🥉 bronze",
-      "status: 📣 needs proof",
       "P1",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 automation",
       "merge-risk: 🚨 compatibility",
       "merge-risk: 🚨 security-boundary",
-      "merge-risk: 🚨 automation"
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-17T13:20:53Z",
-    "updatedAt": "2026-08-17T20:38:01Z",
-    "headSha": "0b54b3adec624ea28e10e849f7524d0dc1bd3080"
+    "updatedAt": "2026-08-18T06:37:23Z",
+    "headSha": "e25fd88ad767d4cb9105817ef3927a330cc0373d"
   },
   "lane": "security_boundary",
   "priority": "P1",
-  "question": "¿Debe el nuevo panel mantener la frontera acordada de inventario protegido por configuración y API autorizada, o se acepta explícitamente que alias SSH e IDs AnyDesk estén disponibles en cualquier bundle público?",
-  "rationale": "La issue vinculada describe el inventario como datos de configuración no expuestos al cliente, mientras que este PR lo incorpora a una página cliente independiente.",
+  "question": "¿Debe Bifrost ofrecer enlaces directos de AnyDesk/SSH al navegador, o limitar esas acciones a un puente o endpoint autorizado conforme al contrato de inventario?",
+  "rationale": "La solicitud vinculada restringe el inventario y cuestiona el enlace directo, mientras que este PR lo publica en JavaScript cliente; elegir el límite permanente excede una corrección mecánica.",
   "options": [
     {
-      "title": "Mantener el inventario protegido",
-      "body": "Mover IDs AnyDesk y demás datos operativos a una ruta autorizada respaldada por `config`, conservando en cliente solo etiquetas y disposición visual.",
+      "title": "Mantener el inventario server-side",
+      "body": "Exponer detalles de conexión sólo tras autorización y conservar cualquier acción remota detrás de un contrato explícito.",
       "recommended": true
     },
     {
-      "title": "Aceptar inventario público",
-      "body": "Aprobar explícitamente el nuevo límite de exposición y documentar por qué esos datos no se consideran sensibles.",
+      "title": "Eliminar las acciones directas en esta entrega",
+      "body": "Dejar el panel como observabilidad y tratar AnyDesk, SSH y WoL en una propuesta posterior con el puente definido.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener el inventario protegido",
-    "body": "Mover IDs AnyDesk y demás datos operativos a una ruta autorizada respaldada por `config`, conservando en cliente solo etiquetas y disposición visual.",
+    "title": "Mantener el inventario server-side",
+    "body": "Exponer detalles de conexión sólo tras autorización y conservar cualquier acción remota detrás de un contrato explícito.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial conecta el patrón actual de Auth0 y el routing de despliegue afectados por esta decisión.",
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su entrega previa y la discusión vinculada lo conectan con el alcance funcional y la decisión de superficie.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8482.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8482#issuecomment-5319901810",
-    "reviewedAt": "2026-08-17T21:49:30.304Z",
-    "mainSha": "fc7c48dd1ecff251de1b9d9537476384cbf58f6a"
+    "reviewedAt": "2026-08-18T06:48:58.509Z",
+    "mainSha": "f06b3958ba613cf707b6b2dccdc02d22e6229af2"
   }
 }
