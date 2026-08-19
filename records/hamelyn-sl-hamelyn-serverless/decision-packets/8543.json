@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T21:17:58.291Z",
-  "updatedAt": "2026-08-19T19:16:35Z",
+  "generatedAt": "2026-08-19T23:25:51.176Z",
+  "updatedAt": "2026-08-19T21:22:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -18,38 +18,38 @@
       "rating: 🥇 gold"
     ],
     "createdAt": "2026-08-19T08:23:09Z",
-    "updatedAt": "2026-08-19T19:16:35Z",
+    "updatedAt": "2026-08-19T21:22:45Z",
     "headSha": "77cb56f15c2f00e412c6e9d1efb3fad4a5fc7c42"
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe este cambio incluir un despliegue coordinado de Data Platform y una barrera de frescura antes de que los sitemaps lean la tabla?",
-  "rationale": "La política de despliegue separa `dev` de Data Platform y la decisión determina si se acepta una degradación temporal del catálogo o se exige una transición atómica.",
+  "question": "¿Debe condicionarse el merge a aprovisionar y ejecutar la scheduled query antes de que ecommerce la consuma, o se acepta una ventana temporal sin `lastmod`?",
+  "rationale": "La decisión determina si producción puede degradar temporalmente la señal SEO entre el merge a `dev` y el despliegue separado de data-platform.",
   "options": [
     {
-      "title": "Coordinar el despliegue y la frescura",
-      "body": "Aprovisionar la scheduled query antes de activar el lector y hacer que el sitemap espere su resultado reciente.",
+      "title": "Aprovisionar antes del merge",
+      "body": "Aplicar la scheduled query y verificar una ejecución correcta antes de habilitar su lectura desde el generador.",
       "recommended": true
     },
     {
-      "title": "Aceptar la omisión temporal",
-      "body": "Mantener el fallback actual y asumir que el catálogo publique sin `lastmod` hasta un despliegue manual posterior.",
+      "title": "Aceptar la degradación temporal",
+      "body": "Mergear primero y ejecutar data-platform manualmente después, aceptando que un ciclo pueda omitir `lastmod`.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Coordinar el despliegue y la frescura",
-    "body": "Aprovisionar la scheduled query antes de activar el lector y hacer que el sitemap espere su resultado reciente.",
+    "title": "Aprovisionar antes del merge",
+    "body": "Aplicar la scheduled query y verificar una ejecución correcta antes de habilitar su lectura desde el generador.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "alexcanHamelyn",
-    "reason": "Conecta la semántica existente de `lastmod` con la propuesta y puede concretar el orden de transición.",
-    "confidence": "medium"
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial cubre el workflow, el dispatch y el gate de frescura que determinan la seguridad operativa.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8543.md",
-    "reviewedAt": "2026-08-19T21:17:58.291Z",
+    "reviewedAt": "2026-08-19T23:25:51.176Z",
     "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
   }
 }
