@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-12T09:09:00.757Z",
-  "updatedAt": "2026-08-12T09:03:40Z",
+  "generatedAt": "2026-08-19T10:07:41.074Z",
+  "updatedAt": "2026-08-19T08:13:08Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,46 @@
       "app:ecommerce",
       "triage:needs-info",
       "business-logic",
-      "P2",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-05T06:54:09Z",
-    "updatedAt": "2026-08-12T09:03:40Z"
+    "updatedAt": "2026-08-19T08:13:08Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aprobarse la matriz propuesta: deprecar `sitemaps-02`, `-06`, `-07` y `structured-data-14`, y conservar los demás IDs reescritos para la semántica v2?",
-  "rationale": "La política de business logic exige validación del owner para retirar reglas publicadas o definir su enunciado vigente; el código confirma la divergencia, pero no decide el contrato documental.",
+  "question": "¿Aprueba alexcanHamelyn deprecar `sitemaps-02`, `-06`, `-07` y `structured-data-14`, y reescribir las restantes reglas señaladas conforme a v2?",
+  "rationale": "La divergencia está demostrada, pero la política BL reserva al owner la validación de enunciados publicados y la decisión de conservar o deprecar sus IDs.",
   "options": [
     {
       "title": "Aprobar la matriz propuesta",
-      "body": "Deprecar las reglas sin implementación y reescribir las reglas vivas contra el comportamiento v2, conservando sus IDs cuando la responsabilidad siga existiendo.",
+      "body": "Deprecar las reglas sin implementación y reescribir las demás contra el comportamiento v2 actual en una PR documental acotada.",
       "recommended": true
     },
     {
-      "title": "Reasignar la semántica de algunos IDs",
-      "body": "Indicar qué reglas deben dividirse, conservarse como históricas o redefinirse antes de actualizar la documentación.",
+      "title": "Conservar algún BL-ID",
+      "body": "Indicar las reglas que deben mantenerse o redefinirse de otra forma antes de preparar la actualización documental.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Aprobar la matriz propuesta",
-    "body": "Deprecar las reglas sin implementación y reescribir las reglas vivas contra el comportamiento v2, conservando sus IDs cuando la responsabilidad siga existiendo.",
+    "body": "Deprecar las reglas sin implementación y reescribir las demás contra el comportamiento v2 actual en una PR documental acotada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "El historial del rediseño v2 y la petición de validación en la discusión lo conectan directamente con la decisión de contrato.",
+    "reason": "Fue mencionado como owner para resolver exactamente esta matriz y la política BL le asigna la validación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8232.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8232#issuecomment-5188659239",
-    "reviewedAt": "2026-08-12T09:09:00.757Z",
-    "mainSha": "67d8dcbb2ef1c8bc372a243488551593294c3730"
+    "reviewedAt": "2026-08-19T10:07:41.074Z",
+    "mainSha": "12c99def178f0478dbe5e60eb3f77f5877009b84"
   }
 }
