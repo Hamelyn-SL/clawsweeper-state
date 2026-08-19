@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T00:15:47.767Z",
+  "generatedAt": "2026-08-19T00:15:46.990Z",
   "updatedAt": "2026-08-19T00:01:24Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -29,34 +29,33 @@
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe la cohorte de 133 stocks activos ausentes en Fnac recrearse mediante el flujo normal o reclasificarse tras revisar sus seis batches?",
-  "rationale": "El código actual evita el retry inseguro, pero los datos no determinan por sí solos si cada ausencia remota exige recreación o una clasificación terminal.",
+  "question": "¿Las 133 filas `ACTIVE` locales ausentes en Fnac deben recrearse por el flujo normal o quedar reclasificadas hasta una revisión manual?",
+  "rationale": "La ausencia remota no determina por sí sola la transición comercial correcta y el re-batch de la cohorte no es seguro.",
   "options": [
     {
-      "title": "Revisar y recrear selectivamente",
-      "body": "Validar los seis batches y recrear solo los SKUs que sigan siendo elegibles para publicación.",
+      "title": "Recrear con el flujo normal",
+      "body": "Reprocesar solo las filas que sigan elegibles tras confirmar que no existe retirada, exclusión o cambio comercial posterior.",
       "recommended": true
     },
     {
-      "title": "Reclasificar como no publicables",
-      "body": "Cerrar localmente la cohorte cuando la revisión confirme que no debe existir una oferta remota.",
+      "title": "Reclasificar para revisión",
+      "body": "Mantenerlas fuera de creación automática hasta resolver por batch o SKU la causa de su ausencia remota.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Revisar y recrear selectivamente",
-    "body": "Validar los seis batches y recrear solo los SKUs que sigan siendo elegibles para publicación.",
+    "title": "Recrear con el flujo normal",
+    "body": "Reprocesar solo las filas que sigan elegibles tras confirmar que no existe retirada, exclusión o cambio comercial posterior.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Ha preparado el predicado, el dry-run y el orden operativo de la recuperación.",
+    "reason": "Está vinculado al PR de drenaje y a la ejecución autorizada de Marketplace/Data.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-19T00:15:47.767Z",
+    "reviewedAt": "2026-08-19T00:15:46.990Z",
     "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
