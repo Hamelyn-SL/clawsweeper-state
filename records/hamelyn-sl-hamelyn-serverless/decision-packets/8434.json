@@ -1,14 +1,14 @@
 {
   "version": 1,
   "generatedAt": "2026-08-18T23:03:23.799Z",
-  "updatedAt": "2026-08-18T21:53:36Z",
+  "updatedAt": "2026-08-18T17:11:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
     "number": 8434,
     "title": "fix: paginate todocoleccion orders and return per-item sync results",
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434",
-    "state": "open",
+    "state": "closed",
     "labels": [
       "size/XXL",
       "merge-risk: 🚨 other",
@@ -18,8 +18,8 @@
       "P1"
     ],
     "createdAt": "2026-08-13T11:40:19Z",
-    "updatedAt": "2026-08-18T10:14:07Z",
-    "headSha": "c06ce30cee88e352efee6ef21daeffee158efcdc"
+    "updatedAt": "2026-08-18T17:11:35Z",
+    "headSha": "e8eb5111072d7ccd7dc40b218d2cfa186c9bf7ee"
   },
   "lane": "product_direction",
   "priority": "P1",
@@ -53,7 +53,7 @@
     "confidence": "high"
   },
   "source": {
-    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8434.md",
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/closed/8434.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8434#issuecomment-5280328832",
     "reviewedAt": "2026-08-18T23:03:23.799Z",
     "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
