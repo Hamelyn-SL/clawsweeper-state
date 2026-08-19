@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T07:21:49.481Z",
-  "updatedAt": "2026-08-19T06:56:35Z",
+  "generatedAt": "2026-08-19T13:07:57.096Z",
+  "updatedAt": "2026-08-19T10:27:34Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,50 +17,44 @@
       "reporter:victor",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-18T12:55:12Z",
-    "updatedAt": "2026-08-19T06:56:35Z"
+    "updatedAt": "2026-08-19T10:27:34Z"
   },
-  "lane": "product_direction",
+  "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Qué cambios deben avanzar el marcador SEO persistido y cuál es el compromiso aceptable entre serving directo, caché larga y recuperación ante Blob?",
-  "rationale": "El umbral de precio, las transiciones de disponibilidad y la fuente de verdad afectan a Ecommerce, Pricing y Data; el código actual no define ese contrato.",
+  "question": "¿Se aprueba el despliegue coordinado de la scheduled query de Data Platform junto con la PR, con seguimiento de Search Console tras el cambio?",
+  "rationale": "La PR degrada de forma segura sin la tabla, pero el resultado SEO solicitado requiere una decisión operativa sobre despliegue y observación posterior.",
   "options": [
     {
-      "title": "Acordar el contrato transversal",
-      "body": "Definir precio SEO, disponibilidad, contenido indexable y política de caché antes de dividir la implementación por equipos.",
+      "title": "Desplegar y medir conjuntamente",
+      "body": "Aprobar la PR con el workflow de Data Platform y revisar el recrawl y las hojas publicadas durante las primeras semanas.",
       "recommended": true
     },
     {
-      "title": "Aplicar solo la caché",
-      "body": "Mejoraría la carga del serving, pero mantendría la señal de `lastmod` técnicamente incorrecta.",
-      "recommended": false
-    },
-    {
-      "title": "Mantener el enfoque actual",
-      "body": "Conservaría una solución parcial basada en `timestamp` y acepta el coste SEO y de recrawl observado.",
+      "title": "Separar el despliegue de datos",
+      "body": "Fusionar la compatibilidad de Ecommerce primero y programar la query y la medición en una ventana operativa posterior.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Acordar el contrato transversal",
-    "body": "Definir precio SEO, disponibilidad, contenido indexable y política de caché antes de dividir la implementación por equipos.",
+    "title": "Desplegar y medir conjuntamente",
+    "body": "Aprobar la PR con el workflow de Data Platform y revisar el recrawl y las hojas publicadas durante las primeras semanas.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su cambio fusionado y su discusión previa conectan directamente con el contrato semántico pendiente.",
+    "reason": "Es el responsable asignado de la incidencia y autor de la implementación candidata que documenta el requisito de despliegue.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8531#issuecomment-5328938892",
-    "reviewedAt": "2026-08-19T07:21:49.481Z",
-    "mainSha": "6f042209b6be7522c0e9eff5558e2b5d0ddfcad9"
+    "reviewedAt": "2026-08-19T13:07:57.096Z",
+    "mainSha": "5cf2cbe54611d0276bb19fbcaddec051aabfa8cb"
   }
 }
