@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T23:25:51.176Z",
+  "generatedAt": "2026-08-19T23:27:19.178Z",
   "updatedAt": "2026-08-19T21:22:45Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -23,33 +23,38 @@
   },
   "lane": "release_inclusion",
   "priority": "P1",
-  "question": "¿Debe condicionarse el merge a aprovisionar y ejecutar la scheduled query antes de que ecommerce la consuma, o se acepta una ventana temporal sin `lastmod`?",
-  "rationale": "La decisión determina si producción puede degradar temporalmente la señal SEO entre el merge a `dev` y el despliegue separado de data-platform.",
+  "question": "¿Debe el PR exigir aprovisionamiento y frescura de `ecommerce_seo_lastmod` antes de permitir publicar sitemaps, o se acepta deliberadamente la degradación temporal sin `lastmod`?",
+  "rationale": "La rama elige disponibilidad sobre precisión cuando falta la tabla, pero el workflow de Data Platform no se despliega con `dev` y la query no está incluida en la compuerta de frescura existente.",
   "options": [
     {
-      "title": "Aprovisionar antes del merge",
-      "body": "Aplicar la scheduled query y verificar una ejecución correcta antes de habilitar su lectura desde el generador.",
+      "title": "Aprovisionar y bloquear por frescura",
+      "body": "Crear y validar la tabla antes del despliegue de ecommerce y extender la compuerta para esperar la materialización diaria del estado SEO.",
       "recommended": true
     },
     {
       "title": "Aceptar la degradación temporal",
-      "body": "Mergear primero y ejecutar data-platform manualmente después, aceptando que un ciclo pueda omitir `lastmod`.",
+      "body": "Mantener el fallback actual y asumir explícitamente que las URLs se publiquen sin `lastmod` hasta una ejecución manual de Data Platform.",
+      "recommended": false
+    },
+    {
+      "title": "Pausar el PR",
+      "body": "Esperar a definir un flujo de despliegue único para Data Platform y ecommerce antes de introducir esta dependencia.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aprovisionar antes del merge",
-    "body": "Aplicar la scheduled query y verificar una ejecución correcta antes de habilitar su lectura desde el generador.",
+    "title": "Aprovisionar y bloquear por frescura",
+    "body": "Crear y validar la tabla antes del despliegue de ecommerce y extender la compuerta para esperar la materialización diaria del estado SEO.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "AlexDiaz-Hamelyn",
-    "reason": "Su historial cubre el workflow, el dispatch y el gate de frescura que determinan la seguridad operativa.",
+    "person": "alexcanHamelyn",
+    "reason": "La persona vinculada por historial a la semántica de `lastmod` y a la propuesta conoce mejor el contrato de degradación aceptable.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8543.md",
-    "reviewedAt": "2026-08-19T23:25:51.176Z",
+    "reviewedAt": "2026-08-19T23:27:19.178Z",
     "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
   }
 }
