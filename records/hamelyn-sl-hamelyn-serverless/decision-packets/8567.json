@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-19T18:02:28.953Z",
+  "updatedAt": "2026-08-19T16:48:31Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8567,
+    "title": "Cambio en el espacio para la direccion de envío de postlibris en la etiqueta de postlibris",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8567",
+    "state": "open",
+    "labels": [
+      "source:admin-panel",
+      "app:ecommerce",
+      "feature",
+      "triage:pr-opened",
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:source-repro",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond",
+      "reporter:jorgecano"
+    ],
+    "createdAt": "2026-08-19T13:24:01Z",
+    "updatedAt": "2026-08-19T16:48:31Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Qué límite operativo debe sustituir al umbral fijo de 40 caracteres de Postlibri tras validar la nueva etiqueta?",
+  "rationale": "El valor elegido afecta al enrutado de pedidos y debe quedar coherente entre la etiqueta, la salvaguarda de código y la configuración persistida.",
+  "options": [
+    {
+      "title": "Adoptar 120 caracteres",
+      "body": "Tras una validación de impresión real, sustituir el límite de 40 por 120 en la salvaguarda y en la fila de ShipMatrix.",
+      "recommended": true
+    },
+    {
+      "title": "Mantener un límite conservador",
+      "body": "Conservar Cainiao por encima de un nuevo umbral inferior si Operaciones detecta restricciones físicas o de entrega.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Adoptar 120 caracteres",
+    "body": "Tras una validación de impresión real, sustituir el límite de 40 por 120 en la salvaguarda y en la fila de ShipMatrix.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "danielmenchen",
+    "reason": "Su cambio reciente conecta los dos archivos de código que deben permanecer coherentes con la decisión operativa.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8567.md",
+    "reviewedAt": "2026-08-19T18:02:28.953Z",
+    "mainSha": "5cf2cbe54611d0276bb19fbcaddec051aabfa8cb"
+  }
+}
