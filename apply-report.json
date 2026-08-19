@@ -1,12 +1,7 @@
 [
   {
-    "number": 8460,
-    "action": "skipped_already_closed",
-    "reason": "state is closed"
-  },
-  {
-    "number": 8507,
-    "action": "skipped_stale_review_comment_sync",
-    "reason": "live durable review comment is newer than the local report: comment reviewed_at=2026-08-19T06:37:13.099Z, report reviewed_at=2026-08-19T06:30:42.882Z"
+    "number": 8531,
+    "action": "review_comment_synced",
+    "reason": "updated durable Codex review comment"
   }
 ]
