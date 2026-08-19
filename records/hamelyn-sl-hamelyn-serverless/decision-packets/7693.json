@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T22:46:33.230Z",
-  "updatedAt": "2026-08-18T17:11:20Z",
+  "generatedAt": "2026-08-18T23:59:46.346Z",
+  "updatedAt": "2026-08-18T22:54:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -24,43 +24,43 @@
       "clawsweeper:needs-product-decision"
     ],
     "createdAt": "2026-07-17T07:37:46Z",
-    "updatedAt": "2026-08-18T17:11:20Z"
+    "updatedAt": "2026-08-18T22:54:44Z"
   },
-  "lane": "manual_review",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Qué transición autorizada deben seguir las 133 filas `ACTIVE` que están ausentes en Fnac: recreación por flujo normal, reclasificación, o exclusión manual?",
-  "rationale": "El código no puede inferir de forma segura si la ausencia remota requiere recrear una oferta, conservarla inactiva o investigar una condición comercial previa.",
+  "question": "¿Debe la cohorte de 133 stocks activos ausentes en Fnac recrearse por el flujo normal o reclasificarse como no publicable?",
+  "rationale": "El dry-run confirma que esa cohorte no comparte una transición segura con los errores fósiles ya clasificados; escogerla cambia el comportamiento remoto y requiere criterio operativo.",
   "options": [
     {
-      "title": "Clasificar y recrear selectivamente",
-      "body": "Validar las 133 filas por SKU y reenviar solo las que sigan siendo elegibles por el flujo normal.",
+      "title": "Separar y verificar antes de actuar",
+      "body": "Mantener los 133 fuera de la operación inicial y decidir tras contrastar una muestra de SKU, precio y elegibilidad.",
       "recommended": true
     },
     {
-      "title": "Reclasificar como inactivas",
-      "body": "Marcar las filas como inactivas únicamente si Operaciones confirma que no deben volver a publicarse.",
+      "title": "Recrear por el flujo normal",
+      "body": "Reintroducir las ofertas que sigan siendo elegibles mediante el flujo estándar, con verificación posterior en el snapshot Fnac.",
       "recommended": false
     },
     {
-      "title": "Pausar esta subcohorte",
-      "body": "Completar primero las cohortes no ambiguas y mantener estas 133 filas para revisión manual posterior.",
+      "title": "Reclasificar como no publicables",
+      "body": "Cerrar localmente las filas que no deban volver a publicarse, conservando una lista auditable de excepciones.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Clasificar y recrear selectivamente",
-    "body": "Validar las 133 filas por SKU y reenviar solo las que sigan siendo elegibles por el flujo normal.",
+    "title": "Separar y verificar antes de actuar",
+    "body": "Mantener los 133 fuera de la operación inicial y decidir tras contrastar una muestra de SKU, precio y elegibilidad.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "La discusión le atribuye la ejecución de la recuperación y el contraste con Marketplace/Data.",
+    "reason": "Ya preparó el predicado, las cohortes y el orden de ejecución autorizado para esta recuperación.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/7693.md",
     "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/7693#issuecomment-5009903523",
-    "reviewedAt": "2026-08-18T22:46:33.230Z",
+    "reviewedAt": "2026-08-18T23:59:46.346Z",
     "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
   }
 }
