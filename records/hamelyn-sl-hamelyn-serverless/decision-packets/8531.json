@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-18T17:35:40.950Z",
-  "updatedAt": "2026-08-18T15:53:44Z",
+  "generatedAt": "2026-08-19T07:21:49.481Z",
+  "updatedAt": "2026-08-19T06:56:35Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -17,45 +17,49 @@
       "reporter:victor",
       "P1",
       "impact:other",
-      "issue-rating: 💎 diamond",
-      "clawsweeper:source-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "clawsweeper:source-repro",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-18T12:55:12Z",
-    "updatedAt": "2026-08-18T15:53:44Z"
+    "updatedAt": "2026-08-19T06:56:35Z"
   },
   "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Debe Ecommerce exigir el contrato semántico completo de `lastmod` o aceptar temporalmente el `timestamp` técnico mientras se prioriza el serving CDN?",
-  "rationale": "El código actual confirma que ambas alternativas tienen efectos distintos sobre la señal SEO y atraviesan producto, pricing, materialización analítica y rutas públicas.",
+  "question": "¿Qué cambios deben avanzar el marcador SEO persistido y cuál es el compromiso aceptable entre serving directo, caché larga y recuperación ante Blob?",
+  "rationale": "El umbral de precio, las transiciones de disponibilidad y la fuente de verdad afectan a Ecommerce, Pricing y Data; el código actual no define ese contrato.",
   "options": [
     {
-      "title": "Exigir contrato SEO completo",
-      "body": "Persistir la señal SEO y actualizarla solo ante contenido indexable, precio visible significativo o transición de disponibilidad; después completar el serving.",
+      "title": "Acordar el contrato transversal",
+      "body": "Definir precio SEO, disponibilidad, contenido indexable y política de caché antes de dividir la implementación por equipos.",
       "recommended": true
     },
     {
-      "title": "Separar mitigación de serving",
-      "body": "Aplicar primero caché y pre-warm como mitigación operativa, manteniendo una incidencia explícita para la semántica de `lastmod`.",
+      "title": "Aplicar solo la caché",
+      "body": "Mejoraría la carga del serving, pero mantendría la señal de `lastmod` técnicamente incorrecta.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el enfoque actual",
+      "body": "Conservaría una solución parcial basada en `timestamp` y acepta el coste SEO y de recrawl observado.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Exigir contrato SEO completo",
-    "body": "Persistir la señal SEO y actualizarla solo ante contenido indexable, precio visible significativo o transición de disponibilidad; después completar el serving.",
+    "title": "Acordar el contrato transversal",
+    "body": "Definir precio SEO, disponibilidad, contenido indexable y política de caché antes de dividir la implementación por equipos.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Su trabajo fusionado define el límite técnico actual y la discusión pendiente sobre la semántica de `lastmod`.",
+    "reason": "Su cambio fusionado y su discusión previa conectan directamente con el contrato semántico pendiente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8531#issuecomment-5328938892",
-    "reviewedAt": "2026-08-18T17:35:40.950Z",
-    "mainSha": "c48d810626fc99fac2537fe628d12f1a18d666da"
+    "reviewedAt": "2026-08-19T07:21:49.481Z",
+    "mainSha": "6f042209b6be7522c0e9eff5558e2b5d0ddfcad9"
   }
 }
