@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-19T19:03:27.562Z",
+  "updatedAt": "2026-08-19T10:38:12Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8543,
+    "title": "fix: move sitemap lastmod only on real product changes",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8543",
+    "state": "open",
+    "labels": [
+      "size/L"
+    ],
+    "createdAt": "2026-08-19T08:23:09Z",
+    "updatedAt": "2026-08-19T10:38:12Z",
+    "headSha": "77cb56f15c2f00e412c6e9d1efb3fad4a5fc7c42"
+  },
+  "lane": "release_inclusion",
+  "priority": "P1",
+  "question": "¿Se autoriza desplegar y verificar la scheduled query de BigQuery antes de mergear el generador que depende de ella?",
+  "rationale": "El workflow normal de data-platform no aplica recursos nuevos al mergear en `dev`, pero los sitemaps de `dev` sí se ejecutan diariamente contra producción.",
+  "options": [
+    {
+      "title": "Preaprovisionar y verificar",
+      "body": "Ejecutar `[Deploy] Data Platform` desde esta referencia, confirmar que la tabla se puebla y después mergear el generador.",
+      "recommended": true
+    },
+    {
+      "title": "Separar el rollout",
+      "body": "Llevar primero la scheduled query mediante un despliegue controlado y dejar el cambio del generador para un segundo PR.",
+      "recommended": false
+    },
+    {
+      "title": "Aceptar la ventana sin `lastmod`",
+      "body": "Mergear y asumir que los sitemaps se publiquen temporalmente sin la etiqueta hasta el despliegue manual.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Preaprovisionar y verificar",
+    "body": "Ejecutar `[Deploy] Data Platform` desde esta referencia, confirmar que la tabla se puebla y después mergear el generador.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "AlexDiaz-Hamelyn",
+    "reason": "Su historial cubre tanto el cron de sitemaps como el mecanismo de despliegue de la plataforma de datos.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8543.md",
+    "reviewedAt": "2026-08-19T19:03:27.562Z",
+    "mainSha": "5cf2cbe54611d0276bb19fbcaddec051aabfa8cb"
+  }
+}
