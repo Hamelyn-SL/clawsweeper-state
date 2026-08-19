@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T18:02:28.953Z",
+  "generatedAt": "2026-08-19T18:17:58.283Z",
   "updatedAt": "2026-08-19T16:48:31Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -28,33 +28,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué límite operativo debe sustituir al umbral fijo de 40 caracteres de Postlibri tras validar la nueva etiqueta?",
-  "rationale": "El valor elegido afecta al enrutado de pedidos y debe quedar coherente entre la etiqueta, la salvaguarda de código y la configuración persistida.",
+  "question": "¿Debe Postlibri admitir oficialmente direcciones de hasta 120 caracteres y retirarse el desvío automático a CAINIAO por longitud, conservando los demás límites físicos?",
+  "rationale": "El límite de 40 afecta a coste y selección de transportista; la PR actual prepara el diseño de etiqueta, pero no determina por sí sola la política logística final.",
   "options": [
     {
-      "title": "Adoptar 120 caracteres",
-      "body": "Tras una validación de impresión real, sustituir el límite de 40 por 120 en la salvaguarda y en la fila de ShipMatrix.",
+      "title": "Adoptar el límite de 120",
+      "body": "Aprobar el nuevo límite y completar el cambio de selector y matriz tras la validación visual de la etiqueta.",
       "recommended": true
     },
     {
-      "title": "Mantener un límite conservador",
-      "body": "Conservar Cainiao por encima de un nuevo umbral inferior si Operaciones detecta restricciones físicas o de entrega.",
+      "title": "Mantener el límite de 40",
+      "body": "Conservar la elevación actual a CAINIAO y cerrar la PR de composición si no se necesita para otros casos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar 120 caracteres",
-    "body": "Tras una validación de impresión real, sustituir el límite de 40 por 120 en la salvaguarda y en la fila de ShipMatrix.",
+    "title": "Adoptar el límite de 120",
+    "body": "Aprobar el nuevo límite y completar el cambio de selector y matriz tras la validación visual de la etiqueta.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "danielmenchen",
-    "reason": "Su cambio reciente conecta los dos archivos de código que deben permanecer coherentes con la decisión operativa.",
-    "confidence": "medium"
+    "reason": "Su historial concentra la introducción y el mantenimiento reciente del compositor afectado.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8567.md",
-    "reviewedAt": "2026-08-19T18:02:28.953Z",
+    "reviewedAt": "2026-08-19T18:17:58.283Z",
     "mainSha": "5cf2cbe54611d0276bb19fbcaddec051aabfa8cb"
   }
 }
