@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T13:07:57.096Z",
-  "updatedAt": "2026-08-19T10:27:34Z",
+  "generatedAt": "2026-08-19T16:58:30.557Z",
+  "updatedAt": "2026-08-19T13:32:20Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -15,47 +15,46 @@
       "app:ecommerce",
       "triage:done",
       "reporter:victor",
+      "P1",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-product-decision",
       "clawsweeper:source-repro",
-      "issue-rating: 💎 diamond",
-      "P1",
-      "impact:other",
-      "clawsweeper:linked-pr-open"
+      "clawsweeper:linked-pr-open",
+      "issue-rating: 💎 diamond"
     ],
     "createdAt": "2026-08-18T12:55:12Z",
-    "updatedAt": "2026-08-19T10:27:34Z"
+    "updatedAt": "2026-08-19T13:32:20Z"
   },
-  "lane": "release_inclusion",
+  "lane": "product_direction",
   "priority": "P1",
-  "question": "¿Se aprueba el despliegue coordinado de la scheduled query de Data Platform junto con la PR, con seguimiento de Search Console tras el cambio?",
-  "rationale": "La PR degrada de forma segura sin la tabla, pero el resultado SEO solicitado requiere una decisión operativa sobre despliegue y observación posterior.",
+  "question": "¿Se aprueba el contrato de `lastmod` con umbral absoluto de 1 € y el periodo inicial sin `<lastmod>` hasta que Data Platform quede desplegado?",
+  "rationale": "La decisión fija la señal SEO para millones de URLs y condiciona el orden de despliegue entre Ecommerce y Data Platform.",
   "options": [
     {
-      "title": "Desplegar y medir conjuntamente",
-      "body": "Aprobar la PR con el workflow de Data Platform y revisar el recrawl y las hojas publicadas durante las primeras semanas.",
+      "title": "Aprobar contrato y despliegue coordinado",
+      "body": "Revisar la PR, ejecutar la query real y desplegar Data Platform antes o junto al cambio de Ecommerce.",
       "recommended": true
     },
     {
-      "title": "Separar el despliegue de datos",
-      "body": "Fusionar la compatibilidad de Ecommerce primero y programar la query y la medición en una ventana operativa posterior.",
+      "title": "Pedir otro contrato SEO",
+      "body": "Mantener la incidencia abierta y ajustar el umbral o la semántica antes de aceptar la implementación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Desplegar y medir conjuntamente",
-    "body": "Aprobar la PR con el workflow de Data Platform y revisar el recrawl y las hojas publicadas durante las primeras semanas.",
+    "title": "Aprobar contrato y despliegue coordinado",
+    "body": "Revisar la PR, ejecutar la query real y desplegar Data Platform antes o junto al cambio de Ecommerce.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "alexcanHamelyn",
-    "reason": "Es el responsable asignado de la incidencia y autor de la implementación candidata que documenta el requisito de despliegue.",
-    "confidence": "high"
+    "reason": "Ha llevado la funcionalidad previa y la propuesta que concreta el contrato pendiente.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8531.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8531#issuecomment-5328938892",
-    "reviewedAt": "2026-08-19T13:07:57.096Z",
+    "reviewedAt": "2026-08-19T16:58:30.557Z",
     "mainSha": "5cf2cbe54611d0276bb19fbcaddec051aabfa8cb"
   }
 }
