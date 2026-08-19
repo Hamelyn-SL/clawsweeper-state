@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-04T23:29:21.579Z",
-  "updatedAt": "2026-08-04T23:11:48Z",
+  "generatedAt": "2026-08-19T07:02:01.432Z",
+  "updatedAt": "2026-08-19T06:41:10Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,54 +14,48 @@
       "bug",
       "app:marketplace",
       "triage:done",
-      "origin:agent",
-      "mk:amazon",
-      "P1",
       "impact:other",
-      "issue-rating: ⚪ platinum",
       "clawsweeper:needs-live-repro",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "issue-rating: ⚪ platinum",
+      "origin:agent",
+      "mk:amazon"
     ],
     "createdAt": "2026-06-24T22:50:08Z",
-    "updatedAt": "2026-08-04T23:11:48Z"
+    "updatedAt": "2026-08-19T06:41:10Z"
   },
   "lane": "product_direction",
-  "priority": "P1",
-  "question": "¿Qué destino operativo debe tener un `ORDER_CHANGE` `Unshipped` cuyo SKU no existe y que tampoco tiene un `OrderSell` local: consumo terminal auditado, cola de revisión o creación/degradación controlada?",
-  "rationale": "La reparación evita el bucle, pero el destino elegido afecta a conciliación, inventario y recuperación de pedidos reales; el código no define ese contrato.",
+  "priority": "P2",
+  "question": "¿Qué condiciones deben permitir borrar definitivamente un `ORDER_CHANGE` Amazon sin atributos formateables?",
+  "rationale": "La señal actual no diferencia ausencia permanente de stock de errores recuperables, y la decisión afecta a la posible pérdida temporal de procesamiento de ventas.",
   "options": [
     {
-      "title": "Consumir con auditoría y alerta única",
-      "body": "Eliminar el mensaje tras registrar el pedido huérfano y emitir una señal operativa deduplicada para revisión.",
+      "title": "Distinguir causas terminales",
+      "body": "Devolver un resultado tipado del formatter y borrar únicamente los casos confirmados sin líneas activas o sin stock definitivo.",
       "recommended": true
     },
     {
-      "title": "Retener para revisión controlada",
-      "body": "Mover el caso a una cola o estado observable con límite de reintentos, sin reprocesarlo en cada ejecución del cron.",
-      "recommended": false
-    },
-    {
-      "title": "Crear una venta degradada",
-      "body": "Persistir un `OrderSell` especial o `TO_CANCEL` solo tras definir las reglas de inventario y reconciliación.",
+      "title": "Conservar todos los reintentos",
+      "body": "Mantener la retención actual hasta definir una fuente fiable que clasifique los pedidos huérfanos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Consumir con auditoría y alerta única",
-    "body": "Eliminar el mensaje tras registrar el pedido huérfano y emitir una señal operativa deduplicada para revisión.",
+    "title": "Distinguir causas terminales",
+    "body": "Devolver un resultado tipado del formatter y borrar únicamente los casos confirmados sin líneas activas o sin stock definitivo.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MarcosTerroso",
-    "reason": "El historial sitúa el diseño del consumo SQS y de `ORDER_CHANGE` en esta área de trabajo.",
+    "person": "Daniel Menchen",
+    "reason": "Introdujo conjuntamente el procesador de notificaciones y la recuperación diaria cuyo contrato debe mantenerse coherente.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6658.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/6658#issuecomment-4971281004",
-    "reviewedAt": "2026-08-04T23:29:21.579Z",
-    "mainSha": "42122667ca9651498bcc686bd53907ec08bc20f2"
+    "reviewedAt": "2026-08-19T07:02:01.432Z",
+    "mainSha": "6f042209b6be7522c0e9eff5558e2b5d0ddfcad9"
   }
 }
