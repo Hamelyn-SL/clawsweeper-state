@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T23:53:46.040Z",
-  "updatedAt": "2026-08-19T22:51:44Z",
+  "generatedAt": "2026-08-20T01:00:05.394Z",
+  "updatedAt": "2026-08-20T00:06:47Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,47 +14,52 @@
       "feature",
       "reporter:javier",
       "triage:done",
-      "P2",
-      "impact:security",
-      "issue-rating: ➖ n/a",
-      "clawsweeper:linked-pr-open",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
-      "clawsweeper:needs-product-decision"
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "impact:security",
+      "clawsweeper:needs-security-review",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-19T22:19:12Z",
-    "updatedAt": "2026-08-19T22:51:44Z"
+    "updatedAt": "2026-08-20T00:06:47Z"
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se autoriza `enforce` tras corregir los riesgos y revisar un ciclo real de `audit` en producción?",
-  "rationale": "La activación autoriza crear y retirar secretos de Atlas en producción, una frontera que requiere decisión operativa humana.",
+  "question": "¿Debe aprobarse el paso de `audit` a `enforce` tras corregir los hilos y observar un ciclo de producción sin mutaciones inesperadas?",
+  "rationale": "La decisión habilita mutaciones sobre credenciales de producción y define el umbral aceptable para retirar secretos existentes.",
   "options": [
     {
-      "title": "Mantener audit hasta validar",
-      "body": "Corregir los riesgos y revisar evidencia redactada de un ciclo real antes de permitir mutaciones.",
+      "title": "Exigir correcciones y prueba `audit`",
+      "body": "Resolver los tres riesgos, revisar un ciclo real en `audit` y decidir después la activación de `enforce`.",
       "recommended": true
     },
     {
-      "title": "Activar enforce ahora",
-      "body": "Aceptar explícitamente los riesgos restantes y habilitar la rotación mutante de inmediato.",
+      "title": "Mantener solo `audit`",
+      "body": "Aterrizar la observabilidad sin autorizar todavía mutaciones automáticas en Atlas.",
+      "recommended": false
+    },
+    {
+      "title": "Replantear el alcance",
+      "body": "Pausar la automatización si no se acepta un reconciliador con permisos de creación y retirada de secretos.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener audit hasta validar",
-    "body": "Corregir los riesgos y revisar evidencia redactada de un ciclo real antes de permitir mutaciones.",
+    "title": "Exigir correcciones y prueba `audit`",
+    "body": "Resolver los tres riesgos, revisar un ciclo real en `audit` y decidir después la activación de `enforce`.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y es autor de la PR que concentra la implementación.",
+    "reason": "Es el asignado y el contribuidor reciente del área de schedules; la decisión requiere además la revisión solicitada de seguridad.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8572.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8572#issuecomment-5348925787",
-    "reviewedAt": "2026-08-19T23:53:46.040Z",
+    "reviewedAt": "2026-08-20T01:00:05.394Z",
     "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
   }
 }
