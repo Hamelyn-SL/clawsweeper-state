@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T18:17:58.283Z",
-  "updatedAt": "2026-08-19T16:48:31Z",
+  "generatedAt": "2026-08-20T06:40:18.705Z",
+  "updatedAt": "2026-08-20T06:30:46Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,50 +14,49 @@
       "app:ecommerce",
       "feature",
       "triage:pr-opened",
+      "impact:other",
       "clawsweeper:no-new-fix-pr",
       "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
+      "P2",
       "clawsweeper:source-repro",
       "clawsweeper:linked-pr-open",
+      "clawsweeper:fix-shape-clear",
       "issue-rating: 💎 diamond",
-      "reporter:jorgecano",
-      "P2",
-      "impact:other",
-      "clawsweeper:fix-shape-clear"
+      "reporter:jorgecano"
     ],
     "createdAt": "2026-08-19T13:24:01Z",
-    "updatedAt": "2026-08-19T16:48:31Z"
+    "updatedAt": "2026-08-20T06:30:46Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe Postlibri admitir oficialmente direcciones de hasta 120 caracteres y retirarse el desvío automático a CAINIAO por longitud, conservando los demás límites físicos?",
-  "rationale": "El límite de 40 afecta a coste y selección de transportista; la PR actual prepara el diseño de etiqueta, pero no determina por sí sola la política logística final.",
+  "question": "¿Debe Postlibri aceptar oficialmente hasta 120 caracteres y dejar de desviarse a CAINIAO por longitud, conservando los límites de pedido individual y no consolidado?",
+  "rationale": "La etiqueta puede adaptarse técnicamente, pero el máximo de 40 forma parte de la política de selección y del fallback de la matriz, con consecuencias logísticas y de factura.",
   "options": [
     {
-      "title": "Adoptar el límite de 120",
-      "body": "Aprobar el nuevo límite y completar el cambio de selector y matriz tras la validación visual de la etiqueta.",
+      "title": "Adoptar 120 con validación completa",
+      "body": "Aprobar el nuevo máximo tras corregir y demostrar la geometría de etiqueta, y después actualizar de forma coordinada la matriz y la salvaguarda.",
       "recommended": true
     },
     {
-      "title": "Mantener el límite de 40",
-      "body": "Conservar la elevación actual a CAINIAO y cerrar la PR de composición si no se necesita para otros casos.",
+      "title": "Conservar el límite de 40",
+      "body": "Mantener el fallback actual a CAINIAO y no retirar la política logística aunque la etiqueta pueda mostrar más texto.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Adoptar el límite de 120",
-    "body": "Aprobar el nuevo límite y completar el cambio de selector y matriz tras la validación visual de la etiqueta.",
+    "title": "Adoptar 120 con validación completa",
+    "body": "Aprobar el nuevo máximo tras corregir y demostrar la geometría de etiqueta, y después actualizar de forma coordinada la matriz y la salvaguarda.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "danielmenchen",
-    "reason": "Su historial concentra la introducción y el mantenimiento reciente del compositor afectado.",
-    "confidence": "high"
+    "person": "MiguelHamelyn",
+    "reason": "Es el responsable asignado actual y la decisión afecta a una configuración logística operativa.",
+    "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8567.md",
-    "reviewCommentUrl": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8567#issuecomment-5345243511",
-    "reviewedAt": "2026-08-19T18:17:58.283Z",
-    "mainSha": "5cf2cbe54611d0276bb19fbcaddec051aabfa8cb"
+    "reviewedAt": "2026-08-20T06:40:18.705Z",
+    "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
   }
 }
