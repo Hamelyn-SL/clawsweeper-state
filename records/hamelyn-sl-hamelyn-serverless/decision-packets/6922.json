@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T10:52:59.744Z",
+  "generatedAt": "2026-08-20T10:58:29.605Z",
   "updatedAt": "2026-08-20T10:16:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -27,33 +27,33 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Qué mapeo contractual deben usar Fnac `20/22` y Amazon ES antes de sustituir la heurística de importe?",
-  "rationale": "El código confirma el defecto, pero no resuelve con seguridad la semántica de esos niveles de servicio ni la política operativa de Amazon.",
+  "question": "¿Se aprueban los mappings Fnac `22 → URGENT`, `20 → NORMAL` y la retirada del override de Amazon ES basado en `totalPrice > 14.99`?",
+  "rationale": "El código demuestra que las señales existen, pero su semántica contractual y el comportamiento deseado de Amazon no se pueden deducir con seguridad del repositorio.",
   "options": [
     {
-      "title": "Confirmar los mapeos",
-      "body": "Validar Fnac y Amazon, y aplicar prioridad por servicio con fallback por importe solo donde no haya señal fiable.",
+      "title": "Validar y aprobar el conjunto completo",
+      "body": "Confirmar los dos códigos de Fnac y decidir explícitamente la política de Amazon antes de implementar los cuatro importadores implicados.",
       "recommended": true
     },
     {
-      "title": "Corregir solo señales confirmadas",
-      "body": "Cambiar CDL y eBay ahora, conservando Fnac y Amazon con la lógica vigente hasta verificar sus contratos.",
+      "title": "Acotar la primera corrección",
+      "body": "Aplicar solo los mappings ya confirmados para CDL y eBay, conservando temporalmente Fnac y Amazon con su comportamiento actual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Confirmar los mapeos",
-    "body": "Validar Fnac y Amazon, y aplicar prioridad por servicio con fallback por importe solo donde no haya señal fiable.",
+    "title": "Validar y aprobar el conjunto completo",
+    "body": "Confirmar los dos códigos de Fnac y decidir explícitamente la política de Amazon antes de implementar los cuatro importadores implicados.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "JavierHamelyn",
-    "reason": "Revisó y fusionó la extracción BL, y pidió comprobar que los mecanismos de envío seguían disponibles.",
+    "person": "MiguelHamelyn",
+    "reason": "Es la persona asignada tras el último triage y la decisión pendiente es operativa, no mecánica.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewedAt": "2026-08-20T10:52:59.744Z",
+    "reviewedAt": "2026-08-20T10:58:29.605Z",
     "mainSha": "4eb26cb663c7193f6fe3ff9c3746e78c2890476b"
   }
 }
