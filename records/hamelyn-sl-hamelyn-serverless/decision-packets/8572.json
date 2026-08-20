@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-19T23:53:46.040Z",
+  "generatedAt": "2026-08-20T00:00:35.304Z",
   "updatedAt": "2026-08-19T22:51:44Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -26,33 +26,38 @@
   },
   "lane": "security_boundary",
   "priority": "P2",
-  "question": "¿Se autoriza `enforce` tras corregir los riesgos y revisar un ciclo real de `audit` en producción?",
-  "rationale": "La activación autoriza crear y retirar secretos de Atlas en producción, una frontera que requiere decisión operativa humana.",
+  "question": "¿Se aprueba la política de mutación automática de secretos Atlas tras una ejecución de producción en `audit` y la resolución de los tres hilos abiertos?",
+  "rationale": "La decisión de permitir borrado y creación de credenciales de producción define un límite operativo de seguridad que no puede inferirse solo del código.",
   "options": [
     {
-      "title": "Mantener audit hasta validar",
-      "body": "Corregir los riesgos y revisar evidencia redactada de un ciclo real antes de permitir mutaciones.",
+      "title": "Validar audit y corregir antes de enforce",
+      "body": "Resolver los tres hilos, publicar evidencia redactada de `audit` y revisar después la activación de mutaciones.",
       "recommended": true
     },
     {
-      "title": "Activar enforce ahora",
-      "body": "Aceptar explícitamente los riesgos restantes y habilitar la rotación mutante de inmediato.",
+      "title": "Mantener audit de forma indefinida",
+      "body": "Conservar observabilidad y alertas sin permitir cambios automáticos en Atlas hasta una decisión posterior.",
+      "recommended": false
+    },
+    {
+      "title": "Descartar la automatización",
+      "body": "Cerrar la dirección si el equipo decide que la rotación debe seguir siendo un procedimiento operativo manual.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Mantener audit hasta validar",
-    "body": "Corregir los riesgos y revisar evidencia redactada de un ciclo real antes de permitir mutaciones.",
+    "title": "Validar audit y corregir antes de enforce",
+    "body": "Resolver los tres hilos, publicar evidencia redactada de `audit` y revisar después la activación de mutaciones.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "JavierHamelyn",
-    "reason": "Está asignado a la issue y es autor de la PR que concentra la implementación.",
+    "reason": "Es el autor y asignado de la propuesta, además de contribuidor reciente de los schedules de `apps/agents`.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8572.md",
-    "reviewedAt": "2026-08-19T23:53:46.040Z",
+    "reviewedAt": "2026-08-20T00:00:35.304Z",
     "mainSha": "f53228e49ece1d528f947f9ed5dd4a99a9c9b904"
   }
 }
