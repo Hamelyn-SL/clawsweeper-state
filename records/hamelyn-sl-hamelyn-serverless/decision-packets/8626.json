@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-21T13:08:20.259Z",
+  "updatedAt": "2026-08-21T11:02:05Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8626,
+    "title": "Migrar Discogs al MarketplaceManager (piloto F2 de la épica)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8626",
+    "state": "open",
+    "labels": [
+      "app:marketplace",
+      "feature",
+      "reporter:marcos",
+      "triage:done",
+      "P2"
+    ],
+    "createdAt": "2026-08-21T10:43:04Z",
+    "updatedAt": "2026-08-21T11:02:05Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe F2 esperar a que F1 se integre en `dev`, o se autoriza formalmente una PR apilada sobre F1?",
+  "rationale": "El alcance depende de contratos y runners que no existen en la rama base; la elección define la estrategia de integración y revisión.",
+  "options": [
+    {
+      "title": "Integrar F1 antes",
+      "body": "Aterrizar primero la base MarketplaceManager en `dev` y abrir F2 contra esos contratos estables.",
+      "recommended": true
+    },
+    {
+      "title": "Autorizar una PR apilada",
+      "body": "Mantener F2 explícitamente apilada sobre F1, con orden de merge y validación conjunta acordados.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Integrar F1 antes",
+    "body": "Aterrizar primero la base MarketplaceManager en `dev` y abrir F2 contra esos contratos estables.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MarcosTerroso",
+    "reason": "Es el asignado y ha descrito la secuencia F1/F2 y las restricciones operativas de la migración.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
+    "reviewedAt": "2026-08-21T13:08:20.259Z",
+    "mainSha": "925aeba59c20ca8042a95a2049180592e1955cb8"
+  }
+}
