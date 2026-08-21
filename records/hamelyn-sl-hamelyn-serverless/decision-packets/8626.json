@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T13:08:20.259Z",
-  "updatedAt": "2026-08-21T11:02:05Z",
+  "generatedAt": "2026-08-21T14:40:05.792Z",
+  "updatedAt": "2026-08-21T13:37:06Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -14,40 +14,46 @@
       "feature",
       "reporter:marcos",
       "triage:done",
-      "P2"
+      "impact:other",
+      "clawsweeper:no-new-fix-pr",
+      "clawsweeper:needs-maintainer-review",
+      "clawsweeper:needs-product-decision",
+      "P2",
+      "clawsweeper:linked-pr-open",
+      "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-21T11:02:05Z"
+    "updatedAt": "2026-08-21T13:37:06Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe F2 esperar a que F1 se integre en `dev`, o se autoriza formalmente una PR apilada sobre F1?",
-  "rationale": "El alcance depende de contratos y runners que no existen en la rama base; la elección define la estrategia de integración y revisión.",
+  "question": "¿Debe aceptarse la llegada conjunta de F1 y el piloto F2 en la PR abierta, o separarse F1 para revisar después Discogs sobre una base integrada?",
+  "rationale": "La elección define el límite estable del MarketplaceManager y el tamaño revisable de una migración que cambia estado, runners, composición y cron.",
   "options": [
     {
-      "title": "Integrar F1 antes",
-      "body": "Aterrizar primero la base MarketplaceManager en `dev` y abrir F2 contra esos contratos estables.",
+      "title": "Separar F1 y F2",
+      "body": "Aterrizar primero el núcleo reutilizable de MarketplaceManager y revisar Discogs como una PR apilada o posterior más acotada.",
       "recommended": true
     },
     {
-      "title": "Autorizar una PR apilada",
-      "body": "Mantener F2 explícitamente apilada sobre F1, con orden de merge y validación conjunta acordados.",
+      "title": "Revisar la PR conjunta",
+      "body": "Aceptar una revisión integrada si se confirma que el contrato F1 queda suficientemente estable y la paridad V1/V2 está demostrada.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Integrar F1 antes",
-    "body": "Aterrizar primero la base MarketplaceManager en `dev` y abrir F2 contra esos contratos estables.",
+    "title": "Separar F1 y F2",
+    "body": "Aterrizar primero el núcleo reutilizable de MarketplaceManager y revisar Discogs como una PR apilada o posterior más acotada.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es el asignado y ha descrito la secuencia F1/F2 y las restricciones operativas de la migración.",
+    "reason": "Coordina la issue y la implementación candidata, por lo que puede proponer el corte técnico para validación del equipo.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewedAt": "2026-08-21T13:08:20.259Z",
+    "reviewedAt": "2026-08-21T14:40:05.792Z",
     "mainSha": "925aeba59c20ca8042a95a2049180592e1955cb8"
   }
 }
