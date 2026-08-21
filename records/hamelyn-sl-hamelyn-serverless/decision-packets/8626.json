@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T14:40:05.792Z",
-  "updatedAt": "2026-08-21T13:37:06Z",
+  "generatedAt": "2026-08-21T16:36:16.784Z",
+  "updatedAt": "2026-08-21T14:42:52Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -16,44 +16,43 @@
       "triage:done",
       "impact:other",
       "clawsweeper:no-new-fix-pr",
-      "clawsweeper:needs-maintainer-review",
       "clawsweeper:needs-product-decision",
       "P2",
       "clawsweeper:linked-pr-open",
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-21T13:37:06Z"
+    "updatedAt": "2026-08-21T14:42:52Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aceptarse la llegada conjunta de F1 y el piloto F2 en la PR abierta, o separarse F1 para revisar después Discogs sobre una base integrada?",
-  "rationale": "La elección define el límite estable del MarketplaceManager y el tamaño revisable de una migración que cambia estado, runners, composición y cron.",
+  "question": "¿Debe aterrizar la base F1 junto con el piloto Discogs F2 en la misma PR XXL, o debe integrarse F1 y revisarse F2 como cambio posterior?",
+  "rationale": "La PR abierta incorpora los runners genéricos que la issue describe como dependencia aún no integrada; decidir el corte afecta la revisión, el riesgo de datos persistidos y el plan de adopción.",
   "options": [
     {
       "title": "Separar F1 y F2",
-      "body": "Aterrizar primero el núcleo reutilizable de MarketplaceManager y revisar Discogs como una PR apilada o posterior más acotada.",
+      "body": "Integrar primero la base genérica con sus invariantes y revisar Discogs encima como piloto acotado.",
       "recommended": true
     },
     {
-      "title": "Revisar la PR conjunta",
-      "body": "Aceptar una revisión integrada si se confirma que el contrato F1 queda suficientemente estable y la paridad V1/V2 está demostrada.",
+      "title": "Aceptar una PR apilada",
+      "body": "Mantener ambas capas juntas, pero declarar el orden de revisión y exigir pruebas de compatibilidad V1/V2 y de estado persistido.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Separar F1 y F2",
-    "body": "Aterrizar primero el núcleo reutilizable de MarketplaceManager y revisar Discogs como una PR apilada o posterior más acotada.",
+    "body": "Integrar primero la base genérica con sus invariantes y revisar Discogs encima como piloto acotado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Coordina la issue y la implementación candidata, por lo que puede proponer el corte técnico para validación del equipo.",
-    "confidence": "medium"
+    "reason": "Es la persona asignada y autora de la propuesta de integración que define el alcance técnico.",
+    "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewedAt": "2026-08-21T14:40:05.792Z",
-    "mainSha": "925aeba59c20ca8042a95a2049180592e1955cb8"
+    "reviewedAt": "2026-08-21T16:36:16.784Z",
+    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
   }
 }
