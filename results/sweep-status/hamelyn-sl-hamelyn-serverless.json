@@ -4,8 +4,8 @@
   "display_name": "Hamelyn Serverless",
   "target_repo": "hamelyn-sl/hamelyn-serverless",
   "state": "Apply comments synced",
-  "detail": "Comment-only apply checkpoint 1 finished. Synced durable review comments: 1. Result records: 1. Item numbers: 8594. Next cursor: none.",
-  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/32435559844",
+  "detail": "Comment-only apply checkpoint 1 finished. Synced durable review comments: 24. Result records: 24. Item numbers: 6922,8204,8215,8507,8543,8551,8574,8575,8576,8579,8580,8581,8589,8590,8592,8593,8597,8598,8599,8603,8607,8608,8610,8614. Next cursor: none.",
+  "run_url": "https://github.com/Hamelyn-SL/clawsweeper/actions/runs/32434446488",
   "planned_count": null,
   "planned_capacity": null,
   "planned_shards": null,
@@ -21,16 +21,16 @@
   "bot_owned_proof_dispatches": null,
   "apply_health": {
     "schema_version": 1,
-    "generated_at": "2026-08-21T01:27:36.128Z",
-    "target_repo": "hamelyn-sl/hamelyn-serverless",
+    "generated_at": "2026-08-21T01:24:19.203Z",
+    "target_repo": "Hamelyn-SL/hamelyn-serverless",
     "mode": "comment_sync",
     "status": "ok",
-    "summary": "1/1000 processed; 0 closed, 1 comments synced, 0 skipped; no cursor recorded.",
-    "processed": 1,
+    "summary": "24/1000 processed; 0 closed, 24 comments synced, 0 skipped; no cursor recorded.",
+    "processed": 24,
     "processed_limit": 1000,
     "close_limit": 0,
     "closed": 0,
-    "comment_synced": 1,
+    "comment_synced": 24,
     "skipped": 0,
     "skip_reasons": {},
     "lanes": {
@@ -42,9 +42,9 @@
         "skip_reasons": {}
       },
       "comment_sync": {
-        "processed": 1,
+        "processed": 24,
         "closed": 0,
-        "comment_synced": 1,
+        "comment_synced": 24,
         "skipped": 0,
         "skip_reasons": {}
       }
@@ -65,5 +65,5 @@
     "cursor": null
   },
   "last_close_apply_health": null,
-  "updated_at": "2026-08-21T01:27:36.643Z"
+  "updated_at": "2026-08-21T01:24:19.761Z"
 }
