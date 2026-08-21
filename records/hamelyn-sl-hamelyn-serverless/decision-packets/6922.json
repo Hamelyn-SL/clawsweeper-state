@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T10:58:29.605Z",
-  "updatedAt": "2026-08-20T10:16:44Z",
+  "generatedAt": "2026-08-21T00:45:15.836Z",
+  "updatedAt": "2026-08-20T12:27:30Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -23,37 +23,37 @@
       "origin:bl"
     ],
     "createdAt": "2026-07-06T08:48:48Z",
-    "updatedAt": "2026-08-20T10:16:44Z"
+    "updatedAt": "2026-08-20T12:27:30Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueban los mappings Fnac `22 → URGENT`, `20 → NORMAL` y la retirada del override de Amazon ES basado en `totalPrice > 14.99`?",
-  "rationale": "El código demuestra que las señales existen, pero su semántica contractual y el comportamiento deseado de Amazon no se pueden deducir con seguridad del repositorio.",
+  "question": "¿Se aprueban los mappings operativos de eBay, Fnac y CDL propuestos, manteniendo el fallback por importe para códigos desconocidos y sin tocar Amazon en esta PR?",
+  "rationale": "La implementación cambia la prioridad que determina el tratamiento SLA; el código y el censo aportan evidencia, pero la semántica contractual de cada código requiere confirmación responsable.",
   "options": [
     {
-      "title": "Validar y aprobar el conjunto completo",
-      "body": "Confirmar los dos códigos de Fnac y decidir explícitamente la política de Amazon antes de implementar los cuatro importadores implicados.",
+      "title": "Validar el alcance acotado",
+      "body": "Aceptar los mappings propuestos para eBay, Fnac y CDL, conservar el fallback y revisar Amazon en trabajo separado.",
       "recommended": true
     },
     {
-      "title": "Acotar la primera corrección",
-      "body": "Aplicar solo los mappings ya confirmados para CDL y eBay, conservando temporalmente Fnac y Amazon con su comportamiento actual.",
+      "title": "Pausar por semántica pendiente",
+      "body": "Retener la PR hasta confirmar los códigos Fnac o ampliar la decisión al override de Amazon.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Validar y aprobar el conjunto completo",
-    "body": "Confirmar los dos códigos de Fnac y decidir explícitamente la política de Amazon antes de implementar los cuatro importadores implicados.",
+    "title": "Validar el alcance acotado",
+    "body": "Aceptar los mappings propuestos para eBay, Fnac y CDL, conservar el fallback y revisar Amazon en trabajo separado.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Es la persona asignada tras el último triage y la decisión pendiente es operativa, no mecánica.",
+    "person": "JavierHamelyn",
+    "reason": "Es el revisor asignado por experiencia directa y participó en la validación inicial de la regla de negocio.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/6922.md",
-    "reviewedAt": "2026-08-20T10:58:29.605Z",
-    "mainSha": "4eb26cb663c7193f6fe3ff9c3746e78c2890476b"
+    "reviewedAt": "2026-08-21T00:45:15.836Z",
+    "mainSha": "9612bedb37d998d20c02dd0b5d3c9cea49367ee3"
   }
 }
