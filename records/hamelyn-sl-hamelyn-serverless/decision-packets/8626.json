@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-21T16:36:16.784Z",
-  "updatedAt": "2026-08-21T14:42:52Z",
+  "generatedAt": "2026-08-21T22:34:23.937Z",
+  "updatedAt": "2026-08-21T16:43:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "issue",
@@ -22,37 +22,37 @@
       "issue-rating: ➖ n/a"
     ],
     "createdAt": "2026-08-21T10:43:04Z",
-    "updatedAt": "2026-08-21T14:42:52Z"
+    "updatedAt": "2026-08-21T16:43:23Z"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Debe aterrizar la base F1 junto con el piloto Discogs F2 en la misma PR XXL, o debe integrarse F1 y revisarse F2 como cambio posterior?",
-  "rationale": "La PR abierta incorpora los runners genéricos que la issue describe como dependencia aún no integrada; decidir el corte afecta la revisión, el riesgo de datos persistidos y el plan de adopción.",
+  "question": "¿Se aprueba Discogs como piloto que fija el contrato, las mutaciones de estado y los runners compartidos de MarketplaceManager para los siguientes marketplaces?",
+  "rationale": "La implementación propuesta define infraestructura transversal y persistencia que condicionarán migraciones posteriores; no es una decisión que deba resolver un carril automático.",
   "options": [
     {
-      "title": "Separar F1 y F2",
-      "body": "Integrar primero la base genérica con sus invariantes y revisar Discogs encima como piloto acotado.",
+      "title": "Patrocinar el piloto en la PR abierta",
+      "body": "Revisar la paridad V1/V2 y aceptar Discogs como referencia para la fase F3, manteniendo el switchover separado.",
       "recommended": true
     },
     {
-      "title": "Aceptar una PR apilada",
-      "body": "Mantener ambas capas juntas, pero declarar el orden de revisión y exigir pruebas de compatibilidad V1/V2 y de estado persistido.",
+      "title": "Separar el alcance base",
+      "body": "Pedir que F1 y los runners genéricos aterricen antes en una PR menor, dejando el adaptador Discogs como continuación.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Separar F1 y F2",
-    "body": "Integrar primero la base genérica con sus invariantes y revisar Discogs encima como piloto acotado.",
+    "title": "Patrocinar el piloto en la PR abierta",
+    "body": "Revisar la paridad V1/V2 y aceptar Discogs como referencia para la fase F3, manteniendo el switchover separado.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "MarcosTerroso",
-    "reason": "Es la persona asignada y autora de la propuesta de integración que define el alcance técnico.",
+    "reason": "Es el responsable asignado y ha concentrado la propuesta técnica en la PR vinculada.",
     "confidence": "high"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8626.md",
-    "reviewedAt": "2026-08-21T16:36:16.784Z",
+    "reviewedAt": "2026-08-21T22:34:23.937Z",
     "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
   }
 }
