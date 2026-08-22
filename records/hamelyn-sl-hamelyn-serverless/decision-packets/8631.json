@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-22T18:36:37.103Z",
+  "updatedAt": "2026-08-22T18:27:40Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "issue",
+    "number": 8631,
+    "title": "Agent readiness: alcanzar 100/100 en is-agentic para hamelyn.com y tienda.hamelyn.com",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/issues/8631",
+    "state": "open",
+    "labels": [
+      "app:infrastructure",
+      "feature",
+      "triage:running",
+      "P2"
+    ],
+    "createdAt": "2026-08-22T18:12:42Z",
+    "updatedAt": "2026-08-22T18:27:40Z"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Debe aprobarse una primera fase limitada a Supply y ecommerce, dejando onboarding, claves y recursos OAuth públicos fuera hasta reescanear?",
+  "rationale": "El alcance restante contiene mejoras web mecánicas, pero también decide si Hamelyn ofrece una integración API pública y cómo se autentica.",
+  "options": [
+    {
+      "title": "Aprobar fase web acotada",
+      "body": "Corregir los soft-404, publicar recursos declarativos y añadir negociación Markdown antes de reevaluar la necesidad de API pública.",
+      "recommended": true
+    },
+    {
+      "title": "Aprobar programa de API pública",
+      "body": "Incluir onboarding, permisos, documentación y recursos OAuth como un proyecto separado con revisión de seguridad.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aprobar fase web acotada",
+    "body": "Corregir los soft-404, publicar recursos declarativos y añadir negociación Markdown antes de reevaluar la necesidad de API pública.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "JavierHamelyn",
+    "reason": "La issue está asignada a JavierHamelyn y su historial reciente conecta con la infraestructura SEO de ecommerce.",
+    "confidence": "high"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8631.md",
+    "reviewedAt": "2026-08-22T18:36:37.103Z",
+    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+  }
+}
