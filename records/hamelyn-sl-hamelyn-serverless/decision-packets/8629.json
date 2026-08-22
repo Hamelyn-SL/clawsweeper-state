@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-22T01:36:35.677Z",
-  "updatedAt": "2026-08-21T13:15:14Z",
+  "generatedAt": "2026-08-22T02:46:36.692Z",
+  "updatedAt": "2026-08-22T01:38:32Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
     "kind": "pull_request",
@@ -10,41 +10,45 @@
     "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8629",
     "state": "open",
     "labels": [
-      "size/XXL"
+      "size/XXL",
+      "P2",
+      "status: 📣 needs proof",
+      "merge-risk: 🚨 compatibility",
+      "rating: 🥉 bronze"
     ],
     "createdAt": "2026-08-21T12:53:14Z",
-    "updatedAt": "2026-08-21T13:15:14Z",
+    "updatedAt": "2026-08-22T01:38:32Z",
     "headSha": "c66f475efc9edf7bc61d1285c79b2daf4afecc2e"
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba un piloto de visión con gasto propio y un recall observado del 53,8 %, condicionado a una prueba completa en un puesto real?",
-  "rationale": "El código puede corregirse, pero aceptar coste recurrente y utilidad operativa con ese recall requiere criterio de producto y de operación de almacén.",
+  "question": "¿Se aprueba un piloto de visión con coste propio y recall observado del 53,8 %, tras corregir los bloqueadores y demostrarlo en un puesto real?",
+  "rationale": "Aceptar gasto recurrente y una ayuda que puede no localizar cerca de la mitad de productos exige criterio de operación, además de corrección técnica.",
   "options": [
     {
       "title": "Piloto acotado con prueba real",
-      "body": "Corregir la ruta de fallback y habilitarlo solo tras registrar una prueba de puesto, presupuesto separado y criterios de éxito operativos.",
+      "body": "Corregir el montaje y el fallback, aislar presupuesto y habilitarlo solo tras una prueba redactada en estación.",
       "recommended": true
     },
     {
-      "title": "Posponer la salida",
-      "body": "Mantener el PR en draft hasta mejorar el recall o disponer de una evaluación operativa que justifique el coste y la señal parcial.",
+      "title": "Mantener en draft",
+      "body": "Posponer el aterrizaje hasta contar con presupuesto separado y una evaluación operativa que justifique el recall.",
       "recommended": false
     }
   ],
   "recommendation": {
     "title": "Piloto acotado con prueba real",
-    "body": "Corregir la ruta de fallback y habilitarlo solo tras registrar una prueba de puesto, presupuesto separado y criterios de éxito operativos.",
+    "body": "Corregir el montaje y el fallback, aislar presupuesto y habilitarlo solo tras una prueba redactada en estación.",
     "recommended": true
   },
   "likelyOwner": {
     "person": "HamelynDev",
-    "reason": "Es el contribuidor más reciente en el flujo de estación que debe integrar el piloto sin alterar la operativa actual.",
+    "reason": "Su historial reciente en el flujo de estación le sitúa cerca de la decisión de integración operativa.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8629.md",
-    "reviewedAt": "2026-08-22T01:36:35.677Z",
+    "reviewedAt": "2026-08-22T02:46:36.692Z",
     "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
   }
 }
