@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-22T01:36:14.395Z",
+  "generatedAt": "2026-08-22T01:43:06.730Z",
   "updatedAt": "2026-08-21T13:19:23Z",
   "subject": {
     "repo": "hamelyn-sl/hamelyn-serverless",
@@ -18,33 +18,38 @@
   },
   "lane": "product_direction",
   "priority": "P2",
-  "question": "¿Se aprueba el contrato y estado persistido de `MarketplaceManager` como base F2, manteniendo `discogsV2` sin schedule hasta un switchover posterior?",
-  "rationale": "La aceptación de una nueva arquitectura compartida y el momento de activar el segundo flujo de Discogs requieren criterio operativo más allá de una corrección mecánica.",
+  "question": "¿Se aprueba introducir `MarketplaceManager` y su modelo persistido como base común en este mismo piloto de Discogs, con el switchover y los índices Atlas como gates posteriores?",
+  "rationale": "El diff crea una nueva abstracción pública y estado duradero para futuros marketplaces; corregir los defectos no decide por sí solo si ese contrato debe convertirse en la dirección F1/F2.",
   "options": [
     {
-      "title": "Aceptar el piloto inactivo",
-      "body": "Corregir los bloqueos técnicos y fusionar el piloto sin schedule; el switchover queda en una decisión posterior con índices confirmados.",
+      "title": "Aprobar el piloto acotado",
+      "body": "Aceptar la dirección F1/F2, corregir los bloqueos técnicos y mantener V2 sin schedule hasta validar los índices y el switchover.",
       "recommended": true
     },
     {
-      "title": "Posponer el contrato F2",
-      "body": "Mantener el flujo legacy hasta acordar si este modelo de estado debe ser la plantilla para los demás marketplaces.",
+      "title": "Separar el núcleo F1",
+      "body": "Pedir una PR menor para el contrato y estado comunes antes de revisar el adaptador y cron de Discogs.",
+      "recommended": false
+    },
+    {
+      "title": "Mantener el flujo legacy",
+      "body": "No adoptar todavía el nuevo contrato y cerrar o replantear el piloto fuera de esta migración.",
       "recommended": false
     }
   ],
   "recommendation": {
-    "title": "Aceptar el piloto inactivo",
-    "body": "Corregir los bloqueos técnicos y fusionar el piloto sin schedule; el switchover queda en una decisión posterior con índices confirmados.",
+    "title": "Aprobar el piloto acotado",
+    "body": "Aceptar la dirección F1/F2, corregir los bloqueos técnicos y mantener V2 sin schedule hasta validar los índices y el switchover.",
     "recommended": true
   },
   "likelyOwner": {
-    "person": "MiguelHamelyn",
-    "reason": "Su historial reciente cubre los límites de tasa y la recuperación operativa de Discogs.",
+    "person": "MarcosTerroso",
+    "reason": "Su historial reciente de marketplace y la propuesta F1/F2 le sitúan como la mejor persona para concretar el alcance técnico tras la decisión.",
     "confidence": "medium"
   },
   "source": {
     "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8630.md",
-    "reviewedAt": "2026-08-22T01:36:14.395Z",
+    "reviewedAt": "2026-08-22T01:43:06.730Z",
     "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
   }
 }
