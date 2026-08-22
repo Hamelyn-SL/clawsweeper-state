@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-22T01:36:35.677Z",
+  "updatedAt": "2026-08-21T13:15:14Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8629,
+    "title": "feat: locate picking products inside the bin with a vision model",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8629",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-21T12:53:14Z",
+    "updatedAt": "2026-08-21T13:15:14Z",
+    "headSha": "c66f475efc9edf7bc61d1285c79b2daf4afecc2e"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba un piloto de visión con gasto propio y un recall observado del 53,8 %, condicionado a una prueba completa en un puesto real?",
+  "rationale": "El código puede corregirse, pero aceptar coste recurrente y utilidad operativa con ese recall requiere criterio de producto y de operación de almacén.",
+  "options": [
+    {
+      "title": "Piloto acotado con prueba real",
+      "body": "Corregir la ruta de fallback y habilitarlo solo tras registrar una prueba de puesto, presupuesto separado y criterios de éxito operativos.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer la salida",
+      "body": "Mantener el PR en draft hasta mejorar el recall o disponer de una evaluación operativa que justifique el coste y la señal parcial.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Piloto acotado con prueba real",
+    "body": "Corregir la ruta de fallback y habilitarlo solo tras registrar una prueba de puesto, presupuesto separado y criterios de éxito operativos.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "HamelynDev",
+    "reason": "Es el contribuidor más reciente en el flujo de estación que debe integrar el piloto sin alterar la operativa actual.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8629.md",
+    "reviewedAt": "2026-08-22T01:36:35.677Z",
+    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+  }
+}

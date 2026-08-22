@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-22T01:36:14.395Z",
+  "updatedAt": "2026-08-21T13:19:23Z",
+  "subject": {
+    "repo": "hamelyn-sl/hamelyn-serverless",
+    "kind": "pull_request",
+    "number": 8630,
+    "title": "feat: migrate discogs to the marketplace manager (F2 pilot)",
+    "url": "https://github.com/Hamelyn-SL/hamelyn-serverless/pull/8630",
+    "state": "open",
+    "labels": [
+      "size/XXL"
+    ],
+    "createdAt": "2026-08-21T13:19:11Z",
+    "updatedAt": "2026-08-21T13:19:23Z",
+    "headSha": "9c5b4a7aad065a316a31ed22fc88f1a74e2427eb"
+  },
+  "lane": "product_direction",
+  "priority": "P2",
+  "question": "¿Se aprueba el contrato y estado persistido de `MarketplaceManager` como base F2, manteniendo `discogsV2` sin schedule hasta un switchover posterior?",
+  "rationale": "La aceptación de una nueva arquitectura compartida y el momento de activar el segundo flujo de Discogs requieren criterio operativo más allá de una corrección mecánica.",
+  "options": [
+    {
+      "title": "Aceptar el piloto inactivo",
+      "body": "Corregir los bloqueos técnicos y fusionar el piloto sin schedule; el switchover queda en una decisión posterior con índices confirmados.",
+      "recommended": true
+    },
+    {
+      "title": "Posponer el contrato F2",
+      "body": "Mantener el flujo legacy hasta acordar si este modelo de estado debe ser la plantilla para los demás marketplaces.",
+      "recommended": false
+    }
+  ],
+  "recommendation": {
+    "title": "Aceptar el piloto inactivo",
+    "body": "Corregir los bloqueos técnicos y fusionar el piloto sin schedule; el switchover queda en una decisión posterior con índices confirmados.",
+    "recommended": true
+  },
+  "likelyOwner": {
+    "person": "MiguelHamelyn",
+    "reason": "Su historial reciente cubre los límites de tasa y la recuperación operativa de Discogs.",
+    "confidence": "medium"
+  },
+  "source": {
+    "reportPath": "records/hamelyn-sl-hamelyn-serverless/items/8630.md",
+    "reviewedAt": "2026-08-22T01:36:14.395Z",
+    "mainSha": "6345777ab3811f5c70fd2fd333fe42953fa00288"
+  }
+}
